@@ -339,6 +339,7 @@
             max-width: 2200px;
             pointer-events: none;
             user-select: none;
+            z-index: 1;
         }
 
         .hero-bg-text::after {
@@ -346,6 +347,7 @@
             position: absolute;
             inset: 0;
             background: rgba(26, 26, 26, 0.75);
+            z-index: 2;
         }
 
         .hero-bg-text img {
@@ -359,7 +361,7 @@
             margin: 0 auto;
             width: 100%;
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
 
         .hero-eyebrow {
@@ -2041,6 +2043,10 @@
                 padding-top: 6rem;
             }
 
+            .hero {
+                overflow: visible;
+            }
+
             .hero-bg-text {
                 position: relative;
                 top: auto;
@@ -2049,7 +2055,15 @@
                 width: 130%;
                 max-width: none;
                 margin-left: -15%;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
+                max-height: 20vh;
+            }
+
+            .hero-bg-text img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
             }
 
             .hero-bg-text::after {
@@ -3124,6 +3138,24 @@
             targetScrollRotation += e.deltaY * 0.02;
         }, { passive: true });
 
+        // Mouse tilt — spiral leans away from cursor
+        let tiltX = 0, tiltY = 0;
+        let targetTiltX = 0, targetTiltY = 0;
+
+        const stickyEl = document.querySelector('.portfolio-sticky');
+        stickyEl.addEventListener('mousemove', (e) => {
+            const rect = stickyEl.getBoundingClientRect();
+            const mx = (e.clientX - rect.left) / rect.width - 0.5;
+            const my = (e.clientY - rect.top) / rect.height - 0.5;
+            targetTiltY = -mx * 24;
+            targetTiltX = my * 24;
+        });
+
+        stickyEl.addEventListener('mouseleave', () => {
+            targetTiltX = 0;
+            targetTiltY = 0;
+        });
+
         // Touch drag — spiral rotates with finger on mobile
         let touchStartX = 0;
         let touchStartY = 0;
@@ -3149,24 +3181,6 @@
         stickyEl.addEventListener('touchend', () => {
             touchActive = false;
         }, { passive: true });
-
-        // Mouse tilt — spiral leans away from cursor
-        let tiltX = 0, tiltY = 0;
-        let targetTiltX = 0, targetTiltY = 0;
-
-        const stickyEl = document.querySelector('.portfolio-sticky');
-        stickyEl.addEventListener('mousemove', (e) => {
-            const rect = stickyEl.getBoundingClientRect();
-            const mx = (e.clientX - rect.left) / rect.width - 0.5;
-            const my = (e.clientY - rect.top) / rect.height - 0.5;
-            targetTiltY = -mx * 24;
-            targetTiltX = my * 24;
-        });
-
-        stickyEl.addEventListener('mouseleave', () => {
-            targetTiltX = 0;
-            targetTiltY = 0;
-        });
 
         function animateSpiral() {
             tiltX += (targetTiltX - tiltX) * 0.06;
