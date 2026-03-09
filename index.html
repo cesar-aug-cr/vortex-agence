@@ -194,7 +194,7 @@
 
         .nav-links a {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--text-dim);
@@ -219,7 +219,7 @@
 
         .nav-cta {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: var(--bg) !important;
@@ -280,7 +280,7 @@
         /* ============ SECTION LABEL ============ */
         .section-label {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--text-muted);
@@ -334,14 +334,24 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: clamp(15vw, 20vw, 25vw);
-            font-weight: 900;
-            color: rgba(255,255,255,0.02);
-            white-space: nowrap;
+            transform: translate(-50%, -55%);
+            width: 140%;
+            max-width: 2200px;
             pointer-events: none;
-            letter-spacing: -0.04em;
             user-select: none;
+        }
+
+        .hero-bg-text::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.75);
+        }
+
+        .hero-bg-text img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .hero-content {
@@ -354,7 +364,7 @@
 
         .hero-eyebrow {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--accent);
@@ -395,7 +405,7 @@
         }
 
         .hero-desc {
-            font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+            font-size: clamp(1.05rem, 1.4vw, 1.25rem);
             color: var(--text-dim);
             max-width: 420px;
             line-height: 1.7;
@@ -735,7 +745,7 @@
         }
 
         .services-desc {
-            font-size: clamp(0.85rem, 1vw, 1rem);
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
             color: var(--text-dim);
             max-width: 380px;
             line-height: 1.7;
@@ -780,7 +790,7 @@
 
         .service-number {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--accent);
             letter-spacing: 0.1em;
             margin-bottom: clamp(1.5rem, 3vw, 3rem);
@@ -859,7 +869,7 @@
         }
 
         .about-text {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.8;
             margin-bottom: 2rem;
@@ -870,7 +880,7 @@
             align-items: center;
             gap: 0.8rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--accent);
@@ -904,7 +914,7 @@
         }
 
         .stat-label {
-            font-size: clamp(0.7rem, 0.85vw, 0.85rem);
+            font-size: clamp(0.9rem, 1vw, 1rem);
             color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -941,7 +951,7 @@
 
         .process-step {
             font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+            font-size: clamp(0.9rem, 1vw, 0.95rem);
             color: var(--accent);
             letter-spacing: 0.1em;
             min-width: 40px;
@@ -1046,7 +1056,7 @@
 
         .testimonial-author-role {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -1099,7 +1109,7 @@
         .contact-heading .accent { color: var(--accent); }
 
         .contact-text {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
             margin-bottom: 2.5rem;
@@ -1233,7 +1243,7 @@
 
         .footer-links a {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--text-muted);
@@ -1370,7 +1380,7 @@
         }
 
         .leadgen-subtitle {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
             max-width: 700px;
@@ -1391,7 +1401,7 @@
 
         .leadgen-col-label {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
@@ -1409,7 +1419,7 @@
         }
 
         .leadgen-col-text {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
             margin-bottom: 1.5rem;
@@ -1466,7 +1476,7 @@
         .funnel-step:hover .funnel-step-num { opacity: 1; }
 
         .funnel-step-label {
-            font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+            font-size: clamp(1.05rem, 1.4vw, 1.25rem);
             font-weight: 600;
             color: var(--white);
         }
@@ -1511,7 +1521,7 @@
 
         .callout-label {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--accent);
@@ -1519,7 +1529,7 @@
         }
 
         .callout-text {
-            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            font-size: clamp(1rem, 1.2vw, 1.1rem);
             color: var(--text-dim);
             line-height: 1.7;
         }
@@ -1545,7 +1555,7 @@
         }
 
         .included-subtitle {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
         }
@@ -1598,7 +1608,7 @@
 
         .included-card-link {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--accent);
             text-decoration: none;
             letter-spacing: 0.05em;
@@ -1628,7 +1638,7 @@
         }
 
         .evolution-subtitle {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
         }
@@ -1647,7 +1657,7 @@
 
         .evolution-panel-title {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--accent);
@@ -1682,19 +1692,19 @@
 
         .evolution-service-num {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--accent);
             min-width: 24px;
         }
 
         .evolution-service-name {
-            font-size: clamp(0.85rem, 1vw, 1rem);
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
             font-weight: 600;
             color: var(--white);
         }
 
         .evolution-desc {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
             max-width: 700px;
@@ -1721,7 +1731,7 @@
         }
 
         .tech-subtitle {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
         }
@@ -1759,7 +1769,7 @@
 
         .tech-category-count {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--accent);
             letter-spacing: 0.1em;
         }
@@ -1800,7 +1810,7 @@
         }
 
         .tech-big-stat-label {
-            font-size: clamp(0.85rem, 1vw, 1rem);
+            font-size: clamp(1rem, 1.2vw, 1.15rem);
             color: var(--text-dim);
             margin-top: 0.5rem;
         }
@@ -1826,7 +1836,7 @@
         }
 
         .seo-ia-subtitle {
-            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-size: clamp(1.05rem, 1.3vw, 1.2rem);
             color: var(--text-dim);
             line-height: 1.7;
         }
@@ -1840,7 +1850,7 @@
 
         .seo-ia-badge {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             letter-spacing: 0.08em;
             padding: 0.5rem 1.2rem;
             border: 1px solid var(--accent);
@@ -1872,14 +1882,14 @@
         }
 
         .seo-ia-feature-text {
-            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            font-size: clamp(1rem, 1.2vw, 1.1rem);
             color: var(--text-dim);
             line-height: 1.7;
         }
 
         /* ============ PROCESS DESCRIPTION ============ */
         .process-desc-text {
-            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            font-size: clamp(1rem, 1.2vw, 1.1rem);
             color: var(--text-dim);
             line-height: 1.7;
             max-width: 500px;
@@ -1893,7 +1903,7 @@
 
         .process-note {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             margin-top: clamp(2rem, 3vw, 3rem);
             padding: 1.2rem;
@@ -1914,7 +1924,7 @@
         }
 
         .contact-bullets li {
-            font-size: clamp(0.85rem, 1vw, 0.95rem);
+            font-size: clamp(1rem, 1.2vw, 1.1rem);
             color: var(--text-dim);
             display: flex;
             align-items: center;
@@ -2026,6 +2036,39 @@
 
             .hero-scroll-indicator { display: none; }
 
+            .hero {
+                justify-content: flex-start;
+                padding-top: 6rem;
+            }
+
+            .hero-bg-text {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                width: 130%;
+                max-width: none;
+                margin-left: -15%;
+                margin-bottom: 2rem;
+            }
+
+            .hero-bg-text::after {
+                display: none;
+            }
+
+            .portfolio-section {
+                height: 60vh;
+            }
+
+            .portfolio-sticky {
+                height: 60vh;
+            }
+
+            .spiral-card {
+                width: 100px;
+                height: 75px;
+            }
+
             .process-item {
                 grid-template-columns: auto 1fr;
             }
@@ -2070,12 +2113,12 @@
             }
 
             .portfolio-section {
-                height: 250vh;
+                height: 50vh;
             }
 
             .spiral-card {
-                width: 140px;
-                height: 110px;
+                width: 80px;
+                height: 60px;
             }
 
             .portfolio-bg-text {
@@ -2132,7 +2175,9 @@
 
     <!-- Hero -->
     <section class="hero" id="hero">
-        <div class="hero-bg-text">VORTX</div>
+        <div class="hero-bg-text">
+            <img src="vortx-hero-letters.svg" alt="VORTX" />
+        </div>
         <div class="hero-content">
             <div class="hero-eyebrow reveal">Diseno web de nueva generacion</div>
             <h1 class="hero-title reveal reveal-delay-1">
@@ -3077,6 +3122,32 @@
         let targetScrollRotation = 0;
         window.addEventListener('wheel', (e) => {
             targetScrollRotation += e.deltaY * 0.02;
+        }, { passive: true });
+
+        // Touch drag — spiral rotates with finger on mobile
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchActive = false;
+
+        stickyEl.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            touchActive = true;
+        }, { passive: true });
+
+        stickyEl.addEventListener('touchmove', (e) => {
+            if (!touchActive) return;
+            const dx = e.touches[0].clientX - touchStartX;
+            const dy = e.touches[0].clientY - touchStartY;
+            targetScrollRotation += dx * 0.15;
+            targetTiltX += dy * 0.05;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            e.preventDefault();
+        }, { passive: false });
+
+        stickyEl.addEventListener('touchend', () => {
+            touchActive = false;
         }, { passive: true });
 
         // Mouse tilt — spiral leans away from cursor
