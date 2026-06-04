@@ -1,0 +1,41 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env*
+!.env.example
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# vercel
+.vercel
+
+# local helper artifacts
+_svg_analyze.mjs
+vortx-hero-letters.svg
+index.html
+_*.png
+_*.svg
+
+# logs
+*.log

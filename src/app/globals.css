@@ -1,0 +1,471 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (toggled on <html class="dark">) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   DESIGN TOKENS — Vortex Lime
+   Light = trust/clean · Dark = brand-first (default)
+   The "stage" stays dark in both themes: the 3D scenes
+   (black hole, DNA) only exist against deep space.
+   ============================================================ */
+:root {
+  --bg: #f7f8f4;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --surface: #f7f8f4;
+  --surface-2: #eef0e8;
+
+  --text: #0a0a0b;
+  --text-dim: #45483f;
+  --text-muted: #767970;
+
+  --border: rgba(10, 10, 11, 0.1);
+  --border-strong: rgba(10, 10, 11, 0.2);
+
+  /* Always-dark stage for 3D / hero scenes */
+  --stage: #07070a;
+  --stage-elevated: #101015;
+  --stage-text: #f4f5ef;
+  --stage-text-dim: #b9bcb2;
+  --stage-border: rgba(255, 255, 255, 0.1);
+
+  /* Brand */
+  --accent: #c8f02e; /* lime */
+  --accent-2: #14e0c8; /* cyan vortex */
+  --accent-ink: #0a0a0b; /* text on accent fills */
+  --accent-soft: rgba(200, 240, 46, 0.12);
+  --ring: rgba(200, 240, 46, 0.55);
+
+  --shadow-sm: 0 1px 2px rgba(10, 10, 11, 0.06);
+  --shadow-md: 0 12px 32px rgba(10, 10, 11, 0.1);
+  --shadow-lg: 0 28px 60px rgba(10, 10, 11, 0.14);
+
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #09090c;
+  --bg-elevated: #131319;
+  --bg-card: #121218;
+  --surface: #09090c;
+  --surface-2: #16161b;
+
+  /* In dark mode the 3D "stage" matches the body → one continuous surface */
+  --stage: #09090c;
+  --stage-elevated: #131319;
+
+  --text: #f2f3ee;
+  --text-dim: #b9bcb2;
+  --text-muted: #7e817a;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --accent-soft: rgba(200, 240, 46, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.55);
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   TAILWIND THEME MAPPING — exposes tokens as utilities
+   (bg-bg, text-text, border-border, text-accent, font-mono…)
+   ============================================================ */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-card: var(--bg-card);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+
+  --color-text: var(--text);
+  --color-text-dim: var(--text-dim);
+  --color-text-muted: var(--text-muted);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-stage: var(--stage);
+  --color-stage-elevated: var(--stage-elevated);
+  --color-stage-text: var(--stage-text);
+  --color-stage-text-dim: var(--stage-text-dim);
+  --color-stage-border: var(--stage-border);
+
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, -apple-system,
+    sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular",
+    monospace;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--accent) transparent;
+  }
+
+  /* Anti horizontal-scroll guard (mobile) */
+  html,
+  body {
+    max-width: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================================
+   COMPONENTS / UTILITIES
+   ============================================================ */
+@layer components {
+  .container-vortx {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 80rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-vortx {
+      padding-inline: 2rem;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .text-gradient {
+    background: linear-gradient(100deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 9999px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease,
+      border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 0.9rem 1.6rem;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 34px rgba(200, 240, 46, 0.35);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    padding: 0.9rem 1.6rem;
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* chip / badge */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.7rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-strong);
+    color: var(--text-dim);
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-strong);
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+.animate-float {
+  animation: floatY 6s ease-in-out infinite;
+}
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.marquee-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   ANIMATED NAV LOGO  (components/brand/LogoMark.tsx)
+   13s loop: base dot ~5s → soft lime/teal flicker ~5s → dot returns.
+   ============================================================ */
+.vortx-logo .vortx-o {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.vortx-logo:hover .vortx-o {
+  transform: scale(1.15);
+}
+
+.vortx-logo .vortx-o-dot {
+  opacity: 1;
+  animation: vortxODot 13s ease-in-out infinite;
+}
+.vortx-logo .vortx-o-lime {
+  opacity: 0;
+  animation: vortxORingLime 13s ease-in-out infinite;
+}
+.vortx-logo .vortx-o-teal {
+  opacity: 0;
+  animation: vortxORingTeal 13s ease-in-out infinite;
+}
+
+/* base dot: visible while resting, hidden during the flicker window */
+@keyframes vortxODot {
+  0%,
+  35% {
+    opacity: 1;
+  }
+  39%,
+  69% {
+    opacity: 0;
+  }
+  73%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* lime ring — soft pulses on the "odd" beats (38%–69%) */
+@keyframes vortxORingLime {
+  0%,
+  38% {
+    opacity: 0;
+  }
+  41% {
+    opacity: 0.95;
+  }
+  44%,
+  48% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.95;
+  }
+  54%,
+  58% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 0.95;
+  }
+  64%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* teal ring — soft pulses on the "even" beats, interleaved with lime */
+@keyframes vortxORingTeal {
+  0%,
+  43% {
+    opacity: 0;
+  }
+  46% {
+    opacity: 0.95;
+  }
+  49%,
+  53% {
+    opacity: 0;
+  }
+  56% {
+    opacity: 0.95;
+  }
+  59%,
+  63% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0.95;
+  }
+  69%,
+  100% {
+    opacity: 0;
+  }
+}

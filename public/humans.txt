@@ -1,0 +1,13 @@
+/* TEAM */
+  Agence: VorTX
+  Site: Agence marketing & web — Luxembourg
+  Contact: contact [at] vortx.lu
+
+/* SITE */
+  Langue: Français (DE / EN / LU à venir)
+  Stack: Next.js, React, TypeScript, Tailwind CSS, Three.js
+  Standards: HTML5, CSS3, JSON-LD, hreflang
+  Lieu: Luxembourg
+
+/* MERCI */
+  Conçu avec soin et beaucoup d'IA.

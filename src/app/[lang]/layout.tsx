@@ -1,0 +1,90 @@
+import type { Metadata } from "next";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { notFound } from "next/navigation";
+import "../globals.css";
+import { i18n, isLocale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/getDictionary";
+import { ThemeScript } from "@/components/theme/ThemeScript";
+import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter-tight",
+  display: "swap",
+});
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+const SITE_URL = "https://vortx.lu";
+
+export async function generateStaticParams() {
+  return i18n.locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = isLocale(lang) ? lang : i18n.defaultLocale;
+  const dict = await getDictionary(locale);
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: dict.meta.home.title,
+      template: "%s",
+    },
+    description: dict.meta.home.description,
+    applicationName: "VorTX",
+    authors: [{ name: "VorTX" }],
+    creator: "VorTX",
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        fr: "/fr",
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: "fr_LU",
+      siteName: "VorTX",
+      title: dict.meta.home.title,
+      description: dict.meta.home.description,
+      url: `/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.home.title,
+      description: dict.meta.home.description,
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
+export default async function LangLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+
+  return (
+    <html lang={lang} suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
+      <body className={`${interTight.variable} ${jetbrainsMono.variable} antialiased`}>
+        <SchemaMarkup />
+        {children}
+      </body>
+    </html>
+  );
+}
