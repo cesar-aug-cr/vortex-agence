@@ -56,7 +56,7 @@ export const fr = {
   // ---- HERO ----
   hero: {
     eyebrow: "Agence marketing · Luxembourg",
-    titleLead: "Le marketing qui",
+    titleLead: "Marketing & web à Luxembourg qui",
     titleAccent: "attire et convertit.",
     subtitle:
       "VorTX conçoit des sites et des stratégies d'acquisition qui transforment l'attention en clients. Design premium, SEO de nouvelle génération, génération de leads mesurable.",
