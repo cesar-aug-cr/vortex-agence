@@ -4,7 +4,6 @@ import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Wordmark } from "@/components/brand/Wordmark";
 import ThreeSphereV2BlackHole from "@/components/three/BlackHoleLazy";
-import { HeroFloatingButtons } from "@/components/sections/HeroFloatingButtons";
 
 export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
@@ -123,8 +122,6 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           {dict.hero.note}
         </p>
       </div>
-
-      <HeroFloatingButtons dict={dict} lang={lang} />
     </section>
   );
 }
