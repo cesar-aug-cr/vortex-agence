@@ -480,4 +480,14 @@ export const fr = {
     legalTodo:
       "⚠️ Contenu à faire valider juridiquement et à compléter avec les informations légales réelles de la société.",
   },
+
+  // ---- Cookie consent (RGPD / ePrivacy) ----
+  consent: {
+    title: "Cookies & confidentialité",
+    message:
+      "Nous utilisons des cookies essentiels au fonctionnement du site et, avec votre accord, des cookies de mesure d'audience et de publicité.",
+    accept: "Tout accepter",
+    refuse: "Refuser",
+    learnMore: "En savoir plus",
+  },
 } as const;

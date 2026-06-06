@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
 import { SpotlightCards } from "@/components/ui/SpotlightCards";
+import { StickyCta } from "@/components/layout/StickyCta";
 
 /**
  * Shell for every internal page: fixed Header (not over-hero), the page-wide
@@ -29,6 +30,7 @@ export function PageShell({
         <main>{children}</main>
         <Footer dict={dict} lang={lang} />
       </div>
+      <StickyCta lang={lang} label={dict.common.cta} />
     </>
   );
 }

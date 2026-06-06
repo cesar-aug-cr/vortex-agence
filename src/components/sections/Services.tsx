@@ -29,7 +29,7 @@ export function Services({ dict, lang }: { dict: Dictionary; lang: Locale }) {
               </span>
             </div>
             <h3 className="mt-5 text-xl font-semibold text-text">{s.title}</h3>
-            <p className="mt-1 text-sm font-medium text-accent-2">{s.tagline}</p>
+            <p className="tagline mt-1 text-sm font-medium">{s.tagline}</p>
             <p className="mt-3 text-sm leading-relaxed text-text-dim">{s.short}</p>
             <ul className="mt-5 space-y-2 border-t border-border pt-5">
               {s.bullets.slice(0, 3).map((b) => (

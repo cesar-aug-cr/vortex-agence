@@ -224,6 +224,15 @@
     color: transparent;
   }
 
+  /* Service taglines: brand cyan reads well on the dark stage but fails AA on
+     white cards in light mode — use a darker teal there, keep cyan in dark. */
+  .tagline {
+    color: #0f766e;
+  }
+  .dark .tagline {
+    color: var(--accent-2);
+  }
+
   /* Brand-coloured shine that sweeps left→right across the LETTERS only
      (clipped to the text — no background halo). */
   .brand-sweep {

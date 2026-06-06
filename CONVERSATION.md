@@ -142,4 +142,34 @@ npm run build        # build prod
 npx tsc --noEmit     # type-check
 node scripts/shot.mjs "http://localhost:3000/fr" out.png 1440 950 dark 0   # capture hero
 node scripts/shot.mjs "http://localhost:3000/fr" full.png 1440 900 dark 1  # capture pleine page
+node scripts/check-overflow.mjs http://localhost:3005 360 /fr /fr/services # anti-scroll-horizontal
 ```
+
+> Note Windows : lancer les scripts puppeteer via **PowerShell** (Git Bash mange les
+> chemins commençant par `/`). Un 2ᵉ serveur dev tourne sur :3005 avec son propre
+> cache (`NEXT_DIST_DIR=.next-dev2 npx next dev -p 3005`). Build isolé :
+> `NEXT_DIST_DIR=.next-build npx next build`.
+
+---
+
+## 10. Session 2026-06 — buildout complet (branche `feat/site-buildout-perf-seo`)
+
+Audit multi-agents (56 constats) → exécution des 8 chantiers. **`tsc` exit 0 ; `next build` OK (26 routes) ; 0 scroll horizontal à 360px.**
+
+**Pages internes (Phase A — FAIT).** Tous les liens pointaient vers des 404 ; créées sous `src/app/[lang]/` : `services` (index + illustrations), `services/[slug]` (×6, `generateStaticParams` + `Service` JSON-LD + illustration mappée via `components/illustrations/map.ts`), `agence`, `approche`, `realisations`, `contact`, `merci`, `not-found`, + 3 pages légales (placeholder `[À COMPLÉTER]`, `noindex`). Pièces partagées : `layout/PageShell`, `lib/metadata.ts` (`buildMetadata`), `legal/LegalDoc`. Formulaire → `app/api/contact/route.ts` (validation, honeypot, **Resend si `RESEND_API_KEY`+`CONTACT_TO`**, sinon log).
+
+**SEO (Phase B — FAIT).** Corrigé 404 `/icon` (le `proxy` redirigeait les routes de métadonnées → matcher étendu). Ajouté `opengraph-image`/`twitter-image`/`apple-icon`, `FAQPage` JSON-LD (Faq), `BreadcrumbList` (toutes pages internes), hreflang `x-default`, `metadataBase` par page. `robots` host retiré. `public/llms-full.txt` ajouté. `LocalBusiness` dégradé en `Organization/ProfessionalService` (bascule auto via `site.address.street`). Titre template gardé `%s` (les titres du dict portent déjà la marque).
+
+**3D / animations.** Disque d'accrétion : orbite en vertex shader (`uTime`) au lieu d'une boucle CPU ; `prefers-reduced-motion` → frame statique ; fallback WebGL context-loss ; `next/dynamic ssr:false` (`BlackHoleLazy`/`HelixDNALazy`). Hélice : ponts fusionnés (1 draw call), scaling mobile, GL tuning. CSS : `backdrop-filter` hero desktop-only (`@supports`), `@supports` mask-composite spotlight, `AmbientGlow` 8→5 blobs, `svh`, `SpotlightCards` rAF + `pointer:fine`.
+
+**RGPD / Trust / a11y.** Bannière consentement opt-in (`layout/ConsentBanner`, `getConsent()` — gate GA4/GTM/Meta à brancher). `Proof` : grille de logos vides retirée. Footer : e-mail/tél/réseaux conditionnels. CTA sticky mobile (`layout/StickyCta`). Cibles tactiles 44px, `aria-haspopup`, `Wordmark` `aria-hidden` propagé, taglines `.tagline` (teal AA en clair).
+
+**Contenu.** Retiré toutes les mentions « livraison 2 à 4 semaines ». Hero : wordmark VORTX en filigrane, ligne de réassurance animée (`.brand-sweep`), bloc stats retiré.
+
+### §8 — toujours à fournir (bloque le réel)
+1. Domaine final · 2. **Adresse/tél/e-mail réels** (→ `lib/site.ts` : remplir `address.street`/`postalCode` rebascule le schema en LocalBusiness ; `phone`/`sameAs` activent footer) · 3. Réseaux · 4. Preuve réelle (témoignages/logos pour `Proof`). + Brancher un transport e-mail (`RESEND_API_KEY`) et l'analytics derrière le consentement.
+
+### Reste / idées
+- Mega-menu : passer en vrai disclosure (aria-expanded + Échap + clic-extérieur) — actuellement hover/focus CSS (le déclencheur navigue désormais vers `/services` réel).
+- Marquees/logo nav : pause hors-écran via IntersectionObserver (micro-opt).
+- DE/EN : créer `de.ts`/`en.ts` + switcher quand décidé (archi déjà prête).

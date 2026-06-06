@@ -24,6 +24,7 @@ export function buildMetadata({
 }): Metadata {
   const url = localized(lang, path);
   return {
+    metadataBase: new URL(site.url),
     title,
     description,
     alternates: { canonical: url },

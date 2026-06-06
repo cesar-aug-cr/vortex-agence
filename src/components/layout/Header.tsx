@@ -72,6 +72,7 @@ export function Header({
             <li className="group/mega static">
               <Link
                 href={localized(lang, "/services")}
+                aria-haspopup="true"
                 className={`flex items-center gap-1.5 py-2 transition-colors ${navLinkClass}`}
               >
                 {dict.nav.services}
@@ -192,7 +193,7 @@ export function Header({
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? dict.common.close : dict.common.openMenu}
             aria-expanded={mobileOpen}
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-full border lg:hidden ${
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden ${
               solid ? "border-border-strong text-text" : "border-white/30 text-white"
             }`}
           >

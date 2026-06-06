@@ -75,7 +75,7 @@ export default async function ServicesPage({
                     <ArrowUpRight width={16} height={16} />
                   </span>
                 </div>
-                <p className="mt-1 text-sm font-medium text-accent-2">{s.tagline}</p>
+                <p className="tagline mt-1 text-sm font-medium">{s.tagline}</p>
                 <p className="mt-3 text-sm leading-relaxed text-text-dim">{s.short}</p>
                 <ul className="mt-5 space-y-2 border-t border-border pt-5">
                   {s.bullets.slice(0, 3).map((b) => (

@@ -6,6 +6,7 @@ import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { ThemeScript } from "@/components/theme/ThemeScript";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+import { ConsentBanner } from "@/components/layout/ConsentBanner";
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -76,6 +77,7 @@ export default async function LangLayout({
 }) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
 
   return (
     <html lang={lang} suppressHydrationWarning>
@@ -85,6 +87,7 @@ export default async function LangLayout({
       <body className={`${interTight.variable} ${jetbrainsMono.variable} antialiased`}>
         <SchemaMarkup />
         {children}
+        <ConsentBanner lang={lang} consent={dict.consent} />
       </body>
     </html>
   );

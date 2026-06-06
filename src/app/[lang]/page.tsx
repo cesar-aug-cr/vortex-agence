@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
 import { SpotlightCards } from "@/components/ui/SpotlightCards";
+import { StickyCta } from "@/components/layout/StickyCta";
 import { Hero } from "@/components/sections/Hero";
 import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
@@ -44,6 +45,7 @@ export default async function HomePage({
         </main>
         <Footer dict={dict} lang={lang} />
       </div>
+      <StickyCta lang={lang} label={dict.common.cta} />
     </>
   );
 }

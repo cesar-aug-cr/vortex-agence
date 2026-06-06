@@ -81,7 +81,7 @@ export default async function ServiceDetailPage({
             <h1 className="mt-4 text-3xl font-bold leading-[1.08] text-text md:text-5xl">
               {service.title}
             </h1>
-            <p className="mt-3 text-lg font-medium text-accent-2">{service.tagline}</p>
+            <p className="tagline mt-3 text-lg font-medium">{service.tagline}</p>
             <p className="mt-5 max-w-xl text-lg text-text-dim">{service.short}</p>
 
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">

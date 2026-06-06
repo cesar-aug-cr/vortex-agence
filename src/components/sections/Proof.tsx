@@ -9,23 +9,12 @@ export function Proof({ dict }: { dict: Dictionary }) {
     <Section tone="base">
       <SectionHeading eyebrow={dict.proof.eyebrow} title={dict.proof.title} />
 
-      {/* logos / placeholder */}
-      <p className="mt-14 font-mono text-xs uppercase tracking-wide text-text-muted md:mt-16">
-        {dict.proof.logosTitle}
-      </p>
-      <div className="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <div
-            key={i}
-            className="card flex h-24 items-center justify-center"
-          >
-            <span className="h-3 w-20 rounded bg-border-strong" aria-hidden />
-          </div>
-        ))}
-      </div>
+      {/* Real client logos go here once available. Until then we don't render an
+          empty placeholder grid (it reads as a distrust signal) — we lead with
+          the honest note + concrete guarantees below. */}
 
       {hasTestimonials && (
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:mt-16 md:grid-cols-3">
           {dict.proof.testimonials.map((t) => (
             <figure key={t.author} className="card p-7">
               <blockquote className="text-text-dim">“{t.quote}”</blockquote>
@@ -38,7 +27,9 @@ export function Proof({ dict }: { dict: Dictionary }) {
         </div>
       )}
 
-      <p className="mt-6 text-sm italic text-text-muted">{dict.proof.placeholderNote}</p>
+      <p className="mt-10 max-w-2xl text-sm italic text-text-muted md:mt-12">
+        {dict.proof.placeholderNote}
+      </p>
 
       {/* guarantees */}
       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

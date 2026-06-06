@@ -6,18 +6,25 @@
 export function Wordmark({
   className,
   title = "VorTX",
+  "aria-hidden": ariaHidden,
 }: {
   className?: string;
   title?: string;
+  "aria-hidden"?: boolean | "true" | "false";
 }) {
+  // When used decoratively (e.g. the faint hero watermark) the caller passes
+  // aria-hidden — drop the img role/label so screen readers don't announce
+  // "VorTX" twice.
+  const decorative = ariaHidden === true || ariaHidden === "true";
   return (
     <svg
       className={className}
       viewBox="275 400 1375 300"
       fill="currentColor"
       preserveAspectRatio="xMinYMid meet"
-      role="img"
-      aria-label={title}
+      {...(decorative
+        ? { "aria-hidden": true, role: "presentation" }
+        : { role: "img", "aria-label": title })}
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* V */}

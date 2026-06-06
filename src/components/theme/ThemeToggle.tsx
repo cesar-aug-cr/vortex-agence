@@ -28,7 +28,7 @@ export function ThemeToggle({ label = "Changer de thème" }: { label?: string })
       onClick={toggle}
       aria-label={label}
       title={label}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-strong text-text transition-colors hover:border-accent"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border-strong text-text transition-colors hover:border-accent"
     >
       {mounted && dark ? (
         // Sun

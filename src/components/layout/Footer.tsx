@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { ArrowRight } from "@/components/ui/icons";
+import { site } from "@/lib/site";
 
 export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const year = 2026;
@@ -73,11 +74,40 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         </div>
 
         {/* contact strip */}
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-8 text-sm text-stage-text-dim sm:flex-row sm:items-center sm:gap-8">
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-8 text-sm text-stage-text-dim sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-2">
           <span className="font-mono text-xs uppercase tracking-wide text-stage-text">
             {dict.footer.contactTitle}
           </span>
+          <a
+            href={`mailto:${site.email}`}
+            className="transition-colors hover:text-accent"
+          >
+            {site.email}
+          </a>
+          {site.phone && (
+            <a
+              href={`tel:${site.phone.replace(/\s+/g, "")}`}
+              className="transition-colors hover:text-accent"
+            >
+              {site.phone}
+            </a>
+          )}
           <span>{dict.footer.location}</span>
+          {site.sameAs.length > 0 && (
+            <span className="flex gap-4">
+              {site.sameAs.map((href) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-accent"
+                >
+                  {new URL(href).hostname.replace("www.", "")}
+                </a>
+              ))}
+            </span>
+          )}
         </div>
       </div>
 
