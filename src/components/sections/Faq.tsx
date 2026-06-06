@@ -3,6 +3,16 @@ import { Section } from "@/components/ui/Section";
 import { Plus } from "@/components/ui/icons";
 
 export function Faq({ dict }: { dict: Dictionary }) {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: dict.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <Section tone="muted" containerClassName="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
       <div>
@@ -27,6 +37,11 @@ export function Faq({ dict }: { dict: Dictionary }) {
           </details>
         ))}
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </Section>
   );
 }

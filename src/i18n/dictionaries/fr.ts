@@ -49,7 +49,7 @@ export const fr = {
     featured: {
       label: "À la une",
       title: "Site Lead Gen prêt à convertir",
-      desc: "Un site rapide, pensé IA-ready, livré en 2 à 4 semaines.",
+      desc: "Un site rapide, pensé IA-ready, prêt à convertir.",
     },
   },
 
@@ -62,12 +62,11 @@ export const fr = {
       "VorTX conçoit des sites et des stratégies d'acquisition qui transforment l'attention en clients. Design premium, SEO de nouvelle génération, génération de leads mesurable.",
     primaryCta: "Réserver un appel découverte",
     secondaryCta: "Découvrir notre approche",
-    note: "Réponse sous 48 h · Audit offert · Sans engagement",
+    note: "Réponse sous 48 h · Audit offert · Sans engagement · 100% sur-mesure",
   },
 
   stats: [
     { value: "48 h", label: "Réponse garantie" },
-    { value: "2–4 sem.", label: "Délai de livraison" },
     { value: "100 %", label: "Conçu sur mesure" },
     { value: "FR · DE · EN", label: "Multilingue natif" },
   ],
@@ -254,7 +253,6 @@ export const fr = {
         desc: "Mise en ligne, configuration et accompagnement pour commencer à générer des résultats.",
       },
     ],
-    timeline: "Délai moyen de livraison : 2 à 4 semaines selon le projet.",
   },
 
   // ---- Tools / stack ----
@@ -319,6 +317,7 @@ export const fr = {
     placeholderNote:
       "Études de cas en cours de publication. Vos résultats seront les prochains.",
     logosTitle: "Ils nous font confiance",
+    guaranteesTitle: "Nos engagements",
     testimonials: [
       // À remplacer par de vrais témoignages clients.
     ] as { quote: string; author: string; role: string }[],
@@ -338,10 +337,6 @@ export const fr = {
       {
         q: "Combien coûte un site ou une campagne ?",
         a: "Chaque projet est sur mesure. Plutôt qu'un tarif générique, on vous propose un devis précis après un appel découverte gratuit et un audit de votre situation.",
-      },
-      {
-        q: "En combien de temps mon site est-il en ligne ?",
-        a: "Entre 2 et 4 semaines selon l'ampleur du projet. On vous donne un planning ferme dès le diagnostic.",
       },
       {
         q: "Travaillez-vous en plusieurs langues ?",
@@ -441,7 +436,7 @@ export const fr = {
     approach: {
       title: "Notre méthode | VorTX Luxembourg",
       description:
-        "Diagnostic, conception, revue, lancement : la méthode VorTX pour livrer des sites et des campagnes qui rapportent, en 2 à 4 semaines.",
+        "Diagnostic, conception, revue, lancement : la méthode VorTX pour livrer des sites et des campagnes qui rapportent.",
     },
     work: {
       title: "Réalisations | VorTX Luxembourg",
@@ -453,5 +448,36 @@ export const fr = {
       description:
         "Réservez un appel découverte gratuit avec VorTX. Audit personnalisé sous 48 h, devis sans engagement. Agence marketing & web à Luxembourg.",
     },
+    legalMentions: {
+      title: "Mentions légales | VorTX Luxembourg",
+      description: "Mentions légales du site VorTX, agence marketing & web à Luxembourg.",
+    },
+    legalPrivacy: {
+      title: "Politique de confidentialité | VorTX Luxembourg",
+      description:
+        "Comment VorTX collecte, utilise et protège vos données personnelles (RGPD).",
+    },
+    legalCookies: {
+      title: "Politique cookies | VorTX Luxembourg",
+      description: "Utilisation des cookies et traceurs sur le site VorTX.",
+    },
+  },
+
+  // ---- Standalone pages ----
+  pages: {
+    thanks: {
+      title: "Merci, votre demande est bien partie.",
+      lead: "Nous l'étudions et revenons vers vous sous 48 h ouvrées avec une première analyse — sans engagement.",
+      cta: "Retour à l'accueil",
+      metaTitle: "Merci | VorTX Luxembourg",
+    },
+    notFound: {
+      title: "Page introuvable",
+      lead: "La page que vous cherchez n'existe pas ou a été déplacée.",
+      cta: "Retour à l'accueil",
+    },
+    legalUpdated: "Dernière mise à jour : à compléter",
+    legalTodo:
+      "⚠️ Contenu à faire valider juridiquement et à compléter avec les informations légales réelles de la société.",
   },
 } as const;

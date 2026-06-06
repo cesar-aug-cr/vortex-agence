@@ -180,6 +180,15 @@
       transition-duration: 0.001ms !important;
       scroll-behavior: auto !important;
     }
+    /* Brand sweep is a deliberate identity element, but a continuous infinite
+       loop is exactly what reduced-motion users opt out of. Compromise: stop
+       the motion and freeze the gradient at its brightest position so the
+       lime→cyan→white identity colours stay, with zero animation. */
+    .brand-sweep {
+      animation: none !important;
+      background-position: 50% center !important;
+      will-change: auto !important;
+    }
   }
 }
 
@@ -213,6 +222,25 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  /* Brand-coloured shine that sweeps left→right across the LETTERS only
+     (clipped to the text — no background halo). */
+  .brand-sweep {
+    background: linear-gradient(
+      100deg,
+      var(--accent-2) 0%,
+      var(--accent) 30%,
+      #ffffff 45%,
+      #ffffff 55%,
+      var(--accent) 70%,
+      var(--accent-2) 100%
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: brandSweep 2.8s linear infinite;
   }
 
   .btn {
@@ -276,6 +304,104 @@
     box-shadow: var(--shadow-lg);
     border-color: var(--border-strong);
   }
+
+  /* Clickable cards: a brand-coloured spotlight in the background plus a
+     border that lights up near the cursor. The pointer position is fed in
+     as --mx / --my (px, relative to the card) by the SpotlightCards
+     client listener; the effect fades in on hover. */
+  .spotlight-card {
+    position: relative;
+    isolation: isolate;
+  }
+  /* background spotlight following the cursor */
+  .spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(
+      280px circle at var(--mx, 50%) var(--my, -30%),
+      rgba(20, 224, 200, 0.16),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  /* border glow near the cursor (gradient ring via mask). The ring is only
+     painted where mask-composite is supported — otherwise the gradient would
+     fill the whole card (a lime wash), so we gate it behind @supports and the
+     bare ::after stays transparent as a graceful fallback. */
+  .spotlight-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  @supports (
+    (mask-composite: exclude) or (-webkit-mask-composite: xor)
+  ) {
+    .spotlight-card::after {
+      padding: 1px;
+      background: radial-gradient(
+        220px circle at var(--mx, 50%) var(--my, -30%),
+        rgba(200, 240, 46, 0.9),
+        rgba(20, 224, 200, 0.5) 35%,
+        transparent 70%
+      );
+      -webkit-mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  }
+  .spotlight-card:hover::before,
+  .spotlight-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Frosted blur over the live WebGL hero re-samples the animating canvas
+     every frame — one of the most expensive compositor ops on mobile/iOS
+     Safari. Enable it only on wider viewports where it's affordable and
+     supported; the radial-gradient scrim alone carries the look on mobile. */
+  @supports (
+    (backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))
+  ) {
+    @media (min-width: 768px) {
+      .hero-frost {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+      }
+    }
+  }
+
+  /* Readable prose for legal pages (no typography plugin needed). */
+  .legal-prose h2 {
+    color: var(--text);
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  .legal-prose p,
+  .legal-prose li {
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .legal-prose ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .legal-prose a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .legal-prose strong {
+    color: var(--text);
+  }
 }
 
 /* ============================================================
@@ -323,6 +449,14 @@
   }
   50% {
     opacity: 1;
+  }
+}
+@keyframes brandSweep {
+  0% {
+    background-position: 150% center;
+  }
+  100% {
+    background-position: -50% center;
   }
 }
 

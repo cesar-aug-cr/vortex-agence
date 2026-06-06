@@ -15,7 +15,7 @@
 
 ## Pages
 - [Accueil](https://vortx.lu/fr)
-- [Notre méthode](https://vortx.lu/fr/approche) : diagnostic, conception, revue, lancement (2 à 4 semaines).
+- [Notre méthode](https://vortx.lu/fr/approche) : diagnostic, conception, revue, lancement.
 - [L'agence](https://vortx.lu/fr/agence)
 - [Réalisations](https://vortx.lu/fr/realisations)
 - [Contact / audit gratuit](https://vortx.lu/fr/contact)

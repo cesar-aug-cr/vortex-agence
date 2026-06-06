@@ -21,5 +21,11 @@ export function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/((?!_next|api|.*\\..*).*)"],
+  // Exclude _next, api, dotted files, AND Next's extensionless metadata routes
+  // (icon, opengraph-image…) — otherwise "/icon" gets redirected to "/fr/icon"
+  // which 404s (those routes live at the root, not under /<locale>).
+  matcher: [
+    "/",
+    "/((?!_next|api|icon|apple-icon|opengraph-image|twitter-image|manifest|sitemap|robots|favicon|.*\\..*).*)",
+  ],
 };

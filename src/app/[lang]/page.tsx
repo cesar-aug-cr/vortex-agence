@@ -3,6 +3,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
+import { SpotlightCards } from "@/components/ui/SpotlightCards";
 import { Hero } from "@/components/sections/Hero";
 import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
@@ -28,6 +29,7 @@ export default async function HomePage({
       <Header dict={dict} lang={lang} overHero />
       <div className="relative isolate bg-bg">
         <AmbientGlow />
+        <SpotlightCards />
         <main>
           <Hero dict={dict} lang={lang} />
           <WhyVortx dict={dict} />

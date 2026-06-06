@@ -11,8 +11,10 @@ export const site = {
   description:
     "Agence marketing & web à Luxembourg : sites qui convertissent, SEO & GEO, génération de leads et publicité en ligne.",
   email: "contact@vortx.lu", // placeholder
-  phone: "", // placeholder — e.g. "+352 ..."
+  phone: "" as string, // placeholder — e.g. "+352 ..."
   address: {
+    street: "" as string, // placeholder — set to flip schema to LocalBusiness
+    postalCode: "" as string, // placeholder
     locality: "Luxembourg",
     region: "Luxembourg",
     country: "LU",

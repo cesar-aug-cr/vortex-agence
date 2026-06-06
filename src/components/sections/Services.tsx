@@ -18,7 +18,7 @@ export function Services({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           <Link
             key={s.slug}
             href={localized(lang, `/services/${s.slug}`)}
-            className="card card-hover group flex flex-col p-7"
+            className="card card-hover spotlight-card group flex flex-col p-7"
           >
             <div className="flex items-start justify-between gap-4">
               <span className="font-mono text-sm text-text-muted">

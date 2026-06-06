@@ -3,7 +3,7 @@ import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Wordmark } from "@/components/brand/Wordmark";
-import ThreeSphereV2BlackHole from "@/components/three/ThreeSphereV2BlackHole";
+import ThreeSphereV2BlackHole from "@/components/three/BlackHoleLazy";
 
 export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
@@ -12,7 +12,7 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <ThreeSphereV2BlackHole
           showSphere={false}
-          bhPositionOverride={[3.5, 0.4, 0]}
+          bhPositionOverride={[2.4, 0.4, 0]}
           bhPositionMobileOverride={[1.2, 2.6, 1]}
           bhScaleOverride={1.7}
         />
@@ -69,13 +69,13 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
-      {/* frosted filter over the black hole only (softens it, keeps text crisp) */}
+      {/* frosted filter over the black hole only (softens it, keeps text crisp).
+          The blur is applied via .hero-frost (desktop + @supports only); the
+          gradient scrim below carries the look on mobile without the cost. */}
       <div
-        className="pointer-events-none absolute inset-0 z-[3]"
+        className="hero-frost pointer-events-none absolute inset-0 z-[3]"
         aria-hidden
         style={{
-          backdropFilter: "blur(2px)",
-          WebkitBackdropFilter: "blur(2px)",
           background:
             "radial-gradient(44% 54% at 80% 50%, rgba(7,7,10,0.5), rgba(7,7,10,0.16) 55%, transparent 78%)",
           maskImage:
@@ -85,14 +85,19 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
-      <div className="container-vortx relative z-10 flex min-h-[92vh] flex-col justify-center pb-24 pt-36 md:pt-40">
-        <span className="font-mono text-xs uppercase tracking-[0.24em] text-accent animate-fade-in">
-          {dict.hero.eyebrow}
-        </span>
+      <div className="container-vortx relative z-10 flex min-h-[80svh] flex-col justify-center pb-16 pt-36 md:pt-40">
+        <div className="relative self-start">
+          {/* VORTX wordmark as a faint watermark sitting behind the eyebrow */}
+          <Wordmark
+            aria-hidden
+            className="pointer-events-none absolute left-0 top-1/2 h-14 w-auto -translate-y-1/2 text-stage-text/[0.08] animate-fade-in sm:h-16 md:h-20"
+          />
+          <span className="relative font-mono text-xs uppercase tracking-[0.24em] text-accent animate-fade-in">
+            {dict.hero.eyebrow}
+          </span>
+        </div>
 
-        <Wordmark className="mt-6 h-12 w-auto self-start text-stage-text sm:h-16 md:h-20 animate-fade-in" />
-
-        <h1 className="mt-7 max-w-3xl text-4xl font-bold leading-[1.04] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up delay-100">
+        <h1 className="mt-10 max-w-3xl text-4xl font-bold leading-[1.04] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up delay-100">
           {dict.hero.titleLead}{" "}
           <span className="text-gradient">{dict.hero.titleAccent}</span>
         </h1>
@@ -107,28 +112,15 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           </Link>
           <Link
             href={localized(lang, "/approche")}
-            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-stage-text backdrop-blur-sm transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-stage-text transition-colors hover:border-accent hover:text-accent sm:backdrop-blur-sm"
           >
             {dict.hero.secondaryCta}
           </Link>
         </div>
 
-        <p className="mt-6 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-stage-text-dim">
+        <p className="brand-sweep mt-6 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em]">
           {dict.hero.note}
         </p>
-
-        <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-9 md:grid-cols-4">
-          {dict.stats.map((s) => (
-            <div key={s.label}>
-              <dt className="text-3xl font-bold text-stage-text md:text-4xl">
-                {s.value}
-              </dt>
-              <dd className="mt-1 font-mono text-[0.7rem] uppercase tracking-wide text-stage-text-dim">
-                {s.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

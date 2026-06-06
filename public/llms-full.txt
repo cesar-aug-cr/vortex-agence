@@ -1,0 +1,107 @@
+# VorTX — contenu complet
+
+> VorTX est une agence marketing et web basée au Luxembourg. VorTX conçoit des
+> sites web qui convertissent et des stratégies d'acquisition mesurables :
+> SEO & GEO, génération de leads, publicité en ligne, branding et automatisation
+> IA. Réponse sous 48 h, audit gratuit, sans engagement, travail 100 % sur mesure.
+
+## L'agence
+VorTX est une agence marketing et web luxembourgeoise, obsédée par la conversion
+et la performance mesurable. Au Luxembourg, les clients comparent en français, en
+allemand et en anglais : VorTX construit des présences qui performent dans les
+trois langues et qui parlent autant à Google qu'aux IA génératives.
+
+Principes :
+- Stratégie d'abord : on part du tunnel de vente, pas d'un template.
+- Conversion mesurable : chaque page a un objectif (appel, devis, lead), mesuré et optimisé.
+- Ancrage local : marché luxembourgeois, multilingue, conforme RGPD.
+- Prêt pour l'IA : SEO + GEO/GSO pour être cité par Google ET par les IA génératives.
+
+## Services
+VorTX propose six expertises qui s'emboîtent.
+
+### Sites web qui convertissent
+Sites vitrines, landing pages et plateformes sur mesure en Next.js. Performance,
+design premium et tunnels de conversion intégrés.
+- Développement Next.js ultra-rapide
+- Design sur mesure, mobile-first
+- Formulaires intelligents multi-étapes
+- 100 % responsive et accessible
+
+### SEO & GEO / GSO
+Référencement naturel technique et éditorial, étendu à l'ère des moteurs
+génératifs (GEO/GSO) : être la réponse, pas le lien n°7.
+- Audit technique et sémantique
+- Contenu optimisé FR/DE/EN
+- Schémas LLM-ready et données structurées
+- Suivi de positions et de citations IA
+
+### Génération de leads
+Un système d'acquisition complet : site optimisé, tunnels, campagnes et
+automatisation pour remplir l'agenda de prospects qualifiés.
+- Tunnels de conversion sur mesure
+- Landing pages par campagne
+- Qualification et scoring des leads
+- Reporting clair sur le coût par lead
+
+### Publicité en ligne
+Campagnes Google Ads, Meta et LinkedIn pilotées par la donnée.
+- Google Ads et Performance Max
+- Meta Ads (Facebook et Instagram)
+- LinkedIn Ads B2B
+- Optimisation continue du ROAS
+
+### Identité & design
+Identité visuelle, direction artistique et systèmes de design.
+- Logo et identité de marque
+- Direction artistique
+- Design system et UI/UX
+- Déclinaisons print et digital
+
+### Automatisation & IA
+Workflows automatisés, intégrations et agents IA sur mesure.
+- Automatisation des workflows
+- Agents et assistants IA sur mesure
+- Intégrations CRM et outils
+- Chatbots et widgets intelligents
+
+## Méthode
+1. Diagnostic — analyse du marché, des objectifs et du tunnel actuel.
+2. Conception & développement — design premium et développement aux dernières technologies.
+3. Revue & ajustements — présentation du résultat et ajustements jusqu'à satisfaction.
+4. Lancement & suivi — mise en ligne, configuration et accompagnement.
+
+## GEO / GSO (le SEO du futur)
+La recherche évolue : les clients posent leurs questions à des assistants IA.
+VorTX optimise le contenu pour être la source citée.
+- Citations directes par l'IA grâce à du contenu structuré.
+- Schémas LLM-ready et fichiers (llms.txt) qui parlent aux modèles.
+- SEO et GEO intégrés : on gagne sur Google ET sur les IA.
+
+## Questions fréquentes
+Q : Combien coûte un site ou une campagne ?
+R : Chaque projet est sur mesure. Plutôt qu'un tarif générique, VorTX propose un
+devis précis après un appel découverte gratuit et un audit.
+
+Q : Travaillez-vous en plusieurs langues ?
+R : Oui. Les sites sont multilingues nativement (FR, DE, EN, et Lëtzebuergesch
+sur demande), adaptés au marché luxembourgeois.
+
+Q : Qu'est-ce que le GEO / GSO ?
+R : L'optimisation pour les moteurs de réponse IA (ChatGPT, Perplexity, Google AI).
+VorTX structure le contenu pour que les IA citent l'entreprise comme source.
+
+Q : Proposez-vous un suivi après la mise en ligne ?
+R : Oui. Maintenance, évolutions, optimisation de la conversion et accompagnement
+marketing continu font partie de l'offre.
+
+## Garanties
+- Consultation initiale gratuite
+- Devis sans engagement
+- Réponse en moins de 48 h
+- Accompagnement après lancement
+
+## Contact
+Zone desservie : Luxembourg (et Grande Région). Tarifs sur devis après appel
+découverte gratuit. Réservez un appel via la page de contact :
+https://vortx.lu/fr/contact

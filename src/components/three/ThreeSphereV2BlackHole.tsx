@@ -183,16 +183,28 @@ void main() {
 }
 `;
 
-/* ── Accretion Disk GLSL ── */
+/* ── Accretion Disk GLSL ──
+   The orbital motion runs entirely on the GPU: each point carries its base
+   angle / radius / angular speed as static attributes and the position is
+   recomputed in the vertex shader from a single uTime uniform. This removes
+   the per-frame CPU loop that previously recomputed ~5 500 points and
+   re-uploaded the whole position buffer every frame. */
 const diskVert = /* glsl */ `
 attribute float aSize;
 attribute float aSoftness;
+attribute float aBaseAngle;
+attribute float aRadius;
+attribute float aSpeed;
+uniform float uTime;
+uniform float uSpeed;
 varying vec3 vColor;
 varying float vSoftness;
 void main() {
   vColor = color;
   vSoftness = aSoftness;
-  vec4 mvPos = modelViewMatrix * vec4(position, 1.0);
+  float ang = aBaseAngle + uTime * aSpeed * uSpeed;
+  vec3 p = vec3(cos(ang) * aRadius, position.y, sin(ang) * aRadius);
+  vec4 mvPos = modelViewMatrix * vec4(p, 1.0);
   gl_PointSize = aSize * (450.0 / -mvPos.z);
   gl_Position = projectionMatrix * mvPos;
 }
@@ -277,21 +289,6 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
     return { positions: pos, colors: col, sizes: sz, softness: soft, speeds: spd, baseAngles: ang, radii: rad };
   }, [count, sizeScale, brightness, maxRadius, coreWhite, extraSoftness]);
 
-  useFrame(({ clock }) => {
-    if (!points.current) return;
-    const pos = points.current.geometry.attributes.position.array as Float32Array;
-    const t = clock.getElapsedTime();
-
-    for (let i = 0; i < count; i++) {
-      const i3 = i * 3;
-      const r = radii[i];
-      const angle = baseAngles[i] + t * speeds[i] * speedMultiplier;
-      pos[i3] = Math.cos(angle) * r;
-      pos[i3 + 2] = Math.sin(angle) * r;
-    }
-    points.current.geometry.attributes.position.needsUpdate = true;
-  });
-
   const shaderMat = useMemo(
     () =>
       new THREE.ShaderMaterial({
@@ -301,9 +298,23 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
+        uniforms: {
+          uTime: { value: 0 },
+          uSpeed: { value: speedMultiplier },
+        },
       }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
+
+  // Free the GPU material when the disk unmounts (e.g. when the hero leaves
+  // the tree) so it never leaks across mount/unmount cycles.
+  useEffect(() => () => shaderMat.dispose(), [shaderMat]);
+
+  useFrame(({ clock }) => {
+    shaderMat.uniforms.uTime.value = clock.getElapsedTime();
+    shaderMat.uniforms.uSpeed.value = speedMultiplier;
+  });
 
   return (
     <points ref={points} material={shaderMat}>
@@ -312,6 +323,9 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
         <bufferAttribute attach="attributes-color" args={[colors, 3]} count={count} />
         <bufferAttribute attach="attributes-aSize" args={[sizes, 1]} count={count} />
         <bufferAttribute attach="attributes-aSoftness" args={[softness, 1]} count={count} />
+        <bufferAttribute attach="attributes-aBaseAngle" args={[baseAngles, 1]} count={count} />
+        <bufferAttribute attach="attributes-aRadius" args={[radii, 1]} count={count} />
+        <bufferAttribute attach="attributes-aSpeed" args={[speeds, 1]} count={count} />
       </bufferGeometry>
     </points>
   );
@@ -463,6 +477,16 @@ interface Props {
 export default function ThreeSphereV2BlackHole({ className, showSphere = false, bhPositionOverride, bhPositionMobileOverride, bhRotationOverride, bhScaleOverride, bhRing2RotOverride, lensingStrength, lensingAsymmetry, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed }: Props) {
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  // Pause the (very heavy: FBO + double full-scene render per frame) loop when
+  // the hero is scrolled out of view, so it never burns the GPU off-screen.
+  const [onScreen, setOnScreen] = useState(true);
+  // Respect prefers-reduced-motion: render a single static frame instead of an
+  // endlessly spinning black hole (design-system hard rule + vestibular a11y).
+  const [reduced, setReduced] = useState(false);
+  // If the GPU drops the WebGL context (common on iOS Safari under memory
+  // pressure) fall back to a static gradient instead of a frozen black canvas.
+  const [lost, setLost] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -475,6 +499,25 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
     };
   }, []);
 
+  useEffect(() => {
+    const node = wrapRef.current;
+    if (!node) return;
+    const obs = new IntersectionObserver(
+      ([e]) => setOnScreen(e.isIntersecting),
+      { threshold: 0 }
+    );
+    obs.observe(node);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setReduced(mq.matches);
+    apply();
+    mq.addEventListener?.("change", apply);
+    return () => mq.removeEventListener?.("change", apply);
+  }, []);
+
   const effectiveOverride = isMobile
     ? bhPositionMobileOverride ?? bhPositionOverride
     : bhPositionOverride;
@@ -484,6 +527,7 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
 
   return (
     <div
+      ref={wrapRef}
       className={className}
       style={{
         width: "100%",
@@ -493,19 +537,58 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
         transition: "opacity 2s ease-in-out",
       }}
     >
-      <Canvas
-        camera={{ position: [0, 0, isMobile ? 10 : 7], fov: 50 }}
-        style={{ background: "transparent", position: "absolute", inset: 0, pointerEvents: "none" }}
-        gl={{ alpha: true, antialias: true }}
-        raycaster={{ enabled: false } as never}
-      >
+      {lost ? (
+        // Graceful static fallback after a WebGL context loss.
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(42% 52% at 72% 50%, rgba(20,167,200,0.18), rgba(14,58,107,0.10) 45%, transparent 72%)",
+          }}
+        />
+      ) : (
+        <Canvas
+          camera={{ position: [0, 0, isMobile ? 10 : 7], fov: 50 }}
+          style={{ background: "transparent", position: "absolute", inset: 0, pointerEvents: "none" }}
+          // Clamp DPR: the lensing pass renders the full scene to a 1024² FBO and
+          // then to screen every frame. At native 3× DPR on phones that is ~3×
+          // the pixels for no visible gain — cap it (lower on mobile).
+          dpr={isMobile ? 1 : [1, 1.5]}
+          // Antialias is wasted here (additive points + soft sprites); dropping it
+          // on mobile removes the MSAA cost on the most constrained GPUs.
+          // failIfMajorPerformanceCaveat:false lets it fall back to software GL
+          // rather than failing outright on weak/blocklisted GPUs.
+          gl={{
+            alpha: true,
+            antialias: !isMobile,
+            powerPreference: "high-performance",
+            failIfMajorPerformanceCaveat: false,
+          }}
+          // Animate only when on screen; render a single static frame when the
+          // user asked for reduced motion.
+          frameloop={reduced ? "demand" : onScreen ? "always" : "never"}
+          raycaster={{ enabled: false } as never}
+          onCreated={({ gl }) => {
+            gl.domElement.addEventListener(
+              "webglcontextlost",
+              (e) => {
+                e.preventDefault();
+                setLost(true);
+              },
+              { once: true }
+            );
+          }}
+        >
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
           {showSphere && <BandedSphere isMobile={isMobile} />}
           <BlackHole isMobile={isMobile} posOverride={effectiveOverride} rotOverride={bhRotationOverride} scaleOverride={bhScaleOverride} ring2RotOverride={bhRing2RotOverride} diskCount={diskCount} disk2Count={disk2Count} diskMaxRadius={diskMaxRadius} diskSizeScale={diskSizeScale} diskBrightness={diskBrightness} disk2MaxRadius={disk2MaxRadius} diskSpeed={diskSpeed} />
           <GravitationalLens bhPosition={bhPosition} bhScale={bhScale} strength={lensingStrength} asymmetry={lensingAsymmetry} />
         </Suspense>
-      </Canvas>
+        </Canvas>
+      )}
     </div>
   );
 }

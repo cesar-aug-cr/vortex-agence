@@ -4,10 +4,9 @@ import React, { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-function HelixStrands() {
+function HelixStrands({ steps = 200, animate = true }: { steps?: number; animate?: boolean }) {
   const group = useRef<THREE.Group>(null);
-  const { strand1, strand2, bridges, colors1, colors2 } = useMemo(() => {
-    const steps = 200;
+  const { strand1, strand2, bridgePos, bridgeCol, colors1, colors2 } = useMemo(() => {
     const s1 = new Float32Array(steps * 3);
     const s2 = new Float32Array(steps * 3);
     const c1 = new Float32Array(steps * 3);
@@ -17,8 +16,10 @@ function HelixStrands() {
     const cyan = new THREE.Color("#14e0c8");
     const teal = new THREE.Color("#3ad6a0");
 
-    const bridgePos: Float32Array[] = [];
-    const bridgeCol: Float32Array[] = [];
+    // All "rungs" are accumulated into a single buffer → one draw call instead
+    // of ~20 separate <points> (one per bridge).
+    const bp: number[] = [];
+    const bc: number[] = [];
 
     for (let i = 0; i < steps; i++) {
       const i3 = i * 3;
@@ -44,24 +45,29 @@ function HelixStrands() {
 
       if (i % 10 === 0 && i < steps - 1) {
         const bSteps = 8;
-        const bp = new Float32Array(bSteps * 3);
-        const bc = new Float32Array(bSteps * 3);
         for (let j = 0; j < bSteps; j++) {
           const f = j / (bSteps - 1);
-          bp[j * 3] = s1[i3] + (s2[i3] - s1[i3]) * f;
-          bp[j * 3 + 1] = y;
-          bp[j * 3 + 2] = s1[i3 + 2] + (s2[i3 + 2] - s1[i3 + 2]) * f;
-          bc[j * 3] = col.r; bc[j * 3 + 1] = col.g; bc[j * 3 + 2] = col.b;
+          bp.push(
+            s1[i3] + (s2[i3] - s1[i3]) * f,
+            y,
+            s1[i3 + 2] + (s2[i3 + 2] - s1[i3 + 2]) * f
+          );
+          bc.push(col.r, col.g, col.b);
         }
-        bridgePos.push(bp);
-        bridgeCol.push(bc);
       }
     }
-    return { strand1: s1, strand2: s2, bridges: { pos: bridgePos, col: bridgeCol }, colors1: c1, colors2: c2 };
-  }, []);
+    return {
+      strand1: s1,
+      strand2: s2,
+      bridgePos: new Float32Array(bp),
+      bridgeCol: new Float32Array(bc),
+      colors1: c1,
+      colors2: c2,
+    };
+  }, [steps]);
 
   useFrame(({ clock }) => {
-    if (!group.current) return;
+    if (!group.current || !animate) return;
     group.current.rotation.y = clock.getElapsedTime() * 0.2;
   });
 
@@ -81,15 +87,13 @@ function HelixStrands() {
         </bufferGeometry>
         <pointsMaterial size={0.06} vertexColors transparent opacity={0.9} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} />
       </points>
-      {bridges.pos.map((bp, idx) => (
-        <points key={idx}>
-          <bufferGeometry>
-            <bufferAttribute attach="attributes-position" args={[bp, 3]} count={bp.length / 3} />
-            <bufferAttribute attach="attributes-color" args={[bridges.col[idx], 3]} count={bridges.col[idx].length / 3} />
-          </bufferGeometry>
-          <pointsMaterial size={0.04} vertexColors transparent opacity={0.5} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} />
-        </points>
-      ))}
+      <points>
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" args={[bridgePos, 3]} count={bridgePos.length / 3} />
+          <bufferAttribute attach="attributes-color" args={[bridgeCol, 3]} count={bridgeCol.length / 3} />
+        </bufferGeometry>
+        <pointsMaterial size={0.04} vertexColors transparent opacity={0.5} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} />
+      </points>
     </group>
   );
 }
@@ -154,6 +158,8 @@ export default function HelixDNA3D({
   tiltDeg?: number;
 }) {
   const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [reduced, setReduced] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const tilt = (tiltDeg * Math.PI) / 180;
 
@@ -164,13 +170,42 @@ export default function HelixDNA3D({
     return () => obs.disconnect();
   }, []);
 
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setReduced(mq.matches);
+    apply();
+    mq.addEventListener?.("change", apply);
+    return () => {
+      window.removeEventListener("resize", check);
+      mq.removeEventListener?.("change", apply);
+    };
+  }, []);
+
   return (
     <div ref={ref} className={className} style={{ height: `${height}px`, width: "100%" }}>
       {visible && (
-        <Canvas camera={{ position: [0, 0, 8], fov: 50 }} style={{ background: "transparent" }} gl={{ alpha: true, antialias: true }}>
+        <Canvas
+          camera={{ position: [0, 0, 8], fov: 50 }}
+          style={{ background: "transparent" }}
+          // Cap DPR + drop AA on mobile (additive points don't benefit from it).
+          dpr={isMobile ? 1 : [1, 1.5]}
+          gl={{
+            alpha: true,
+            antialias: !isMobile,
+            powerPreference: "high-performance",
+            failIfMajorPerformanceCaveat: false,
+          }}
+          // Decorative canvas → no pointer interaction; single static frame when
+          // the user prefers reduced motion.
+          frameloop={reduced ? "demand" : "always"}
+          raycaster={{ enabled: false } as never}
+        >
           <group rotation={[0, 0, tilt]}>
-            <HelixStrands />
-            <TravelingParticles />
+            <HelixStrands steps={isMobile ? 120 : 200} animate={!reduced} />
+            <TravelingParticles count={isMobile ? 40 : 80} />
           </group>
         </Canvas>
       )}

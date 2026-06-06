@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/i18n/getDictionary";
 import { Section } from "@/components/ui/Section";
 import { Check } from "@/components/ui/icons";
-import HelixDNA3D from "@/components/three/HelixDNA3D";
+import HelixDNA3D from "@/components/three/HelixDNALazy";
 
 export function Geo({ dict }: { dict: Dictionary }) {
   return (

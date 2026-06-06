@@ -15,8 +15,6 @@ export function Process({ dict }: { dict: Dictionary }) {
           </li>
         ))}
       </ol>
-
-      <p className="mt-8 font-mono text-sm text-text-muted">{dict.process.timeline}</p>
     </Section>
   );
 }
