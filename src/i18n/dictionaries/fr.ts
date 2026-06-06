@@ -20,6 +20,7 @@ export const fr = {
     readMore: "En savoir plus",
     backHome: "Retour à l'accueil",
     allServices: "Tous les services",
+    servicesShort: "Les services",
     menu: "Menu",
     close: "Fermer",
     openMenu: "Ouvrir le menu",

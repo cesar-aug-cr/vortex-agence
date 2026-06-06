@@ -30,7 +30,7 @@ export function PageShell({
         <main>{children}</main>
         <Footer dict={dict} lang={lang} />
       </div>
-      <StickyCta lang={lang} label={dict.common.cta} />
+      <StickyCta dict={dict} lang={lang} />
     </>
   );
 }

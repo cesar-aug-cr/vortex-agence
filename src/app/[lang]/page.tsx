@@ -45,7 +45,7 @@ export default async function HomePage({
         </main>
         <Footer dict={dict} lang={lang} />
       </div>
-      <StickyCta lang={lang} label={dict.common.cta} />
+      <StickyCta dict={dict} lang={lang} />
     </>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { localized } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
+import { Cookie } from "@/components/ui/icons";
 import {
   readConsent,
   writeConsent,
@@ -63,9 +64,9 @@ export function ConsentBanner({
         onClick={reopen}
         aria-label={consent.manage}
         title={consent.manage}
-        className="fixed bottom-20 right-4 z-30 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-bg-elevated/95 text-text shadow-[var(--shadow-md)] backdrop-blur-md transition-colors hover:border-accent hover:text-accent lg:bottom-5 lg:right-5"
+        className="fixed bottom-5 left-5 z-30 hidden h-12 w-12 items-center justify-center rounded-full border border-border bg-bg-elevated/70 text-text shadow-[var(--shadow-md)] backdrop-blur-xl transition-colors hover:border-accent hover:text-accent lg:flex"
       >
-        <CookieIcon />
+        <Cookie width={22} height={22} />
       </button>
     );
   }
@@ -142,29 +143,6 @@ export function ConsentBanner({
         </button>
       </div>
     </div>
-  );
-}
-
-function CookieIcon() {
-  return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
-      <path d="M8.5 8.5v.01" />
-      <path d="M16 15.5v.01" />
-      <path d="M12 12v.01" />
-      <path d="M11 17v.01" />
-      <path d="M7 14v.01" />
-    </svg>
   );
 }
 
