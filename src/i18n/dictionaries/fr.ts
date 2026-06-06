@@ -21,6 +21,8 @@ export const fr = {
     backHome: "Retour à l'accueil",
     allServices: "Tous les services",
     servicesShort: "Les services",
+    servicesVortx: "Les services VorTX",
+    faq: "FAQ",
     menu: "Menu",
     close: "Fermer",
     openMenu: "Ouvrir le menu",

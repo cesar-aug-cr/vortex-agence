@@ -14,7 +14,7 @@ export function Faq({ dict }: { dict: Dictionary }) {
   };
 
   return (
-    <Section tone="muted" containerClassName="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+    <Section id="faq" tone="muted" containerClassName="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
       <div>
         <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
           {dict.faq.eyebrow}

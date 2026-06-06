@@ -43,7 +43,7 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
               onClick={() => setServicesOpen(false)}
               className="fixed inset-0 z-0 cursor-default"
             />
-            <div className="absolute bottom-full left-1/2 z-10 mb-3 w-64 -translate-x-1/2 animate-fade-in-up rounded-2xl border border-border bg-bg-elevated/70 p-2 shadow-[var(--shadow-lg)] backdrop-blur-xl">
+            <div className="glass-pill absolute bottom-full left-1/2 z-10 mb-3 w-64 -translate-x-1/2 animate-fade-in-up rounded-2xl bg-bg-elevated/70 p-2 shadow-[var(--shadow-lg)] backdrop-blur-xl">
               <p className="px-3 pb-1 pt-1.5 font-mono text-[0.6rem] uppercase tracking-wide text-text-muted">
                 {dict.servicesSection.eyebrow}
               </p>
@@ -75,7 +75,7 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         )}
 
         {/* glassmorphism pill */}
-        <div className="relative z-10 flex items-center gap-1.5 rounded-full border border-border bg-bg-elevated/60 p-1.5 shadow-[var(--shadow-lg)] backdrop-blur-xl">
+        <div className="glass-pill relative z-10 flex items-center gap-1.5 rounded-full bg-bg-elevated/60 p-1.5 shadow-[var(--shadow-lg)] backdrop-blur-xl">
           <button
             type="button"
             onClick={openConsentPreferences}
