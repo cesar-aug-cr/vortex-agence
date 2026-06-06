@@ -1,24 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { localized } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
-
-const STORAGE_KEY = "vortx-consent";
-
-/** Read the stored consent ("granted" | "denied" | null). */
-export function getConsent(): "granted" | "denied" | null {
-  if (typeof window === "undefined") return null;
-  const v = localStorage.getItem(STORAGE_KEY);
-  return v === "granted" || v === "denied" ? v : null;
-}
+import {
+  readConsent,
+  writeConsent,
+  CONSENT_OPEN_EVENT,
+  type ConsentChoice,
+} from "@/lib/consent";
 
 /**
- * Opt-in cookie consent banner (RGPD / ePrivacy). Non-essential trackers
- * (GA4 / GTM / Meta) must only be loaded after `getConsent() === "granted"`
- * or after the "vortx-consent" CustomEvent fires with detail "granted".
+ * Opt-in cookie consent (RGPD / ePrivacy). Strictly-necessary cookies only
+ * until the visitor grants a category. Persists via lib/consent (cookie +
+ * Google Consent Mode v2). Once a choice exists, a floating cookie button
+ * (bottom-right, iubenda-style) lets the visitor re-open their preferences.
  */
 export function ConsentBanner({
   lang,
@@ -27,27 +25,61 @@ export function ConsentBanner({
   lang: Locale;
   consent: Dictionary["consent"];
 }) {
-  const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [decided, setDecided] = useState(false);
+  const [showPrefs, setShowPrefs] = useState(false);
+  const [choice, setChoice] = useState<ConsentChoice>({ analytics: false, marketing: false });
 
-  useEffect(() => {
-    if (!getConsent()) setVisible(true);
+  const reopen = useCallback(() => {
+    const existing = readConsent();
+    setChoice({
+      analytics: existing?.analytics ?? false,
+      marketing: existing?.marketing ?? false,
+    });
+    setShowPrefs(true);
+    setOpen(true);
   }, []);
 
-  function choose(value: "granted" | "denied") {
-    try {
-      localStorage.setItem(STORAGE_KEY, value);
-    } catch {}
-    window.dispatchEvent(new CustomEvent("vortx-consent", { detail: value }));
-    setVisible(false);
+  useEffect(() => {
+    if (readConsent()) setDecided(true);
+    else setOpen(true);
+    window.addEventListener(CONSENT_OPEN_EVENT, reopen);
+    return () => window.removeEventListener(CONSENT_OPEN_EVENT, reopen);
+  }, [reopen]);
+
+  function decide(c: ConsentChoice) {
+    writeConsent(c);
+    setOpen(false);
+    setShowPrefs(false);
+    setDecided(true);
   }
 
-  if (!visible) return null;
+  // Floating re-open button (shown once a choice exists and the banner is closed)
+  if (!open) {
+    if (!decided) return null;
+    return (
+      <button
+        type="button"
+        onClick={reopen}
+        aria-label={consent.manage}
+        title={consent.manage}
+        className="fixed bottom-20 right-4 z-30 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-bg-elevated/95 text-text shadow-[var(--shadow-md)] backdrop-blur-md transition-colors hover:border-accent hover:text-accent lg:bottom-5 lg:right-5"
+      >
+        <CookieIcon />
+      </button>
+    );
+  }
+
+  const cat = consent.categories;
+  const secondaryBtn =
+    "inline-flex items-center justify-center rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent";
 
   return (
     <div
       role="dialog"
+      aria-modal="false"
       aria-label={consent.title}
-      className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-2xl rounded-2xl border border-border bg-bg-elevated/95 p-5 shadow-[var(--shadow-lg)] backdrop-blur-md sm:inset-x-auto sm:right-4 sm:left-auto"
+      className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl rounded-2xl border border-border bg-bg-elevated/95 p-5 shadow-[var(--shadow-lg)] backdrop-blur-md sm:inset-x-auto sm:right-4 sm:left-auto"
     >
       <p className="text-sm font-semibold text-text">{consent.title}</p>
       <p className="mt-2 text-sm text-text-dim">
@@ -59,22 +91,122 @@ export function ConsentBanner({
           {consent.learnMore}
         </Link>
       </p>
-      <div className="mt-4 flex flex-wrap gap-3">
+
+      {showPrefs && (
+        <div className="mt-4 grid gap-3">
+          <ToggleRow
+            title={cat.necessary.title}
+            desc={cat.necessary.desc}
+            checked
+            disabled
+            badge={cat.necessary.always}
+          />
+          <ToggleRow
+            title={cat.analytics.title}
+            desc={cat.analytics.desc}
+            checked={choice.analytics}
+            onChange={(v) => setChoice((p) => ({ ...p, analytics: v }))}
+          />
+          <ToggleRow
+            title={cat.marketing.title}
+            desc={cat.marketing.desc}
+            checked={choice.marketing}
+            onChange={(v) => setChoice((p) => ({ ...p, marketing: v }))}
+          />
+        </div>
+      )}
+
+      <div className="mt-4 flex flex-wrap gap-2.5">
         <button
           type="button"
-          onClick={() => choose("granted")}
+          onClick={() => decide({ analytics: true, marketing: true })}
           className="btn btn-primary text-sm"
         >
-          {consent.accept}
+          {consent.acceptAll}
         </button>
+        {showPrefs ? (
+          <button type="button" onClick={() => decide(choice)} className={secondaryBtn}>
+            {consent.save}
+          </button>
+        ) : (
+          <button type="button" onClick={() => setShowPrefs(true)} className={secondaryBtn}>
+            {consent.customize}
+          </button>
+        )}
         <button
           type="button"
-          onClick={() => choose("denied")}
-          className="inline-flex items-center justify-center rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent"
+          onClick={() => decide({ analytics: false, marketing: false })}
+          className={secondaryBtn}
         >
-          {consent.refuse}
+          {consent.rejectAll}
         </button>
       </div>
     </div>
+  );
+}
+
+function CookieIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
+      <path d="M8.5 8.5v.01" />
+      <path d="M16 15.5v.01" />
+      <path d="M12 12v.01" />
+      <path d="M11 17v.01" />
+      <path d="M7 14v.01" />
+    </svg>
+  );
+}
+
+function ToggleRow({
+  title,
+  desc,
+  checked,
+  onChange,
+  disabled,
+  badge,
+}: {
+  title: string;
+  desc: string;
+  checked: boolean;
+  onChange?: (v: boolean) => void;
+  disabled?: boolean;
+  badge?: string;
+}) {
+  return (
+    <label
+      className={`flex items-start justify-between gap-4 rounded-xl border border-border p-3 ${
+        disabled ? "opacity-80" : "cursor-pointer"
+      }`}
+    >
+      <span>
+        <span className="flex items-center gap-2 text-sm font-medium text-text">
+          {title}
+          {badge && (
+            <span className="rounded-full bg-accent-soft px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wide text-accent">
+              {badge}
+            </span>
+          )}
+        </span>
+        <span className="mt-1 block text-xs leading-relaxed text-text-dim">{desc}</span>
+      </span>
+      <input
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        onChange={(e) => onChange?.(e.target.checked)}
+        className="mt-1 h-5 w-5 shrink-0 accent-[color:var(--accent)] disabled:cursor-not-allowed"
+      />
+    </label>
   );
 }

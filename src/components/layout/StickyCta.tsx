@@ -23,7 +23,7 @@ export function StickyCta({ lang, label }: { lang: Locale; label: string }) {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 border-t border-border bg-bg/90 p-3 backdrop-blur-md transition-transform duration-300 lg:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-border bg-bg/90 p-3 backdrop-blur-md transition-transform duration-300 lg:hidden ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
       style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}

@@ -21,6 +21,25 @@ export const site = {
   },
   sameAs: [] as string[], // placeholder — LinkedIn / Instagram / …
   founded: "2024",
+
+  /**
+   * Legal identity — required for real "Mentions légales" / privacy pages.
+   * Fill these with the company's actual data (and have a lawyer review the
+   * pages). While empty, the legal pages show clearly-flagged placeholders.
+   */
+  legal: {
+    companyName: "" as string, // Raison sociale — ex: "VorTX S.à r.l."
+    legalForm: "" as string, // Forme juridique — ex: "Société à responsabilité limitée"
+    rcs: "" as string, // N° RCS Luxembourg — ex: "B123456"
+    vat: "" as string, // N° TVA — ex: "LU12345678"
+    capital: "" as string, // Capital social (optionnel)
+    director: "" as string, // Directeur de la publication (nom)
+    host: {
+      name: "" as string, // Hébergeur — ex: "Vercel Inc."
+      address: "" as string, // Adresse de l'hébergeur
+      url: "" as string, // Site de l'hébergeur
+    },
+  },
 } as const;
 
 /** Service slugs (must match the dictionary `services[].slug`). */

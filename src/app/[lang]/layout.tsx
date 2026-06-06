@@ -5,6 +5,7 @@ import "../globals.css";
 import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { ThemeScript } from "@/components/theme/ThemeScript";
+import { ConsentScript } from "@/components/layout/ConsentScript";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
 
@@ -83,6 +84,7 @@ export default async function LangLayout({
     <html lang={lang} suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <ConsentScript />
       </head>
       <body className={`${interTight.variable} ${jetbrainsMono.variable} antialiased`}>
         <SchemaMarkup />

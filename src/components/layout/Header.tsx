@@ -49,6 +49,7 @@ export function Header({
     : "text-white/90 hover:text-accent";
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         solid
@@ -203,10 +204,13 @@ export function Header({
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — rendered as a sibling of <header>, NOT inside it: the
+          solid header's backdrop-filter would otherwise become the containing
+          block for this fixed panel and trap it inside the 80px bar. */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-20 z-40 overflow-y-auto border-t border-border bg-bg lg:hidden">
+        <div className="fixed inset-0 top-20 z-[45] overflow-y-auto border-t border-border bg-bg lg:hidden">
           <nav className="container-vortx py-8">
             <p className="eyebrow">{dict.nav.services}</p>
             <ul className="mt-4 grid gap-1">
@@ -253,6 +257,6 @@ export function Header({
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }

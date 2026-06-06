@@ -485,9 +485,27 @@ export const fr = {
   consent: {
     title: "Cookies & confidentialité",
     message:
-      "Nous utilisons des cookies essentiels au fonctionnement du site et, avec votre accord, des cookies de mesure d'audience et de publicité.",
-    accept: "Tout accepter",
-    refuse: "Refuser",
+      "Nous utilisons des cookies nécessaires au fonctionnement du site et, avec votre accord, des cookies de mesure d'audience et de publicité.",
+    acceptAll: "Tout accepter",
+    rejectAll: "Tout refuser",
+    customize: "Personnaliser",
+    save: "Enregistrer mes choix",
     learnMore: "En savoir plus",
+    manage: "Gérer mes cookies",
+    categories: {
+      necessary: {
+        title: "Nécessaires",
+        desc: "Indispensables au fonctionnement du site (sécurité, préférences, mémorisation de votre consentement). Toujours actifs.",
+        always: "Toujours actifs",
+      },
+      analytics: {
+        title: "Mesure d'audience",
+        desc: "Nous aident à comprendre l'utilisation du site afin de l'améliorer (statistiques anonymisées).",
+      },
+      marketing: {
+        title: "Marketing",
+        desc: "Permettent de mesurer et de personnaliser nos campagnes publicitaires.",
+      },
+    },
   },
 } as const;
