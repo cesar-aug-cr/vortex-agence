@@ -65,7 +65,7 @@ export default async function ServicesPage({
                 className="card card-hover spotlight-card group flex flex-col p-7"
               >
                 {Illu && (
-                  <div className="mb-5 overflow-hidden rounded-xl border border-border bg-stage/40">
+                  <div className="illu-stage mb-5 overflow-hidden rounded-xl border border-border">
                     <Illu className="h-40 w-full" />
                   </div>
                 )}

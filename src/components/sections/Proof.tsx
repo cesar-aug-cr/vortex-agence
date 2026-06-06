@@ -1,13 +1,18 @@
 import type { Dictionary } from "@/i18n/getDictionary";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Check } from "@/components/ui/icons";
+import { PortfolioCoverflow } from "@/components/sections/PortfolioCoverflow";
 
 export function Proof({ dict }: { dict: Dictionary }) {
   const hasTestimonials = dict.proof.testimonials.length > 0;
 
   return (
     <Section tone="base">
-      <SectionHeading eyebrow={dict.proof.eyebrow} title={dict.proof.title} />
+      <SectionHeading
+        eyebrow={dict.proof.eyebrow}
+        title={dict.proof.title}
+        align="center"
+      />
 
       {/* Real client logos go here once available. Until then we don't render an
           empty placeholder grid (it reads as a distrust signal) — we lead with
@@ -27,16 +32,18 @@ export function Proof({ dict }: { dict: Dictionary }) {
         </div>
       )}
 
-      <p className="mt-10 max-w-2xl text-sm italic text-text-muted md:mt-12">
-        {dict.proof.placeholderNote}
-      </p>
+      {/* Portfolio coverflow (ported & rebranded) replaces the old placeholder
+          note — full-bleed (breaks out of the container) like the source. */}
+      <div className="relative left-1/2 right-1/2 mt-8 w-screen -translate-x-1/2 md:mt-10">
+        <PortfolioCoverflow />
+      </div>
 
-      {/* guarantees */}
+      {/* guarantees — centered */}
       <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {dict.proof.guarantees.map((g) => (
           <div
             key={g}
-            className="card flex items-center gap-3 p-5 text-sm font-medium text-text"
+            className="card flex items-center justify-center gap-3 p-5 text-center text-sm font-medium text-text"
           >
             <Check width={18} height={18} className="shrink-0 text-accent" />
             {g}

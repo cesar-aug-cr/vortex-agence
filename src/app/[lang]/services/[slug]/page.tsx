@@ -109,7 +109,7 @@ export default async function ServiceDetailPage({
 
           {Illu && (
             <div className="order-1 lg:order-2">
-              <div className="overflow-hidden rounded-2xl border border-border bg-stage/40 p-4">
+              <div className="illu-stage overflow-hidden rounded-2xl border border-border p-4">
                 <Illu className="h-auto w-full" />
               </div>
             </div>

@@ -85,7 +85,7 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
-      <div className="container-vortx relative z-10 flex min-h-[80svh] flex-col justify-center pb-16 pt-36 md:pt-40">
+      <div className="container-vortx relative z-10 flex min-h-[100svh] flex-col justify-center pb-16 pt-36 md:pt-40">
         <div className="relative self-start">
           {/* VORTX wordmark as a faint watermark sitting behind the eyebrow */}
           <Wordmark

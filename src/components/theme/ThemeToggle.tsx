@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-export function ThemeToggle({ label = "Changer de thème" }: { label?: string }) {
+export function ThemeToggle({
+  label = "Changer de thème",
+  onDark = false,
+}: {
+  label?: string;
+  /** True when sitting over the always-dark hero (transparent header) — forces
+   *  light icon/border so it stays visible even in light theme. */
+  onDark?: boolean;
+}) {
   const [dark, setDark] = useState(true);
   const [mounted, setMounted] = useState(false);
 
@@ -28,7 +36,9 @@ export function ThemeToggle({ label = "Changer de thème" }: { label?: string })
       onClick={toggle}
       aria-label={label}
       title={label}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border-strong text-text transition-colors hover:border-accent"
+      className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
+        onDark ? "border-white/30 text-white" : "border-border-strong text-text"
+      }`}
     >
       {mounted && dark ? (
         // Sun

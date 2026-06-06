@@ -233,6 +233,46 @@
     color: var(--accent-2);
   }
 
+  /* Service illustration backdrop: the SVGs are built for deep space, so they
+     get a solid black panel + a soft lime vignette in every theme (on the
+     white light theme a translucent dark would look like a washed-out grey). */
+  .illu-stage {
+    background-color: #06060a;
+    background-image: radial-gradient(
+      62% 62% at 50% 32%,
+      rgba(200, 240, 46, 0.16),
+      transparent 70%
+    );
+  }
+
+  /* Ambient page glow — coloured only in dark mode (designed for the dark
+     stage). Light mode keeps a clean white surface (no glow). */
+  .ambient-glow {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 82svh,
+      black 112svh
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 82svh,
+      black 112svh
+    );
+  }
+  .dark .ambient-glow {
+    background-image: radial-gradient(
+        620px 620px at 86% 16%,
+        rgba(20, 224, 200, 0.13),
+        transparent 68%
+      ),
+      radial-gradient(720px 720px at 8% 33%, rgba(34, 211, 140, 0.14), transparent 68%),
+      radial-gradient(640px 640px at 92% 48%, rgba(46, 102, 255, 0.13), transparent 68%),
+      radial-gradient(700px 700px at 16% 64%, rgba(20, 224, 200, 0.12), transparent 68%),
+      radial-gradient(660px 660px at 88% 80%, rgba(34, 211, 140, 0.14), transparent 68%);
+  }
+
   /* Brand-coloured shine that sweeps left→right across the LETTERS only
      (clipped to the text — no background halo). */
   .brand-sweep {
@@ -449,6 +489,17 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+@keyframes coverflow-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 1;
   }
 }
 @keyframes pulseGlow {

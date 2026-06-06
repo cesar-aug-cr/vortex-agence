@@ -179,7 +179,7 @@ export function Header({
           >
             FR
           </span>
-          <ThemeToggle label={dict.common.toggleTheme} />
+          <ThemeToggle label={dict.common.toggleTheme} onDark={!solid} />
           <Link
             href={localized(lang, "/contact")}
             className="btn btn-primary hidden sm:inline-flex"
