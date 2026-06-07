@@ -68,7 +68,7 @@ function HelixStrands({ steps = 200, animate = true }: { steps?: number; animate
 
   useFrame(({ clock }) => {
     if (!group.current || !animate) return;
-    group.current.rotation.y = clock.getElapsedTime() * 0.2;
+    group.current.rotation.y = clock.getElapsedTime() * 0.07;
   });
 
   return (
@@ -125,7 +125,7 @@ function TravelingParticles({ count = 80 }) {
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
-      const progress = (offsets[i] + t * 0.08) % 1;
+      const progress = (offsets[i] + t * 0.03) % 1;
       const angle = progress * Math.PI * 6;
       const y = (progress - 0.5) * 10;
       const strand = i % 2 === 0 ? 0 : Math.PI;
