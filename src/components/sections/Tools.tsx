@@ -5,10 +5,17 @@ export function Tools({ dict }: { dict: Dictionary }) {
   const all = dict.tools.categories.flatMap((c) => c.items);
   const marquee = [...all, ...all];
 
-  // Display order tuned for balanced, equal-height rows: the three busiest
-  // categories on the top row, the lighter ones (+ the stat) on the bottom.
-  const order = [0, 4, 3, 1, 2];
-  const cats = order.map((i) => dict.tools.categories[i]);
+  // Bento layout. Dict order is: 0 Marketing · 1 Web&code · 2 IA · 3 Design ·
+  // 4 Productivité. We lay them out as:
+  //   row 1 → Marketing (1/3, spans 2 rows) | IA (2/3, top) / Web&code (2/3, bottom)
+  //   row 2 → Design (4th) · Productivité (5th) · 40+ stat
+  const layout = [
+    { i: 0, span: "lg:row-span-2" }, // Marketing digital — 1/3, tall
+    { i: 2, span: "lg:col-span-2" }, // IA & automatisation — 2/3, top-right
+    { i: 1, span: "lg:col-span-2" }, // Web & code — 2/3, bottom-right
+    { i: 3, span: "" }, // Design
+    { i: 4, span: "" }, // Productivité (5th)
+  ];
 
   return (
     <Section tone="muted" containerClassName="">
@@ -19,30 +26,33 @@ export function Tools({ dict }: { dict: Dictionary }) {
       />
 
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:mt-16">
-        {cats.map((cat) => (
-          <div
-            key={cat.name}
-            className="card card-hover spotlight-card group flex flex-col p-6"
-          >
-            <div className="flex items-center justify-between gap-3">
-              <h3 className="font-mono text-xs uppercase tracking-wide text-accent">
-                {cat.name}
-              </h3>
-              <span className="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full border border-border px-2 font-mono text-xs text-text-muted">
-                {cat.items.length}
-              </span>
+        {layout.map(({ i, span }) => {
+          const cat = dict.tools.categories[i];
+          return (
+            <div
+              key={cat.name}
+              className={`card card-hover spotlight-card group flex flex-col p-6 ${span}`}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="font-mono text-xs uppercase tracking-wide text-accent">
+                  {cat.name}
+                </h3>
+                <span className="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full border border-border px-2 font-mono text-xs text-text-muted">
+                  {cat.items.length}
+                </span>
+              </div>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {cat.items.map((item) => (
+                  <li key={item} className="chip">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {cat.items.map((item) => (
-                <li key={item} className="chip">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          );
+        })}
 
-        {/* count stat — same card footprint, brand-lit focal point */}
+        {/* count stat — last cell */}
         <div className="card card-hover spotlight-card group relative flex flex-col items-center justify-center overflow-hidden p-6 text-center">
           <div
             className="pointer-events-none absolute inset-0"

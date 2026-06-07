@@ -372,7 +372,7 @@ function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2Rot
     >
       <EventHorizon />
       <PhotonRing />
-      <AccretionDisk count={diskCount ?? (isMobile ? 2300 : 4500)} maxRadius={diskMaxRadius} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} />
+      <AccretionDisk count={diskCount ?? (isMobile ? 1400 : 2700)} maxRadius={diskMaxRadius} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} />
       <group rotation={ring2RotOverride ?? [Math.PI * 0.35, 0, 0]}>
         <AccretionDisk count={disk2Count ?? (isMobile ? 600 : 1000)} maxRadius={disk2MaxRadius ?? 0.7} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} coreWhite={0.75} extraSoftness={0.22} />
         <PhotonRing />
