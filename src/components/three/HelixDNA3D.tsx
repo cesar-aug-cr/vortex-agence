@@ -185,7 +185,17 @@ export default function HelixDNA3D({
   }, []);
 
   return (
-    <div ref={ref} className={className} style={{ height: `${height}px`, width: "100%" }}>
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        height: `${height}px`,
+        width: "100%",
+        // Fade in instead of popping when the canvas mounts into view.
+        opacity: visible ? 1 : 0,
+        transition: reduced ? "none" : "opacity 1600ms ease-out",
+      }}
+    >
       {visible && (
         <Canvas
           camera={{ position: [0, 0, 8], fov: 50 }}

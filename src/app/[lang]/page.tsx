@@ -9,8 +9,7 @@ import { Hero } from "@/components/sections/Hero";
 import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
 import { LeadGen } from "@/components/sections/LeadGen";
-import { Process } from "@/components/sections/Process";
-import { Geo } from "@/components/sections/Geo";
+import { ProcessGeo } from "@/components/sections/ProcessGeo";
 import { Tools } from "@/components/sections/Tools";
 import { Proof } from "@/components/sections/Proof";
 import { Faq } from "@/components/sections/Faq";
@@ -36,8 +35,7 @@ export default async function HomePage({
           <WhyVortx dict={dict} />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} />
-          <Process dict={dict} />
-          <Geo dict={dict} />
+          <ProcessGeo dict={dict} />
           <Tools dict={dict} />
           <Proof dict={dict} />
           <Faq dict={dict} />
