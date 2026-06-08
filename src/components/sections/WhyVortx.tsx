@@ -45,8 +45,8 @@ export function WhyVortx({ dict }: { dict: Dictionary }) {
               className="card card-hover spotlight-card group p-7"
             >
               <div className="flex items-center justify-between">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">
-                  <Icon />
+                <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+                  <Icon className="h-10 w-10" />
                 </span>
                 <span className="font-mono text-sm text-text-muted">
                   0{i + 1}
