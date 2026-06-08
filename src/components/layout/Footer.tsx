@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
-import { Wordmark } from "@/components/brand/Wordmark";
 import { LogoMark } from "@/components/brand/LogoMark";
 import { ArrowRight } from "@/components/ui/icons";
 import { BackToTop } from "@/components/layout/BackToTop";
@@ -38,12 +37,11 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           {/* brand + CTA */}
           <div>
-            {/* mobile: static dot-only mark · desktop: full wordmark */}
+            {/* logo 1 — static dot mark (no animation), all breakpoints */}
             <LogoMark
               animated={false}
-              className="h-9 w-auto text-stage-text sm:hidden"
+              className="h-9 w-auto text-stage-text"
             />
-            <Wordmark className="hidden h-7 w-auto text-stage-text sm:block" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-stage-text-dim">
               {dict.footer.blurb}
             </p>

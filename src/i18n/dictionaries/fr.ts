@@ -63,11 +63,11 @@ export const fr = {
       "VorTX conçoit des sites et des stratégies d'acquisition qui transforment l'attention en clients. Design premium, SEO de nouvelle génération, génération de leads mesurable.",
     primaryCta: "Réserver un appel découverte",
     secondaryCta: "Découvrir notre approche",
-    note: "Réponse sous 48 h · Audit offert · Sans engagement · 100% sur-mesure",
+    note: "Réponse rapide · Audit offert · Sans engagement · 100% sur-mesure",
   },
 
   stats: [
-    { value: "48 h", label: "Réponse garantie" },
+    { value: "Express", label: "Réponse garantie" },
     { value: "100 %", label: "Conçu sur mesure" },
     { value: "FR · DE · EN", label: "Multilingue natif" },
   ],
@@ -231,7 +231,7 @@ export const fr = {
   // ---- Process ----
   process: {
     eyebrow: "Notre méthode",
-    title: "Quatre étapes, zéro mauvaise surprise.",
+    title: "L'adn Marketing, zéro mauvaise surprise.",
     steps: [
       {
         n: "01",
@@ -365,7 +365,7 @@ export const fr = {
     guarantees: [
       "Consultation initiale gratuite",
       "Devis sans engagement",
-      "Réponse en moins de 48 h",
+      "Réponse rapide garantie",
       "Accompagnement après lancement",
     ],
   },
@@ -401,7 +401,7 @@ export const fr = {
     lead: "Réservez un appel découverte gratuit. On analyse votre situation et on vous dit, sans détour, ce qui peut être amélioré.",
     benefits: [
       "Consultation initiale gratuite",
-      "Audit personnalisé sous 48 h",
+      "Audit personnalisé sans délai",
       "Devis sans engagement",
       "Accompagnement après lancement",
     ],
@@ -413,7 +413,7 @@ export const fr = {
       interest: "Service qui vous intéresse",
       message: "Votre message",
       submit: "Envoyer ma demande",
-      success: "Merci ! Nous vous répondons sous 48 h.",
+      success: "Merci ! Nous revenons vers vous très vite.",
     },
   },
 
@@ -463,7 +463,7 @@ export const fr = {
     home: {
       title: "VorTX | Agence marketing & web à Luxembourg",
       description:
-        "VorTX, agence marketing à Luxembourg : sites web qui convertissent, SEO & GEO, génération de leads et publicité en ligne. Audit gratuit, réponse sous 48 h.",
+        "VorTX, agence marketing à Luxembourg : sites web qui convertissent, SEO & GEO, génération de leads et publicité en ligne. Audit gratuit, réponse rapide.",
     },
     services: {
       title: "Services marketing & web | VorTX Luxembourg",
@@ -488,7 +488,7 @@ export const fr = {
     contact: {
       title: "Contact & audit gratuit | VorTX Luxembourg",
       description:
-        "Réservez un appel découverte gratuit avec VorTX. Audit personnalisé sous 48 h, devis sans engagement. Agence marketing & web à Luxembourg.",
+        "Réservez un appel découverte gratuit avec VorTX. Audit personnalisé sans délai, devis sans engagement. Agence marketing & web à Luxembourg.",
     },
     legalMentions: {
       title: "Mentions légales | VorTX Luxembourg",
@@ -509,7 +509,7 @@ export const fr = {
   pages: {
     thanks: {
       title: "Merci, votre demande est bien partie.",
-      lead: "Nous l'étudions et revenons vers vous sous 48 h ouvrées avec une première analyse — sans engagement.",
+      lead: "Nous l'étudions et revenons vers vous rapidement avec une première analyse — sans engagement.",
       cta: "Retour à l'accueil",
       metaTitle: "Merci | VorTX Luxembourg",
     },
