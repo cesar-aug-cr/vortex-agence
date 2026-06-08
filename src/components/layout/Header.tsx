@@ -187,17 +187,19 @@ export function Header({
           </ul>
         </nav>
 
-        {/* Right cluster — order: desktop [a11y · lang · theme · CTA] ·
-            mobile [theme · a11y · burger] */}
-        <div className="flex items-center gap-3">
-          {/* accessibility — left of language (desktop), left of burger (mobile) */}
-          <div className="order-2 sm:order-1">
+        {/* Right cluster — order on every size: a11y · language · theme ·
+            (CTA / burger) */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* accessibility — leftmost */}
+          <div className="order-1">
             <AccessibilityWidget labels={dict.a11y} onDark={!solid} />
           </div>
-          <div className="order-1 hidden sm:order-2 sm:block">
+          {/* language — between accessibility and theme (visible on mobile too) */}
+          <div className="order-2">
             <LanguageSwitcher lang={lang} onDark={!solid} />
           </div>
-          <div className="order-1 sm:order-3">
+          {/* theme / colour — to the right of language */}
+          <div className="order-3">
             <ThemeToggle label={dict.common.toggleTheme} onDark={!solid} />
           </div>
           <Link
@@ -213,7 +215,7 @@ export function Header({
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? dict.common.close : dict.common.openMenu}
             aria-expanded={mobileOpen}
-            className={`order-3 inline-flex h-11 w-11 items-center justify-center rounded-full border sm:order-5 lg:hidden ${
+            className={`order-5 inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden ${
               solid ? "border-border-strong text-text" : "border-white/30 text-white"
             }`}
           >
@@ -276,13 +278,6 @@ export function Header({
             >
               {dict.common.cta}
             </Link>
-
-            <div className="mt-8 border-t border-border pt-6">
-              <p className="eyebrow">{dict.common.language}</p>
-              <div className="mt-3">
-                <LanguageSwitcher lang={lang} />
-              </div>
-            </div>
           </nav>
         </div>
       )}
