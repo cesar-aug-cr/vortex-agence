@@ -22,6 +22,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = "https://vortx.lu";
 
+// Daily ISR: lets statically-generated pages refresh on their own so the
+// dynamic year / "X ans d'expérience" counters roll over after Jan 1 with no
+// redeploy. Applies as the default for every page under this segment.
+export const revalidate = 86400;
+
 export async function generateStaticParams() {
   return i18n.locales.map((lang) => ({ lang }));
 }

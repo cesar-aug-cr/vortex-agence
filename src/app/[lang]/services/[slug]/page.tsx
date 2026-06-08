@@ -8,9 +8,10 @@ import { buildMetadata } from "@/lib/metadata";
 import { site, serviceSlugs } from "@/lib/site";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Section } from "@/components/ui/Section";
+import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { serviceIllustration } from "@/components/illustrations/map";
+import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
 
 export async function generateStaticParams() {
@@ -49,6 +50,9 @@ export default async function ServiceDetailPage({
   if (!service) notFound();
 
   const Illu = serviceIllustration[service.slug];
+  const content =
+    dict.serviceContent[service.slug as keyof typeof dict.serviceContent];
+  const sd = dict.servicesDetail;
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -60,6 +64,19 @@ export default async function ServiceDetailPage({
     areaServed: { "@type": "Country", name: "Luxembourg" },
     url: `${site.url}${localized(lang, `/services/${service.slug}`)}`,
   };
+
+  const faqJsonLd =
+    content && content.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: content.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }
+      : null;
 
   return (
     <PageShell dict={dict} lang={lang}>
@@ -117,12 +134,98 @@ export default async function ServiceDetailPage({
         </div>
       </Section>
 
+      {content && (
+        <>
+          {/* overview */}
+          <Section tone="muted">
+            <SectionHeading eyebrow={sd.overviewTitle} title={service.tagline} />
+            <div className="mt-8 grid max-w-3xl gap-5">
+              {content.intro.map((p) => (
+                <p key={p} className="text-lg leading-relaxed text-text-dim">
+                  {p}
+                </p>
+              ))}
+            </div>
+
+            {/* what's included — complex icons as imagery */}
+            <h3 className="mt-16 text-xl font-semibold text-text">
+              {sd.includedTitle}
+            </h3>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {content.included.map((item) => {
+                const Icon = featureIcons[item.icon];
+                return (
+                  <div key={item.title} className="card card-hover group flex flex-col p-6">
+                    <div className="illu-stage flex h-28 w-28 items-center justify-center self-start rounded-xl border border-border">
+                      {Icon && <Icon className="h-20 w-20" />}
+                    </div>
+                    <h4 className="mt-5 text-base font-semibold text-text">
+                      {item.title}
+                    </h4>
+                    <p className="mt-2 text-sm leading-relaxed text-text-dim">
+                      {item.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </Section>
+
+          {/* deliverables + FAQ */}
+          <Section tone="base">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <h3 className="text-xl font-semibold text-text">
+                  {sd.deliverablesTitle}
+                </h3>
+                <ul className="mt-6 grid gap-3">
+                  {content.deliverables.map((d) => (
+                    <li key={d} className="flex items-start gap-3 text-text-dim">
+                      <Check width={20} height={20} className="mt-0.5 shrink-0 text-accent" />
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-text">{sd.faqTitle}</h3>
+                <div className="mt-6 grid gap-3">
+                  {content.faq.map((f) => (
+                    <details
+                      key={f.q}
+                      className="group rounded-2xl border border-border bg-bg-card p-5 [&_summary::-webkit-details-marker]:hidden"
+                    >
+                      <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-semibold text-text">
+                        {f.q}
+                        <span className="text-accent transition-transform group-open:rotate-45">
+                          <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <p className="mt-3 text-sm leading-relaxed text-text-dim">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Section>
+        </>
+      )}
+
       <ContactCta dict={dict} lang={lang} />
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
     </PageShell>
   );
 }

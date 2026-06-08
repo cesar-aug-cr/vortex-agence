@@ -68,7 +68,7 @@ export function Header({
 
         {/* Desktop nav */}
         <nav className="hidden lg:block">
-          <ul className="flex items-center gap-9 text-sm font-medium">
+          <ul className="flex items-center gap-5 text-sm font-medium xl:gap-7">
             {/* Services mega */}
             <li className="group/mega static">
               <Link
@@ -167,6 +167,21 @@ export function Header({
                 {dict.nav.about}
               </Link>
             </li>
+            <li>
+              <Link href={localized(lang, "/news")} className={`py-2 transition-colors ${navLinkClass}`}>
+                {dict.nav.news}
+              </Link>
+            </li>
+            <li>
+              <Link href={localized(lang, "/glossaire")} className={`py-2 transition-colors ${navLinkClass}`}>
+                {dict.nav.glossary}
+              </Link>
+            </li>
+            <li>
+              <Link href={localized(lang, "/faq")} className={`py-2 transition-colors ${navLinkClass}`}>
+                {dict.nav.faq}
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -233,6 +248,9 @@ export function Header({
                 { label: dict.nav.approach, href: "/approche" },
                 { label: dict.nav.work, href: "/realisations" },
                 { label: dict.nav.about, href: "/agence" },
+                { label: dict.nav.news, href: "/news" },
+                { label: dict.nav.glossary, href: "/glossaire" },
+                { label: dict.nav.faq, href: "/faq" },
                 { label: dict.nav.contact, href: "/contact" },
               ].map((l) => (
                 <li key={l.href}>

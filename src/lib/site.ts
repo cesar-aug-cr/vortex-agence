@@ -59,8 +59,19 @@ export const mainRoutes = [
   "approche",
   "realisations",
   "agence",
+  "news",
+  "glossaire",
+  "faq",
   "contact",
   "mentions-legales",
   "confidentialite",
   "cookies",
+] as const;
+
+/**
+ * News article slugs (must match the dictionary `news.articles[].slug`).
+ * Kept here so the sitemap stays dependency-free of the dictionary.
+ */
+export const newsSlugs = [
+  "geo-seo-luxembourg-etre-cite-par-les-ia",
 ] as const;

@@ -12,6 +12,8 @@ import { LeadGen } from "@/components/sections/LeadGen";
 import { ProcessGeo } from "@/components/sections/ProcessGeo";
 import { Tools } from "@/components/sections/Tools";
 import { Proof } from "@/components/sections/Proof";
+import { Reviews } from "@/components/sections/Reviews";
+import { NewsTeaser } from "@/components/sections/NewsTeaser";
 import { Faq } from "@/components/sections/Faq";
 import { ContactCta } from "@/components/sections/ContactCta";
 
@@ -38,6 +40,8 @@ export default async function HomePage({
           <ProcessGeo dict={dict} />
           <Tools dict={dict} />
           <Proof dict={dict} />
+          <Reviews dict={dict} />
+          <NewsTeaser dict={dict} lang={lang} />
           <Faq dict={dict} />
           <ContactCta dict={dict} lang={lang} />
         </main>

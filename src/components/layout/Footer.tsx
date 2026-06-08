@@ -6,9 +6,10 @@ import { LogoMark } from "@/components/brand/LogoMark";
 import { ArrowRight } from "@/components/ui/icons";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { site } from "@/lib/site";
+import { currentYear } from "@/lib/dates";
 
 export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
-  const year = 2026;
+  const year = currentYear();
   const cols = [dict.footer.columns.services, dict.footer.columns.company, dict.footer.columns.legal];
   const allTools = dict.tools.categories.flatMap((c) => c.items);
   const marquee = [...allTools, ...allTools];

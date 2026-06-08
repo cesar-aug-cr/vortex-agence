@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site, mainRoutes, serviceSlugs } from "@/lib/site";
+import { site, mainRoutes, serviceSlugs, newsSlugs } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -20,6 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: "monthly",
         priority: 0.8,
+      });
+    }
+    for (const slug of newsSlugs) {
+      entries.push({
+        url: `${site.url}/${lang}/news/${slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.6,
       });
     }
   }
