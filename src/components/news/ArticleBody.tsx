@@ -1,5 +1,6 @@
 import type { ArticleBlock } from "@/i18n/dictionaries/fr";
 import { Check } from "@/components/ui/icons";
+import { LogoMark } from "@/components/brand/LogoMark";
 
 /** Renders a long-form article body from typed {@link ArticleBlock}s. */
 export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
@@ -66,6 +67,15 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                   </cite>
                 )}
               </blockquote>
+            );
+          case "logo":
+            return (
+              <div
+                key={i}
+                className="illu-stage flex items-center justify-center rounded-2xl border border-border py-12"
+              >
+                <LogoMark className="h-14 w-auto text-text md:h-20" />
+              </div>
             );
           case "callout":
             return (

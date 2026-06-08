@@ -6,6 +6,8 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Section } from "@/components/ui/Section";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { LogoMark } from "@/components/brand/LogoMark";
+import ThreeSphereV2BlackHole from "@/components/three/BlackHoleLazy";
+import HelixDNA3D from "@/components/three/HelixDNALazy";
 import { GlowStar } from "@/components/sections/GlowStar";
 import { IconStrategy, IconConversion, IconLocal, IconAI } from "@/components/sections/WhyIcons";
 import { featureIcons } from "@/components/illustrations/icons";
@@ -137,16 +139,16 @@ export default async function StyleGuidePage({
         <Block title="Marque">
           <div className="flex flex-wrap items-center gap-10">
             <div className="rounded-2xl border border-border bg-bg-card p-6">
-              <Wordmark className="h-8 w-auto text-text" />
-              <p className="mt-3 font-mono text-xs text-text-muted">Wordmark</p>
-            </div>
-            <div className="rounded-2xl border border-border bg-bg-card p-6">
               <LogoMark className="h-8 w-auto text-text" />
               <p className="mt-3 font-mono text-xs text-text-muted">LogoMark (animé)</p>
             </div>
             <div className="rounded-2xl border border-border bg-bg-card p-6">
               <LogoMark animated={false} className="h-8 w-auto text-text" />
               <p className="mt-3 font-mono text-xs text-text-muted">LogoMark (statique)</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-bg-card p-6">
+              <Wordmark className="h-8 w-auto text-text" />
+              <p className="mt-3 font-mono text-xs text-text-muted">Wordmark</p>
             </div>
           </div>
         </Block>
@@ -312,6 +314,29 @@ export default async function StyleGuidePage({
                 <span className="font-mono text-[0.55rem] text-text-muted">{key}</span>
               </div>
             ))}
+          </div>
+        </Block>
+
+        {/* 3D / WebGL */}
+        <Block title="3D · WebGL">
+          <div className="grid gap-5 lg:grid-cols-2">
+            <div className="relative h-80 overflow-hidden rounded-2xl border border-border bg-stage">
+              <ThreeSphereV2BlackHole
+                showSphere={false}
+                bhPositionOverride={[0, 0, 0]}
+                bhPositionMobileOverride={[0, 0, 0]}
+                bhScaleOverride={1.3}
+              />
+              <span className="absolute bottom-4 left-4 z-10 font-mono text-xs text-stage-text-dim">
+                Black hole (Three.js)
+              </span>
+            </div>
+            <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-2xl border border-border bg-stage">
+              <HelixDNA3D height={320} tiltDeg={-20} />
+              <span className="absolute bottom-4 left-4 z-10 font-mono text-xs text-stage-text-dim">
+                ADN helix (Three.js)
+              </span>
+            </div>
           </div>
         </Block>
 

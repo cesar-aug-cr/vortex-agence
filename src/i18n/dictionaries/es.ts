@@ -1061,6 +1061,7 @@ export const es = {
             id: "principes",
             text: "Los 5 principios de un buen logo",
           },
+          { type: "logo" },
           { type: "h3", text: "1. Simple" },
           {
             type: "p",

@@ -12,7 +12,8 @@ export type ArticleBlock =
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[] }
   | { type: "quote"; text: string; cite?: string }
-  | { type: "callout"; title: string; text: string };
+  | { type: "callout"; title: string; text: string }
+  | { type: "logo" };
 
 /** One glossary entry. */
 export type GlossaryTerm = {
@@ -1084,6 +1085,7 @@ export const fr = {
             id: "principes",
             text: "Les 5 principes d'un bon logo",
           },
+          { type: "logo" },
           { type: "h3", text: "1. Simple" },
           {
             type: "p",
