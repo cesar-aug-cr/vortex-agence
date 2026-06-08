@@ -37,13 +37,16 @@ const O_R = 30.39;
 export function LogoMark({
   className,
   title = "VorTX",
+  animated = true,
 }: {
   className?: string;
   title?: string;
+  /** When false, freeze on the base "dot" state with no animation/rings. */
+  animated?: boolean;
 }) {
   return (
     <svg
-      className={`vortx-logo${className ? ` ${className}` : ""}`}
+      className={`${animated ? "vortx-logo" : ""}${className ? ` ${className}` : ""}`.trim()}
       viewBox="0 0 600 200"
       fill="none"
       role="img"
@@ -58,31 +61,36 @@ export function LogoMark({
         <path d={X} />
       </g>
 
-      {/* The animated "O" — scales up on hover */}
-      <g className="vortx-o">
-        {/* logo 2 — lime ring */}
-        <path
-          className="vortx-o-ring vortx-o-lime"
-          d={RING}
-          fillRule="evenodd"
-          fill="var(--accent)"
-        />
-        {/* logo 3 — teal ring */}
-        <path
-          className="vortx-o-ring vortx-o-teal"
-          d={RING}
-          fillRule="evenodd"
-          fill="var(--accent-2)"
-        />
-        {/* logo 1 — solid dot (base) */}
-        <circle
-          className="vortx-o-dot"
-          cx={O_CX}
-          cy={O_CY}
-          r={O_R}
-          fill="currentColor"
-        />
-      </g>
+      {animated ? (
+        /* The animated "O" — scales up on hover */
+        <g className="vortx-o">
+          {/* logo 2 — lime ring */}
+          <path
+            className="vortx-o-ring vortx-o-lime"
+            d={RING}
+            fillRule="evenodd"
+            fill="var(--accent)"
+          />
+          {/* logo 3 — teal ring */}
+          <path
+            className="vortx-o-ring vortx-o-teal"
+            d={RING}
+            fillRule="evenodd"
+            fill="var(--accent-2)"
+          />
+          {/* logo 1 — solid dot (base) */}
+          <circle
+            className="vortx-o-dot"
+            cx={O_CX}
+            cy={O_CY}
+            r={O_R}
+            fill="currentColor"
+          />
+        </g>
+      ) : (
+        /* Static "dot" only — no rings, no animation */
+        <circle cx={O_CX} cy={O_CY} r={O_R} fill="currentColor" />
+      )}
     </svg>
   );
 }

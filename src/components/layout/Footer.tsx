@@ -3,7 +3,9 @@ import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Wordmark } from "@/components/brand/Wordmark";
+import { LogoMark } from "@/components/brand/LogoMark";
 import { ArrowRight } from "@/components/ui/icons";
+import { BackToTop } from "@/components/layout/BackToTop";
 import { site } from "@/lib/site";
 
 export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
@@ -36,7 +38,12 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           {/* brand + CTA */}
           <div>
-            <Wordmark className="h-7 w-auto text-stage-text" />
+            {/* mobile: static dot-only mark · desktop: full wordmark */}
+            <LogoMark
+              animated={false}
+              className="h-9 w-auto text-stage-text sm:hidden"
+            />
+            <Wordmark className="hidden h-7 w-auto text-stage-text sm:block" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-stage-text-dim">
               {dict.footer.blurb}
             </p>
@@ -49,8 +56,9 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             </Link>
           </div>
 
-          {/* link columns */}
-          <div className="grid gap-8 sm:grid-cols-3">
+          {/* link columns — mobile pairs them 2-up (Services|Agence, then
+              Légal|Contact); desktop keeps the 3-column row + contact strip. */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             {cols.map((col) => (
               <div key={col.title}>
                 <h3 className="font-mono text-xs uppercase tracking-wide text-stage-text-dim">
@@ -70,11 +78,51 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 </ul>
               </div>
             ))}
+
+            {/* Contact as a 4th column — mobile only (desktop uses the strip below) */}
+            <div className="sm:hidden">
+              <h3 className="font-mono text-xs uppercase tracking-wide text-stage-text-dim">
+                {dict.footer.contactTitle}
+              </h3>
+              <ul className="mt-4 space-y-2.5 text-sm text-stage-text/85">
+                <li>
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="break-all transition-colors hover:text-accent"
+                  >
+                    {site.email}
+                  </a>
+                </li>
+                {site.phone && (
+                  <li>
+                    <a
+                      href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                      className="transition-colors hover:text-accent"
+                    >
+                      {site.phone}
+                    </a>
+                  </li>
+                )}
+                <li>{dict.footer.location}</li>
+                {site.sameAs.map((href) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-accent"
+                    >
+                      {new URL(href).hostname.replace("www.", "")}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* contact strip */}
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-8 text-sm text-stage-text-dim sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-2">
+        {/* contact strip — desktop only (mobile shows it as a column above) */}
+        <div className="mt-12 hidden border-t border-white/10 pt-8 text-sm text-stage-text-dim sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-2">
           <span className="font-mono text-xs uppercase tracking-wide text-stage-text">
             {dict.footer.contactTitle}
           </span>
@@ -113,11 +161,16 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
       {/* bottom bar */}
       <div className="border-t border-white/10">
-        <div className="container-vortx flex flex-col items-center justify-between gap-3 py-6 text-xs text-stage-text-dim sm:flex-row">
-          <p>
+        {/* pb clears the fixed StickyCta pill (bottom-4, ~lg:hidden) on mobile/tablet */}
+        <div className="container-vortx flex flex-col items-center gap-4 pt-6 pb-28 text-xs text-stage-text-dim sm:flex-row sm:justify-between lg:py-6">
+          <p className="order-1">
             © {year} {dict.brand.name}. {dict.footer.rights}
           </p>
-          <p className="font-mono">{dict.footer.madeWith}</p>
+          <p className="order-2 font-mono sm:order-3">{dict.footer.madeWith}</p>
+          {/* mobile: below both texts · desktop: centered between them */}
+          <div className="order-3 sm:order-2">
+            <BackToTop label={dict.footer.backToTop} />
+          </div>
         </div>
       </div>
     </footer>

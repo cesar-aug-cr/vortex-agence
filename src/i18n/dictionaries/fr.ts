@@ -455,6 +455,7 @@ export const fr = {
     location: "Luxembourg",
     rights: "Tous droits réservés.",
     madeWith: "Conçu avec soin et beaucoup d'IA.",
+    backToTop: "Retour en haut",
   },
 
   // ---- Per-route metadata ----
