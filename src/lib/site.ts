@@ -52,6 +52,12 @@ export const serviceSlugs = [
   "automatisation-ia",
 ] as const;
 
+/** Service sub-pages (children of a parent service slug). */
+export const subServiceRoutes = [
+  { parent: "publicite", child: "google-ads" },
+  { parent: "publicite", child: "meta-ads" },
+] as const;
+
 /** Top-level routes (relative to /<lang>) used for the sitemap. */
 export const mainRoutes = [
   "",

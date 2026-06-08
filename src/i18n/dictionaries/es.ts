@@ -1679,6 +1679,87 @@ export const es = {
     },
   },
 
+  subServicesTitle: "Dos canales, dos lógicas",
+  subServicesLead: "La publicidad no es una sola palanca. Pilotamos los dos grandes canales — según si sus clientes ya le buscan o si hay que despertar el deseo.",
+  subServices: {
+    publicite: [
+      {
+        slug: "google-ads",
+        illustration: "google-ads",
+        title: "Google Ads",
+        tagline: "Capte la demanda en el momento exacto en que se expresa.",
+        short:
+          "Search, Performance Max, Shopping, YouTube: esté presente cuando sus clientes buscan, con campañas pilotadas por los datos y orientadas a la rentabilidad.",
+        bullets: [
+          "Search y Performance Max",
+          "Shopping y YouTube Ads",
+          "Landing pages dedicadas",
+          "Optimización continua del ROAS",
+        ],
+        metaTitle: "Agencia Google Ads en Luxemburgo | vortx",
+        metaDescription:
+          "Campañas Google Ads (Search, Performance Max, Shopping, YouTube) rentables para el mercado luxemburgués. Capte la demanda, pilotado por los datos.",
+        intro: [
+          "En Google, sus clientes no buscan una marca: buscan una solución. Google Ads le coloca ante ellos en el instante preciso en que lo necesitan — ni antes, ni después.",
+          "Estructuramos sus campañas (Search, Performance Max, Shopping, YouTube) para captar esa intención y transformarla en solicitudes concretas, gastando su presupuesto allí donde realmente rinde.",
+        ],
+        included: [
+          { icon: "ads-targeting", title: "Search y Performance Max", desc: "Campañas estructuradas para aparecer en las búsquedas que convierten." },
+          { icon: "conversion", title: "Landing pages dedicadas", desc: "Páginas de aterrizaje pensadas para transformar el clic de pago en lead." },
+          { icon: "analytics", title: "Pilotaje por los datos", desc: "Un seguimiento de conversiones fiable: cada euro gastado está vinculado a un resultado." },
+          { icon: "next-perf", title: "Optimización del ROAS", desc: "Ajustes continuos de las pujas y las audiencias para maximizar el retorno." },
+        ],
+        deliverables: [
+          "Estrategia y estructura de cuentas",
+          "Creación de las campañas (Search, PMax, Shopping, YouTube)",
+          "Landing pages optimizadas",
+          "Reporting ROAS y optimización continua",
+        ],
+        faq: [
+          { q: "¿Qué presupuesto mínimo hay que prever?", a: "Depende de su sector y de la competencia en sus palabras clave. Definimos un presupuesto de prueba, medimos, y luego aumentamos únicamente lo que es rentable." },
+          { q: "¿En cuánto tiempo se ven resultados?", a: "Los primeros clics llegan desde el lanzamiento. Las primeras semanas sirven para aprender y optimizar; la rentabilidad se estabiliza después." },
+        ],
+      },
+      {
+        slug: "meta-ads",
+        illustration: "meta-ads",
+        title: "Meta Ads",
+        tagline: "Cree la demanda en Facebook, Instagram y Threads.",
+        short:
+          "Contenido que detiene el scroll. Campañas Meta (Facebook, Instagram, Threads) segmentadas para dar a conocer su marca, captar a su audiencia y convertir.",
+        bullets: [
+          "Facebook e Instagram Ads",
+          "Threads",
+          "Audiencias y retargeting",
+          "Creación de contenidos que convierten",
+        ],
+        metaTitle: "Agencia Meta Ads (Facebook e Instagram) en Luxemburgo | vortx",
+        metaDescription:
+          "Campañas Meta Ads (Facebook, Instagram, Threads) para el mercado luxemburgués: notoriedad, engagement y conversiones. Segmentación precisa y creatividades que rinden.",
+        intro: [
+          "En las redes sociales, nadie busca su producto — es usted quien debe atraer la atención. Meta Ads (Facebook, Instagram, Threads) crea la demanda allí donde sus clientes pasan su tiempo.",
+          "Combinamos segmentación precisa, retargeting y creación de contenidos que detienen el scroll para transformar una audiencia fría en clientes, paso a paso.",
+        ],
+        included: [
+          { icon: "ads-targeting", title: "Segmentación social precisa", desc: "Las audiencias adecuadas en Facebook, Instagram y Threads, en el momento adecuado." },
+          { icon: "branding", title: "Creatividades que convierten", desc: "Imágenes y vídeos pensados para captar la atención y dar ganas de actuar." },
+          { icon: "leads", title: "Retargeting y audiencias", desc: "Reimpactamos a los visitantes y construimos audiencias similares para amplificar." },
+          { icon: "analytics", title: "Seguimiento del rendimiento", desc: "Un reporting claro sobre el coste por resultado y el retorno de la inversión." },
+        ],
+        deliverables: [
+          "Estrategia y estructura de campañas Meta",
+          "Creación de las imágenes y vídeos",
+          "Audiencias, retargeting y A/B tests",
+          "Reporting y optimización continua",
+        ],
+        faq: [
+          { q: "¿Meta Ads es solo Facebook e Instagram?", a: "No: cubrimos también Threads y la red de audiencia de Meta. Elegimos los emplazamientos según su público y sus objetivos." },
+          { q: "¿Hay que tener ya contenido?", a: "No necesariamente. Podemos crear las imágenes y vídeos publicitarios, o partir de sus contenidos existentes y adaptarlos al formato que convierte." },
+        ],
+      },
+    ],
+  },
+
   // ---- FAQ page (comprehensive, grouped) ----
   faqPage: {
     eyebrow: "Preguntas frecuentes",

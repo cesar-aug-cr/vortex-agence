@@ -53,6 +53,10 @@ export default async function ServiceDetailPage({
   const content =
     dict.serviceContent[service.slug as keyof typeof dict.serviceContent];
   const sd = dict.servicesDetail;
+  const subs =
+    (dict.subServices as Record<string, ReadonlyArray<{ slug: string; title: string; tagline: string; bullets: readonly string[] }>>)[
+      service.slug
+    ] ?? [];
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -133,6 +137,43 @@ export default async function ServiceDetailPage({
           )}
         </div>
       </Section>
+
+      {/* sub-services (e.g. Google Ads / Meta Ads under Publicité) */}
+      {subs.length > 0 && (
+        <Section tone="muted">
+          <SectionHeading
+            eyebrow={dict.servicesSection.eyebrow}
+            title={dict.subServicesTitle}
+            lead={dict.subServicesLead}
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {subs.map((s) => (
+              <Link
+                key={s.slug}
+                href={localized(lang, `/services/${service.slug}/${s.slug}`)}
+                className="card card-hover group flex flex-col p-8"
+              >
+                <h3 className="text-xl font-bold text-text transition-colors group-hover:text-accent">
+                  {s.title}
+                </h3>
+                <p className="tagline mt-2 text-base font-medium">{s.tagline}</p>
+                <ul className="mt-6 grid flex-1 gap-2">
+                  {s.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-sm text-text-dim">
+                      <Check width={16} height={16} className="mt-0.5 shrink-0 text-accent" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <span className="mt-7 inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                  {dict.common.readMore}
+                  <ArrowRight width={15} height={15} className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {content && (
         <>

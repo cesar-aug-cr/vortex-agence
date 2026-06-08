@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site, mainRoutes, serviceSlugs, newsSlugs } from "@/lib/site";
+import { site, mainRoutes, serviceSlugs, newsSlugs, subServiceRoutes } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -16,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
   for (const slug of serviceSlugs) {
     paths.push({ path: `/services/${slug}`, priority: 0.8, freq: "monthly" });
+  }
+  for (const { parent, child } of subServiceRoutes) {
+    paths.push({ path: `/services/${parent}/${child}`, priority: 0.7, freq: "monthly" });
   }
   for (const slug of newsSlugs) {
     paths.push({ path: `/news/${slug}`, priority: 0.6, freq: "monthly" });

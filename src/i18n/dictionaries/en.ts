@@ -1685,6 +1685,87 @@ export const en = {
     },
   },
 
+  subServicesTitle: "Two channels, two logics",
+  subServicesLead: "Advertising isn't a single lever. We run both major channels — depending on whether your clients are already looking for you or whether you need to spark the desire.",
+  subServices: {
+    publicite: [
+      {
+        slug: "google-ads",
+        illustration: "google-ads",
+        title: "Google Ads",
+        tagline: "Capture demand at the exact moment it appears.",
+        short:
+          "Search, Performance Max, Shopping, YouTube: be there when your clients are searching, with data-driven campaigns built for profitability.",
+        bullets: [
+          "Search & Performance Max",
+          "Shopping & YouTube Ads",
+          "Dedicated landing pages",
+          "Continuous ROAS optimisation",
+        ],
+        metaTitle: "Google Ads Agency in Luxembourg | vortx",
+        metaDescription:
+          "Profitable Google Ads campaigns (Search, Performance Max, Shopping, YouTube) for the Luxembourg market. Capture demand, driven by data.",
+        intro: [
+          "On Google, your clients aren't looking for a brand: they're looking for a solution. Google Ads puts you in front of them at the precise moment they need it — not before, not after.",
+          "We structure your campaigns (Search, Performance Max, Shopping, YouTube) to capture that intent and turn it into concrete enquiries, spending your budget where it truly pays off.",
+        ],
+        included: [
+          { icon: "ads-targeting", title: "Search & Performance Max", desc: "Structured campaigns to show up on the queries that convert." },
+          { icon: "conversion", title: "Dedicated landing pages", desc: "Landing pages designed to turn a paid click into a lead." },
+          { icon: "analytics", title: "Data-driven management", desc: "Reliable conversion tracking: every euro spent is tied to a result." },
+          { icon: "next-perf", title: "ROAS optimisation", desc: "Continuous adjustments to bids and audiences to maximise return." },
+        ],
+        deliverables: [
+          "Strategy & account structure",
+          "Campaign setup (Search, PMax, Shopping, YouTube)",
+          "Optimised landing pages",
+          "ROAS reporting & continuous optimisation",
+        ],
+        faq: [
+          { q: "What minimum budget should I plan for?", a: "It depends on your sector and the competition on your keywords. We set a test budget, measure, then scale up only what's profitable." },
+          { q: "How long before we see results?", a: "The first clicks come in as soon as you launch. The first few weeks are about learning and optimising; profitability stabilises after that." },
+        ],
+      },
+      {
+        slug: "meta-ads",
+        illustration: "meta-ads",
+        title: "Meta Ads",
+        tagline: "Create demand on Facebook, Instagram and Threads.",
+        short:
+          "Content that stops the scroll. Targeted Meta campaigns (Facebook, Instagram, Threads) to build your brand awareness, engage your audience and convert.",
+        bullets: [
+          "Facebook & Instagram Ads",
+          "Threads",
+          "Audiences & retargeting",
+          "Content creation that converts",
+        ],
+        metaTitle: "Meta Ads Agency (Facebook & Instagram) in Luxembourg | vortx",
+        metaDescription:
+          "Meta Ads campaigns (Facebook, Instagram, Threads) for the Luxembourg market: awareness, engagement and conversions. Precise targeting and creatives that perform.",
+        intro: [
+          "On social media, no one is searching for your product — it's up to you to grab attention. Meta Ads (Facebook, Instagram, Threads) creates demand right where your clients spend their time.",
+          "We combine precise targeting, retargeting and content creation that stops the scroll to turn a cold audience into clients, step by step.",
+        ],
+        included: [
+          { icon: "ads-targeting", title: "Precise social targeting", desc: "The right audiences on Facebook, Instagram and Threads, at the right moment." },
+          { icon: "branding", title: "Creatives that convert", desc: "Visuals and videos designed to grab attention and make people want to act." },
+          { icon: "leads", title: "Retargeting & audiences", desc: "We retarget visitors and build lookalike audiences to amplify your reach." },
+          { icon: "analytics", title: "Performance tracking", desc: "Clear reporting on cost per result and return on investment." },
+        ],
+        deliverables: [
+          "Strategy & Meta campaign structure",
+          "Visual and video creation",
+          "Audiences, retargeting & A/B tests",
+          "Reporting & continuous optimisation",
+        ],
+        faq: [
+          { q: "Is Meta Ads only Facebook and Instagram?", a: "No: we also cover Threads and the Meta Audience Network. We pick the placements based on your target and your goals." },
+          { q: "Do I need to have content already?", a: "Not necessarily. We can create the ad visuals and videos, or start from your existing content and adapt it to the format that converts." },
+        ],
+      },
+    ],
+  },
+
   // ---- FAQ page (comprehensive, grouped) ----
   faqPage: {
     eyebrow: "FAQ",

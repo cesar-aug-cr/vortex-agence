@@ -1685,6 +1685,88 @@ export const de = {
     },
   },
 
+  // ---- Sub-services (children of a parent service) ----
+  subServicesTitle: "Zwei Kanäle, zwei Logiken",
+  subServicesLead: "Werbung ist nicht nur ein einziger Hebel. Wir steuern die beiden großen Kanäle — je nachdem, ob Ihre Kunden bereits nach Ihnen suchen oder ob erst das Verlangen geweckt werden muss.",
+  subServices: {
+    publicite: [
+      {
+        slug: "google-ads",
+        illustration: "google-ads",
+        title: "Google Ads",
+        tagline: "Fangen Sie die Nachfrage genau in dem Moment ein, in dem sie entsteht.",
+        short:
+          "Search, Performance Max, Shopping, YouTube: Seien Sie präsent, wenn Ihre Kunden suchen — mit datengesteuerten und auf Rentabilität ausgerichteten Kampagnen.",
+        bullets: [
+          "Search & Performance Max",
+          "Shopping & YouTube Ads",
+          "Dedizierte Landingpages",
+          "Kontinuierliche ROAS-Optimierung",
+        ],
+        metaTitle: "Google-Ads-Agentur in Luxemburg | vortx",
+        metaDescription:
+          "Rentable Google-Ads-Kampagnen (Search, Performance Max, Shopping, YouTube) für den luxemburgischen Markt. Fangen Sie die Nachfrage ein, datengesteuert.",
+        intro: [
+          "Bei Google suchen Ihre Kunden nicht nach einer Marke: Sie suchen nach einer Lösung. Google Ads platziert Sie genau in dem Moment vor ihnen, in dem sie es brauchen — nicht früher, nicht später.",
+          "Wir strukturieren Ihre Kampagnen (Search, Performance Max, Shopping, YouTube) so, dass diese Absicht eingefangen und in konkrete Anfragen umgewandelt wird — indem wir Ihr Budget dort einsetzen, wo es sich wirklich auszahlt.",
+        ],
+        included: [
+          { icon: "ads-targeting", title: "Search & Performance Max", desc: "Strukturierte Kampagnen, um bei den Suchanfragen zu erscheinen, die konvertieren." },
+          { icon: "conversion", title: "Dedizierte Landingpages", desc: "Landingpages, die darauf ausgelegt sind, den bezahlten Klick in einen Lead zu verwandeln." },
+          { icon: "analytics", title: "Datengesteuerte Steuerung", desc: "Ein zuverlässiges Conversion-Tracking: Jeder ausgegebene Euro ist mit einem Ergebnis verknüpft." },
+          { icon: "next-perf", title: "ROAS-Optimierung", desc: "Kontinuierliche Anpassungen von Geboten und Zielgruppen, um die Rendite zu maximieren." },
+        ],
+        deliverables: [
+          "Strategie & Kontostruktur",
+          "Erstellung der Kampagnen (Search, PMax, Shopping, YouTube)",
+          "Optimierte Landingpages",
+          "ROAS-Reporting & kontinuierliche Optimierung",
+        ],
+        faq: [
+          { q: "Welches Mindestbudget sollte man einplanen?", a: "Das hängt von Ihrer Branche und dem Wettbewerb um Ihre Keywords ab. Wir legen ein Testbudget fest, messen die Ergebnisse und erhöhen dann nur das, was rentabel ist." },
+          { q: "Wie lange dauert es, bis man Ergebnisse sieht?", a: "Die ersten Klicks kommen bereits ab dem Start. Die ersten Wochen dienen dem Lernen und Optimieren; danach stabilisiert sich die Rentabilität." },
+        ],
+      },
+      {
+        slug: "meta-ads",
+        illustration: "meta-ads",
+        title: "Meta Ads",
+        tagline: "Wecken Sie die Nachfrage auf Facebook, Instagram und Threads.",
+        short:
+          "Inhalte, die das Scrollen stoppen. Gezielte Meta-Kampagnen (Facebook, Instagram, Threads), um Ihre Marke bekannt zu machen, Ihr Publikum zu binden und zu konvertieren.",
+        bullets: [
+          "Facebook & Instagram Ads",
+          "Threads",
+          "Zielgruppen & Retargeting",
+          "Erstellung von Inhalten, die konvertieren",
+        ],
+        metaTitle: "Meta-Ads-Agentur (Facebook & Instagram) in Luxemburg | vortx",
+        metaDescription:
+          "Meta-Ads-Kampagnen (Facebook, Instagram, Threads) für den luxemburgischen Markt: Bekanntheit, Engagement und Conversions. Präzises Targeting und Creatives, die performen.",
+        intro: [
+          "In den sozialen Netzwerken sucht niemand nach Ihrem Produkt — es liegt an Ihnen, die Aufmerksamkeit zu gewinnen. Meta Ads (Facebook, Instagram, Threads) weckt die Nachfrage dort, wo Ihre Kunden ihre Zeit verbringen.",
+          "Wir kombinieren präzises Targeting, Retargeting und die Erstellung von Inhalten, die das Scrollen stoppen, um ein kaltes Publikum Schritt für Schritt in Kunden zu verwandeln.",
+        ],
+        included: [
+          { icon: "ads-targeting", title: "Präzises Social-Targeting", desc: "Die richtigen Zielgruppen auf Facebook, Instagram und Threads, zum richtigen Zeitpunkt." },
+          { icon: "branding", title: "Creatives, die konvertieren", desc: "Visuals und Videos, die darauf ausgelegt sind, Aufmerksamkeit zu erregen und zum Handeln zu motivieren." },
+          { icon: "leads", title: "Retargeting & Zielgruppen", desc: "Wir sprechen Besucher erneut an und bauen ähnliche Zielgruppen auf, um die Wirkung zu verstärken." },
+          { icon: "analytics", title: "Performance-Tracking", desc: "Ein klares Reporting zu den Kosten pro Ergebnis und der Rendite Ihrer Investition." },
+        ],
+        deliverables: [
+          "Strategie & Struktur der Meta-Kampagnen",
+          "Erstellung der Visuals und Videos",
+          "Zielgruppen, Retargeting & A/B-Tests",
+          "Reporting & kontinuierliche Optimierung",
+        ],
+        faq: [
+          { q: "Sind Meta Ads nur Facebook und Instagram?", a: "Nein: Wir decken auch Threads und das Meta Audience Network ab. Wir wählen die Platzierungen je nach Ihrer Zielgruppe und Ihren Zielen." },
+          { q: "Muss man bereits Inhalte haben?", a: "Nicht unbedingt. Wir können die Werbe-Visuals und -Videos erstellen oder von Ihren bestehenden Inhalten ausgehen und sie an das Format anpassen, das konvertiert." },
+        ],
+      },
+    ],
+  },
+
   // ---- FAQ page (comprehensive, grouped) ----
   faqPage: {
     eyebrow: "FAQ",
