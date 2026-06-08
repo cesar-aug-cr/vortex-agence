@@ -940,6 +940,360 @@ export const de = {
           },
         ],
       },
+      {
+        slug: "combien-coute-un-site-web-luxembourg-2026",
+        category: "Websites",
+        title:
+          "Was kostet eine professionelle Website in Luxemburg 2026?",
+        excerpt:
+          "Die ehrliche Antwort ist keine einzelne Zahl, sondern eine Spanne, die von Ihren Zielen abhängt. Hier erfahren Sie, was den Preis einer Website beeinflusst und wie Sie dort investieren, wo es wirklich zählt.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 7,
+        author: "Das vortx-Team",
+        cover: "analytics",
+        body: [
+          {
+            type: "p",
+            text: "„Was kostet eine Website?“ Das ist die erste Frage, die man uns stellt – und die am schwersten mit einer einzigen Zahl zu beantworten ist. Eine Website ist wie ein Haus: Zwischen einem Studio und einer Villa sagt das Wort „Haus“ nichts über den Preis aus. Worauf es ankommt, ist, was Sie damit erreichen wollen.",
+          },
+          {
+            type: "h2",
+            id: "ca-depend",
+            text: "Warum „das kommt darauf an“ die einzige ehrliche Antwort ist",
+          },
+          {
+            type: "p",
+            text: "Ein Preis, der ohne Kenntnis Ihres Projekts genannt wird, ist entweder zu hoch (man rechnet sich zur Sicherheit nach oben) oder enttäuschend (man spart am Wesentlichen). Die eigentliche Arbeit besteht darin, den richtigen Umfang zu definieren: nicht mehr und nicht weniger, als Ihrem Ziel dient.",
+          },
+          {
+            type: "h2",
+            id: "ce-qui-fait-le-prix",
+            text: "Was den Preis wirklich beeinflusst",
+          },
+          {
+            type: "ul",
+            items: [
+              "Die Anzahl der Seiten und die Komplexität der Inhalte.",
+              "Maßgeschneidert (Next.js) oder WordPress, je nach Ihrem Bedarf an Flexibilität und Eigenständigkeit.",
+              "Das Designniveau: angepasstes Template oder zu 100 % maßgeschneiderte Identität.",
+              "Die Funktionen: Formulare, Terminbuchung, Zahlung, Kundenbereich …",
+              "Mehrsprachigkeit (FR/DE/EN) sowie SEO- & GEO-Optimierung.",
+              "Integrationen (CRM, Fachtools) und Automatisierung.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "fourchettes",
+            text: "Anhaltspunkte zur Orientierung",
+          },
+          {
+            type: "h3",
+            text: "Visitenkarten-Website oder Landingpage",
+          },
+          {
+            type: "p",
+            text: "Um Ihre Tätigkeit vorzustellen und Kontakte zu generieren, bleibt die Investition überschaubar. Das ist oft der beste Ausgangspunkt: schnell umgesetzt, sofort nützlich und auf Conversion ausgelegt.",
+          },
+          {
+            type: "h3",
+            text: "Maßgeschneiderte Website oder Plattform",
+          },
+          {
+            type: "p",
+            text: "Sobald spezifische Funktionen, ein einzigartiges Design, ausgefeilte Mehrsprachigkeit oder Integrationen nötig sind, steigt das Budget – aber genau dann wird die Website zu einem echten Vermögenswert, der für Sie arbeitet.",
+          },
+          {
+            type: "callout",
+            title: "Der richtige Reflex",
+            text: "Fragen Sie nicht nur „Was kostet das?“, sondern „Was bringt das ein?“. Eine Website für 2.000 €, die nichts generiert, ist teurer als eine, die sich mit ein paar Aufträgen amortisiert.",
+          },
+          {
+            type: "h2",
+            id: "investir-malin",
+            text: "Wo Sie mit Priorität investieren sollten",
+          },
+          {
+            type: "ul",
+            items: [
+              "Performance und Mobile: Eine langsame Website vertreibt Besucher, bevor sie überhaupt gelesen wird.",
+              "Der Conversion-Funnel: Jede Seite muss zu einer klaren Handlung führen.",
+              "SEO & GEO von Anfang an: bei Google gefunden und von KIs zitiert werden.",
+              "Ein ehrlicher, präziser Inhalt, der in Ihrer Realität verankert ist.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "Eine Website ist keine einmalige Ausgabe, sondern ein Vertriebsmitarbeiter, der rund um die Uhr arbeitet. Die Frage ist, was Sie von ihm erwarten.",
+          },
+          {
+            type: "callout",
+            title: "Zum Mitnehmen",
+            text: "Der Preis einer Website hängt von Ihren Zielen ab, nicht von einem Pauschaltarif. Definieren Sie den richtigen Umfang, investieren Sie in Conversion und Auffindbarkeit und beurteilen Sie die Kosten an dem, was die Website Ihnen einbringt.",
+          },
+          {
+            type: "p",
+            text: "Bei vortx erhalten Sie nach einem kostenlosen Kennenlerngespräch ein präzises Angebot – keinen aus der Luft gegriffenen Preis. Wir sagen Ihnen ohne Umschweife, was Sie wirklich brauchen.",
+          },
+        ],
+      },
+      {
+        slug: "quest-ce-quun-bon-logo-identite-qui-dure",
+        category: "Branding",
+        title: "Was macht ein gutes Logo aus? Die Prinzipien einer Identität, die bleibt",
+        excerpt:
+          "Ein gutes Logo ist nicht nur ein hübsches Bild: Es ist das erste Versprechen Ihrer Marke. Hier sind die Prinzipien, die ein einprägsames von einem vergesslichen Logo unterscheiden.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "Das vortx-Team",
+        cover: "branding",
+        body: [
+          {
+            type: "p",
+            text: "Noch vor dem ersten Wort hat Ihr Logo bereits gesprochen. Es ist der erste Eindruck, der Anker, an den man sich erinnert, das Gesicht Ihrer Marke. Dennoch behandeln viele Unternehmen es wie eine Nebensache. Ein gutes Logo ist alles andere als eine Nebensache – und es folgt einfachen Prinzipien.",
+          },
+          {
+            type: "h2",
+            id: "pas-juste-joli",
+            text: "Ein Logo ist nicht (nur) etwas Hübsches",
+          },
+          {
+            type: "p",
+            text: "Ein Logo hat nicht die Aufgabe, jedem zu gefallen, sondern Ihre Marke erkennbar und vertrauenswürdig zu machen. Es muss auf einem Schild ebenso funktionieren wie auf einem App-Icon, in Farbe wie in Schwarz-Weiß.",
+          },
+          {
+            type: "h2",
+            id: "principes",
+            text: "Die 5 Prinzipien eines guten Logos",
+          },
+          { type: "h3", text: "1. Einfach" },
+          {
+            type: "p",
+            text: "Die stärksten Logos sind oft die schlichtesten. Einfachheit prägt sich ein, wird auf einen Blick erkannt und lässt sich überall einsetzen, ohne sich zu verformen.",
+          },
+          { type: "h3", text: "2. Einprägsam" },
+          {
+            type: "p",
+            text: "Ein gutes Logo hinterlässt eine Spur. Eine Form, eine Idee, ein Detail, das hängen bleibt – markant genug, dass man sich nach einmaligem Sehen daran erinnert.",
+          },
+          { type: "h3", text: "3. Zeitlos" },
+          {
+            type: "p",
+            text: "Moden vergehen. Ein Logo, das bleiben soll, vermeidet modische Effekte, die schlecht altern, und bleibt auch zehn Jahre später relevant.",
+          },
+          { type: "h3", text: "4. Vielseitig" },
+          {
+            type: "p",
+            text: "Vom 16-Pixel-Favicon bis zur Plakatwand muss es überall lesbar und stimmig bleiben. Deshalb liefern wir es immer in mehreren Formaten.",
+          },
+          { type: "h3", text: "5. Passend" },
+          {
+            type: "p",
+            text: "Der Stil muss zu Ihrer Branche und Ihrer Positionierung passen. Ein Logo muss nicht alles über Sie aussagen – nur nicht das Gegenteil von dem, was Sie sind.",
+          },
+          {
+            type: "callout",
+            title: "Die klassische Falle",
+            text: "Wollen, dass das Logo alles „erklärt“, was Sie tun. Ein gutes Logo identifiziert; den Rest erzählt Ihre Marke über die Zeit.",
+          },
+          {
+            type: "h2",
+            id: "au-dela",
+            text: "Über das Logo hinaus: die komplette Identität",
+          },
+          {
+            type: "p",
+            text: "Ein Logo allein genügt nicht. Seine volle Kraft entfaltet es innerhalb einer stimmigen Identität: Farben, Schriften, Anwendungsregeln. Es ist diese überall angewandte Stimmigkeit, die Vertrauen und Wiedererkennung aufbaut.",
+          },
+          {
+            type: "quote",
+            text: "Ein Logo ist die Unterschrift. Die Identität ist die gesamte Handschrift. Beide müssen dasselbe sagen.",
+          },
+          {
+            type: "callout",
+            title: "Zum Mitnehmen",
+            text: "Ein gutes Logo ist einfach, einprägsam, zeitlos, vielseitig und passend – und es lebt innerhalb einer stimmigen visuellen Identität, nicht für sich allein.",
+          },
+          {
+            type: "p",
+            text: "Bei vortx gestalten wir maßgeschneiderte Logos und die komplette Identität, die dazugehört. Lust auf eine Marke, an die man sich erinnert? Sprechen wir darüber.",
+          },
+        ],
+      },
+      {
+        slug: "rgpd-cookies-site-web-luxembourg",
+        category: "Compliance",
+        title:
+          "DSGVO & Cookies: das Minimum, das Ihre Website in Luxemburg einhalten muss",
+        excerpt:
+          "Cookie-Banner, Einwilligung, Pflichtangaben … Die DSGVO macht Angst, doch das Wesentliche lässt sich in wenigen klaren Regeln zusammenfassen. Hier ist das Minimum für eine sorgenfreie luxemburgische Website.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "Das vortx-Team",
+        cover: "rgpd",
+        body: [
+          {
+            type: "p",
+            text: "Die DSGVO hat den Ruf, ein Kopfzerbrechen zu sein. In Wirklichkeit lässt sich für eine Visitenkarten- oder Lead-Generierungs-Website das Wesentliche auf wenige Regeln des gesunden Menschenverstands reduzieren. Hier ist, was Sie brauchen, um regelkonform zu sein – und vor allem im Vertrauensverhältnis zu Ihren Besuchern.",
+          },
+          {
+            type: "callout",
+            title: "Nützlicher Hinweis",
+            text: "Dieser Artikel gibt praktische Anhaltspunkte, keine Rechtsberatung. Lassen Sie Ihre Rechtsseiten für einen konkreten Fall von einem Rechtsexperten prüfen.",
+          },
+          {
+            type: "h2",
+            id: "rgpd-cest-quoi",
+            text: "Die DSGVO in zwei Minuten",
+          },
+          {
+            type: "p",
+            text: "Die Datenschutz-Grundverordnung regelt, wie Sie personenbezogene Daten (Name, E-Mail, IP-Adresse …) erheben und verwenden. Das Prinzip: Transparenz, Einwilligung wo nötig und Achtung der Rechte der Betroffenen.",
+          },
+          {
+            type: "h2",
+            id: "cookies",
+            text: "Cookies: Einwilligung vor dem Setzen",
+          },
+          {
+            type: "ul",
+            items: [
+              "Nicht notwendige Cookies (Reichweitenmessung, Werbung) werden erst nach ausdrücklicher Zustimmung gesetzt.",
+              "Das Banner muss das Annehmen, Ablehnen und Anpassen ermöglichen – Ablehnen muss so einfach sein wie Annehmen.",
+              "Für den Betrieb der Website unbedingt notwendige Cookies erfordern keine Einwilligung.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "checklist",
+            text: "Die minimale Checkliste",
+          },
+          {
+            type: "ul",
+            items: [
+              "Ein DSGVO-konformes Cookie-Banner (annehmen / ablehnen / anpassen).",
+              "Eine klare Datenschutzerklärung (welche Daten, wozu, wie lange).",
+              "Aktuelle Impressums- und Pflichtangaben.",
+              "Eine Rechtsgrundlage für jede Erhebung (Einwilligung, Vertrag, berechtigtes Interesse).",
+              "Eine Website über HTTPS und eine sichere Datenverarbeitung.",
+              "Eine einfache Möglichkeit, seine Rechte auszuüben (Auskunft, Löschung).",
+            ],
+          },
+          {
+            type: "callout",
+            title: "Der richtige Reflex",
+            text: "Erheben Sie nur, was Sie wirklich brauchen. Weniger Daten bedeutet weniger Risiken – und mehr Vertrauen.",
+          },
+          {
+            type: "h2",
+            id: "atout",
+            text: "Compliance: eher ein Vorteil als eine lästige Pflicht",
+          },
+          {
+            type: "p",
+            text: "Eine Website, die transparent mit dem Umgang von Daten ist, schafft Vertrauen. In Luxemburg, wo Datenschutz ernst genommen wird, ist die Einhaltung der DSGVO ein Zeichen von Professionalität, das zu Ihren Gunsten spricht.",
+          },
+          {
+            type: "quote",
+            text: "Die DSGVO ist kein Hindernis für die Conversion. Gut umgesetzt ist sie ein Vertrauensargument.",
+          },
+          {
+            type: "p",
+            text: "Bei vortx gestalten wir jede Website von Anfang an DSGVO-konform – Einwilligungs-Banner, Cookie-Verwaltung und Rechtsseiten inklusive. Zweifel an Ihrer aktuellen Website? Wir machen Ihnen eine kostenlose Bestandsaufnahme.",
+          },
+        ],
+      },
+      {
+        slug: "5-taches-pme-confier-a-l-ia",
+        category: "Automatisierung & KI",
+        title: "5 Aufgaben, die Ihr KMU schon heute der KI überlassen sollte",
+        excerpt:
+          "Die KI ersetzt Ihre Teams nicht – sie nimmt ihnen die lästigen Routinen ab. Hier sind 5 konkrete Aufgaben, die ein luxemburgisches KMU schon heute automatisieren kann, ohne Bürokratie-Monster.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "Das vortx-Team",
+        cover: "automation",
+        body: [
+          {
+            type: "p",
+            text: "Die KI beflügelt die Fantasie ebenso sehr, wie sie beunruhigt. Für ein KMU ist der richtige Ansatz pragmatisch: keine Revolution, sondern wiederkehrende Aufgaben, die man delegiert, um Zeit freizusetzen. Hier sind fünf konkrete Felder, die schon jetzt zugänglich sind.",
+          },
+          {
+            type: "h2",
+            id: "pas-remplacer",
+            text: "Die KI ist nicht da, um zu ersetzen, sondern um zu entlasten",
+          },
+          {
+            type: "p",
+            text: "Das Ziel ist nicht, Stellen abzuschaffen, sondern Ihren Teams das abzunehmen, was keinen Mehrwert bringt – damit sie sich auf Ihre Kunden und Ihr Kerngeschäft konzentrieren können.",
+          },
+          {
+            type: "h2",
+            id: "les-5",
+            text: "Die 5 Aufgaben, die Sie schon jetzt delegieren sollten",
+          },
+          { type: "h3", text: "1. Wiederkehrende Fragen beantworten" },
+          {
+            type: "p",
+            text: "Ein gut trainierter Chatbot beantwortet rund um die Uhr gängige Fragen (Öffnungszeiten, Leistungen, Angebote) und leitet den Besucher weiter, ohne jemanden zu binden.",
+          },
+          { type: "h3", text: "2. Leads qualifizieren und sortieren" },
+          {
+            type: "p",
+            text: "Die KI kann eingehende Anfragen bewerten und die heißesten an den richtigen Ansprechpartner weiterleiten – Ihr Vertrieb bearbeitet nur die besten Kontakte.",
+          },
+          { type: "h3", text: "3. Nachfassen und Nachverfolgen" },
+          {
+            type: "p",
+            text: "Automatische Nachfass-Mails, Terminerinnerungen, Follow-ups nach einem Angebot: lauter kleine, leicht vergessene Aufgaben, die automatisiert nie mehr unter den Tisch fallen.",
+          },
+          { type: "h3", text: "4. Inhalte erstellen und anpassen" },
+          {
+            type: "p",
+            text: "E-Mail-Entwürfe, Beschreibungen, mehrsprachige Varianten: Die KI beschleunigt die Produktion, Ihre Teams lesen gegen und geben frei. Mehr Volumen, weniger Aufwand.",
+          },
+          { type: "h3", text: "5. Ihre Tools synchronisieren" },
+          {
+            type: "p",
+            text: "Website, CRM, Rechnungsstellung, Kalender: Wir verbinden alles, damit die Daten ohne erneute Eingabe fließen. Schluss mit dem Copy-Paste zwischen Programmen.",
+          },
+          {
+            type: "callout",
+            title: "Die zu vermeidende Falle",
+            text: "Alles auf einmal automatisieren wollen. Man beginnt mit einer Aufgabe, misst den Gewinn und weitet dann aus. Nützliche Automatisierung ist schrittweise.",
+          },
+          {
+            type: "h2",
+            id: "par-ou-commencer",
+            text: "Wo Sie anfangen sollten",
+          },
+          {
+            type: "ul",
+            items: [
+              "Finden Sie die wiederkehrende Aufgabe, die Sie am meisten Zeit kostet.",
+              "Automatisieren Sie sie zuerst, messen Sie die gewonnene Zeit.",
+              "Behalten Sie immer einen Menschen in der Schleife, der freigibt.",
+              "Weiten Sie danach Schritt für Schritt aus, im Einklang mit der DSGVO.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "Die richtige Automatisierung sieht man nicht: Sie gibt Ihnen einfach Ihre Tage zurück.",
+          },
+          {
+            type: "callout",
+            title: "Zum Mitnehmen",
+            text: "Überlassen Sie der KI die wiederkehrenden Aufgaben ohne Mehrwert – Antworten, Qualifizierung, Nachfassen, Inhalte, Synchronisation – fangen Sie klein an und behalten Sie die Kontrolle.",
+          },
+          {
+            type: "p",
+            text: "Bei vortx setzen wir die KI dort ein, wo sie Ihnen wirklich Zeit spart. Wollen Sie wissen, was Sie automatisieren könnten? Wir sagen es Ihnen kostenlos.",
+          },
+        ],
+      },
     ] as {
       slug: string;
       category: string;

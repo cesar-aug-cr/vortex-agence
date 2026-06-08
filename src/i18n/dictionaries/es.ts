@@ -934,6 +934,360 @@ export const es = {
           },
         ],
       },
+      {
+        slug: "combien-coute-un-site-web-luxembourg-2026",
+        category: "Sitios web",
+        title:
+          "¿Cuánto cuesta un sitio web profesional en Luxemburgo en 2026?",
+        excerpt:
+          "La verdadera respuesta no es una cifra, sino un rango que depende de sus objetivos. Esto es lo que hace variar el precio de un sitio, y cómo invertir donde de verdad importa.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 7,
+        author: "El equipo vortx",
+        cover: "analytics",
+        body: [
+          {
+            type: "p",
+            text: "«¿Cuánto cuesta un sitio web?» Es la primera pregunta que nos hacen, y la más difícil de responder con una sola cifra. Un sitio es como una casa: entre un estudio y una villa, la palabra «casa» no dice nada del precio. Lo que cuenta es lo que usted quiere hacer con él.",
+          },
+          {
+            type: "h2",
+            id: "ca-depend",
+            text: "Por qué «depende» es la única respuesta honesta",
+          },
+          {
+            type: "p",
+            text: "Un precio anunciado sin conocer su proyecto es o demasiado alto (se infla para cubrirse) o decepcionante (se recorta lo esencial). El verdadero trabajo es definir el alcance justo: ni más, ni menos que lo que sirve a su objetivo.",
+          },
+          {
+            type: "h2",
+            id: "ce-qui-fait-le-prix",
+            text: "Lo que de verdad hace variar el precio",
+          },
+          {
+            type: "ul",
+            items: [
+              "El número de páginas y la complejidad de los contenidos.",
+              "A medida (Next.js) o WordPress, según su necesidad de flexibilidad y autonomía.",
+              "El nivel de diseño: plantilla adaptada o identidad 100 % a medida.",
+              "Las funcionalidades: formularios, reserva de citas, pago, área de cliente…",
+              "El multilingüe (FR/DE/EN) y la optimización SEO y GEO.",
+              "Las integraciones (CRM, herramientas de negocio) y la automatización.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "fourchettes",
+            text: "Algunas referencias para situarse",
+          },
+          {
+            type: "h3",
+            text: "Sitio escaparate o landing page",
+          },
+          {
+            type: "p",
+            text: "Para presentar su actividad y generar contactos, la inversión se mantiene contenida. Suele ser el mejor punto de partida: rápido de entregar, útil de inmediato y diseñado para convertir.",
+          },
+          {
+            type: "h3",
+            text: "Sitio a medida o plataforma",
+          },
+          {
+            type: "p",
+            text: "En cuanto hacen falta funcionalidades específicas, un diseño único, multilingüe avanzado o integraciones, el presupuesto sube — pero es también ahí donde el sitio se convierte en un verdadero activo que trabaja para usted.",
+          },
+          {
+            type: "callout",
+            title: "El buen reflejo",
+            text: "No pregunte solo «cuánto cuesta», sino «cuánto rinde». Un sitio de 2.000 € que no genera nada es más caro que un sitio que se amortiza con unos pocos contratos.",
+          },
+          {
+            type: "h2",
+            id: "investir-malin",
+            text: "Dónde invertir como prioridad",
+          },
+          {
+            type: "ul",
+            items: [
+              "El rendimiento y el móvil: un sitio lento ahuyenta antes incluso de ser leído.",
+              "El embudo de conversión: cada página debe empujar hacia una acción clara.",
+              "El SEO y GEO desde el principio: ser encontrado en Google y citado por las IA.",
+              "Un contenido honesto y preciso, anclado en su realidad.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "Un sitio no es un gasto puntual, es un comercial que trabaja 24/7. La pregunta es qué espera usted de él.",
+          },
+          {
+            type: "callout",
+            title: "Para recordar",
+            text: "El precio de un sitio depende de sus objetivos, no de una tarifa genérica. Defina el alcance adecuado, invierta en la conversión y el posicionamiento, y juzgue el coste a la luz de lo que el sitio le aporta.",
+          },
+          {
+            type: "p",
+            text: "En vortx, le proponemos un presupuesto preciso tras una llamada de descubrimiento gratuita — no un precio sacado de la chistera. Le decimos, sin rodeos, lo que de verdad necesita.",
+          },
+        ],
+      },
+      {
+        slug: "quest-ce-quun-bon-logo-identite-qui-dure",
+        category: "Branding",
+        title: "¿Qué es un buen logo? Los principios de una identidad que perdura",
+        excerpt:
+          "Un buen logo no es solo una imagen bonita: es la primera promesa de su marca. Estos son los principios que separan un logo memorable de uno olvidable.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "El equipo vortx",
+        cover: "branding",
+        body: [
+          {
+            type: "p",
+            text: "Antes de la primera palabra, su logo ya ha hablado. Es la primera impresión, la referencia que se recuerda, el rostro de su marca. Sin embargo, muchas empresas lo tratan como un detalle. Un buen logo es todo menos un detalle — y obedece a principios sencillos.",
+          },
+          {
+            type: "h2",
+            id: "pas-juste-joli",
+            text: "Un logo no es (solo) algo bonito",
+          },
+          {
+            type: "p",
+            text: "Un logo no tiene la misión de gustar a todo el mundo, sino de hacer su marca reconocible y digna de confianza. Debe funcionar igual de bien en un rótulo que en un icono de aplicación, en color como en blanco y negro.",
+          },
+          {
+            type: "h2",
+            id: "principes",
+            text: "Los 5 principios de un buen logo",
+          },
+          { type: "h3", text: "1. Simple" },
+          {
+            type: "p",
+            text: "Los logos más potentes suelen ser los más depurados. La simplicidad se memoriza, se reconoce de un vistazo y se adapta a todas partes sin deformarse.",
+          },
+          { type: "h3", text: "2. Memorable" },
+          {
+            type: "p",
+            text: "Un buen logo deja huella. Una forma, una idea, un detalle que engancha — lo bastante distintivo para que se recuerde tras haberlo visto una sola vez.",
+          },
+          { type: "h3", text: "3. Atemporal" },
+          {
+            type: "p",
+            text: "Las modas pasan. Un logo diseñado para durar evita los efectos de moda que envejecen mal, y sigue siendo pertinente diez años después.",
+          },
+          { type: "h3", text: "4. Versátil" },
+          {
+            type: "p",
+            text: "Del favicon de 16 píxeles al cartel publicitario, debe seguir siendo legible y coherente en todas partes. Por eso lo entregamos siempre en varios formatos.",
+          },
+          { type: "h3", text: "5. Pertinente" },
+          {
+            type: "p",
+            text: "El estilo debe encajar con su sector y su posicionamiento. Un logo no tiene que decirlo todo sobre usted — solo no decir lo contrario de lo que usted es.",
+          },
+          {
+            type: "callout",
+            title: "La trampa clásica",
+            text: "Querer que el logo «explique» todo lo que usted hace. Un buen logo identifica; es su marca, a lo largo del tiempo, la que cuenta el resto.",
+          },
+          {
+            type: "h2",
+            id: "au-dela",
+            text: "Más allá del logo: la identidad completa",
+          },
+          {
+            type: "p",
+            text: "Un logo por sí solo no basta. Cobra toda su fuerza dentro de una identidad coherente: colores, tipografías, reglas de uso. Es esa coherencia, aplicada en todas partes, la que construye la confianza y el reconocimiento.",
+          },
+          {
+            type: "quote",
+            text: "Un logo es la firma. La identidad es la escritura entera. Las dos deben decir lo mismo.",
+          },
+          {
+            type: "callout",
+            title: "Para recordar",
+            text: "Un buen logo es simple, memorable, atemporal, versátil y pertinente — y vive dentro de una identidad visual coherente, no aislado.",
+          },
+          {
+            type: "p",
+            text: "En vortx, diseñamos logos a medida y la identidad completa que los acompaña. ¿Quiere una marca que se recuerde? Hablemos de ello.",
+          },
+        ],
+      },
+      {
+        slug: "rgpd-cookies-site-web-luxembourg",
+        category: "Cumplimiento",
+        title:
+          "RGPD y cookies: el mínimo a respetar en su sitio web en Luxemburgo",
+        excerpt:
+          "Banner de cookies, consentimiento, avisos legales… El RGPD asusta, pero lo esencial se resume en unas pocas reglas claras. Este es el mínimo para un sitio luxemburgués tranquilo.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "El equipo vortx",
+        cover: "rgpd",
+        body: [
+          {
+            type: "p",
+            text: "El RGPD tiene fama de ser un quebradero de cabeza. En realidad, para un sitio escaparate o de generación de leads, lo esencial se resume en unas pocas reglas de sentido común. Aquí tiene lo necesario para estar en regla — y, sobre todo, en confianza con sus visitantes.",
+          },
+          {
+            type: "callout",
+            title: "Aclaración útil",
+            text: "Este artículo ofrece referencias prácticas, no asesoramiento jurídico. Para un caso concreto, haga validar sus páginas legales por un profesional del derecho.",
+          },
+          {
+            type: "h2",
+            id: "rgpd-cest-quoi",
+            text: "El RGPD en dos minutos",
+          },
+          {
+            type: "p",
+            text: "El Reglamento General de Protección de Datos regula la forma en que usted recopila y utiliza los datos personales (nombre, correo electrónico, dirección IP…). El principio: transparencia, consentimiento cuando hace falta, y respeto de los derechos de las personas.",
+          },
+          {
+            type: "h2",
+            id: "cookies",
+            text: "Cookies: consentimiento antes del depósito",
+          },
+          {
+            type: "ul",
+            items: [
+              "Las cookies no esenciales (medición de audiencia, publicidad) solo se depositan tras un acuerdo explícito.",
+              "El banner debe permitir aceptar, rechazar y personalizar — rechazar debe ser tan sencillo como aceptar.",
+              "Las cookies estrictamente necesarias para el funcionamiento del sitio no requieren consentimiento.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "checklist",
+            text: "La checklist mínima",
+          },
+          {
+            type: "ul",
+            items: [
+              "Un banner de cookies conforme (aceptar / rechazar / personalizar).",
+              "Una política de privacidad clara (qué datos, por qué, durante cuánto tiempo).",
+              "Unos avisos legales actualizados.",
+              "Una base legal para cada recogida (consentimiento, contrato, interés legítimo).",
+              "Un sitio en HTTPS y datos tratados de forma segura.",
+              "Un medio sencillo para ejercer sus derechos (acceso, supresión).",
+            ],
+          },
+          {
+            type: "callout",
+            title: "El buen reflejo",
+            text: "Recopile solo lo que de verdad necesita. Menos datos significa menos riesgos — y más confianza.",
+          },
+          {
+            type: "h2",
+            id: "atout",
+            text: "El cumplimiento, una ventaja más que una carga",
+          },
+          {
+            type: "p",
+            text: "Un sitio claro sobre el uso de los datos tranquiliza. En Luxemburgo, donde la privacidad se toma en serio, el respeto del RGPD es una señal de profesionalidad que juega a su favor.",
+          },
+          {
+            type: "quote",
+            text: "El RGPD no es un obstáculo para la conversión. Bien hecho, es un argumento de confianza.",
+          },
+          {
+            type: "p",
+            text: "En vortx, concebimos cada sitio respetando el RGPD desde el principio — banner de consentimiento, gestión de cookies y páginas legales incluidos. ¿Tiene dudas sobre su sitio actual? Le hacemos una revisión gratuita.",
+          },
+        ],
+      },
+      {
+        slug: "5-taches-pme-confier-a-l-ia",
+        category: "Automatización e IA",
+        title: "5 tareas que su pyme ya debería confiar a la IA",
+        excerpt:
+          "La IA no sustituye a sus equipos — les quita las tareas pesadas. Aquí tiene 5 tareas concretas que una pyme luxemburguesa puede automatizar desde hoy, sin montar un mecanismo enrevesado.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "El equipo vortx",
+        cover: "automation",
+        body: [
+          {
+            type: "p",
+            text: "La IA fascina tanto como inquieta. Para una pyme, el buen enfoque es pragmático: nada de revoluciones, sino tareas repetitivas que se delegan para liberar tiempo. Aquí tiene cinco frentes concretos, accesibles desde ahora mismo.",
+          },
+          {
+            type: "h2",
+            id: "pas-remplacer",
+            text: "La IA no está para reemplazar, sino para aliviar",
+          },
+          {
+            type: "p",
+            text: "El objetivo no es suprimir puestos, sino quitar a sus equipos lo que no aporta ningún valor — para que se concentren en sus clientes y en su negocio.",
+          },
+          {
+            type: "h2",
+            id: "les-5",
+            text: "Las 5 tareas a delegar desde ahora",
+          },
+          { type: "h3", text: "1. Responder a las preguntas repetitivas" },
+          {
+            type: "p",
+            text: "Un chatbot bien entrenado responde 24/7 a las preguntas habituales (horarios, servicios, presupuestos) y orienta al visitante, sin movilizar a nadie.",
+          },
+          { type: "h3", text: "2. Cualificar y filtrar los leads" },
+          {
+            type: "p",
+            text: "La IA puede puntuar las solicitudes entrantes y dirigir las más prometedoras al interlocutor adecuado — sus comerciales solo atienden los mejores contactos.",
+          },
+          { type: "h3", text: "3. Recordar y hacer seguimiento" },
+          {
+            type: "p",
+            text: "Recordatorios automáticos, avisos de citas, seguimientos tras un presupuesto: pequeñas tareas que se olvidan y que, automatizadas, ya no se quedan nunca en el aire.",
+          },
+          { type: "h3", text: "4. Producir y adaptar contenido" },
+          {
+            type: "p",
+            text: "Borradores de correos, descripciones, versiones multilingües: la IA acelera la producción, sus equipos revisan y validan. Más volumen, menos esfuerzo.",
+          },
+          { type: "h3", text: "5. Sincronizar sus herramientas" },
+          {
+            type: "p",
+            text: "Sitio, CRM, facturación, agenda: lo conectamos todo para que el dato circule sin reintroducirlo. Se acabó el copiar y pegar entre programas.",
+          },
+          {
+            type: "callout",
+            title: "La trampa a evitar",
+            text: "Querer automatizarlo todo de golpe. Se empieza por una tarea, se mide la ganancia, y luego se amplía. La automatización útil es progresiva.",
+          },
+          {
+            type: "h2",
+            id: "par-ou-commencer",
+            text: "Por dónde empezar",
+          },
+          {
+            type: "ul",
+            items: [
+              "Identifique la tarea repetitiva que más tiempo le cuesta.",
+              "Automatícela primero, mida el tiempo ganado.",
+              "Mantenga siempre a una persona en el bucle para validar.",
+              "Amplíe después, paso a paso, respetando el RGPD.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "La buena automatización no se nota: simplemente le devuelve sus jornadas.",
+          },
+          {
+            type: "callout",
+            title: "Para recordar",
+            text: "Confíe a la IA las tareas repetitivas sin valor añadido — respuestas, cualificación, recordatorios, contenido, sincronización — empezando poco a poco y manteniendo el control.",
+          },
+          {
+            type: "p",
+            text: "En vortx, ponemos la IA a trabajar allí donde de verdad le hace ganar tiempo. ¿Quiere saber qué podría automatizar? Se lo decimos gratis.",
+          },
+        ],
+      },
     ] as {
       slug: string;
       category: string;

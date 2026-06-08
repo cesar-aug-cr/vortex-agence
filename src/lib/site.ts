@@ -76,4 +76,8 @@ export const newsSlugs = [
   "geo-seo-luxembourg-etre-cite-par-les-ia",
   "google-ads-ou-seo-ou-investir-budget-marketing",
   "tunnel-de-conversion-transformer-visiteurs-en-clients",
+  "combien-coute-un-site-web-luxembourg-2026",
+  "quest-ce-quun-bon-logo-identite-qui-dure",
+  "rgpd-cookies-site-web-luxembourg",
+  "5-taches-pme-confier-a-l-ia",
 ] as const;

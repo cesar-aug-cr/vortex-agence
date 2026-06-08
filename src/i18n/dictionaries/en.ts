@@ -940,6 +940,360 @@ export const en = {
           },
         ],
       },
+      {
+        slug: "combien-coute-un-site-web-luxembourg-2026",
+        category: "Websites",
+        title:
+          "How much does a professional website cost in Luxembourg in 2026?",
+        excerpt:
+          "The real answer isn't a single figure, but a range that depends on your goals. Here's what makes the price of a website vary, and how to invest where it truly counts.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 7,
+        author: "The vortx team",
+        cover: "analytics",
+        body: [
+          {
+            type: "p",
+            text: "\"How much does a website cost?\" It's the first question we get asked, and the hardest to answer with a single number. A website is like a house: between a studio and a villa, the word \"house\" tells you nothing about the price. What matters is what you want to do with it.",
+          },
+          {
+            type: "h2",
+            id: "ca-depend",
+            text: "Why \"it depends\" is the only honest answer",
+          },
+          {
+            type: "p",
+            text: "A price quoted without knowing your project is either too high (padded to cover ourselves) or disappointing (cutting corners on the essentials). The real work is defining the right scope: no more, no less than what serves your goal.",
+          },
+          {
+            type: "h2",
+            id: "ce-qui-fait-le-prix",
+            text: "What really makes the price vary",
+          },
+          {
+            type: "ul",
+            items: [
+              "The number of pages and the complexity of the content.",
+              "Custom-built (Next.js) or WordPress, depending on your need for flexibility and autonomy.",
+              "The level of design: an adapted template or a 100% bespoke identity.",
+              "The features: forms, appointment booking, payment, client area…",
+              "Multilingual support (FR/DE/EN) and SEO & GEO optimisation.",
+              "Integrations (CRM, business tools) and automation.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "fourchettes",
+            text: "Some benchmarks to find your way",
+          },
+          {
+            type: "h3",
+            text: "Showcase site or landing page",
+          },
+          {
+            type: "p",
+            text: "To present your business and generate contacts, the investment stays modest. It's often the best starting point: quick to deliver, immediately useful, and built to convert.",
+          },
+          {
+            type: "h3",
+            text: "Custom-built site or platform",
+          },
+          {
+            type: "p",
+            text: "As soon as you need specific features, a unique design, advanced multilingual support or integrations, the budget climbs — but that's also where the site becomes a true asset working for you.",
+          },
+          {
+            type: "callout",
+            title: "The right instinct",
+            text: "Don't just ask \"how much does it cost\", but \"how much does it bring in\". A €2,000 site that generates nothing is more expensive than one that pays for itself in a few contracts.",
+          },
+          {
+            type: "h2",
+            id: "investir-malin",
+            text: "Where to invest first",
+          },
+          {
+            type: "ul",
+            items: [
+              "Performance and mobile: a slow site drives people away before they've even read a word.",
+              "The conversion funnel: every page should push towards a clear action.",
+              "SEO & GEO from the start: being found on Google and cited by AI.",
+              "Honest, precise content, rooted in your reality.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "A website isn't a one-off expense, it's a salesperson working 24/7. The question is what you expect from it.",
+          },
+          {
+            type: "callout",
+            title: "Key takeaway",
+            text: "The price of a website depends on your goals, not a generic rate. Define the right scope, invest in conversion and search visibility, and judge the cost against what the site brings you.",
+          },
+          {
+            type: "p",
+            text: "At vortx, we give you a precise quote after a free discovery call — not a price pulled out of thin air. We tell you, straight, what you really need.",
+          },
+        ],
+      },
+      {
+        slug: "quest-ce-quun-bon-logo-identite-qui-dure",
+        category: "Branding",
+        title: "What makes a good logo? The principles of an identity that lasts",
+        excerpt:
+          "A good logo isn't just a pretty picture: it's your brand's first promise. Here are the principles that separate a memorable logo from a forgettable one.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "The vortx team",
+        cover: "branding",
+        body: [
+          {
+            type: "p",
+            text: "Before the first word, your logo has already spoken. It's the first impression, the marker people remember, the face of your brand. Yet many businesses treat it as a detail. A good logo is anything but a detail — and it follows a few simple principles.",
+          },
+          {
+            type: "h2",
+            id: "pas-juste-joli",
+            text: "A logo isn't (just) about looking pretty",
+          },
+          {
+            type: "p",
+            text: "A logo's job isn't to please everyone, but to make your brand recognisable and trustworthy. It has to work just as well on a storefront sign as on an app icon, in colour as in black and white.",
+          },
+          {
+            type: "h2",
+            id: "principes",
+            text: "The 5 principles of a good logo",
+          },
+          { type: "h3", text: "1. Simple" },
+          {
+            type: "p",
+            text: "The strongest logos are often the cleanest. Simplicity is easy to remember, recognised at a glance, and works everywhere without distorting.",
+          },
+          { type: "h3", text: "2. Memorable" },
+          {
+            type: "p",
+            text: "A good logo leaves a mark. A shape, an idea, a detail that sticks — distinctive enough to be remembered after seeing it just once.",
+          },
+          { type: "h3", text: "3. Timeless" },
+          {
+            type: "p",
+            text: "Trends come and go. A logo built to last avoids fashionable effects that age badly, and stays relevant ten years later.",
+          },
+          { type: "h3", text: "4. Versatile" },
+          {
+            type: "p",
+            text: "From a 16-pixel favicon to a billboard, it has to stay legible and consistent everywhere. That's why we always deliver it in several formats.",
+          },
+          { type: "h3", text: "5. Relevant" },
+          {
+            type: "p",
+            text: "The style should fit your sector and your positioning. A logo doesn't have to say everything about you — just to avoid saying the opposite of what you are.",
+          },
+          {
+            type: "callout",
+            title: "The classic trap",
+            text: "Wanting the logo to \"explain\" everything you do. A good logo identifies; it's your brand, over time, that tells the rest.",
+          },
+          {
+            type: "h2",
+            id: "au-dela",
+            text: "Beyond the logo: the complete identity",
+          },
+          {
+            type: "p",
+            text: "A logo alone isn't enough. It reaches its full strength within a coherent identity: colours, typefaces, usage rules. It's that consistency, applied everywhere, that builds trust and recognition.",
+          },
+          {
+            type: "quote",
+            text: "A logo is the signature. The identity is the whole handwriting. Both have to say the same thing.",
+          },
+          {
+            type: "callout",
+            title: "Key takeaway",
+            text: "A good logo is simple, memorable, timeless, versatile and relevant — and it lives within a coherent visual identity, not on its own.",
+          },
+          {
+            type: "p",
+            text: "At vortx, we design bespoke logos and the complete identity that goes with them. Want a brand people remember? Let's talk.",
+          },
+        ],
+      },
+      {
+        slug: "rgpd-cookies-site-web-luxembourg",
+        category: "Compliance",
+        title:
+          "GDPR & cookies: the minimum to respect on your Luxembourg website",
+        excerpt:
+          "Cookie banner, consent, legal notices… GDPR can feel daunting, but the essentials boil down to a few clear rules. Here's the minimum for a worry-free Luxembourg website.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "The vortx team",
+        cover: "rgpd",
+        body: [
+          {
+            type: "p",
+            text: "GDPR has a reputation for being a headache. In reality, for a showcase or lead-generation site, the essentials come down to a few common-sense rules. Here's what you need to be compliant — and, above all, to earn your visitors' trust.",
+          },
+          {
+            type: "callout",
+            title: "A useful note",
+            text: "This article gives practical guidance, not legal advice. For a specific case, have your legal pages validated by a legal professional.",
+          },
+          {
+            type: "h2",
+            id: "rgpd-cest-quoi",
+            text: "GDPR in two minutes",
+          },
+          {
+            type: "p",
+            text: "The General Data Protection Regulation governs how you collect and use personal data (name, email, IP address…). The principle: transparency, consent when required, and respect for people's rights.",
+          },
+          {
+            type: "h2",
+            id: "cookies",
+            text: "Cookies: consent before placement",
+          },
+          {
+            type: "ul",
+            items: [
+              "Non-essential cookies (analytics, advertising) are only placed after explicit agreement.",
+              "The banner must allow visitors to accept, refuse and customise — refusing must be as easy as accepting.",
+              "Cookies strictly necessary for the site to function don't require consent.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "checklist",
+            text: "The minimal checklist",
+          },
+          {
+            type: "ul",
+            items: [
+              "A compliant cookie banner (accept / refuse / customise).",
+              "A clear privacy policy (what data, why, for how long).",
+              "Up-to-date legal notices.",
+              "A legal basis for each collection (consent, contract, legitimate interest).",
+              "A site on HTTPS and data processed securely.",
+              "A simple way to exercise one's rights (access, deletion).",
+            ],
+          },
+          {
+            type: "callout",
+            title: "The right instinct",
+            text: "Only collect what you genuinely need. Less data means less risk — and more trust.",
+          },
+          {
+            type: "h2",
+            id: "atout",
+            text: "Compliance, an asset more than a chore",
+          },
+          {
+            type: "p",
+            text: "A site that's clear about how it uses data reassures people. In Luxembourg, where privacy is taken seriously, respecting GDPR is a mark of professionalism that works in your favour.",
+          },
+          {
+            type: "quote",
+            text: "GDPR isn't an obstacle to conversion. Done well, it's an argument for trust.",
+          },
+          {
+            type: "p",
+            text: "At vortx, we design every site with GDPR in mind from the start — consent banner, cookie management and legal pages included. Unsure about your current site? We'll give you a free review.",
+          },
+        ],
+      },
+      {
+        slug: "5-taches-pme-confier-a-l-ia",
+        category: "Automation & AI",
+        title: "5 tasks your SME should already be handing over to AI",
+        excerpt:
+          "AI doesn't replace your teams — it takes the drudgery off their hands. Here are 5 concrete tasks a Luxembourg SME can automate today, without an overengineered setup.",
+        date: "2026-06-08",
+        updated: "2026-06-08",
+        readingMinutes: 6,
+        author: "The vortx team",
+        cover: "automation",
+        body: [
+          {
+            type: "p",
+            text: "AI sparks as much fascination as worry. For an SME, the right approach is pragmatic: no revolution, just repetitive tasks you delegate to free up time. Here are five concrete projects, within reach right now.",
+          },
+          {
+            type: "h2",
+            id: "pas-remplacer",
+            text: "AI isn't here to replace, but to relieve",
+          },
+          {
+            type: "p",
+            text: "The goal isn't to cut jobs, but to take off your teams' shoulders what adds no value — so they can focus on your clients and your craft.",
+          },
+          {
+            type: "h2",
+            id: "les-5",
+            text: "The 5 tasks to delegate right now",
+          },
+          { type: "h3", text: "1. Answering repetitive questions" },
+          {
+            type: "p",
+            text: "A well-trained chatbot answers common questions 24/7 (opening hours, services, quotes) and guides the visitor, without tying anyone up.",
+          },
+          { type: "h3", text: "2. Qualifying and sorting leads" },
+          {
+            type: "p",
+            text: "AI can score incoming enquiries and route the hottest ones to the right person — your sales team only handles the best contacts.",
+          },
+          { type: "h3", text: "3. Following up and tracking" },
+          {
+            type: "p",
+            text: "Automatic follow-ups, appointment reminders, post-quote check-ins: all those small forgotten tasks that, once automated, never fall through the cracks again.",
+          },
+          { type: "h3", text: "4. Producing and adapting content" },
+          {
+            type: "p",
+            text: "Email drafts, descriptions, multilingual variants: AI speeds up production, your teams review and approve. More volume, less effort.",
+          },
+          { type: "h3", text: "5. Syncing your tools" },
+          {
+            type: "p",
+            text: "Website, CRM, invoicing, calendar: we connect it all so data flows without re-entry. No more copy-pasting between software.",
+          },
+          {
+            type: "callout",
+            title: "The trap to avoid",
+            text: "Trying to automate everything at once. Start with one task, measure the gain, then expand. Useful automation is gradual.",
+          },
+          {
+            type: "h2",
+            id: "par-ou-commencer",
+            text: "Where to start",
+          },
+          {
+            type: "ul",
+            items: [
+              "Spot the repetitive task that costs you the most time.",
+              "Automate it first, measure the time saved.",
+              "Always keep a human in the loop to approve.",
+              "Then expand, step by step, in line with GDPR.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "Good automation goes unnoticed: it simply gives you your days back.",
+          },
+          {
+            type: "callout",
+            title: "Key takeaway",
+            text: "Hand over to AI the repetitive, low-value tasks — answers, qualification, follow-ups, content, syncing — starting small and keeping control.",
+          },
+          {
+            type: "p",
+            text: "At vortx, we put AI to work where it genuinely saves you time. Want to know what you could automate? We'll tell you for free.",
+          },
+        ],
+      },
     ] as {
       slug: string;
       category: string;
