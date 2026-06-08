@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type { Dictionary } from "@/i18n/getDictionary";
 
 type A11yLabels = Dictionary["a11y"];
@@ -43,7 +44,6 @@ const KEY = "vortx-a11y";
 const MIN = 0.9;
 const MAX = 1.6;
 
-/** boolean setting → class toggled on <html> (filters & font size handled separately). */
 const CLASS_MAP: Partial<Record<keyof Settings, string>> = {
   readable: "a11y-readable",
   spacing: "a11y-spacing",
@@ -88,10 +88,10 @@ function sameSettings(a: Settings, b: Settings): boolean {
 }
 
 /**
- * Accessibility widget v2 (UserWay / Eye-Able style): a header button opening a
- * panel with one-click profiles + grouped reading-comfort controls. Settings
- * persist in localStorage and are applied pre-paint by A11yScript / ThemeSync.
- * Panel is a centered modal on mobile, a dropdown on desktop.
+ * Accessibility widget v2 (UserWay / Eye-Able style). The launcher lives in the
+ * header; the panel + overlays render through a portal on document.body so the
+ * header's backdrop-filter can't trap their `position: fixed` (which otherwise
+ * pinned the mobile modal to the top once the header turned solid on scroll).
  */
 export function AccessibilityWidget({
   labels,
@@ -101,6 +101,12 @@ export function AccessibilityWidget({
   onDark?: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [pos, setPos] = useState<{ mobile: boolean; top: number; right: number }>({
+    mobile: false,
+    top: 80,
+    right: 16,
+  });
   const [s, setS] = useState<Settings>(DEFAULTS);
   const loaded = useRef(false);
   const launcherRef = useRef<HTMLButtonElement>(null);
@@ -108,6 +114,8 @@ export function AccessibilityWidget({
   const guideRef = useRef<HTMLDivElement>(null);
   const maskTopRef = useRef<HTMLDivElement>(null);
   const maskBotRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     try {
@@ -129,6 +137,20 @@ export function AccessibilityWidget({
     }
   }, [s]);
 
+  // position the panel under the launcher (desktop) / centre it (mobile)
+  useEffect(() => {
+    if (!open) return;
+    const compute = () => {
+      const r = launcherRef.current?.getBoundingClientRect();
+      const mobile = window.innerWidth < 640;
+      if (!r) return setPos({ mobile, top: 80, right: 16 });
+      setPos({ mobile, top: r.bottom + 8, right: Math.max(8, window.innerWidth - r.right) });
+    };
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, [open]);
+
   // reading guide / mask follow the pointer
   useEffect(() => {
     if (!s.readingGuide && !s.readingMask) return;
@@ -143,17 +165,13 @@ export function AccessibilityWidget({
     return () => window.removeEventListener("pointermove", onMove);
   }, [s.readingGuide, s.readingMask]);
 
-  // focus management: focus panel on open, restore focus on close, Esc closes
+  // focus management + Esc + focus trap
   useEffect(() => {
     if (!open) return;
     const node = panelRef.current;
-    const first = node?.querySelector<HTMLElement>("button, a, input");
-    first?.focus();
+    node?.querySelector<HTMLElement>("button, a, input")?.focus();
     const onKey = (ev: KeyboardEvent) => {
-      if (ev.key === "Escape") {
-        setOpen(false);
-        return;
-      }
+      if (ev.key === "Escape") return setOpen(false);
       if (ev.key === "Tab" && node) {
         const f = Array.from(
           node.querySelectorAll<HTMLElement>("button, a[href], input, [tabindex]:not([tabindex='-1'])")
@@ -192,7 +210,7 @@ export function AccessibilityWidget({
 
   const active = countActive(s);
 
-  const profiles: { key: string; label: string }[] = [
+  const profiles = [
     { key: "visual", label: labels.profileVisual },
     { key: "dyslexia", label: labels.profileDyslexia },
     { key: "reading", label: labels.profileReading },
@@ -223,9 +241,7 @@ export function AccessibilityWidget({
       aria-hidden
       className={`relative h-5 w-9 shrink-0 rounded-full transition-colors ${on ? "bg-accent" : "bg-border-strong"}`}
     >
-      <span
-        className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${on ? "left-[1.125rem]" : "left-0.5"}`}
-      />
+      <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${on ? "left-[1.125rem]" : "left-0.5"}`} />
     </span>
   );
 
@@ -244,12 +260,10 @@ export function AccessibilityWidget({
   );
 
   const GroupTitle = ({ children }: { children: string }) => (
-    <p className="mt-5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-text-muted">
-      {children}
-    </p>
+    <p className="mt-5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-text-muted">{children}</p>
   );
 
-  return (
+  const portal = (
     <>
       {/* overlays */}
       {s.readingGuide && (
@@ -267,64 +281,44 @@ export function AccessibilityWidget({
         </>
       )}
 
-      <div className="relative">
-        <button
-          ref={launcherRef}
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-haspopup="dialog"
-          aria-expanded={open}
-          aria-label={labels.button}
-          title={labels.button}
-          className={`relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
-            onDark ? "border-white/30 text-white" : "border-border-strong text-text"
-          }`}
-        >
-          <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <circle cx="12" cy="3.8" r="1.6" fill="currentColor" stroke="none" />
-            <path d="M4.5 7.5c2.5 1 5 1.5 7.5 1.5s5-.5 7.5-1.5" />
-            <path d="M12 9v5m0 0-3 6m3-6 3 6" />
-          </svg>
-          {active > 0 && (
-            <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 font-mono text-[0.6rem] font-bold text-accent-ink">
-              {active}
-            </span>
-          )}
-        </button>
+      {open && (
+        <>
+          <button
+            type="button"
+            aria-hidden
+            tabIndex={-1}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-[64] cursor-default bg-black/40 sm:bg-transparent"
+          />
+          <div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={labels.title}
+            style={pos.mobile ? undefined : { top: pos.top, right: pos.right }}
+            className={`fixed z-[65] flex max-h-[85vh] w-[min(22rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)] ${
+              pos.mobile ? "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" : ""
+            }`}
+          >
+            {/* pinned header */}
+            <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
+              <h2 className="font-mono text-sm font-semibold uppercase tracking-wide text-accent">
+                {labels.title}
+              </h2>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label={labels.close}
+                className="text-text-muted transition-colors hover:text-text"
+              >
+                <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
+                  <path d="M6 6l12 12M18 6 6 18" />
+                </svg>
+              </button>
+            </div>
 
-        {open && (
-          <>
-            <button
-              type="button"
-              aria-hidden
-              tabIndex={-1}
-              onClick={() => setOpen(false)}
-              className="fixed inset-0 z-40 cursor-default bg-black/40 sm:bg-transparent"
-            />
-            <div
-              ref={panelRef}
-              role="dialog"
-              aria-modal="true"
-              aria-label={labels.title}
-              className="fixed left-1/2 top-1/2 z-50 max-h-[82vh] w-[min(22rem,calc(100vw-2rem))] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border border-border bg-bg-card p-5 shadow-[var(--shadow-lg)] sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-2 sm:max-h-[78vh] sm:translate-x-0 sm:translate-y-0"
-            >
-              <div className="flex items-center justify-between">
-                <h2 className="font-mono text-sm font-semibold uppercase tracking-wide text-accent">
-                  {labels.title}
-                </h2>
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label={labels.close}
-                  className="text-text-muted transition-colors hover:text-text"
-                >
-                  <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
-                    <path d="M6 6l12 12M18 6 6 18" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* profiles */}
+            {/* scrollable body */}
+            <div className="grow overflow-y-auto px-5 pb-5">
               <GroupTitle>{labels.profilesTitle}</GroupTitle>
               <div className="mt-2 grid grid-cols-2 gap-2">
                 {profiles.map((p) => (
@@ -344,7 +338,6 @@ export function AccessibilityWidget({
                 ))}
               </div>
 
-              {/* text */}
               <GroupTitle>{labels.textGroup}</GroupTitle>
               <div className="mt-2 flex items-center gap-2">
                 <button
@@ -375,7 +368,6 @@ export function AccessibilityWidget({
                 ))}
               </div>
 
-              {/* view */}
               <GroupTitle>{labels.viewGroup}</GroupTitle>
               <div className="mt-2 grid gap-2">
                 {viewToggles.map((t) => (
@@ -383,25 +375,57 @@ export function AccessibilityWidget({
                 ))}
               </div>
 
-              {/* comfort */}
               <GroupTitle>{labels.comfortGroup}</GroupTitle>
               <div className="mt-2 grid gap-2">
                 {comfortToggles.map((t) => (
                   <ToggleRow key={t.key} k={t.key} label={t.label} />
                 ))}
               </div>
+            </div>
 
+            {/* pinned footer */}
+            <div className="shrink-0 border-t border-border p-4">
               <button
                 type="button"
                 onClick={() => setS(DEFAULTS)}
-                className="mt-5 w-full rounded-lg border border-border py-2.5 text-sm font-medium text-text-dim transition-colors hover:border-accent hover:text-accent"
+                className="w-full rounded-lg border border-border py-2.5 text-sm font-medium text-text-dim transition-colors hover:border-accent hover:text-accent"
               >
                 {labels.reset}
               </button>
             </div>
-          </>
+          </div>
+        </>
+      )}
+    </>
+  );
+
+  return (
+    <>
+      <button
+        ref={launcherRef}
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        aria-label={labels.button}
+        title={labels.button}
+        className={`relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
+          onDark ? "border-white/30 text-white" : "border-border-strong text-text"
+        }`}
+      >
+        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <circle cx="12" cy="3.8" r="1.6" fill="currentColor" stroke="none" />
+          <path d="M4.5 7.5c2.5 1 5 1.5 7.5 1.5s5-.5 7.5-1.5" />
+          <path d="M12 9v5m0 0-3 6m3-6 3 6" />
+        </svg>
+        {active > 0 && (
+          <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 font-mono text-[0.6rem] font-bold text-accent-ink">
+            {active}
+          </span>
         )}
-      </div>
+      </button>
+
+      {mounted && createPortal(portal, document.body)}
     </>
   );
 }
