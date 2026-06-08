@@ -34,6 +34,7 @@ export async function POST(req: Request) {
     phone: String(data.phone ?? "").trim(),
     company: String(data.company ?? "").trim(),
     interest: String(data.interest ?? "").trim(),
+    consent: String(data.consent ?? "").trim(),
     message,
     lang: String(data.lang ?? "fr"),
   };
@@ -59,7 +60,8 @@ export async function POST(req: Request) {
             `Email: ${lead.email}`,
             `Téléphone: ${lead.phone || "—"}`,
             `Entreprise: ${lead.company || "—"}`,
-            `Service: ${lead.interest || "—"}`,
+            `Services: ${lead.interest || "—"}`,
+            `Consentement données: ${lead.consent || "—"}`,
             "",
             lead.message,
           ].join("\n"),

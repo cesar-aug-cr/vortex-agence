@@ -415,6 +415,21 @@ export const es = {
       message: "Su mensaje",
       submit: "Enviar mi solicitud",
       success: "¡Gracias! Le responderemos muy pronto.",
+      step: "Paso",
+      next: "Siguiente",
+      back: "Atrás",
+      stepServices: "Sus necesidades",
+      stepDetails: "Sus datos",
+      stepMessage: "Su mensaje",
+      servicesLabel: "¿Qué servicios le interesan?",
+      servicesHint: "Seleccione uno o varios servicios.",
+      consentBefore:
+        "Al marcar esta casilla, confirmo que he tomado conocimiento de cómo se tratan y conservan mis datos personales, tal como se describe en la ",
+      consentLink: "política de privacidad",
+      consentAfter: ".",
+      consentRequired: "Por favor, confirme este punto para continuar.",
+      error:
+        "Se ha producido un error. Vuelva a intentarlo o escríbanos directamente por correo.",
     },
   },
 

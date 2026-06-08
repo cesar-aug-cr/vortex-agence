@@ -421,6 +421,21 @@ export const en = {
       message: "Your message",
       submit: "Send my request",
       success: "Thank you! We'll get back to you very soon.",
+      step: "Step",
+      next: "Next",
+      back: "Back",
+      stepServices: "Your needs",
+      stepDetails: "Your details",
+      stepMessage: "Your message",
+      servicesLabel: "Which services are you interested in?",
+      servicesHint: "Select one or more services.",
+      consentBefore:
+        "By ticking this box, I acknowledge that I have read how my personal data is processed and stored, as described in the ",
+      consentLink: "privacy policy",
+      consentAfter: ".",
+      consentRequired: "Please confirm this to continue.",
+      error:
+        "Something went wrong. Please try again or email us directly.",
     },
   },
 

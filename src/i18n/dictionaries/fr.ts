@@ -54,7 +54,7 @@ export const fr = {
     approach: "Approche",
     work: "Réalisations",
     about: "Agence",
-    news: "Les news",
+    news: "News",
     glossary: "Glossaire",
     faq: "FAQ",
     contact: "Contact",
@@ -438,6 +438,21 @@ export const fr = {
       message: "Votre message",
       submit: "Envoyer ma demande",
       success: "Merci ! Nous revenons vers vous très vite.",
+      step: "Étape",
+      next: "Suivant",
+      back: "Retour",
+      stepServices: "Vos besoins",
+      stepDetails: "Vos coordonnées",
+      stepMessage: "Votre message",
+      servicesLabel: "Quels services vous intéressent ?",
+      servicesHint: "Sélectionnez un ou plusieurs services.",
+      consentBefore:
+        "En cochant cette case, je reconnais avoir pris connaissance de la façon dont mes données personnelles sont traitées et conservées, décrite dans la ",
+      consentLink: "politique de confidentialité",
+      consentAfter: ".",
+      consentRequired: "Merci de confirmer ce point pour continuer.",
+      error:
+        "Une erreur est survenue. Réessayez ou écrivez-nous directement par e-mail.",
     },
   },
 
@@ -463,7 +478,7 @@ export const fr = {
           { label: "À propos", href: "/agence" },
           { label: "Notre méthode", href: "/approche" },
           { label: "Réalisations", href: "/realisations" },
-          { label: "Les news", href: "/news" },
+          { label: "News", href: "/news" },
           { label: "Glossaire", href: "/glossaire" },
           { label: "FAQ", href: "/faq" },
           { label: "Contact", href: "/contact" },
@@ -579,7 +594,7 @@ export const fr = {
 
   // ---- News / blog ----
   news: {
-    eyebrow: "Les news",
+    eyebrow: "News",
     title: "Idées, tendances et coulisses du marketing digital.",
     lead: "Nos analyses sur le SEO, le GEO, la conversion et le web au Luxembourg. Du concret, pas du vent.",
     homeTitle: "Dernières news",
@@ -1475,7 +1490,7 @@ export const fr = {
       description: "Utilisation des cookies et traceurs sur le site vortx.",
     },
     news: {
-      title: "Les news | Marketing, SEO & GEO — vortx Luxembourg",
+      title: "News | Marketing, SEO & GEO — vortx Luxembourg",
       description:
         "Analyses et conseils de vortx sur le SEO, le GEO, la conversion et le web au Luxembourg. Du concret pour faire croître votre entreprise.",
     },

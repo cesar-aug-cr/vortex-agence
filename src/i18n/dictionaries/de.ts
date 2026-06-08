@@ -421,6 +421,21 @@ export const de = {
       message: "Ihre Nachricht",
       submit: "Anfrage senden",
       success: "Danke! Wir melden uns sehr bald bei Ihnen.",
+      step: "Schritt",
+      next: "Weiter",
+      back: "Zurück",
+      stepServices: "Ihr Bedarf",
+      stepDetails: "Ihre Kontaktdaten",
+      stepMessage: "Ihre Nachricht",
+      servicesLabel: "Welche Leistungen interessieren Sie?",
+      servicesHint: "Wählen Sie eine oder mehrere Leistungen.",
+      consentBefore:
+        "Mit dem Anklicken dieses Kästchens bestätige ich, dass ich zur Kenntnis genommen habe, wie meine personenbezogenen Daten verarbeitet und gespeichert werden, wie in der ",
+      consentLink: "Datenschutzerklärung",
+      consentAfter: " beschrieben.",
+      consentRequired: "Bitte bestätigen Sie dies, um fortzufahren.",
+      error:
+        "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt eine E-Mail.",
     },
   },
 
