@@ -6,11 +6,20 @@ type TocItem = { id: string; text: string };
 
 /**
  * Article table of contents.
- * - Mobile: a sticky, collapsible bar pinned just under the header (top-20) so
- *   readers can jump between sections from anywhere in the article.
- * - Desktop: a plain inline list (the sticky/toggle behaviour is mobile-only).
+ * - `variant="mobile"`: a sticky, collapsible bar pinned under the header so
+ *   readers can jump between sections from anywhere (hidden on desktop).
+ * - `variant="desktop"`: a plain list meant to sit in a sticky left sidebar
+ *   (hidden on mobile).
  */
-export function ArticleToc({ items, title }: { items: TocItem[]; title: string }) {
+export function ArticleToc({
+  items,
+  title,
+  variant = "mobile",
+}: {
+  items: TocItem[];
+  title: string;
+  variant?: "mobile" | "desktop";
+}) {
   const [open, setOpen] = useState(false);
 
   if (items.length < 2) return null;
@@ -25,69 +34,71 @@ export function ArticleToc({ items, title }: { items: TocItem[]; title: string }
     setOpen(false);
   };
 
-  return (
-    <>
-      {/* Mobile: sticky collapsible bar under the header */}
-      <nav className="sticky top-20 z-30 -mx-4 mb-8 border-y border-border bg-bg/90 backdrop-blur-md lg:hidden">
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
-        >
-          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-accent">
-            <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
-              <path d="M4 6h16M4 12h12M4 18h8" />
-            </svg>
-            {title}
-          </span>
-          <svg
-            width={18}
-            height={18}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            aria-hidden
-            className={`text-text-muted transition-transform ${open ? "rotate-180" : ""}`}
-          >
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </button>
-        {open && (
-          <ol className="grid gap-1 px-4 pb-4">
-            {items.map((h, i) => (
-              <li key={h.id}>
-                <a
-                  href={`#${h.id}`}
-                  onClick={(e) => go(e, h.id)}
-                  className="block rounded-lg px-2 py-2 text-sm text-text-dim transition-colors hover:bg-accent-soft hover:text-accent"
-                >
-                  {i + 1}. {h.text}
-                </a>
-              </li>
-            ))}
-          </ol>
-        )}
-      </nav>
-
-      {/* Desktop: plain inline list */}
-      <nav className="mt-10 hidden rounded-2xl border border-border bg-bg-card p-6 lg:block">
+  if (variant === "desktop") {
+    return (
+      <nav className="hidden rounded-2xl border border-border bg-bg-card p-5 lg:block">
         <p className="font-mono text-xs uppercase tracking-wide text-text-muted">{title}</p>
         <ol className="mt-3 grid gap-2">
           {items.map((h, i) => (
             <li key={h.id}>
               <a
                 href={`#${h.id}`}
-                className="text-sm text-text-dim transition-colors hover:text-accent"
+                onClick={(e) => go(e, h.id)}
+                className="block text-sm leading-snug text-text-dim transition-colors hover:text-accent"
+              >
+                <span className="text-text-muted">{i + 1}.</span> {h.text}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    );
+  }
+
+  // mobile — sticky collapsible bar under the header
+  return (
+    <nav className="sticky top-20 z-30 -mx-4 mb-8 border-y border-border bg-bg/90 backdrop-blur-md lg:hidden">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
+      >
+        <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-accent">
+          <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
+            <path d="M4 6h16M4 12h12M4 18h8" />
+          </svg>
+          {title}
+        </span>
+        <svg
+          width={18}
+          height={18}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          aria-hidden
+          className={`text-text-muted transition-transform ${open ? "rotate-180" : ""}`}
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
+      {open && (
+        <ol className="grid gap-1 px-4 pb-4">
+          {items.map((h, i) => (
+            <li key={h.id}>
+              <a
+                href={`#${h.id}`}
+                onClick={(e) => go(e, h.id)}
+                className="block rounded-lg px-2 py-2 text-sm text-text-dim transition-colors hover:bg-accent-soft hover:text-accent"
               >
                 {i + 1}. {h.text}
               </a>
             </li>
           ))}
         </ol>
-      </nav>
-    </>
+      )}
+    </nav>
   );
 }

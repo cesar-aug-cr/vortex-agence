@@ -26,7 +26,7 @@ export type GlossaryTerm = {
 export const fr = {
   locale: "fr",
   brand: {
-    name: "VorTX",
+    name: "vortx",
     baseline: "Agence marketing & web · Luxembourg",
     tagline: "L'attraction, par le design.",
   },
@@ -83,7 +83,7 @@ export const fr = {
     titleLead: "Marketing & web à Luxembourg qui",
     titleAccent: "attire et convertit.",
     subtitle:
-      "VorTX conçoit des sites et des stratégies d'acquisition qui transforment l'attention en clients. Design premium, SEO de nouvelle génération, génération de leads mesurable.",
+      "vortx conçoit des sites et des stratégies d'acquisition qui transforment l'attention en clients. Design premium, SEO de nouvelle génération, génération de leads mesurable.",
     primaryCta: "Réserver un appel découverte",
     secondaryCta: "Découvrir notre approche",
     note: "Réponse rapide · Audit offert · Sans engagement · 100% sur-mesure",
@@ -97,7 +97,7 @@ export const fr = {
 
   // ---- Trust / positioning band ----
   trust: {
-    eyebrow: "Pourquoi VorTX",
+    eyebrow: "Pourquoi vortx",
     title: "Une agence, pas un prestataire.",
     lead: "Au Luxembourg, vos clients comparent en français, en allemand et en anglais. Nous construisons des présences qui performent dans les trois — et qui parlent autant à Google qu'aux IA génératives.",
     pillars: [
@@ -142,7 +142,7 @@ export const fr = {
         "Formulaires intelligents multi-étapes",
         "100 % responsive & accessible",
       ],
-      metaTitle: "Création de sites web à Luxembourg | VorTX",
+      metaTitle: "Création de sites web à Luxembourg | vortx",
       metaDescription:
         "Sites web rapides, design premium et orientés conversion pour les entreprises luxembourgeoises. Développement Next.js, multilingue, SEO-ready.",
     },
@@ -159,7 +159,7 @@ export const fr = {
         "Schémas LLM-ready & données structurées",
         "Suivi de positions et de citations IA",
       ],
-      metaTitle: "Agence SEO & GEO à Luxembourg | VorTX",
+      metaTitle: "Agence SEO & GEO à Luxembourg | vortx",
       metaDescription:
         "Référencement naturel et optimisation pour les IA génératives (GEO/GSO) au Luxembourg. Soyez trouvé sur Google et cité par les assistants IA.",
     },
@@ -176,7 +176,7 @@ export const fr = {
         "Qualification & scoring des leads",
         "Reporting clair sur le coût par lead",
       ],
-      metaTitle: "Génération de leads B2B à Luxembourg | VorTX",
+      metaTitle: "Génération de leads B2B à Luxembourg | vortx",
       metaDescription:
         "Système de génération de leads pour PME et artisans luxembourgeois : demandes de devis qualifiées chaque semaine, sans prospecter vous-même.",
     },
@@ -193,7 +193,7 @@ export const fr = {
         "LinkedIn Ads B2B",
         "Optimisation continue du ROAS",
       ],
-      metaTitle: "Publicité en ligne (Google & Meta Ads) Luxembourg | VorTX",
+      metaTitle: "Publicité en ligne (Google & Meta Ads) Luxembourg | vortx",
       metaDescription:
         "Campagnes Google Ads, Meta et LinkedIn rentables pour le marché luxembourgeois. Acquisition payante pilotée par la donnée et orientée ROI.",
     },
@@ -210,7 +210,7 @@ export const fr = {
         "Charte graphique & règles d'usage",
         "Déclinaisons print & digital",
       ],
-      metaTitle: "Création de logo & branding à Luxembourg | VorTX",
+      metaTitle: "Création de logo & branding à Luxembourg | vortx",
       metaDescription:
         "Création de logo sur mesure, identité de marque et charte graphique pour les entreprises luxembourgeoises. Une image cohérente qui inspire confiance.",
     },
@@ -227,7 +227,7 @@ export const fr = {
         "Intégrations CRM & outils",
         "Chatbots et widgets intelligents",
       ],
-      metaTitle: "Automatisation & IA pour entreprises Luxembourg | VorTX",
+      metaTitle: "Automatisation & IA pour entreprises Luxembourg | vortx",
       metaDescription:
         "Automatisation des workflows, intégrations et agents IA sur mesure pour les entreprises luxembourgeoises. Gagnez du temps, répondez plus vite.",
     },
@@ -243,7 +243,7 @@ export const fr = {
       "Un ROI marketing décevant",
       "Trop de visites, trop peu de contacts",
     ],
-    solutionTitle: "Avec VorTX :",
+    solutionTitle: "Avec vortx :",
     solutions: [
       "Un site pensé pour convertir, livré vite",
       "Un tunnel clair : visiteur → lead → client",
@@ -358,7 +358,7 @@ export const fr = {
   geo: {
     eyebrow: "Le SEO du futur",
     title: "GEO / GSO : être la réponse de l'IA.",
-    lead: "La recherche évolue. Vos clients posent leurs questions à des assistants IA. Nous optimisons pour que VorTX — et vous — soyez la source citée.",
+    lead: "La recherche évolue. Vos clients posent leurs questions à des assistants IA. Nous optimisons pour que vortx — et vous — soyez la source citée.",
     points: [
       {
         title: "Citations directes par l'IA",
@@ -444,7 +444,7 @@ export const fr = {
   // ---- Footer (cd-lac style) ----
   footer: {
     blurb:
-      "VorTX — agence marketing et web au Luxembourg. On attire l'attention, on la convertit en clients.",
+      "vortx — agence marketing et web au Luxembourg. On attire l'attention, on la convertit en clients.",
     columns: {
       services: {
         title: "Services",
@@ -489,9 +489,9 @@ export const fr = {
   agence: {
     eyebrow: "L'agence",
     title: "Une équipe d'attraction, au service de votre croissance.",
-    lead: "VorTX réunit le marketing, le design et la technologie sous un même toit, à Luxembourg. Une obsession : transformer l'attention en clients, et le prouver en chiffres.",
+    lead: "vortx réunit le marketing, le design et la technologie sous un même toit, à Luxembourg. Une obsession : transformer l'attention en clients, et le prouver en chiffres.",
     story: [
-      "VorTX est né d'un constat simple : trop d'entreprises luxembourgeoises ont un site qui ressemble à une brochure — joli, mais qui ne rapporte rien. On construit l'inverse : des présences digitales pensées comme des machines d'acquisition.",
+      "vortx est né d'un constat simple : trop d'entreprises luxembourgeoises ont un site qui ressemble à une brochure — joli, mais qui ne rapporte rien. On construit l'inverse : des présences digitales pensées comme des machines d'acquisition.",
       "Derrière l'agence, une équipe qui cumule plus d'une décennie d'expérience en marketing digital, développement web et direction artistique. On a vu les modes passer ; on garde ce qui convertit, on jette le reste.",
       "On travaille en français, en allemand et en anglais, avec une seule exigence : que chaque euro investi dans votre marketing soit justifiable. Pas de jargon, pas de promesse en l'air — des résultats mesurables.",
     ],
@@ -605,7 +605,7 @@ export const fr = {
         date: "2026-06-02",
         updated: "2026-06-02",
         readingMinutes: 9,
-        author: "L'équipe VorTX",
+        author: "L'équipe vortx",
         cover: "geo-citation",
         body: [
           {
@@ -708,7 +708,236 @@ export const fr = {
           },
           {
             type: "p",
-            text: "Chez VorTX, on construit chaque site et chaque stratégie de contenu avec cette double exigence dès la première ligne. Si vous voulez savoir où vous en êtes aujourd'hui, on vous offre un audit SEO/GEO sans engagement.",
+            text: "Chez vortx, on construit chaque site et chaque stratégie de contenu avec cette double exigence dès la première ligne. Si vous voulez savoir où vous en êtes aujourd'hui, on vous offre un audit SEO/GEO sans engagement.",
+          },
+        ],
+      },
+      {
+        slug: "google-ads-ou-seo-ou-investir-budget-marketing",
+        category: "Acquisition",
+        title:
+          "Google Ads ou SEO : où investir votre budget marketing en 2026 ?",
+        excerpt:
+          "Faut-il payer pour apparaître en haut de Google, ou travailler son référencement naturel ? La vraie question n'est pas « l'un ou l'autre », mais « lequel, quand, et pour quel objectif ». On démêle tout, chiffres et bon sens à l'appui.",
+        date: "2026-06-04",
+        updated: "2026-06-04",
+        readingMinutes: 8,
+        author: "L'équipe vortx",
+        cover: "ads-targeting",
+        body: [
+          {
+            type: "p",
+            text: "C'est l'une des questions qu'on nous pose le plus souvent : « Je mets mon budget dans la publicité ou dans le SEO ? ». Réponse honnête : ça dépend de votre objectif, de votre échéance et de votre marché. Les deux amènent des clients depuis Google, mais ils ne fonctionnent pas de la même façon — et surtout, ils ne se remplacent pas, ils se complètent.",
+          },
+          {
+            type: "h2",
+            id: "deux-leviers",
+            text: "Deux leviers, deux logiques",
+          },
+          {
+            type: "p",
+            text: "Google Ads (le SEA, ou référencement payant), c'est de la location : vous payez pour apparaître tout en haut, immédiatement, le temps que votre budget tourne. Le SEO (référencement naturel), c'est de la propriété : vous construisez un actif qui met du temps à se mettre en place, mais qui continue de générer du trafic même quand vous ne payez plus.",
+          },
+          {
+            type: "h2",
+            id: "google-ads",
+            text: "Google Ads : la visibilité immédiate",
+          },
+          {
+            type: "p",
+            text: "Vous lancez une campagne aujourd'hui, vous pouvez être premier sur vos mots-clés dès cet après-midi. C'est l'outil idéal quand vous avez besoin de résultats vite, quand vous testez une offre, ou pour les requêtes très concurrentielles.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Résultats immédiats : du trafic et des leads dès le premier jour.",
+              "Ciblage précis : mots-clés, zone géographique, horaires, audience.",
+              "Mesurable au centime : vous savez exactement ce que coûte chaque lead.",
+              "Idéal pour les promotions, les lancements et les campagnes saisonnières.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Le revers : dès que vous arrêtez de payer, la visibilité s'éteint. Et sur certains secteurs, le coût par clic peut grimper vite. La publicité, c'est un robinet : puissant, mais qui s'arrête quand on coupe l'eau.",
+          },
+          {
+            type: "h2",
+            id: "seo",
+            text: "SEO : l'actif qui travaille dans la durée",
+          },
+          {
+            type: "p",
+            text: "Le SEO demande de la patience — quelques semaines à quelques mois — mais il construit quelque chose qui vous appartient. Une fois bien positionné, votre site attire un trafic régulier sans coût par clic, et la confiance d'un résultat naturel est souvent supérieure à celle d'une annonce.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Trafic durable : votre positionnement continue de travailler dans le temps.",
+              "Meilleure crédibilité : on fait davantage confiance aux résultats naturels.",
+              "Coût décroissant : l'investissement initial s'amortit, le clic est « gratuit ».",
+              "Compatible GEO : un bon SEO vous rend aussi citable par les IA génératives.",
+            ],
+          },
+          {
+            type: "callout",
+            title: "En une phrase",
+            text: "Google Ads achète de la visibilité maintenant ; le SEO la construit pour demain. L'un est une dépense, l'autre un investissement.",
+          },
+          {
+            type: "h2",
+            id: "lequel-choisir",
+            text: "Lequel choisir selon votre situation",
+          },
+          {
+            type: "p",
+            text: "Plutôt que de trancher dans l'absolu, regardez où vous en êtes :",
+          },
+          {
+            type: "ul",
+            items: [
+              "Vous lancez votre activité et voulez des leads vite : commencez par Google Ads.",
+              "Vous visez la rentabilité sur le long terme : investissez dans le SEO en parallèle.",
+              "Votre secteur est très concurrentiel sur Google : combinez les deux pour occuper le terrain.",
+              "Votre budget est serré : priorisez le SEO sur vos pages clés, et la pub sur une seule offre phare.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "ensemble",
+            text: "La vraie réponse : les deux ensemble",
+          },
+          {
+            type: "p",
+            text: "Les entreprises qui performent ne choisissent pas — elles orchestrent. La publicité apporte des résultats immédiats et des données précieuses (quels mots-clés convertissent vraiment), qui nourrissent ensuite la stratégie SEO. Pendant que le SEO monte en puissance, la pub maintient le flux de leads. Puis, à mesure que le naturel prend le relais, on peut réduire la dépendance au payant.",
+          },
+          {
+            type: "quote",
+            text: "La pub allume le feu tout de suite. Le SEO l'entretient pour qu'il ne s'éteigne plus.",
+          },
+          {
+            type: "callout",
+            title: "À retenir",
+            text: "Ne raisonnez pas « Ads OU SEO », mais « Ads ET SEO », dosés selon votre échéance et votre budget. La pub pour la vitesse, le SEO pour la durée — et les deux qui se renforcent.",
+          },
+          {
+            type: "p",
+            text: "Chez vortx, on construit cette combinaison selon votre situation réelle, sans vous vendre l'un au détriment de l'autre. On vous offre un audit gratuit pour vous dire où votre budget rapportera le plus.",
+          },
+        ],
+      },
+      {
+        slug: "tunnel-de-conversion-transformer-visiteurs-en-clients",
+        category: "Conversion",
+        title:
+          "Tunnel de conversion : transformer vos visiteurs en clients, étape par étape",
+        excerpt:
+          "Attirer du trafic, c'est bien. Le convertir en clients, c'est tout l'enjeu. Le tunnel de conversion est la carte qui relie le premier clic au contrat signé — et chaque étape mal pensée vous coûte des ventes. Voici comment le construire.",
+        date: "2026-06-07",
+        updated: "2026-06-07",
+        readingMinutes: 7,
+        author: "L'équipe vortx",
+        cover: "conversion",
+        body: [
+          {
+            type: "p",
+            text: "Vous avez du trafic, mais peu de demandes ? Le problème n'est presque jamais le nombre de visiteurs — c'est ce qui se passe entre leur arrivée et leur décision. Ce chemin a un nom : le tunnel de conversion. Le comprendre, c'est arrêter de « faire venir du monde » pour commencer à transformer ce monde en clients.",
+          },
+          {
+            type: "h2",
+            id: "c-est-quoi",
+            text: "Qu'est-ce qu'un tunnel de conversion ?",
+          },
+          {
+            type: "p",
+            text: "C'est la suite d'étapes que franchit un visiteur avant de devenir client : il vous découvre, s'intéresse, vous contacte, puis achète. À chaque étape, une partie des gens abandonne — comme un entonnoir qui se resserre. L'objectif n'est pas d'éliminer ces pertes (impossible), mais de les réduire là où elles coûtent le plus cher.",
+          },
+          {
+            type: "h2",
+            id: "etapes",
+            text: "Les 4 étapes d'un tunnel qui convertit",
+          },
+          {
+            type: "h3",
+            text: "1. Attirer — la bonne audience, pas juste du trafic",
+          },
+          {
+            type: "p",
+            text: "Tout commence par attirer les bonnes personnes (SEO, publicité, réseaux, bouche-à-oreille). Mille visiteurs non qualifiés valent moins que cent visiteurs qui ont un vrai besoin. La qualité du trafic conditionne tout le reste du tunnel.",
+          },
+          {
+            type: "h3",
+            text: "2. Intéresser — donner envie de rester",
+          },
+          {
+            type: "p",
+            text: "En quelques secondes, le visiteur décide s'il reste ou part. Un message clair, une promesse compréhensible, une page rapide et rassurante : c'est ici qu'on transforme un curieux en prospect intéressé. Si votre page met trop de temps à dire ce que vous faites, c'est perdu.",
+          },
+          {
+            type: "h3",
+            text: "3. Convertir — faciliter le passage à l'action",
+          },
+          {
+            type: "p",
+            text: "C'est l'étape décisive : demande de devis, prise de rendez-vous, achat. Un appel à l'action visible, un formulaire court et intelligent, zéro friction inutile. Chaque champ en trop, chaque doute non levé fait chuter le taux de conversion.",
+          },
+          {
+            type: "h3",
+            text: "4. Fidéliser — un client qui revient et recommande",
+          },
+          {
+            type: "p",
+            text: "Le tunnel ne s'arrête pas à la vente. Un client satisfait revient, achète plus, et surtout vous recommande. Suivi, qualité de service, relances pertinentes : la fidélisation est le levier le plus rentable, et le plus négligé.",
+          },
+          {
+            type: "callout",
+            title: "Le principe clé",
+            text: "Une seule étape qui fuit plombe tout le tunnel. Inutile d'attirer plus de monde si vos visiteurs se perdent au moment de passer à l'action.",
+          },
+          {
+            type: "h2",
+            id: "fuites",
+            text: "Où ça fuit (et comment colmater)",
+          },
+          {
+            type: "ul",
+            items: [
+              "Page lente ou confuse : le visiteur part avant de comprendre votre offre.",
+              "Pas d'appel à l'action clair : il ne sait pas quoi faire ensuite.",
+              "Formulaire trop long : il abandonne en cours de route.",
+              "Manque de preuves (avis, réalisations, garanties) : il doute et reporte.",
+              "Aucune relance : un prospect tiède qu'on ne recontacte jamais est un client perdu.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "mesurer",
+            text: "Mesurer pour optimiser",
+          },
+          {
+            type: "p",
+            text: "On n'améliore que ce qu'on mesure. En suivant le taux de conversion de chaque étape, on repère précisément où ça coince — et on agit là, plutôt que de tout refaire au hasard.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Taux de conversion global et par étape.",
+              "Pages où les visiteurs quittent le tunnel.",
+              "Coût par lead et coût par client.",
+              "Tests A/B pour valider chaque amélioration.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "Un bon tunnel ne se devine pas : il se mesure, s'ajuste, et se mesure encore.",
+          },
+          {
+            type: "callout",
+            title: "À retenir",
+            text: "Un tunnel de conversion, c'est un parcours : attirer, intéresser, convertir, fidéliser. Travaillez le maillon le plus faible en premier — c'est là que se cachent vos ventes perdues.",
+          },
+          {
+            type: "p",
+            text: "Chez vortx, on conçoit chaque site comme un tunnel pensé pour convertir, et on l'optimise en continu. Envie de savoir où le vôtre perd des clients ? On vous offre un audit gratuit de votre tunnel.",
           },
         ],
       },
@@ -1115,7 +1344,7 @@ export const fr = {
       {
         title: "L'agence & démarrer",
         items: [
-          { q: "Qui est VorTX et que faites-vous exactement ?", a: "VorTX est une agence marketing et web basée au Luxembourg. On conçoit des sites qui convertissent et des stratégies d'acquisition mesurables : SEO & GEO, génération de leads, publicité en ligne, branding et automatisation IA. Notre obsession : transformer l'attention en clients." },
+          { q: "Qui est vortx et que faites-vous exactement ?", a: "vortx est une agence marketing et web basée au Luxembourg. On conçoit des sites qui convertissent et des stratégies d'acquisition mesurables : SEO & GEO, génération de leads, publicité en ligne, branding et automatisation IA. Notre obsession : transformer l'attention en clients." },
           { q: "Travaillez-vous avec des entreprises de ma taille ?", a: "Oui. On accompagne aussi bien les indépendants et artisans que les PME et startups. L'approche s'adapte à votre maturité digitale et à votre budget." },
           { q: "Comment se passe un premier contact ?", a: "Vous réservez un appel découverte gratuit. On analyse votre situation, vos objectifs et votre marché, puis on vous dit, sans détour, ce qui peut être amélioré — avant même de parler de devis." },
           { q: "Êtes-vous une agence luxembourgeoise ?", a: "Oui, on connaît le marché local, son multilinguisme (FR/DE/EN) et ses exigences RGPD. On pense vos campagnes pour le terrain luxembourgeois." },
@@ -1203,60 +1432,60 @@ export const fr = {
   // ---- Per-route metadata ----
   meta: {
     home: {
-      title: "VorTX | Agence marketing & web à Luxembourg",
+      title: "vortx | Agence marketing & web à Luxembourg",
       description:
-        "VorTX, agence marketing à Luxembourg : sites web qui convertissent, SEO & GEO, génération de leads et publicité en ligne. Audit gratuit, réponse rapide.",
+        "vortx, agence marketing à Luxembourg : sites web qui convertissent, SEO & GEO, génération de leads et publicité en ligne. Audit gratuit, réponse rapide.",
     },
     services: {
-      title: "Services marketing & web | VorTX Luxembourg",
+      title: "Services marketing & web | vortx Luxembourg",
       description:
         "Sites web, SEO & GEO, génération de leads, publicité, branding et automatisation IA. Une chaîne complète d'acquisition pour les entreprises luxembourgeoises.",
     },
     about: {
-      title: "L'agence VorTX | Marketing & web à Luxembourg",
+      title: "L'agence vortx | Marketing & web à Luxembourg",
       description:
-        "Qui est VorTX : une agence marketing et web luxembourgeoise obsédée par la conversion et la performance mesurable. Découvrez notre approche.",
+        "Qui est vortx : une agence marketing et web luxembourgeoise obsédée par la conversion et la performance mesurable. Découvrez notre approche.",
     },
     approach: {
-      title: "Notre méthode | VorTX Luxembourg",
+      title: "Notre méthode | vortx Luxembourg",
       description:
-        "Diagnostic, conception, revue, lancement : la méthode VorTX pour livrer des sites et des campagnes qui rapportent.",
+        "Diagnostic, conception, revue, lancement : la méthode vortx pour livrer des sites et des campagnes qui rapportent.",
     },
     work: {
-      title: "Réalisations | VorTX Luxembourg",
+      title: "Réalisations | vortx Luxembourg",
       description:
-        "Découvrez les projets et résultats de VorTX, agence marketing et web au Luxembourg.",
+        "Découvrez les projets et résultats de vortx, agence marketing et web au Luxembourg.",
     },
     contact: {
-      title: "Contact & audit gratuit | VorTX Luxembourg",
+      title: "Contact & audit gratuit | vortx Luxembourg",
       description:
-        "Réservez un appel découverte gratuit avec VorTX. Audit personnalisé sans délai, devis sans engagement. Agence marketing & web à Luxembourg.",
+        "Réservez un appel découverte gratuit avec vortx. Audit personnalisé sans délai, devis sans engagement. Agence marketing & web à Luxembourg.",
     },
     legalMentions: {
-      title: "Mentions légales | VorTX Luxembourg",
-      description: "Mentions légales du site VorTX, agence marketing & web à Luxembourg.",
+      title: "Mentions légales | vortx Luxembourg",
+      description: "Mentions légales du site vortx, agence marketing & web à Luxembourg.",
     },
     legalPrivacy: {
-      title: "Politique de confidentialité | VorTX Luxembourg",
+      title: "Politique de confidentialité | vortx Luxembourg",
       description:
-        "Comment VorTX collecte, utilise et protège vos données personnelles (RGPD).",
+        "Comment vortx collecte, utilise et protège vos données personnelles (RGPD).",
     },
     legalCookies: {
-      title: "Politique cookies | VorTX Luxembourg",
-      description: "Utilisation des cookies et traceurs sur le site VorTX.",
+      title: "Politique cookies | vortx Luxembourg",
+      description: "Utilisation des cookies et traceurs sur le site vortx.",
     },
     news: {
-      title: "Les news | Marketing, SEO & GEO — VorTX Luxembourg",
+      title: "Les news | Marketing, SEO & GEO — vortx Luxembourg",
       description:
-        "Analyses et conseils de VorTX sur le SEO, le GEO, la conversion et le web au Luxembourg. Du concret pour faire croître votre entreprise.",
+        "Analyses et conseils de vortx sur le SEO, le GEO, la conversion et le web au Luxembourg. Du concret pour faire croître votre entreprise.",
     },
     glossary: {
-      title: "Glossaire marketing & web | VorTX Luxembourg",
+      title: "Glossaire marketing & web | vortx Luxembourg",
       description:
         "Tous les termes du marketing digital et du web expliqués simplement : SEO, GEO, ROAS, tunnel de conversion, CMS… avec le contexte luxembourgeois.",
     },
     faq: {
-      title: "FAQ — Sites web, SEO, leads & tarifs | VorTX Luxembourg",
+      title: "FAQ — Sites web, SEO, leads & tarifs | vortx Luxembourg",
       description:
         "Toutes les réponses sur nos sites web, le SEO & GEO, la génération de leads, la publicité, l'IA, les tarifs, les délais et le RGPD. Agence marketing & web à Luxembourg.",
     },
@@ -1268,7 +1497,7 @@ export const fr = {
       title: "Merci, votre demande est bien partie.",
       lead: "Nous l'étudions et revenons vers vous rapidement avec une première analyse — sans engagement.",
       cta: "Retour à l'accueil",
-      metaTitle: "Merci | VorTX Luxembourg",
+      metaTitle: "Merci | vortx Luxembourg",
     },
     notFound: {
       title: "Page introuvable",

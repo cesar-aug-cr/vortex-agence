@@ -9,7 +9,7 @@ import type { ArticleBlock, GlossaryTerm } from "./fr";
 export const de = {
   locale: "de",
   brand: {
-    name: "VorTX",
+    name: "vortx",
     baseline: "Marketing- & Web-Agentur · Luxemburg",
     tagline: "Anziehungskraft durch Design.",
   },
@@ -66,7 +66,7 @@ export const de = {
     titleLead: "Marketing & Web in Luxemburg, das",
     titleAccent: "anzieht und konvertiert.",
     subtitle:
-      "VorTX entwickelt Websites und Akquise-Strategien, die Aufmerksamkeit in Kunden verwandeln. Premium-Design, SEO der neuen Generation, messbare Leadgenerierung.",
+      "vortx entwickelt Websites und Akquise-Strategien, die Aufmerksamkeit in Kunden verwandeln. Premium-Design, SEO der neuen Generation, messbare Leadgenerierung.",
     primaryCta: "Erstgespräch buchen",
     secondaryCta: "Unser Vorgehen entdecken",
     note: "Schnelle Antwort · Audit gratis · Unverbindlich · 100 % maßgeschneidert",
@@ -80,7 +80,7 @@ export const de = {
 
   // ---- Trust / positioning band ----
   trust: {
-    eyebrow: "Warum VorTX",
+    eyebrow: "Warum vortx",
     title: "Eine Agentur, kein Dienstleister.",
     lead: "In Luxemburg vergleichen Ihre Kunden auf Französisch, Deutsch und Englisch. Wir bauen Präsenzen, die in allen drei Sprachen performen — und die sowohl Google als auch generative KI ansprechen.",
     pillars: [
@@ -125,7 +125,7 @@ export const de = {
         "Intelligente mehrstufige Formulare",
         "100 % responsiv & barrierefrei",
       ],
-      metaTitle: "Webdesign & Websites in Luxemburg | VorTX",
+      metaTitle: "Webdesign & Websites in Luxemburg | vortx",
       metaDescription:
         "Schnelle Websites, Premium-Design und conversion-orientiert für Luxemburger Unternehmen. Next.js-Entwicklung, mehrsprachig, SEO-ready.",
     },
@@ -142,7 +142,7 @@ export const de = {
         "LLM-ready Schemata & strukturierte Daten",
         "Tracking von Rankings und KI-Zitaten",
       ],
-      metaTitle: "SEO- & GEO-Agentur in Luxemburg | VorTX",
+      metaTitle: "SEO- & GEO-Agentur in Luxemburg | vortx",
       metaDescription:
         "Suchmaschinenoptimierung und Optimierung für generative KI (GEO/GSO) in Luxemburg. Werden Sie bei Google gefunden und von KI-Assistenten zitiert.",
     },
@@ -159,7 +159,7 @@ export const de = {
         "Qualifizierung & Scoring der Leads",
         "Klares Reporting zu den Kosten pro Lead",
       ],
-      metaTitle: "B2B-Leadgenerierung in Luxemburg | VorTX",
+      metaTitle: "B2B-Leadgenerierung in Luxemburg | vortx",
       metaDescription:
         "Leadgenerierungs-System für Luxemburger KMU und Handwerker: qualifizierte Angebotsanfragen jede Woche, ganz ohne selbst zu akquirieren.",
     },
@@ -176,7 +176,7 @@ export const de = {
         "LinkedIn Ads B2B",
         "Laufende ROAS-Optimierung",
       ],
-      metaTitle: "Online-Werbung (Google & Meta Ads) Luxemburg | VorTX",
+      metaTitle: "Online-Werbung (Google & Meta Ads) Luxemburg | vortx",
       metaDescription:
         "Rentable Kampagnen auf Google Ads, Meta und LinkedIn für den Luxemburger Markt. Datengesteuerte, ROI-orientierte bezahlte Akquise.",
     },
@@ -193,7 +193,7 @@ export const de = {
         "Styleguide & Anwendungsregeln",
         "Print- & Digital-Ableitungen",
       ],
-      metaTitle: "Logo-Gestaltung & Branding in Luxemburg | VorTX",
+      metaTitle: "Logo-Gestaltung & Branding in Luxemburg | vortx",
       metaDescription:
         "Maßgeschneiderte Logo-Gestaltung, Markenidentität und Styleguide für Luxemburger Unternehmen. Ein kohärentes Bild, das Vertrauen schafft.",
     },
@@ -210,7 +210,7 @@ export const de = {
         "CRM- & Tool-Integrationen",
         "Intelligente Chatbots und Widgets",
       ],
-      metaTitle: "Automatisierung & KI für Unternehmen Luxemburg | VorTX",
+      metaTitle: "Automatisierung & KI für Unternehmen Luxemburg | vortx",
       metaDescription:
         "Automatisierung von Workflows, Integrationen und maßgeschneiderte KI-Agenten für Luxemburger Unternehmen. Zeit sparen, schneller antworten.",
     },
@@ -226,7 +226,7 @@ export const de = {
       "Ein enttäuschender Marketing-ROI",
       "Zu viele Besuche, zu wenige Kontakte",
     ],
-    solutionTitle: "Mit VorTX:",
+    solutionTitle: "Mit vortx:",
     solutions: [
       "Eine auf Conversion ausgelegte Website, schnell geliefert",
       "Ein klarer Trichter: Besucher → Lead → Kunde",
@@ -341,7 +341,7 @@ export const de = {
   geo: {
     eyebrow: "Das SEO der Zukunft",
     title: "GEO / GSO: die Antwort der KI sein.",
-    lead: "Die Suche verändert sich. Ihre Kunden stellen ihre Fragen KI-Assistenten. Wir optimieren so, dass VorTX — und Sie — die zitierte Quelle sind.",
+    lead: "Die Suche verändert sich. Ihre Kunden stellen ihre Fragen KI-Assistenten. Wir optimieren so, dass vortx — und Sie — die zitierte Quelle sind.",
     points: [
       {
         title: "Direkte Zitate durch KI",
@@ -427,7 +427,7 @@ export const de = {
   // ---- Footer (cd-lac style) ----
   footer: {
     blurb:
-      "VorTX — Marketing- und Web-Agentur in Luxemburg. Wir ziehen Aufmerksamkeit an und verwandeln sie in Kunden.",
+      "vortx — Marketing- und Web-Agentur in Luxemburg. Wir ziehen Aufmerksamkeit an und verwandeln sie in Kunden.",
     columns: {
       services: {
         title: "Leistungen",
@@ -472,9 +472,9 @@ export const de = {
   agence: {
     eyebrow: "Die Agentur",
     title: "Ein Team für Anziehungskraft, im Dienst Ihres Wachstums.",
-    lead: "VorTX vereint Marketing, Design und Technologie unter einem Dach, in Luxemburg. Eine Obsession: Aufmerksamkeit in Kunden verwandeln und es in Zahlen belegen.",
+    lead: "vortx vereint Marketing, Design und Technologie unter einem Dach, in Luxemburg. Eine Obsession: Aufmerksamkeit in Kunden verwandeln und es in Zahlen belegen.",
     story: [
-      "VorTX entstand aus einer einfachen Feststellung: Zu viele Luxemburger Unternehmen haben eine Website, die wie eine Broschüre wirkt — schön, aber ohne Ertrag. Wir bauen das Gegenteil: digitale Präsenzen, gedacht als Akquise-Maschinen.",
+      "vortx entstand aus einer einfachen Feststellung: Zu viele Luxemburger Unternehmen haben eine Website, die wie eine Broschüre wirkt — schön, aber ohne Ertrag. Wir bauen das Gegenteil: digitale Präsenzen, gedacht als Akquise-Maschinen.",
       "Hinter der Agentur steht ein Team mit über einem Jahrzehnt Erfahrung in digitalem Marketing, Webentwicklung und künstlerischer Leitung. Wir haben Moden kommen und gehen sehen; wir behalten, was konvertiert, und werfen den Rest weg.",
       "Wir arbeiten auf Französisch, Deutsch und Englisch, mit nur einem Anspruch: dass jeder in Ihr Marketing investierte Euro begründbar ist. Kein Fachjargon, keine leeren Versprechen — messbare Ergebnisse.",
     ],
@@ -588,7 +588,7 @@ export const de = {
         date: "2026-06-02",
         updated: "2026-06-02",
         readingMinutes: 9,
-        author: "Das VorTX-Team",
+        author: "Das vortx-Team",
         cover: "geo-citation",
         body: [
           {
@@ -691,7 +691,236 @@ export const de = {
           },
           {
             type: "p",
-            text: "Bei VorTX bauen wir jede Website und jede Content-Strategie von der ersten Zeile an mit diesem doppelten Anspruch. Wenn Sie wissen wollen, wo Sie heute stehen, schenken wir Ihnen ein unverbindliches SEO-/GEO-Audit.",
+            text: "Bei vortx bauen wir jede Website und jede Content-Strategie von der ersten Zeile an mit diesem doppelten Anspruch. Wenn Sie wissen wollen, wo Sie heute stehen, schenken wir Ihnen ein unverbindliches SEO-/GEO-Audit.",
+          },
+        ],
+      },
+      {
+        slug: "google-ads-ou-seo-ou-investir-budget-marketing",
+        category: "Akquise",
+        title:
+          "Google Ads oder SEO: Wohin sollten Sie 2026 Ihr Marketing-Budget investieren?",
+        excerpt:
+          "Sollten Sie dafür bezahlen, oben bei Google zu erscheinen, oder lieber an Ihrer organischen Sichtbarkeit arbeiten? Die eigentliche Frage ist nicht „das eine oder das andere\", sondern „welches, wann und für welches Ziel\". Wir entwirren das Ganze — mit Zahlen und gesundem Menschenverstand.",
+        date: "2026-06-04",
+        updated: "2026-06-04",
+        readingMinutes: 8,
+        author: "Das vortx-Team",
+        cover: "ads-targeting",
+        body: [
+          {
+            type: "p",
+            text: "Es ist eine der Fragen, die man uns am häufigsten stellt: „Soll ich mein Budget in Werbung oder in SEO stecken?\". Ehrliche Antwort: Das hängt von Ihrem Ziel, Ihrem Zeithorizont und Ihrem Markt ab. Beide bringen Kunden über Google, aber sie funktionieren nicht gleich — und vor allem ersetzen sie sich nicht, sie ergänzen sich.",
+          },
+          {
+            type: "h2",
+            id: "deux-leviers",
+            text: "Zwei Hebel, zwei Logiken",
+          },
+          {
+            type: "p",
+            text: "Google Ads (SEA, also bezahlte Suche) ist wie Miete: Sie zahlen, um sofort ganz oben zu erscheinen — so lange Ihr Budget läuft. SEO (organische Suche) ist wie Eigentum: Sie bauen ein Asset auf, das Zeit braucht, aber weiter Traffic bringt, auch wenn Sie nicht mehr zahlen.",
+          },
+          {
+            type: "h2",
+            id: "google-ads",
+            text: "Google Ads: sofortige Sichtbarkeit",
+          },
+          {
+            type: "p",
+            text: "Sie starten heute eine Kampagne und können schon heute Nachmittag bei Ihren Keywords auf Platz eins stehen. Das ideale Werkzeug, wenn Sie schnell Ergebnisse brauchen, ein Angebot testen oder bei stark umkämpften Suchanfragen mitspielen wollen.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Sofortige Ergebnisse: Traffic und Leads schon am ersten Tag.",
+              "Präzises Targeting: Keywords, geografische Zone, Uhrzeiten, Zielgruppe.",
+              "Auf den Cent genau messbar: Sie wissen exakt, was jeder Lead kostet.",
+              "Ideal für Aktionen, Launches und saisonale Kampagnen.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Die Kehrseite: Sobald Sie aufhören zu zahlen, erlischt die Sichtbarkeit. In manchen Branchen kann der Klickpreis schnell steigen. Werbung ist wie ein Wasserhahn: kraftvoll, aber sie versiegt, sobald Sie ihn zudrehen.",
+          },
+          {
+            type: "h2",
+            id: "seo",
+            text: "SEO: das Asset, das langfristig arbeitet",
+          },
+          {
+            type: "p",
+            text: "SEO verlangt Geduld — einige Wochen bis einige Monate —, aber es baut etwas auf, das Ihnen gehört. Gut positioniert zieht Ihre Website regelmäßigen Traffic ohne Klickkosten an, und das Vertrauen in ein organisches Ergebnis ist oft größer als das in eine Anzeige.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Dauerhafter Traffic: Ihre Positionierung arbeitet über die Zeit weiter.",
+              "Höhere Glaubwürdigkeit: Organischen Ergebnissen wird mehr vertraut.",
+              "Sinkende Kosten: Die Anfangsinvestition amortisiert sich, der Klick ist „gratis\".",
+              "GEO-kompatibel: Gutes SEO macht Sie auch für generative KI zitierbar.",
+            ],
+          },
+          {
+            type: "callout",
+            title: "In einem Satz",
+            text: "Google Ads kauft Sichtbarkeit jetzt; SEO baut sie für morgen auf. Das eine ist eine Ausgabe, das andere eine Investition.",
+          },
+          {
+            type: "h2",
+            id: "lequel-choisir",
+            text: "Welches passt zu Ihrer Situation",
+          },
+          {
+            type: "p",
+            text: "Statt grundsätzlich zu entscheiden, schauen Sie, wo Sie stehen:",
+          },
+          {
+            type: "ul",
+            items: [
+              "Sie starten Ihr Geschäft und wollen schnell Leads: Beginnen Sie mit Google Ads.",
+              "Sie zielen auf langfristige Rentabilität: Investieren Sie parallel in SEO.",
+              "Ihre Branche ist bei Google stark umkämpft: Kombinieren Sie beides, um das Feld zu besetzen.",
+              "Ihr Budget ist knapp: Priorisieren Sie SEO auf Ihren Schlüsselseiten und Werbung für ein einziges Top-Angebot.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "ensemble",
+            text: "Die echte Antwort: beides zusammen",
+          },
+          {
+            type: "p",
+            text: "Unternehmen mit starker Performance wählen nicht — sie orchestrieren. Werbung liefert sofortige Ergebnisse und wertvolle Daten (welche Keywords wirklich konvertieren), die dann die SEO-Strategie nähren. Während SEO an Kraft gewinnt, hält die Werbung den Lead-Fluss aufrecht. Übernimmt das Organische die Führung, lässt sich die Abhängigkeit von der bezahlten Suche verringern.",
+          },
+          {
+            type: "quote",
+            text: "Werbung entfacht das Feuer sofort. SEO hält es am Brennen, damit es nie wieder erlischt.",
+          },
+          {
+            type: "callout",
+            title: "Zum Mitnehmen",
+            text: "Denken Sie nicht „Ads ODER SEO\", sondern „Ads UND SEO\", dosiert nach Ihrem Zeithorizont und Budget. Werbung für die Geschwindigkeit, SEO für die Dauer — und beide verstärken sich gegenseitig.",
+          },
+          {
+            type: "p",
+            text: "Bei vortx bauen wir diese Kombination nach Ihrer echten Situation auf, ohne Ihnen das eine auf Kosten des anderen zu verkaufen. Wir schenken Ihnen ein kostenloses Audit, das Ihnen zeigt, wo Ihr Budget am meisten bringt.",
+          },
+        ],
+      },
+      {
+        slug: "tunnel-de-conversion-transformer-visiteurs-en-clients",
+        category: "Conversion",
+        title:
+          "Conversion-Funnel: So machen Sie aus Besuchern Schritt für Schritt Kunden",
+        excerpt:
+          "Traffic anzuziehen ist schön. Ihn in Kunden zu verwandeln, darum geht es. Der Conversion-Funnel ist die Karte, die den ersten Klick mit dem unterschriebenen Vertrag verbindet — und jede schlecht durchdachte Stufe kostet Sie Umsatz. So bauen Sie ihn richtig auf.",
+        date: "2026-06-07",
+        updated: "2026-06-07",
+        readingMinutes: 7,
+        author: "Das vortx-Team",
+        cover: "conversion",
+        body: [
+          {
+            type: "p",
+            text: "Sie haben Traffic, aber wenige Anfragen? Das Problem ist fast nie die Zahl der Besucher — es ist das, was zwischen ihrer Ankunft und ihrer Entscheidung passiert. Dieser Weg hat einen Namen: der Conversion-Funnel. Ihn zu verstehen heißt, mit dem bloßen „Leute herbringen\" aufzuhören und anzufangen, diese Leute in Kunden zu verwandeln.",
+          },
+          {
+            type: "h2",
+            id: "c-est-quoi",
+            text: "Was ist ein Conversion-Funnel?",
+          },
+          {
+            type: "p",
+            text: "Es ist die Abfolge von Schritten, die ein Besucher durchläuft, bevor er Kunde wird: Er entdeckt Sie, interessiert sich, kontaktiert Sie und kauft dann. Bei jedem Schritt springt ein Teil der Leute ab — wie ein Trichter, der sich verengt. Das Ziel ist nicht, diese Verluste auszuschalten (unmöglich), sondern sie dort zu reduzieren, wo sie am teuersten sind.",
+          },
+          {
+            type: "h2",
+            id: "etapes",
+            text: "Die 4 Stufen eines Funnels, der konvertiert",
+          },
+          {
+            type: "h3",
+            text: "1. Anziehen — die richtige Zielgruppe, nicht nur Traffic",
+          },
+          {
+            type: "p",
+            text: "Alles beginnt damit, die richtigen Menschen anzuziehen (SEO, Werbung, Social Media, Mundpropaganda). Tausend unqualifizierte Besucher sind weniger wert als hundert Besucher mit echtem Bedarf. Die Qualität des Traffics bestimmt den gesamten Rest des Funnels.",
+          },
+          {
+            type: "h3",
+            text: "2. Interessieren — Lust machen zu bleiben",
+          },
+          {
+            type: "p",
+            text: "In wenigen Sekunden entscheidet der Besucher, ob er bleibt oder geht. Eine klare Botschaft, ein verständliches Versprechen, eine schnelle und vertrauenswürdige Seite: Hier wird aus einem Neugierigen ein interessierter Interessent. Braucht Ihre Seite zu lange, um zu sagen, was Sie tun, ist er weg.",
+          },
+          {
+            type: "h3",
+            text: "3. Konvertieren — den Schritt zur Aktion erleichtern",
+          },
+          {
+            type: "p",
+            text: "Das ist die entscheidende Stufe: Angebotsanfrage, Terminvereinbarung, Kauf. Ein sichtbarer Call-to-Action, ein kurzes und intelligentes Formular, null unnötige Reibung. Jedes überflüssige Feld, jeder nicht ausgeräumte Zweifel senkt die Conversion-Rate.",
+          },
+          {
+            type: "h3",
+            text: "4. Binden — ein Kunde, der wiederkommt und weiterempfiehlt",
+          },
+          {
+            type: "p",
+            text: "Der Funnel endet nicht beim Verkauf. Ein zufriedener Kunde kommt wieder, kauft mehr und empfiehlt Sie vor allem weiter. Nachbetreuung, Servicequalität, passende Follow-ups: Kundenbindung ist der rentabelste — und am meisten vernachlässigte — Hebel.",
+          },
+          {
+            type: "callout",
+            title: "Das Schlüsselprinzip",
+            text: "Eine einzige undichte Stufe zieht den ganzen Funnel nach unten. Es bringt nichts, mehr Leute anzuziehen, wenn sich Ihre Besucher genau im Moment der Aktion verlieren.",
+          },
+          {
+            type: "h2",
+            id: "fuites",
+            text: "Wo es leckt (und wie Sie es abdichten)",
+          },
+          {
+            type: "ul",
+            items: [
+              "Langsame oder verwirrende Seite: Der Besucher geht, bevor er Ihr Angebot versteht.",
+              "Kein klarer Call-to-Action: Er weiß nicht, was er als Nächstes tun soll.",
+              "Zu langes Formular: Er bricht unterwegs ab.",
+              "Fehlende Belege (Bewertungen, Referenzen, Garantien): Er zweifelt und schiebt es auf.",
+              "Kein Follow-up: Ein lauwarmer Interessent, den man nie wieder kontaktiert, ist ein verlorener Kunde.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "mesurer",
+            text: "Messen, um zu optimieren",
+          },
+          {
+            type: "p",
+            text: "Man verbessert nur, was man misst. Wenn Sie die Conversion-Rate jeder Stufe verfolgen, erkennen Sie genau, wo es klemmt — und handeln genau dort, statt alles aufs Geratewohl neu zu machen.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Gesamte Conversion-Rate und je Stufe.",
+              "Seiten, auf denen Besucher den Funnel verlassen.",
+              "Kosten pro Lead und Kosten pro Kunde.",
+              "A/B-Tests, um jede Verbesserung zu bestätigen.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "Ein guter Funnel wird nicht erraten: Er wird gemessen, angepasst und wieder gemessen.",
+          },
+          {
+            type: "callout",
+            title: "Zum Mitnehmen",
+            text: "Ein Conversion-Funnel ist eine Reise: anziehen, interessieren, konvertieren, binden. Arbeiten Sie zuerst am schwächsten Glied — genau dort verstecken sich Ihre verlorenen Umsätze.",
+          },
+          {
+            type: "p",
+            text: "Bei vortx gestalten wir jede Website als Funnel, der zum Konvertieren gebaut ist, und optimieren ihn laufend. Wollen Sie wissen, wo Ihrer Kunden verliert? Wir schenken Ihnen ein kostenloses Audit Ihres Funnels.",
           },
         ],
       },
@@ -1098,7 +1327,7 @@ export const de = {
       {
         title: "Die Agentur & der Start",
         items: [
-          { q: "Wer ist VorTX und was machen Sie genau?", a: "VorTX ist eine in Luxemburg ansässige Marketing- und Web-Agentur. Wir gestalten Websites, die konvertieren, und messbare Akquise-Strategien: SEO & GEO, Leadgenerierung, Online-Werbung, Branding und KI-Automatisierung. Unsere Obsession: Aufmerksamkeit in Kunden verwandeln." },
+          { q: "Wer ist vortx und was machen Sie genau?", a: "vortx ist eine in Luxemburg ansässige Marketing- und Web-Agentur. Wir gestalten Websites, die konvertieren, und messbare Akquise-Strategien: SEO & GEO, Leadgenerierung, Online-Werbung, Branding und KI-Automatisierung. Unsere Obsession: Aufmerksamkeit in Kunden verwandeln." },
           { q: "Arbeiten Sie mit Unternehmen meiner Größe?", a: "Ja. Wir begleiten sowohl Selbstständige und Handwerker als auch KMU und Startups. Der Ansatz passt sich Ihrer digitalen Reife und Ihrem Budget an." },
           { q: "Wie läuft ein Erstkontakt ab?", a: "Sie buchen ein kostenloses Erstgespräch. Wir analysieren Ihre Situation, Ihre Ziele und Ihren Markt und sagen Ihnen dann ohne Umschweife, was sich verbessern lässt — noch bevor wir über ein Angebot sprechen." },
           { q: "Sind Sie eine Luxemburger Agentur?", a: "Ja, wir kennen den lokalen Markt, seine Mehrsprachigkeit (FR/DE/EN) und seine DSGVO-Anforderungen. Wir denken Ihre Kampagnen für das Luxemburger Terrain." },
@@ -1186,60 +1415,60 @@ export const de = {
   // ---- Per-route metadata ----
   meta: {
     home: {
-      title: "VorTX | Marketing- & Web-Agentur in Luxemburg",
+      title: "vortx | Marketing- & Web-Agentur in Luxemburg",
       description:
-        "VorTX, Marketing-Agentur in Luxemburg: Websites, die konvertieren, SEO & GEO, Leadgenerierung und Online-Werbung. Kostenloses Audit, schnelle Antwort.",
+        "vortx, Marketing-Agentur in Luxemburg: Websites, die konvertieren, SEO & GEO, Leadgenerierung und Online-Werbung. Kostenloses Audit, schnelle Antwort.",
     },
     services: {
-      title: "Marketing- & Web-Leistungen | VorTX Luxemburg",
+      title: "Marketing- & Web-Leistungen | vortx Luxemburg",
       description:
         "Websites, SEO & GEO, Leadgenerierung, Werbung, Branding und KI-Automatisierung. Eine komplette Akquise-Kette für Luxemburger Unternehmen.",
     },
     about: {
-      title: "Die Agentur VorTX | Marketing & Web in Luxemburg",
+      title: "Die Agentur vortx | Marketing & Web in Luxemburg",
       description:
-        "Wer ist VorTX: eine Luxemburger Marketing- und Web-Agentur, besessen von Conversion und messbarer Performance. Entdecken Sie unser Vorgehen.",
+        "Wer ist vortx: eine Luxemburger Marketing- und Web-Agentur, besessen von Conversion und messbarer Performance. Entdecken Sie unser Vorgehen.",
     },
     approach: {
-      title: "Unsere Methode | VorTX Luxemburg",
+      title: "Unsere Methode | vortx Luxemburg",
       description:
-        "Diagnose, Konzeption, Review, Launch: die VorTX-Methode, um Websites und Kampagnen zu liefern, die sich auszahlen.",
+        "Diagnose, Konzeption, Review, Launch: die vortx-Methode, um Websites und Kampagnen zu liefern, die sich auszahlen.",
     },
     work: {
-      title: "Referenzen | VorTX Luxemburg",
+      title: "Referenzen | vortx Luxemburg",
       description:
-        "Entdecken Sie die Projekte und Ergebnisse von VorTX, der Marketing- und Web-Agentur in Luxemburg.",
+        "Entdecken Sie die Projekte und Ergebnisse von vortx, der Marketing- und Web-Agentur in Luxemburg.",
     },
     contact: {
-      title: "Kontakt & kostenloses Audit | VorTX Luxemburg",
+      title: "Kontakt & kostenloses Audit | vortx Luxemburg",
       description:
-        "Buchen Sie ein kostenloses Erstgespräch mit VorTX. Persönliches Audit ohne Verzögerung, unverbindliches Angebot. Marketing- & Web-Agentur in Luxemburg.",
+        "Buchen Sie ein kostenloses Erstgespräch mit vortx. Persönliches Audit ohne Verzögerung, unverbindliches Angebot. Marketing- & Web-Agentur in Luxemburg.",
     },
     legalMentions: {
-      title: "Impressum | VorTX Luxemburg",
-      description: "Impressum der Website von VorTX, Marketing- & Web-Agentur in Luxemburg.",
+      title: "Impressum | vortx Luxemburg",
+      description: "Impressum der Website von vortx, Marketing- & Web-Agentur in Luxemburg.",
     },
     legalPrivacy: {
-      title: "Datenschutzerklärung | VorTX Luxemburg",
+      title: "Datenschutzerklärung | vortx Luxemburg",
       description:
-        "Wie VorTX Ihre personenbezogenen Daten erhebt, nutzt und schützt (DSGVO).",
+        "Wie vortx Ihre personenbezogenen Daten erhebt, nutzt und schützt (DSGVO).",
     },
     legalCookies: {
-      title: "Cookie-Richtlinie | VorTX Luxemburg",
-      description: "Nutzung von Cookies und Trackern auf der Website von VorTX.",
+      title: "Cookie-Richtlinie | vortx Luxemburg",
+      description: "Nutzung von Cookies und Trackern auf der Website von vortx.",
     },
     news: {
-      title: "News | Marketing, SEO & GEO — VorTX Luxemburg",
+      title: "News | Marketing, SEO & GEO — vortx Luxemburg",
       description:
-        "Analysen und Tipps von VorTX zu SEO, GEO, Conversion und Web in Luxemburg. Konkretes, um Ihr Unternehmen wachsen zu lassen.",
+        "Analysen und Tipps von vortx zu SEO, GEO, Conversion und Web in Luxemburg. Konkretes, um Ihr Unternehmen wachsen zu lassen.",
     },
     glossary: {
-      title: "Marketing- & Web-Glossar | VorTX Luxemburg",
+      title: "Marketing- & Web-Glossar | vortx Luxemburg",
       description:
         "Alle Begriffe des digitalen Marketings und des Webs einfach erklärt: SEO, GEO, ROAS, Conversion-Trichter, CMS… mit dem Luxemburger Kontext.",
     },
     faq: {
-      title: "FAQ — Websites, SEO, Leads & Preise | VorTX Luxemburg",
+      title: "FAQ — Websites, SEO, Leads & Preise | vortx Luxemburg",
       description:
         "Alle Antworten zu unseren Websites, SEO & GEO, Leadgenerierung, Werbung, KI, Preisen, Fristen und DSGVO. Marketing- & Web-Agentur in Luxemburg.",
     },
@@ -1251,7 +1480,7 @@ export const de = {
       title: "Danke, Ihre Anfrage ist auf dem Weg.",
       lead: "Wir prüfen sie und melden uns rasch mit einer ersten Analyse zurück — unverbindlich.",
       cta: "Zurück zur Startseite",
-      metaTitle: "Danke | VorTX Luxemburg",
+      metaTitle: "Danke | vortx Luxemburg",
     },
     notFound: {
       title: "Seite nicht gefunden",

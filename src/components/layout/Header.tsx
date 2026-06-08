@@ -62,7 +62,7 @@ export function Header({
       <div className="container-vortx flex h-20 items-center justify-between gap-6">
         <Link
           href={localized(lang, "/")}
-          aria-label="VorTX — accueil"
+          aria-label="vortx — accueil"
           className={solid ? "text-text" : "text-white"}
         >
           <LogoMark className="h-8 w-auto" />

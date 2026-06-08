@@ -5,7 +5,7 @@ import { Target, Pulse, Globe, Spark } from "@/components/ui/icons";
 const icons = [Target, Pulse, Globe, Spark];
 
 /**
- * "Pourquoi VorTX" — bento layout. A featured heading cell (title + lead)
+ * "Pourquoi vortx" — bento layout. A featured heading cell (title + lead)
  * anchors the left column while the four pillars fill an asymmetric 2×2 bento
  * grid, each with an icon, an index and the Services-style hover effects.
  */

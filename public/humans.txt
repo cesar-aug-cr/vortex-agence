@@ -1,5 +1,5 @@
 /* TEAM */
-  Agence: VorTX
+  Agence: vortx
   Site: Agence marketing & web — Luxembourg
   Contact: contact [at] vortx.lu
 

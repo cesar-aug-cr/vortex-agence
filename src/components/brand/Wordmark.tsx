@@ -1,11 +1,11 @@
 /**
- * VorTX wordmark — extracted clean letterforms from the original 22 MB hero
+ * vortx wordmark — extracted clean letterforms from the original 22 MB hero
  * SVG (which embedded raster fills). ~1.8 KB, inherits `currentColor`.
  * Letters: V O R T X.
  */
 export function Wordmark({
   className,
-  title = "VorTX",
+  title = "vortx",
   "aria-hidden": ariaHidden,
 }: {
   className?: string;
@@ -14,7 +14,7 @@ export function Wordmark({
 }) {
   // When used decoratively (e.g. the faint hero watermark) the caller passes
   // aria-hidden — drop the img role/label so screen readers don't announce
-  // "VorTX" twice.
+  // "vortx" twice.
   const decorative = ariaHidden === true || ariaHidden === "true";
   return (
     <svg

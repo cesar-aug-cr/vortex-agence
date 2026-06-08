@@ -1,5 +1,5 @@
 /**
- * Animated VorTX nav logo — vectors extracted from "vortex logo sequence.ai"
+ * Animated vortx nav logo — vectors extracted from "vortex logo sequence.ai"
  * (3-page sequence). The letters V · R · T · X are shared and inherit
  * `currentColor`; the "O" is a circle rendered in three states, animated in
  * CSS (see globals.css → "Animated nav logo"):
@@ -36,7 +36,7 @@ const O_R = 30.39;
 
 export function LogoMark({
   className,
-  title = "VorTX",
+  title = "vortx",
   animated = true,
 }: {
   className?: string;

@@ -4,7 +4,7 @@
  *   - url (final domain), email, phone, address, sameAs (socials)
  */
 export const site = {
-  name: "VorTX",
+  name: "vortx",
   url: "https://vortx.lu",
   defaultLocale: "fr",
   locales: ["fr", "en", "de", "es"] as const,
@@ -28,7 +28,7 @@ export const site = {
    * pages). While empty, the legal pages show clearly-flagged placeholders.
    */
   legal: {
-    companyName: "" as string, // Raison sociale — ex: "VorTX S.à r.l."
+    companyName: "" as string, // Raison sociale — ex: "vortx S.à r.l."
     legalForm: "" as string, // Forme juridique — ex: "Société à responsabilité limitée"
     rcs: "" as string, // N° RCS Luxembourg — ex: "B123456"
     vat: "" as string, // N° TVA — ex: "LU12345678"
@@ -74,4 +74,6 @@ export const mainRoutes = [
  */
 export const newsSlugs = [
   "geo-seo-luxembourg-etre-cite-par-les-ia",
+  "google-ads-ou-seo-ou-investir-budget-marketing",
+  "tunnel-de-conversion-transformer-visiteurs-en-clients",
 ] as const;

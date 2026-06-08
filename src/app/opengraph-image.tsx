@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "VorTX — Agence marketing & web à Luxembourg";
+export const alt = "vortx — Agence marketing & web à Luxembourg";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

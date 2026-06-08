@@ -36,7 +36,7 @@ export async function generateMetadata({
   return buildMetadata({
     lang,
     path: `/news/${slug}`,
-    title: `${article.title} | ${dict.nav.news} VorTX`,
+    title: `${article.title} | ${dict.nav.news} vortx`,
     description: article.excerpt,
   });
 }
@@ -92,7 +92,26 @@ export default async function ArticlePage({
       />
 
       <Section tone="base" className="pt-10 md:pt-12">
-        <article className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12">
+          {/* desktop — sticky left sidebar table of contents */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-28">
+              <ArticleToc
+                items={toc.map((h) => ({ id: h.id, text: h.text }))}
+                title={dict.news.tocTitle}
+                variant="desktop"
+              />
+            </div>
+          </aside>
+
+          <article className="min-w-0">
+          {/* mobile — sticky clickable table of contents under the nav */}
+          <ArticleToc
+            items={toc.map((h) => ({ id: h.id, text: h.text }))}
+            title={dict.news.tocTitle}
+            variant="mobile"
+          />
+
           {/* header */}
           <header>
             <span className="inline-flex rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-wide text-accent">
@@ -118,12 +137,6 @@ export default async function ArticlePage({
             </div>
           )}
 
-          {/* table of contents — sticky & clickable on mobile, inline on desktop */}
-          <ArticleToc
-            items={toc.map((h) => ({ id: h.id, text: h.text }))}
-            title={dict.news.tocTitle}
-          />
-
           {/* body */}
           <div className="mt-10">
             <ArticleBody blocks={article.body} />
@@ -138,7 +151,8 @@ export default async function ArticlePage({
               ← {dict.news.backToNews}
             </Link>
           </div>
-        </article>
+          </article>
+        </div>
 
         {/* related */}
         {related.length > 0 && (

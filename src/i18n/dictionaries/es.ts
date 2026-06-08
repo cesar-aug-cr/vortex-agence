@@ -3,7 +3,7 @@ import type { ArticleBlock, GlossaryTerm } from "./fr";
 export const es = {
   locale: "es",
   brand: {
-    name: "VorTX",
+    name: "vortx",
     baseline: "Agencia de marketing y web · Luxemburgo",
     tagline: "La atracción, por el diseño.",
   },
@@ -60,7 +60,7 @@ export const es = {
     titleLead: "Marketing y web en Luxemburgo que",
     titleAccent: "atrae y convierte.",
     subtitle:
-      "VorTX diseña sitios y estrategias de captación que transforman la atención en clientes. Diseño premium, SEO de nueva generación, generación de leads medible.",
+      "vortx diseña sitios y estrategias de captación que transforman la atención en clientes. Diseño premium, SEO de nueva generación, generación de leads medible.",
     primaryCta: "Reservar una llamada de descubrimiento",
     secondaryCta: "Descubrir nuestro enfoque",
     note: "Respuesta rápida · Auditoría gratuita · Sin compromiso · 100 % a medida",
@@ -74,7 +74,7 @@ export const es = {
 
   // ---- Trust / positioning band ----
   trust: {
-    eyebrow: "Por qué VorTX",
+    eyebrow: "Por qué vortx",
     title: "Una agencia, no un proveedor.",
     lead: "En Luxemburgo, sus clientes comparan en francés, en alemán y en inglés. Construimos presencias que rinden en los tres idiomas — y que hablan tanto a Google como a las IA generativas.",
     pillars: [
@@ -119,7 +119,7 @@ export const es = {
         "Formularios inteligentes de varios pasos",
         "100 % responsive y accesible",
       ],
-      metaTitle: "Creación de sitios web en Luxemburgo | VorTX",
+      metaTitle: "Creación de sitios web en Luxemburgo | vortx",
       metaDescription:
         "Sitios web rápidos, de diseño premium y orientados a la conversión para las empresas luxemburguesas. Desarrollo Next.js, multilingüe, listo para SEO.",
     },
@@ -136,7 +136,7 @@ export const es = {
         "Esquemas listos para LLM y datos estructurados",
         "Seguimiento de posiciones y de citas en IA",
       ],
-      metaTitle: "Agencia SEO y GEO en Luxemburgo | VorTX",
+      metaTitle: "Agencia SEO y GEO en Luxemburgo | vortx",
       metaDescription:
         "Posicionamiento orgánico y optimización para las IA generativas (GEO/GSO) en Luxemburgo. Sea encontrado en Google y citado por los asistentes de IA.",
     },
@@ -153,7 +153,7 @@ export const es = {
         "Cualificación y scoring de los leads",
         "Reporting claro sobre el coste por lead",
       ],
-      metaTitle: "Generación de leads B2B en Luxemburgo | VorTX",
+      metaTitle: "Generación de leads B2B en Luxemburgo | vortx",
       metaDescription:
         "Sistema de generación de leads para pymes y autónomos luxemburgueses: solicitudes de presupuesto cualificadas cada semana, sin tener que prospectar usted mismo.",
     },
@@ -170,7 +170,7 @@ export const es = {
         "LinkedIn Ads B2B",
         "Optimización continua del ROAS",
       ],
-      metaTitle: "Publicidad online (Google y Meta Ads) Luxemburgo | VorTX",
+      metaTitle: "Publicidad online (Google y Meta Ads) Luxemburgo | vortx",
       metaDescription:
         "Campañas en Google Ads, Meta y LinkedIn rentables para el mercado luxemburgués. Adquisición de pago dirigida por los datos y orientada al ROI.",
     },
@@ -187,7 +187,7 @@ export const es = {
         "Manual de marca y reglas de uso",
         "Adaptaciones impresas y digitales",
       ],
-      metaTitle: "Creación de logo y branding en Luxemburgo | VorTX",
+      metaTitle: "Creación de logo y branding en Luxemburgo | vortx",
       metaDescription:
         "Creación de logo a medida, identidad de marca y manual de marca para las empresas luxemburguesas. Una imagen coherente que inspira confianza.",
     },
@@ -204,7 +204,7 @@ export const es = {
         "Integraciones con CRM y herramientas",
         "Chatbots y widgets inteligentes",
       ],
-      metaTitle: "Automatización e IA para empresas Luxemburgo | VorTX",
+      metaTitle: "Automatización e IA para empresas Luxemburgo | vortx",
       metaDescription:
         "Automatización de los flujos de trabajo, integraciones y agentes de IA a medida para las empresas luxemburguesas. Gane tiempo, responda más rápido.",
     },
@@ -220,7 +220,7 @@ export const es = {
       "Un ROI de marketing decepcionante",
       "Demasiadas visitas, demasiado pocos contactos",
     ],
-    solutionTitle: "Con VorTX:",
+    solutionTitle: "Con vortx:",
     solutions: [
       "Un sitio pensado para convertir, entregado rápido",
       "Un embudo claro: visitante → lead → cliente",
@@ -335,7 +335,7 @@ export const es = {
   geo: {
     eyebrow: "El SEO del futuro",
     title: "GEO / GSO: ser la respuesta de la IA.",
-    lead: "La búsqueda evoluciona. Sus clientes plantean sus preguntas a asistentes de IA. Optimizamos para que VorTX — y usted — sean la fuente citada.",
+    lead: "La búsqueda evoluciona. Sus clientes plantean sus preguntas a asistentes de IA. Optimizamos para que vortx — y usted — sean la fuente citada.",
     points: [
       {
         title: "Citas directas por la IA",
@@ -421,7 +421,7 @@ export const es = {
   // ---- Footer (cd-lac style) ----
   footer: {
     blurb:
-      "VorTX — agencia de marketing y web en Luxemburgo. Atraemos la atención y la convertimos en clientes.",
+      "vortx — agencia de marketing y web en Luxemburgo. Atraemos la atención y la convertimos en clientes.",
     columns: {
       services: {
         title: "Servicios",
@@ -466,9 +466,9 @@ export const es = {
   agence: {
     eyebrow: "La agencia",
     title: "Un equipo de atracción, al servicio de su crecimiento.",
-    lead: "VorTX reúne el marketing, el diseño y la tecnología bajo un mismo techo, en Luxemburgo. Una obsesión: transformar la atención en clientes, y demostrarlo en cifras.",
+    lead: "vortx reúne el marketing, el diseño y la tecnología bajo un mismo techo, en Luxemburgo. Una obsesión: transformar la atención en clientes, y demostrarlo en cifras.",
     story: [
-      "VorTX nació de una constatación simple: demasiadas empresas luxemburguesas tienen un sitio que parece un folleto — bonito, pero que no genera nada. Construimos lo contrario: presencias digitales pensadas como máquinas de captación.",
+      "vortx nació de una constatación simple: demasiadas empresas luxemburguesas tienen un sitio que parece un folleto — bonito, pero que no genera nada. Construimos lo contrario: presencias digitales pensadas como máquinas de captación.",
       "Detrás de la agencia hay un equipo que suma más de una década de experiencia en marketing digital, desarrollo web y dirección artística. Hemos visto pasar las modas; conservamos lo que convierte y desechamos el resto.",
       "Trabajamos en francés, en alemán y en inglés, con una sola exigencia: que cada euro invertido en su marketing sea justificable. Sin jerga, sin promesas vacías — resultados medibles.",
     ],
@@ -582,7 +582,7 @@ export const es = {
         date: "2026-06-02",
         updated: "2026-06-02",
         readingMinutes: 9,
-        author: "El equipo VorTX",
+        author: "El equipo vortx",
         cover: "geo-citation",
         body: [
           {
@@ -685,7 +685,236 @@ export const es = {
           },
           {
             type: "p",
-            text: "En VorTX, construimos cada sitio y cada estrategia de contenido con esta doble exigencia desde la primera línea. Si quiere saber en qué punto se encuentra hoy, le ofrecemos una auditoría SEO/GEO sin compromiso.",
+            text: "En vortx, construimos cada sitio y cada estrategia de contenido con esta doble exigencia desde la primera línea. Si quiere saber en qué punto se encuentra hoy, le ofrecemos una auditoría SEO/GEO sin compromiso.",
+          },
+        ],
+      },
+      {
+        slug: "google-ads-ou-seo-ou-investir-budget-marketing",
+        category: "Adquisición",
+        title:
+          "Google Ads o SEO: ¿dónde invertir su presupuesto de marketing en 2026?",
+        excerpt:
+          "¿Hay que pagar para aparecer en lo más alto de Google, o trabajar el posicionamiento natural? La verdadera pregunta no es «lo uno o lo otro», sino «cuál, cuándo y para qué objetivo». Lo aclaramos todo, con cifras y sentido común.",
+        date: "2026-06-04",
+        updated: "2026-06-04",
+        readingMinutes: 8,
+        author: "El equipo vortx",
+        cover: "ads-targeting",
+        body: [
+          {
+            type: "p",
+            text: "Es una de las preguntas que más nos hacen: «¿Pongo mi presupuesto en publicidad o en SEO?». Respuesta honesta: depende de su objetivo, de su plazo y de su mercado. Ambos traen clientes desde Google, pero no funcionan de la misma manera — y, sobre todo, no se sustituyen, se complementan.",
+          },
+          {
+            type: "h2",
+            id: "deux-leviers",
+            text: "Dos palancas, dos lógicas",
+          },
+          {
+            type: "p",
+            text: "Google Ads (el SEA, o posicionamiento de pago) es alquiler: usted paga para aparecer en lo más alto, de inmediato, mientras su presupuesto siga rodando. El SEO (posicionamiento natural) es propiedad: usted construye un activo que tarda en consolidarse, pero que sigue generando tráfico incluso cuando deja de pagar.",
+          },
+          {
+            type: "h2",
+            id: "google-ads",
+            text: "Google Ads: la visibilidad inmediata",
+          },
+          {
+            type: "p",
+            text: "Lanza una campaña hoy y puede ser el primero en sus palabras clave esta misma tarde. Es la herramienta ideal cuando necesita resultados rápidos, cuando prueba una oferta, o para las búsquedas muy competitivas.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Resultados inmediatos: tráfico y leads desde el primer día.",
+              "Segmentación precisa: palabras clave, zona geográfica, horarios, audiencia.",
+              "Medible al céntimo: sabe exactamente cuánto le cuesta cada lead.",
+              "Ideal para las promociones, los lanzamientos y las campañas estacionales.",
+            ],
+          },
+          {
+            type: "p",
+            text: "El reverso: en cuanto deja de pagar, la visibilidad se apaga. Y en ciertos sectores, el coste por clic puede dispararse rápido. La publicidad es un grifo: potente, pero que se para cuando cierra el agua.",
+          },
+          {
+            type: "h2",
+            id: "seo",
+            text: "SEO: el activo que trabaja a largo plazo",
+          },
+          {
+            type: "p",
+            text: "El SEO requiere paciencia — de unas semanas a unos meses — pero construye algo que le pertenece. Una vez bien posicionado, su sitio atrae un tráfico constante sin coste por clic, y la confianza de un resultado natural suele ser superior a la de un anuncio.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Tráfico duradero: su posicionamiento sigue trabajando con el tiempo.",
+              "Mayor credibilidad: se confía más en los resultados naturales.",
+              "Coste decreciente: la inversión inicial se amortiza, el clic es «gratis».",
+              "Compatible con el GEO: un buen SEO también le hace citable por las IA generativas.",
+            ],
+          },
+          {
+            type: "callout",
+            title: "En una frase",
+            text: "Google Ads compra visibilidad ahora; el SEO la construye para mañana. Lo uno es un gasto, lo otro una inversión.",
+          },
+          {
+            type: "h2",
+            id: "lequel-choisir",
+            text: "Cuál elegir según su situación",
+          },
+          {
+            type: "p",
+            text: "En lugar de zanjarlo en abstracto, mire en qué punto está:",
+          },
+          {
+            type: "ul",
+            items: [
+              "Está lanzando su actividad y quiere leads rápido: empiece por Google Ads.",
+              "Busca rentabilidad a largo plazo: invierta en SEO en paralelo.",
+              "Su sector es muy competitivo en Google: combine ambos para ocupar el terreno.",
+              "Su presupuesto es ajustado: priorice el SEO en sus páginas clave, y la publicidad en una sola oferta estrella.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "ensemble",
+            text: "La verdadera respuesta: los dos juntos",
+          },
+          {
+            type: "p",
+            text: "Las empresas que rinden no eligen — orquestan. La publicidad aporta resultados inmediatos y datos valiosos (qué palabras clave convierten de verdad), que luego alimentan la estrategia SEO. Mientras el SEO gana fuerza, la publicidad mantiene el flujo de leads. Después, a medida que lo natural toma el relevo, se puede reducir la dependencia del pago.",
+          },
+          {
+            type: "quote",
+            text: "La publicidad enciende el fuego al instante. El SEO lo mantiene para que no vuelva a apagarse.",
+          },
+          {
+            type: "callout",
+            title: "Para recordar",
+            text: "No razone «Ads O SEO», sino «Ads Y SEO», dosificados según su plazo y su presupuesto. La publicidad para la velocidad, el SEO para la duración — y ambos reforzándose.",
+          },
+          {
+            type: "p",
+            text: "En vortx, construimos esta combinación según su situación real, sin venderle uno en detrimento del otro. Le ofrecemos una auditoría gratuita para decirle dónde rendirá más su presupuesto.",
+          },
+        ],
+      },
+      {
+        slug: "tunnel-de-conversion-transformer-visiteurs-en-clients",
+        category: "Conversión",
+        title:
+          "Embudo de conversión: transformar a sus visitantes en clientes, paso a paso",
+        excerpt:
+          "Atraer tráfico está bien. Convertirlo en clientes es lo que de verdad importa. El embudo de conversión es el mapa que une el primer clic con el contrato firmado — y cada etapa mal pensada le cuesta ventas. Así se construye.",
+        date: "2026-06-07",
+        updated: "2026-06-07",
+        readingMinutes: 7,
+        author: "El equipo vortx",
+        cover: "conversion",
+        body: [
+          {
+            type: "p",
+            text: "¿Tiene tráfico, pero pocas solicitudes? El problema casi nunca es el número de visitantes — es lo que ocurre entre su llegada y su decisión. Ese camino tiene un nombre: el embudo de conversión. Entenderlo es dejar de «hacer venir gente» para empezar a transformar a esa gente en clientes.",
+          },
+          {
+            type: "h2",
+            id: "c-est-quoi",
+            text: "¿Qué es un embudo de conversión?",
+          },
+          {
+            type: "p",
+            text: "Es la sucesión de etapas que recorre un visitante antes de convertirse en cliente: le descubre, se interesa, le contacta y luego compra. En cada etapa, una parte de las personas abandona — como un embudo que se estrecha. El objetivo no es eliminar esas pérdidas (imposible), sino reducirlas allí donde más caro cuestan.",
+          },
+          {
+            type: "h2",
+            id: "etapes",
+            text: "Las 4 etapas de un embudo que convierte",
+          },
+          {
+            type: "h3",
+            text: "1. Atraer — la audiencia adecuada, no solo tráfico",
+          },
+          {
+            type: "p",
+            text: "Todo empieza por atraer a las personas adecuadas (SEO, publicidad, redes, boca a boca). Mil visitantes no cualificados valen menos que cien visitantes con una necesidad real. La calidad del tráfico condiciona todo el resto del embudo.",
+          },
+          {
+            type: "h3",
+            text: "2. Interesar — dar ganas de quedarse",
+          },
+          {
+            type: "p",
+            text: "En unos segundos, el visitante decide si se queda o se va. Un mensaje claro, una promesa comprensible, una página rápida y tranquilizadora: es aquí donde se transforma a un curioso en un prospecto interesado. Si su página tarda demasiado en decir lo que hace, está perdido.",
+          },
+          {
+            type: "h3",
+            text: "3. Convertir — facilitar el paso a la acción",
+          },
+          {
+            type: "p",
+            text: "Es la etapa decisiva: solicitud de presupuesto, concertación de cita, compra. Una llamada a la acción visible, un formulario corto e inteligente, cero fricción inútil. Cada campo de más, cada duda sin resolver hace caer la tasa de conversión.",
+          },
+          {
+            type: "h3",
+            text: "4. Fidelizar — un cliente que vuelve y recomienda",
+          },
+          {
+            type: "p",
+            text: "El embudo no termina en la venta. Un cliente satisfecho vuelve, compra más y, sobre todo, le recomienda. Seguimiento, calidad de servicio, recordatorios pertinentes: la fidelización es la palanca más rentable, y la más descuidada.",
+          },
+          {
+            type: "callout",
+            title: "El principio clave",
+            text: "Una sola etapa que pierde lastra todo el embudo. De nada sirve atraer a más gente si sus visitantes se pierden en el momento de pasar a la acción.",
+          },
+          {
+            type: "h2",
+            id: "fuites",
+            text: "Por dónde se pierde (y cómo taparlo)",
+          },
+          {
+            type: "ul",
+            items: [
+              "Página lenta o confusa: el visitante se va antes de entender su oferta.",
+              "Sin una llamada a la acción clara: no sabe qué hacer a continuación.",
+              "Formulario demasiado largo: abandona a medio camino.",
+              "Falta de pruebas (opiniones, proyectos, garantías): duda y lo pospone.",
+              "Ningún recordatorio: un prospecto tibio al que no se vuelve a contactar es un cliente perdido.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "mesurer",
+            text: "Medir para optimizar",
+          },
+          {
+            type: "p",
+            text: "Solo se mejora lo que se mide. Al seguir la tasa de conversión de cada etapa, se detecta con precisión dónde se atasca — y se actúa ahí, en lugar de rehacerlo todo al azar.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Tasa de conversión global y por etapa.",
+              "Páginas donde los visitantes abandonan el embudo.",
+              "Coste por lead y coste por cliente.",
+              "Pruebas A/B para validar cada mejora.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "Un buen embudo no se adivina: se mide, se ajusta, y se vuelve a medir.",
+          },
+          {
+            type: "callout",
+            title: "Para recordar",
+            text: "Un embudo de conversión es un recorrido: atraer, interesar, convertir, fidelizar. Trabaje primero el eslabón más débil — ahí es donde se esconden sus ventas perdidas.",
+          },
+          {
+            type: "p",
+            text: "En vortx, concebimos cada sitio como un embudo pensado para convertir, y lo optimizamos de forma continua. ¿Quiere saber dónde pierde clientes el suyo? Le ofrecemos una auditoría gratuita de su embudo.",
           },
         ],
       },
@@ -1092,7 +1321,7 @@ export const es = {
       {
         title: "La agencia y empezar",
         items: [
-          { q: "¿Quién es VorTX y qué hacen exactamente?", a: "VorTX es una agencia de marketing y web con sede en Luxemburgo. Diseñamos sitios que convierten y estrategias de captación medibles: SEO y GEO, generación de leads, publicidad online, branding y automatización con IA. Nuestra obsesión: transformar la atención en clientes." },
+          { q: "¿Quién es vortx y qué hacen exactamente?", a: "vortx es una agencia de marketing y web con sede en Luxemburgo. Diseñamos sitios que convierten y estrategias de captación medibles: SEO y GEO, generación de leads, publicidad online, branding y automatización con IA. Nuestra obsesión: transformar la atención en clientes." },
           { q: "¿Trabajan con empresas de mi tamaño?", a: "Sí. Acompañamos tanto a autónomos y profesionales como a pymes y startups. El enfoque se adapta a su madurez digital y a su presupuesto." },
           { q: "¿Cómo es un primer contacto?", a: "Reserva una llamada de descubrimiento gratuita. Analizamos su situación, sus objetivos y su mercado, y luego le decimos, sin rodeos, qué se puede mejorar — incluso antes de hablar de presupuesto." },
           { q: "¿Son una agencia luxemburguesa?", a: "Sí, conocemos el mercado local, su multilingüismo (FR/DE/EN) y sus exigencias de RGPD. Pensamos sus campañas para el terreno luxemburgués." },
@@ -1180,60 +1409,60 @@ export const es = {
   // ---- Per-route metadata ----
   meta: {
     home: {
-      title: "VorTX | Agencia de marketing y web en Luxemburgo",
+      title: "vortx | Agencia de marketing y web en Luxemburgo",
       description:
-        "VorTX, agencia de marketing en Luxemburgo: sitios web que convierten, SEO y GEO, generación de leads y publicidad online. Auditoría gratuita, respuesta rápida.",
+        "vortx, agencia de marketing en Luxemburgo: sitios web que convierten, SEO y GEO, generación de leads y publicidad online. Auditoría gratuita, respuesta rápida.",
     },
     services: {
-      title: "Servicios de marketing y web | VorTX Luxemburgo",
+      title: "Servicios de marketing y web | vortx Luxemburgo",
       description:
         "Sitios web, SEO y GEO, generación de leads, publicidad, branding y automatización con IA. Una cadena completa de captación para las empresas luxemburguesas.",
     },
     about: {
-      title: "La agencia VorTX | Marketing y web en Luxemburgo",
+      title: "La agencia vortx | Marketing y web en Luxemburgo",
       description:
-        "Quién es VorTX: una agencia de marketing y web luxemburguesa obsesionada con la conversión y el rendimiento medible. Descubra nuestro enfoque.",
+        "Quién es vortx: una agencia de marketing y web luxemburguesa obsesionada con la conversión y el rendimiento medible. Descubra nuestro enfoque.",
     },
     approach: {
-      title: "Nuestro método | VorTX Luxemburgo",
+      title: "Nuestro método | vortx Luxemburgo",
       description:
-        "Diagnóstico, diseño, revisión, lanzamiento: el método VorTX para entregar sitios y campañas que dan resultados.",
+        "Diagnóstico, diseño, revisión, lanzamiento: el método vortx para entregar sitios y campañas que dan resultados.",
     },
     work: {
-      title: "Proyectos | VorTX Luxemburgo",
+      title: "Proyectos | vortx Luxemburgo",
       description:
-        "Descubra los proyectos y resultados de VorTX, agencia de marketing y web en Luxemburgo.",
+        "Descubra los proyectos y resultados de vortx, agencia de marketing y web en Luxemburgo.",
     },
     contact: {
-      title: "Contacto y auditoría gratuita | VorTX Luxemburgo",
+      title: "Contacto y auditoría gratuita | vortx Luxemburgo",
       description:
-        "Reserve una llamada de descubrimiento gratuita con VorTX. Auditoría personalizada sin demora, presupuesto sin compromiso. Agencia de marketing y web en Luxemburgo.",
+        "Reserve una llamada de descubrimiento gratuita con vortx. Auditoría personalizada sin demora, presupuesto sin compromiso. Agencia de marketing y web en Luxemburgo.",
     },
     legalMentions: {
-      title: "Aviso legal | VorTX Luxemburgo",
-      description: "Aviso legal del sitio VorTX, agencia de marketing y web en Luxemburgo.",
+      title: "Aviso legal | vortx Luxemburgo",
+      description: "Aviso legal del sitio vortx, agencia de marketing y web en Luxemburgo.",
     },
     legalPrivacy: {
-      title: "Política de privacidad | VorTX Luxemburgo",
+      title: "Política de privacidad | vortx Luxemburgo",
       description:
-        "Cómo VorTX recoge, utiliza y protege sus datos personales (RGPD).",
+        "Cómo vortx recoge, utiliza y protege sus datos personales (RGPD).",
     },
     legalCookies: {
-      title: "Política de cookies | VorTX Luxemburgo",
-      description: "Uso de las cookies y rastreadores en el sitio VorTX.",
+      title: "Política de cookies | vortx Luxemburgo",
+      description: "Uso de las cookies y rastreadores en el sitio vortx.",
     },
     news: {
-      title: "Novedades | Marketing, SEO y GEO — VorTX Luxemburgo",
+      title: "Novedades | Marketing, SEO y GEO — vortx Luxemburgo",
       description:
-        "Análisis y consejos de VorTX sobre el SEO, el GEO, la conversión y el web en Luxemburgo. Algo concreto para hacer crecer su empresa.",
+        "Análisis y consejos de vortx sobre el SEO, el GEO, la conversión y el web en Luxemburgo. Algo concreto para hacer crecer su empresa.",
     },
     glossary: {
-      title: "Glosario de marketing y web | VorTX Luxemburgo",
+      title: "Glosario de marketing y web | vortx Luxemburgo",
       description:
         "Todos los términos del marketing digital y del web explicados de forma sencilla: SEO, GEO, ROAS, embudo de conversión, CMS… con el contexto luxemburgués.",
     },
     faq: {
-      title: "Preguntas frecuentes — Sitios web, SEO, leads y tarifas | VorTX Luxemburgo",
+      title: "Preguntas frecuentes — Sitios web, SEO, leads y tarifas | vortx Luxemburgo",
       description:
         "Todas las respuestas sobre nuestros sitios web, el SEO y GEO, la generación de leads, la publicidad, la IA, las tarifas, los plazos y el RGPD. Agencia de marketing y web en Luxemburgo.",
     },
@@ -1245,7 +1474,7 @@ export const es = {
       title: "Gracias, su solicitud se ha enviado correctamente.",
       lead: "La estudiamos y le responderemos rápidamente con un primer análisis — sin compromiso.",
       cta: "Volver al inicio",
-      metaTitle: "Gracias | VorTX Luxemburgo",
+      metaTitle: "Gracias | vortx Luxemburgo",
     },
     notFound: {
       title: "Página no encontrada",

@@ -1,6 +1,6 @@
-# VorTX
+# vortx
 
-> Agence marketing et web basée au Luxembourg. VorTX conçoit des sites web qui
+> Agence marketing et web basée au Luxembourg. vortx conçoit des sites web qui
 > convertissent et des stratégies d'acquisition mesurables : SEO & GEO,
 > génération de leads, publicité en ligne, branding et automatisation IA.
 > Multilingue (FR/DE/EN). Réponse rapide, audit gratuit, sans engagement.

@@ -9,7 +9,7 @@ import type { ArticleBlock, GlossaryTerm } from "./fr";
 export const en = {
   locale: "en",
   brand: {
-    name: "VorTX",
+    name: "vortx",
     baseline: "Marketing & web agency · Luxembourg",
     tagline: "Attraction, by design.",
   },
@@ -66,7 +66,7 @@ export const en = {
     titleLead: "Marketing & web in Luxembourg that",
     titleAccent: "attracts and converts.",
     subtitle:
-      "VorTX builds websites and acquisition strategies that turn attention into clients. Premium design, next-generation SEO, measurable lead generation.",
+      "vortx builds websites and acquisition strategies that turn attention into clients. Premium design, next-generation SEO, measurable lead generation.",
     primaryCta: "Book a discovery call",
     secondaryCta: "Discover our approach",
     note: "Fast reply · Free audit · No commitment · 100% bespoke",
@@ -80,7 +80,7 @@ export const en = {
 
   // ---- Trust / positioning band ----
   trust: {
-    eyebrow: "Why VorTX",
+    eyebrow: "Why vortx",
     title: "An agency, not a vendor.",
     lead: "In Luxembourg, your clients compare you in French, German and English. We build a presence that performs in all three — and that speaks to Google as much as to generative AI.",
     pillars: [
@@ -125,7 +125,7 @@ export const en = {
         "Smart multi-step forms",
         "100% responsive & accessible",
       ],
-      metaTitle: "Website design in Luxembourg | VorTX",
+      metaTitle: "Website design in Luxembourg | vortx",
       metaDescription:
         "Fast, premium-design, conversion-focused websites for Luxembourg businesses. Next.js development, multilingual, SEO-ready.",
     },
@@ -142,7 +142,7 @@ export const en = {
         "LLM-ready schemas & structured data",
         "Ranking and AI-citation tracking",
       ],
-      metaTitle: "SEO & GEO agency in Luxembourg | VorTX",
+      metaTitle: "SEO & GEO agency in Luxembourg | vortx",
       metaDescription:
         "Organic SEO and generative AI optimisation (GEO/GSO) in Luxembourg. Get found on Google and cited by AI assistants.",
     },
@@ -159,7 +159,7 @@ export const en = {
         "Lead qualification & scoring",
         "Clear reporting on cost per lead",
       ],
-      metaTitle: "B2B lead generation in Luxembourg | VorTX",
+      metaTitle: "B2B lead generation in Luxembourg | vortx",
       metaDescription:
         "Lead generation system for Luxembourg SMEs and tradespeople: qualified quote requests every week, without prospecting yourself.",
     },
@@ -176,7 +176,7 @@ export const en = {
         "LinkedIn Ads B2B",
         "Continuous ROAS optimisation",
       ],
-      metaTitle: "Online advertising (Google & Meta Ads) Luxembourg | VorTX",
+      metaTitle: "Online advertising (Google & Meta Ads) Luxembourg | vortx",
       metaDescription:
         "Profitable Google Ads, Meta and LinkedIn campaigns for the Luxembourg market. Data-driven, ROI-focused paid acquisition.",
     },
@@ -193,7 +193,7 @@ export const en = {
         "Brand guidelines & usage rules",
         "Print & digital variations",
       ],
-      metaTitle: "Logo design & branding in Luxembourg | VorTX",
+      metaTitle: "Logo design & branding in Luxembourg | vortx",
       metaDescription:
         "Bespoke logo design, brand identity and brand guidelines for Luxembourg businesses. A consistent image that builds trust.",
     },
@@ -210,7 +210,7 @@ export const en = {
         "CRM & tool integrations",
         "Chatbots and smart widgets",
       ],
-      metaTitle: "Automation & AI for Luxembourg businesses | VorTX",
+      metaTitle: "Automation & AI for Luxembourg businesses | vortx",
       metaDescription:
         "Workflow automation, integrations and bespoke AI agents for Luxembourg businesses. Save time, respond faster.",
     },
@@ -226,7 +226,7 @@ export const en = {
       "A disappointing marketing ROI",
       "Too many visits, too few contacts",
     ],
-    solutionTitle: "With VorTX:",
+    solutionTitle: "With vortx:",
     solutions: [
       "A site built to convert, delivered fast",
       "A clear funnel: visitor → lead → client",
@@ -341,7 +341,7 @@ export const en = {
   geo: {
     eyebrow: "The SEO of the future",
     title: "GEO / GSO: be the AI's answer.",
-    lead: "Search is changing. Your clients ask their questions to AI assistants. We optimise so that VorTX — and you — are the source that gets cited.",
+    lead: "Search is changing. Your clients ask their questions to AI assistants. We optimise so that vortx — and you — are the source that gets cited.",
     points: [
       {
         title: "Direct citations by AI",
@@ -427,7 +427,7 @@ export const en = {
   // ---- Footer (cd-lac style) ----
   footer: {
     blurb:
-      "VorTX — marketing and web agency in Luxembourg. We capture attention and convert it into clients.",
+      "vortx — marketing and web agency in Luxembourg. We capture attention and convert it into clients.",
     columns: {
       services: {
         title: "Services",
@@ -472,9 +472,9 @@ export const en = {
   agence: {
     eyebrow: "The agency",
     title: "An attraction team, at the service of your growth.",
-    lead: "VorTX brings marketing, design and technology under one roof in Luxembourg. One obsession: turning attention into clients, and proving it in numbers.",
+    lead: "vortx brings marketing, design and technology under one roof in Luxembourg. One obsession: turning attention into clients, and proving it in numbers.",
     story: [
-      "VorTX was born from a simple observation: too many Luxembourg businesses have a site that looks like a brochure — pretty, but bringing in nothing. We build the opposite: digital presences designed as acquisition machines.",
+      "vortx was born from a simple observation: too many Luxembourg businesses have a site that looks like a brochure — pretty, but bringing in nothing. We build the opposite: digital presences designed as acquisition machines.",
       "Behind the agency is a team with more than a decade of combined experience in digital marketing, web development and art direction. We've watched the trends come and go; we keep what converts and drop the rest.",
       "We work in French, German and English, with a single requirement: every euro invested in your marketing must be justifiable. No jargon, no empty promises — measurable results.",
     ],
@@ -588,7 +588,7 @@ export const en = {
         date: "2026-06-02",
         updated: "2026-06-02",
         readingMinutes: 9,
-        author: "The VorTX team",
+        author: "The vortx team",
         cover: "geo-citation",
         body: [
           {
@@ -691,7 +691,236 @@ export const en = {
           },
           {
             type: "p",
-            text: "At VorTX, we build every site and every content strategy to this dual standard from the very first line. If you want to know where you stand today, we'll give you a no-commitment SEO/GEO audit.",
+            text: "At vortx, we build every site and every content strategy to this dual standard from the very first line. If you want to know where you stand today, we'll give you a no-commitment SEO/GEO audit.",
+          },
+        ],
+      },
+      {
+        slug: "google-ads-ou-seo-ou-investir-budget-marketing",
+        category: "Acquisition",
+        title:
+          "Google Ads or SEO: where should you invest your marketing budget in 2026?",
+        excerpt:
+          "Should you pay to appear at the top of Google, or build your organic ranking? The real question isn't \"one or the other\", but \"which one, when, and for what goal\". We untangle it all, with figures and common sense to back it up.",
+        date: "2026-06-04",
+        updated: "2026-06-04",
+        readingMinutes: 8,
+        author: "The vortx team",
+        cover: "ads-targeting",
+        body: [
+          {
+            type: "p",
+            text: "It's one of the questions we're asked most often: \"Should I put my budget into advertising or into SEO?\". The honest answer: it depends on your goal, your timeline and your market. Both bring you clients from Google, but they don't work the same way — and above all, they don't replace each other, they complement each other.",
+          },
+          {
+            type: "h2",
+            id: "deux-leviers",
+            text: "Two levers, two logics",
+          },
+          {
+            type: "p",
+            text: "Google Ads (SEA, or paid search) is renting: you pay to appear right at the top, immediately, for as long as your budget runs. SEO (organic search) is owning: you build an asset that takes time to come together, but keeps generating traffic even when you stop paying.",
+          },
+          {
+            type: "h2",
+            id: "google-ads",
+            text: "Google Ads: instant visibility",
+          },
+          {
+            type: "p",
+            text: "Launch a campaign today and you can be first on your keywords this very afternoon. It's the ideal tool when you need results fast, when you're testing an offer, or for highly competitive queries.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Immediate results: traffic and leads from day one.",
+              "Precise targeting: keywords, geography, time of day, audience.",
+              "Measurable to the cent: you know exactly what each lead costs.",
+              "Ideal for promotions, launches and seasonal campaigns.",
+            ],
+          },
+          {
+            type: "p",
+            text: "The flip side: the moment you stop paying, the visibility goes out. And in some sectors, the cost per click can climb fast. Advertising is a tap: powerful, but it stops as soon as you cut the water.",
+          },
+          {
+            type: "h2",
+            id: "seo",
+            text: "SEO: the asset that works over time",
+          },
+          {
+            type: "p",
+            text: "SEO takes patience — a few weeks to a few months — but it builds something that belongs to you. Once well positioned, your site draws steady traffic with no cost per click, and the trust of an organic result is often higher than that of an ad.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Lasting traffic: your ranking keeps working over time.",
+              "Greater credibility: people trust organic results more.",
+              "Decreasing cost: the initial investment pays off, the click is \"free\".",
+              "GEO-compatible: good SEO also makes you citable by generative AI.",
+            ],
+          },
+          {
+            type: "callout",
+            title: "In one sentence",
+            text: "Google Ads buys visibility now; SEO builds it for tomorrow. One is an expense, the other an investment.",
+          },
+          {
+            type: "h2",
+            id: "lequel-choisir",
+            text: "Which to choose depending on your situation",
+          },
+          {
+            type: "p",
+            text: "Rather than deciding in the abstract, look at where you stand:",
+          },
+          {
+            type: "ul",
+            items: [
+              "You're launching your business and want leads fast: start with Google Ads.",
+              "You're aiming for long-term profitability: invest in SEO in parallel.",
+              "Your sector is very competitive on Google: combine both to hold your ground.",
+              "Your budget is tight: prioritise SEO on your key pages, and ads on a single flagship offer.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "ensemble",
+            text: "The real answer: both, together",
+          },
+          {
+            type: "p",
+            text: "The companies that perform don't choose — they orchestrate. Advertising brings immediate results and valuable data (which keywords actually convert), which then feed the SEO strategy. While SEO builds momentum, ads keep the lead flow going. Then, as organic takes over, you can reduce your reliance on paid.",
+          },
+          {
+            type: "quote",
+            text: "Ads light the fire right away. SEO keeps it burning so it never goes out.",
+          },
+          {
+            type: "callout",
+            title: "Key takeaway",
+            text: "Don't think \"Ads OR SEO\", but \"Ads AND SEO\", dosed according to your timeline and budget. Ads for speed, SEO for the long run — and the two reinforcing each other.",
+          },
+          {
+            type: "p",
+            text: "At vortx, we build this combination around your real situation, without selling you one at the expense of the other. We'll give you a free audit to tell you where your budget will pay off most.",
+          },
+        ],
+      },
+      {
+        slug: "tunnel-de-conversion-transformer-visiteurs-en-clients",
+        category: "Conversion",
+        title:
+          "Conversion funnel: turning your visitors into clients, step by step",
+        excerpt:
+          "Attracting traffic is good. Converting it into clients is the whole point. The conversion funnel is the map that links the first click to the signed contract — and every poorly designed step costs you sales. Here's how to build it.",
+        date: "2026-06-07",
+        updated: "2026-06-07",
+        readingMinutes: 7,
+        author: "The vortx team",
+        cover: "conversion",
+        body: [
+          {
+            type: "p",
+            text: "You have traffic, but few enquiries? The problem is almost never the number of visitors — it's what happens between their arrival and their decision. That path has a name: the conversion funnel. Understanding it means you stop \"bringing in a crowd\" and start turning that crowd into clients.",
+          },
+          {
+            type: "h2",
+            id: "c-est-quoi",
+            text: "What is a conversion funnel?",
+          },
+          {
+            type: "p",
+            text: "It's the sequence of steps a visitor goes through before becoming a client: they discover you, take an interest, get in touch, then buy. At each step, some people drop off — like a funnel that narrows. The goal isn't to eliminate those losses (impossible), but to reduce them where they cost the most.",
+          },
+          {
+            type: "h2",
+            id: "etapes",
+            text: "The 4 steps of a funnel that converts",
+          },
+          {
+            type: "h3",
+            text: "1. Attract — the right audience, not just traffic",
+          },
+          {
+            type: "p",
+            text: "It all starts with attracting the right people (SEO, advertising, social, word of mouth). A thousand unqualified visitors are worth less than a hundred who have a real need. The quality of your traffic shapes everything else in the funnel.",
+          },
+          {
+            type: "h3",
+            text: "2. Engage — make them want to stay",
+          },
+          {
+            type: "p",
+            text: "Within seconds, the visitor decides whether to stay or leave. A clear message, an understandable promise, a fast and reassuring page: this is where you turn a curious visitor into an interested prospect. If your page takes too long to say what you do, it's lost.",
+          },
+          {
+            type: "h3",
+            text: "3. Convert — make taking action easy",
+          },
+          {
+            type: "p",
+            text: "This is the decisive step: a quote request, a booking, a purchase. A visible call to action, a short and smart form, zero needless friction. Every extra field, every unanswered doubt drives the conversion rate down.",
+          },
+          {
+            type: "h3",
+            text: "4. Retain — a client who comes back and recommends you",
+          },
+          {
+            type: "p",
+            text: "The funnel doesn't stop at the sale. A satisfied client comes back, buys more, and above all recommends you. Follow-up, service quality, well-timed nudges: retention is the most profitable lever, and the most neglected.",
+          },
+          {
+            type: "callout",
+            title: "The key principle",
+            text: "A single leaking step drags down the whole funnel. There's no point attracting more people if your visitors get lost at the moment of taking action.",
+          },
+          {
+            type: "h2",
+            id: "fuites",
+            text: "Where it leaks (and how to plug it)",
+          },
+          {
+            type: "ul",
+            items: [
+              "Slow or confusing page: the visitor leaves before understanding your offer.",
+              "No clear call to action: they don't know what to do next.",
+              "Form too long: they give up halfway through.",
+              "Lack of proof (reviews, case studies, guarantees): they doubt and put it off.",
+              "No follow-up: a lukewarm prospect you never contact again is a lost client.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "mesurer",
+            text: "Measure to optimise",
+          },
+          {
+            type: "p",
+            text: "You only improve what you measure. By tracking the conversion rate of each step, you pinpoint exactly where it stalls — and act there, rather than redoing everything at random.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Overall conversion rate and rate per step.",
+              "Pages where visitors leave the funnel.",
+              "Cost per lead and cost per client.",
+              "A/B tests to validate each improvement.",
+            ],
+          },
+          {
+            type: "quote",
+            text: "A good funnel isn't guessed: it's measured, adjusted, and measured again.",
+          },
+          {
+            type: "callout",
+            title: "Key takeaway",
+            text: "A conversion funnel is a journey: attract, engage, convert, retain. Work on the weakest link first — that's where your lost sales are hiding.",
+          },
+          {
+            type: "p",
+            text: "At vortx, we design every site as a funnel built to convert, and optimise it continuously. Want to know where yours is losing clients? We'll give you a free audit of your funnel.",
           },
         ],
       },
@@ -1098,7 +1327,7 @@ export const en = {
       {
         title: "The agency & getting started",
         items: [
-          { q: "Who is VorTX and what exactly do you do?", a: "VorTX is a marketing and web agency based in Luxembourg. We build websites that convert and measurable acquisition strategies: SEO & GEO, lead generation, online advertising, branding and AI automation. Our obsession: turning attention into clients." },
+          { q: "Who is vortx and what exactly do you do?", a: "vortx is a marketing and web agency based in Luxembourg. We build websites that convert and measurable acquisition strategies: SEO & GEO, lead generation, online advertising, branding and AI automation. Our obsession: turning attention into clients." },
           { q: "Do you work with businesses my size?", a: "Yes. We support sole traders and tradespeople just as much as SMEs and startups. The approach adapts to your digital maturity and your budget." },
           { q: "How does a first contact work?", a: "You book a free discovery call. We analyse your situation, your goals and your market, then tell you, straight up, what can be improved — before we even talk about a quote." },
           { q: "Are you a Luxembourg agency?", a: "Yes, we know the local market, its multilingualism (FR/DE/EN) and its GDPR requirements. We design your campaigns for the Luxembourg field." },
@@ -1186,60 +1415,60 @@ export const en = {
   // ---- Per-route metadata ----
   meta: {
     home: {
-      title: "VorTX | Marketing & web agency in Luxembourg",
+      title: "vortx | Marketing & web agency in Luxembourg",
       description:
-        "VorTX, marketing agency in Luxembourg: websites that convert, SEO & GEO, lead generation and online advertising. Free audit, fast reply.",
+        "vortx, marketing agency in Luxembourg: websites that convert, SEO & GEO, lead generation and online advertising. Free audit, fast reply.",
     },
     services: {
-      title: "Marketing & web services | VorTX Luxembourg",
+      title: "Marketing & web services | vortx Luxembourg",
       description:
         "Websites, SEO & GEO, lead generation, advertising, branding and AI automation. A complete acquisition chain for Luxembourg businesses.",
     },
     about: {
-      title: "The VorTX agency | Marketing & web in Luxembourg",
+      title: "The vortx agency | Marketing & web in Luxembourg",
       description:
-        "Who VorTX is: a Luxembourg marketing and web agency obsessed with conversion and measurable performance. Discover our approach.",
+        "Who vortx is: a Luxembourg marketing and web agency obsessed with conversion and measurable performance. Discover our approach.",
     },
     approach: {
-      title: "Our method | VorTX Luxembourg",
+      title: "Our method | vortx Luxembourg",
       description:
-        "Diagnosis, design, review, launch: the VorTX method for delivering sites and campaigns that pay off.",
+        "Diagnosis, design, review, launch: the vortx method for delivering sites and campaigns that pay off.",
     },
     work: {
-      title: "Work | VorTX Luxembourg",
+      title: "Work | vortx Luxembourg",
       description:
-        "Discover the projects and results of VorTX, marketing and web agency in Luxembourg.",
+        "Discover the projects and results of vortx, marketing and web agency in Luxembourg.",
     },
     contact: {
-      title: "Contact & free audit | VorTX Luxembourg",
+      title: "Contact & free audit | vortx Luxembourg",
       description:
-        "Book a free discovery call with VorTX. Personalised audit with no delay, no-commitment quote. Marketing & web agency in Luxembourg.",
+        "Book a free discovery call with vortx. Personalised audit with no delay, no-commitment quote. Marketing & web agency in Luxembourg.",
     },
     legalMentions: {
-      title: "Legal notice | VorTX Luxembourg",
-      description: "Legal notice for the VorTX site, marketing & web agency in Luxembourg.",
+      title: "Legal notice | vortx Luxembourg",
+      description: "Legal notice for the vortx site, marketing & web agency in Luxembourg.",
     },
     legalPrivacy: {
-      title: "Privacy policy | VorTX Luxembourg",
+      title: "Privacy policy | vortx Luxembourg",
       description:
-        "How VorTX collects, uses and protects your personal data (GDPR).",
+        "How vortx collects, uses and protects your personal data (GDPR).",
     },
     legalCookies: {
-      title: "Cookie policy | VorTX Luxembourg",
-      description: "Use of cookies and trackers on the VorTX site.",
+      title: "Cookie policy | vortx Luxembourg",
+      description: "Use of cookies and trackers on the vortx site.",
     },
     news: {
-      title: "News | Marketing, SEO & GEO — VorTX Luxembourg",
+      title: "News | Marketing, SEO & GEO — vortx Luxembourg",
       description:
-        "Analysis and advice from VorTX on SEO, GEO, conversion and the web in Luxembourg. Substance to grow your business.",
+        "Analysis and advice from vortx on SEO, GEO, conversion and the web in Luxembourg. Substance to grow your business.",
     },
     glossary: {
-      title: "Marketing & web glossary | VorTX Luxembourg",
+      title: "Marketing & web glossary | vortx Luxembourg",
       description:
         "Every digital marketing and web term explained simply: SEO, GEO, ROAS, conversion funnel, CMS… with the Luxembourg context.",
     },
     faq: {
-      title: "FAQ — Websites, SEO, leads & pricing | VorTX Luxembourg",
+      title: "FAQ — Websites, SEO, leads & pricing | vortx Luxembourg",
       description:
         "All the answers on our websites, SEO & GEO, lead generation, advertising, AI, pricing, timelines and GDPR. Marketing & web agency in Luxembourg.",
     },
@@ -1251,7 +1480,7 @@ export const en = {
       title: "Thank you, your request is on its way.",
       lead: "We're reviewing it and will get back to you quickly with an initial analysis — no commitment.",
       cta: "Back to home",
-      metaTitle: "Thank you | VorTX Luxembourg",
+      metaTitle: "Thank you | vortx Luxembourg",
     },
     notFound: {
       title: "Page not found",

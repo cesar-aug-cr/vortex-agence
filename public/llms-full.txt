@@ -1,14 +1,14 @@
-# VorTX — contenu complet
+# vortx — contenu complet
 
-> VorTX est une agence marketing et web basée au Luxembourg. VorTX conçoit des
+> vortx est une agence marketing et web basée au Luxembourg. vortx conçoit des
 > sites web qui convertissent et des stratégies d'acquisition mesurables :
 > SEO & GEO, génération de leads, publicité en ligne, branding et automatisation
 > IA. Réponse rapide, audit gratuit, sans engagement, travail 100 % sur mesure.
 
 ## L'agence
-VorTX est une agence marketing et web luxembourgeoise, obsédée par la conversion
+vortx est une agence marketing et web luxembourgeoise, obsédée par la conversion
 et la performance mesurable. Au Luxembourg, les clients comparent en français, en
-allemand et en anglais : VorTX construit des présences qui performent dans les
+allemand et en anglais : vortx construit des présences qui performent dans les
 trois langues et qui parlent autant à Google qu'aux IA génératives.
 
 Principes :
@@ -18,7 +18,7 @@ Principes :
 - Prêt pour l'IA : SEO + GEO/GSO pour être cité par Google ET par les IA génératives.
 
 ## Services
-VorTX propose six expertises qui s'emboîtent.
+vortx propose six expertises qui s'emboîtent.
 
 ### Sites web qui convertissent
 Sites vitrines, landing pages et plateformes sur mesure en Next.js. Performance,
@@ -73,14 +73,14 @@ Workflows automatisés, intégrations et agents IA sur mesure.
 
 ## GEO / GSO (le SEO du futur)
 La recherche évolue : les clients posent leurs questions à des assistants IA.
-VorTX optimise le contenu pour être la source citée.
+vortx optimise le contenu pour être la source citée.
 - Citations directes par l'IA grâce à du contenu structuré.
 - Schémas LLM-ready et fichiers (llms.txt) qui parlent aux modèles.
 - SEO et GEO intégrés : on gagne sur Google ET sur les IA.
 
 ## Questions fréquentes
 Q : Combien coûte un site ou une campagne ?
-R : Chaque projet est sur mesure. Plutôt qu'un tarif générique, VorTX propose un
+R : Chaque projet est sur mesure. Plutôt qu'un tarif générique, vortx propose un
 devis précis après un appel découverte gratuit et un audit.
 
 Q : Travaillez-vous en plusieurs langues ?
@@ -89,7 +89,7 @@ sur demande), adaptés au marché luxembourgeois.
 
 Q : Qu'est-ce que le GEO / GSO ?
 R : L'optimisation pour les moteurs de réponse IA (ChatGPT, Perplexity, Google AI).
-VorTX structure le contenu pour que les IA citent l'entreprise comme source.
+vortx structure le contenu pour que les IA citent l'entreprise comme source.
 
 Q : Proposez-vous un suivi après la mise en ligne ?
 R : Oui. Maintenance, évolutions, optimisation de la conversion et accompagnement

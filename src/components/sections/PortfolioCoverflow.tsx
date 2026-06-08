@@ -5,7 +5,7 @@ import Image from "next/image";
 
 /**
  * Portfolio coverflow showcase — ported from the cd-main /portafolio hero and
- * rebranded to VorTX (lime/cyan, French copy, CTA → #contact). Self-detects the
+ * rebranded to vortx (lime/cyan, French copy, CTA → #contact). Self-detects the
  * active theme via the `.dark` class on <html>.
  */
 
@@ -42,7 +42,7 @@ export function PortfolioCoverflow() {
     Array<{ id: number; x: number; y: number; size: number; delay: number }>
   >([]);
 
-  // Track the VorTX theme (class "dark" on <html>).
+  // Track the vortx theme (class "dark" on <html>).
   useEffect(() => {
     const el = document.documentElement;
     const update = () => setIsDark(el.classList.contains("dark"));
@@ -216,7 +216,7 @@ export function PortfolioCoverflow() {
                 >
                   <Image
                     src={site.image}
-                    alt={`Projet ${site.name} réalisé par VorTX`}
+                    alt={`Projet ${site.name} réalisé par vortx`}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 480px"

@@ -49,9 +49,9 @@ export async function generateMetadata({
       template: "%s",
     },
     description: dict.meta.home.description,
-    applicationName: "VorTX",
-    authors: [{ name: "VorTX" }],
-    creator: "VorTX",
+    applicationName: "vortx",
+    authors: [{ name: "vortx" }],
+    creator: "vortx",
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -62,7 +62,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: "fr_LU",
-      siteName: "VorTX",
+      siteName: "vortx",
       title: dict.meta.home.title,
       description: dict.meta.home.description,
       url: `/${locale}`,

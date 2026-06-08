@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
  * server-side so the whole flow works end-to-end. Set these env vars to go live:
  *   RESEND_API_KEY   — Resend API key
  *   CONTACT_TO       — destination inbox (defaults to site.email)
- *   CONTACT_FROM     — verified sender, e.g. "VorTX <contact@vortx.lu>"
+ *   CONTACT_FROM     — verified sender, e.g. "vortx <contact@vortx.lu>"
  */
 export async function POST(req: Request) {
   const data = await req.json().catch(() => null);
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
   };
 
   const to = process.env.CONTACT_TO || site.email;
-  const from = process.env.CONTACT_FROM || `VorTX <${site.email}>`;
+  const from = process.env.CONTACT_FROM || `vortx <${site.email}>`;
 
   if (process.env.RESEND_API_KEY && to) {
     try {
