@@ -1,9 +1,12 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Wordmark } from "@/components/brand/Wordmark";
 import ThreeSphereV2BlackHole from "@/components/three/BlackHoleLazy";
+import { HeroParticles } from "@/components/sections/HeroParticles";
+import { GlowStar } from "@/components/sections/GlowStar";
 
 export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
@@ -85,6 +88,12 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
+      {/* Floating particles + glow lines (ported from the "Confiance" section) —
+          above the scrim/frost so they stay visible, below the copy (z-10) */}
+      <div className="pointer-events-none absolute inset-0 z-[4]" aria-hidden>
+        <HeroParticles />
+      </div>
+
       <div className="container-vortx relative z-10 flex min-h-[100svh] flex-col justify-center pb-16 pt-36 md:pt-40">
         <div className="relative self-start">
           {/* VORTX wordmark as a faint watermark sitting behind the eyebrow */}
@@ -93,7 +102,22 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             className="pointer-events-none absolute left-0 top-1/2 h-14 w-auto -translate-y-1/2 text-stage-text/[0.08] animate-fade-in sm:h-16 md:h-20"
           />
           <span className="relative font-mono text-xs uppercase tracking-[0.24em] text-accent animate-fade-in">
-            {dict.hero.eyebrow}
+            {dict.hero.eyebrow.split("Luxembourg").map((part, i) => (
+              <Fragment key={i}>
+                {i > 0 && (
+                  <span className="relative inline-block">
+                    Luxembourg
+                    {/* sparkle acting as the full stop, under the final "g" */}
+                    <GlowStar
+                      className="left-full top-full"
+                      scale={0.28}
+                      delay={0.8}
+                    />
+                  </span>
+                )}
+                {part}
+              </Fragment>
+            ))}
           </span>
         </div>
 

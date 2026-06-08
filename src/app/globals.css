@@ -546,6 +546,17 @@
     opacity: 1;
   }
 }
+/* Glow-star twinkle — opacity only (the star's scale lives in an inline
+   transform, so animating opacity here avoids clobbering it). */
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 @keyframes brandSweep {
   0% {
     background-position: 150% center;
