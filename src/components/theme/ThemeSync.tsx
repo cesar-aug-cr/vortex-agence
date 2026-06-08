@@ -8,10 +8,14 @@ import { usePathname } from "next/navigation";
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const A11Y_CLASSES: Record<string, string> = {
-  contrast: "a11y-contrast",
-  links: "a11y-links",
   readable: "a11y-readable",
   spacing: "a11y-spacing",
+  lineHeight: "a11y-line",
+  links: "a11y-links",
+  contrast: "a11y-contrast",
+  hideImages: "a11y-hide-img",
+  bigCursor: "a11y-cursor",
+  focusHighlight: "a11y-focus",
   pauseMotion: "a11y-no-motion",
 };
 
@@ -46,6 +50,10 @@ export function ThemeSync() {
         e.classList.toggle(A11Y_CLASSES[key], Boolean(s[key]));
       }
       e.style.fontSize = s.fontScale && s.fontScale !== 1 ? `${s.fontScale * 100}%` : "";
+      const filter = [s.grayscale ? "grayscale(1)" : "", s.saturate ? "saturate(1.6)" : ""]
+        .filter(Boolean)
+        .join(" ");
+      e.style.filter = filter;
     } catch {
       /* ignore */
     }

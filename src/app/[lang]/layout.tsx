@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono, Atkinson_Hyperlegible } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { i18n, isLocale } from "@/i18n/config";
@@ -19,6 +19,14 @@ const interTight = Inter_Tight({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+// Legibility font for the accessibility "readable font" option — designed for
+// low-vision reading, self-hosted by Next (no external request).
+const atkinson = Atkinson_Hyperlegible({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-readable",
   display: "swap",
 });
 
@@ -94,7 +102,7 @@ export default async function LangLayout({
         <A11yScript />
         <ConsentScript />
       </head>
-      <body className={`${interTight.variable} ${jetbrainsMono.variable} antialiased`}>
+      <body className={`${interTight.variable} ${jetbrainsMono.variable} ${atkinson.variable} antialiased`}>
         <ThemeSync />
         <SchemaMarkup />
         {children}

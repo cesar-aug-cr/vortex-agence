@@ -70,7 +70,7 @@ export function Header({
 
         {/* Desktop nav */}
         <nav className="hidden lg:block">
-          <ul className="flex items-center gap-5 text-sm font-medium xl:gap-7">
+          <ul className="flex items-center gap-7 text-sm font-medium xl:gap-9">
             {/* Services mega */}
             <li className="group/mega static">
               <Link
@@ -169,20 +169,37 @@ export function Header({
                 {dict.nav.about}
               </Link>
             </li>
-            <li>
-              <Link href={localized(lang, "/news")} className={`py-2 transition-colors ${navLinkClass}`}>
-                {dict.nav.news}
-              </Link>
-            </li>
-            <li>
-              <Link href={localized(lang, "/glossaire")} className={`py-2 transition-colors ${navLinkClass}`}>
-                {dict.nav.glossary}
-              </Link>
-            </li>
-            <li>
-              <Link href={localized(lang, "/faq")} className={`py-2 transition-colors ${navLinkClass}`}>
-                {dict.nav.faq}
-              </Link>
+
+            {/* Ressources dropdown */}
+            <li className="group/res relative">
+              <button
+                type="button"
+                aria-haspopup="true"
+                className={`flex items-center gap-1.5 py-2 transition-colors ${navLinkClass}`}
+              >
+                {dict.nav.resources}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden className="transition-transform group-hover/res:rotate-180">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <div className="invisible absolute left-0 top-full z-40 w-52 translate-y-2 pt-3 opacity-0 transition-all duration-200 group-hover/res:visible group-hover/res:translate-y-0 group-hover/res:opacity-100 group-focus-within/res:visible group-focus-within/res:translate-y-0 group-focus-within/res:opacity-100">
+                <ul className="overflow-hidden rounded-xl border border-border bg-bg-card p-2 shadow-[var(--shadow-lg)]">
+                  {[
+                    { label: dict.nav.news, href: "/news" },
+                    { label: dict.nav.glossary, href: "/glossaire" },
+                    { label: dict.nav.faq, href: "/faq" },
+                  ].map((l) => (
+                    <li key={l.href}>
+                      <Link
+                        href={localized(lang, l.href)}
+                        className="block rounded-lg px-3 py-2 text-sm font-medium text-text transition-colors hover:bg-accent-soft hover:text-accent"
+                      >
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
           </ul>
         </nav>
@@ -254,10 +271,26 @@ export function Header({
                 { label: dict.nav.approach, href: "/approche" },
                 { label: dict.nav.work, href: "/realisations" },
                 { label: dict.nav.about, href: "/agence" },
+                { label: dict.nav.contact, href: "/contact" },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={localized(lang, l.href)}
+                    onClick={() => setMobileOpen(false)}
+                    className="block border-b border-border py-3 text-text"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <p className="eyebrow mt-8">{dict.nav.resources}</p>
+            <ul className="mt-4 grid gap-1 text-lg font-medium">
+              {[
                 { label: dict.nav.news, href: "/news" },
                 { label: dict.nav.glossary, href: "/glossaire" },
                 { label: dict.nav.faq, href: "/faq" },
-                { label: dict.nav.contact, href: "/contact" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link

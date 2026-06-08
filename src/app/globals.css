@@ -733,18 +733,43 @@ html.a11y-links a {
   text-underline-offset: 0.18em;
 }
 
-/* More legible, neutral font everywhere */
+/* Legibility font (Atkinson Hyperlegible) for low-vision / dyslexia comfort */
 html.a11y-readable,
 html.a11y-readable body {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-    sans-serif !important;
+  font-family: var(--font-readable), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif !important;
 }
 
-/* Looser spacing for easier reading */
+/* Looser letter/word spacing */
 html.a11y-spacing body {
   letter-spacing: 0.05em;
   word-spacing: 0.12em;
+}
+
+/* Larger line height */
+html.a11y-line body {
   line-height: 1.9 !important;
+}
+
+/* Hide images & decorative illustrations */
+html.a11y-hide-img img,
+html.a11y-hide-img .illu-stage > svg {
+  display: none !important;
+}
+
+/* Bigger cursor */
+html.a11y-cursor,
+html.a11y-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cpath d='M5 3l14 7-6 1.5L9.5 17z' fill='%23000' stroke='%23fff' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E")
+      4 4,
+    auto !important;
+}
+
+/* Strong keyboard focus highlight */
+html.a11y-focus *:focus-visible {
+  outline: 3px solid var(--accent) !important;
+  outline-offset: 2px !important;
+  border-radius: 2px;
 }
 
 /* Stop animations & transitions (motion sensitivity) */

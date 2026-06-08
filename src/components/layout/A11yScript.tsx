@@ -4,6 +4,6 @@
  * no flash of un-adjusted content for users who rely on these settings.
  */
 export function A11yScript() {
-  const js = `(function(){try{var s=JSON.parse(localStorage.getItem('vortx-a11y')||'{}');var e=document.documentElement;var m={contrast:'a11y-contrast',links:'a11y-links',readable:'a11y-readable',spacing:'a11y-spacing',pauseMotion:'a11y-no-motion'};for(var k in m){if(s[k])e.classList.add(m[k]);}if(s.fontScale&&s.fontScale!==1){e.style.fontSize=(s.fontScale*100)+'%';}}catch(_){}})();`;
+  const js = `(function(){try{var s=JSON.parse(localStorage.getItem('vortx-a11y')||'{}');var e=document.documentElement;var m={readable:'a11y-readable',spacing:'a11y-spacing',lineHeight:'a11y-line',links:'a11y-links',contrast:'a11y-contrast',hideImages:'a11y-hide-img',bigCursor:'a11y-cursor',focusHighlight:'a11y-focus',pauseMotion:'a11y-no-motion'};for(var k in m){if(s[k])e.classList.add(m[k]);}if(s.fontScale&&s.fontScale!==1){e.style.fontSize=(s.fontScale*100)+'%';}var f=[];if(s.grayscale)f.push('grayscale(1)');if(s.saturate)f.push('saturate(1.6)');if(f.length)e.style.filter=f.join(' ');}catch(_){}})();`;
   return <script dangerouslySetInnerHTML={{ __html: js }} suppressHydrationWarning />;
 }
