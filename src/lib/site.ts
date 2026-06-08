@@ -7,7 +7,7 @@ export const site = {
   name: "VorTX",
   url: "https://vortx.lu",
   defaultLocale: "fr",
-  locales: ["fr"] as const,
+  locales: ["fr", "en", "de", "es"] as const,
   description:
     "Agence marketing & web à Luxembourg : sites qui convertissent, SEO & GEO, génération de leads et publicité en ligne.",
   email: "contact@vortx.lu", // placeholder

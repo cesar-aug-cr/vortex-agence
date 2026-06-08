@@ -7,6 +7,22 @@ import { i18n } from "@/i18n/config";
  * are redirected to the default locale. Files, _next and api are excluded
  * via the matcher below.
  */
+/** Pick the best supported locale from the Accept-Language header. */
+function preferredLocale(req: NextRequest): string {
+  const header = req.headers.get("accept-language");
+  if (!header) return i18n.defaultLocale;
+  // e.g. "de-DE,de;q=0.9,en;q=0.8" → ["de","de","en"]
+  const wanted = header
+    .split(",")
+    .map((part) => part.split(";")[0].trim().slice(0, 2).toLowerCase())
+    .filter(Boolean);
+  for (const code of wanted) {
+    const hit = i18n.locales.find((l) => l === code);
+    if (hit) return hit;
+  }
+  return i18n.defaultLocale;
+}
+
 export function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
 
@@ -15,7 +31,7 @@ export function proxy(req: NextRequest) {
   );
   if (hasLocale) return;
 
-  const locale = i18n.defaultLocale;
+  const locale = preferredLocale(req);
   const target = pathname === "/" ? "" : pathname;
   return NextResponse.redirect(new URL(`/${locale}${target}${search}`, req.url));
 }

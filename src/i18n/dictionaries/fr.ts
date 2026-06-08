@@ -200,19 +200,19 @@ export const fr = {
     {
       slug: "branding-design",
       group: "convert",
-      title: "Identité & design",
-      tagline: "Une marque dont on se souvient.",
+      title: "Création de logos & branding",
+      tagline: "Un logo et une marque dont on se souvient.",
       short:
-        "Identité visuelle, direction artistique et systèmes de design. La cohérence qui inspire confiance avant le premier mot.",
+        "Logo sur mesure, identité visuelle complète et charte de marque. La cohérence qui inspire confiance avant même le premier mot.",
       bullets: [
-        "Logo & identité de marque",
-        "Direction artistique",
-        "Design system & UI/UX",
+        "Création de logo sur mesure",
+        "Identité visuelle complète",
+        "Charte graphique & règles d'usage",
         "Déclinaisons print & digital",
       ],
-      metaTitle: "Branding & design graphique à Luxembourg | VorTX",
+      metaTitle: "Création de logo & branding à Luxembourg | VorTX",
       metaDescription:
-        "Identité de marque, direction artistique et design system pour les entreprises luxembourgeoises. Une image cohérente qui inspire confiance.",
+        "Création de logo sur mesure, identité de marque et charte graphique pour les entreprises luxembourgeoises. Une image cohérente qui inspire confiance.",
     },
     {
       slug: "automatisation-ia",
@@ -453,7 +453,7 @@ export const fr = {
           { label: "SEO & GEO", href: "/services/seo-geo" },
           { label: "Génération de leads", href: "/services/lead-generation" },
           { label: "Publicité en ligne", href: "/services/publicite" },
-          { label: "Identité & design", href: "/services/branding-design" },
+          { label: "Création de logos & branding", href: "/services/branding-design" },
           { label: "Automatisation & IA", href: "/services/automatisation-ia" },
         ],
       },
@@ -481,7 +481,7 @@ export const fr = {
     contactTitle: "Contact",
     location: "Luxembourg",
     rights: "Tous droits réservés.",
-    madeWith: "Conçu avec soin et beaucoup d'IA.",
+    madeWith: "Conçu avec amour et beaucoup d'AI.",
     backToTop: "Retour en haut",
   },
 
@@ -1057,23 +1057,24 @@ export const fr = {
     },
     "branding-design": {
       intro: [
-        "Avant le premier mot, votre image parle déjà. Une identité cohérente inspire confiance et fait la différence sur un marché où tout le monde se ressemble.",
-        "Logo, direction artistique, design system : on construit une marque mémorable et un univers visuel qui se décline partout, du site au print.",
+        "Votre logo, c'est la première chose qu'on retient de vous. On le conçoit sur mesure pour qu'il soit unique, mémorable et fidèle à ce que vous êtes — pas un template vu mille fois.",
+        "Au-delà du logo, on construit une identité visuelle complète : couleurs, typographies, règles d'usage. Une marque cohérente partout, du site web au print, qui inspire confiance avant même le premier mot.",
       ],
       included: [
-        { icon: "branding", title: "Identité de marque", desc: "Logo, palette, typographie et règles d'usage qui rendent votre marque reconnaissable." },
-        { icon: "responsive", title: "Direction artistique", desc: "Un univers visuel cohérent, décliné sur tous vos supports digitaux et imprimés." },
-        { icon: "ai-build", title: "Design system", desc: "Une bibliothèque de composants réutilisables pour une cohérence parfaite et durable." },
-        { icon: "conversion", title: "Design orienté conversion", desc: "Du beau qui sert un objectif : guider l'œil et l'action, pas seulement décorer." },
+        { icon: "branding", title: "Logo sur mesure", desc: "Un logo unique, conçu à la main, décliné dans tous les formats dont vous aurez besoin." },
+        { icon: "ai-build", title: "Identité visuelle", desc: "Palette de couleurs, typographies et éléments graphiques qui rendent votre marque reconnaissable." },
+        { icon: "responsive", title: "Charte graphique", desc: "Un guide clair des règles d'usage pour garder votre marque cohérente partout, dans le temps." },
+        { icon: "conversion", title: "Déclinaisons print & digital", desc: "Cartes de visite, signatures, réseaux sociaux, supports… votre marque appliquée sur tout." },
       ],
       deliverables: [
-        "Logo et identité visuelle complète",
+        "Logo sur mesure (tous formats : couleur, noir & blanc, vectoriel)",
+        "Identité visuelle : couleurs & typographies",
         "Charte graphique & règles d'usage",
-        "Design system & maquettes UI/UX",
         "Déclinaisons print et digital",
       ],
       faq: [
-        { q: "Vous refaites une marque de zéro ou vous faites évoluer l'existant ?", a: "Les deux. On peut créer une identité complète ou rafraîchir la vôtre en gardant ce qui fonctionne déjà et qui vous est reconnu." },
+        { q: "Vous créez un logo de zéro ou vous faites évoluer l'existant ?", a: "Les deux. On peut créer un logo et une identité de A à Z, ou rafraîchir les vôtres en gardant ce qui fonctionne déjà et qui vous est reconnu." },
+        { q: "Quels fichiers est-ce que je reçois ?", a: "Vous recevez votre logo dans tous les formats utiles (vectoriel, couleur, noir & blanc, versions web et print) — vous en êtes pleinement propriétaire." },
         { q: "Le design tient-il compte de la conversion ?", a: "Toujours. On ne fait pas du beau pour du beau : chaque choix visuel sert la clarté, la confiance et l'action." },
       ],
     },
@@ -1180,6 +1181,23 @@ export const fr = {
         ],
       },
     ],
+  },
+
+  // ---- Accessibility widget ----
+  a11y: {
+    button: "Accessibilité",
+    title: "Accessibilité",
+    fontSize: "Taille du texte",
+    decrease: "Réduire le texte",
+    increase: "Agrandir le texte",
+    contrast: "Contraste élevé",
+    links: "Souligner les liens",
+    readable: "Police plus lisible",
+    spacing: "Espacement du texte",
+    pauseMotion: "Couper les animations",
+    readingGuide: "Guide de lecture",
+    reset: "Réinitialiser",
+    close: "Fermer",
   },
 
   // ---- Per-route metadata ----

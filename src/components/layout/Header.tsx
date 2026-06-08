@@ -7,6 +7,8 @@ import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { LogoMark } from "@/components/brand/LogoMark";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { AccessibilityWidget } from "@/components/layout/AccessibilityWidget";
 import { ArrowUpRight, ArrowRight } from "@/components/ui/icons";
 
 type Service = Dictionary["services"][number];
@@ -185,20 +187,22 @@ export function Header({
           </ul>
         </nav>
 
-        {/* Right cluster */}
+        {/* Right cluster — order: desktop [a11y · lang · theme · CTA] ·
+            mobile [theme · a11y · burger] */}
         <div className="flex items-center gap-3">
-          <span
-            className={`hidden font-mono text-xs uppercase tracking-widest sm:inline ${
-              solid ? "text-text-muted" : "text-white/60"
-            }`}
-            title="Bientôt : DE · EN · LU"
-          >
-            FR
-          </span>
-          <ThemeToggle label={dict.common.toggleTheme} onDark={!solid} />
+          {/* accessibility — left of language (desktop), left of burger (mobile) */}
+          <div className="order-2 sm:order-1">
+            <AccessibilityWidget labels={dict.a11y} onDark={!solid} />
+          </div>
+          <div className="order-1 hidden sm:order-2 sm:block">
+            <LanguageSwitcher lang={lang} onDark={!solid} />
+          </div>
+          <div className="order-1 sm:order-3">
+            <ThemeToggle label={dict.common.toggleTheme} onDark={!solid} />
+          </div>
           <Link
             href={localized(lang, "/contact")}
-            className="btn btn-primary hidden sm:inline-flex"
+            className="btn btn-primary order-4 hidden sm:inline-flex"
           >
             {dict.common.cta}
           </Link>
@@ -209,7 +213,7 @@ export function Header({
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? dict.common.close : dict.common.openMenu}
             aria-expanded={mobileOpen}
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden ${
+            className={`order-3 inline-flex h-11 w-11 items-center justify-center rounded-full border sm:order-5 lg:hidden ${
               solid ? "border-border-strong text-text" : "border-white/30 text-white"
             }`}
           >
@@ -272,6 +276,13 @@ export function Header({
             >
               {dict.common.cta}
             </Link>
+
+            <div className="mt-8 border-t border-border pt-6">
+              <p className="eyebrow">{dict.common.language}</p>
+              <div className="mt-3">
+                <LanguageSwitcher lang={lang} />
+              </div>
+            </div>
           </nav>
         </div>
       )}

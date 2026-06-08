@@ -5,7 +5,9 @@ import "../globals.css";
 import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { ThemeScript } from "@/components/theme/ThemeScript";
+import { ThemeSync } from "@/components/theme/ThemeSync";
 import { ConsentScript } from "@/components/layout/ConsentScript";
+import { A11yScript } from "@/components/layout/A11yScript";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
 
@@ -53,8 +55,8 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${locale}`,
       languages: {
-        fr: "/fr",
-        "x-default": "/fr",
+        ...Object.fromEntries(i18n.locales.map((l) => [l, `/${l}`])),
+        "x-default": `/${i18n.defaultLocale}`,
       },
     },
     openGraph: {
@@ -89,9 +91,11 @@ export default async function LangLayout({
     <html lang={lang} suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <A11yScript />
         <ConsentScript />
       </head>
       <body className={`${interTight.variable} ${jetbrainsMono.variable} antialiased`}>
+        <ThemeSync />
         <SchemaMarkup />
         {children}
         <ConsentBanner lang={lang} consent={dict.consent} />

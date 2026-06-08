@@ -37,19 +37,12 @@ export function Reviews({ dict }: { dict: Dictionary }) {
       <SectionHeading eyebrow={r.eyebrow} title={r.title} lead={r.lead} align="center" />
 
       {/* aggregate header */}
-      <div className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-4 rounded-2xl border border-border bg-bg-card p-6 text-center sm:flex-row sm:justify-center sm:gap-8 sm:text-left">
-        <div className="flex flex-col items-center">
-          <span className="text-5xl font-bold leading-none text-text">
-            {r.aggregate.rating}
-            <span className="text-2xl text-text-muted">/{r.aggregate.ratingMax}</span>
-          </span>
-          <Stars rating={5} className="mt-2" />
-        </div>
-        <div className="h-px w-16 bg-border sm:h-14 sm:w-px" />
-        <div className="flex flex-col items-center sm:items-start">
-          <span className="text-2xl font-bold text-text">{r.aggregate.count}</span>
-          <span className="mt-1 text-sm text-text-dim">{r.aggregate.countLabel}</span>
-        </div>
+      <div className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-2 rounded-2xl border border-border bg-bg-card p-6 text-center">
+        <span className="text-5xl font-bold leading-none text-text">
+          {r.aggregate.rating}
+          <span className="text-2xl text-text-muted">/{r.aggregate.ratingMax}</span>
+        </span>
+        <Stars rating={5} className="mt-2" />
       </div>
 
       {/* review cards */}

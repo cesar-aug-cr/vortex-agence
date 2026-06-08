@@ -709,3 +709,58 @@
     opacity: 0;
   }
 }
+
+/* ============================================================
+   Accessibility widget — toggled by classes on <html>
+   ============================================================ */
+
+/* Underline every link for clearer affordance */
+html.a11y-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.18em;
+}
+
+/* More legible, neutral font everywhere */
+html.a11y-readable,
+html.a11y-readable body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif !important;
+}
+
+/* Looser spacing for easier reading */
+html.a11y-spacing body {
+  letter-spacing: 0.05em;
+  word-spacing: 0.12em;
+  line-height: 1.9 !important;
+}
+
+/* Stop animations & transitions (motion sensitivity) */
+html.a11y-no-motion *,
+html.a11y-no-motion *::before,
+html.a11y-no-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* High contrast — push text/borders to the strongest values per theme */
+html.a11y-contrast {
+  --text-dim: var(--text);
+  --text-muted: var(--text);
+  --stage-text-dim: var(--stage-text);
+  --border: var(--border-strong);
+}
+html:not(.dark).a11y-contrast {
+  --text: #000000;
+  --border-strong: rgba(0, 0, 0, 0.55);
+}
+html.dark.a11y-contrast {
+  --text: #ffffff;
+  --border-strong: rgba(255, 255, 255, 0.55);
+}
+html.a11y-contrast a:focus-visible,
+html.a11y-contrast button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
