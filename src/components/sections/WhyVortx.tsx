@@ -1,8 +1,8 @@
 import type { Dictionary } from "@/i18n/getDictionary";
 import { Section } from "@/components/ui/Section";
-import { Target, Pulse, Globe, Spark } from "@/components/ui/icons";
+import { IconStrategy, IconConversion, IconLocal, IconAI } from "@/components/sections/WhyIcons";
 
-const icons = [Target, Pulse, Globe, Spark];
+const icons = [IconStrategy, IconConversion, IconLocal, IconAI];
 
 /**
  * "Pourquoi vortx" — bento layout. A featured heading cell (title + lead)
