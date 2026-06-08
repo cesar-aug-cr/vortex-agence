@@ -307,6 +307,19 @@
       radial-gradient(700px 700px at 16% 64%, rgba(20, 224, 200, 0.12), transparent 68%),
       radial-gradient(660px 660px at 88% 80%, rgba(34, 211, 140, 0.14), transparent 68%);
   }
+  /* Light mode — same blue/green/cyan blobs, softer so the white surface
+     stays clean while picking up the brand tints behind the sections. */
+  :root:not(.dark) .ambient-glow {
+    background-image: radial-gradient(
+        620px 620px at 86% 16%,
+        rgba(20, 224, 200, 0.24),
+        transparent 70%
+      ),
+      radial-gradient(720px 720px at 8% 33%, rgba(34, 211, 140, 0.24), transparent 70%),
+      radial-gradient(640px 640px at 92% 48%, rgba(46, 102, 255, 0.2), transparent 70%),
+      radial-gradient(700px 700px at 16% 64%, rgba(20, 224, 200, 0.22), transparent 70%),
+      radial-gradient(660px 660px at 88% 80%, rgba(34, 211, 140, 0.24), transparent 70%);
+  }
 
   /* Brand-coloured shine that sweeps left→right across the LETTERS only
      (clipped to the text — no background halo). */
