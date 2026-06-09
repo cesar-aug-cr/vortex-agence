@@ -25,23 +25,23 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Section } from "@/components/ui/Section";
 
 /* ---- Fonts (all OFL/Apache — free for commercial use, self-hosted) ---- */
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], display: "swap" });
-const manrope = Manrope({ subsets: ["latin"], display: "swap" });
-const sora = Sora({ subsets: ["latin"], display: "swap" });
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap" });
-const outfit = Outfit({ subsets: ["latin"], display: "swap" });
-const hanken = Hanken_Grotesk({ subsets: ["latin"], display: "swap" });
-const onest = Onest({ subsets: ["latin"], display: "swap" });
-const lexend = Lexend({ subsets: ["latin"], display: "swap" });
-const bricolage = Bricolage_Grotesque({ subsets: ["latin"], display: "swap" });
-const syne = Syne({ subsets: ["latin"], display: "swap" });
-const fraunces = Fraunces({ subsets: ["latin"], display: "swap" });
-const newsreader = Newsreader({ subsets: ["latin"], display: "swap" });
-const lora = Lora({ subsets: ["latin"], display: "swap" });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], display: "swap" });
-const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], display: "swap" });
-const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
-const atkinson = Atkinson_Hyperlegible({ subsets: ["latin"], weight: ["400", "700"], display: "swap" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin", "latin-ext"], display: "swap" });
+const manrope = Manrope({ subsets: ["latin", "latin-ext"], display: "swap" });
+const sora = Sora({ subsets: ["latin", "latin-ext"], display: "swap" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin", "latin-ext"], display: "swap" });
+const outfit = Outfit({ subsets: ["latin", "latin-ext"], display: "swap" });
+const hanken = Hanken_Grotesk({ subsets: ["latin", "latin-ext"], display: "swap" });
+const onest = Onest({ subsets: ["latin", "latin-ext"], display: "swap" });
+const lexend = Lexend({ subsets: ["latin", "latin-ext"], display: "swap" });
+const bricolage = Bricolage_Grotesque({ subsets: ["latin", "latin-ext"], display: "swap" });
+const syne = Syne({ subsets: ["latin", "latin-ext"], display: "swap" });
+const fraunces = Fraunces({ subsets: ["latin", "latin-ext"], display: "swap" });
+const newsreader = Newsreader({ subsets: ["latin", "latin-ext"], display: "swap" });
+const lora = Lora({ subsets: ["latin", "latin-ext"], display: "swap" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin", "latin-ext"], display: "swap" });
+const spaceMono = Space_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "700"], display: "swap" });
+const plexMono = IBM_Plex_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600"], display: "swap" });
+const atkinson = Atkinson_Hyperlegible({ subsets: ["latin", "latin-ext"], weight: ["400", "700"], display: "swap" });
 
 type FontEntry = { name: string; cat: string; license: string; className: string };
 
@@ -123,6 +123,45 @@ function FontBlock({ f, tone }: { f: FontEntry; tone: "base" | "muted" }) {
       </div>
       <p className="mt-4 text-2xl tracking-wide text-text-dim">
         0 1 2 3 4 5 6 7 8 9 &nbsp; € $ % &amp; @ # — “ ” ‘ ’ ! ?
+      </p>
+
+      {/* Accents & diacritics (for translations) */}
+      <p className="mt-8 font-mono text-xs uppercase tracking-wide text-text-muted">
+        Accents &amp; diacritiques
+      </p>
+      <p className="mt-2 text-xl text-text">
+        à â ä á ã å æ ç é è ê ë í î ï ñ ó ô ö õ œ ù û ü ú ÿ ø ß
+      </p>
+      <p className="mt-1 text-xl text-text">
+        À Â Ä Á Ç É È Ê Ë Í Î Ï Ñ Ó Ô Ö Œ Ù Û Ü Ú Ÿ Ø ẞ ¿ ¡
+      </p>
+
+      {/* Real translated sentences (FR / DE / ES / EN) */}
+      <p className="mt-8 font-mono text-xs uppercase tracking-wide text-text-muted">
+        Phrases multilingues
+      </p>
+      <div className="mt-3 grid gap-2 text-lg text-text-dim">
+        <p>
+          <span className="mr-2 font-mono text-xs text-accent-strong">FR</span>
+          Été à Cœur : l&apos;œuvre élégante où chaque détail compte déjà — naïveté, sûreté, qualité.
+        </p>
+        <p>
+          <span className="mr-2 font-mono text-xs text-accent-strong">DE</span>
+          Schöne Grüße: Über Größe, Maßstäbe und Qualität — straßenweit, fünf Äpfel, weißer Fuß.
+        </p>
+        <p>
+          <span className="mr-2 font-mono text-xs text-accent-strong">ES</span>
+          ¡Diseño único! ¿Por qué no destacar y crecer más rápido? Atención, niño señor.
+        </p>
+        <p>
+          <span className="mr-2 font-mono text-xs text-accent-strong">EN</span>
+          The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.
+        </p>
+      </div>
+
+      {/* Punctuation & ligatures */}
+      <p className="mt-8 text-lg text-text-dim">
+        « guillemets » · „deutsch“ · “english” · ‹ angle › · – — … · &amp; fi fl ffi · © ® ™ ° № ½ ¼ → ←
       </p>
     </Section>
   );
