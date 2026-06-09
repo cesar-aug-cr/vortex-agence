@@ -104,6 +104,29 @@ export default async function ContactPage({
           </aside>
         </div>
       </Section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            url: `${site.url}/${lang}/contact`,
+            mainEntity: {
+              "@type": "Organization",
+              "@id": `${site.url}/#organization`,
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "sales",
+                email: site.email || undefined,
+                telephone: site.phone || undefined,
+                areaServed: "LU",
+                availableLanguage: [...site.locales],
+              },
+            },
+          }),
+        }}
+      />
     </PageShell>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { localized } from "@/lib/locale";
+import { site } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -100,6 +101,27 @@ export default async function NewsPage({
       </Section>
 
       <ContactCta dict={dict} lang={lang} />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: dict.meta.news.title,
+            url: `${site.url}${localized(lang, "/news")}`,
+            inLanguage: lang,
+            blogPost: articles.map((a) => ({
+              "@type": "BlogPosting",
+              headline: a.title,
+              description: a.excerpt,
+              datePublished: a.date,
+              dateModified: a.updated ?? a.date,
+              url: `${site.url}${localized(lang, `/news/${a.slug}`)}`,
+            })),
+          }),
+        }}
+      />
     </PageShell>
   );
 }
