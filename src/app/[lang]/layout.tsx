@@ -6,6 +6,7 @@ import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { ThemeScript } from "@/components/theme/ThemeScript";
 import { ThemeSync } from "@/components/theme/ThemeSync";
+import { MotionGuard } from "@/components/layout/MotionGuard";
 import { ConsentScript } from "@/components/layout/ConsentScript";
 import { A11yScript } from "@/components/layout/A11yScript";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
@@ -104,6 +105,7 @@ export default async function LangLayout({
       </head>
       <body className={`${interTight.variable} ${jetbrainsMono.variable} ${atkinson.variable} antialiased`}>
         <ThemeSync />
+        <MotionGuard />
         <SchemaMarkup />
         {children}
         <ConsentBanner lang={lang} consent={dict.consent} />

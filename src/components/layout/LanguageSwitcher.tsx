@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { i18n, localeNames, localeShort, type Locale } from "@/i18n/config";
@@ -19,6 +19,13 @@ export function LanguageSwitcher({
   const [open, setOpen] = useState(false);
   const pathname = usePathname() || `/${lang}`;
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   // swap the first path segment (the locale) for the target locale
   const pathFor = (target: string) => {
     const rest = pathname.replace(/^\/[^/]+/, "");
@@ -33,7 +40,7 @@ export function LanguageSwitcher({
         aria-haspopup="true"
         aria-expanded={open}
         aria-label={localeNames[lang]}
-        className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 font-mono text-xs uppercase tracking-widest transition-colors ${
+        className={`inline-flex h-11 items-center gap-1.5 rounded-full border px-3.5 font-mono text-xs uppercase tracking-widest transition-colors ${
           onDark
             ? "border-white/25 text-white/80 hover:border-accent hover:text-accent"
             : "border-border-strong text-text-muted hover:border-accent hover:text-accent"

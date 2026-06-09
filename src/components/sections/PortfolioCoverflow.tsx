@@ -41,6 +41,22 @@ export function PortfolioCoverflow() {
   const [particles, setParticles] = useState<
     Array<{ id: number; x: number; y: number; size: number; delay: number }>
   >([]);
+  const [reduced, setReduced] = useState(false);
+
+  // Respect reduced motion (OS setting OR the a11y "pause animations" toggle).
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const el = document.documentElement;
+    const update = () => setReduced(mq.matches || el.classList.contains("a11y-no-motion"));
+    update();
+    mq.addEventListener("change", update);
+    const obs = new MutationObserver(update);
+    obs.observe(el, { attributes: true, attributeFilter: ["class"] });
+    return () => {
+      mq.removeEventListener("change", update);
+      obs.disconnect();
+    };
+  }, []);
 
   // Track the vortx theme (class "dark" on <html>).
   useEffect(() => {
@@ -71,6 +87,10 @@ export function PortfolioCoverflow() {
 
   // Typewriter
   useEffect(() => {
+    if (reduced) {
+      setCurrentText(typewriterTexts[0]);
+      return;
+    }
     const full = typewriterTexts[textIndex];
     const timeout = setTimeout(
       () => {
@@ -92,16 +112,16 @@ export function PortfolioCoverflow() {
       isDeleting ? 40 : 80
     );
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, textIndex]);
+  }, [charIndex, isDeleting, textIndex, reduced]);
 
-  // Auto-advance
+  // Auto-advance (disabled under reduced motion)
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || reduced) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % showcaseSites.length);
     }, 3500);
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, reduced]);
 
   const getPosition = (index: number) => {
     const total = showcaseSites.length;
