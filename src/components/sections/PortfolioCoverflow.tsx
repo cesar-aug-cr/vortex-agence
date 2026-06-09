@@ -21,15 +21,17 @@ const showcaseSites = [
   { id: 9, name: "Pauly Losch", image: "/portfolio/pauly-losch.jpg" },
 ];
 
-const typewriterTexts = [
-  "Créez votre présence digitale",
-  "Concevez des expériences uniques",
-  "Boostez votre activité en ligne",
-  "Démarquez-vous de la concurrence",
-  "Connectez-vous à vos clients",
-];
+type Copy = {
+  typewriter: readonly string[];
+  cta: string;
+  prev: string;
+  next: string;
+  pause: string;
+  play: string;
+};
 
-export function PortfolioCoverflow() {
+export function PortfolioCoverflow({ copy }: { copy: Copy }) {
+  const typewriterTexts = copy.typewriter;
   const [isDark, setIsDark] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -279,7 +281,7 @@ export function PortfolioCoverflow() {
             href="#contact"
             className="block w-full rounded-xl bg-gradient-to-r from-accent to-accent-2 py-4 text-center text-lg font-semibold text-accent-ink shadow-lg shadow-accent/25 transition-all hover:opacity-90"
           >
-            Travaillons ensemble
+            {copy.cta}
           </a>
         </div>
       </div>
@@ -296,7 +298,7 @@ export function PortfolioCoverflow() {
               ? "border-white/20 text-white hover:border-accent hover:bg-accent/10 hover:text-accent"
               : "border-black/20 text-text-dim hover:border-accent hover:bg-accent/10 hover:text-text"
           }`}
-          aria-label="Projet précédent"
+          aria-label={copy.prev}
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -311,7 +313,7 @@ export function PortfolioCoverflow() {
               ? "border-white text-white hover:bg-white hover:text-black"
               : "border-text text-text hover:bg-text hover:text-bg"
           }`}
-          aria-label={isPaused ? "Reprendre le défilement" : "Mettre en pause"}
+          aria-label={isPaused ? copy.play : copy.pause}
         >
           {isPaused ? (
             <svg className="ml-0.5 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -332,7 +334,7 @@ export function PortfolioCoverflow() {
               ? "border-white/20 text-white hover:border-accent hover:bg-accent/10 hover:text-accent"
               : "border-black/20 text-text-dim hover:border-accent hover:bg-accent/10 hover:text-text"
           }`}
-          aria-label="Projet suivant"
+          aria-label={copy.next}
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

@@ -430,6 +430,7 @@ export const de = {
       stepMessage: "Ihre Nachricht",
       servicesLabel: "Welche Leistungen interessieren Sie?",
       servicesHint: "Wählen Sie eine oder mehrere Leistungen.",
+      servicesRequired: "Wählen Sie mindestens eine Leistung aus, um fortzufahren.",
       consentBefore:
         "Mit dem Anklicken dieses Kästchens bestätige ich, dass ich zur Kenntnis genommen habe, wie meine personenbezogenen Daten verarbeitet und gespeichert werden, wie in der ",
       consentLink: "Datenschutzerklärung",
@@ -1683,6 +1684,21 @@ export const de = {
         { q: "Sind meine Daten sicher?", a: "Ja. Wir konzipieren die Automatisierungen unter Einhaltung der DSGVO und mit großer Aufmerksamkeit für die Vertraulichkeit Ihrer Daten." },
       ],
     },
+  },
+
+  portfolio: {
+    typewriter: [
+      "Gestalten Sie Ihre digitale Präsenz",
+      "Schaffen Sie einzigartige Erlebnisse",
+      "Bringen Sie Ihr Geschäft online voran",
+      "Heben Sie sich vom Wettbewerb ab",
+      "Verbinden Sie sich mit Ihren Kunden",
+    ],
+    cta: "Lassen Sie uns zusammenarbeiten",
+    prev: "Vorheriges Projekt",
+    next: "Nächstes Projekt",
+    pause: "Pausieren",
+    play: "Wiedergabe fortsetzen",
   },
 
   // ---- Sub-services (children of a parent service) ----

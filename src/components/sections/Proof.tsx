@@ -35,7 +35,7 @@ export function Proof({ dict }: { dict: Dictionary }) {
       {/* Portfolio coverflow (ported & rebranded) replaces the old placeholder
           note — full-bleed (breaks out of the container) like the source. */}
       <div className="relative left-1/2 right-1/2 mt-8 w-screen -translate-x-1/2 md:mt-10">
-        <PortfolioCoverflow />
+        <PortfolioCoverflow copy={dict.portfolio} />
       </div>
 
       {/* guarantees — centered */}

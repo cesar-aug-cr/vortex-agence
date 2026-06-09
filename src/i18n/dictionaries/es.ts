@@ -424,6 +424,7 @@ export const es = {
       stepMessage: "Su mensaje",
       servicesLabel: "¿Qué servicios le interesan?",
       servicesHint: "Seleccione uno o varios servicios.",
+      servicesRequired: "Seleccione al menos un servicio para continuar.",
       consentBefore:
         "Al marcar esta casilla, confirmo que he tomado conocimiento de cómo se tratan y conservan mis datos personales, tal como se describe en la ",
       consentLink: "política de privacidad",
@@ -1677,6 +1678,22 @@ export const es = {
         { q: "¿Mis datos están seguros?", a: "Sí. Diseñamos las automatizaciones respetando el RGPD y con una fuerte atención a la confidencialidad de sus datos." },
       ],
     },
+  },
+
+  // ---- Portfolio coverflow (homepage showcase) ----
+  portfolio: {
+    typewriter: [
+      "Cree su presencia digital",
+      "Diseñe experiencias únicas",
+      "Impulse su negocio online",
+      "Destaque frente a la competencia",
+      "Conecte con sus clientes",
+    ],
+    cta: "Trabajemos juntos",
+    prev: "Proyecto anterior",
+    next: "Proyecto siguiente",
+    pause: "Pausar",
+    play: "Reanudar el desplazamiento",
   },
 
   subServicesTitle: "Dos especialidades complementarias",

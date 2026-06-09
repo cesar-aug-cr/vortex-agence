@@ -430,6 +430,7 @@ export const en = {
       stepMessage: "Your message",
       servicesLabel: "Which services are you interested in?",
       servicesHint: "Select one or more services.",
+      servicesRequired: "Select at least one service to continue.",
       consentBefore:
         "By ticking this box, I acknowledge that I have read how my personal data is processed and stored, as described in the ",
       consentLink: "privacy policy",
@@ -1683,6 +1684,21 @@ export const en = {
         { q: "Is my data safe?", a: "Yes. We design automations in compliance with GDPR and with strong attention to the confidentiality of your data." },
       ],
     },
+  },
+
+  portfolio: {
+    typewriter: [
+      "Build your digital presence",
+      "Craft unique experiences",
+      "Grow your business online",
+      "Stand out from the crowd",
+      "Connect with your customers",
+    ],
+    cta: "Let's work together",
+    prev: "Previous project",
+    next: "Next project",
+    pause: "Pause",
+    play: "Resume scrolling",
   },
 
   subServicesTitle: "Two complementary specialities",

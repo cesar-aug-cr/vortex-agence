@@ -448,6 +448,7 @@ export const fr = {
       stepMessage: "Votre message",
       servicesLabel: "Quels services vous intéressent ?",
       servicesHint: "Sélectionnez un ou plusieurs services.",
+      servicesRequired: "Sélectionnez au moins un service pour continuer.",
       consentBefore:
         "En cochant cette case, je reconnais avoir pris connaissance de la façon dont mes données personnelles sont traitées et conservées, décrite dans la ",
       consentLink: "politique de confidentialité",
@@ -1701,6 +1702,22 @@ export const fr = {
         { q: "Mes données sont-elles en sécurité ?", a: "Oui. On conçoit les automatisations dans le respect du RGPD et avec une attention forte à la confidentialité de vos données." },
       ],
     },
+  },
+
+  // ---- Portfolio coverflow (homepage showcase) ----
+  portfolio: {
+    typewriter: [
+      "Créez votre présence digitale",
+      "Concevez des expériences uniques",
+      "Boostez votre activité en ligne",
+      "Démarquez-vous de la concurrence",
+      "Connectez-vous à vos clients",
+    ],
+    cta: "Travaillons ensemble",
+    prev: "Projet précédent",
+    next: "Projet suivant",
+    pause: "Mettre en pause",
+    play: "Reprendre le défilement",
   },
 
   // ---- Sub-services (children of a parent service) ----

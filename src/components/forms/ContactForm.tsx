@@ -81,6 +81,11 @@ export function ContactForm({
   // only fires once the visible required fields are valid.
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // Require at least one service on the first step.
+    if (step === 0 && selected.length === 0) {
+      setError(form.servicesRequired);
+      return;
+    }
     setError("");
     if (step < STEPS - 1) setStep((s) => s + 1);
     else send();
