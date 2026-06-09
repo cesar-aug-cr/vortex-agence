@@ -56,7 +56,7 @@ export default async function AgencePage({
 
       {/* intro + story + dynamic experience counter */}
       <Section tone="base" className="pt-10 md:pt-12">
-        <SectionHeading eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
+        <SectionHeading level="h1" eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
 
         <div className="mt-14 grid gap-10 md:mt-16 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
           <div className="space-y-5">

@@ -47,6 +47,7 @@ export function SectionHeading({
   lead,
   tone = "base",
   align = "left",
+  level = "h2",
   className = "",
 }: {
   eyebrow: string;
@@ -54,23 +55,30 @@ export function SectionHeading({
   lead?: string;
   tone?: Tone;
   align?: "left" | "center";
+  /** Heading level for the title — use "h1" when this is the page's top heading. */
+  level?: "h1" | "h2";
   className?: string;
 }) {
   const onStage = tone === "stage";
+  const Title = level;
   return (
     <div
       className={`${align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} ${className}`}
     >
-      <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
+      <span
+        className={`font-mono text-xs uppercase tracking-[0.22em] ${
+          onStage ? "text-accent" : "text-accent-strong"
+        }`}
+      >
         {eyebrow}
       </span>
-      <h2
+      <Title
         className={`mt-4 text-3xl font-bold leading-[1.08] md:text-5xl ${
           onStage ? "text-stage-text" : "text-text"
         }`}
       >
         {title}
-      </h2>
+      </Title>
       {lead && (
         <p
           className={`mt-5 text-lg ${onStage ? "text-stage-text-dim" : "text-text-dim"}`}

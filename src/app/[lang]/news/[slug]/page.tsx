@@ -71,6 +71,7 @@ export default async function ArticlePage({
     "@type": "Article",
     headline: article.title,
     description: article.excerpt,
+    image: `${site.url}/opengraph-image`,
     datePublished: article.date,
     dateModified: article.updated ?? article.date,
     author: { "@type": "Organization", name: article.author },

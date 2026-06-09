@@ -59,6 +59,7 @@ export default async function FaqPage({
 
       <Section tone="base" className="pt-10 md:pt-12">
         <SectionHeading
+          level="h1"
           eyebrow={dict.faqPage.eyebrow}
           title={dict.faqPage.title}
           lead={dict.faqPage.lead}

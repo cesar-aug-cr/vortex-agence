@@ -36,7 +36,7 @@ export function SchemaMarkup() {
           },
         }
       : {}),
-    knowsLanguage: ["fr"],
+    knowsLanguage: [...site.locales],
     sameAs: site.sameAs.length ? site.sameAs : undefined,
     makesOffer: serviceSlugs.map((slug) => ({
       "@type": "Offer",
@@ -52,7 +52,7 @@ export function SchemaMarkup() {
     name: site.name,
     description: site.description,
     publisher: { "@id": `${site.url}/#organization` },
-    inLanguage: "fr",
+    inLanguage: [...site.locales],
   };
 
   return (

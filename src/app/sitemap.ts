@@ -5,9 +5,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
 
+  // Routes that are noindex — must not appear in the sitemap.
+  const noindex = new Set(["mentions-legales", "confidentialite", "cookies"]);
+
   // All page paths (relative to /<lang>), with their priority + frequency.
   const paths: { path: string; priority: number; freq: "weekly" | "monthly" }[] = [];
   for (const route of mainRoutes) {
+    if (noindex.has(route)) continue;
     paths.push({
       path: route ? `/${route}` : "",
       priority: route === "" ? 1 : 0.7,

@@ -50,6 +50,7 @@ export default async function ServicesPage({
 
       <Section tone="base" className="pt-10 md:pt-12">
         <SectionHeading
+          level="h1"
           eyebrow={dict.servicesSection.eyebrow}
           title={dict.servicesSection.title}
           lead={dict.servicesSection.lead}
@@ -70,7 +71,7 @@ export default async function ServicesPage({
                   </div>
                 )}
                 <div className="flex items-start justify-between gap-4">
-                  <h2 className="text-xl font-semibold text-text">{s.title}</h2>
+                  <h3 className="text-xl font-semibold text-text">{s.title}</h3>
                   <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text-dim transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
                     <ArrowUpRight width={16} height={16} />
                   </span>

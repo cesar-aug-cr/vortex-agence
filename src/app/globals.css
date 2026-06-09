@@ -18,7 +18,7 @@
 
   --text: #0a0a0b;
   --text-dim: #45483f;
-  --text-muted: #767970;
+  --text-muted: #5f6258;
 
   --border: rgba(10, 10, 11, 0.1);
   --border-strong: rgba(10, 10, 11, 0.2);
@@ -35,6 +35,9 @@
   --accent-2: #14e0c8; /* cyan vortex */
   --accent-ink: #0a0a0b; /* text on accent fills */
   --accent-soft: rgba(200, 240, 46, 0.12);
+  /* Readable accent for text on LIGHT surfaces (lime fails AA on white);
+     overridden to lime in dark mode below. */
+  --accent-strong: #4f7a0a;
   --ring: rgba(200, 240, 46, 0.55);
 
   --shadow-sm: 0 1px 2px rgba(10, 10, 11, 0.06);
@@ -63,6 +66,7 @@
   --border-strong: rgba(255, 255, 255, 0.16);
 
   --accent-soft: rgba(200, 240, 46, 0.1);
+  --accent-strong: var(--accent);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.45);
@@ -98,6 +102,7 @@
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-strong: var(--accent-strong);
 
   --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, -apple-system,
     sans-serif;

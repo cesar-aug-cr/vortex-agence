@@ -49,6 +49,7 @@ export default async function RealisationsPage({
 
       <Section tone="base" className="pt-10 md:pt-12">
         <SectionHeading
+          level="h1"
           eyebrow={dict.proof.eyebrow}
           title={dict.proof.title}
           lead={dict.proof.placeholderNote}

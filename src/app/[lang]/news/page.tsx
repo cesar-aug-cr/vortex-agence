@@ -59,6 +59,7 @@ export default async function NewsPage({
 
       <Section tone="base" className="pt-10 md:pt-12">
         <SectionHeading
+          level="h1"
           eyebrow={dict.news.eyebrow}
           title={dict.news.title}
           lead={dict.news.lead}

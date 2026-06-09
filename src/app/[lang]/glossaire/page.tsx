@@ -60,6 +60,7 @@ export default async function GlossairePage({
 
       <Section tone="base" className="pt-10 md:pt-12">
         <SectionHeading
+          level="h1"
           eyebrow={dict.glossary.eyebrow}
           title={dict.glossary.title}
           lead={dict.glossary.lead}

@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
   images: {
     formats: ["image/avif", "image/webp"],
+    // Portfolio images request quality 85; Next 15 requires it to be listed.
+    qualities: [75, 85],
   },
 };
 
