@@ -67,7 +67,7 @@ export function SectionHeading({
     >
       <span
         className={`font-mono text-xs uppercase tracking-[0.22em] ${
-          onStage ? "text-accent" : "text-accent-strong"
+          onStage ? "text-accent" : "eyebrow-badge"
         }`}
       >
         {eyebrow}

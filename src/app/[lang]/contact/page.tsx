@@ -51,7 +51,7 @@ export default async function ContactPage({
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           {/* Intro + form */}
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
+            <span className="font-mono text-xs uppercase tracking-[0.22em] eyebrow-badge">
               {dict.contact.eyebrow}
             </span>
             <h1 className="mt-4 text-3xl font-bold leading-[1.08] text-text md:text-5xl">
