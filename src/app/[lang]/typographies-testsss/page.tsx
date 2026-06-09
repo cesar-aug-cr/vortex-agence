@@ -9,6 +9,7 @@ import {
   Space_Mono,
   Atkinson_Hyperlegible,
 } from "next/font/google";
+import localFont from "next/font/local";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
@@ -24,6 +25,17 @@ const outfit = Outfit({ subsets: ["latin", "latin-ext"], display: "swap" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin", "latin-ext"], display: "swap" });
 const spaceMono = Space_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "700"], display: "swap" });
 const atkinson = Atkinson_Hyperlegible({ subsets: ["latin", "latin-ext"], weight: ["400", "700"], display: "swap" });
+// Clarity City — self-hosted (OFL, not on Google Fonts). Files in src/fonts/clarity-city/.
+const clarityCity = localFont({
+  src: [
+    { path: "../../../fonts/clarity-city/ClarityCity-Light.woff2", weight: "300", style: "normal" },
+    { path: "../../../fonts/clarity-city/ClarityCity-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../../fonts/clarity-city/ClarityCity-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../../fonts/clarity-city/ClarityCity-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../../../fonts/clarity-city/ClarityCity-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+});
 
 type FontEntry = { name: string; cat: string; license: string; className: string };
 
@@ -34,6 +46,7 @@ const SANS: FontEntry[] = [
   { name: "Plus Jakarta Sans", cat: "Sans · élégante", license: "OFL", className: jakarta.className },
   { name: "Outfit", cat: "Sans · épurée", license: "OFL", className: outfit.className },
   { name: "Atkinson Hyperlegible", cat: "Sans · accessibilité", license: "OFL", className: atkinson.className },
+  { name: "Clarity City", cat: "Sans · VMware Clarity", license: "OFL", className: clarityCity.className },
 ];
 const MONO: FontEntry[] = [
   { name: "JetBrains Mono", cat: "Mono · code", license: "OFL", className: jetbrains.className },
