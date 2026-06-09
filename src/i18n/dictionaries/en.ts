@@ -1685,8 +1685,8 @@ export const en = {
     },
   },
 
-  subServicesTitle: "Two channels, two logics",
-  subServicesLead: "Advertising isn't a single lever. We run both major channels — depending on whether your clients are already looking for you or whether you need to spark the desire.",
+  subServicesTitle: "Two complementary specialities",
+  subServicesLead: "This service comes in two specialities. Take the one that fits your need — or combine them to cover the whole field.",
   subServices: {
     publicite: [
       {
@@ -1761,6 +1761,82 @@ export const en = {
         faq: [
           { q: "Is Meta Ads only Facebook and Instagram?", a: "No: we also cover Threads and the Meta Audience Network. We pick the placements based on your target and your goals." },
           { q: "Do I need to have content already?", a: "Not necessarily. We can create the ad visuals and videos, or start from your existing content and adapt it to the format that converts." },
+        ],
+      },
+    ],
+    "seo-geo": [
+      {
+        slug: "seo",
+        illustration: "seo",
+        title: "SEO",
+        tagline: "Get found on Google, for the long run.",
+        short:
+          "Technical and editorial search optimisation: we optimise your site to climb on the queries that matter and attract qualified traffic, without paying for the click.",
+        bullets: [
+          "Technical & semantic audit",
+          "On-page optimisation",
+          "Content & keywords",
+          "Ranking tracking",
+        ],
+        metaTitle: "SEO Agency in Luxembourg | vortx",
+        metaDescription:
+          "Technical and editorial search engine optimisation (SEO) for Luxembourg businesses. Climb on Google and attract qualified traffic, for the long run.",
+        intro: [
+          "SEO is the art of being found on Google without paying for the click. An asset that takes a few weeks to build, but keeps attracting qualified traffic long after — unlike advertising, which stops the moment you cut the budget.",
+          "We work all three pillars: the technical side (speed, structure, indexing), the content (the right keywords, search intent) and authority. All designed for the Luxembourg market and its multilingualism.",
+        ],
+        included: [
+          { icon: "seo", title: "Audit & technical SEO", desc: "Speed, structure, indexing, data: we fix the foundations that are holding back your rankings." },
+          { icon: "conversion", title: "Optimised content", desc: "Pages that genuinely match search intent and convert." },
+          { icon: "multilingual", title: "Multilingual FR/DE/EN", desc: "Search optimisation designed for the three languages of the Luxembourg market." },
+          { icon: "analytics", title: "Ranking tracking", desc: "Clear reporting on your rankings, your traffic and your conversions." },
+        ],
+        deliverables: [
+          "Full technical & semantic audit",
+          "Keyword plan and on-page optimisations",
+          "Content recommendations",
+          "Monthly ranking & traffic reporting",
+        ],
+        faq: [
+          { q: "How long before we see results?", a: "The first signals often appear within a few weeks, solid gains within a few months. SEO is foundational work — we show you the progress at every step." },
+          { q: "Is SEO enough, or do I also need ads?", a: "The two complement each other: ads bring immediate results, SEO builds lasting traffic. We advise you on the right balance based on your timeline." },
+        ],
+      },
+      {
+        slug: "geo-gso",
+        illustration: "geo-gso",
+        title: "GEO / GSO",
+        tagline: "Be the answer the AIs cite.",
+        short:
+          "Generative Engine Optimization: we structure your content and your data so that ChatGPT, Perplexity and Google AI cite you as a source — not just a link.",
+        bullets: [
+          "Structured & citable content",
+          "Structured data (Schema.org)",
+          "llms.txt file",
+          "AI citation tracking",
+        ],
+        metaTitle: "GEO / GSO Agency in Luxembourg | vortx",
+        metaDescription:
+          "Optimisation for generative AI (GEO/GSO): get cited by ChatGPT, Perplexity and Google AI. Structured data, citable content, citation tracking.",
+        intro: [
+          "More and more of your clients put their questions to an AI rather than to Google. GEO (Generative Engine Optimization) optimises your presence so that ChatGPT, Perplexity and Google AI pick you up and cite you as a source — not just as one link among many.",
+          "We structure your content so it's \"citable\" (clear answers, verifiable facts, local context) and make your site machine-readable: structured data, llms.txt, clean architecture.",
+        ],
+        included: [
+          { icon: "geo-citation", title: "Citable content", desc: "We structure your pages to be picked up and cited in the answers of generative AIs." },
+          { icon: "seo", title: "Structured data", desc: "Schema.org and llms.txt: we make your offer readable and reusable by the models." },
+          { icon: "ai-build", title: "AI-ready architecture", desc: "A fast, clean site, designed from the start for answer engines." },
+          { icon: "analytics", title: "Citation tracking", desc: "We track where and how the AIs cite you, with clear reporting." },
+        ],
+        deliverables: [
+          "GEO audit & content structuring",
+          "Structured data (Schema.org)",
+          "llms.txt file & technical optimisations",
+          "Reporting on citations in AI answers",
+        ],
+        faq: [
+          { q: "Does GEO replace SEO?", a: "No, it complements it. 80% of the best practices are shared: structured, reliable content performs both on Google and with the AIs. We optimise for both." },
+          { q: "How do you measure GEO results?", a: "We track your presence in the answers of AI assistants (citations, mentions) and how your authority evolves. It's an emerging field: we move forward with method and transparency." },
         ],
       },
     ],

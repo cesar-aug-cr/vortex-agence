@@ -1679,8 +1679,8 @@ export const es = {
     },
   },
 
-  subServicesTitle: "Dos canales, dos lógicas",
-  subServicesLead: "La publicidad no es una sola palanca. Pilotamos los dos grandes canales — según si sus clientes ya le buscan o si hay que despertar el deseo.",
+  subServicesTitle: "Dos especialidades complementarias",
+  subServicesLead: "Este servicio se divide en dos especialidades. Tome la que encaje con su necesidad — o combínelas para cubrir todo el terreno.",
   subServices: {
     publicite: [
       {
@@ -1755,6 +1755,82 @@ export const es = {
         faq: [
           { q: "¿Meta Ads es solo Facebook e Instagram?", a: "No: cubrimos también Threads y la red de audiencia de Meta. Elegimos los emplazamientos según su público y sus objetivos." },
           { q: "¿Hay que tener ya contenido?", a: "No necesariamente. Podemos crear las imágenes y vídeos publicitarios, o partir de sus contenidos existentes y adaptarlos al formato que convierte." },
+        ],
+      },
+    ],
+    "seo-geo": [
+      {
+        slug: "seo",
+        illustration: "seo",
+        title: "SEO",
+        tagline: "Ser encontrado en Google, de forma duradera.",
+        short:
+          "Posicionamiento orgánico técnico y editorial: optimizamos su sitio para subir en las búsquedas que importan y atraer un tráfico cualificado, sin pagar el clic.",
+        bullets: [
+          "Auditoría técnica y semántica",
+          "Optimización on-page",
+          "Contenido y palabras clave",
+          "Seguimiento de posiciones",
+        ],
+        metaTitle: "Agencia SEO en Luxemburgo | vortx",
+        metaDescription:
+          "Posicionamiento orgánico (SEO) técnico y editorial para las empresas luxemburguesas. Suba en Google y atraiga un tráfico cualificado, de forma duradera.",
+        intro: [
+          "El SEO es el arte de ser encontrado en Google sin pagar el clic. Un activo que tarda unas semanas en construirse, pero que sigue atrayendo tráfico cualificado mucho tiempo después — al contrario que la publicidad, que se detiene en cuanto se corta el presupuesto.",
+          "Trabajamos los tres pilares: la técnica (velocidad, estructura, indexación), el contenido (las palabras clave correctas, la intención de búsqueda) y la autoridad. Todo pensado para el mercado luxemburgués y su multilingüismo.",
+        ],
+        included: [
+          { icon: "seo", title: "Auditoría y SEO técnico", desc: "Velocidad, estructura, indexación, datos: corregimos los cimientos que bloquean su posicionamiento." },
+          { icon: "conversion", title: "Contenido optimizado", desc: "Páginas que responden de verdad a la intención de búsqueda y que convierten." },
+          { icon: "multilingual", title: "Multilingüe FR/DE/EN", desc: "Un posicionamiento pensado para los tres idiomas del mercado luxemburgués." },
+          { icon: "analytics", title: "Seguimiento de posiciones", desc: "Reporting claro sobre sus posiciones, su tráfico y sus conversiones." },
+        ],
+        deliverables: [
+          "Auditoría técnica y semántica completa",
+          "Plan de palabras clave y optimizaciones on-page",
+          "Recomendaciones de contenido",
+          "Reporting mensual de posiciones y tráfico",
+        ],
+        faq: [
+          { q: "¿En cuánto tiempo se ven resultados?", a: "Las primeras señales aparecen a menudo en unas semanas, las ganancias sólidas en unos meses. El SEO es un trabajo de fondo — le mostramos el progreso en cada etapa." },
+          { q: "¿Basta con el SEO, o hace falta también publicidad?", a: "Los dos se complementan: la publicidad aporta resultados inmediatos, el SEO construye un tráfico duradero. Le aconsejamos la dosis adecuada según su plazo." },
+        ],
+      },
+      {
+        slug: "geo-gso",
+        illustration: "geo-gso",
+        title: "GEO / GSO",
+        tagline: "Ser la respuesta citada por las IA.",
+        short:
+          "Generative Engine Optimization: estructuramos su contenido y sus datos para que ChatGPT, Perplexity y Google AI le citen como fuente — no solo un enlace.",
+        bullets: [
+          "Contenido estructurado y citable",
+          "Datos estructurados (Schema.org)",
+          "Archivo llms.txt",
+          "Seguimiento de citas en IA",
+        ],
+        metaTitle: "Agencia GEO / GSO en Luxemburgo | vortx",
+        metaDescription:
+          "Optimización para las IA generativas (GEO/GSO): sea citado por ChatGPT, Perplexity y Google AI. Datos estructurados, contenido citable, seguimiento de citas.",
+        intro: [
+          "Cada vez más clientes plantean sus preguntas a una IA en lugar de a Google. El GEO (Generative Engine Optimization) optimiza su presencia para que ChatGPT, Perplexity y Google AI le retomen y le citen como fuente — no solo como un enlace más.",
+          "Estructuramos su contenido para que sea «citable» (respuestas nítidas, hechos verificables, contexto local) y hacemos su sitio legible por las máquinas: datos estructurados, llms.txt, arquitectura limpia.",
+        ],
+        included: [
+          { icon: "geo-citation", title: "Contenido citable", desc: "Estructuramos sus páginas para ser retomadas y citadas en las respuestas de las IA generativas." },
+          { icon: "seo", title: "Datos estructurados", desc: "Schema.org y llms.txt: hacemos su oferta legible y reutilizable por los modelos." },
+          { icon: "ai-build", title: "Arquitectura lista para IA", desc: "Un sitio rápido y limpio, pensado desde el principio para los motores de respuesta." },
+          { icon: "analytics", title: "Seguimiento de citas", desc: "Seguimos dónde y cómo le citan las IA, con un reporting claro." },
+        ],
+        deliverables: [
+          "Auditoría GEO y estructuración del contenido",
+          "Datos estructurados (Schema.org)",
+          "Archivo llms.txt y optimizaciones técnicas",
+          "Reporting de las citas en las respuestas de IA",
+        ],
+        faq: [
+          { q: "¿El GEO reemplaza al SEO?", a: "No, lo complementa. El 80 % de las buenas prácticas son comunes: un contenido estructurado y fiable rinde a la vez en Google y ante las IA. Optimizamos para los dos." },
+          { q: "¿Cómo se miden los resultados del GEO?", a: "Seguimos su presencia en las respuestas de los asistentes de IA (citas, menciones) y la evolución de su autoridad. Es un campo emergente: avanzamos con método y transparencia." },
         ],
       },
     ],

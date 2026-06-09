@@ -56,6 +56,8 @@ export const serviceSlugs = [
 export const subServiceRoutes = [
   { parent: "publicite", child: "google-ads" },
   { parent: "publicite", child: "meta-ads" },
+  { parent: "seo-geo", child: "seo" },
+  { parent: "seo-geo", child: "geo-gso" },
 ] as const;
 
 /** Top-level routes (relative to /<lang>) used for the sitemap. */

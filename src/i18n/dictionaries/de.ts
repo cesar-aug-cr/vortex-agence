@@ -1686,8 +1686,8 @@ export const de = {
   },
 
   // ---- Sub-services (children of a parent service) ----
-  subServicesTitle: "Zwei Kanäle, zwei Logiken",
-  subServicesLead: "Werbung ist nicht nur ein einziger Hebel. Wir steuern die beiden großen Kanäle — je nachdem, ob Ihre Kunden bereits nach Ihnen suchen oder ob erst das Verlangen geweckt werden muss.",
+  subServicesTitle: "Zwei sich ergänzende Kompetenzen",
+  subServicesLead: "Diese Leistung gliedert sich in zwei Spezialgebiete. Nehmen Sie das, was zu Ihrem Bedarf passt — oder kombinieren Sie beide, um das gesamte Feld abzudecken.",
   subServices: {
     publicite: [
       {
@@ -1762,6 +1762,82 @@ export const de = {
         faq: [
           { q: "Sind Meta Ads nur Facebook und Instagram?", a: "Nein: Wir decken auch Threads und das Meta Audience Network ab. Wir wählen die Platzierungen je nach Ihrer Zielgruppe und Ihren Zielen." },
           { q: "Muss man bereits Inhalte haben?", a: "Nicht unbedingt. Wir können die Werbe-Visuals und -Videos erstellen oder von Ihren bestehenden Inhalten ausgehen und sie an das Format anpassen, das konvertiert." },
+        ],
+      },
+    ],
+    "seo-geo": [
+      {
+        slug: "seo",
+        illustration: "seo",
+        title: "SEO",
+        tagline: "Bei Google gefunden werden, dauerhaft.",
+        short:
+          "Technische und redaktionelle Suchmaschinenoptimierung: Wir optimieren Ihre Website, damit sie bei den Suchanfragen, die zählen, nach oben kommt und qualifizierten Traffic anzieht — ohne den Klick zu bezahlen.",
+        bullets: [
+          "Technisches & semantisches Audit",
+          "On-Page-Optimierung",
+          "Inhalte & Keywords",
+          "Tracking der Rankings",
+        ],
+        metaTitle: "SEO-Agentur in Luxemburg | vortx",
+        metaDescription:
+          "Technische und redaktionelle Suchmaschinenoptimierung (SEO) für Luxemburger Unternehmen. Steigen Sie bei Google auf und ziehen Sie dauerhaft qualifizierten Traffic an.",
+        intro: [
+          "SEO ist die Kunst, bei Google gefunden zu werden, ohne den Klick zu bezahlen. Ein Asset, dessen Aufbau einige Wochen dauert, das aber noch lange danach qualifizierten Traffic anzieht — anders als Werbung, die stoppt, sobald man das Budget abdreht.",
+          "Wir bearbeiten die drei Säulen: die Technik (Geschwindigkeit, Struktur, Indexierung), die Inhalte (die richtigen Keywords, die Suchintention) und die Autorität. Alles gedacht für den Luxemburger Markt und seine Mehrsprachigkeit.",
+        ],
+        included: [
+          { icon: "seo", title: "Audit & technisches SEO", desc: "Geschwindigkeit, Struktur, Indexierung, Daten: Wir beheben die Grundlagen, die Ihr Ranking blockieren." },
+          { icon: "conversion", title: "Optimierte Inhalte", desc: "Seiten, die wirklich auf die Suchintention antworten und konvertieren." },
+          { icon: "multilingual", title: "Mehrsprachig FR/DE/EN", desc: "Ein Ranking, gedacht für die drei Sprachen des Luxemburger Marktes." },
+          { icon: "analytics", title: "Tracking der Rankings", desc: "Klares Reporting zu Ihren Positionen, Ihrem Traffic und Ihren Conversions." },
+        ],
+        deliverables: [
+          "Vollständiges technisches & semantisches Audit",
+          "Keyword-Plan und On-Page-Optimierungen",
+          "Content-Empfehlungen",
+          "Monatliches Reporting der Rankings & des Traffics",
+        ],
+        faq: [
+          { q: "Wie lange dauert es, bis man Ergebnisse sieht?", a: "Die ersten Signale erscheinen oft in wenigen Wochen, solide Zugewinne in einigen Monaten. SEO ist Grundlagenarbeit — wir zeigen Ihnen den Fortschritt bei jedem Schritt." },
+          { q: "Reicht SEO, oder braucht es auch Werbung?", a: "Beides ergänzt sich: Werbung bringt sofortige Ergebnisse, SEO baut dauerhaften Traffic auf. Wir empfehlen Ihnen die richtige Dosierung je nach Ihrem Zeithorizont." },
+        ],
+      },
+      {
+        slug: "geo-gso",
+        illustration: "geo-gso",
+        title: "GEO / GSO",
+        tagline: "Die Antwort sein, die von KI zitiert wird.",
+        short:
+          "Generative Engine Optimization: Wir strukturieren Ihre Inhalte und Daten so, dass ChatGPT, Perplexity und Google AI Sie als Quelle zitieren — nicht nur als Link.",
+        bullets: [
+          "Strukturierte & zitierbare Inhalte",
+          "Strukturierte Daten (Schema.org)",
+          "llms.txt-Datei",
+          "Tracking der KI-Zitate",
+        ],
+        metaTitle: "GEO- / GSO-Agentur in Luxemburg | vortx",
+        metaDescription:
+          "Optimierung für generative KI (GEO/GSO): Werden Sie von ChatGPT, Perplexity und Google AI zitiert. Strukturierte Daten, zitierbare Inhalte, Tracking der Zitate.",
+        intro: [
+          "Immer mehr Ihrer Kunden stellen ihre Fragen einer KI statt Google. GEO (Generative Engine Optimization) optimiert Ihre Präsenz so, dass ChatGPT, Perplexity und Google AI Sie aufgreifen und als Quelle zitieren — nicht nur als einen Link unter vielen.",
+          "Wir strukturieren Ihre Inhalte so, dass sie „zitierbar\" sind (klare Antworten, nachprüfbare Fakten, lokaler Kontext), und machen Ihre Website für Maschinen lesbar: strukturierte Daten, llms.txt, saubere Architektur.",
+        ],
+        included: [
+          { icon: "geo-citation", title: "Zitierbare Inhalte", desc: "Wir strukturieren Ihre Seiten so, dass sie in den Antworten generativer KI aufgegriffen und zitiert werden." },
+          { icon: "seo", title: "Strukturierte Daten", desc: "Schema.org und llms.txt: Wir machen Ihr Angebot für die Modelle lesbar und aufgreifbar." },
+          { icon: "ai-build", title: "KI-ready Architektur", desc: "Eine schnelle und saubere Website, von Anfang an für Antwortmaschinen gedacht." },
+          { icon: "analytics", title: "Tracking der Zitate", desc: "Wir verfolgen, wo und wie die KI Sie zitiert, mit klarem Reporting." },
+        ],
+        deliverables: [
+          "GEO-Audit & Strukturierung der Inhalte",
+          "Strukturierte Daten (Schema.org)",
+          "llms.txt-Datei & technische Optimierungen",
+          "Reporting der Zitate in den KI-Antworten",
+        ],
+        faq: [
+          { q: "Ersetzt GEO das SEO?", a: "Nein, es ergänzt es. 80 % der Best Practices sind gemeinsam: Ein strukturierter und verlässlicher Inhalt performt sowohl bei Google als auch bei der KI. Wir optimieren für beide." },
+          { q: "Wie misst man die Ergebnisse von GEO?", a: "Wir verfolgen Ihre Präsenz in den Antworten der KI-Assistenten (Zitate, Erwähnungen) und die Entwicklung Ihrer Autorität. Es ist ein aufkommendes Feld: Wir gehen methodisch und transparent vor." },
         ],
       },
     ],
