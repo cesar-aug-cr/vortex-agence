@@ -38,12 +38,12 @@ export function Proof({ dict }: { dict: Dictionary }) {
         <PortfolioCoverflow copy={dict.portfolio} />
       </div>
 
-      {/* guarantees — centered */}
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {/* guarantees — 2×2 without background on mobile, cards from sm up */}
+      <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
         {dict.proof.guarantees.map((g) => (
           <div
             key={g}
-            className="card flex items-center justify-center gap-3 p-5 text-center text-sm font-medium text-text"
+            className="flex items-center justify-center gap-2 rounded-2xl p-3 text-center text-sm font-medium text-text sm:gap-3 sm:border sm:border-border sm:bg-bg-card sm:p-5"
           >
             <Check width={18} height={18} className="shrink-0 text-accent" />
             {g}
