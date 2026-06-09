@@ -5,17 +5,8 @@ import {
   Sora,
   Plus_Jakarta_Sans,
   Outfit,
-  Hanken_Grotesk,
-  Onest,
-  Lexend,
-  Bricolage_Grotesque,
-  Syne,
-  Fraunces,
-  Newsreader,
-  Lora,
   JetBrains_Mono,
   Space_Mono,
-  IBM_Plex_Mono,
   Atkinson_Hyperlegible,
 } from "next/font/google";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
@@ -30,17 +21,8 @@ const manrope = Manrope({ subsets: ["latin", "latin-ext"], display: "swap" });
 const sora = Sora({ subsets: ["latin", "latin-ext"], display: "swap" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin", "latin-ext"], display: "swap" });
 const outfit = Outfit({ subsets: ["latin", "latin-ext"], display: "swap" });
-const hanken = Hanken_Grotesk({ subsets: ["latin", "latin-ext"], display: "swap" });
-const onest = Onest({ subsets: ["latin", "latin-ext"], display: "swap" });
-const lexend = Lexend({ subsets: ["latin", "latin-ext"], display: "swap" });
-const bricolage = Bricolage_Grotesque({ subsets: ["latin", "latin-ext"], display: "swap" });
-const syne = Syne({ subsets: ["latin", "latin-ext"], display: "swap" });
-const fraunces = Fraunces({ subsets: ["latin", "latin-ext"], display: "swap" });
-const newsreader = Newsreader({ subsets: ["latin", "latin-ext"], display: "swap" });
-const lora = Lora({ subsets: ["latin", "latin-ext"], display: "swap" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin", "latin-ext"], display: "swap" });
 const spaceMono = Space_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "700"], display: "swap" });
-const plexMono = IBM_Plex_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "500", "600"], display: "swap" });
 const atkinson = Atkinson_Hyperlegible({ subsets: ["latin", "latin-ext"], weight: ["400", "700"], display: "swap" });
 
 type FontEntry = { name: string; cat: string; license: string; className: string };
@@ -51,24 +33,11 @@ const SANS: FontEntry[] = [
   { name: "Sora", cat: "Sans · moderne", license: "OFL", className: sora.className },
   { name: "Plus Jakarta Sans", cat: "Sans · élégante", license: "OFL", className: jakarta.className },
   { name: "Outfit", cat: "Sans · épurée", license: "OFL", className: outfit.className },
-  { name: "Hanken Grotesk", cat: "Sans · grotesque", license: "OFL", className: hanken.className },
-  { name: "Onest", cat: "Sans · neutre", license: "OFL", className: onest.className },
-  { name: "Lexend", cat: "Sans · lisibilité", license: "OFL", className: lexend.className },
   { name: "Atkinson Hyperlegible", cat: "Sans · accessibilité", license: "OFL", className: atkinson.className },
-];
-const DISPLAY: FontEntry[] = [
-  { name: "Bricolage Grotesque", cat: "Display · caractère", license: "OFL", className: bricolage.className },
-  { name: "Syne", cat: "Display · artistique", license: "OFL", className: syne.className },
-];
-const SERIF: FontEntry[] = [
-  { name: "Fraunces", cat: "Serif · moderne", license: "OFL", className: fraunces.className },
-  { name: "Newsreader", cat: "Serif · éditorial", license: "OFL", className: newsreader.className },
-  { name: "Lora", cat: "Serif · chaleureuse", license: "OFL", className: lora.className },
 ];
 const MONO: FontEntry[] = [
   { name: "JetBrains Mono", cat: "Mono · code", license: "OFL", className: jetbrains.className },
   { name: "Space Mono", cat: "Mono · rétro", license: "OFL", className: spaceMono.className },
-  { name: "IBM Plex Mono", cat: "Mono · technique", license: "OFL", className: plexMono.className },
 ];
 
 export async function generateStaticParams() {
@@ -178,8 +147,6 @@ export default async function TypographyTestPage({
 
   const groups: { label: string; fonts: FontEntry[] }[] = [
     { label: "Sans-serif", fonts: SANS },
-    { label: "Display", fonts: DISPLAY },
-    { label: "Serif", fonts: SERIF },
     { label: "Monospace", fonts: MONO },
   ];
 
