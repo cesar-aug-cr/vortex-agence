@@ -72,8 +72,13 @@ export async function POST(req: Request) {
       console.error("[contact] email send failed:", err);
       return NextResponse.json({ ok: false, error: "send-failed" }, { status: 502 });
     }
+  } else if (process.env.NODE_ENV === "production" && !process.env.CONTACT_PLACEHOLDER) {
+    // Fail loudly in production rather than silently dropping a lead while the
+    // UI shows success. Set RESEND_API_KEY (or CONTACT_PLACEHOLDER=1 to opt in).
+    console.error("[contact] no email transport configured in production — lead NOT sent:", lead);
+    return NextResponse.json({ ok: false, error: "not-configured" }, { status: 503 });
   } else {
-    // Placeholder mode — no transport configured yet.
+    // Dev / explicit placeholder mode — log the lead so the flow still works.
     console.info("[contact] new lead (email transport not configured):", lead);
   }
 

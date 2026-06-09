@@ -98,21 +98,39 @@ export function Header({
                                 {dict.megaMenu.columns[g.key]}
                               </p>
                               <ul className="mt-3 space-y-3">
-                                {g.services.map((s) => (
-                                  <li key={s.slug}>
-                                    <Link
-                                      href={localized(lang, `/services/${s.slug}`)}
-                                      className="group/it flex items-center gap-1 text-sm font-medium text-text transition-colors hover:text-accent"
-                                    >
-                                      {s.title}
-                                      <ArrowUpRight
-                                        width={13}
-                                        height={13}
-                                        className="opacity-0 transition-opacity group-hover/it:opacity-100"
-                                      />
-                                    </Link>
-                                  </li>
-                                ))}
+                                {g.services.map((s) => {
+                                  const subs =
+                                    (dict.subServices as Record<string, readonly { slug: string; title: string }[]>)[s.slug] ?? [];
+                                  return (
+                                    <li key={s.slug}>
+                                      <Link
+                                        href={localized(lang, `/services/${s.slug}`)}
+                                        className="group/it flex items-center gap-1 text-sm font-medium text-text transition-colors hover:text-accent"
+                                      >
+                                        {s.title}
+                                        <ArrowUpRight
+                                          width={13}
+                                          height={13}
+                                          className="opacity-0 transition-opacity group-hover/it:opacity-100"
+                                        />
+                                      </Link>
+                                      {subs.length > 0 && (
+                                        <ul className="mt-1.5 space-y-1.5 border-l border-border pl-3">
+                                          {subs.map((c) => (
+                                            <li key={c.slug}>
+                                              <Link
+                                                href={localized(lang, `/services/${s.slug}/${c.slug}`)}
+                                                className="text-sm text-text-dim transition-colors hover:text-accent"
+                                              >
+                                                {c.title}
+                                              </Link>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      )}
+                                    </li>
+                                  );
+                                })}
                               </ul>
                             </div>
                           ))}
