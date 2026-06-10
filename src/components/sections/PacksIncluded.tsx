@@ -1,33 +1,9 @@
-import type { FC } from "react";
-import type { SVGProps } from "react";
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import {
-  Server,
-  Smartphone,
-  Search,
-  Mail,
-  FormInput,
-  ShieldCheck,
-  LifeBuoy,
-  BarChart,
-  Gauge,
-  ArrowRight,
-} from "@/components/ui/icons";
-
-const ICONS: Record<string, FC<SVGProps<SVGSVGElement>>> = {
-  server: Server,
-  responsive: Smartphone,
-  seo: Search,
-  contact: Mail,
-  smartforms: FormInput,
-  ssl: ShieldCheck,
-  support: LifeBuoy,
-  analytics: BarChart,
-  speed: Gauge,
-};
+import { ArrowRight } from "@/components/ui/icons";
+import { packIcons } from "@/components/illustrations/packs";
 
 export type PacksIncludedContent = {
   eyebrow: string;
@@ -57,15 +33,15 @@ export function PacksIncluded({
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {content.items.map((item) => {
-          const Icon = ICONS[item.icon] ?? Server;
+          const Icon = packIcons[item.icon];
           return (
             <div
               key={item.title}
-              className="card flex flex-col gap-3 p-6 transition-colors hover:border-accent/40"
+              className="card card-hover group flex flex-col gap-4 p-6"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">
-                <Icon width={22} height={22} />
-              </span>
+              <div className="illu-stage flex h-20 w-20 items-center justify-center self-start rounded-xl border border-border">
+                {Icon && <Icon className="h-14 w-14" />}
+              </div>
               <h3 className="text-base font-semibold text-text">{item.title}</h3>
               <p className="text-sm leading-relaxed text-text-dim">{item.desc}</p>
             </div>
