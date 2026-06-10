@@ -588,6 +588,13 @@ export const es = {
     tocTitle: "Índice",
     relatedTitle: "Lea también",
     ctaTitle: "¿Quiere ser citado por las IA, usted también?",
+    summaryLabel: "Resumen generado por IA",
+    summaryDisclaimer: "Síntesis automática de los puntos clave, revisada por nuestro equipo.",
+    summaryPointsLabel: "Para recordar",
+    linksTitle: "Para profundizar",
+    allCategories: "Todos los temas",
+    filterLabel: "Filtrar por tema",
+    emptyLabel: "Aún no hay artículos sobre este tema.",
     articles: [
       {
         slug: "geo-seo-luxembourg-etre-cite-par-les-ia",
@@ -601,6 +608,19 @@ export const es = {
         readingMinutes: 9,
         author: "El equipo vortx",
         cover: "geo-citation",
+        summary: {
+          text: "El posicionamiento ya no se limita a Google: ChatGPT, Perplexity y Google AI se convierten en una nueva puerta de entrada. El artículo explica la diferencia entre SEO y GEO y cómo trabajar ambos juntos, con acciones concretas para ser citado por las IA.",
+          points: [
+            "El SEO le posiciona en los resultados; el GEO le coloca dentro de la respuesta de la IA.",
+            "Estructure sus páginas en formato pregunta/respuesta y ánclelas en hechos locales para ser citado.",
+            "El 80 % del trabajo es común: un buen contenido rinde en Google Y ante los modelos.",
+          ],
+        },
+        links: [
+          { label: "Google Ads o SEO: dónde invertir su presupuesto", href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", desc: "Comparar las palancas de captación de pago y orgánicas." },
+          { label: "Nuestro servicio SEO y GEO / GSO", href: "/services/seo-geo", desc: "Cómo le hacemos visible en Google y citado por las IA." },
+          { label: "Glosario del marketing y del web", href: "/glossaire", desc: "SEO, GEO, GSO… el vocabulario explicado de forma sencilla." },
+        ],
         body: [
           {
             type: "p",
@@ -718,6 +738,19 @@ export const es = {
         readingMinutes: 8,
         author: "El equipo vortx",
         cover: "ads-targeting",
+        summary: {
+          text: "¿Hay que invertir en Google Ads o en SEO? La respuesta depende de su objetivo y de su plazo. El artículo contrapone el «alquiler» (Ads, inmediato) a la «propiedad» (SEO, duradera) y muestra cómo combinarlos según su situación.",
+          points: [
+            "Google Ads = resultados inmediatos mientras paga; SEO = activo duradero que tarda en llegar.",
+            "La dosis adecuada depende de su plazo, de su mercado y de su presupuesto.",
+            "Ambos se complementan: la publicidad arranca, el SEO le independiza del presupuesto.",
+          ],
+        },
+        links: [
+          { label: "SEO vs GEO: ser encontrado Y citado en 2026", href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", desc: "La visibilidad orgánica en la era de las IA." },
+          { label: "Nuestro servicio Publicidad online", href: "/services/publicite", desc: "Google Ads, Meta y LinkedIn pilotados por los datos." },
+          { label: "Nuestro servicio SEO y GEO", href: "/services/seo-geo", desc: "Construir un activo de visibilidad duradero." },
+        ],
         body: [
           {
             type: "p",
@@ -831,6 +864,19 @@ export const es = {
         readingMinutes: 7,
         author: "El equipo vortx",
         cover: "conversion",
+        summary: {
+          text: "Atraer tráfico no sirve de nada si no se transforma. El artículo desglosa el embudo de conversión paso a paso — del primer clic al contrato — y muestra dónde se pierden visitantes y cómo tapar cada fuga.",
+          points: [
+            "Cada etapa mal pensada del embudo le cuesta ventas.",
+            "Guiamos al visitante hacia una acción clara en cada página.",
+            "Medir los abandonos permite optimizar donde de verdad importa.",
+          ],
+        },
+        links: [
+          { label: "Nuestro servicio Generación de leads", href: "/services/lead-generation", desc: "Transformar el tráfico en solicitudes de presupuesto cualificadas." },
+          { label: "¿Cuánto cuesta un sitio web en Luxemburgo?", href: "/news/combien-coute-un-site-web-luxembourg-2026", desc: "Invertir donde de verdad se juega la conversión." },
+          { label: "Glosario: embudo, CRO, landing page…", href: "/glossaire", desc: "Los términos de la conversión explicados de forma sencilla." },
+        ],
         body: [
           {
             type: "p",
@@ -947,6 +993,19 @@ export const es = {
         readingMinutes: 7,
         author: "El equipo vortx",
         cover: "analytics",
+        summary: {
+          text: "El precio de un sitio no es una cifra fija, sino un rango que depende de sus objetivos. El artículo detalla qué hace variar el coste y cómo invertir donde de verdad rinde, en lugar de buscar lo más barato.",
+          points: [
+            "El precio depende del alcance y de los objetivos, no de una tarifa genérica.",
+            "Invierta en la conversión y el posicionamiento, no en lo superfluo.",
+            "Juzgue el coste a la luz de lo que el sitio le aporta.",
+          ],
+        },
+        links: [
+          { label: "Nuestro servicio Sitios web", href: "/services/sites-web", desc: "Lo que construimos y lo que incluye cada pack." },
+          { label: "Embudo de conversión: visitantes → clientes", href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", desc: "Por qué un sitio debe pensarse para convertir." },
+          { label: "¿Qué es un buen logo?", href: "/news/quest-ce-quun-bon-logo-identite-qui-dure", desc: "La identidad de marca que acompaña a su sitio." },
+        ],
         body: [
           {
             type: "p",
@@ -1043,6 +1102,19 @@ export const es = {
         readingMinutes: 6,
         author: "El equipo vortx",
         cover: "branding",
+        summary: {
+          text: "Un logo no es solo una imagen bonita: es la primera promesa de su marca. El artículo expone los principios de un logo que perdura — simple, memorable, atemporal, versátil y pertinente — y su papel dentro de una identidad coherente.",
+          points: [
+            "Un buen logo es simple, memorable, atemporal, versátil y pertinente.",
+            "Vive dentro de una identidad visual coherente, no aislado.",
+            "La coherencia visual inspira confianza antes incluso de la primera palabra.",
+          ],
+        },
+        links: [
+          { label: "Nuestro servicio Branding y diseño", href: "/services/branding-design", desc: "Logo a medida e identidad de marca completa." },
+          { label: "¿Cuánto cuesta un sitio web en Luxemburgo?", href: "/news/combien-coute-un-site-web-luxembourg-2026", desc: "Vestir su marca en la web." },
+          { label: "Glosario: identidad de marca, design system…", href: "/glossaire", desc: "El vocabulario del branding explicado." },
+        ],
         body: [
           {
             type: "p",
@@ -1129,6 +1201,19 @@ export const es = {
         readingMinutes: 6,
         author: "El equipo vortx",
         cover: "rgpd",
+        summary: {
+          text: "El RGPD asusta, pero lo esencial se resume en unas pocas reglas claras. El artículo recoge el mínimo a respetar en un sitio luxemburgués — banner de cookies, consentimiento y avisos legales — para cumplir sin caer en la paranoia.",
+          points: [
+            "Consentimiento real y previo antes de cualquier cookie no esencial.",
+            "Un banner claro y unos avisos legales actualizados cubren lo esencial.",
+            "El cumplimiento protege a sus visitantes y su credibilidad.",
+          ],
+        },
+        links: [
+          { label: "Nuestro servicio Sitios web", href: "/services/sites-web", desc: "Sitios concebidos conformes desde el principio." },
+          { label: "SEO vs GEO: visibilidad y confianza", href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", desc: "Por qué la confianza y la visibilidad van de la mano." },
+          { label: "Glosario: RGPD, cookies, consentimiento…", href: "/glossaire", desc: "Los términos del cumplimiento explicados." },
+        ],
         body: [
           {
             type: "p",
@@ -1212,6 +1297,19 @@ export const es = {
         readingMinutes: 6,
         author: "El equipo vortx",
         cover: "automation",
+        summary: {
+          text: "La IA no sustituye a sus equipos, les quita las tareas pesadas. El artículo enumera cinco tareas concretas que una pyme luxemburguesa puede automatizar desde hoy — sin montar un mecanismo enrevesado — para liberar tiempo útil.",
+          points: [
+            "Empiece poco a poco: tareas repetitivas, no una revolución.",
+            "Respuestas, cualificación, recordatorios, contenido, sincronización: otros tantos candidatos.",
+            "Mantenga el control: la IA asiste, la persona decide.",
+          ],
+        },
+        links: [
+          { label: "IA para las pymes: por dónde empezar", href: "/news/ia-pme-luxembourg-par-ou-commencer", desc: "La guía para arrancar sin equivocarse." },
+          { label: "Nuestro servicio Automatización e IA", href: "/services/automatisation-ia", desc: "Flujos de trabajo y agentes de IA a medida." },
+          { label: "Glosario: automatización, IA…", href: "/glossaire", desc: "Los términos de la automatización explicados." },
+        ],
         body: [
           {
             type: "p",
@@ -1290,6 +1388,140 @@ export const es = {
           },
         ],
       },
+      {
+        slug: "ia-pme-luxembourg-par-ou-commencer",
+        category: "Automatización e IA",
+        title: "IA para las pymes en Luxemburgo: por dónde empezar en 2026",
+        excerpt:
+          "La IA ya no está reservada a las grandes empresas. Pero ¿por dónde empezar siendo una pyme, sin presupuesto tecnológico ni equipo dedicado? Aquí tiene una hoja de ruta pragmática: los buenos casos de uso, las trampas a evitar y cómo mantener el control de sus datos.",
+        date: "2026-06-09",
+        updated: "2026-06-09",
+        readingMinutes: 7,
+        author: "El equipo vortx",
+        cover: "ai-build",
+        summary: {
+          text: "La IA ya no está reservada a las grandes empresas: bien encuadrada, da a una pyme la capacidad de impacto de un equipo mayor. Esta guía desmonta las ideas preconcebidas, muestra dónde la IA rinde de verdad y propone un método para empezar poco a poco manteniendo el control de sus datos.",
+          points: [
+            "Parta de un problema concreto y de una tarea repetitiva, no de una herramienta de moda.",
+            "Pruebe en un alcance reducido, mida el tiempo ganado, y luego amplíe.",
+            "Mantenga sus datos bajo control: RGPD y soberanía primero.",
+          ],
+        },
+        links: [
+          { label: "5 tareas que su pyme debería confiar a la IA", href: "/news/5-taches-pme-confier-a-l-ia", desc: "Ejemplos concretos para automatizar desde ahora mismo." },
+          { label: "Nuestro servicio Automatización e IA", href: "/services/automatisation-ia", desc: "Flujos de trabajo, integraciones y agentes de IA a medida." },
+          { label: "Glosario: IA, automatización, RGPD…", href: "/glossaire", desc: "El vocabulario de la IA explicado de forma sencilla." },
+        ],
+        body: [
+          {
+            type: "p",
+            text: "La inteligencia artificial está en todos los discursos, pero muchos directivos de pymes aún se preguntan, concretamente, qué se supone que deben hacer con ella. La buena noticia: no necesita un departamento de datos ni un presupuesto de seis cifras. Necesita una tarea que le cueste tiempo cada semana — y un punto de partida razonable. Aquí le explicamos cómo abordarlo.",
+          },
+          {
+            type: "h2",
+            id: "pourquoi-pme",
+            text: "Por qué la IA está por fin al alcance de las pymes",
+          },
+          {
+            type: "p",
+            text: "Durante años, la IA fue un proyecto de gran empresa: datos, servidores, especialistas. Hoy, lo esencial se ha convertido en un servicio que se activa bajo demanda, se factura por uso y habla español. Una pyme luxemburguesa puede conectar un asistente, automatizar un flujo o generar contenido sin alojar nada por sí misma. El coste de entrada se ha desplomado; lo que cuenta ahora es elegir el buen caso de uso.",
+          },
+          {
+            type: "h2",
+            id: "trois-idees-recues",
+            text: "Tres ideas preconcebidas que frenan a las pymes",
+          },
+          {
+            type: "h3",
+            text: "«La IA es para las grandes empresas»",
+          },
+          {
+            type: "p",
+            text: "Es justo lo contrario. Cuanto más pequeño es su equipo, más pesa cada hora ganada. Un autónomo, un despacho o un comercio que automatiza sus respuestas y sus recordatorios recupera un tiempo que ninguna gran estructura valora tanto. La IA es un multiplicador de equipos pequeños.",
+          },
+          {
+            type: "h3",
+            text: "«Hace falta un desarrollador y un gran presupuesto»",
+          },
+          {
+            type: "p",
+            text: "Muchas ganancias se consiguen con herramientas listas para usar y unas cuantas automatizaciones bien pensadas. A menudo se empieza sin escribir una sola línea de código. El presupuesto se mide en decenas de euros al mes, no en miles — y se justifica desde la primera tarea automatizada.",
+          },
+          {
+            type: "h3",
+            text: "«La IA va a reemplazar a mi equipo»",
+          },
+          {
+            type: "p",
+            text: "La IA reemplaza tareas, no personas. Se hace cargo de lo repetitivo y de lo que no aporta valor para devolver a sus colaboradores el tiempo de las decisiones, de la relación con el cliente y del oficio. Bien llevada, aumenta sus equipos en lugar de reducirlos.",
+          },
+          {
+            type: "callout",
+            title: "En una frase",
+            text: "La IA no reemplaza a una pyme — le da la capacidad de impacto de un equipo mayor.",
+          },
+          {
+            type: "h2",
+            id: "ou-commencer",
+            text: "Dónde rinde de verdad la IA para una pyme",
+          },
+          {
+            type: "p",
+            text: "No hace falta transformarlo todo. Unos pocos ámbitos concentran lo esencial del valor para una estructura pequeña:",
+          },
+          {
+            type: "ul",
+            items: [
+              "Relación con el cliente: respuestas a las preguntas frecuentes, cualificación de las solicitudes, concertación de citas.",
+              "Marketing y contenido: borradores de artículos, publicaciones, correos y descripciones, para revisar y personalizar.",
+              "Presupuestos y administración: precumplimentación, síntesis de documentos, recordatorios automáticos.",
+              "Análisis: lectura rápida de sus datos de ventas o de tráfico para detectar lo que funciona.",
+              "Productividad interna: actas de reuniones, traducción FR/DE/EN, búsqueda de información.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "demarrer-petit",
+            text: "Cómo empezar sin equivocarse",
+          },
+          {
+            type: "ol",
+            items: [
+              "Parta de un problema, no de una herramienta: ¿qué tarea le cuesta tiempo cada semana?",
+              "Elija una tarea repetitiva y medible, con un resultado claro.",
+              "Pruebe en un alcance reducido, sobre unos pocos casos reales, antes de generalizar.",
+              "Mida el tiempo ganado y la calidad obtenida, con honestidad.",
+              "Amplíe lo que funciona, abandone lo que no cumple sus promesas.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Este enfoque de pasos pequeños evita el efecto «gran proyecto de IA» que se atasca. Va acumulando victorias concretas, su equipo gana confianza, y solo invierte allí donde el valor está probado.",
+          },
+          {
+            type: "h2",
+            id: "rgpd-donnees",
+            text: "RGPD y datos: la vigilancia que tranquiliza",
+          },
+          {
+            type: "p",
+            text: "En Luxemburgo, la cuestión de los datos no es un detalle. Antes de confiar lo que sea a una herramienta, hágase tres preguntas: dónde se almacenan los datos, quién puede acceder a ellos, y si tiene derecho a usarlos así. Evite pegar datos sensibles o nominativos en herramientas de gran público, priorice soluciones conformes al RGPD y alojadas en la UE cuando sea posible, y deje traza de lo que automatiza. El cumplimiento no es un freno: es lo que hace que la IA se pueda desplegar con tranquilidad.",
+          },
+          {
+            type: "callout",
+            title: "Para recordar",
+            text: "Empiece por un caso de uso simple y medible, mantenga sus datos bajo control, y amplíe una vez probado el valor.",
+          },
+          {
+            type: "quote",
+            text: "La buena pregunta no es «¿debo hacer IA?» sino «¿qué tarea me cuesta tiempo cada semana?».",
+          },
+          {
+            type: "p",
+            text: "En vortx, ayudamos a las pymes luxemburguesas a identificar los casos de uso que de verdad rinden, y luego a implementarlos correctamente — herramientas, automatizaciones y salvaguardas RGPD incluidas. ¿Quiere saber por dónde empezar en su caso? Se lo decimos gratis.",
+          },
+        ],
+      },
     ] as {
       slug: string;
       category: string;
@@ -1301,6 +1533,10 @@ export const es = {
       author: string;
       cover: string;
       body: ArticleBlock[];
+      /** AI-style synthesis shown at the top of the article (text + key points). */
+      summary?: { text: string; points: string[] };
+      /** Curated internal links rendered in a "go further" box. */
+      links?: { label: string; href: string; desc: string }[];
     }[],
   },
 
@@ -1566,6 +1802,25 @@ export const es = {
         { q: "¿Qué significa «hecho con IA»?", a: "Usamos la IA para acelerar el diseño, el código y el contenido. Resultado: un sitio de mayor calidad, entregado más rápido y con una mejor relación valor/precio — revisado y finalizado por humanos." },
         { q: "¿Mi sitio estará optimizado para Google y las IA?", a: "Sí. Integramos desde el principio las buenas prácticas de SEO y GEO: estructura, rendimiento, datos estructurados y contenido citable." },
       ],
+      packsIncluded: {
+        eyebrow: "Todo Incluido",
+        title: "¿Qué incluyen todos nuestros packs?",
+        lead: "Independientemente del pack que elijas, siempre disfrutarás de estas características esenciales.",
+        items: [
+          { icon: "server", title: "Dominio y Hosting", desc: "Primer año de dominio incluido y hosting de alta velocidad." },
+          { icon: "responsive", title: "100% Responsive", desc: "Adaptación perfecta a todos los dispositivos para capturar leads desde móvil, tablet y escritorio." },
+          { icon: "seo", title: "SEO Preparado para el Futuro", desc: "Optimización para motores de búsqueda tradicionales y posicionamiento conversacional." },
+          { icon: "contact", title: "Formulario de Contacto", desc: "Recibe mensajes directamente en tu email (Landing Page & Site S)." },
+          { icon: "smartforms", title: "Formularios inteligentes", desc: "Formularios de contacto y cotización multi-paso diseñados para maximizar las conversiones y capturar leads cualificados (Site M, L, XL & Custom)." },
+          { icon: "ssl", title: "Certificado SSL", desc: "Conexión segura HTTPS para proteger a tus visitantes." },
+          { icon: "support", title: "Soporte Técnico", desc: "Asistencia técnica durante los primeros 3 meses." },
+          { icon: "analytics", title: "Analytics integrado", desc: "Seguimiento completo de conversiones y comportamiento de usuarios para optimización continua." },
+          { icon: "speed", title: "Velocidad optimizada", desc: "Carga ultra-rápida para mejorar la experiencia de usuario y el posicionamiento en buscadores." },
+        ],
+        moreTitle: "Y mucho más...",
+        moreText: "Cada proyecto es único. Podemos añadir funcionalidades adicionales según tus necesidades: blog, galería, reservas online, integración con redes sociales y más.",
+        ctaLabel: "Pregúntanos",
+      },
     },
     "seo-geo": {
       intro: [

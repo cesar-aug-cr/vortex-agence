@@ -13,6 +13,8 @@ import { Section } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { ArticleBody } from "@/components/news/ArticleBody";
 import { ArticleToc } from "@/components/news/ArticleToc";
+import { AiSummary } from "@/components/news/AiSummary";
+import { ArticleLinks } from "@/components/news/ArticleLinks";
 import { featureIcons } from "@/components/illustrations/icons";
 import { ArrowRight } from "@/components/ui/icons";
 
@@ -131,6 +133,16 @@ export default async function ArticlePage({
             </div>
           </header>
 
+          {/* AI-generated summary */}
+          {article.summary && (
+            <AiSummary
+              summary={article.summary}
+              label={dict.news.summaryLabel}
+              disclaimer={dict.news.summaryDisclaimer}
+              pointsLabel={dict.news.summaryPointsLabel}
+            />
+          )}
+
           {/* cover */}
           {Cover && (
             <div className="illu-stage mt-10 flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-border md:h-72">
@@ -142,6 +154,11 @@ export default async function ArticlePage({
           <div className="mt-10">
             <ArticleBody blocks={article.body} />
           </div>
+
+          {/* internal links — go further */}
+          {article.links && article.links.length > 0 && (
+            <ArticleLinks links={article.links} title={dict.news.linksTitle} lang={lang} />
+          )}
 
           {/* back link */}
           <div className="mt-12 border-t border-border pt-8">

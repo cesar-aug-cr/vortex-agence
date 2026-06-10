@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { localized } from "@/lib/locale";
@@ -9,8 +8,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
-import { featureIcons } from "@/components/illustrations/icons";
-import { ArrowUpRight } from "@/components/ui/icons";
+import { NewsList } from "@/components/news/NewsList";
 
 export async function generateStaticParams() {
   return i18n.locales.map((lang) => ({ lang }));
@@ -30,14 +28,6 @@ export async function generateMetadata({
     title: dict.meta.news.title,
     description: dict.meta.news.description,
   });
-}
-
-function formatDate(iso: string) {
-  return new Intl.DateTimeFormat("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(iso));
 }
 
 export default async function NewsPage({
@@ -66,38 +56,26 @@ export default async function NewsPage({
           lead={dict.news.lead}
         />
 
-        <div className="mt-14 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((a) => {
-            const Cover = featureIcons[a.cover];
-            return (
-              <Link
-                key={a.slug}
-                href={localized(lang, `/news/${a.slug}`)}
-                className="card card-hover group flex flex-col overflow-hidden"
-              >
-                <div className="illu-stage relative flex h-44 items-center justify-center overflow-hidden border-b border-border">
-                  {Cover && <Cover className="h-28 w-28" />}
-                  <span className="absolute left-4 top-4 rounded-full border border-border bg-bg/70 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-text-dim backdrop-blur-sm">
-                    {a.category}
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="font-mono text-xs text-text-muted">
-                    {formatDate(a.date)} · {a.readingMinutes} {dict.news.readingTime}
-                  </span>
-                  <h2 className="mt-3 text-lg font-semibold leading-snug text-text transition-colors group-hover:text-accent">
-                    {a.title}
-                  </h2>
-                  <p className="mt-3 line-clamp-3 flex-1 text-sm text-text-dim">{a.excerpt}</p>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-accent">
-                    {dict.news.readArticle}
-                    <ArrowUpRight width={15} height={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        <NewsList
+          locale={lang}
+          articles={articles.map((a) => ({
+            slug: a.slug,
+            href: localized(lang, `/news/${a.slug}`),
+            category: a.category,
+            title: a.title,
+            excerpt: a.excerpt,
+            date: a.date,
+            readingMinutes: a.readingMinutes,
+            cover: a.cover,
+          }))}
+          labels={{
+            all: dict.news.allCategories,
+            filterLabel: dict.news.filterLabel,
+            readingTime: dict.news.readingTime,
+            readArticle: dict.news.readArticle,
+            empty: dict.news.emptyLabel,
+          }}
+        />
       </Section>
 
       <ContactCta dict={dict} lang={lang} />

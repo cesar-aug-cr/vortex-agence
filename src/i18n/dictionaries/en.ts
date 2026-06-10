@@ -594,6 +594,13 @@ export const en = {
     tocTitle: "Contents",
     relatedTitle: "Read next",
     ctaTitle: "Want to be cited by AI too?",
+    summaryLabel: "AI-generated summary",
+    summaryDisclaimer: "Automated synthesis of the key points, reviewed by our team.",
+    summaryPointsLabel: "Key takeaways",
+    linksTitle: "Go further",
+    allCategories: "All topics",
+    filterLabel: "Filter by topic",
+    emptyLabel: "No articles in this topic just yet.",
     articles: [
       {
         slug: "geo-seo-luxembourg-etre-cite-par-les-ia",
@@ -607,6 +614,19 @@ export const en = {
         readingMinutes: 9,
         author: "The vortx team",
         cover: "geo-citation",
+        summary: {
+          text: "Search is no longer confined to Google: ChatGPT, Perplexity and Google AI are becoming a new front door. This article explains the difference between SEO and GEO and how to work both together, with concrete steps to get cited by AI.",
+          points: [
+            "SEO ranks you in the results; GEO places you inside the AI's answer.",
+            "Structure your pages as question/answer and ground them in local facts to get cited.",
+            "80% of the work is shared: good content performs on Google AND with the models.",
+          ],
+        },
+        links: [
+          { label: "Google Ads or SEO: where to invest your budget", href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", desc: "Compare paid and organic acquisition levers." },
+          { label: "Our SEO & GEO / GSO service", href: "/services/seo-geo", desc: "How we get you found on Google and cited by AI." },
+          { label: "Marketing & web glossary", href: "/glossaire", desc: "SEO, GEO, GSO… the vocabulary explained simply." },
+        ],
         body: [
           {
             type: "p",
@@ -724,6 +744,19 @@ export const en = {
         readingMinutes: 8,
         author: "The vortx team",
         cover: "ads-targeting",
+        summary: {
+          text: "Should you invest in Google Ads or in SEO? The answer depends on your goal and your timeline. This article contrasts \"renting\" (Ads, immediate) with \"owning\" (SEO, lasting) and shows how to combine them for your situation.",
+          points: [
+            "Google Ads = immediate results for as long as you pay; SEO = a lasting asset that takes time.",
+            "The right balance depends on your timeline, your market and your budget.",
+            "The two complement each other: ads kick-start, SEO frees you from the budget.",
+          ],
+        },
+        links: [
+          { label: "SEO vs GEO: get found AND cited in 2026", href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", desc: "Organic visibility in the age of AI." },
+          { label: "Our Online advertising service", href: "/services/publicite", desc: "Google Ads, Meta and LinkedIn driven by data." },
+          { label: "Our SEO & GEO service", href: "/services/seo-geo", desc: "Build a lasting visibility asset." },
+        ],
         body: [
           {
             type: "p",
@@ -837,6 +870,19 @@ export const en = {
         readingMinutes: 7,
         author: "The vortx team",
         cover: "conversion",
+        summary: {
+          text: "Attracting traffic is pointless if it doesn't convert. This article breaks the conversion funnel down step by step — from the first click to the contract — and shows where you lose visitors and how to plug each leak.",
+          points: [
+            "Every poorly designed step in the funnel costs you sales.",
+            "Guide the visitor towards one clear action on every page.",
+            "Measuring drop-off lets you optimise where it actually matters.",
+          ],
+        },
+        links: [
+          { label: "Our Lead generation service", href: "/services/lead-generation", desc: "Turn traffic into qualified quote requests." },
+          { label: "How much does a website cost in Luxembourg?", href: "/news/combien-coute-un-site-web-luxembourg-2026", desc: "Invest where conversion is really won." },
+          { label: "Glossary: funnel, CRO, landing page…", href: "/glossaire", desc: "The conversion terms explained simply." },
+        ],
         body: [
           {
             type: "p",
@@ -953,6 +999,19 @@ export const en = {
         readingMinutes: 7,
         author: "The vortx team",
         cover: "analytics",
+        summary: {
+          text: "The price of a website isn't a fixed number but a range that depends on your goals. This article breaks down what makes the cost vary and how to invest where it truly pays off, rather than chasing the cheapest option.",
+          points: [
+            "The price depends on scope and goals, not a generic rate.",
+            "Invest in conversion and search visibility, not in the superfluous.",
+            "Judge the cost against what the site brings you.",
+          ],
+        },
+        links: [
+          { label: "Our Websites service", href: "/services/sites-web", desc: "What we build and what's included in every pack." },
+          { label: "Conversion funnel: visitors → clients", href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", desc: "Why a site has to be built to convert." },
+          { label: "What makes a good logo?", href: "/news/quest-ce-quun-bon-logo-identite-qui-dure", desc: "The brand identity that goes with your site." },
+        ],
         body: [
           {
             type: "p",
@@ -1049,6 +1108,19 @@ export const en = {
         readingMinutes: 6,
         author: "The vortx team",
         cover: "branding",
+        summary: {
+          text: "A logo isn't just a pretty picture: it's your brand's first promise. This article lays out the principles of a logo that lasts — simple, memorable, timeless, versatile and relevant — and its role within a coherent identity.",
+          points: [
+            "A good logo is simple, memorable, timeless, versatile and relevant.",
+            "It lives within a coherent visual identity, not on its own.",
+            "Visual consistency builds trust before the first word.",
+          ],
+        },
+        links: [
+          { label: "Our Branding & design service", href: "/services/branding-design", desc: "Bespoke logo and complete brand identity." },
+          { label: "How much does a website cost in Luxembourg?", href: "/news/combien-coute-un-site-web-luxembourg-2026", desc: "Dressing your brand on the web." },
+          { label: "Glossary: brand identity, design system…", href: "/glossaire", desc: "The branding vocabulary explained." },
+        ],
         body: [
           {
             type: "p",
@@ -1135,6 +1207,19 @@ export const en = {
         readingMinutes: 6,
         author: "The vortx team",
         cover: "rgpd",
+        summary: {
+          text: "GDPR has a scary reputation, but the essentials come down to a few clear rules. This article sums up the minimum to respect on a Luxembourg website — cookie banner, consent and legal notices — to be compliant without tipping into paranoia.",
+          points: [
+            "Genuine, prior consent before any non-essential cookie.",
+            "A clear banner and up-to-date legal notices cover the essentials.",
+            "Compliance protects your visitors and your credibility.",
+          ],
+        },
+        links: [
+          { label: "Our Websites service", href: "/services/sites-web", desc: "Sites built compliant from the start." },
+          { label: "SEO vs GEO: visibility and trust", href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", desc: "Why trust and visibility go hand in hand." },
+          { label: "Glossary: GDPR, cookies, consent…", href: "/glossaire", desc: "The compliance terms explained." },
+        ],
         body: [
           {
             type: "p",
@@ -1218,6 +1303,19 @@ export const en = {
         readingMinutes: 6,
         author: "The vortx team",
         cover: "automation",
+        summary: {
+          text: "AI doesn't replace your teams, it takes the drudgery off their hands. This article lists five concrete tasks a Luxembourg SME can automate today — without an overengineered setup — to free up valuable time.",
+          points: [
+            "Start small: repetitive tasks, not a revolution.",
+            "Answers, qualification, follow-ups, content, syncing: all good candidates.",
+            "Keep control: AI assists, humans decide.",
+          ],
+        },
+        links: [
+          { label: "AI for SMEs: where to start", href: "/news/ia-pme-luxembourg-par-ou-commencer", desc: "The guide to getting started without missteps." },
+          { label: "Our Automation & AI service", href: "/services/automatisation-ia", desc: "Bespoke workflows and AI agents." },
+          { label: "Glossary: automation, AI…", href: "/glossaire", desc: "The automation terms explained." },
+        ],
         body: [
           {
             type: "p",
@@ -1296,6 +1394,140 @@ export const en = {
           },
         ],
       },
+      {
+        slug: "ia-pme-luxembourg-par-ou-commencer",
+        category: "Automation & AI",
+        title: "AI for SMEs in Luxembourg: where to start in 2026",
+        excerpt:
+          "AI is no longer just for big corporations. But where do you begin as an SME, with no tech budget and no dedicated team? Here's a pragmatic roadmap: the right use cases, the traps to avoid and how to keep control of your data.",
+        date: "2026-06-09",
+        updated: "2026-06-09",
+        readingMinutes: 7,
+        author: "The vortx team",
+        cover: "ai-build",
+        summary: {
+          text: "AI is no longer reserved for big corporations: framed well, it gives an SME the firepower of a bigger team. This guide dismantles the myths, shows where AI genuinely pays off and lays out a method to start small while keeping control of your data.",
+          points: [
+            "Start from a real problem and a repetitive task, not a trendy tool.",
+            "Test on a small scope, measure the time saved, then scale up.",
+            "Keep your data under control: GDPR and sovereignty first.",
+          ],
+        },
+        links: [
+          { label: "5 tasks your SME should hand over to AI", href: "/news/5-taches-pme-confier-a-l-ia", desc: "Concrete examples to automate right now." },
+          { label: "Our Automation & AI service", href: "/services/automatisation-ia", desc: "Bespoke workflows, integrations and AI agents." },
+          { label: "Glossary: AI, automation, GDPR…", href: "/glossaire", desc: "The AI vocabulary explained simply." },
+        ],
+        body: [
+          {
+            type: "p",
+            text: "Artificial intelligence is everywhere in the conversation, yet many SME leaders are still wondering, in practical terms, what they're actually supposed to do with it. The good news: you don't need a data department or a six-figure budget. You need one task that costs you time every week — and a sensible place to start. Here's how to go about it.",
+          },
+          {
+            type: "h2",
+            id: "pourquoi-pme",
+            text: "Why AI is finally within reach for SMEs",
+          },
+          {
+            type: "p",
+            text: "For years, AI was an enterprise project: data, servers, specialists. Today, the essentials have become a service you switch on as needed, billed by usage, and it speaks your language. A Luxembourg SME can plug in an assistant, automate a flow or generate content without hosting anything itself. The cost of entry has melted away; what matters now is choosing the right use case.",
+          },
+          {
+            type: "h2",
+            id: "trois-idees-recues",
+            text: "Three myths that hold SMEs back",
+          },
+          {
+            type: "h3",
+            text: "\"AI is for big corporations\"",
+          },
+          {
+            type: "p",
+            text: "It's precisely the opposite. The smaller your team, the more every hour saved counts. A tradesperson, a firm or a shop that automates its replies and follow-ups reclaims time that no large organisation values as highly. AI is a force multiplier for small teams.",
+          },
+          {
+            type: "h3",
+            text: "\"You need a developer and a big budget\"",
+          },
+          {
+            type: "p",
+            text: "Many of the gains come from off-the-shelf tools and a few well-thought-out automations. You often start without writing a single line of code. The budget is measured in tens of euros a month, not thousands — and it pays for itself from the very first automated task.",
+          },
+          {
+            type: "h3",
+            text: "\"AI is going to replace my team\"",
+          },
+          {
+            type: "p",
+            text: "AI replaces tasks, not people. It takes on the repetitive, low-value work to give your staff back the time for decisions, client relationships and their craft. Done well, it augments your teams rather than shrinking them.",
+          },
+          {
+            type: "callout",
+            title: "In one sentence",
+            text: "AI doesn't replace an SME — it gives it the firepower of a bigger team.",
+          },
+          {
+            type: "h2",
+            id: "ou-commencer",
+            text: "Where AI genuinely pays off for an SME",
+          },
+          {
+            type: "p",
+            text: "There's no need to transform everything. A few areas concentrate most of the value for a small business:",
+          },
+          {
+            type: "ul",
+            items: [
+              "Client relationships: answering frequent questions, qualifying enquiries, booking appointments.",
+              "Marketing & content: drafts of articles, posts, emails and descriptions, to review and personalise.",
+              "Quotes & admin: pre-filling, document summaries, automatic follow-ups.",
+              "Analysis: a quick read of your sales or traffic data to spot what's working.",
+              "Internal productivity: meeting notes, FR/DE/EN translation, finding information.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "demarrer-petit",
+            text: "How to start without missteps",
+          },
+          {
+            type: "ol",
+            items: [
+              "Start from a problem, not a tool: which task costs you time every week?",
+              "Choose a repetitive, measurable task with a clear outcome.",
+              "Test on a small scope, on a few real cases, before rolling it out.",
+              "Measure the time saved and the quality achieved, honestly.",
+              "Scale what works, drop what doesn't deliver on its promise.",
+            ],
+          },
+          {
+            type: "p",
+            text: "This step-by-step approach avoids the \"big AI project\" that gets bogged down. You stack up concrete wins, your team grows in confidence, and you only invest where the value is proven.",
+          },
+          {
+            type: "h2",
+            id: "rgpd-donnees",
+            text: "GDPR and data: the vigilance that reassures",
+          },
+          {
+            type: "p",
+            text: "In Luxembourg, the question of data is no minor detail. Before entrusting anything to a tool, ask yourself three questions: where is the data stored, who can access it, and are you allowed to use it this way? Avoid pasting sensitive or personal data into consumer tools, favour GDPR-compliant solutions hosted in the EU where possible, and keep a record of what you automate. Compliance isn't a brake: it's what makes AI deployable with peace of mind.",
+          },
+          {
+            type: "callout",
+            title: "Key takeaway",
+            text: "Start with a simple, measurable use case, keep your data under control, and scale once the value is proven.",
+          },
+          {
+            type: "quote",
+            text: "The right question isn't \"should I do AI?\" but \"which task costs me time every week?\".",
+          },
+          {
+            type: "p",
+            text: "At vortx, we help Luxembourg SMEs pinpoint the use cases that genuinely pay off, then put them in place properly — tools, automations and GDPR safeguards included. Want to know where to start in your business? We'll tell you for free.",
+          },
+        ],
+      },
     ] as {
       slug: string;
       category: string;
@@ -1307,6 +1539,10 @@ export const en = {
       author: string;
       cover: string;
       body: ArticleBlock[];
+      /** AI-style synthesis shown at the top of the article (text + key points). */
+      summary?: { text: string; points: string[] };
+      /** Curated internal links rendered in a "go further" box. */
+      links?: { label: string; href: string; desc: string }[];
     }[],
   },
 
@@ -1572,6 +1808,25 @@ export const en = {
         { q: "What does \"built with AI\" mean?", a: "We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and at a better value-for-money — reviewed and finalised by humans." },
         { q: "Will my site be optimised for Google and AI?", a: "Yes. We build in SEO and GEO best practices from the start: structure, performance, structured data and citable content." },
       ],
+      packsIncluded: {
+        eyebrow: "Everything's included",
+        title: "What do all our packs include?",
+        lead: "Whichever pack you choose, you always get these essential features.",
+        items: [
+          { icon: "server", title: "Domain & hosting", desc: "First year of domain on us, with high-speed hosting included." },
+          { icon: "responsive", title: "100% responsive", desc: "A perfect fit on every screen to capture leads on mobile, tablet and desktop." },
+          { icon: "seo", title: "Future-proof SEO", desc: "Optimised for classic search engines and conversational search (GEO) — found on Google and cited by AI." },
+          { icon: "contact", title: "Contact form", desc: "Receive messages straight to your inbox (Landing Page & Site S)." },
+          { icon: "smartforms", title: "Smart forms", desc: "Multi-step contact and quote forms, built to maximise conversions and capture qualified leads (Site M, L, XL & bespoke)." },
+          { icon: "ssl", title: "SSL certificate", desc: "Secure HTTPS connection to protect your visitors and reassure Google." },
+          { icon: "support", title: "Technical support", desc: "Technical assistance included for the first 3 months." },
+          { icon: "analytics", title: "Built-in analytics", desc: "Full tracking of conversions and user behaviour for continuous optimisation." },
+          { icon: "speed", title: "Optimised speed", desc: "Ultra-fast loading for a better experience and better rankings." },
+        ],
+        moreTitle: "And much more…",
+        moreText: "Every project is unique. We can add the features you need: blog, gallery, online booking, social media integration, and more.",
+        ctaLabel: "Let's talk about your project",
+      },
     },
     "seo-geo": {
       intro: [

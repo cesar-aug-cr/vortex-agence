@@ -594,6 +594,13 @@ export const de = {
     tocTitle: "Inhalt",
     relatedTitle: "Auch lesenswert",
     ctaTitle: "Möchten auch Sie von KI zitiert werden?",
+    summaryLabel: "Von KI erstellte Zusammenfassung",
+    summaryDisclaimer: "Automatische Synthese der Kernpunkte, von unserem Team geprüft.",
+    summaryPointsLabel: "Auf einen Blick",
+    linksTitle: "Zum Weiterlesen",
+    allCategories: "Alle Themen",
+    filterLabel: "Nach Thema filtern",
+    emptyLabel: "Zu diesem Thema gibt es derzeit keinen Artikel.",
     articles: [
       {
         slug: "geo-seo-luxembourg-etre-cite-par-les-ia",
@@ -607,6 +614,19 @@ export const de = {
         readingMinutes: 9,
         author: "Das vortx-Team",
         cover: "geo-citation",
+        summary: {
+          text: "Suchmaschinenoptimierung beschränkt sich nicht mehr auf Google: ChatGPT, Perplexity und Google AI werden zu einem neuen Eingangstor. Der Artikel erklärt den Unterschied zwischen SEO und GEO und wie Sie beide gemeinsam bespielen — mit konkreten Schritten, um von KI zitiert zu werden.",
+          points: [
+            "SEO platziert Sie in den Ergebnissen; GEO platziert Sie in der KI-Antwort.",
+            "Strukturieren Sie Ihre Seiten als Frage/Antwort und verankern Sie sie in lokalen Fakten, um zitiert zu werden.",
+            "80 % der Arbeit ist gemeinsam: Guter Content performt bei Google UND bei den Modellen.",
+          ],
+        },
+        links: [
+          { label: "Google Ads oder SEO: wohin mit Ihrem Budget", href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", desc: "Bezahlte und organische Akquise-Hebel im Vergleich." },
+          { label: "Unsere Leistung SEO & GEO / GSO", href: "/services/seo-geo", desc: "Wie wir Sie bei Google sichtbar und von KI zitiert machen." },
+          { label: "Glossar des Marketings & Webs", href: "/glossaire", desc: "SEO, GEO, GSO… das Vokabular einfach erklärt." },
+        ],
         body: [
           {
             type: "p",
@@ -724,6 +744,19 @@ export const de = {
         readingMinutes: 8,
         author: "Das vortx-Team",
         cover: "ads-targeting",
+        summary: {
+          text: "Soll man in Google Ads oder in SEO investieren? Die Antwort hängt von Ihrem Ziel und Ihrem Zeithorizont ab. Der Artikel stellt das „Mieten\" (Ads, sofort) dem „Besitzen\" (SEO, dauerhaft) gegenüber und zeigt, wie Sie beide je nach Situation kombinieren.",
+          points: [
+            "Google Ads = sofortige Ergebnisse, solange Sie zahlen; SEO = dauerhaftes Asset, das Zeit braucht.",
+            "Die richtige Dosierung hängt von Zeithorizont, Markt und Budget ab.",
+            "Beide ergänzen sich: Werbung zündet, SEO macht Sie vom Budget unabhängig.",
+          ],
+        },
+        links: [
+          { label: "SEO vs. GEO: 2026 gefunden UND zitiert werden", href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", desc: "Organische Sichtbarkeit im Zeitalter der KI." },
+          { label: "Unsere Leistung Online-Werbung", href: "/services/publicite", desc: "Google Ads, Meta und LinkedIn, datengesteuert." },
+          { label: "Unsere Leistung SEO & GEO", href: "/services/seo-geo", desc: "Ein dauerhaftes Sichtbarkeits-Asset aufbauen." },
+        ],
         body: [
           {
             type: "p",
@@ -837,6 +870,19 @@ export const de = {
         readingMinutes: 7,
         author: "Das vortx-Team",
         cover: "conversion",
+        summary: {
+          text: "Traffic anzuziehen bringt nichts, wenn er sich nicht verwandelt. Der Artikel zerlegt den Conversion-Funnel Schritt für Schritt — vom ersten Klick bis zum Vertrag — und zeigt, wo Sie Besucher verlieren und wie Sie jedes Leck abdichten.",
+          points: [
+            "Jede schlecht durchdachte Stufe des Funnels kostet Sie Umsatz.",
+            "Wir führen den Besucher auf jeder Seite zu einer klaren Handlung.",
+            "Abbrüche zu messen erlaubt, dort zu optimieren, wo es zählt.",
+          ],
+        },
+        links: [
+          { label: "Unsere Leistung Leadgenerierung", href: "/services/lead-generation", desc: "Traffic in qualifizierte Angebotsanfragen verwandeln." },
+          { label: "Was kostet eine Website in Luxemburg?", href: "/news/combien-coute-un-site-web-luxembourg-2026", desc: "Dort investieren, wo die Conversion wirklich entsteht." },
+          { label: "Glossar: Funnel, CRO, Landingpage…", href: "/glossaire", desc: "Die Begriffe der Conversion einfach erklärt." },
+        ],
         body: [
           {
             type: "p",
@@ -953,6 +999,19 @@ export const de = {
         readingMinutes: 7,
         author: "Das vortx-Team",
         cover: "analytics",
+        summary: {
+          text: "Der Preis einer Website ist keine feste Zahl, sondern eine Spanne, die von Ihren Zielen abhängt. Der Artikel erläutert, was die Kosten beeinflusst und wie Sie dort investieren, wo es sich wirklich auszahlt, statt nur das Günstigste zu suchen.",
+          points: [
+            "Der Preis hängt von Umfang und Zielen ab, nicht von einem Pauschaltarif.",
+            "Investieren Sie in Conversion und Auffindbarkeit, nicht in Überflüssiges.",
+            "Beurteilen Sie die Kosten daran, was die Website Ihnen einbringt.",
+          ],
+        },
+        links: [
+          { label: "Unsere Leistung Websites", href: "/services/sites-web", desc: "Was wir bauen und was in jedem Paket enthalten ist." },
+          { label: "Conversion-Funnel: Besucher → Kunden", href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", desc: "Warum eine Website zum Konvertieren gebaut sein muss." },
+          { label: "Was macht ein gutes Logo aus?", href: "/news/quest-ce-quun-bon-logo-identite-qui-dure", desc: "Die Markenidentität, die Ihre Website begleitet." },
+        ],
         body: [
           {
             type: "p",
@@ -1049,6 +1108,19 @@ export const de = {
         readingMinutes: 6,
         author: "Das vortx-Team",
         cover: "branding",
+        summary: {
+          text: "Ein Logo ist nicht nur ein hübsches Bild: Es ist das erste Versprechen Ihrer Marke. Der Artikel erläutert die Prinzipien eines Logos, das bleibt — einfach, einprägsam, zeitlos, vielseitig und passend — und seine Rolle innerhalb einer stimmigen Identität.",
+          points: [
+            "Ein gutes Logo ist einfach, einprägsam, zeitlos, vielseitig und passend.",
+            "Es lebt innerhalb einer stimmigen visuellen Identität, nicht für sich allein.",
+            "Visuelle Stimmigkeit schafft Vertrauen, noch vor dem ersten Wort.",
+          ],
+        },
+        links: [
+          { label: "Unsere Leistung Branding & Design", href: "/services/branding-design", desc: "Maßgeschneidertes Logo und komplette Markenidentität." },
+          { label: "Was kostet eine Website in Luxemburg?", href: "/news/combien-coute-un-site-web-luxembourg-2026", desc: "Ihre Marke fürs Web in Szene setzen." },
+          { label: "Glossar: Markenidentität, Design-System…", href: "/glossaire", desc: "Das Vokabular des Brandings erklärt." },
+        ],
         body: [
           {
             type: "p",
@@ -1135,6 +1207,19 @@ export const de = {
         readingMinutes: 6,
         author: "Das vortx-Team",
         cover: "rgpd",
+        summary: {
+          text: "Die DSGVO macht Angst, doch das Wesentliche lässt sich in wenigen klaren Regeln zusammenfassen. Der Artikel fasst das Minimum für eine luxemburgische Website zusammen — Cookie-Banner, Einwilligung und Pflichtangaben — um regelkonform zu sein, ohne in Paranoia zu verfallen.",
+          points: [
+            "Echte, vorherige Einwilligung vor jedem nicht notwendigen Cookie.",
+            "Ein klares Banner und aktuelle Pflichtangaben decken das Wesentliche ab.",
+            "Compliance schützt Ihre Besucher und Ihre Glaubwürdigkeit.",
+          ],
+        },
+        links: [
+          { label: "Unsere Leistung Websites", href: "/services/sites-web", desc: "Websites, die von Anfang an konform gebaut sind." },
+          { label: "SEO vs. GEO: Sichtbarkeit und Vertrauen", href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", desc: "Warum Vertrauen und Sichtbarkeit zusammengehören." },
+          { label: "Glossar: DSGVO, Cookies, Einwilligung…", href: "/glossaire", desc: "Die Begriffe der Compliance erklärt." },
+        ],
         body: [
           {
             type: "p",
@@ -1218,6 +1303,19 @@ export const de = {
         readingMinutes: 6,
         author: "Das vortx-Team",
         cover: "automation",
+        summary: {
+          text: "Die KI ersetzt Ihre Teams nicht, sie nimmt ihnen die lästigen Routinen ab. Der Artikel listet fünf konkrete Aufgaben, die ein luxemburgisches KMU schon heute automatisieren kann — ohne Bürokratie-Monster — um nützliche Zeit freizusetzen.",
+          points: [
+            "Fangen Sie klein an: wiederkehrende Aufgaben, keine Revolution.",
+            "Antworten, Qualifizierung, Nachfassen, Inhalte, Synchronisation: lauter Kandidaten.",
+            "Behalten Sie die Kontrolle: Die KI assistiert, der Mensch entscheidet.",
+          ],
+        },
+        links: [
+          { label: "KI für KMU: wo Sie anfangen sollten", href: "/news/ia-pme-luxembourg-par-ou-commencer", desc: "Der Leitfaden für den Einstieg ohne Fehlstart." },
+          { label: "Unsere Leistung Automatisierung & KI", href: "/services/automatisation-ia", desc: "Maßgeschneiderte Workflows und KI-Agenten." },
+          { label: "Glossar: Automatisierung, KI…", href: "/glossaire", desc: "Die Begriffe der Automatisierung erklärt." },
+        ],
         body: [
           {
             type: "p",
@@ -1296,6 +1394,140 @@ export const de = {
           },
         ],
       },
+      {
+        slug: "ia-pme-luxembourg-par-ou-commencer",
+        category: "Automatisierung & KI",
+        title: "KI für KMU in Luxemburg: Wo Sie 2026 anfangen sollten",
+        excerpt:
+          "KI ist nicht mehr nur den Großkonzernen vorbehalten. Aber wo fängt man als KMU an, ohne Tech-Budget und ohne eigenes Team? Hier ist eine pragmatische Roadmap: die richtigen Anwendungsfälle, die zu vermeidenden Fallen und wie Sie die Kontrolle über Ihre Daten behalten.",
+        date: "2026-06-09",
+        updated: "2026-06-09",
+        readingMinutes: 7,
+        author: "Das vortx-Team",
+        cover: "ai-build",
+        summary: {
+          text: "KI ist nicht mehr nur den Großkonzernen vorbehalten: richtig eingesetzt, gibt sie einem KMU die Schlagkraft eines größeren Teams. Dieser Leitfaden räumt mit Vorurteilen auf, zeigt, wo KI sich wirklich auszahlt, und liefert eine Methode, um klein zu starten und dabei die Kontrolle über Ihre Daten zu behalten.",
+          points: [
+            "Gehen Sie von einem konkreten Problem und einer wiederkehrenden Aufgabe aus, nicht von einem Trend-Tool.",
+            "Testen Sie auf einem begrenzten Bereich, messen Sie die gewonnene Zeit und weiten Sie dann aus.",
+            "Behalten Sie Ihre Daten unter Kontrolle: DSGVO und Souveränität zuerst.",
+          ],
+        },
+        links: [
+          { label: "5 Aufgaben, die Ihr KMU der KI überlassen sollte", href: "/news/5-taches-pme-confier-a-l-ia", desc: "Konkrete Beispiele, die Sie schon jetzt automatisieren können." },
+          { label: "Unsere Leistung Automatisierung & KI", href: "/services/automatisation-ia", desc: "Maßgeschneiderte Workflows, Integrationen und KI-Agenten." },
+          { label: "Glossar: KI, Automatisierung, DSGVO…", href: "/glossaire", desc: "Das Vokabular der KI einfach erklärt." },
+        ],
+        body: [
+          {
+            type: "p",
+            text: "Künstliche Intelligenz ist in aller Munde, doch viele KMU-Geschäftsführer fragen sich noch ganz konkret, was sie damit eigentlich anfangen sollen. Die gute Nachricht: Sie brauchen weder eine Datenabteilung noch ein sechsstelliges Budget. Sie brauchen eine Aufgabe, die Sie jede Woche Zeit kostet — und einen vernünftigen Ausgangspunkt. So gehen Sie es an.",
+          },
+          {
+            type: "h2",
+            id: "pourquoi-pme",
+            text: "Warum KI endlich in Reichweite der KMU ist",
+          },
+          {
+            type: "p",
+            text: "Jahrelang war KI ein Konzernprojekt: Daten, Server, Spezialisten. Heute ist das Wesentliche zu einem Dienst geworden, den man auf Abruf aktiviert, nach Nutzung abrechnet und der Deutsch spricht. Ein luxemburgisches KMU kann einen Assistenten anbinden, einen Ablauf automatisieren oder Inhalte erzeugen, ohne selbst etwas zu hosten. Die Einstiegskosten sind geschmolzen; worauf es jetzt ankommt, ist die Wahl des richtigen Anwendungsfalls.",
+          },
+          {
+            type: "h2",
+            id: "trois-idees-recues",
+            text: "Drei Vorurteile, die KMU blockieren",
+          },
+          {
+            type: "h3",
+            text: "„KI ist etwas für Großkonzerne\"",
+          },
+          {
+            type: "p",
+            text: "Es ist genau umgekehrt. Je kleiner Ihr Team, desto schwerer wiegt jede gewonnene Stunde. Ein Handwerker, eine Kanzlei oder ein Geschäft, das seine Antworten und sein Nachfassen automatisiert, gewinnt eine Zeit zurück, die keine Großstruktur derart wertschätzt. KI ist ein Multiplikator für kleine Teams.",
+          },
+          {
+            type: "h3",
+            text: "„Man braucht einen Entwickler und ein großes Budget\"",
+          },
+          {
+            type: "p",
+            text: "Viele Gewinne entstehen mit gebrauchsfertigen Tools und einigen gut durchdachten Automatisierungen. Oft beginnt man, ohne eine einzige Zeile Code zu schreiben. Das Budget bemisst sich in zehn Euro pro Monat, nicht in Tausenden — und es rechtfertigt sich schon mit der ersten automatisierten Aufgabe.",
+          },
+          {
+            type: "h3",
+            text: "„Die KI wird mein Team ersetzen\"",
+          },
+          {
+            type: "p",
+            text: "Die KI ersetzt Aufgaben, nicht Menschen. Sie übernimmt das Wiederkehrende und das ohne Mehrwert, um Ihren Mitarbeitenden die Zeit für Entscheidungen, Kundenbeziehung und Kerngeschäft zurückzugeben. Richtig geführt, stärkt sie Ihre Teams, statt sie zu verkleinern.",
+          },
+          {
+            type: "callout",
+            title: "In einem Satz",
+            text: "Die KI ersetzt kein KMU — sie gibt ihm die Schlagkraft eines größeren Teams.",
+          },
+          {
+            type: "h2",
+            id: "ou-commencer",
+            text: "Wo sich KI für ein KMU wirklich auszahlt",
+          },
+          {
+            type: "p",
+            text: "Sie müssen nicht alles umkrempeln. Einige Bereiche bündeln den Großteil des Werts für eine kleine Struktur:",
+          },
+          {
+            type: "ul",
+            items: [
+              "Kundenbeziehung: Antworten auf häufige Fragen, Qualifizierung von Anfragen, Terminvereinbarung.",
+              "Marketing & Content: Entwürfe für Artikel, Posts, E-Mails und Beschreibungen, zum Gegenlesen und Personalisieren.",
+              "Angebote & Administration: Vorbefüllung, Zusammenfassung von Dokumenten, automatisches Nachfassen.",
+              "Analyse: schnelles Auslesen Ihrer Verkaufs- oder Traffic-Daten, um zu erkennen, was funktioniert.",
+              "Interne Produktivität: Protokolle, Übersetzung FR/DE/EN, Informationsrecherche.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "demarrer-petit",
+            text: "Wie Sie ohne Fehlstart anfangen",
+          },
+          {
+            type: "ol",
+            items: [
+              "Gehen Sie von einem Problem aus, nicht von einem Tool: Welche Aufgabe kostet Sie jede Woche Zeit?",
+              "Wählen Sie eine wiederkehrende und messbare Aufgabe mit einem klaren Ergebnis.",
+              "Testen Sie auf einem begrenzten Bereich, an einigen echten Fällen, bevor Sie verallgemeinern.",
+              "Messen Sie ehrlich die gewonnene Zeit und die erreichte Qualität.",
+              "Weiten Sie aus, was funktioniert, und lassen Sie fallen, was seine Versprechen nicht hält.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Dieser Ansatz in kleinen Schritten vermeidet den Effekt des „großen KI-Projekts\", das im Sande verläuft. Sie sammeln konkrete Erfolge, Ihr Team gewinnt an Vertrauen, und Sie investieren nur dort, wo der Wert bewiesen ist.",
+          },
+          {
+            type: "h2",
+            id: "rgpd-donnees",
+            text: "DSGVO und Daten: die Sorgfalt, die beruhigt",
+          },
+          {
+            type: "p",
+            text: "In Luxemburg ist die Frage der Daten kein Detail. Bevor Sie einem Tool irgendetwas anvertrauen, stellen Sie sich drei Fragen: Wo werden die Daten gespeichert, wer hat Zugriff darauf, und dürfen Sie sie so überhaupt nutzen? Vermeiden Sie es, sensible oder personenbezogene Daten in Consumer-Tools einzufügen, bevorzugen Sie nach Möglichkeit DSGVO-konforme und in der EU gehostete Lösungen, und dokumentieren Sie, was Sie automatisieren. Compliance ist keine Bremse: Sie ist das, was den Einsatz von KI sorgenfrei macht.",
+          },
+          {
+            type: "callout",
+            title: "Zum Mitnehmen",
+            text: "Beginnen Sie mit einem einfachen und messbaren Anwendungsfall, behalten Sie Ihre Daten unter Kontrolle und weiten Sie aus, sobald der Wert bewiesen ist.",
+          },
+          {
+            type: "quote",
+            text: "Die richtige Frage lautet nicht „Muss ich KI machen?\", sondern „Welche Aufgabe kostet mich jede Woche Zeit?\".",
+          },
+          {
+            type: "p",
+            text: "Bei vortx helfen wir luxemburgischen KMU, die Anwendungsfälle zu identifizieren, die sich wirklich auszahlen, und sie dann sauber umzusetzen — Tools, Automatisierungen und DSGVO-Schutzmaßnahmen inklusive. Wollen Sie wissen, wo Sie bei sich anfangen sollten? Wir sagen es Ihnen kostenlos.",
+          },
+        ],
+      },
     ] as {
       slug: string;
       category: string;
@@ -1307,6 +1539,10 @@ export const de = {
       author: string;
       cover: string;
       body: ArticleBlock[];
+      /** AI-style synthesis shown at the top of the article (text + key points). */
+      summary?: { text: string; points: string[] };
+      /** Curated internal links rendered in a "go further" box. */
+      links?: { label: string; href: string; desc: string }[];
     }[],
   },
 
@@ -1572,6 +1808,25 @@ export const de = {
         { q: "Was bedeutet „mit KI gemacht\"?", a: "Wir nutzen KI, um Konzeption, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — von Menschen geprüft und finalisiert." },
         { q: "Wird meine Website für Google und KI optimiert sein?", a: "Ja. Wir integrieren von Anfang an die SEO- und GEO-Best-Practices: Struktur, Performance, strukturierte Daten und zitierbare Inhalte." },
       ],
+      packsIncluded: {
+        eyebrow: "Alles inklusive",
+        title: "Was ist in all unseren Paketen enthalten?",
+        lead: "Welches Paket Sie auch wählen, diese essenziellen Funktionen sind immer dabei.",
+        items: [
+          { icon: "server", title: "Domain & Hosting", desc: "Erstes Domain-Jahr geschenkt und Highspeed-Hosting inklusive." },
+          { icon: "responsive", title: "100 % responsiv", desc: "Perfekte Darstellung auf allen Bildschirmen, um Leads auf Handy, Tablet und Computer zu gewinnen." },
+          { icon: "seo", title: "Zukunftssicheres SEO", desc: "Optimiert für klassische Suchmaschinen und konversationelle Suche (GEO) — bei Google gefunden und von KIs zitiert." },
+          { icon: "contact", title: "Kontaktformular", desc: "Erhalten Sie Nachrichten direkt per E-Mail (Landing Page & Website S)." },
+          { icon: "smartforms", title: "Intelligente Formulare", desc: "Mehrstufige Kontakt- und Angebotsformulare, gemacht, um Conversions zu maximieren und qualifizierte Leads zu gewinnen (Website M, L, XL & maßgeschneidert)." },
+          { icon: "ssl", title: "SSL-Zertifikat", desc: "Sichere HTTPS-Verbindung, um Ihre Besucher zu schützen und Google zu überzeugen." },
+          { icon: "support", title: "Technischer Support", desc: "Technische Unterstützung in den ersten 3 Monaten inklusive." },
+          { icon: "analytics", title: "Integriertes Analytics", desc: "Vollständige Verfolgung von Conversions und Nutzerverhalten für eine laufende Optimierung." },
+          { icon: "speed", title: "Optimierte Geschwindigkeit", desc: "Ultraschnelles Laden für ein besseres Erlebnis und ein besseres Ranking." },
+        ],
+        moreTitle: "Und noch vieles mehr…",
+        moreText: "Jedes Projekt ist einzigartig. Wir können die Funktionen ergänzen, die Sie brauchen: Blog, Galerie, Online-Buchung, Anbindung an soziale Netzwerke und mehr.",
+        ctaLabel: "Sprechen wir über Ihr Projekt",
+      },
     },
     "seo-geo": {
       intro: [

@@ -88,4 +88,5 @@ export const newsSlugs = [
   "quest-ce-quun-bon-logo-identite-qui-dure",
   "rgpd-cookies-site-web-luxembourg",
   "5-taches-pme-confier-a-l-ia",
+  "ia-pme-luxembourg-par-ou-commencer",
 ] as const;

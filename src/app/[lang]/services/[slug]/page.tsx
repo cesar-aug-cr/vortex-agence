@@ -10,6 +10,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
+import { PacksIncluded } from "@/components/sections/PacksIncluded";
 import { serviceIllustration } from "@/components/illustrations/map";
 import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
@@ -53,6 +54,8 @@ export default async function ServiceDetailPage({
   const content =
     dict.serviceContent[service.slug as keyof typeof dict.serviceContent];
   const sd = dict.servicesDetail;
+  const packs =
+    service.slug === "sites-web" ? dict.serviceContent["sites-web"].packsIncluded : null;
   const subs =
     (dict.subServices as Record<string, ReadonlyArray<{ slug: string; title: string; tagline: string; bullets: readonly string[] }>>)[
       service.slug
@@ -211,6 +214,9 @@ export default async function ServiceDetailPage({
               })}
             </div>
           </Section>
+
+          {/* everything included in every pack (sites-web) */}
+          {packs && <PacksIncluded content={packs} lang={lang} />}
 
           {/* deliverables + FAQ */}
           <Section tone="base">
