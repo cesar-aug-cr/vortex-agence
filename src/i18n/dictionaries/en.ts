@@ -601,6 +601,13 @@ export const en = {
     allCategories: "All topics",
     filterLabel: "Filter by topic",
     emptyLabel: "No articles in this topic just yet.",
+    articleCtaTitle: "Got a project in mind?",
+    articleCtaText:
+      "Let's talk. Get a clear, no-strings quote for your website or your acquisition strategy.",
+    articleCtaButton: "Request a quote",
+    shareLabel: "Share",
+    shareCopy: "Copy link",
+    shareCopied: "Link copied!",
     articles: [
       {
         slug: "geo-seo-luxembourg-etre-cite-par-les-ia",

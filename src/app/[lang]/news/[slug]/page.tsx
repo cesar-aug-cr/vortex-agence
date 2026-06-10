@@ -15,6 +15,8 @@ import { ArticleBody } from "@/components/news/ArticleBody";
 import { ArticleToc } from "@/components/news/ArticleToc";
 import { AiSummary } from "@/components/news/AiSummary";
 import { ArticleLinks } from "@/components/news/ArticleLinks";
+import { ArticleCta } from "@/components/news/ArticleCta";
+import { ShareButton } from "@/components/news/ShareButton";
 import { featureIcons } from "@/components/illustrations/icons";
 import { ArrowRight } from "@/components/ui/icons";
 
@@ -67,6 +69,12 @@ export default async function ArticlePage({
     (b): b is Extract<ArticleBlock, { type: "h2" }> => b.type === "h2"
   );
   const related = dict.news.articles.filter((a) => a.slug !== article.slug).slice(0, 2);
+  const shareUrl = `${site.url}${localized(lang, `/news/${article.slug}`)}`;
+  const shareLabels = {
+    share: dict.news.shareLabel,
+    copy: dict.news.shareCopy,
+    copied: dict.news.shareCopied,
+  };
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -96,14 +104,15 @@ export default async function ArticlePage({
 
       <Section tone="base" className="pt-10 md:pt-12">
         <div className="mx-auto max-w-5xl lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12">
-          {/* desktop — sticky left sidebar table of contents */}
+          {/* desktop — sticky left sidebar table of contents + share */}
           <aside className="hidden lg:block">
-            <div className="sticky top-28">
+            <div className="sticky top-28 space-y-4">
               <ArticleToc
                 items={toc.map((h) => ({ id: h.id, text: h.text }))}
                 title={dict.news.tocTitle}
                 variant="desktop"
               />
+              <ShareButton url={shareUrl} title={article.title} labels={shareLabels} variant="panel" />
             </div>
           </aside>
 
@@ -155,19 +164,28 @@ export default async function ArticlePage({
             <ArticleBody blocks={article.body} />
           </div>
 
+          {/* in-article conversion CTA — before the "go further" links */}
+          <ArticleCta
+            title={dict.news.articleCtaTitle}
+            text={dict.news.articleCtaText}
+            button={dict.news.articleCtaButton}
+            lang={lang}
+          />
+
           {/* internal links — go further */}
           {article.links && article.links.length > 0 && (
             <ArticleLinks links={article.links} title={dict.news.linksTitle} lang={lang} />
           )}
 
-          {/* back link */}
-          <div className="mt-12 border-t border-border pt-8">
+          {/* back link + share */}
+          <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-8">
             <Link
               href={localized(lang, "/news")}
               className="inline-flex items-center gap-2 text-sm font-semibold text-accent"
             >
               ← {dict.news.backToNews}
             </Link>
+            <ShareButton url={shareUrl} title={article.title} labels={shareLabels} variant="inline" />
           </div>
           </article>
         </div>

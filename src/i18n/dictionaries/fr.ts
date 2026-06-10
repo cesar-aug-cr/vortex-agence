@@ -619,6 +619,13 @@ export const fr = {
     allCategories: "Tous les sujets",
     filterLabel: "Filtrer par sujet",
     emptyLabel: "Aucun article pour ce sujet pour le moment.",
+    articleCtaTitle: "Un projet en tête ?",
+    articleCtaText:
+      "Discutons-en. Recevez un devis clair et sans engagement pour votre site ou votre stratégie d'acquisition.",
+    articleCtaButton: "Demander un devis",
+    shareLabel: "Partager",
+    shareCopy: "Copier le lien",
+    shareCopied: "Lien copié !",
     articles: [
       {
         slug: "geo-seo-luxembourg-etre-cite-par-les-ia",
