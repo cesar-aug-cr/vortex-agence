@@ -3,6 +3,7 @@ import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+import { localized } from "@/lib/locale";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section } from "@/components/ui/Section";
@@ -105,9 +106,9 @@ export default async function MentionsLegalesPage({
             <h2>5. Données personnelles &amp; cookies</h2>
             <p>
               Le traitement de vos données personnelles est décrit dans notre{" "}
-              <a href={`/${lang}/confidentialite`}>politique de confidentialité</a>, et
+              <a href={localized(lang, "/confidentialite")}>politique de confidentialité</a>, et
               l&apos;usage des cookies dans notre{" "}
-              <a href={`/${lang}/cookies`}>politique cookies</a>.
+              <a href={localized(lang, "/cookies")}>politique cookies</a>.
             </p>
           </section>
 

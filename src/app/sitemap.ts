@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site, mainRoutes, serviceSlugs, newsSlugs, subServiceRoutes } from "@/lib/site";
+import { localized } from "@/lib/locale";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -32,11 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // whole language set so search engines link the translations together.
   for (const { path, priority, freq } of paths) {
     const languages = Object.fromEntries(
-      site.locales.map((l) => [l, `${site.url}/${l}${path}`])
+      site.locales.map((l) => [l, `${site.url}${localized(l, path)}`])
     );
     for (const lang of site.locales) {
       entries.push({
-        url: `${site.url}/${lang}${path}`,
+        url: `${site.url}${localized(lang, path)}`,
         lastModified: now,
         changeFrequency: freq,
         priority,

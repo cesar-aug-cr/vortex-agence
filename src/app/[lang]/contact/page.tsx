@@ -3,6 +3,7 @@ import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+import { localized } from "@/lib/locale";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section } from "@/components/ui/Section";
@@ -111,7 +112,7 @@ export default async function ContactPage({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            url: `${site.url}/${lang}/contact`,
+            url: `${site.url}${localized(lang, "/contact")}`,
             mainEntity: {
               "@type": "Organization",
               "@id": `${site.url}/#organization`,

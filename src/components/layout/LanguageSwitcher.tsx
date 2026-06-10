@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { i18n, localeNames, localeShort, type Locale } from "@/i18n/config";
+import { canonicalizePath, localizePath } from "@/i18n/routes";
 
 /**
  * Language switcher — swaps the locale segment of the current path while
@@ -26,10 +27,14 @@ export function LanguageSwitcher({
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // swap the first path segment (the locale) for the target locale
+  // Swap locale AND translate the slug: canonicalize the current localized
+  // path, then re-localize it for the target language so the user lands on the
+  // same page with that language's URL (e.g. /es/agencia → /de/agentur).
   const pathFor = (target: string) => {
-    const rest = pathname.replace(/^\/[^/]+/, "");
-    return `/${target}${rest}`;
+    const rest = pathname.replace(/^\/[^/]+/, "") || "/";
+    const canonical = canonicalizePath(lang, rest);
+    const localizedRest = localizePath(target, canonical);
+    return `/${target}${localizedRest === "/" ? "" : localizedRest}`;
   };
 
   return (

@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { i18n } from "@/i18n/config";
+import { canonicalizePath, localizePath } from "@/i18n/routes";
 
 /**
  * Locale routing (Next 16 "proxy" convention, formerly "middleware").
@@ -26,14 +27,37 @@ function preferredLocale(req: NextRequest): string {
 export function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
 
-  const hasLocale = i18n.locales.some(
+  const lang = i18n.locales.find(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
   );
-  if (hasLocale) return;
 
-  const locale = preferredLocale(req);
-  const target = pathname === "/" ? "" : pathname;
-  return NextResponse.redirect(new URL(`/${locale}${target}${search}`, req.url));
+  // No locale prefix → redirect to the best-guess locale.
+  if (!lang) {
+    const locale = preferredLocale(req);
+    const target = pathname === "/" ? "" : pathname;
+    return NextResponse.redirect(new URL(`/${locale}${target}${search}`, req.url));
+  }
+
+  // Locale present → handle localized slugs. `rest` is the path after /<lang>.
+  const rest = pathname.slice(`/${lang}`.length);
+  if (rest === "" || rest === "/") return; // homepage
+
+  const canonRest = canonicalizePath(lang, rest); // → real folder path
+  const prefRest = localizePath(lang, canonRest); // → preferred public path
+
+  // Wrong public form (e.g. /es/agence or /es/services) → redirect to the
+  // localized one (/es/agencia, /es/servicios) so there's a single public URL.
+  // 307 (temporary) during pre-launch iteration; switch to 308 at launch.
+  if (rest !== prefRest) {
+    return NextResponse.redirect(new URL(`/${lang}${prefRest}${search}`, req.url), 307);
+  }
+
+  // Correct public form that maps to a different folder → rewrite internally.
+  if (canonRest !== rest) {
+    return NextResponse.rewrite(new URL(`/${lang}${canonRest}${search}`, req.url));
+  }
+
+  return;
 }
 
 export const config = {

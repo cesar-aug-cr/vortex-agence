@@ -3,6 +3,7 @@ import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+import { localized } from "@/lib/locale";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section } from "@/components/ui/Section";
@@ -126,7 +127,7 @@ export default async function ConfidentialitePage({
             <h2>6. Durées de conservation</h2>
             <ul>
               <li>Demandes via le formulaire : [À COMPLÉTER — ex. 3 ans après le dernier contact].</li>
-              <li>Données de mesure d&apos;audience : selon la durée de vie des cookies (voir la <a href={`/${lang}/cookies`}>politique cookies</a>).</li>
+              <li>Données de mesure d&apos;audience : selon la durée de vie des cookies (voir la <a href={localized(lang, "/cookies")}>politique cookies</a>).</li>
             </ul>
           </section>
 
@@ -148,7 +149,7 @@ export default async function ConfidentialitePage({
             <h2>8. Cookies</h2>
             <p>
               L&apos;utilisation des cookies et la gestion de votre consentement sont
-              détaillées dans notre <a href={`/${lang}/cookies`}>politique cookies</a>.
+              détaillées dans notre <a href={localized(lang, "/cookies")}>politique cookies</a>.
             </p>
           </section>
 
