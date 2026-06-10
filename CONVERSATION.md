@@ -2,7 +2,8 @@
 
 > Site de l'agence marketing **VorTX** (Luxembourg) — Next.js 16.
 > Récapitulatif complet : décisions, travaux, réglages, et **reprise pour la suite**.
-> Dernière mise à jour : 2026-06-04.
+> Dernière mise à jour : 2026-06-10.
+> Dossier de travail actuel : `C:\Users\CACR\Documents\sites\VorTX` · Repo : `github.com/cesar-aug-cr/vortex-agence` (branche `main`).
 
 ---
 
@@ -173,3 +174,52 @@ Audit multi-agents (56 constats) → exécution des 8 chantiers. **`tsc` exit 0 
 - Mega-menu : passer en vrai disclosure (aria-expanded + Échap + clic-extérieur) — actuellement hover/focus CSS (le déclencheur navigue désormais vers `/services` réel).
 - Marquees/logo nav : pause hors-écran via IntersectionObserver (micro-opt).
 - DE/EN : créer `de.ts`/`en.ts` + switcher quand décidé (archi déjà prête).
+
+---
+
+## 11. Session 2026-06-09/10 — contenu News, URLs localisées, partage, icônes complexes
+
+> Marque écrite **`vortx`** (minuscule) dans le dico. **Les 4 langues sont live** : `fr` (source `as const`), `en`/`de`/`es` (cast `as unknown as Dictionary`). `tsc` exit 0 + `next build` (142 pages) verts à chaque étape. Tout est poussé sur `main`.
+
+### A. Sandbox typographies (`/[lang]/typographies-testsss`, noindex)
+Page interne pour comparer des polices en live. Accents/diacritiques + phrases multilingues FR/DE/ES/EN + ponctuation, toutes les polices en `subsets: ["latin","latin-ext"]`. Sections réduites à **6 sans + 2 mono**. Ajout de **Clarity City** (OFL, VMware) en **self-host** (`next/font/local`, 5 `.woff2` Light→Bold + `OFL.txt` dans `src/fonts/clarity-city/`) — pas sur Google Fonts.
+Commits : `d1a65fa`, `9f55a94`, `032f3ae`.
+
+### B. News / articles — gros lot (commit `3ac11f8`)
+- **Résumé « généré par IA » par article** (écrit à la main, **sans clé API**) : encadré sparkle + synthèse + « À retenir » (3 points) + disclaimer honnête. Composant `news/AiSummary`.
+- **Liens internes** « Pour aller plus loin » par article (`news/ArticleLinks`) → articles liés / services / glossaire (SEO).
+- **Catégories + filtres** sur `/news` : `news/NewsList` (client) avec pastilles de filtre dérivées des articles, « Tous les sujets » actif en lime.
+- **Sommaire scroll-spy** : `news/ArticleToc` réécrit avec IntersectionObserver → section courante **en lime** (desktop + mobile).
+- **Nouvel article** `ia-pme-luxembourg-par-ou-commencer` (« IA pour les PME au Luxembourg : par où commencer ») — angle stratégique, complémentaire de l'existant « 5 tâches PME », cross-link mutuel. Slug ajouté à `lib/site.ts`.
+- **Modèle de données** : type article étendu (`summary?`, `links?`) ; labels `news.*` ajoutés.
+- **Traductions EN/DE/ES** produites par **workflow (1 agent par fichier de dico → zéro conflit)** + agent de revue de complétude. Voir mémoire `vortx-translation-workflow-one-agent-per-file`.
+
+### C. Page Sites web — section « Tout est inclus » (commit `3ac11f8`, icônes `22862c6`)
+- Nouvelle section `sections/PacksIncluded` dans `serviceContent["sites-web"].packsIncluded` (9 features + carte « Et bien plus encore… » + bouton contact). **ES = texte espagnol du client au mot près** ; FR/EN/DE localisés.
+- **Icônes super complexes** : 9 illustrations SVG dédiées animées (`src/components/illustrations/packs/Pack*.tsx` + `index.ts` → `packIcons`), style maison 120×120 (dégradés cyan/vert/bleu/lime + halo + SMIL). **Préfixe d'ID unique `pk*` par icône** (sinon collision de gradients sur une même page). Générées par **9 agents `vortx-svg-illustrator` en parallèle** (un fichier chacun) + revue. Affichées dans un cadre `illu-stage`.
+
+### D. URLs localisées par langue (commit `8ae7101`)
+Slugs publics traduits par langue : `/es/agencia`, `/de/kontakt`, `/en/agency`, `/fr/agence`…
+- **`src/i18n/routes.ts`** (nouveau) : table `routeSlugs` (segment canonique = nom de dossier FR → slug par locale) + `localizePath`/`canonicalizePath` (1ᵉʳ segment seulement ; les slugs de contenu service/article **restent stables**).
+- **`lib/locale.ts`** : `localized()` traduit le 1ᵉʳ segment → tous les liens, `canonical`, `hreflang`, `sitemap` deviennent localisés.
+- **`proxy.ts`** (middleware) : réécrit l'URL localisée → dossier canonique, et **redirige (307)** les mauvaises formes (ex. `/es/agence` → `/es/agencia`). 307 temporaire en pré-prod → passer 308 au lancement.
+- **`LanguageSwitcher`** : canonicalise puis re-localise (reste sur la même page dans la langue cible).
+- Corrigé les constructeurs d'URL manuels (sitemap, JSON-LD contact, liens légaux inline).
+- Slugs : services→servicios/leistungen · agence→agency/agentur/agencia · contact→kontakt/contacto · approche→approach/ansatz/enfoque · realisations→work/referenzen/proyectos · glossaire→glossary/glossar/glosario · news→noticias (es) · légales (impressum/datenschutz/aviso-legal…).
+- **À décider** : faut-il aussi traduire les slugs de **contenu** (service `sites-web`, slugs d'articles) ? Pour l'instant **non** (identité stable = usage habituel).
+
+### E. CTA devis + bouton Partager dans les articles (commit `1568495`)
+- `news/ArticleCta` : encadré conversion en fin d'article, **avant** « Pour aller plus loin » → bouton « Demander un devis » vers `/contact`.
+- `news/ShareButton` (client) : **copier le lien** (presse-papiers + feedback) + LinkedIn / X / WhatsApp / e-mail + **partage natif** (`navigator.share`). Placé **dans le Sommaire desktop** (panel) et **après « ← Toutes les news »** (inline). URL partagée = URL **canonique localisée**.
+
+### F. Hero — étoile mobile (commit `89ebab7`)
+Étoile glow en bas à droite (`HeroParticles`, `left-[80%] top-[74%]`) **légèrement réduite sur mobile uniquement** (`scale 0.8` via instance `md:hidden`, desktop reste `scale 1`). Le `transform: scale()` inline n'étant pas responsive en Tailwind → deux instances.
+
+### Notes techniques / leçons
+- **Gotcha i18n** : en/de/es sont **force-cast** `as unknown as Dictionary` → un champ manquant **ne lève pas d'erreur tsc** (rendu `undefined` à l'exécution). Donc **vérifier par rendu** (build/captures), pas seulement `tsc`. Tout champ optionnel du dico est gardé par `&&`. (Mémoire : `i18n-force-cast-hides-missing-translations`.) Exception : les objets `news.articles` ont un cast inline `as {...}[]` qui, lui, est strict.
+- **Le tool Agent expose désormais les agents projet** (`vortx-svg-illustrator`, `vortx-copywriter-fr`, etc.) via `agentType` dans un Workflow — contredit la note de §4/§10.
+- **Build pendant que `dev` tourne = `.next` corrompu** → toujours build isolé `NEXT_DIST_DIR=.next-prod npx next build` (puis `git checkout tsconfig.json` car Next ré-ajoute le dist dir, et `rm -rf .next-prod`).
+- **`git push` qui hangue** (stall HTTP/2) → pousser en **HTTP/1.1** : `git -c http.version=HTTP/1.1 push origin main`.
+
+### Historique commits de la session
+`d1a65fa` typo accents/multilingue · `9f55a94` retrait 9 polices · `032f3ae` Clarity City · `3ac11f8` News (résumés IA, liens, filtres, ToC lime, article PME×IA, section packs) · `8ae7101` URLs localisées · `1568495` CTA devis + partage · `89ebab7` étoile hero mobile · `22862c6` icônes complexes packs.
