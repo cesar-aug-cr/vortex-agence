@@ -71,7 +71,7 @@ export default async function ServicesPage({
                   </div>
                 )}
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-text">{s.title}</h3>
+                  <h2 className="text-xl font-semibold text-text">{s.title}</h2>
                   <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text-dim transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
                     <ArrowUpRight width={16} height={16} />
                   </span>

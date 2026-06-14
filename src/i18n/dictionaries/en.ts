@@ -1789,6 +1789,30 @@ export const en = {
     includedTitle: "What's included",
     deliverablesTitle: "Deliverables",
     faqTitle: "Frequently asked questions",
+    // Shared "our method" band, rendered on every service & sub-service page.
+    method: {
+      eyebrow: "Our method",
+      title: "Four steps, zero nasty surprises.",
+      lead: "A clear framework, the same on every project: you sign off at each step, we move fast, you stay in control.",
+      steps: [
+        { n: "01", icon: "process", title: "Diagnosis", desc: "We analyse your situation, your market and your goals. A free audit, straight up: we tell you what can be improved before we even talk about a quote." },
+        { n: "02", icon: "ai-build", title: "Design & build", desc: "Bespoke design and AI-accelerated production. We build the solution — site, campaign, identity, automation — engineered to convert." },
+        { n: "03", icon: "ab-test", title: "Review & optimisation", desc: "We test, we measure, we adjust with you. Nothing is set in stone: every detail is optimised until it performs." },
+        { n: "04", icon: "analytics", title: "Launch & follow-up", desc: "Go-live, results tracking and ongoing support. You see the progress, every euro tied to a result." },
+      ],
+    },
+    // Honest "guarantees / engagements" band — no invented client metrics.
+    proof: {
+      eyebrow: "Our commitments",
+      title: "What we guarantee you, in black and white.",
+      lead: "No magic promises. Concrete commitments, kept on every project.",
+      items: [
+        { icon: "guarantee", value: "Free audit", label: "Before any quote", desc: "A free diagnosis of your situation, with no commitment." },
+        { icon: "rgpd", value: "100% yours", label: "Code, content, access", desc: "You fully own it. No lock-in, ever." },
+        { icon: "multilingual", value: "FR · DE · EN", label: "Natively multilingual", desc: "Built for the Luxembourg market and the Greater Region." },
+        { icon: "analytics", value: "Clear reporting", label: "Total transparency", desc: "Every euro spent is tied to a measurable result." },
+      ],
+    },
   },
   serviceContent: {
     "sites-web": {
@@ -1963,8 +1987,8 @@ export const en = {
     play: "Resume scrolling",
   },
 
-  subServicesTitle: "Two complementary specialities",
-  subServicesLead: "This service comes in two specialities. Take the one that fits your need — or combine them to cover the whole field.",
+  subServicesTitle: "A speciality for every need",
+  subServicesLead: "This service breaks down into focused expertises. Take the one that fits your need — or combine them to cover the whole field.",
   subServices: {
     publicite: [
       {
@@ -2041,6 +2065,43 @@ export const en = {
           { q: "Do I need to have content already?", a: "Not necessarily. We can create the ad visuals and videos, or start from your existing content and adapt it to the format that converts." },
         ],
       },
+      {
+        slug: "linkedin-ads",
+        illustration: "linkedin-ads",
+        title: "LinkedIn Ads",
+        tagline: "Reach Luxembourg's decision-makers where they decide.",
+        short:
+          "The most precise B2B advertising there is: target by job function, sector and company. Ideal for long sales cycles and strategic accounts in Luxembourg and the Greater Region.",
+        bullets: [
+          "Targeting by role, sector & company",
+          "Built-in Lead Gen Forms",
+          "Account-Based Marketing (ABM)",
+          "Cost-per-lead & pipeline tracking",
+        ],
+        metaTitle: "B2B LinkedIn Ads Agency in Luxembourg | vortx",
+        metaDescription:
+          "B2B LinkedIn Ads campaigns for the Luxembourg market: targeting by function and company, Lead Gen Forms, ABM. Reach decision-makers, generate qualified leads.",
+        intro: [
+          "In B2B, you don't sell to a company: you win over people. LinkedIn Ads is the only channel that lets you target decision-makers precisely — by job function, sector, company size and even by named account.",
+          "We structure your campaigns (Lead Gen Forms, sponsored content, message ads) to speak to the right people at the right moment, and we tie every lead back to your pipeline to measure real return, not just clicks.",
+        ],
+        included: [
+          { icon: "linkedin", title: "Decision-maker targeting", desc: "By function, seniority, sector and company size — the B2B precision only LinkedIn offers." },
+          { icon: "leads", title: "Lead Gen Forms", desc: "Pre-filled forms built into LinkedIn to capture qualified leads without friction." },
+          { icon: "ads-targeting", title: "Account-Based Marketing", desc: "We target your named strategic accounts and the right contacts within each one." },
+          { icon: "analytics", title: "Pipeline & ROI", desc: "Cost-per-lead and pipeline contribution tracking, integrated with your CRM." },
+        ],
+        deliverables: [
+          "Targeting strategy & campaign structure",
+          "Ad creative & Lead Gen Forms",
+          "Tracking setup (CRM, conversions)",
+          "Cost-per-lead reporting & continuous optimisation",
+        ],
+        faq: [
+          { q: "Isn't LinkedIn Ads too expensive?", a: "The cost per click is higher than elsewhere, but so is the quality of the leads. In B2B, a single signed client often more than pays for the campaign. We start with a test budget and only scale what's profitable." },
+          { q: "Do I need an active LinkedIn company page?", a: "It's a plus for credibility, but not a prerequisite to launch campaigns. We can help you bring your page up to standard in parallel." },
+        ],
+      },
     ],
     "seo-geo": [
       {
@@ -2115,6 +2176,828 @@ export const en = {
         faq: [
           { q: "Does GEO replace SEO?", a: "No, it complements it. 80% of the best practices are shared: structured, reliable content performs both on Google and with the AIs. We optimise for both." },
           { q: "How do you measure GEO results?", a: "We track your presence in the answers of AI assistants (citations, mentions) and how your authority evolves. It's an emerging field: we move forward with method and transparency." },
+        ],
+      },
+      {
+        slug: "seo-local",
+        illustration: "seo-local",
+        title: "Local SEO & Google Business Profile",
+        tagline: "Dominate the \"near me\" searches across Luxembourg.",
+        short:
+          "Be the obvious answer when a client searches nearby. Optimisation of your Google Business Profile, local citations and reviews to capture local demand, everywhere in the Greater Region.",
+        bullets: [
+          "Optimised Google Business Profile",
+          "Local citations & NAP consistency",
+          "Customer review strategy",
+          "Multilingual LocalBusiness schema",
+        ],
+        metaTitle: "Local SEO & Google Business Profile Agency in Luxembourg | vortx",
+        metaDescription:
+          "Local SEO in Luxembourg: Google Business Profile optimisation, citations, customer reviews and local pages. Capture \"near me\" searches across the Greater Region.",
+        intro: [
+          "When a client searches \"plumber Luxembourg\" or \"agency near me\", Google shows a map and three listings first. If you're not there, you're invisible — even if you rank first in the classic results.",
+          "Local SEO optimises your presence on that map and in the local pack: a complete Google Business Profile, consistent contact details across the web, customer reviews and technical markup. A decisive lever for retailers, tradespeople and local services in Luxembourg and across the border.",
+        ],
+        included: [
+          { icon: "local-seo", title: "Google Business Profile", desc: "Categories, services, photos, posts and hours: a complete listing that builds trust and climbs on the map." },
+          { icon: "seo", title: "Citations & NAP", desc: "Consistent name, address and phone across directories and local platforms — a key signal for Google." },
+          { icon: "conversion", title: "Reviews & reputation", desc: "A customer review and response strategy to strengthen your local signals and your credibility." },
+          { icon: "geo-citation", title: "Local pages & schema", desc: "Local landing pages and LocalBusiness structured data, in FR/DE/EN." },
+        ],
+        deliverables: [
+          "Google Business Profile audit & optimisation",
+          "Local citation clean-up and creation",
+          "Review strategy and response templates",
+          "Local pages & multilingual schema markup",
+        ],
+        faq: [
+          { q: "Is local SEO useful if I don't have a shop?", a: "Yes, as soon as you have a service area: tradespeople, home services, independent professionals. We can set up a \"service area\" listing with no public address." },
+          { q: "How long before my listing climbs?", a: "The first improvements (completeness, photos, categories) take effect within a few weeks. Consistent reviews and citations consolidate your position over a few months." },
+        ],
+      },
+    ],
+    "sites-web": [
+      {
+        slug: "site-vitrine",
+        illustration: "site-vitrine",
+        title: "Bespoke showcase site",
+        tagline: "A digital showcase that builds trust from the first second.",
+        short:
+          "The site that presents your business, your services and your credibility — designed 100% bespoke, fast and action-driven. Your best salesperson, available 24/7.",
+        bullets: [
+          "100% bespoke design, zero template",
+          "Architecture built for conversion",
+          "Responsive & ultra-fast",
+          "SEO-optimised from launch",
+        ],
+        metaTitle: "Showcase Website Design in Luxembourg | vortx",
+        metaDescription:
+          "Bespoke showcase website design for Luxembourg businesses: premium design, fast, responsive and conversion-driven. Your best salesperson, 24/7.",
+        intro: [
+          "Your showcase site is often a prospect's first contact with your business. Within seconds, they decide whether to trust you — or head back to Google. We design that first meeting so it plays in your favour.",
+          "Bespoke design, clear structure, near-instant loading: every page showcases your expertise and guides the visitor towards action — a call, a message, a quote. Not a static catalogue, a salesperson working for you.",
+        ],
+        included: [
+          { icon: "ai-build", title: "Bespoke design", desc: "A unique visual identity, true to you — never a recycled template seen a thousand times." },
+          { icon: "conversion", title: "Built to convert", desc: "Every page has a clear goal and guides the visitor towards contact or a quote." },
+          { icon: "responsive", title: "100% responsive", desc: "A flawless experience on mobile, tablet and desktop — mobile first." },
+          { icon: "seo", title: "Built-in SEO", desc: "Structure, performance and data ready for Google and AI from go-live." },
+        ],
+        deliverables: [
+          "Bespoke mockups & design signed off with you",
+          "Responsive showcase site (Next.js or WordPress)",
+          "Baseline SEO & GEO optimisation",
+          "Forms, tracking and go-live included",
+        ],
+        faq: [
+          { q: "How many pages does a showcase site include?", a: "It depends on your business — often 5 to 10 pages (home, services, about, contact…). We define the clearest structure together, for your visitors and for Google." },
+          { q: "Will I be able to edit the content myself?", a: "Yes, if you'd like. On WordPress, editing is simple; on bespoke builds, we set up what's needed to manage your key content — or we handle it for you." },
+        ],
+      },
+      {
+        slug: "site-e-commerce",
+        illustration: "site-e-commerce",
+        title: "E-commerce site",
+        tagline: "From product page to payment, every pixel works for your sales.",
+        short:
+          "Online stores built to sell: a smooth checkout funnel, secure payments, autonomous catalogue management. A sales engine, not just a site.",
+        bullets: [
+          "Optimised checkout funnel",
+          "Integrated payments & logistics",
+          "Autonomous catalogue management",
+          "Sales performance tracking",
+        ],
+        metaTitle: "E-commerce Website Design in Luxembourg | vortx",
+        metaDescription:
+          "High-performance online store creation in Luxembourg: optimised checkout funnel, secure payments, catalogue management. An e-commerce site that truly sells.",
+        intro: [
+          "An online store isn't judged on its catalogue, but on its conversion rate. Too many e-commerce sites lose customers between the product and the basket. We build yours to take them all the way to payment, without friction.",
+          "Compelling product pages, a smooth checkout funnel, secure payments and autonomous catalogue management: we connect it all to your tools (stock, delivery, accounting) and track performance to optimise what drives sales.",
+        ],
+        included: [
+          { icon: "ecommerce", title: "Optimised checkout funnel", desc: "From product to payment, a smooth journey designed to reduce cart abandonment." },
+          { icon: "smart-forms", title: "Secure payments", desc: "Integration of payment methods and VAT rules, securely." },
+          { icon: "automation", title: "Autonomous management", desc: "A clear back-office to manage products, stock and orders without depending on us." },
+          { icon: "analytics", title: "Sales tracking", desc: "A dashboard of conversions, baskets and the products that perform." },
+        ],
+        deliverables: [
+          "Responsive & secure online store",
+          "Catalogue, payments and delivery configured",
+          "Conversion-optimised checkout funnel",
+          "E-commerce tracking & management training",
+        ],
+        faq: [
+          { q: "Which platform do you build the store on?", a: "Depending on your need: WooCommerce/WordPress for autonomy, or a bespoke solution (Next.js) for performance and specific requirements. We advise without dogma." },
+          { q: "Do you handle payments and VAT?", a: "Yes. We configure payment methods, Luxembourg VAT rules and, if needed, the connection to your logistics and accounting." },
+        ],
+      },
+      {
+        slug: "landing-pages",
+        illustration: "landing-pages",
+        title: "High-conversion landing pages",
+        tagline: "One page, one goal, the maximum number of leads.",
+        short:
+          "Landing pages designed for a single action: convert. Ideal for your advertising campaigns, launches and targeted offers.",
+        bullets: [
+          "Designed for a single action",
+          "Fast launch, mobile-first",
+          "A/B testing & optimisation",
+          "Connected to your campaigns",
+        ],
+        metaTitle: "Landing Page Design in Luxembourg | vortx",
+        metaDescription:
+          "High-conversion landing page creation in Luxembourg: fast, mobile-first pages optimised for your campaigns. More leads, less wasted budget.",
+        intro: [
+          "Sending ad traffic to your homepage is wasting budget. A landing page has a single goal and removes every distraction to drive the visitor to one precise action: fill in a form, book, download.",
+          "We design fast, persuasive, mobile-first pages aligned with each campaign's message, then test and optimise them to lift the conversion rate — and lower your cost per lead.",
+        ],
+        included: [
+          { icon: "landing", title: "A single action", desc: "Zero distraction: everything converges on the page's one goal." },
+          { icon: "speed", title: "Fast & mobile-first", desc: "Near-instant loading, perfect on mobile where most paid traffic lands." },
+          { icon: "ab-test", title: "A/B testing", desc: "We test headlines, visuals and forms to optimise conversion continuously." },
+          { icon: "ads-targeting", title: "Connected to campaigns", desc: "Message aligned with your ad and end-to-end conversion tracking." },
+        ],
+        deliverables: [
+          "Bespoke conversion-optimised landing page",
+          "Persuasive copywriting & optimised form",
+          "Conversion tracking setup",
+          "A/B testing plan & recommendations",
+        ],
+        faq: [
+          { q: "Is a landing page different from a page on my site?", a: "Yes. A site page informs and offers several paths; a landing page pursues a single goal, with no menu or distraction, to maximise the conversion of a specific campaign." },
+          { q: "How long does it take to deliver a landing page?", a: "Often a few days. Our AI-accelerated production lets us launch fast, which is essential to time a campaign right." },
+        ],
+      },
+      {
+        slug: "refonte-de-site",
+        illustration: "refonte-de-site",
+        title: "Website redesign",
+        tagline: "Turn a sleeping site into a growth engine.",
+        short:
+          "Is your site slow, dated or no longer converting? We rethink it from the ground up — design, performance, SEO — without losing the rankings you've earned.",
+        bullets: [
+          "Full UX & performance audit",
+          "Migration with no SEO loss",
+          "Visual & technical redesign",
+          "Measurable results",
+        ],
+        metaTitle: "Website Redesign in Luxembourg | vortx",
+        metaDescription:
+          "Website redesign in Luxembourg: UX audit, new design, performance and migration with no SEO loss. Turn an outdated site into a conversion engine.",
+        intro: [
+          "A dated site costs more than it seems: it drives visitors away, weighs down your credibility and your rankings. A redesign isn't a simple facelift — it's the chance to start again on healthy foundations.",
+          "We start with an audit (UX, performance, SEO, conversion) to understand what's blocking, then rethink design and technology. Crucially: we migrate cleanly to preserve — and often improve — your existing rankings.",
+        ],
+        included: [
+          { icon: "redesign", title: "Full audit", desc: "UX, performance, SEO and conversion: we pinpoint exactly what's holding your current site back." },
+          { icon: "ai-build", title: "Design & technical redesign", desc: "A new, modern design on fast, durable technical foundations." },
+          { icon: "seo", title: "Migration with no SEO loss", desc: "Redirects, structure and content migrated cleanly to protect your rankings." },
+          { icon: "speed", title: "Performance restored", desc: "A near-instant site — better experience, better rankings, more conversions." },
+        ],
+        deliverables: [
+          "Full audit of the existing site",
+          "New design & development",
+          "Migration plan & SEO redirects",
+          "Go-live and ranking tracking",
+        ],
+        faq: [
+          { q: "Will I lose my Google rankings?", a: "That's the whole risk of a poorly done redesign — and exactly what we avoid. We map your URLs, set up the redirects and preserve the SEO structure. Done well, a redesign often improves rankings." },
+          { q: "Can we keep part of the existing site?", a: "Yes. We keep what works (content, brand elements, high-performing pages) and redo what's holding you back. The audit decides objectively." },
+        ],
+      },
+      {
+        slug: "application-web",
+        illustration: "application-web",
+        title: "Bespoke apps & platforms",
+        tagline: "When a site is no longer enough, we build your tool.",
+        short:
+          "Client portals, back-offices, business platforms: 100% bespoke development to digitalise a process and create an edge your competitors don't have.",
+        bullets: [
+          "100% bespoke development",
+          "Client portals & back-offices",
+          "API integrations & automations",
+          "Scalable & secure",
+        ],
+        metaTitle: "Bespoke Web Application Development in Luxembourg | vortx",
+        metaDescription:
+          "Bespoke web application and platform development in Luxembourg: client portals, back-offices, API integrations. Digitalise your processes, create your edge.",
+        intro: [
+          "Some needs go beyond a website: a client portal, an internal management tool, a platform that automates a business process. That's where a bespoke application becomes a genuine competitive edge.",
+          "We design and build fast, secure and scalable web applications, connected to your existing tools. From mapping the need to production, we build the tool that fits exactly the way you work.",
+        ],
+        included: [
+          { icon: "webapp", title: "Fully bespoke", desc: "An application built for your precise process — not a generic software you have to put up with." },
+          { icon: "next-perf", title: "Fast & secure", desc: "A modern, high-performance architecture designed in compliance with GDPR." },
+          { icon: "integration", title: "Integrations & APIs", desc: "Connected to your CRM, your tools and third-party services via APIs and webhooks." },
+          { icon: "automation", title: "Scalable", desc: "A foundation that grows with you: we add modules as your needs evolve." },
+        ],
+        deliverables: [
+          "Needs mapping & specifications",
+          "UX/UI mockups & technical architecture",
+          "Development, testing & production deployment",
+          "Documentation, training & maintenance",
+        ],
+        faq: [
+          { q: "How does an application project unfold?", a: "In stages: scoping the need, mockups, iterative development you sign off on, then production deployment and follow-up. You see the tool take shape, with no months-long blind tunnel." },
+          { q: "Do I fully own the application?", a: "Yes. The code, data and access belong to you. No lock-in: you can develop it further with us or in-house." },
+        ],
+      },
+      {
+        slug: "site-multilingue",
+        illustration: "site-multilingue",
+        title: "Multilingual sites FR / DE / EN / LU",
+        tagline: "Speak to all of Luxembourg, and well beyond.",
+        short:
+          "In Luxembourg, your clients compare you in several languages. We build natively multilingual sites, optimised language by language for search and conversion.",
+        bullets: [
+          "Native multilingual management",
+          "Localised SEO per language (hreflang)",
+          "Editorial & UX consistency",
+          "Built for the cross-border market",
+        ],
+        metaTitle: "Multilingual Website Design (FR/DE/EN) in Luxembourg | vortx",
+        metaDescription:
+          "Natively multilingual websites for Luxembourg: FR, DE, EN, LU. Localised SEO per language (hreflang), editorial consistency and UX. Speak to your whole market.",
+        intro: [
+          "Multilingualism isn't an option in Luxembourg: it's the reality of the market. A client searching in German shouldn't land on a rough translation — nor stay invisible because your site only exists in one language.",
+          "We build multilingual sites designed for this from the start: clean architecture, correct hreflang markup, SEO optimised language by language and editorial consistency. Not a bolted-on translation, a genuine presence in each language.",
+        ],
+        included: [
+          { icon: "multilingual", title: "Natively multilingual", desc: "An architecture designed for several languages from the start, not added afterwards." },
+          { icon: "seo", title: "SEO per language", desc: "Hreflang markup, URLs and content optimised independently for each language." },
+          { icon: "conversion", title: "Editorial consistency", desc: "A consistent tone and UX across languages, adapted to each audience." },
+          { icon: "geo-citation", title: "Cross-border market", desc: "Built for Luxembourg and the Greater Region — FR, DE, EN and Lëtzebuergesch on request." },
+        ],
+        deliverables: [
+          "Multilingual architecture & hreflang strategy",
+          "Site in each language, SEO-optimised",
+          "Translation workflow & editorial consistency",
+          "Language switcher & go-live",
+        ],
+        faq: [
+          { q: "Do you handle translations?", a: "We can take on the writing and professional translation, or cleanly integrate your existing content. What matters: accurate, optimised content in each language, not raw machine translation." },
+          { q: "Does multilingual hurt SEO?", a: "On the contrary, done well it strengthens it: each language captures its own searches. The key is correct hreflang markup and distinct content — exactly what we put in place." },
+        ],
+      },
+    ],
+    "lead-generation": [
+      {
+        slug: "tunnels-de-conversion",
+        illustration: "tunnels-de-conversion",
+        title: "Conversion funnels",
+        tagline: "From the first click to the signed quote, a journey built to convert.",
+        short:
+          "We architect the full path from stranger to client: aligned steps, messages tailored to each phase, end-to-end tracking. The backbone of your acquisition.",
+        bullets: [
+          "Funnel architecture (TOFU/MOFU/BOFU)",
+          "Aligned steps & messages",
+          "Full tracking & attribution",
+          "Continuous A/B testing",
+        ],
+        metaTitle: "Conversion Funnel Design in Luxembourg | vortx",
+        metaDescription:
+          "Conversion funnel design for Luxembourg businesses: journey from click to client, full tracking and continuous optimisation. More qualified leads.",
+        intro: [
+          "Your clients don't go from stranger to purchase in a single click. They follow a journey: they discover, they research, they compare, then they decide. A conversion funnel guides that journey step by step, with the right message at the right moment.",
+          "We map that path (TOFU/MOFU/BOFU), align each page and each follow-up with the relevant phase, and set up full tracking to know precisely where you win — and where you lose — prospects.",
+        ],
+        included: [
+          { icon: "funnel", title: "Funnel architecture", desc: "A structured journey from first contact to conversion, with no gaps." },
+          { icon: "conversion", title: "Aligned messages", desc: "The right argument at each step: discovery, consideration, decision." },
+          { icon: "analytics", title: "Tracking & attribution", desc: "We measure each step to know what converts and what holds things back." },
+          { icon: "ab-test", title: "Continuous optimisation", desc: "Regular A/B tests to improve the conversion rate at every stage." },
+        ],
+        deliverables: [
+          "Full conversion-funnel mapping",
+          "Pages & sequences aligned by step",
+          "Tracking & attribution setup",
+          "Dashboard & optimisation plan",
+        ],
+        faq: [
+          { q: "Is a funnel only for online sales?", a: "No. In B2B, the funnel often leads to a quote request or a call, not a payment. We adapt it to your real sales cycle, even a long one." },
+          { q: "Do I need to have traffic already?", a: "The funnel optimises the conversion of existing traffic; we can also pair it with SEO or ads to feed the top of the funnel. We start by maximising what you already capture." },
+        ],
+      },
+      {
+        slug: "landing-pages-campagne",
+        illustration: "landing-pages-campagne",
+        title: "Campaign landing pages",
+        tagline: "Landing pages that turn traffic into enquiries.",
+        short:
+          "For every campaign, a dedicated page aligned with its message and its audience. The essential complement to your ads, so you don't waste a single click.",
+        bullets: [
+          "One page per campaign",
+          "Persuasive copywriting",
+          "Optimised forms",
+          "Mobile-first & fast",
+        ],
+        metaTitle: "Campaign Landing Pages in Luxembourg | vortx",
+        metaDescription:
+          "Campaign landing page creation in Luxembourg: dedicated pages, persuasive copywriting and optimised forms. Convert every ad click into a qualified lead.",
+        intro: [
+          "A campaign that points to a generic page loses half its potential. Every ad message should be matched by a page that extends it: same promise, same audience, one single expected action.",
+          "We create persuasive, fast landing pages for your Google, Meta or LinkedIn campaigns, with benefit-driven copywriting and forms built to maximise the response rate — not to discourage it.",
+        ],
+        included: [
+          { icon: "landing", title: "One page per campaign", desc: "Each page extends the ad's message: perfect continuity, zero leakage." },
+          { icon: "branding", title: "Persuasive copywriting", desc: "Benefit-driven copy that answers objections and triggers action." },
+          { icon: "smart-forms", title: "Optimised forms", desc: "Just enough fields to qualify without discouraging, built for the response rate." },
+          { icon: "speed", title: "Mobile-first & fast", desc: "Perfect on mobile, where most campaign traffic lands." },
+        ],
+        deliverables: [
+          "Dedicated landing pages per campaign",
+          "Copywriting & conversion structure",
+          "Optimised forms & tracking",
+          "Variants for A/B testing",
+        ],
+        faq: [
+          { q: "How many landing pages do I need?", a: "Ideally one per offer or per key audience. The more the message aligns with intent, the higher the conversion rate climbs. We start with your priority campaigns." },
+          { q: "Do you work with my existing campaigns?", a: "Yes. We can create the pages for your live campaigns, whether they're managed by you or by our advertising team." },
+        ],
+      },
+      {
+        slug: "email-marketing-automation",
+        illustration: "email-marketing-automation",
+        title: "Email marketing & automation",
+        tagline: "Automated sequences that work your prospects 24/7.",
+        short:
+          "Email remains the channel with the best ROI. We set up automated sequences that warm up your prospects, follow up at the right moment and turn interest into appointments.",
+        bullets: [
+          "Automated nurturing sequences",
+          "Triggered scenarios",
+          "Careful deliverability",
+          "CRM integration",
+        ],
+        metaTitle: "Email Marketing & Marketing Automation in Luxembourg | vortx",
+        metaDescription:
+          "Email marketing and marketing automation for Luxembourg businesses: nurturing sequences, triggered scenarios and CRM integration. Convert your prospects automatically.",
+        intro: [
+          "Not all your prospects are ready to buy today. Without follow-up, most forget you. Email automation keeps the connection alive: it informs, reassures and follows up automatically, until the prospect is ready.",
+          "We design sequences triggered by behaviour (download, visit, inactivity), take care of deliverability so you land in the inbox, and connect it all to your CRM so your sales team receives leads that are already warmed up.",
+        ],
+        included: [
+          { icon: "email-automation", title: "Automated sequences", desc: "Scenarios that trigger on their own and support each prospect at the right pace." },
+          { icon: "nurturing", title: "Smart nurturing", desc: "The right content for each phase: we warm up without harassing, all the way to the decision." },
+          { icon: "conversion", title: "Careful deliverability", desc: "Technical setup (SPF, DKIM) to land in the inbox, not in spam." },
+          { icon: "integration", title: "CRM integration", desc: "Synced with your CRM: your sales team receives leads that are already qualified." },
+        ],
+        deliverables: [
+          "Sequence & scenario strategy",
+          "Email copywriting & design",
+          "Automation & deliverability setup",
+          "CRM connection & reporting",
+        ],
+        faq: [
+          { q: "Is it GDPR-compliant?", a: "Yes. We work only on opt-in lists, with clear consent and unsubscribe. GDPR compliance is built into the sequences from the design stage." },
+          { q: "Do I need an email list already?", a: "It's a plus, but we can also set up capture (lead magnets, forms) to build it cleanly. We start from your real situation." },
+        ],
+      },
+      {
+        slug: "lead-nurturing-scoring",
+        illustration: "lead-nurturing-scoring",
+        title: "Lead nurturing & scoring",
+        tagline: "Identify and warm up the prospects ready to buy.",
+        short:
+          "Not all leads are equal. We score them by behaviour and profile so your sales team focuses its energy on the hottest ones — at the right moment.",
+        bullets: [
+          "Behavioural lead scoring",
+          "Nurturing workflows",
+          "MQL → SQL qualification",
+          "Sales feedback loop",
+        ],
+        metaTitle: "Lead Nurturing & Scoring in Luxembourg | vortx",
+        metaDescription:
+          "Lead nurturing and scoring for Luxembourg businesses: behavioural scoring, automated nurturing and MQL/SQL qualification. Your sales team on the right leads, at the right moment.",
+        intro: [
+          "Drowning your sales team in unqualified leads wastes their time and motivation. Scoring fixes this: each lead gets a score based on its profile and behaviour, and only surfaces once it's ready.",
+          "We define the qualification criteria with you (MQL, SQL), automate the nurturing of leads that are still lukewarm, and set up a feedback loop with your sales team to refine the scoring continuously. The result: more time on the right opportunities.",
+        ],
+        included: [
+          { icon: "nurturing", title: "Behavioural scoring", desc: "Each lead is scored by profile and actions — you know who's ready." },
+          { icon: "email-automation", title: "Nurturing workflows", desc: "Lukewarm leads are warmed up automatically until they reach the right level." },
+          { icon: "leads", title: "MQL → SQL qualification", desc: "Clear criteria to tell a mere browser from a prospect ready to talk." },
+          { icon: "analytics", title: "Feedback loop", desc: "Your sales team's feedback refines the scoring continuously for greater precision." },
+        ],
+        deliverables: [
+          "Scoring model & qualification criteria",
+          "Automated nurturing workflows",
+          "Configuration in your CRM",
+          "Feedback ritual & continuous adjustment",
+        ],
+        faq: [
+          { q: "Does scoring work without high volume?", a: "Yes. Even with few leads, prioritising the right ones saves your sales team valuable time. The model stays simple and refines itself as data comes in." },
+          { q: "Do I need a particular CRM?", a: "We work with most CRMs (HubSpot, Pipedrive, Salesforce…). If you don't have one, we help you choose and configure the right one." },
+        ],
+      },
+      {
+        slug: "optimisation-conversion-cro",
+        illustration: "optimisation-conversion-cro",
+        title: "Conversion rate optimisation (CRO)",
+        tagline: "More leads at the same traffic, thanks to data.",
+        short:
+          "Doubling your conversions without doubling your budget: that's the promise of CRO. We identify the obstacles, test solutions and keep what works, with proof to back it up.",
+        bullets: [
+          "Audit of conversion obstacles",
+          "A/B & multivariate testing",
+          "Behavioural analysis (heatmaps)",
+          "Form optimisation",
+        ],
+        metaTitle: "Conversion Rate Optimisation (CRO) in Luxembourg | vortx",
+        metaDescription:
+          "Conversion rate optimisation (CRO) in Luxembourg: audit of obstacles, A/B testing, heatmaps and form optimisation. More leads at the same traffic, driven by data.",
+        intro: [
+          "Attracting more traffic is expensive. Converting more of what you already have costs far less — and often pays off more. CRO (Conversion Rate Optimization) is about turning a larger share of your visitors into leads.",
+          "We analyse your visitors' real behaviour (heatmaps, recordings, funnels), form hypotheses, then validate them with A/B tests. No opinions: we keep only what the data proves to be the winner.",
+        ],
+        included: [
+          { icon: "ab-test", title: "Audit of obstacles", desc: "We pinpoint exactly where and why your visitors give up before converting." },
+          { icon: "analytics", title: "A/B & multivariate testing", desc: "We test variants and measure: only the winning versions are kept." },
+          { icon: "conversion", title: "Behavioural analysis", desc: "Heatmaps and session recordings to understand the real friction points." },
+          { icon: "smart-forms", title: "Form optimisation", desc: "Less friction, more completions: the form is often the key point." },
+        ],
+        deliverables: [
+          "Conversion audit & behavioural analysis",
+          "Hypothesis plan & prioritisation",
+          "A/B tests set up & analysed",
+          "Reporting of gains & iterations",
+        ],
+        faq: [
+          { q: "What conversion gain can we expect?", a: "It depends on your starting point. We don't promise a magic figure: we set up a continuous-improvement process and document every gain validated by the tests." },
+          { q: "Do I need a lot of traffic to do CRO?", a: "A minimum of volume helps achieve statistically reliable results. Below that, we start with optimisations grounded in best practices and behavioural analysis." },
+        ],
+      },
+    ],
+    "branding-design": [
+      {
+        slug: "creation-de-logo",
+        illustration: "creation-de-logo",
+        title: "Logo design",
+        tagline: "A symbol that makes you recognisable at a glance.",
+        short:
+          "A unique logo, hand-crafted and delivered in every useful format. The starting point of a brand people remember — not a generic pictogram.",
+        bullets: [
+          "Original hand-drawn concepts",
+          "Variations (colour, mono, favicon)",
+          "Vector formats delivered",
+          "Multi-medium legibility testing",
+        ],
+        metaTitle: "Bespoke Logo Design in Luxembourg | vortx",
+        metaDescription:
+          "Bespoke logo design in Luxembourg: original concepts, variations and vector formats. A unique, memorable symbol, true to your identity.",
+        intro: [
+          "Your logo is the first thing people remember about you — and often the only thing. It has to be unique, legible everywhere, and true to who you are. We design it bespoke, never from a stock library of recycled symbols.",
+          "We explore several creative directions, refine the one that's most you, then deliver it in every format you'll need — colour, monochrome, favicon, web and print versions. A logo that holds up everywhere and over time.",
+        ],
+        included: [
+          { icon: "logo", title: "Hand-drawn concepts", desc: "Several original directions designed for you, not retouched templates." },
+          { icon: "branding", title: "Complete variations", desc: "Colour, black & white, monochrome and favicon versions: your logo ready for any use." },
+          { icon: "ai-build", title: "Vector formats", desc: "Vector files (SVG, PDF) that stay sharp at every size, from favicon to storefront sign." },
+          { icon: "responsive", title: "Legibility tested", desc: "Checked on small and large formats, light and dark backgrounds, screen and paper." },
+        ],
+        deliverables: [
+          "Several original logo concepts",
+          "Finalised logo in colour & mono versions",
+          "File pack (vector, web, print, favicon)",
+          "Mini logo usage guide",
+        ],
+        faq: [
+          { q: "How many proposals will I receive?", a: "We present several distinct directions, then refine the one you prefer through back-and-forth. The goal is a logo you love, not a lukewarm compromise." },
+          { q: "Do I really own the logo?", a: "Yes, fully. You receive all the source files and own them completely, with no hidden fees or royalties." },
+        ],
+      },
+      {
+        slug: "identite-visuelle",
+        illustration: "identite-visuelle",
+        title: "Complete visual identity",
+        tagline: "Far more than a logo: a coherent visual system everywhere.",
+        short:
+          "Colours, typography, iconography, art direction: a complete visual system that makes your brand recognisable across every touchpoint.",
+        bullets: [
+          "Colour palette & typography",
+          "Iconography & patterns",
+          "Photographic art direction",
+          "Scalable modular system",
+        ],
+        metaTitle: "Brand Visual Identity in Luxembourg | vortx",
+        metaDescription:
+          "Complete visual identity creation in Luxembourg: colours, typography, iconography and art direction. A coherent system that makes your brand recognisable everywhere.",
+        intro: [
+          "A logo alone doesn't make a brand. What makes you recognisable is the consistency of everything else: your colours, your typefaces, your images, your style. A complete visual identity orchestrates these elements into a harmonious system.",
+          "We build that system from A to Z: colour palette, typographic hierarchy, iconography, patterns and art direction. Modular and scalable, it gives you everything to communicate consistently — from website to social media, from print to presentation.",
+        ],
+        included: [
+          { icon: "brand-identity", title: "Colours & typography", desc: "A distinctive palette and typographic hierarchy, adapted for every use." },
+          { icon: "branding", title: "Iconography & patterns", desc: "Graphic elements unique to your brand that reinforce its recognition." },
+          { icon: "ai-build", title: "Art direction", desc: "A consistent photographic and visual style so everything you produce looks alike." },
+          { icon: "automation", title: "Modular system", desc: "A scalable foundation: we can extend it to new media without redoing everything." },
+        ],
+        deliverables: [
+          "Colour palette & typographic system",
+          "Iconography, patterns & graphic elements",
+          "Art direction & application examples",
+          "Organised, ready-to-use source files",
+        ],
+        faq: [
+          { q: "Do I need to have a logo already?", a: "Ideally yes — the identity is built around it. If you don't have one, we start by creating it, then roll out the coherent visual identity around it." },
+          { q: "What's the difference with brand guidelines?", a: "The visual identity is the elements (colours, type, style). The brand guidelines are the document that sets the usage rules. The two are complementary and we can deliver both." },
+        ],
+      },
+      {
+        slug: "charte-graphique",
+        illustration: "charte-graphique",
+        title: "Brand guidelines & style guide",
+        tagline: "The rules that guarantee a coherent brand, everywhere, by everyone.",
+        short:
+          "The reference document that sets how your brand is used: logo, colours, typography, tone. So everyone — your teams and your suppliers — applies it correctly.",
+        bullets: [
+          "Logo usage manual",
+          "Colour, type & spacing rules",
+          "Application examples",
+          "Files ready for your teams",
+        ],
+        metaTitle: "Brand Guidelines & Style Guide in Luxembourg | vortx",
+        metaDescription:
+          "Brand guidelines and style guide creation in Luxembourg: logo usage rules, colours, typography and applications. A coherent brand, applied by everyone.",
+        intro: [
+          "A brand loses its strength the moment everyone applies it their own way: a distorted logo, approximate colours, mismatched typefaces. Brand guidelines prevent this by setting clear rules, followed by all.",
+          "We document how your brand is used: logo protection zones, precise colour codes, typographic hierarchy, spacing, tone of voice and concrete application examples. A guide your teams and suppliers can follow without hesitation.",
+        ],
+        included: [
+          { icon: "guidelines", title: "Logo manual", desc: "Minimum sizes, protection zones, correct and forbidden uses, on every background." },
+          { icon: "brand-identity", title: "Colour & type rules", desc: "Precise codes (HEX, RGB, CMYK, Pantone) and documented typographic hierarchy." },
+          { icon: "conversion", title: "Application examples", desc: "Concrete cases — stationery, web, social media — to remove any ambiguity." },
+          { icon: "ai-build", title: "Ready-to-use files", desc: "All the assets organised and accessible for your teams and suppliers." },
+        ],
+        deliverables: [
+          "Complete brand guidelines document (PDF)",
+          "Logo, colour, typography & spacing rules",
+          "Tone of voice & application examples",
+          "Organised asset library",
+        ],
+        faq: [
+          { q: "What's the point of guidelines if I work alone?", a: "They guarantee consistency over time and make every future collaboration easier (printer, freelancer, new hire). It's an investment that protects the value of your brand." },
+          { q: "Can the guidelines evolve?", a: "Yes. It's a living document: we can expand it as your brand extends to new media." },
+        ],
+      },
+      {
+        slug: "supports-print",
+        illustration: "supports-print",
+        title: "Print materials & stationery",
+        tagline: "A brand that holds up just as well in the hand as on screen.",
+        short:
+          "Business cards, brochures, leaflets, reports, signage: your printed materials designed with the same care as your digital presence.",
+        bullets: [
+          "Business cards & stationery",
+          "Brochures & leaflets",
+          "Reports & corporate documents",
+          "Signage & event materials",
+        ],
+        metaTitle: "Print Materials & Stationery Design in Luxembourg | vortx",
+        metaDescription:
+          "Print materials design in Luxembourg: business cards, brochures, leaflets, reports and signage. A coherent brand from digital to paper, ready to print.",
+        intro: [
+          "Print isn't dead — it reassures. In Luxembourg, the corporate and financial fabric remains a heavy consumer of polished printed materials: a business card, a leaflet or an annual report says a lot about how seriously you take things.",
+          "We design your print materials in continuity with your identity, ready to print (bleeds, colour profiles, standard formats). From the detail of a business card to signage, your brand stays consistent across every medium.",
+        ],
+        included: [
+          { icon: "print", title: "Cards & stationery", desc: "Business cards, letterheads, signatures: your identity down to the details." },
+          { icon: "branding", title: "Brochures & leaflets", desc: "Sales materials that showcase your offers with clarity and elegance." },
+          { icon: "guidelines", title: "Corporate reports", desc: "Annual reports and institutional documents laid out with rigour." },
+          { icon: "responsive", title: "Ready to print", desc: "Compliant files (bleeds, CMYK) for printing with no nasty surprises." },
+        ],
+        deliverables: [
+          "Design of the requested print materials",
+          "Print-ready files (PDF, CMYK, bleeds)",
+          "Variations & reusable templates",
+          "Support with your printer if needed",
+        ],
+        faq: [
+          { q: "Do you handle the printing too?", a: "We deliver print-ready files and can coordinate with your printer, or recommend reliable partners in Luxembourg." },
+          { q: "Can you reuse my existing guidelines?", a: "Yes. We apply your current identity to the print materials, or adapt it if it doesn't yet have a printed version." },
+        ],
+      },
+      {
+        slug: "strategie-de-marque-naming",
+        illustration: "strategie-de-marque-naming",
+        title: "Brand strategy & naming",
+        tagline: "Meaning and words before pixels.",
+        short:
+          "Before the visuals, the substance: positioning, brand platform, name and tone of voice. The strategy that gives a clear direction to all your communication.",
+        bullets: [
+          "Positioning & brand platform",
+          "Naming & name research",
+          "Tone of voice & key messages",
+          "Multilingual verbal identity",
+        ],
+        metaTitle: "Brand Strategy & Naming in Luxembourg | vortx",
+        metaDescription:
+          "Brand strategy and naming in Luxembourg: positioning, brand platform, name creation and multilingual tone of voice. The meaning that guides all your communication.",
+        intro: [
+          "A beautiful brand with no strategy is a façade with no foundations. Before designing anything, you need to know what you stand for, who you're talking to and what sets you apart. That's the role of brand strategy.",
+          "We define your positioning, your brand platform (mission, values, promise) and your territory of expression. If needed, we create your name (naming) and set a coherent tone of voice — including in several languages, as the Luxembourg market demands.",
+        ],
+        included: [
+          { icon: "strategy", title: "Positioning", desc: "What sets you apart, stated clearly: the basis of all your communication." },
+          { icon: "branding", title: "Brand platform", desc: "Mission, values, promise and personality: the DNA that guides every decision." },
+          { icon: "gen-content", title: "Naming", desc: "Creation and checking of a brand or product name that's available and meaningful." },
+          { icon: "multilingual", title: "Multilingual tone of voice", desc: "A coherent verbal identity in FR, DE and EN, adapted to each audience." },
+        ],
+        deliverables: [
+          "Brand platform & positioning",
+          "Naming & recommendations (if applicable)",
+          "Tone of voice guide & key messages",
+          "Actionable strategic summary",
+        ],
+        faq: [
+          { q: "Is brand strategy useful for a small business?", a: "Yes, perhaps even more so: with fewer resources, every message has to land just right. A clear strategy keeps you focused and makes all your communication more effective." },
+          { q: "Should strategy come before the logo?", a: "Ideally yes: the visuals flow from the positioning. We can, however, run both in parallel if the project requires it. Strategy stays the compass." },
+        ],
+      },
+    ],
+    "automatisation-ia": [
+      {
+        slug: "automatisation-workflows",
+        illustration: "automatisation-workflows",
+        title: "Workflow automation",
+        tagline: "Your repetitive tasks, run on their own — 24/7, error-free.",
+        short:
+          "We connect your tools and automate the manual tasks: follow-ups, synchronisations, notifications, reporting. Your teams focus on what truly matters.",
+        bullets: [
+          "Mapping of your processes",
+          "Connecting your tools (Make, n8n, Zapier)",
+          "Bespoke triggers & scenarios",
+          "Monitoring & incident alerts",
+        ],
+        metaTitle: "Workflow Automation in Luxembourg | vortx",
+        metaDescription:
+          "Workflow automation for Luxembourg businesses: Make, n8n, Zapier. Connect your tools, remove manual tasks and save hours every week.",
+        intro: [
+          "How many hours do your teams spend copying data from one tool to another, following up, notifying, updating spreadsheets? These repetitive tasks are costly and breed errors. Automation makes them disappear.",
+          "We map your processes, identify what can be automated, then connect your tools (Make, n8n, Zapier) with bespoke scenarios. All supervised, with alerts in case of an incident — so it runs with no surprises.",
+        ],
+        included: [
+          { icon: "automation", title: "Process mapping", desc: "We analyse your flows to spot where automation saves the most time." },
+          { icon: "integration", title: "Tool connection", desc: "Make, n8n, Zapier: we connect your apps so they finally talk to each other." },
+          { icon: "ai-build", title: "Bespoke scenarios", desc: "Automations designed for your precise case, not generic recipes." },
+          { icon: "analytics", title: "Monitoring & alerts", desc: "Run tracking and incident alerts: it works with no blind spots." },
+        ],
+        deliverables: [
+          "Mapping of processes to automate",
+          "Configured automation scenarios",
+          "Connections between your tools",
+          "Documentation & workflow monitoring",
+        ],
+        faq: [
+          { q: "Do I need to change my current tools?", a: "Rarely. Automation connects your existing tools to each other. We start from your stack and add the layer that makes them communicate." },
+          { q: "What happens if an automation breaks?", a: "We set up monitoring with alerts: in case of an incident, you (and we) are notified immediately. We can also provide maintenance." },
+        ],
+      },
+      {
+        slug: "agents-assistants-ia",
+        illustration: "agents-assistants-ia",
+        title: "Bespoke AI agents & assistants",
+        tagline: "AI co-workers that reason, decide and act.",
+        short:
+          "Beyond the simple chatbot: AI agents connected to your data and your tools, able to carry out complex tasks — with the necessary guardrails.",
+        bullets: [
+          "Agents connected to your data",
+          "Internal assistants (HR, support, finance)",
+          "Knowledge base (RAG)",
+          "Guardrails & human validation",
+        ],
+        metaTitle: "Bespoke AI Agents & Assistants in Luxembourg | vortx",
+        metaDescription:
+          "Bespoke AI agent and assistant creation in Luxembourg: connected to your data (RAG), able to act, with guardrails. AI that truly works for your business.",
+        intro: [
+          "An AI agent doesn't just answer: it understands a request, fetches information from your data, reasons and carries out actions. That's the difference between a gadget and a genuine digital co-worker.",
+          "We design agents and assistants trained on your context (your documents, your processes), connected to your tools, with a knowledge base (RAG) and guardrails: human validation on sensitive actions, GDPR compliance, traceability.",
+        ],
+        included: [
+          { icon: "ai-agent", title: "Autonomous agents", desc: "Agents that understand, reason and carry out tasks connected to your tools." },
+          { icon: "ai-build", title: "Internal assistants", desc: "For support, HR, finance: an assistant that knows your processes." },
+          { icon: "geo-citation", title: "Knowledge base (RAG)", desc: "Plugged into your documents for reliable, sourced answers, not invented ones." },
+          { icon: "rgpd", title: "Guardrails & GDPR", desc: "Human validation on sensitive actions, confidentiality and traceability." },
+        ],
+        deliverables: [
+          "Scoping of use cases & data",
+          "AI agent/assistant built & connected",
+          "Knowledge base & guardrails",
+          "Testing, documentation & support",
+        ],
+        faq: [
+          { q: "Could the AI make up answers?", a: "That's the risk we neutralise with a knowledge base (RAG): the agent answers from your documents and cites its sources. On sensitive actions, human validation is required." },
+          { q: "Does my data stay confidential?", a: "Yes. We design every agent in compliance with GDPR, with strong attention to confidentiality and to the choice of models and hosting." },
+        ],
+      },
+      {
+        slug: "chatbots-ia",
+        illustration: "chatbots-ia",
+        title: "AI chatbots & voicebots",
+        tagline: "Answer, qualify and book automatically, 24/7.",
+        short:
+          "Smart chatbots and voicebots that answer your visitors, qualify enquiries and book appointments — on your site and on WhatsApp.",
+        bullets: [
+          "Multilingual website chatbot",
+          "WhatsApp & Messenger",
+          "Voicebot for inbound calls",
+          "Smart handover to a human",
+        ],
+        metaTitle: "AI Chatbots & Voicebots in Luxembourg | vortx",
+        metaDescription:
+          "AI chatbots and voicebots for Luxembourg businesses: website, WhatsApp, inbound calls, multilingual. Answer, qualify and book automatically, 24/7.",
+        intro: [
+          "A visitor who can't find an answer leaves. A missed call is a lost client. A well-designed AI chatbot answers instantly, at any hour, in the visitor's language — and never sleeps.",
+          "We deploy chatbots and voicebots connected to your context: they answer common questions, qualify enquiries, book appointments and hand over to a human when it's relevant. On your site, on WhatsApp, or on the phone.",
+        ],
+        included: [
+          { icon: "chatbot", title: "Multilingual chatbot", desc: "On your site, it answers in FR/DE/EN and qualifies visitors continuously." },
+          { icon: "integration", title: "WhatsApp & Messenger", desc: "Where your clients are: we deploy the bot on their preferred channels." },
+          { icon: "ai-agent", title: "Phone voicebot", desc: "A voice agent that picks up, informs and routes inbound calls." },
+          { icon: "leads", title: "Smart handover", desc: "When useful, the bot hands over to a human with all the context." },
+        ],
+        deliverables: [
+          "Scenario & tone design",
+          "Chatbot/voicebot connected to your content",
+          "Deployment on your channels (web, WhatsApp…)",
+          "Conversation tracking & optimisation",
+        ],
+        faq: [
+          { q: "Can a chatbot really replace a human?", a: "For common questions and qualification, yes — 24/7 and instantly. For complex cases, it hands over to a human with the context. The goal is to relieve your teams, not to dehumanise." },
+          { q: "Is it multilingual?", a: "Yes, and it's a major asset in Luxembourg: the bot detects the visitor's language and answers in FR, DE or EN." },
+        ],
+      },
+      {
+        slug: "integrations-crm-api",
+        illustration: "integrations-crm-api",
+        title: "CRM & API integrations",
+        tagline: "All your tools finally connected, your data in sync.",
+        short:
+          "No more double entry and silos: we connect your site, your CRM and your business software for a smooth, reliable data flow, in real time.",
+        bullets: [
+          "CRM connection (HubSpot, Salesforce…)",
+          "Synchronisation between software",
+          "Bespoke APIs & webhooks",
+          "End of double entry",
+        ],
+        metaTitle: "CRM & API Integrations in Luxembourg | vortx",
+        metaDescription:
+          "CRM and API integrations for Luxembourg businesses: HubSpot, Salesforce, Pipedrive. Sync your tools, remove silos and double entry.",
+        intro: [
+          "Your data is scattered: one lead in the site form, another in the spreadsheet, a third in the CRM. This dispersion wastes time, creates errors and lets opportunities slip through the cracks.",
+          "We connect your tools so they speak the same language: your site feeds your CRM, your CRM syncs with your business software, and everything updates in real time. Via existing connectors or bespoke APIs when needed.",
+        ],
+        included: [
+          { icon: "integration", title: "CRM connection", desc: "HubSpot, Salesforce, Pipedrive… we connect your CRM to your site and your tools." },
+          { icon: "automation", title: "Real-time synchronisation", desc: "Your data up to date everywhere, with no manual intervention or delay." },
+          { icon: "ai-build", title: "Bespoke APIs & webhooks", desc: "When no standard connector exists, we build the integration bespoke." },
+          { icon: "analytics", title: "Data reliability", desc: "End of double entry and silos: one source of truth, sound decisions." },
+        ],
+        deliverables: [
+          "Audit of your tools & data flows",
+          "Configured integrations & connectors",
+          "Bespoke APIs/webhooks if needed",
+          "Testing, documentation & monitoring",
+        ],
+        faq: [
+          { q: "What if my software has no ready-made connector?", a: "We build a bespoke integration via its API or webhooks. Most professional tools expose an API: we plug in cleanly." },
+          { q: "Is my data secure during the sync?", a: "Yes. The integrations are designed in compliance with GDPR, with secure connections and fine-grained access management." },
+        ],
+      },
+      {
+        slug: "ia-contenu-generatif",
+        illustration: "ia-contenu-generatif",
+        title: "Generative AI for content",
+        tagline: "Produce articles, emails and on-brand visuals, at scale.",
+        short:
+          "Put generative AI to work for your content — articles, newsletters, replies, visuals — while keeping your brand tone and human editorial validation.",
+        bullets: [
+          "Article & newsletter generation",
+          "Personalised replies & emails",
+          "Social media visuals & variations",
+          "Editorial validation & brand tone",
+        ],
+        metaTitle: "Generative AI for Content in Luxembourg | vortx",
+        metaDescription:
+          "Generative AI for content in Luxembourg: articles, newsletters, emails and visuals in your brand tone, in several languages. Produce more, without sacrificing quality.",
+        intro: [
+          "Producing quality content, regularly and in several languages, is a challenge of time and resources. Generative AI changes the game: it speeds up production while keeping your voice — provided it's properly framed.",
+          "We set up bespoke generation workflows (articles, emails, social media visuals) trained on your brand tone, with a human editorial validation step. Produce more, faster, without falling into generic content.",
+        ],
+        included: [
+          { icon: "gen-content", title: "Articles & newsletters", desc: "Editorial content produced at your pace, in your tone, ready to review." },
+          { icon: "email-automation", title: "Personalised emails", desc: "Bespoke replies and emails, generated at scale without losing the human touch." },
+          { icon: "branding", title: "Social media visuals", desc: "Graphic variations consistent with your identity, for your channels." },
+          { icon: "multilingual", title: "Multilingual & validated", desc: "Production in FR/DE/EN with editorial validation: quality and tone guaranteed." },
+        ],
+        deliverables: [
+          "Bespoke generation workflows",
+          "Models trained on your brand tone",
+          "Editorial validation process",
+          "Training & support for your teams",
+        ],
+        faq: [
+          { q: "Isn't AI content penalised by Google?", a: "What Google penalises is content with no value — not the tool used. Our approach combines generation and human validation for useful, original and optimised content. Quality is what counts." },
+          { q: "Will the content really keep my tone?", a: "Yes, that's the whole point. We train the models on your content and your style, and a human review guarantees consistency before publication." },
         ],
       },
     ],

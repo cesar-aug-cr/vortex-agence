@@ -11,7 +11,9 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { PacksIncluded } from "@/components/sections/PacksIncluded";
-import { serviceIllustration } from "@/components/illustrations/map";
+import { ServiceMethod } from "@/components/sections/ServiceMethod";
+import { ServiceProof } from "@/components/sections/ServiceProof";
+import { serviceIllustration, subServiceIllustration } from "@/components/illustrations/map";
 import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
 
@@ -57,7 +59,7 @@ export default async function ServiceDetailPage({
   const packs =
     service.slug === "sites-web" ? dict.serviceContent["sites-web"].packsIncluded : null;
   const subs =
-    (dict.subServices as Record<string, ReadonlyArray<{ slug: string; title: string; tagline: string; bullets: readonly string[] }>>)[
+    (dict.subServices as Record<string, ReadonlyArray<{ slug: string; illustration: string; title: string; tagline: string; bullets: readonly string[] }>>)[
       service.slug
     ] ?? [];
 
@@ -150,12 +152,19 @@ export default async function ServiceDetailPage({
             lead={dict.subServicesLead}
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {subs.map((s) => (
+            {subs.map((s) => {
+              const SubIllu = subServiceIllustration[s.illustration];
+              return (
               <Link
                 key={s.slug}
                 href={localized(lang, `/services/${service.slug}/${s.slug}`)}
-                className="card card-hover group flex flex-col p-8"
+                className="card card-hover spotlight-card group flex flex-col p-8"
               >
+                {SubIllu && (
+                  <div className="illu-stage mb-6 overflow-hidden rounded-xl border border-border">
+                    <SubIllu className="h-40 w-full" />
+                  </div>
+                )}
                 <h3 className="text-xl font-bold text-text transition-colors group-hover:text-accent">
                   {s.title}
                 </h3>
@@ -173,7 +182,8 @@ export default async function ServiceDetailPage({
                   <ArrowRight width={15} height={15} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </Section>
       )}
@@ -260,6 +270,9 @@ export default async function ServiceDetailPage({
           </Section>
         </>
       )}
+
+      <ServiceMethod content={sd.method} />
+      <ServiceProof content={sd.proof} />
 
       <ContactCta dict={dict} lang={lang} />
 

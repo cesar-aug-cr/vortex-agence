@@ -21,7 +21,7 @@ export function Seo({ className }: { className?: string }) {
           <stop offset="0.55" stopColor="#14e0c8" />
           <stop offset="1" stopColor="#c8f02e" />
         </linearGradient>
-        <linearGradient id="seo-row" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id="seoillu-row" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stopColor="#14e0c8" stopOpacity="0.55" />
           <stop offset="1" stopColor="#14e0c8" stopOpacity="0.05" />
         </linearGradient>
@@ -53,19 +53,19 @@ export function Seo({ className }: { className?: string }) {
       <g>
         {/* row 7 (bottom, dim) */}
         <g opacity="0.85">
-          <rect x="86" y="288" width="170" height="20" rx="6" fill="url(#seo-row)" />
+          <rect x="86" y="288" width="170" height="20" rx="6" fill="url(#seoillu-row)" />
           <circle cx="100" cy="298" r="6" fill="#2e66ff" />
           <text x="96.5" y="301.5" fontSize="8" fontFamily="monospace" fill="#0a0a0b">7</text>
         </g>
         {/* row 5 */}
         <g opacity="0.9">
-          <rect x="86" y="250" width="200" height="20" rx="6" fill="url(#seo-row)" />
+          <rect x="86" y="250" width="200" height="20" rx="6" fill="url(#seoillu-row)" />
           <circle cx="100" cy="260" r="6" fill="#2e66ff" />
           <text x="96.5" y="263.5" fontSize="8" fontFamily="monospace" fill="#0a0a0b">5</text>
         </g>
         {/* row 3 */}
         <g>
-          <rect x="86" y="212" width="230" height="20" rx="6" fill="url(#seo-row)" />
+          <rect x="86" y="212" width="230" height="20" rx="6" fill="url(#seoillu-row)" />
           <circle cx="100" cy="222" r="6" fill="#14e0c8" />
           <text x="96.5" y="225.5" fontSize="8" fontFamily="monospace" fill="#0a0a0b">3</text>
         </g>

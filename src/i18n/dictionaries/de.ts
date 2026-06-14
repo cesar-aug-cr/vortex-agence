@@ -1789,6 +1789,30 @@ export const de = {
     includedTitle: "Was darin enthalten ist",
     deliverablesTitle: "Liefergegenstände",
     faqTitle: "Häufige Fragen",
+    // Shared "our method" band, rendered on every service & sub-service page.
+    method: {
+      eyebrow: "Unsere Methode",
+      title: "Vier Phasen, null böse Überraschungen.",
+      lead: "Ein klarer Rahmen, derselbe für jedes Projekt: Sie geben bei jedem Schritt Ihr Okay, wir kommen schnell voran, Sie behalten die Kontrolle.",
+      steps: [
+        { n: "01", icon: "process", title: "Diagnose", desc: "Wir analysieren Ihre Situation, Ihren Markt und Ihre Ziele. Audit gratis, ohne Umschweife: Wir sagen Ihnen, was sich verbessern lässt, noch bevor wir über ein Angebot sprechen." },
+        { n: "02", icon: "ai-build", title: "Konzeption & Umsetzung", desc: "Maßgeschneidertes Design und KI-beschleunigte Produktion. Wir bauen die Lösung — Website, Kampagne, Identität, Automatisierung — auf Conversion ausgelegt." },
+        { n: "03", icon: "ab-test", title: "Review & Optimierung", desc: "Wir testen, wir messen, wir justieren mit Ihnen. Nichts ist in Stein gemeißelt: Jedes Detail wird optimiert, bis es performt." },
+        { n: "04", icon: "analytics", title: "Launch & Betreuung", desc: "Veröffentlichung, Ergebnis-Tracking und laufende Begleitung. Sie sehen den Fortschritt, jeder Euro mit einem Ergebnis verknüpft." },
+      ],
+    },
+    // Honest "guarantees / engagements" band — no invented client metrics.
+    proof: {
+      eyebrow: "Unsere Zusagen",
+      title: "Was wir Ihnen garantieren, schwarz auf weiß.",
+      lead: "Keine Wunderversprechen. Konkrete Zusagen, bei jedem Projekt eingehalten.",
+      items: [
+        { icon: "guarantee", value: "Audit gratis", label: "Vor jedem Angebot", desc: "Eine kostenlose Diagnose Ihrer Situation, unverbindlich." },
+        { icon: "rgpd", value: "100 % bei Ihnen", label: "Code, Inhalte, Zugänge", desc: "Sie sind vollumfänglich Eigentümer. Kein Lock-in, niemals." },
+        { icon: "multilingual", value: "FR · DE · EN", label: "Nativ mehrsprachig", desc: "Gedacht für den Luxemburger Markt und die Großregion." },
+        { icon: "analytics", value: "Klares Reporting", label: "Volle Transparenz", desc: "Jeder ausgegebene Euro ist mit einem messbaren Ergebnis verknüpft." },
+      ],
+    },
   },
   serviceContent: {
     "sites-web": {
@@ -1964,8 +1988,8 @@ export const de = {
   },
 
   // ---- Sub-services (children of a parent service) ----
-  subServicesTitle: "Zwei sich ergänzende Kompetenzen",
-  subServicesLead: "Diese Leistung gliedert sich in zwei Spezialgebiete. Nehmen Sie das, was zu Ihrem Bedarf passt — oder kombinieren Sie beide, um das gesamte Feld abzudecken.",
+  subServicesTitle: "Spezialgebiete für jeden Bedarf",
+  subServicesLead: "Diese Leistung gliedert sich in gezielte Expertisen. Nehmen Sie die, die zu Ihrem Bedarf passt — oder kombinieren Sie sie, um das gesamte Feld abzudecken.",
   subServices: {
     publicite: [
       {
@@ -2042,6 +2066,43 @@ export const de = {
           { q: "Muss man bereits Inhalte haben?", a: "Nicht unbedingt. Wir können die Werbe-Visuals und -Videos erstellen oder von Ihren bestehenden Inhalten ausgehen und sie an das Format anpassen, das konvertiert." },
         ],
       },
+      {
+        slug: "linkedin-ads",
+        illustration: "linkedin-ads",
+        title: "LinkedIn Ads",
+        tagline: "Erreichen Sie Luxemburgs Entscheider genau dort, wo sie entscheiden.",
+        short:
+          "Die präziseste B2B-Werbung: Targeting nach Funktion, Branche und Unternehmen. Ideal für lange Verkaufszyklen und strategische Accounts in Luxemburg und der Großregion.",
+        bullets: [
+          "Targeting nach Position, Branche & Unternehmen",
+          "Integrierte Lead Gen Forms",
+          "Account-Based Marketing (ABM)",
+          "Tracking von Kosten pro Lead & Pipeline",
+        ],
+        metaTitle: "LinkedIn-Ads-Agentur B2B in Luxemburg | vortx",
+        metaDescription:
+          "LinkedIn-Ads-Kampagnen B2B für den luxemburgischen Markt: Targeting nach Funktion und Unternehmen, Lead Gen Forms, ABM. Erreichen Sie Entscheider, gewinnen Sie qualifizierte Leads.",
+        intro: [
+          "Im B2B verkaufen Sie nicht an ein Unternehmen: Sie überzeugen Menschen. LinkedIn Ads ist der einzige Kanal, mit dem Sie Entscheider präzise ansprechen können — nach Funktion, Branche, Unternehmensgröße und sogar nach namentlich genanntem Account.",
+          "Wir strukturieren Ihre Kampagnen (Lead Gen Forms, Sponsored Content, Message Ads) so, dass sie die richtigen Menschen zum richtigen Zeitpunkt ansprechen, und verbinden jeden Lead mit Ihrer Pipeline, um den echten Return zu messen — nicht nur Klicks.",
+        ],
+        included: [
+          { icon: "linkedin", title: "Entscheider-Targeting", desc: "Nach Funktion, Seniorität, Branche und Unternehmensgröße — die B2B-Präzision, die nur LinkedIn bietet." },
+          { icon: "leads", title: "Lead Gen Forms", desc: "In LinkedIn integrierte, vorausgefüllte Formulare, um qualifizierte Leads ohne Reibung zu gewinnen." },
+          { icon: "ads-targeting", title: "Account-Based Marketing", desc: "Wir zielen auf Ihre namentlich genannten strategischen Accounts und die richtigen Ansprechpartner in jedem davon." },
+          { icon: "analytics", title: "Pipeline & ROI", desc: "Tracking der Kosten pro Lead und des Beitrags zur Pipeline, in Ihr CRM integriert." },
+        ],
+        deliverables: [
+          "Targeting-Strategie & Kampagnenstruktur",
+          "Erstellung der Anzeigen & Lead Gen Forms",
+          "Einrichtung des Trackings (CRM, Conversions)",
+          "Reporting Kosten pro Lead & kontinuierliche Optimierung",
+        ],
+        faq: [
+          { q: "Sind LinkedIn Ads nicht zu teuer?", a: "Der Klickpreis ist höher als anderswo, aber die Lead-Qualität auch. Im B2B macht ein einziger gewonnener Kunde die Kampagne oft weit mehr als rentabel. Wir beginnen mit einem Testbudget und erhöhen nur, was rentabel ist." },
+          { q: "Braucht man eine aktive LinkedIn-Unternehmensseite?", a: "Ein Plus für die Glaubwürdigkeit, aber keine Voraussetzung, um Kampagnen zu starten. Wir können Ihnen helfen, Ihre Seite parallel auf Stand zu bringen." },
+        ],
+      },
     ],
     "seo-geo": [
       {
@@ -2116,6 +2177,828 @@ export const de = {
         faq: [
           { q: "Ersetzt GEO das SEO?", a: "Nein, es ergänzt es. 80 % der Best Practices sind gemeinsam: Ein strukturierter und verlässlicher Inhalt performt sowohl bei Google als auch bei der KI. Wir optimieren für beide." },
           { q: "Wie misst man die Ergebnisse von GEO?", a: "Wir verfolgen Ihre Präsenz in den Antworten der KI-Assistenten (Zitate, Erwähnungen) und die Entwicklung Ihrer Autorität. Es ist ein aufkommendes Feld: Wir gehen methodisch und transparent vor." },
+        ],
+      },
+      {
+        slug: "seo-local",
+        illustration: "seo-local",
+        title: "Lokales SEO & Google Business Profile",
+        tagline: "Dominieren Sie die „in meiner Nähe\"-Suchen in Luxemburg.",
+        short:
+          "Seien Sie die naheliegende Antwort, wenn ein Kunde in seiner Nähe sucht. Optimierung Ihres Google-Business-Profile-Eintrags, lokale Citations und Bewertungen, um die Nachfrage aus der Umgebung zu erfassen — überall in der Großregion.",
+        bullets: [
+          "Optimierter Google-Business-Profile-Eintrag",
+          "Lokale Citations & NAP-Konsistenz",
+          "Strategie für Kundenbewertungen",
+          "Mehrsprachiges LocalBusiness-Schema",
+        ],
+        metaTitle: "Agentur für lokales SEO & Google Business Profile in Luxemburg | vortx",
+        metaDescription:
+          "Lokale Suchmaschinenoptimierung in Luxemburg: Optimierung des Google Business Profile, Citations, Kundenbewertungen und lokale Seiten. Erfassen Sie „in meiner Nähe\"-Suchen in der Großregion.",
+        intro: [
+          "Wenn ein Kunde nach „Klempner Luxemburg\" oder „Agentur in meiner Nähe\" sucht, zeigt Google zuerst eine Karte und drei Einträge. Wenn Sie nicht dabei sind, sind Sie unsichtbar — selbst wenn Sie in den klassischen Ergebnissen Erster sind.",
+          "Lokales SEO optimiert Ihre Präsenz auf dieser Karte und im Local Pack: vollständiger Google-Business-Profile-Eintrag, Konsistenz Ihrer Kontaktdaten im gesamten Web, Kundenbewertungen und technische Auszeichnung. Ein entscheidender Hebel für Geschäfte, Handwerker und ortsnahe Dienstleistungen in Luxemburg und an der Grenze.",
+        ],
+        included: [
+          { icon: "local-seo", title: "Google Business Profile", desc: "Kategorien, Leistungen, Fotos, Beiträge und Öffnungszeiten: ein vollständiger Eintrag, der Vertrauen schafft und auf der Karte aufsteigt." },
+          { icon: "seo", title: "Citations & NAP", desc: "Name, Adresse, Telefon konsistent in Verzeichnissen und lokalen Plattformen — ein Schlüsselsignal für Google." },
+          { icon: "conversion", title: "Bewertungen & Reputation", desc: "Eine Strategie für Kundenbewertungen und Antworten, um Ihre lokalen Signale und Ihre Glaubwürdigkeit zu stärken." },
+          { icon: "geo-citation", title: "Lokale Seiten & Schema", desc: "Lokale Landingpages und strukturierte LocalBusiness-Daten, in FR/DE/EN." },
+        ],
+        deliverables: [
+          "Audit & Optimierung des Google Business Profile",
+          "Bereinigung und Aufbau lokaler Citations",
+          "Bewertungsstrategie & Antwortvorlagen",
+          "Lokale Seiten & mehrsprachige Schema-Auszeichnung",
+        ],
+        faq: [
+          { q: "Ist lokales SEO nützlich, wenn ich kein Ladengeschäft habe?", a: "Ja, sobald Sie ein Einzugsgebiet haben: Handwerker, Dienstleistungen vor Ort, freie Berufe. Wir können einen Eintrag mit „Einzugsgebiet\" ohne öffentliche Adresse einrichten." },
+          { q: "Wie lange dauert es, bis mein Eintrag aufsteigt?", a: "Die ersten Verbesserungen (Vollständigkeit, Fotos, Kategorien) wirken in wenigen Wochen. Die Stetigkeit von Bewertungen und Citations festigt die Position über einige Monate." },
+        ],
+      },
+    ],
+    "sites-web": [
+      {
+        slug: "site-vitrine",
+        illustration: "site-vitrine",
+        title: "Maßgeschneiderte Visitenkarten-Website",
+        tagline: "Ein digitales Aushängeschild, das ab der ersten Sekunde Vertrauen schafft.",
+        short:
+          "Die Website, die Ihr Unternehmen, Ihre Leistungen und Ihre Glaubwürdigkeit präsentiert — 100 % maßgeschneidert, schnell und handlungsorientiert. Ihr bester Vertriebsmitarbeiter, rund um die Uhr verfügbar.",
+        bullets: [
+          "Design 100 % maßgeschneidert, null Template",
+          "Auf Conversion ausgelegte Architektur",
+          "Responsiv & ultraschnell",
+          "Ab dem Launch SEO-optimiert",
+        ],
+        metaTitle: "Erstellung von Visitenkarten-Websites in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung maßgeschneiderter Visitenkarten-Websites für Luxemburger Unternehmen: Premium-Design, schnell, responsiv und conversion-orientiert. Ihr bester Vertriebsmitarbeiter, rund um die Uhr.",
+        intro: [
+          "Ihre Visitenkarten-Website ist oft der erste Kontakt eines Interessenten mit Ihrem Unternehmen. In wenigen Sekunden entscheidet er, ob er Ihnen vertraut — oder zu Google zurückkehrt. Wir gestalten dieses erste Treffen so, dass es zu Ihren Gunsten ausfällt.",
+          "Maßgeschneidertes Design, klare Struktur, nahezu sofortiges Laden: Jede Seite hebt Ihre Expertise hervor und führt den Besucher zur Aktion — einem Anruf, einer Nachricht, einem Angebot. Kein starrer Katalog, sondern ein Vertriebsmitarbeiter, der für Sie arbeitet.",
+        ],
+        included: [
+          { icon: "ai-build", title: "Maßgeschneidertes Design", desc: "Eine einzigartige visuelle Identität, ganz nach Ihrem Bild — nie ein tausendfach gesehenes recyceltes Template." },
+          { icon: "conversion", title: "Auf Conversion ausgelegt", desc: "Jede Seite hat ein klares Ziel und führt den Besucher zum Kontakt oder zum Angebot." },
+          { icon: "responsive", title: "100 % responsiv", desc: "Ein makelloses Erlebnis auf Handy, Tablet und Computer — mobile-first." },
+          { icon: "seo", title: "Integriertes SEO", desc: "Struktur, Performance und Daten, ab der Veröffentlichung bereit für Google und KI." },
+        ],
+        deliverables: [
+          "Mockups & maßgeschneidertes Design, mit Ihnen abgestimmt",
+          "Responsive Visitenkarten-Website (Next.js oder WordPress)",
+          "Grundlegende SEO- & GEO-Optimierung",
+          "Formulare, Tracking und Veröffentlichung inklusive",
+        ],
+        faq: [
+          { q: "Wie viele Seiten umfasst eine Visitenkarten-Website?", a: "Das hängt von Ihrer Tätigkeit ab — oft 5 bis 10 Seiten (Startseite, Leistungen, Über uns, Kontakt…). Wir definieren gemeinsam die klarste Struktur für Ihre Besucher und für Google." },
+          { q: "Kann ich die Inhalte selbst bearbeiten?", a: "Ja, wenn Sie möchten. Auf WordPress ist die Bearbeitung einfach; bei einer Maßanfertigung richten wir ein, was nötig ist, um Ihre Schlüsselinhalte zu verwalten — oder wir übernehmen es für Sie." },
+        ],
+      },
+      {
+        slug: "site-e-commerce",
+        illustration: "site-e-commerce",
+        title: "E-Commerce-Website",
+        tagline: "Vom Produktblatt bis zur Zahlung arbeitet jeder Pixel für Ihre Verkäufe.",
+        short:
+          "Onlineshops, die zum Verkaufen gemacht sind: reibungsloser Kaufprozess, sichere Zahlungen, eigenständige Katalogverwaltung. Eine Verkaufsmechanik, nicht nur eine Website.",
+        bullets: [
+          "Optimierter Kaufprozess",
+          "Integrierte Zahlungen & Logistik",
+          "Eigenständige Katalogverwaltung",
+          "Tracking der Verkaufsleistung",
+        ],
+        metaTitle: "Erstellung von E-Commerce-Websites in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung leistungsstarker Onlineshops in Luxemburg: optimierter Kaufprozess, sichere Zahlungen, Katalogverwaltung. Eine E-Commerce-Website, die wirklich verkauft.",
+        intro: [
+          "Ein Onlineshop bemisst sich nicht an seinem Katalog, sondern an seiner Conversion-Rate. Zu viele E-Commerce-Websites verlieren ihre Kunden zwischen Produkt und Warenkorb. Wir bauen Ihren so, dass er sie reibungslos bis zur Zahlung führt.",
+          "Überzeugende Produktblätter, reibungsloser Kaufprozess, sichere Zahlungen und eigenständige Verwaltung Ihres Katalogs: Wir verbinden alles mit Ihren Tools (Lager, Versand, Buchhaltung) und verfolgen die Leistung, um zu optimieren, was verkauft.",
+        ],
+        included: [
+          { icon: "ecommerce", title: "Optimierter Kaufprozess", desc: "Vom Produkt bis zur Zahlung ein reibungsloser Weg, gemacht, um Kaufabbrüche zu reduzieren." },
+          { icon: "smart-forms", title: "Sichere Zahlungen", desc: "Integration der Zahlungsmittel und der Mehrwertsteuerregeln, in voller Sicherheit." },
+          { icon: "automation", title: "Eigenständige Verwaltung", desc: "Ein klares Backoffice, um Produkte, Bestände und Bestellungen zu verwalten, ohne von uns abhängig zu sein." },
+          { icon: "analytics", title: "Verkaufs-Tracking", desc: "Dashboard der Conversions, Warenkörbe und Produkte, die performen." },
+        ],
+        deliverables: [
+          "Responsiver & sicherer Onlineshop",
+          "Katalog, Zahlungen und Versand konfiguriert",
+          "Auf Conversion optimierter Kaufprozess",
+          "E-Commerce-Tracking & Schulung zur Verwaltung",
+        ],
+        faq: [
+          { q: "Auf welcher Plattform bauen Sie den Shop?", a: "Je nach Bedarf: WooCommerce/WordPress für die Eigenständigkeit oder eine maßgeschneiderte Lösung (Next.js) für Performance und spezifische Anforderungen. Wir beraten Sie ohne Dogma." },
+          { q: "Übernehmen Sie Zahlungen und Mehrwertsteuer?", a: "Ja. Wir konfigurieren die Zahlungsmittel, die luxemburgischen Mehrwertsteuerregeln und bei Bedarf die Anbindung an Ihre Logistik und Buchhaltung." },
+        ],
+      },
+      {
+        slug: "landing-pages",
+        illustration: "landing-pages",
+        title: "Landingpages mit hoher Conversion",
+        tagline: "Eine Seite, ein Ziel, ein Maximum an Leads.",
+        short:
+          "Landingpages, die für eine einzige Aktion gemacht sind: konvertieren. Ideal für Ihre Werbekampagnen, Launches und gezielten Angebote.",
+        bullets: [
+          "Für eine einzige Aktion gemacht",
+          "Schneller Launch, mobile-first",
+          "A/B-Testing & Optimierung",
+          "Mit Ihren Kampagnen verbunden",
+        ],
+        metaTitle: "Erstellung von Landingpages in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung von Landingpages mit hoher Conversion in Luxemburg: schnelle, mobile-first und für Ihre Kampagnen optimierte Zielseiten. Mehr Leads, weniger verschwendetes Budget.",
+        intro: [
+          "Werbe-Traffic auf Ihre Startseite zu schicken bedeutet, Budget zu verschwenden. Eine Landingpage hat ein einziges Ziel und beseitigt alle Ablenkungen, um den Besucher zu einer präzisen Aktion zu führen: ein Formular ausfüllen, buchen, herunterladen.",
+          "Wir gestalten schnelle, überzeugende und mobile-first Seiten, abgestimmt auf die Botschaft jeder Kampagne, und testen und optimieren sie dann, um die Conversion-Rate zu steigern — und Ihre Kosten pro Lead zu senken.",
+        ],
+        included: [
+          { icon: "landing", title: "Eine einzige Aktion", desc: "Null Ablenkung: Alles läuft auf das einzige Ziel der Seite zu." },
+          { icon: "speed", title: "Schnell & mobile-first", desc: "Nahezu sofortiges Laden, perfekt auf dem Handy, wo der Großteil des bezahlten Traffics ankommt." },
+          { icon: "ab-test", title: "A/B-Testing", desc: "Wir testen Überschriften, Visuals und Formulare, um die Conversion laufend zu optimieren." },
+          { icon: "ads-targeting", title: "Mit Kampagnen verbunden", desc: "Auf Ihre Werbung abgestimmte Botschaft und durchgängiges Conversion-Tracking." },
+        ],
+        deliverables: [
+          "Maßgeschneiderte, conversion-optimierte Landingpage",
+          "Überzeugendes Copywriting & optimiertes Formular",
+          "Einrichtung des Conversion-Trackings",
+          "A/B-Testing-Plan & Empfehlungen",
+        ],
+        faq: [
+          { q: "Ist eine Landingpage etwas anderes als eine Seite meiner Website?", a: "Ja. Eine Website-Seite informiert und bietet mehrere Wege; eine Landingpage verfolgt ein einziges Ziel, ohne Menü oder Ablenkung, um die Conversion einer präzisen Kampagne zu maximieren." },
+          { q: "Wie lange dauert die Lieferung einer Landingpage?", a: "Oft nur wenige Tage. Unsere KI-beschleunigte Produktion ermöglicht einen schnellen Start, was für das Timing einer Kampagne entscheidend ist." },
+        ],
+      },
+      {
+        slug: "refonte-de-site",
+        illustration: "refonte-de-site",
+        title: "Website-Relaunch",
+        tagline: "Verwandeln Sie eine schlafende Website in einen Wachstumsmotor.",
+        short:
+          "Ihre Website ist langsam, veraltet oder konvertiert nicht mehr? Wir denken sie von Grund auf neu — Design, Performance, SEO — ohne Ihr erworbenes Ranking zu verlieren.",
+        bullets: [
+          "Vollständiges UX- & Performance-Audit",
+          "Migration ohne SEO-Verlust",
+          "Visueller & technischer Relaunch",
+          "Messbare Ergebnisse",
+        ],
+        metaTitle: "Website-Relaunch in Luxemburg | vortx",
+        metaDescription:
+          "Website-Relaunch in Luxemburg: UX-Audit, neues Design, Performance und Migration ohne SEO-Verlust. Verwandeln Sie eine überholte Website in einen Conversion-Motor.",
+        intro: [
+          "Eine veraltete Website kostet mehr, als es scheint: Sie vergrault Besucher, belastet Ihre Glaubwürdigkeit und Ihr Ranking. Der Relaunch ist kein bloßes Aufhübschen — es ist die Gelegenheit, auf gesunden Fundamenten neu zu starten.",
+          "Wir beginnen mit einem Audit (UX, Performance, SEO, Conversion), um zu verstehen, was blockiert, und denken dann Design und Technik neu. Entscheidend: Wir migrieren sauber, um Ihr bestehendes Ranking zu bewahren — und oft zu verbessern.",
+        ],
+        included: [
+          { icon: "redesign", title: "Vollständiges Audit", desc: "UX, Performance, SEO und Conversion: Wir identifizieren präzise, was Ihre aktuelle Website bremst." },
+          { icon: "ai-build", title: "Design- & technischer Relaunch", desc: "Ein neues, modernes Design auf schnellen und dauerhaften technischen Grundlagen." },
+          { icon: "seo", title: "Migration ohne SEO-Verlust", desc: "Weiterleitungen, Struktur und Inhalte sauber migriert, um Ihr Ranking zu schützen." },
+          { icon: "speed", title: "Wiedergewonnene Performance", desc: "Eine nahezu sofortige Website — besseres Erlebnis, besseres Ranking, mehr Conversions." },
+        ],
+        deliverables: [
+          "Vollständiges Audit der bestehenden Website",
+          "Neues Design & Entwicklung",
+          "Migrationsplan & SEO-Weiterleitungen",
+          "Veröffentlichung und Tracking der Rankings",
+        ],
+        faq: [
+          { q: "Verliere ich mein Google-Ranking?", a: "Das ist das ganze Risiko eines schlecht gemachten Relaunchs — und genau das, was wir vermeiden. Wir kartieren Ihre URLs, richten die Weiterleitungen ein und bewahren die SEO-Struktur. Gut gemacht verbessert ein Relaunch das Ranking oft." },
+          { q: "Kann man einen Teil des Bestehenden behalten?", a: "Ja. Wir behalten, was funktioniert (Inhalte, Markenelemente, performante Seiten), und erneuern, was bremst. Das Audit bestimmt das objektiv." },
+        ],
+      },
+      {
+        slug: "application-web",
+        illustration: "application-web",
+        title: "Maßgeschneiderte Anwendungen & Plattformen",
+        tagline: "Wenn eine Website nicht mehr ausreicht, bauen wir Ihr Werkzeug.",
+        short:
+          "Kundenbereiche, Backoffices, Fachplattformen: 100 % maßgeschneiderte Entwicklung, um einen Prozess zu digitalisieren und einen Vorteil zu schaffen, den Ihre Wettbewerber nicht haben.",
+        bullets: [
+          "100 % maßgeschneiderte Entwicklung",
+          "Kundenbereiche & Backoffices",
+          "API-Integrationen & Automatisierungen",
+          "Skalierbar & sicher",
+        ],
+        metaTitle: "Entwicklung maßgeschneiderter Webanwendungen in Luxemburg | vortx",
+        metaDescription:
+          "Entwicklung maßgeschneiderter Webanwendungen und -plattformen in Luxemburg: Kundenbereiche, Backoffices, API-Integrationen. Digitalisieren Sie Ihre Prozesse, schaffen Sie Ihren Vorteil.",
+        intro: [
+          "Manche Bedürfnisse gehen über die Website hinaus: ein Kundenbereich, ein internes Verwaltungstool, eine Plattform, die einen Fachprozess automatisiert. Hier wird eine maßgeschneiderte Anwendung zu einem echten Wettbewerbsvorteil.",
+          "Wir konzipieren und entwickeln schnelle, sichere und skalierbare Webanwendungen, verbunden mit Ihren bestehenden Tools. Von der Bedarfskartierung bis zur Inbetriebnahme bauen wir das Werkzeug, das genau zu Ihrer Arbeitsweise passt.",
+        ],
+        included: [
+          { icon: "webapp", title: "Vollständig maßgeschneidert", desc: "Eine Anwendung, gedacht für Ihren präzisen Prozess — keine generische Software, die man erleidet." },
+          { icon: "next-perf", title: "Schnell & sicher", desc: "Moderne, leistungsstarke Architektur, konzipiert unter Einhaltung der DSGVO." },
+          { icon: "integration", title: "Integrationen & API", desc: "Verbunden mit Ihrem CRM, Ihren Tools und Drittdiensten über API und Webhooks." },
+          { icon: "automation", title: "Skalierbar", desc: "Eine Basis, die mit Ihnen wächst: Wir ergänzen Module im Lauf Ihrer Bedürfnisse." },
+        ],
+        deliverables: [
+          "Bedarfskartierung & Spezifikationen",
+          "UX/UI-Mockups & technische Architektur",
+          "Entwicklung, Tests & Inbetriebnahme",
+          "Dokumentation, Schulung & Wartung",
+        ],
+        faq: [
+          { q: "Wie läuft ein Anwendungsprojekt ab?", a: "In Etappen: Bedarfsklärung, Mockups, Entwicklung in Iterationen, die Sie freigeben, dann Inbetriebnahme und Betreuung. Sie sehen das Werkzeug Gestalt annehmen, ohne monatelangen Blindflug." },
+          { q: "Gehört mir die Anwendung vollständig?", a: "Ja. Code, Daten und Zugänge gehören Ihnen. Kein Lock-in: Sie können sie mit uns oder intern weiterentwickeln." },
+        ],
+      },
+      {
+        slug: "site-multilingue",
+        illustration: "site-multilingue",
+        title: "Mehrsprachige Websites FR / DE / EN / LU",
+        tagline: "Sprechen Sie ganz Luxemburg an, und weit darüber hinaus.",
+        short:
+          "In Luxemburg vergleichen Ihre Kunden in mehreren Sprachen. Wir bauen nativ mehrsprachige Websites, Sprache für Sprache optimiert für Ranking und Conversion.",
+        bullets: [
+          "Native Verwaltung der Mehrsprachigkeit",
+          "Lokalisiertes SEO pro Sprache (hreflang)",
+          "Redaktionelle & UX-Kohärenz",
+          "Angepasst an den grenzüberschreitenden Markt",
+        ],
+        metaTitle: "Erstellung mehrsprachiger Websites (FR/DE/EN) in Luxemburg | vortx",
+        metaDescription:
+          "Nativ mehrsprachige Websites für Luxemburg: FR, DE, EN, LU. Lokalisiertes SEO pro Sprache (hreflang), redaktionelle Kohärenz und UX. Sprechen Sie Ihren ganzen Markt an.",
+        intro: [
+          "Mehrsprachigkeit ist in Luxemburg keine Option: Sie ist die Realität des Marktes. Ein Kunde, der auf Deutsch sucht, darf nicht auf eine ungefähre Übersetzung stoßen — und nicht unsichtbar bleiben, weil Ihre Website nur in einer Sprache existiert.",
+          "Wir bauen mehrsprachige Websites, von Anfang an dafür gedacht: saubere Architektur, korrekte hreflang-Auszeichnung, Sprache für Sprache optimiertes SEO und redaktionelle Kohärenz. Keine aufgeklebte Übersetzung, sondern eine echte Präsenz in jeder Sprache.",
+        ],
+        included: [
+          { icon: "multilingual", title: "Nativ mehrsprachig", desc: "Eine Architektur, von der Konzeption an für mehrere Sprachen gedacht, nicht nachträglich hinzugefügt." },
+          { icon: "seo", title: "SEO pro Sprache", desc: "hreflang-Auszeichnung, URLs und Inhalte unabhängig für jede Sprache optimiert." },
+          { icon: "conversion", title: "Redaktionelle Kohärenz", desc: "Ein kohärenter Ton und eine kohärente UX von einer Sprache zur anderen, angepasst an jedes Publikum." },
+          { icon: "geo-citation", title: "Grenzüberschreitender Markt", desc: "Gedacht für Luxemburg und die Großregion — FR, DE, EN und Lëtzebuergesch auf Anfrage." },
+        ],
+        deliverables: [
+          "Mehrsprachige Architektur & hreflang-Strategie",
+          "Website in jeder Sprache, SEO-optimiert",
+          "Übersetzungs-Workflow & redaktionelle Kohärenz",
+          "Sprachauswahl & Veröffentlichung",
+        ],
+        faq: [
+          { q: "Übernehmen Sie die Übersetzungen?", a: "Wir können das Verfassen und die professionelle Übersetzung übernehmen oder Ihre bestehenden Inhalte sauber integrieren. Wichtig: ein korrekter und optimierter Inhalt in jeder Sprache, keine rohe maschinelle Übersetzung." },
+          { q: "Schadet Mehrsprachigkeit dem SEO?", a: "Im Gegenteil, gut gemacht stärkt sie es: Jede Sprache erfasst ihre eigenen Suchanfragen. Der Schlüssel ist eine korrekte hreflang-Auszeichnung und eigenständige Inhalte — genau das, was wir einrichten." },
+        ],
+      },
+    ],
+    "lead-generation": [
+      {
+        slug: "tunnels-de-conversion",
+        illustration: "tunnels-de-conversion",
+        title: "Conversion-Trichter",
+        tagline: "Vom ersten Klick bis zum unterschriebenen Angebot ein auf Conversion ausgelegter Weg.",
+        short:
+          "Wir gestalten den kompletten Weg vom Unbekannten zum Kunden: aufeinander abgestimmte Etappen, an jede Phase angepasste Botschaften, durchgängiges Tracking. Das Rückgrat Ihrer Akquise.",
+        bullets: [
+          "Funnel-Architektur (TOFU/MOFU/BOFU)",
+          "Abgestimmte Etappen & Botschaften",
+          "Vollständiges Tracking & Attribution",
+          "Laufende A/B-Tests",
+        ],
+        metaTitle: "Erstellung von Conversion-Trichtern in Luxemburg | vortx",
+        metaDescription:
+          "Konzeption von Conversion-Trichtern (Funnels) für Luxemburger Unternehmen: Weg vom Klick zum Kunden, vollständiges Tracking und laufende Optimierung. Mehr qualifizierte Leads.",
+        intro: [
+          "Ihre Kunden gehen nicht mit einem Klick vom Unbekannten zum Kauf über. Sie folgen einem Weg: Sie entdecken, sie informieren sich, sie vergleichen, dann entscheiden sie. Ein Conversion-Trichter begleitet diesen Weg Schritt für Schritt, mit der richtigen Botschaft zum richtigen Zeitpunkt.",
+          "Wir kartieren diesen Weg (TOFU/MOFU/BOFU), stimmen jede Seite und jedes Follow-up auf die betreffende Phase ab und installieren ein vollständiges Tracking, um genau zu wissen, wo Sie Interessenten gewinnen — und wo Sie sie verlieren.",
+        ],
+        included: [
+          { icon: "funnel", title: "Funnel-Architektur", desc: "Ein strukturierter Weg vom ersten Kontakt bis zur Conversion, ohne Lücke." },
+          { icon: "conversion", title: "Abgestimmte Botschaften", desc: "Das richtige Argument in jeder Etappe: Entdeckung, Erwägung, Entscheidung." },
+          { icon: "analytics", title: "Tracking & Attribution", desc: "Wir messen jede Etappe, um zu wissen, was konvertiert und was bremst." },
+          { icon: "ab-test", title: "Laufende Optimierung", desc: "Regelmäßige A/B-Tests, um die Conversion-Rate auf jeder Stufe zu verbessern." },
+        ],
+        deliverables: [
+          "Vollständige Kartierung des Conversion-Trichters",
+          "Nach Etappe abgestimmte Seiten & Sequenzen",
+          "Einrichtung von Tracking & Attribution",
+          "Dashboard & Optimierungsplan",
+        ],
+        faq: [
+          { q: "Ist ein Trichter nur für den Online-Verkauf?", a: "Nein. Im B2B führt der Trichter oft zu einer Angebotsanfrage oder einem Anruf, nicht zu einer Zahlung. Wir passen ihn an Ihren echten Verkaufszyklus an, auch wenn er lang ist." },
+          { q: "Braucht man bereits Traffic?", a: "Der Trichter optimiert die Conversion des bestehenden Traffics; wir können ihn auch mit SEO oder Werbung koppeln, um den oberen Funnel zu speisen. Wir beginnen damit, das zu maximieren, was Sie bereits erfassen." },
+        ],
+      },
+      {
+        slug: "landing-pages-campagne",
+        illustration: "landing-pages-campagne",
+        title: "Kampagnen-Landingpages",
+        tagline: "Zielseiten, die Traffic in Anfragen verwandeln.",
+        short:
+          "Für jede Kampagne eine dedizierte Seite, abgestimmt auf ihre Botschaft und ihre Zielgruppe. Die unverzichtbare Ergänzung Ihrer Werbung, um keinen einzigen Klick zu verschwenden.",
+        bullets: [
+          "Eine Seite pro Kampagne",
+          "Überzeugendes Copywriting",
+          "Optimierte Formulare",
+          "Mobile-first & schnell",
+        ],
+        metaTitle: "Kampagnen-Landingpages in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung von Kampagnen-Landingpages in Luxemburg: dedizierte Seiten, überzeugendes Copywriting und optimierte Formulare. Verwandeln Sie jeden Werbeklick in einen qualifizierten Lead.",
+        intro: [
+          "Eine Kampagne, die auf eine generische Seite verweist, verliert die Hälfte ihres Potenzials. Zu jeder Werbebotschaft muss eine Seite passen, die sie fortsetzt: dasselbe Versprechen, dieselbe Zielgruppe, eine einzige erwartete Aktion.",
+          "Wir erstellen überzeugende und schnelle Landingpages für Ihre Kampagnen auf Google, Meta oder LinkedIn, mit einem nutzenorientierten Copywriting und Formularen, die darauf ausgelegt sind, die Antwortrate zu maximieren — nicht abzuschrecken.",
+        ],
+        included: [
+          { icon: "landing", title: "Eine Seite pro Kampagne", desc: "Jede Seite setzt die Botschaft der Werbung fort: perfekte Kontinuität, null Verlust." },
+          { icon: "branding", title: "Überzeugendes Copywriting", desc: "Nutzenorientierte Texte, die Einwände beantworten und zum Handeln bewegen." },
+          { icon: "smart-forms", title: "Optimierte Formulare", desc: "Gerade genug Felder, um zu qualifizieren, ohne abzuschrecken, ausgelegt auf die Antwortrate." },
+          { icon: "speed", title: "Mobile-first & schnell", desc: "Perfekt auf dem Handy, wo der Großteil des Kampagnen-Traffics ankommt." },
+        ],
+        deliverables: [
+          "Dedizierte Landingpages pro Kampagne",
+          "Copywriting & Conversion-Struktur",
+          "Optimierte Formulare & Tracking",
+          "Varianten für A/B-Testing",
+        ],
+        faq: [
+          { q: "Wie viele Landingpages brauche ich?", a: "Idealerweise eine pro Angebot oder pro Schlüsselzielgruppe. Je besser die Botschaft auf die Absicht abgestimmt ist, desto höher steigt die Conversion-Rate. Wir beginnen mit Ihren prioritären Kampagnen." },
+          { q: "Arbeiten Sie mit meinen bestehenden Kampagnen?", a: "Ja. Wir können die Seiten für Ihre laufenden Kampagnen erstellen, ob sie von Ihnen oder von unserem Werbeteam verwaltet werden." },
+        ],
+      },
+      {
+        slug: "email-marketing-automation",
+        illustration: "email-marketing-automation",
+        title: "E-Mail-Marketing & Automation",
+        tagline: "Automatisierte Sequenzen, die Ihre Interessenten rund um die Uhr bearbeiten.",
+        short:
+          "E-Mail bleibt der Kanal mit dem besten ROI. Wir richten automatisierte Sequenzen ein, die Ihre Interessenten aufwärmen, zum richtigen Zeitpunkt nachfassen und Interesse in Termine verwandeln.",
+        bullets: [
+          "Automatisierte Nurturing-Sequenzen",
+          "Ausgelöste Szenarien (Trigger)",
+          "Sorgfältige Zustellbarkeit",
+          "CRM-Integration",
+        ],
+        metaTitle: "E-Mail-Marketing & Marketing-Automation in Luxemburg | vortx",
+        metaDescription:
+          "E-Mail-Marketing und Marketing-Automation für Luxemburger Unternehmen: Nurturing-Sequenzen, ausgelöste Szenarien und CRM-Integration. Konvertieren Sie Ihre Interessenten automatisch.",
+        intro: [
+          "Nicht alle Ihre Interessenten sind heute kaufbereit. Ohne Nachverfolgung vergessen Sie die meisten. E-Mail-Automation hält den Kontakt: Sie informiert, beruhigt und fasst automatisch nach, bis der Interessent bereit ist.",
+          "Wir gestalten durch Verhalten ausgelöste Sequenzen (Download, Besuch, Inaktivität), kümmern uns um die Zustellbarkeit, um im Posteingang zu landen, und verbinden alles mit Ihrem CRM, damit Ihr Vertrieb bereits aufgewärmte Leads erhält.",
+        ],
+        included: [
+          { icon: "email-automation", title: "Automatisierte Sequenzen", desc: "Szenarien, die sich selbst auslösen und jeden Interessenten im richtigen Rhythmus begleiten." },
+          { icon: "nurturing", title: "Intelligentes Nurturing", desc: "Der richtige Inhalt je nach Phase: Wir wärmen auf, ohne zu nerven, bis zur Entscheidung." },
+          { icon: "conversion", title: "Sorgfältige Zustellbarkeit", desc: "Technische Konfiguration (SPF, DKIM), um im Posteingang zu landen, nicht im Spam." },
+          { icon: "integration", title: "CRM-Integration", desc: "Synchronisierung mit Ihrem CRM: Ihr Vertrieb erhält bereits qualifizierte Leads." },
+        ],
+        deliverables: [
+          "Strategie für Sequenzen & Szenarien",
+          "Verfassen & Design der E-Mails",
+          "Konfiguration der Automatisierung & Zustellbarkeit",
+          "CRM-Anbindung & Reporting",
+        ],
+        faq: [
+          { q: "Ist das DSGVO-konform?", a: "Ja. Wir arbeiten ausschließlich mit Opt-in-Basen, mit klarer Einwilligung und Abmeldung. Die DSGVO-Konformität ist von der Konzeption der Sequenzen an integriert." },
+          { q: "Braucht man bereits eine E-Mail-Liste?", a: "Das ist ein Plus, aber wir können auch die Erfassung einrichten (Lead-Magnete, Formulare), um sie sauber aufzubauen. Wir gehen von Ihrer echten Situation aus." },
+        ],
+      },
+      {
+        slug: "lead-nurturing-scoring",
+        illustration: "lead-nurturing-scoring",
+        title: "Lead-Nurturing & Scoring",
+        tagline: "Erkennen und wärmen Sie die kaufbereiten Interessenten auf.",
+        short:
+          "Nicht alle Leads sind gleich viel wert. Wir bewerten sie nach ihrem Verhalten und ihrem Profil, damit Ihr Vertrieb seine Energie auf die heißesten konzentriert — zum richtigen Zeitpunkt.",
+        bullets: [
+          "Verhaltensbasiertes Lead-Scoring",
+          "Reifungs-Workflows",
+          "Qualifizierung MQL → SQL",
+          "Feedback-Schleife mit dem Vertrieb",
+        ],
+        metaTitle: "Lead-Nurturing & Scoring in Luxemburg | vortx",
+        metaDescription:
+          "Lead-Nurturing und Scoring für Luxemburger Unternehmen: verhaltensbasierte Bewertung, automatisierte Reifung und MQL/SQL-Qualifizierung. Ihr Vertrieb auf den richtigen Leads, zum richtigen Zeitpunkt.",
+        intro: [
+          "Ihren Vertrieb mit unqualifizierten Leads zu überschwemmen lässt ihn Zeit und Motivation verlieren. Scoring löst das: Jeder Lead erhält eine Note nach seinem Profil und seinem Verhalten und wird erst weitergereicht, wenn er bereit ist.",
+          "Wir definieren mit Ihnen die Qualifizierungskriterien (MQL, SQL), automatisieren die Reifung der noch lauwarmen Leads und installieren eine Feedback-Schleife mit Ihrem Vertrieb, um das Scoring laufend zu verfeinern. Ergebnis: mehr Zeit für die richtigen Chancen.",
+        ],
+        included: [
+          { icon: "nurturing", title: "Verhaltensbasiertes Scoring", desc: "Jeder Lead wird nach seinem Profil und seinen Aktionen bewertet — wir wissen, wer bereit ist." },
+          { icon: "email-automation", title: "Reifungs-Workflows", desc: "Lauwarme Leads werden automatisch aufgewärmt, bis sie das richtige Niveau erreichen." },
+          { icon: "leads", title: "Qualifizierung MQL → SQL", desc: "Klare Kriterien, um den bloß Interessierten vom gesprächsbereiten Interessenten zu unterscheiden." },
+          { icon: "analytics", title: "Feedback-Schleife", desc: "Das Feedback Ihres Vertriebs verfeinert das Scoring laufend für mehr Präzision." },
+        ],
+        deliverables: [
+          "Scoring-Modell & Qualifizierungskriterien",
+          "Automatisierte Nurturing-Workflows",
+          "Konfiguration in Ihrem CRM",
+          "Feedback-Ritual & laufende Anpassung",
+        ],
+        faq: [
+          { q: "Funktioniert Scoring ohne großes Volumen?", a: "Ja. Selbst mit wenigen Leads spart das Priorisieren der richtigen Ihrem Vertrieb wertvolle Zeit. Das Modell bleibt einfach und verfeinert sich mit den Daten." },
+          { q: "Braucht man ein bestimmtes CRM?", a: "Wir arbeiten mit den meisten CRMs (HubSpot, Pipedrive, Salesforce…). Wenn Sie keines haben, helfen wir Ihnen, das richtige auszuwählen und einzurichten." },
+        ],
+      },
+      {
+        slug: "optimisation-conversion-cro",
+        illustration: "optimisation-conversion-cro",
+        title: "Conversion-Rate-Optimierung (CRO)",
+        tagline: "Mehr Leads bei gleichem Traffic, dank Daten.",
+        short:
+          "Ihre Conversions verdoppeln, ohne Ihr Budget zu verdoppeln: Das ist die Wette des CRO. Wir identifizieren die Hürden, testen Lösungen und behalten, was funktioniert — mit Belegen.",
+        bullets: [
+          "Audit der Conversion-Hürden",
+          "A/B- & multivariate Tests",
+          "Verhaltensanalyse (Heatmaps)",
+          "Optimierung der Formulare",
+        ],
+        metaTitle: "Conversion-Rate-Optimierung (CRO) in Luxemburg | vortx",
+        metaDescription:
+          "Conversion-Rate-Optimierung (CRO) in Luxemburg: Audit der Hürden, A/B-Tests, Heatmaps und Formularoptimierung. Mehr Leads bei gleichem Traffic, datengesteuert.",
+        intro: [
+          "Mehr Traffic anzuziehen ist teuer. Den, den Sie bereits haben, besser zu konvertieren kostet weit weniger — und bringt oft mehr. CRO (Conversion Rate Optimization) besteht darin, einen größeren Teil Ihrer Besucher in Leads zu verwandeln.",
+          "Wir analysieren das echte Verhalten Ihrer Besucher (Heatmaps, Aufzeichnungen, Funnels), formulieren Hypothesen und validieren sie dann durch A/B-Tests. Keine Meinung: Wir behalten nur, was die Daten als Sieger belegen.",
+        ],
+        included: [
+          { icon: "ab-test", title: "Audit der Hürden", desc: "Wir erkennen präzise, wo und warum Ihre Besucher abbrechen, bevor sie konvertieren." },
+          { icon: "analytics", title: "A/B- & multivariate Tests", desc: "Wir testen Varianten und messen: Nur die Gewinnerversionen werden behalten." },
+          { icon: "conversion", title: "Verhaltensanalyse", desc: "Heatmaps und Session-Aufzeichnungen, um die echten Reibungspunkte zu verstehen." },
+          { icon: "smart-forms", title: "Optimierung der Formulare", desc: "Weniger Reibung, mehr Abschlüsse: Das Formular ist oft der Schlüsselpunkt." },
+        ],
+        deliverables: [
+          "Conversion-Audit & Verhaltensanalyse",
+          "Hypothesenplan & Priorisierung",
+          "Eingerichtete & analysierte A/B-Tests",
+          "Reporting der Gewinne & Iterationen",
+        ],
+        faq: [
+          { q: "Welchen Conversion-Gewinn kann man erwarten?", a: "Das hängt von Ihrem Ausgangspunkt ab. Wir versprechen keine Zauberzahl: Wir installieren einen kontinuierlichen Verbesserungsprozess und dokumentieren jeden durch Tests validierten Gewinn." },
+          { q: "Braucht man viel Traffic für CRO?", a: "Ein Mindestvolumen hilft, statistisch verlässliche Ergebnisse zu erhalten. Darunter beginnen wir mit Optimierungen auf Basis von Best Practices und Verhaltensanalyse." },
+        ],
+      },
+    ],
+    "branding-design": [
+      {
+        slug: "creation-de-logo",
+        illustration: "creation-de-logo",
+        title: "Logo-Gestaltung",
+        tagline: "Ein Symbol, das Sie auf einen Blick wiedererkennbar macht.",
+        short:
+          "Ein einzigartiges, von Hand gestaltetes Logo, abgeleitet in allen nützlichen Formaten. Der Ausgangspunkt einer Marke, an die man sich erinnert — kein generisches Piktogramm.",
+        bullets: [
+          "Originalkonzepte von Hand gezeichnet",
+          "Ableitungen (Farbe, Mono, Favicon)",
+          "Vektorformate geliefert",
+          "Lesbarkeitstests auf mehreren Medien",
+        ],
+        metaTitle: "Maßgeschneiderte Logo-Gestaltung in Luxemburg | vortx",
+        metaDescription:
+          "Maßgeschneiderte Logo-Gestaltung in Luxemburg: Originalkonzepte, Ableitungen und Vektorformate. Ein einzigartiges und einprägsames Symbol, treu Ihrer Identität.",
+        intro: [
+          "Ihr Logo ist das Erste, was man von Ihnen behält — und oft das Einzige. Es muss einzigartig sein, überall lesbar und Ihnen treu. Wir gestalten es maßgeschneidert, nie aus einer Bibliothek recycelter Symbole.",
+          "Wir erkunden mehrere kreative Ansätze, verfeinern mit Ihnen den, der Ihnen entspricht, und leiten ihn dann in allen Formaten ab, die Sie brauchen werden — Farbe, monochrom, Favicon, Web- und Print-Versionen. Ein Logo, das überall und über die Zeit hält.",
+        ],
+        included: [
+          { icon: "logo", title: "Von Hand gezeichnete Konzepte", desc: "Mehrere originale Ansätze, für Sie gestaltet, keine bearbeiteten Templates." },
+          { icon: "branding", title: "Vollständige Ableitungen", desc: "Versionen in Farbe, Schwarz-Weiß, monochrom, Favicon: Ihr Logo bereit für jeden Einsatz." },
+          { icon: "ai-build", title: "Vektorformate", desc: "Vektordateien (SVG, PDF), die in jeder Größe scharf bleiben, vom Favicon bis zum Firmenschild." },
+          { icon: "responsive", title: "Getestete Lesbarkeit", desc: "Geprüft auf kleinen und großen Formaten, hellem und dunklem Hintergrund, Bildschirm und Papier." },
+        ],
+        deliverables: [
+          "Mehrere originale Logo-Konzepte",
+          "Finalisiertes Logo in Farb- & Mono-Versionen",
+          "Datei-Paket (vektoriell, Web, Print, Favicon)",
+          "Mini-Leitfaden zur Logo-Nutzung",
+        ],
+        faq: [
+          { q: "Wie viele Vorschläge erhalte ich?", a: "Wir präsentieren mehrere eigenständige Ansätze und verfeinern dann den von Ihnen bevorzugten mit Abstimmungsrunden. Das Ziel ist ein Logo, das Sie lieben, kein lauwarmer Kompromiss." },
+          { q: "Gehört mir das Logo wirklich?", a: "Ja, vollumfänglich. Sie erhalten alle Quelldateien und sind vollumfänglich Eigentümer, ohne versteckte Kosten oder Lizenzgebühr." },
+        ],
+      },
+      {
+        slug: "identite-visuelle",
+        illustration: "identite-visuelle",
+        title: "Vollständige visuelle Identität",
+        tagline: "Weit mehr als ein Logo: ein überall kohärentes visuelles System.",
+        short:
+          "Farben, Typografien, Bildsprache, künstlerische Leitung: ein vollständiges visuelles System, das Ihre Marke an allen Kontaktpunkten wiedererkennbar macht.",
+        bullets: [
+          "Farbpalette & Typografien",
+          "Bildsprache & Muster",
+          "Künstlerische Fotoleitung",
+          "Modulares, skalierbares System",
+        ],
+        metaTitle: "Visuelle Markenidentität in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung einer vollständigen visuellen Identität in Luxemburg: Farben, Typografien, Bildsprache und künstlerische Leitung. Ein kohärentes System, das Ihre Marke überall wiedererkennbar macht.",
+        intro: [
+          "Ein Logo allein macht keine Marke. Was Sie wiedererkennbar macht, ist die Kohärenz von allem anderen: Ihre Farben, Ihre Typografien, Ihre Bilder, Ihr Stil. Eine vollständige visuelle Identität orchestriert diese Elemente zu einem harmonischen System.",
+          "Wir bauen dieses System von A bis Z auf: Farbpalette, typografische Hierarchie, Bildsprache, Muster und künstlerische Leitung. Modular und skalierbar, gibt es Ihnen alles, um kohärent zu kommunizieren — von der Website bis zum sozialen Netzwerk, vom Print bis zur Präsentation.",
+        ],
+        included: [
+          { icon: "brand-identity", title: "Farben & Typografien", desc: "Eine unverwechselbare Palette und typografische Hierarchie, abgeleitet für alle Einsätze." },
+          { icon: "branding", title: "Bildsprache & Muster", desc: "Markeneigene grafische Elemente, die ihre Wiedererkennbarkeit stärken." },
+          { icon: "ai-build", title: "Künstlerische Leitung", desc: "Ein kohärenter Foto- und Bildstil, damit alles, was Sie produzieren, einheitlich wirkt." },
+          { icon: "automation", title: "Modulares System", desc: "Eine skalierbare Basis: Wir können sie auf neue Medien erweitern, ohne alles neu zu machen." },
+        ],
+        deliverables: [
+          "Farbpalette & typografisches System",
+          "Bildsprache, Muster & grafische Elemente",
+          "Künstlerische Leitung & Anwendungsbeispiele",
+          "Organisierte, einsatzbereite Quelldateien",
+        ],
+        faq: [
+          { q: "Muss man bereits ein Logo haben?", a: "Idealerweise ja — die Identität ordnet sich um es herum an. Wenn Sie keines haben, beginnen wir damit, es zu erstellen, und entfalten dann die kohärente visuelle Identität darum herum." },
+          { q: "Was ist der Unterschied zu einem Styleguide?", a: "Die visuelle Identität sind die Elemente (Farben, Typo, Stil). Der Styleguide ist das Dokument, das deren Anwendungsregeln festlegt. Beide ergänzen sich, und wir können das Ganze liefern." },
+        ],
+      },
+      {
+        slug: "charte-graphique",
+        illustration: "charte-graphique",
+        title: "Styleguide & Brand Guidelines",
+        tagline: "Die Regeln, die eine kohärente Marke garantieren, überall, von allen.",
+        short:
+          "Das Referenzdokument, das die Nutzung Ihrer Marke festlegt: Logo, Farben, Typografien, Ton. Damit alle — Ihre Teams wie Ihre Dienstleister — sie korrekt anwenden.",
+        bullets: [
+          "Handbuch zur Logo-Nutzung",
+          "Regeln für Farben, Typo & Abstände",
+          "Anwendungsbeispiele",
+          "Einsatzbereite Dateien für Ihre Teams",
+        ],
+        metaTitle: "Styleguide & Brand Guidelines in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung von Styleguide und Brand Guidelines in Luxemburg: Anwendungsregeln für Logo, Farben, Typografien und Anwendungen. Eine kohärente Marke, von allen angewendet.",
+        intro: [
+          "Eine Marke verliert ihre Kraft, sobald jeder sie auf seine Weise anwendet: verzerrtes Logo, ungefähre Farben, uneinheitliche Typografien. Der Styleguide verhindert das, indem er klare Regeln festlegt, die von allen befolgt werden.",
+          "Wir dokumentieren die Nutzung Ihrer Marke: Schutzzonen des Logos, präzise Farbcodes, typografische Hierarchie, Abstände, Tonalität und konkrete Anwendungsbeispiele. Ein Leitfaden, dem Ihre Teams und Ihre Dienstleister ohne Zögern folgen können.",
+        ],
+        included: [
+          { icon: "guidelines", title: "Logo-Handbuch", desc: "Mindestgrößen, Schutzzonen, korrekte und untersagte Nutzungen, auf allen Hintergründen." },
+          { icon: "brand-identity", title: "Regeln für Farben & Typo", desc: "Präzise Codes (HEX, RGB, CMYK, Pantone) und dokumentierte typografische Hierarchie." },
+          { icon: "conversion", title: "Anwendungsbeispiele", desc: "Konkrete Fälle — Geschäftspapiere, Web, soziale Netzwerke — um jede Mehrdeutigkeit auszuräumen." },
+          { icon: "ai-build", title: "Einsatzbereite Dateien", desc: "Alle Assets organisiert und zugänglich für Ihre Teams und Dienstleister." },
+        ],
+        deliverables: [
+          "Vollständiges Styleguide-Dokument (PDF)",
+          "Regeln für Logo, Farben, Typografien & Abstände",
+          "Tonalität & Anwendungsbeispiele",
+          "Organisierte Asset-Bibliothek",
+        ],
+        faq: [
+          { q: "Wozu dient ein Styleguide wirklich, wenn ich allein bin?", a: "Er garantiert die Kohärenz über die Zeit und erleichtert jede künftige Zusammenarbeit (Druckerei, Freelancer, neue Mitarbeitende). Eine Investition, die den Wert Ihrer Marke schützt." },
+          { q: "Kann sich der Styleguide weiterentwickeln?", a: "Ja. Es ist ein lebendiges Dokument: Wir können es erweitern, während sich Ihre Marke auf neue Medien ausdehnt." },
+        ],
+      },
+      {
+        slug: "supports-print",
+        illustration: "supports-print",
+        title: "Print-Medien & Geschäftspapiere",
+        tagline: "Eine Marke, die in der Hand genauso gut wirkt wie auf dem Bildschirm.",
+        short:
+          "Visitenkarten, Broschüren, Prospekte, Berichte, Beschilderung: Ihre Druckmedien, gestaltet mit der gleichen Sorgfalt wie Ihre digitale Präsenz.",
+        bullets: [
+          "Visitenkarten & Geschäftspapiere",
+          "Broschüren & Prospekte",
+          "Berichte & Corporate-Dokumente",
+          "Beschilderung & Eventmedien",
+        ],
+        metaTitle: "Erstellung von Print-Medien & Geschäftspapieren in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung von Print-Medien in Luxemburg: Visitenkarten, Broschüren, Prospekte, Berichte und Beschilderung. Eine kohärente Marke vom Digitalen bis zum Papier, druckfertig.",
+        intro: [
+          "Print ist nicht tot — es schafft Vertrauen. In Luxemburg bleibt das Corporate- und Finanzgefüge ein großer Verbraucher sorgfältiger Druckmedien: Eine Visitenkarte, ein Prospekt oder ein Jahresbericht sagen viel über Ihre Seriosität aus.",
+          "Wir gestalten Ihre Print-Medien in der Kontinuität Ihrer Identität, druckfertig (Beschnittzugaben, Farbprofile, normierte Formate). Vom Detail der Visitenkarte bis zur Beschilderung bleibt Ihre Marke auf allen Medien kohärent.",
+        ],
+        included: [
+          { icon: "print", title: "Karten & Geschäftspapiere", desc: "Visitenkarten, Briefköpfe, Signaturen: Ihre Identität bis ins Detail." },
+          { icon: "branding", title: "Broschüren & Prospekte", desc: "Werbemedien, die Ihre Angebote mit Klarheit und Eleganz aufwerten." },
+          { icon: "guidelines", title: "Corporate-Berichte", desc: "Jahresberichte und institutionelle Dokumente mit Sorgfalt gesetzt." },
+          { icon: "responsive", title: "Druckfertig", desc: "Konforme Dateien (Beschnittzugaben, CMYK) für einen Druck ohne böse Überraschung." },
+        ],
+        deliverables: [
+          "Gestaltung der gewünschten Print-Medien",
+          "Druckfertige Dateien (PDF, CMYK, Beschnittzugaben)",
+          "Ableitungen & wiederverwendbare Vorlagen",
+          "Begleitung mit Ihrer Druckerei bei Bedarf",
+        ],
+        faq: [
+          { q: "Übernehmen Sie auch den Druck?", a: "Wir liefern druckfertige Dateien und können uns mit Ihrer Druckerei abstimmen oder Ihnen verlässliche Partner in Luxemburg empfehlen." },
+          { q: "Können Sie meinen bestehenden Styleguide aufgreifen?", a: "Ja. Wir wenden Ihre aktuelle Identität auf die Print-Medien an oder passen sie an, wenn sie noch keine gedruckte Ableitung hat." },
+        ],
+      },
+      {
+        slug: "strategie-de-marque-naming",
+        illustration: "strategie-de-marque-naming",
+        title: "Markenstrategie & Naming",
+        tagline: "Der Sinn und die Worte vor den Pixeln.",
+        short:
+          "Vor dem Visuellen der Inhalt: Positionierung, Markenplattform, Name und Tonalität. Die Strategie, die Ihrer gesamten Kommunikation eine klare Richtung gibt.",
+        bullets: [
+          "Positionierung & Markenplattform",
+          "Naming & Namensfindung",
+          "Tonalität & Kernbotschaften",
+          "Mehrsprachige verbale Identität",
+        ],
+        metaTitle: "Markenstrategie & Naming in Luxemburg | vortx",
+        metaDescription:
+          "Markenstrategie und Naming in Luxemburg: Positionierung, Markenplattform, Namensfindung und mehrsprachige Tonalität. Der Sinn, der Ihre gesamte Kommunikation leitet.",
+        intro: [
+          "Eine schöne Marke ohne Strategie ist eine Fassade ohne Fundament. Bevor man irgendetwas zeichnet, muss man wissen, wofür Sie stehen, zu wem Sie sprechen und was Sie auszeichnet. Das ist die Rolle der Markenstrategie.",
+          "Wir definieren Ihre Positionierung, Ihre Markenplattform (Mission, Werte, Versprechen) und Ihr Ausdrucksterritorium. Bei Bedarf kreieren wir Ihren Namen (Naming) und legen eine kohärente Tonalität fest — auch in mehreren Sprachen, wie es der Luxemburger Markt verlangt.",
+        ],
+        included: [
+          { icon: "strategy", title: "Positionierung", desc: "Was Sie auszeichnet, klar formuliert: die Basis Ihrer gesamten Kommunikation." },
+          { icon: "branding", title: "Markenplattform", desc: "Mission, Werte, Versprechen und Persönlichkeit: die DNA, die jede Entscheidung leitet." },
+          { icon: "gen-content", title: "Naming", desc: "Kreation und Prüfung eines Marken- oder Produktnamens, verfügbar und sinnstiftend." },
+          { icon: "multilingual", title: "Mehrsprachige Tonalität", desc: "Eine kohärente verbale Identität in FR, DE und EN, angepasst an jedes Publikum." },
+        ],
+        deliverables: [
+          "Markenplattform & Positionierung",
+          "Naming & Empfehlungen (falls zutreffend)",
+          "Leitfaden zu Tonalität & Kernbotschaften",
+          "Umsetzbare strategische Synthese",
+        ],
+        faq: [
+          { q: "Ist Markenstrategie für eine kleine Struktur nützlich?", a: "Ja, vielleicht sogar noch mehr: Mit weniger Mitteln muss jede Botschaft genau sitzen. Eine klare Strategie verhindert das Verzetteln und macht Ihre gesamte Kommunikation wirksamer." },
+          { q: "Muss man die Strategie vor dem Logo machen?", a: "Idealerweise ja: Das Visuelle leitet sich aus der Positionierung ab. Wir können beides jedoch parallel führen, wenn das Projekt es erfordert. Die Strategie bleibt der Kompass." },
+        ],
+      },
+    ],
+    "automatisation-ia": [
+      {
+        slug: "automatisation-workflows",
+        illustration: "automatisation-workflows",
+        title: "Automatisierung von Workflows",
+        tagline: "Ihre Routineaufgaben, ganz von selbst ausgeführt — rund um die Uhr, ohne Fehler.",
+        short:
+          "Wir verbinden Ihre Tools und automatisieren die manuellen Aufgaben: Nachfassen, Synchronisierungen, Benachrichtigungen, Reportings. Ihre Teams konzentrieren sich auf das, was wirklich zählt.",
+        bullets: [
+          "Kartierung Ihrer Prozesse",
+          "Anbindung Ihrer Tools (Make, n8n, Zapier)",
+          "Maßgeschneiderte Trigger & Szenarien",
+          "Überwachung & Alarme bei Störungen",
+        ],
+        metaTitle: "Automatisierung von Workflows in Luxemburg | vortx",
+        metaDescription:
+          "Automatisierung von Workflows für Luxemburger Unternehmen: Make, n8n, Zapier. Verbinden Sie Ihre Tools, beseitigen Sie manuelle Aufgaben und gewinnen Sie jede Woche Stunden.",
+        intro: [
+          "Wie viele Stunden verbringen Ihre Teams damit, Daten von einem Tool ins andere zu kopieren, nachzufassen, zu benachrichtigen, Tabellen zu aktualisieren? Diese Routineaufgaben kosten viel und erzeugen Fehler. Automatisierung lässt sie verschwinden.",
+          "Wir kartieren Ihre Prozesse, identifizieren, was sich automatisieren lässt, und verbinden dann Ihre Tools (Make, n8n, Zapier) mit maßgeschneiderten Szenarien. Alles überwacht, mit Alarmen bei Störungen — damit es ohne Überraschung läuft.",
+        ],
+        included: [
+          { icon: "automation", title: "Kartierung der Prozesse", desc: "Wir analysieren Ihre Abläufe, um zu erkennen, wo Automatisierung am meisten Zeit spart." },
+          { icon: "integration", title: "Anbindung der Tools", desc: "Make, n8n, Zapier: Wir verbinden Ihre Anwendungen, damit sie endlich miteinander sprechen." },
+          { icon: "ai-build", title: "Maßgeschneiderte Szenarien", desc: "Automatisierungen, gestaltet für Ihren präzisen Fall, keine generischen Rezepte." },
+          { icon: "analytics", title: "Überwachung & Alarme", desc: "Verfolgung der Ausführungen und Alarme bei Störungen: Es läuft ohne blinden Fleck." },
+        ],
+        deliverables: [
+          "Kartierung der zu automatisierenden Prozesse",
+          "Konfigurierte Automatisierungs-Szenarien",
+          "Verbindungen zwischen Ihren Tools",
+          "Dokumentation & Überwachung der Workflows",
+        ],
+        faq: [
+          { q: "Muss ich meine aktuellen Tools wechseln?", a: "Selten. Automatisierung verbindet Ihre bestehenden Tools miteinander. Wir gehen von Ihrem Stack aus und ergänzen die Schicht, die sie kommunizieren lässt." },
+          { q: "Was passiert, wenn eine Automatisierung ausfällt?", a: "Wir richten eine Überwachung mit Alarmen ein: Bei einer Störung werden Sie (und wir) sofort benachrichtigt. Wir können auch die Wartung übernehmen." },
+        ],
+      },
+      {
+        slug: "agents-assistants-ia",
+        illustration: "agents-assistants-ia",
+        title: "Maßgeschneiderte KI-Agenten & -Assistenten",
+        tagline: "KI-Mitarbeiter, die denken, entscheiden und handeln.",
+        short:
+          "Über den einfachen Chatbot hinaus: KI-Agenten, verbunden mit Ihren Daten und Ihren Tools, fähig, komplexe Aufgaben auszuführen — mit den nötigen Schutzmechanismen.",
+        bullets: [
+          "Mit Ihren Daten verbundene Agenten",
+          "Interne Assistenten (HR, Support, Finanzen)",
+          "Wissensbasis (RAG)",
+          "Schutzmechanismen & menschliche Freigabe",
+        ],
+        metaTitle: "Maßgeschneiderte KI-Agenten & -Assistenten in Luxemburg | vortx",
+        metaDescription:
+          "Erstellung maßgeschneiderter KI-Agenten und -Assistenten in Luxemburg: verbunden mit Ihren Daten (RAG), handlungsfähig, mit Schutzmechanismen. Die KI, die wirklich für Ihr Unternehmen arbeitet.",
+        intro: [
+          "Ein KI-Agent begnügt sich nicht damit zu antworten: Er versteht eine Anfrage, holt die Information aus Ihren Daten, denkt und führt Aktionen aus. Das ist der Unterschied zwischen einer Spielerei und einem echten digitalen Mitarbeiter.",
+          "Wir gestalten Agenten und Assistenten, trainiert auf Ihren Kontext (Ihre Dokumente, Ihre Prozesse), verbunden mit Ihren Tools, mit einer Wissensbasis (RAG) und Schutzmechanismen: menschliche Freigabe bei sensiblen Aktionen, DSGVO-Einhaltung, Nachvollziehbarkeit.",
+        ],
+        included: [
+          { icon: "ai-agent", title: "Autonome Agenten", desc: "Agenten, die verstehen, denken und mit Ihren Tools verbundene Aufgaben ausführen." },
+          { icon: "ai-build", title: "Interne Assistenten", desc: "Für Support, HR, Finanzen: ein Assistent, der Ihre Prozesse kennt." },
+          { icon: "geo-citation", title: "Wissensbasis (RAG)", desc: "An Ihre Dokumente angebunden für verlässliche und belegte Antworten, nicht erfunden." },
+          { icon: "rgpd", title: "Schutzmechanismen & DSGVO", desc: "Menschliche Freigabe bei sensiblen Aktionen, Vertraulichkeit und Nachvollziehbarkeit." },
+        ],
+        deliverables: [
+          "Klärung der Anwendungsfälle & Daten",
+          "Entwickelter & angebundener KI-Agent/-Assistent",
+          "Wissensbasis & Schutzmechanismen",
+          "Tests, Dokumentation & Begleitung",
+        ],
+        faq: [
+          { q: "Besteht die Gefahr, dass die KI Antworten erfindet?", a: "Genau dieses Risiko neutralisieren wir mit einer Wissensbasis (RAG): Der Agent antwortet auf Basis Ihrer Dokumente und zitiert seine Quellen. Bei sensiblen Aktionen ist eine menschliche Freigabe erforderlich." },
+          { q: "Bleiben meine Daten vertraulich?", a: "Ja. Wir gestalten jeden Agenten unter Einhaltung der DSGVO, mit großer Aufmerksamkeit für die Vertraulichkeit und die Wahl der Modelle und des Hostings." },
+        ],
+      },
+      {
+        slug: "chatbots-ia",
+        illustration: "chatbots-ia",
+        title: "KI-Chatbots & -Voicebots",
+        tagline: "Antworten, qualifizieren und buchen Sie automatisch, rund um die Uhr.",
+        short:
+          "Intelligente Chatbots und Voicebots, die Ihren Besuchern antworten, Anfragen qualifizieren und Termine vereinbaren — auf Ihrer Website wie auf WhatsApp.",
+        bullets: [
+          "Mehrsprachiger Website-Chatbot",
+          "WhatsApp & Messenger",
+          "Voicebot für eingehende Anrufe",
+          "Intelligente Weiterleitung an einen Menschen",
+        ],
+        metaTitle: "Erstellung von KI-Chatbots & -Voicebots in Luxemburg | vortx",
+        metaDescription:
+          "KI-Chatbots und -Voicebots für Luxemburger Unternehmen: Website, WhatsApp, eingehende Anrufe, mehrsprachig. Antworten, qualifizieren und buchen Sie automatisch, rund um die Uhr.",
+        intro: [
+          "Ein Besucher, der keine Antwort findet, geht wieder. Ein verpasster Anruf ist ein verlorener Kunde. Ein gut gestalteter KI-Chatbot antwortet sofort, zu jeder Uhrzeit, in der Sprache des Besuchers — und schläft nie.",
+          "Wir setzen Chatbots und Voicebots ein, die mit Ihrem Kontext verbunden sind: Sie beantworten häufige Fragen, qualifizieren Anfragen, vereinbaren Termine und leiten an einen Menschen weiter, wenn es sinnvoll ist. Auf Ihrer Website, auf WhatsApp oder am Telefon.",
+        ],
+        included: [
+          { icon: "chatbot", title: "Mehrsprachiger Chatbot", desc: "Auf Ihrer Website antwortet er in FR/DE/EN und qualifiziert die Besucher laufend." },
+          { icon: "integration", title: "WhatsApp & Messenger", desc: "Dort, wo Ihre Kunden sind: Wir setzen den Bot auf ihren bevorzugten Kanälen ein." },
+          { icon: "ai-agent", title: "Telefon-Voicebot", desc: "Ein Sprachagent, der abnimmt, informiert und eingehende Anrufe lenkt." },
+          { icon: "leads", title: "Intelligente Weiterleitung", desc: "Wenn es nützlich ist, übergibt der Bot mit dem gesamten Kontext an einen Menschen." },
+        ],
+        deliverables: [
+          "Gestaltung der Szenarien & des Tons",
+          "Mit Ihren Inhalten verbundener Chatbot/Voicebot",
+          "Einsatz auf Ihren Kanälen (Web, WhatsApp…)",
+          "Verfolgung der Gespräche & Optimierung",
+        ],
+        faq: [
+          { q: "Kann der Chatbot wirklich einen Menschen ersetzen?", a: "Für häufige Fragen und die Qualifizierung ja — rund um die Uhr und sofort. Für komplexe Fälle leitet er mit dem Kontext an einen Menschen weiter. Das Ziel ist, Ihre Teams zu entlasten, nicht zu entmenschlichen." },
+          { q: "Ist er mehrsprachig?", a: "Ja, das ist in Luxemburg sogar ein großer Vorteil: Der Bot erkennt die Sprache des Besuchers und antwortet in FR, DE oder EN." },
+        ],
+      },
+      {
+        slug: "integrations-crm-api",
+        illustration: "integrations-crm-api",
+        title: "CRM- & API-Integrationen",
+        tagline: "Alle Ihre Tools endlich verbunden, Ihre Daten synchronisiert.",
+        short:
+          "Schluss mit Doppelerfassungen und Silos: Wir verbinden Ihre Website, Ihr CRM und Ihre Fachsoftware für einen reibungslosen und zuverlässigen Datenfluss, in Echtzeit.",
+        bullets: [
+          "CRM-Anbindung (HubSpot, Salesforce…)",
+          "Synchronisierung zwischen Softwares",
+          "Maßgeschneiderte API & Webhooks",
+          "Schluss mit Doppelerfassungen",
+        ],
+        metaTitle: "CRM- & API-Integrationen in Luxemburg | vortx",
+        metaDescription:
+          "CRM- und API-Integrationen für Luxemburger Unternehmen: HubSpot, Salesforce, Pipedrive. Synchronisieren Sie Ihre Tools, beseitigen Sie Silos und Doppelerfassungen.",
+        intro: [
+          "Ihre Daten sind verstreut: ein Lead im Formular der Website, ein anderer in der Tabelle, ein dritter im CRM. Diese Zersplitterung kostet Zeit, erzeugt Fehler und lässt Chancen durchrutschen.",
+          "Wir verbinden Ihre Tools, damit sie dieselbe Sprache sprechen: Ihre Website speist Ihr CRM, Ihr CRM synchronisiert sich mit Ihrer Fachsoftware, und alles aktualisiert sich in Echtzeit. Über bestehende Konnektoren oder maßgeschneiderte APIs, wenn nötig.",
+        ],
+        included: [
+          { icon: "integration", title: "CRM-Anbindung", desc: "HubSpot, Salesforce, Pipedrive… wir verbinden Ihr CRM mit Ihrer Website und Ihren Tools." },
+          { icon: "automation", title: "Echtzeit-Synchronisierung", desc: "Ihre Daten überall aktuell, ohne manuellen Eingriff und ohne Verzögerung." },
+          { icon: "ai-build", title: "Maßgeschneiderte API & Webhooks", desc: "Wenn kein Standard-Konnektor existiert, entwickeln wir die Integration maßgeschneidert." },
+          { icon: "analytics", title: "Zuverlässigkeit der Daten", desc: "Schluss mit Doppelerfassungen und Silos: eine einzige Wahrheitsquelle, richtige Entscheidungen." },
+        ],
+        deliverables: [
+          "Audit Ihrer Tools & Datenflüsse",
+          "Konfigurierte Integrationen & Konnektoren",
+          "Maßgeschneiderte APIs/Webhooks bei Bedarf",
+          "Tests, Dokumentation & Überwachung",
+        ],
+        faq: [
+          { q: "Und wenn meine Software keinen fertigen Konnektor hat?", a: "Wir entwickeln eine maßgeschneiderte Integration über ihre API oder Webhooks. Die meisten professionellen Tools stellen eine API bereit: Wir binden uns sauber an." },
+          { q: "Sind meine Daten während der Synchronisierung sicher?", a: "Ja. Die Integrationen sind unter Einhaltung der DSGVO konzipiert, mit sicheren Verbindungen und einer feinen Zugriffsverwaltung." },
+        ],
+      },
+      {
+        slug: "ia-contenu-generatif",
+        illustration: "ia-contenu-generatif",
+        title: "Generative KI für Content",
+        tagline: "Produzieren Sie Artikel, E-Mails und Markenvisuals, in großem Maßstab.",
+        short:
+          "Setzen Sie generative KI in den Dienst Ihres Contents — Artikel, Newsletter, Antworten, Visuals — und behalten Sie dabei Ihre Markentonalität und eine menschliche redaktionelle Freigabe.",
+        bullets: [
+          "Generierung von Artikeln & Newslettern",
+          "Personalisierte Antworten & E-Mails",
+          "Visuals & Social-Media-Ableitungen",
+          "Redaktionelle Freigabe & Markentonalität",
+        ],
+        metaTitle: "Generative KI für Content in Luxemburg | vortx",
+        metaDescription:
+          "Generative KI für Content in Luxemburg: Artikel, Newsletter, E-Mails und Visuals in Ihrer Markentonalität, in mehreren Sprachen. Produzieren Sie mehr, ohne die Qualität zu opfern.",
+        intro: [
+          "Qualitativen Content regelmäßig und in mehreren Sprachen zu produzieren ist eine Herausforderung an Zeit und Mitteln. Generative KI verändert das Spiel: Sie beschleunigt die Produktion und bewahrt zugleich Ihre Stimme — vorausgesetzt, sie ist gut eingerahmt.",
+          "Wir richten maßgeschneiderte Generierungs-Workflows ein (Artikel, E-Mails, Social-Media-Visuals), trainiert auf Ihre Markentonalität, mit einer Etappe der menschlichen redaktionellen Freigabe. Mehr produzieren, schneller, ohne in generischen Content zu verfallen.",
+        ],
+        included: [
+          { icon: "gen-content", title: "Artikel & Newsletter", desc: "Redaktioneller Content, in Ihrem Rhythmus produziert, in Ihrem Ton, fertig zum Gegenlesen." },
+          { icon: "email-automation", title: "Personalisierte E-Mails", desc: "Maßgeschneiderte Antworten und E-Mails, in großem Maßstab generiert, ohne den menschlichen Touch zu verlieren." },
+          { icon: "branding", title: "Social-Media-Visuals", desc: "Grafische Ableitungen, kohärent mit Ihrer Identität, für Ihre Netzwerke." },
+          { icon: "multilingual", title: "Mehrsprachig & geprüft", desc: "Produktion in FR/DE/EN mit redaktioneller Freigabe: Qualität und Ton garantiert." },
+        ],
+        deliverables: [
+          "Maßgeschneiderte Generierungs-Workflows",
+          "Auf Ihre Markentonalität trainierte Modelle",
+          "Prozess der redaktionellen Freigabe",
+          "Schulung & Begleitung Ihrer Teams",
+        ],
+        faq: [
+          { q: "Wird KI-Content nicht von Google abgestraft?", a: "Was Google abstraft, ist Content ohne Wert — nicht das verwendete Werkzeug. Unser Ansatz kombiniert Generierung und menschliche Freigabe für nützlichen, originellen und optimierten Content. Es zählt die Qualität." },
+          { q: "Behält der Content wirklich meinen Ton?", a: "Ja, das ist der ganze Sinn. Wir trainieren die Modelle auf Ihre Inhalte und Ihren Stil, und ein menschliches Gegenlesen garantiert die Kohärenz vor der Veröffentlichung." },
         ],
       },
     ],

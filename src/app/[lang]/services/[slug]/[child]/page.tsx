@@ -10,6 +10,8 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
+import { ServiceMethod } from "@/components/sections/ServiceMethod";
+import { ServiceProof } from "@/components/sections/ServiceProof";
 import { subServiceIllustration } from "@/components/illustrations/map";
 import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
@@ -210,6 +212,9 @@ export default async function SubServicePage({
           </div>
         </div>
       </Section>
+
+      <ServiceMethod content={sd.method} />
+      <ServiceProof content={sd.proof} />
 
       <ContactCta dict={dict} lang={lang} />
 
