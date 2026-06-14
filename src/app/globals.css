@@ -545,6 +545,39 @@
     opacity: 1;
   }
 }
+
+/* Mobile nav affordance hint — plays once each time the menu opens (the panel
+   remounts, so the animation re-runs). First the service row (title + diagonal
+   arrow) flashes a pale lime; once that's done, the expand chevron flashes a
+   slightly stronger lime — teaching that both the row and the chevron are
+   tappable. Honoured by the global prefers-reduced-motion rule above. */
+@keyframes mobnavHintRow {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  35%,
+  55% {
+    background-color: rgba(200, 240, 46, 0.5);
+  }
+}
+@keyframes mobnavHintToggle {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  35%,
+  65% {
+    background-color: rgba(200, 240, 46, 0.75);
+  }
+}
+.mobnav-hint-row {
+  animation: mobnavHintRow 1s ease-in-out 0.15s 1 both;
+}
+.mobnav-hint-toggle {
+  /* starts after the row flash (0.15s + 1s) finishes */
+  animation: mobnavHintToggle 0.9s ease-in-out 1.2s 1 both;
+}
 @keyframes floatY {
   0%,
   100% {

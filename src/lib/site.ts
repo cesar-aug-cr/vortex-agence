@@ -52,12 +52,41 @@ export const serviceSlugs = [
   "automatisation-ia",
 ] as const;
 
-/** Service sub-pages (children of a parent service slug). */
+/**
+ * Sub-services temporarily hidden from navigation, grids, generated routes
+ * and the sitemap. Remove a slug here to bring the page back (its translated
+ * content stays in the dictionaries).
+ */
+export const hiddenSubServices: ReadonlySet<string> = new Set(["application-web"]);
+
+/** Service sub-pages (children of a parent service slug). Excludes hidden ones. */
 export const subServiceRoutes = [
   { parent: "publicite", child: "google-ads" },
   { parent: "publicite", child: "meta-ads" },
+  { parent: "publicite", child: "linkedin-ads" },
   { parent: "seo-geo", child: "seo" },
   { parent: "seo-geo", child: "geo-gso" },
+  { parent: "seo-geo", child: "seo-local" },
+  { parent: "sites-web", child: "site-vitrine" },
+  { parent: "sites-web", child: "site-e-commerce" },
+  { parent: "sites-web", child: "landing-pages" },
+  { parent: "sites-web", child: "refonte-de-site" },
+  { parent: "sites-web", child: "site-multilingue" },
+  { parent: "lead-generation", child: "tunnels-de-conversion" },
+  { parent: "lead-generation", child: "landing-pages-campagne" },
+  { parent: "lead-generation", child: "email-marketing-automation" },
+  { parent: "lead-generation", child: "lead-nurturing-scoring" },
+  { parent: "lead-generation", child: "optimisation-conversion-cro" },
+  { parent: "branding-design", child: "creation-de-logo" },
+  { parent: "branding-design", child: "identite-visuelle" },
+  { parent: "branding-design", child: "charte-graphique" },
+  { parent: "branding-design", child: "supports-print" },
+  { parent: "branding-design", child: "strategie-de-marque-naming" },
+  { parent: "automatisation-ia", child: "automatisation-workflows" },
+  { parent: "automatisation-ia", child: "agents-assistants-ia" },
+  { parent: "automatisation-ia", child: "chatbots-ia" },
+  { parent: "automatisation-ia", child: "integrations-crm-api" },
+  { parent: "automatisation-ia", child: "ia-contenu-generatif" },
 ] as const;
 
 /** Top-level routes (relative to /<lang>) used for the sitemap. */

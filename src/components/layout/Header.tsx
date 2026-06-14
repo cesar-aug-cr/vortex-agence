@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
+import { hiddenSubServices } from "@/lib/site";
 import { LogoMark } from "@/components/brand/LogoMark";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
@@ -24,6 +25,14 @@ export function Header({
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Mobile nav: which main services have their sub-services expanded.
+  const [openServices, setOpenServices] = useState<Set<string>>(new Set());
+  const toggleService = (slug: string) =>
+    setOpenServices((prev) => {
+      const next = new Set(prev);
+      next.has(slug) ? next.delete(slug) : next.add(slug);
+      return next;
+    });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -34,6 +43,9 @@ export function Header({
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+    // Collapse every expanded sub-list when the menu closes, so each open
+    // starts fresh (and the one-time hint animation reads cleanly).
+    if (!mobileOpen) setOpenServices(new Set());
     return () => {
       document.body.style.overflow = "";
     };
@@ -100,7 +112,9 @@ export function Header({
                               <ul className="mt-3 space-y-3">
                                 {g.services.map((s) => {
                                   const subs =
-                                    (dict.subServices as Record<string, readonly { slug: string; title: string }[]>)[s.slug] ?? [];
+                                    ((dict.subServices as Record<string, readonly { slug: string; title: string }[]>)[s.slug] ?? []).filter(
+                                      (c) => !hiddenSubServices.has(c.slug)
+                                    );
                                   return (
                                     <li key={s.slug}>
                                       <Link
@@ -270,18 +284,69 @@ export function Header({
           <nav className="container-vortx py-8">
             <p className="eyebrow">{dict.nav.services}</p>
             <ul className="mt-4 grid gap-1">
-              {dict.services.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={localized(lang, `/services/${s.slug}`)}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-between border-b border-border py-3 text-text"
-                  >
-                    {s.title}
-                    <ArrowUpRight width={16} height={16} className="text-text-muted" />
-                  </Link>
-                </li>
-              ))}
+              {dict.services.map((s) => {
+                const subs = (
+                  (dict.subServices as Record<string, readonly { slug: string; title: string }[]>)[s.slug] ?? []
+                ).filter((c) => !hiddenSubServices.has(c.slug));
+                const open = openServices.has(s.slug);
+                return (
+                  <li key={s.slug} className="border-b border-border">
+                    <div className="flex items-center justify-between gap-2">
+                      <Link
+                        href={localized(lang, `/services/${s.slug}`)}
+                        onClick={() => setMobileOpen(false)}
+                        className="mobnav-hint-row group flex flex-1 items-center gap-1.5 rounded-lg px-2 py-3 text-text"
+                      >
+                        {s.title}
+                        <ArrowUpRight
+                          width={16}
+                          height={16}
+                          className="text-text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                      </Link>
+                      {subs.length > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => toggleService(s.slug)}
+                          aria-expanded={open}
+                          aria-label={s.title}
+                          className="mobnav-hint-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-text-muted transition-colors hover:text-accent"
+                        >
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden
+                            className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+                          >
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                    {subs.length > 0 && open && (
+                      <ul className="mb-3 ml-2 grid gap-0.5 border-l border-border pl-3">
+                        {subs.map((c) => (
+                          <li key={c.slug}>
+                            <Link
+                              href={localized(lang, `/services/${s.slug}/${c.slug}`)}
+                              onClick={() => setMobileOpen(false)}
+                              className="block py-2 text-sm text-text-dim transition-colors hover:text-accent"
+                            >
+                              {c.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             <ul className="mt-8 grid gap-1 text-lg font-medium">

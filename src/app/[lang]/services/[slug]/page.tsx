@@ -5,7 +5,7 @@ import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { localized } from "@/lib/locale";
 import { buildMetadata } from "@/lib/metadata";
-import { site, serviceSlugs } from "@/lib/site";
+import { site, serviceSlugs, hiddenSubServices } from "@/lib/site";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -59,9 +59,9 @@ export default async function ServiceDetailPage({
   const packs =
     service.slug === "sites-web" ? dict.serviceContent["sites-web"].packsIncluded : null;
   const subs =
-    (dict.subServices as Record<string, ReadonlyArray<{ slug: string; illustration: string; title: string; tagline: string; bullets: readonly string[] }>>)[
+    ((dict.subServices as Record<string, ReadonlyArray<{ slug: string; illustration: string; title: string; tagline: string; bullets: readonly string[] }>>)[
       service.slug
-    ] ?? [];
+    ] ?? []).filter((s) => !hiddenSubServices.has(s.slug));
 
   const serviceJsonLd = {
     "@context": "https://schema.org",

@@ -5,7 +5,7 @@ import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary, type Dictionary } from "@/i18n/getDictionary";
 import { localized } from "@/lib/locale";
 import { buildMetadata } from "@/lib/metadata";
-import { site } from "@/lib/site";
+import { site, hiddenSubServices } from "@/lib/site";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -27,7 +27,9 @@ export async function generateStaticParams() {
   const dict = await getDictionary(i18n.defaultLocale);
   return i18n.locales.flatMap((lang) =>
     Object.entries(dict.subServices).flatMap(([slug, children]) =>
-      children.map((c) => ({ lang, slug, child: c.slug }))
+      children
+        .filter((c) => !hiddenSubServices.has(c.slug))
+        .map((c) => ({ lang, slug, child: c.slug }))
     )
   );
 }
@@ -59,7 +61,7 @@ export default async function SubServicePage({
   const lang: Locale = isLocale(raw) ? raw : i18n.defaultLocale;
   const dict = await getDictionary(lang);
   const sub = getSub(dict, slug, child);
-  if (!sub) notFound();
+  if (!sub || hiddenSubServices.has(child)) notFound();
 
   const parent = dict.services.find((s) => s.slug === slug);
   const Illu = subServiceIllustration[sub.illustration];

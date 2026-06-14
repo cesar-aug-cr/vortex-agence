@@ -4,7 +4,6 @@ import { SeoGeo } from "./SeoGeo";
 import { LeadGeneration } from "./LeadGeneration";
 import { Publicite } from "./Publicite";
 import { BrandingDesign } from "./BrandingDesign";
-import { AutomatisationIa } from "./AutomatisationIa";
 import { GoogleAds } from "./GoogleAds";
 import { MetaAds } from "./MetaAds";
 import { Seo } from "./Seo";
@@ -40,7 +39,9 @@ export const serviceIllustration: Record<string, FC<{ className?: string }>> = {
   "lead-generation": LeadGeneration,
   publicite: Publicite,
   "branding-design": BrandingDesign,
-  "automatisation-ia": AutomatisationIa,
+  // Temporarily uses the "Applications & plateformes sur-mesure" visual
+  // (the application-web sub-service is hidden for now — see lib/site.ts).
+  "automatisation-ia": ApplicationWeb,
 };
 
 /** illustration key → component, for service sub-pages (Google/Meta Ads…). */
