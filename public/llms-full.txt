@@ -18,15 +18,23 @@ Principes :
 - Prêt pour l'IA : SEO + GEO/GSO pour être cité par Google ET par les IA génératives.
 
 ## Services
-vortx propose six expertises qui s'emboîtent.
+vortx propose six expertises qui s'emboîtent. Chacune se décline en spécialités
+ciblées (sous-services), à prendre seules ou combinées.
 
 ### Sites web qui convertissent
-Sites vitrines, landing pages et plateformes sur mesure en Next.js. Performance,
-design premium et tunnels de conversion intégrés.
-- Développement Next.js ultra-rapide
+Sites vitrines, landing pages et plateformes sur mesure en Next.js — ou sur
+WordPress quand vous voulez garder la main. Performance, design premium et
+tunnels de conversion intégrés.
+- Développement Next.js ultra-rapide (ou WordPress)
 - Design sur mesure, mobile-first
 - Formulaires intelligents multi-étapes
 - 100 % responsive et accessible
+Sous-services :
+- Site vitrine sur-mesure : la vitrine digitale qui inspire confiance.
+- Site e-commerce : boutiques en ligne avec tunnel d'achat optimisé.
+- Landing pages haute conversion : une page, un objectif, un maximum de leads.
+- Refonte de site web : refonte design + technique, sans perte de SEO.
+- Sites multilingues FR/DE/EN/LU : SEO localisé par langue (hreflang).
 
 ### SEO & GEO / GSO
 Référencement naturel technique et éditorial, étendu à l'ère des moteurs
@@ -35,6 +43,10 @@ génératifs (GEO/GSO) : être la réponse, pas le lien n°7.
 - Contenu optimisé FR/DE/EN
 - Schémas LLM-ready et données structurées
 - Suivi de positions et de citations IA
+Sous-services :
+- SEO : être trouvé sur Google, durablement.
+- GEO / GSO : être la source citée par ChatGPT, Perplexity et Google AI.
+- SEO local & Google Business Profile : dominer les recherches « près de moi ».
 
 ### Génération de leads
 Un système d'acquisition complet : site optimisé, tunnels, campagnes et
@@ -43,6 +55,12 @@ automatisation pour remplir l'agenda de prospects qualifiés.
 - Landing pages par campagne
 - Qualification et scoring des leads
 - Reporting clair sur le coût par lead
+Sous-services :
+- Tunnels de conversion : du premier clic au devis signé (TOFU/MOFU/BOFU).
+- Landing pages de campagne : transformer le trafic payant en demandes.
+- Email marketing & automation : séquences de nurturing automatisées.
+- Lead nurturing & scoring : qualifier et réchauffer (MQL → SQL).
+- Optimisation du taux de conversion (CRO) : plus de leads à trafic égal.
 
 ### Publicité en ligne
 Campagnes Google Ads, Meta et LinkedIn pilotées par la donnée.
@@ -50,13 +68,24 @@ Campagnes Google Ads, Meta et LinkedIn pilotées par la donnée.
 - Meta Ads (Facebook et Instagram)
 - LinkedIn Ads B2B
 - Optimisation continue du ROAS
+Sous-services :
+- Google Ads : capter la demande au moment exact où elle s'exprime.
+- Meta Ads : créer la demande sur Facebook, Instagram et Threads.
+- LinkedIn Ads : toucher les décideurs B2B (ABM, Lead Gen Forms).
 
-### Identité & design
-Identité visuelle, direction artistique et systèmes de design.
-- Logo et identité de marque
-- Direction artistique
-- Design system et UI/UX
+### Création de logos & branding
+Logo sur mesure, identité visuelle complète et charte de marque. La cohérence
+qui inspire confiance avant même le premier mot.
+- Création de logo sur mesure
+- Identité visuelle complète
+- Charte graphique et règles d'usage
 - Déclinaisons print et digital
+Sous-services :
+- Création de logo : un symbole unique et mémorable.
+- Identité visuelle complète : couleurs, typographies, iconographie, direction artistique.
+- Charte graphique & brand guidelines : les règles d'usage de la marque.
+- Supports print & papeterie : cartes, brochures, rapports, signalétique.
+- Stratégie de marque & naming : positionnement, plateforme de marque, ton de voix.
 
 ### Automatisation & IA
 Workflows automatisés, intégrations et agents IA sur mesure.
@@ -64,6 +93,12 @@ Workflows automatisés, intégrations et agents IA sur mesure.
 - Agents et assistants IA sur mesure
 - Intégrations CRM et outils
 - Chatbots et widgets intelligents
+Sous-services :
+- Automatisation des workflows : connecter vos outils (Make, n8n, Zapier).
+- Agents & assistants IA sur mesure : des agents connectés à vos données (RAG).
+- Chatbots & voicebots IA : répondre, qualifier et réserver 24/7 (web, WhatsApp).
+- Intégrations CRM & API : synchroniser vos outils, supprimer les silos.
+- IA générative pour le contenu : articles, emails, visuels à votre ton de marque.
 
 ## Méthode
 1. Diagnostic — analyse du marché, des objectifs et du tunnel actuel.

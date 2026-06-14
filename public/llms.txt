@@ -6,21 +6,52 @@
 > Multilingue (FR/DE/EN). Réponse rapide, audit gratuit, sans engagement.
 
 ## Services
-- [Sites web qui convertissent](https://vortx.lu/fr/services/sites-web) : sites rapides en Next.js, orientés conversion.
+- [Sites web qui convertissent](https://vortx.lu/fr/services/sites-web) : sites rapides en Next.js ou WordPress, orientés conversion.
+  - [Site vitrine sur-mesure](https://vortx.lu/fr/services/sites-web/site-vitrine)
+  - [Site e-commerce](https://vortx.lu/fr/services/sites-web/site-e-commerce)
+  - [Landing pages haute conversion](https://vortx.lu/fr/services/sites-web/landing-pages)
+  - [Refonte de site web](https://vortx.lu/fr/services/sites-web/refonte-de-site)
+  - [Sites multilingues FR/DE/EN/LU](https://vortx.lu/fr/services/sites-web/site-multilingue)
 - [SEO & GEO / GSO](https://vortx.lu/fr/services/seo-geo) : référencement Google + optimisation pour les IA génératives.
+  - [SEO](https://vortx.lu/fr/services/seo-geo/seo)
+  - [GEO / GSO](https://vortx.lu/fr/services/seo-geo/geo-gso)
+  - [SEO local & Google Business Profile](https://vortx.lu/fr/services/seo-geo/seo-local)
 - [Génération de leads](https://vortx.lu/fr/services/lead-generation) : système d'acquisition de prospects qualifiés.
+  - [Tunnels de conversion](https://vortx.lu/fr/services/lead-generation/tunnels-de-conversion)
+  - [Landing pages de campagne](https://vortx.lu/fr/services/lead-generation/landing-pages-campagne)
+  - [Email marketing & automation](https://vortx.lu/fr/services/lead-generation/email-marketing-automation)
+  - [Lead nurturing & scoring](https://vortx.lu/fr/services/lead-generation/lead-nurturing-scoring)
+  - [Optimisation du taux de conversion (CRO)](https://vortx.lu/fr/services/lead-generation/optimisation-conversion-cro)
 - [Publicité en ligne](https://vortx.lu/fr/services/publicite) : Google Ads, Meta Ads, LinkedIn Ads pilotées par la donnée.
-- [Identité & design](https://vortx.lu/fr/services/branding-design) : identité de marque, direction artistique, design system.
+  - [Google Ads](https://vortx.lu/fr/services/publicite/google-ads)
+  - [Meta Ads](https://vortx.lu/fr/services/publicite/meta-ads)
+  - [LinkedIn Ads](https://vortx.lu/fr/services/publicite/linkedin-ads)
+- [Création de logos & branding](https://vortx.lu/fr/services/branding-design) : logo, identité de marque, charte graphique.
+  - [Création de logo](https://vortx.lu/fr/services/branding-design/creation-de-logo)
+  - [Identité visuelle complète](https://vortx.lu/fr/services/branding-design/identite-visuelle)
+  - [Charte graphique & brand guidelines](https://vortx.lu/fr/services/branding-design/charte-graphique)
+  - [Supports print & papeterie](https://vortx.lu/fr/services/branding-design/supports-print)
+  - [Stratégie de marque & naming](https://vortx.lu/fr/services/branding-design/strategie-de-marque-naming)
 - [Automatisation & IA](https://vortx.lu/fr/services/automatisation-ia) : workflows automatisés, agents IA, intégrations.
+  - [Automatisation des workflows](https://vortx.lu/fr/services/automatisation-ia/automatisation-workflows)
+  - [Agents & assistants IA sur mesure](https://vortx.lu/fr/services/automatisation-ia/agents-assistants-ia)
+  - [Chatbots & voicebots IA](https://vortx.lu/fr/services/automatisation-ia/chatbots-ia)
+  - [Intégrations CRM & API](https://vortx.lu/fr/services/automatisation-ia/integrations-crm-api)
+  - [IA générative pour le contenu](https://vortx.lu/fr/services/automatisation-ia/ia-contenu-generatif)
 
 ## Pages
 - [Accueil](https://vortx.lu/fr)
+- [Tous les services](https://vortx.lu/fr/services)
 - [Notre méthode](https://vortx.lu/fr/approche) : diagnostic, conception, revue, lancement.
 - [L'agence](https://vortx.lu/fr/agence)
 - [Réalisations](https://vortx.lu/fr/realisations)
+- [FAQ](https://vortx.lu/fr/faq)
+- [Glossaire](https://vortx.lu/fr/glossaire)
+- [News](https://vortx.lu/fr/news)
 - [Contact / audit gratuit](https://vortx.lu/fr/contact)
 
 ## Notes
 - Zone desservie : Luxembourg (et Grande Région).
+- Multilingue : FR, DE, EN (Lëtzebuergesch sur demande). Versions DE sous /de/leistungen/…
 - Tarifs : sur devis après appel découverte gratuit ; pas de grille publique.
 - Contact : voir la page de contact pour réserver un appel.
