@@ -59,7 +59,7 @@ export function HeroParticles() {
           one top-right. A third sits next to "Luxembourg" in the headline. */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* bottom-right star — slightly smaller on phones, full size on desktop */}
-        <GlowStar className="left-[80%] top-[74%] md:hidden" scale={0.8} delay={0} />
+        <GlowStar className="left-[80%] top-[74%] opacity-50 md:hidden" scale={0.5} delay={0} />
         <GlowStar className="left-[80%] top-[74%] hidden md:block" scale={1} delay={0} />
         <GlowStar className="left-[90%] top-[15%] hidden md:block" scale={0.55} delay={1.6} />
       </div>

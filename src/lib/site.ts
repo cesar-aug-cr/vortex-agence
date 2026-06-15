@@ -99,6 +99,7 @@ export const mainRoutes = [
   "news",
   "glossaire",
   "faq",
+  "quiz",
   "contact",
   "mentions-legales",
   "confidentialite",
@@ -110,6 +111,7 @@ export const mainRoutes = [
  * Kept here so the sitemap stays dependency-free of the dictionary.
  */
 export const newsSlugs = [
+  "ux-ui-design-site-qui-convertit-bonnes-pratiques",
   "geo-seo-luxembourg-etre-cite-par-les-ia",
   "google-ads-ou-seo-ou-investir-budget-marketing",
   "tunnel-de-conversion-transformer-visiteurs-en-clients",

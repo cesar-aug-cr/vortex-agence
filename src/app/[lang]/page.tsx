@@ -42,7 +42,7 @@ export default async function HomePage({
           <Proof dict={dict} />
           <Reviews dict={dict} />
           <NewsTeaser dict={dict} lang={lang} />
-          <Faq dict={dict} />
+          <Faq dict={dict} lang={lang} />
           <ContactCta dict={dict} lang={lang} />
         </main>
         <Footer dict={dict} lang={lang} />

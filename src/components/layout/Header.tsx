@@ -220,6 +220,7 @@ export function Header({
                     { label: dict.nav.news, href: "/news" },
                     { label: dict.nav.glossary, href: "/glossaire" },
                     { label: dict.nav.faq, href: "/faq" },
+                    { label: dict.nav.quiz, href: "/quiz" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link
@@ -374,6 +375,7 @@ export function Header({
                 { label: dict.nav.news, href: "/news" },
                 { label: dict.nav.glossary, href: "/glossaire" },
                 { label: dict.nav.faq, href: "/faq" },
+                { label: dict.nav.quiz, href: "/quiz" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link

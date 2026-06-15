@@ -1,8 +1,11 @@
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
+import type { Locale } from "@/i18n/config";
+import { localized } from "@/lib/locale";
 import { Section } from "@/components/ui/Section";
-import { Plus } from "@/components/ui/icons";
+import { Plus, ArrowRight } from "@/components/ui/icons";
 
-export function Faq({ dict }: { dict: Dictionary }) {
+export function Faq({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -20,6 +23,13 @@ export function Faq({ dict }: { dict: Dictionary }) {
           {dict.faq.eyebrow}
         </span>
         <h2 className="mt-4 text-3xl font-bold text-text md:text-4xl">{dict.faq.title}</h2>
+        <Link
+          href={localized(lang, "/faq")}
+          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-text"
+        >
+          {dict.faq.allCta}
+          <ArrowRight width={16} height={16} className="transition-transform group-hover:translate-x-1" />
+        </Link>
       </div>
 
       <div className="divide-y divide-border border-y border-border">

@@ -134,12 +134,12 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           <Link href={localized(lang, "/contact")} className="btn btn-primary">
             {dict.hero.primaryCta}
           </Link>
-          <Link
-            href={localized(lang, "/approche")}
+          <a
+            href="#services"
             className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-stage-text transition-colors hover:border-accent hover:text-accent sm:backdrop-blur-sm"
           >
             {dict.hero.secondaryCta}
-          </Link>
+          </a>
         </div>
 
         <p className="brand-sweep mt-6 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em]">

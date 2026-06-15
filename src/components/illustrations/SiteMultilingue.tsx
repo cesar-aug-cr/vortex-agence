@@ -105,7 +105,7 @@ export function SiteMultilingue({ className }: { className?: string }) {
           <circle cx="252" cy="252" r="20" fill="none" stroke="#c8f02e" strokeWidth="1.4">
             <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" begin="3s" repeatCount="indefinite" />
           </circle>
-          <text x="252" y="257" fontFamily="monospace" fontSize="13" fontWeight="700" fill="#0a0a0b" textAnchor="middle">LU</text>
+          <text x="252" y="256" fontFamily="monospace" fontSize="8.5" fontWeight="700" fill="#0a0a0b" textAnchor="middle">AUTRE</text>
         </g>
       </g>
 

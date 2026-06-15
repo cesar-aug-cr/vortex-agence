@@ -53,6 +53,9 @@ export function ContactForm({
   const toggleService = (title: string) =>
     setSelected((s) => (s.includes(title) ? s.filter((t) => t !== title) : [...s, title]));
 
+  // Service choices + a generic "Other" option.
+  const options: ServiceOpt[] = [...services, { slug: "autre", title: form.serviceOther }];
+
   const stepTitles = [form.stepServices, form.stepDetails, form.stepMessage];
 
   async function send() {
@@ -128,21 +131,22 @@ export function ContactForm({
           <legend className="text-sm font-medium text-text">{form.servicesLabel}</legend>
           <p className="text-xs text-text-muted">{form.servicesHint}</p>
           <div className="mt-1 grid gap-3 sm:grid-cols-2">
-            {services.map((s) => {
-              const on = selected.includes(s.title);
+            {options.map((opt, i) => {
+              const on = selected.includes(opt.title);
               return (
                 <button
-                  key={s.slug}
+                  key={opt.slug}
                   type="button"
-                  onClick={() => toggleService(s.title)}
+                  onClick={() => toggleService(opt.title)}
                   aria-pressed={on}
-                  className={`flex items-center justify-between gap-3 rounded-lg border px-4 py-3 text-left text-sm transition-colors ${
+                  style={{ animationDelay: `${0.15 + i * 0.06}s` }}
+                  className={`option-hint flex items-center justify-between gap-3 rounded-lg border px-4 py-3 text-left text-sm transition-colors ${
                     on
                       ? "border-accent bg-accent-soft text-text"
                       : "border-border text-text-dim hover:border-border-strong hover:text-text"
                   }`}
                 >
-                  {s.title}
+                  {opt.title}
                   <span
                     aria-hidden
                     className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors ${

@@ -72,9 +72,36 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
             return (
               <div
                 key={i}
-                className="illu-stage flex items-center justify-center rounded-2xl border border-border py-12"
+                className="illu-stage relative flex items-center justify-center rounded-2xl border border-border py-12"
               >
                 <LogoMark className="h-14 w-auto text-text md:h-20" />
+                {block.tip && (
+                  <span className="group absolute right-3 top-3">
+                    <button
+                      type="button"
+                      aria-label={block.tipTitle ?? block.tip}
+                      className="logo-tip-glow flex h-8 w-8 items-center justify-center rounded-full border border-accent/50 bg-bg/60 text-accent outline-none backdrop-blur-sm transition-colors hover:bg-accent hover:text-accent-ink focus-visible:bg-accent focus-visible:text-accent-ink"
+                    >
+                      <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 16v-4M12 8h.01" />
+                      </svg>
+                    </button>
+                    <span
+                      role="tooltip"
+                      className="pointer-events-none absolute right-0 top-11 z-20 w-64 origin-top-right scale-95 rounded-xl border border-border bg-bg-card p-4 text-left opacity-0 shadow-[var(--shadow-lg)] transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100 sm:w-72"
+                    >
+                      {block.tipTitle && (
+                        <span className="block font-mono text-xs uppercase tracking-wide text-accent">
+                          {block.tipTitle}
+                        </span>
+                      )}
+                      <span className="mt-2 block whitespace-pre-line text-sm leading-relaxed text-text-dim">
+                        {block.tip}
+                      </span>
+                    </span>
+                  </span>
+                )}
               </div>
             );
           case "callout":

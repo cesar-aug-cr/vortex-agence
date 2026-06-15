@@ -41,6 +41,7 @@ export const en = {
     news: "News",
     glossary: "Glossary",
     faq: "FAQ",
+    quiz: "Quiz",
     contact: "Contact",
   },
 
@@ -69,7 +70,7 @@ export const en = {
     subtitle:
       "vortx builds websites and acquisition strategies that turn attention into clients. Premium design, next-generation SEO, measurable lead generation.",
     primaryCta: "Book a discovery call",
-    secondaryCta: "Discover our approach",
+    secondaryCta: "Discover our services",
     note: "Fast reply · Free audit · No commitment · 100% bespoke",
   },
 
@@ -269,7 +270,7 @@ export const en = {
     eyebrow: "Our arsenal",
     title: "The best tools, mastered in depth.",
     lead: "Marketing, code, AI, design. We pick the tool for the result, not the other way round.",
-    stat: { value: "40+", label: "tools mastered" },
+    stat: { value: "42+", label: "tools mastered" },
     categories: [
       {
         name: "Digital marketing",
@@ -281,7 +282,6 @@ export const en = {
           "Tag Manager",
           "Search Console",
           "Bing Webmaster",
-          "Matomo",
           "Ahrefs",
           "Semrush",
           "Whatagraph",
@@ -292,7 +292,7 @@ export const en = {
       },
       {
         name: "Web & code",
-        items: ["WordPress", "Divi", "CSS", "HTML", "VS Code"],
+        items: ["WordPress", "Divi", "CSS", "HTML"],
       },
       {
         name: "AI & automation",
@@ -313,7 +313,6 @@ export const en = {
           "Canva",
           "Affinity",
           "Figma",
-          "GIMP",
           "UI/UX",
           "Mockups",
         ],
@@ -382,6 +381,7 @@ export const en = {
   faq: {
     eyebrow: "Frequently asked questions",
     title: "What clients ask before getting started.",
+    allCta: "See all questions",
     items: [
       {
         q: "How much does a website or campaign cost?",
@@ -430,6 +430,7 @@ export const en = {
       stepMessage: "Your message",
       servicesLabel: "Which services are you interested in?",
       servicesHint: "Select one or more services.",
+      serviceOther: "Other",
       servicesRequired: "Select at least one service to continue.",
       consentBefore:
         "By ticking this box, I acknowledge that I have read how my personal data is processed and stored, as described in the ",
@@ -439,6 +440,44 @@ export const en = {
       error:
         "Something went wrong. Please try again or email us directly.",
     },
+  },
+
+  // ---- Quiz page (fun marketing quiz → contact) ----
+  quiz: {
+    eyebrow: "Quiz",
+    title: "Test your marketing IQ",
+    lead: "10 random questions, zero mercy. Marketing, web, SEO, ads, AI… how far will you go?",
+    intro: "Here's the deal: 10 questions, a score out of 10, and a verdict (sometimes spicy). You learn something with every answer. Ready?",
+    start: "Start the quiz",
+    questionLabel: "Question",
+    next: "Next question",
+    finish: "See my score",
+    correct: "Correct!",
+    wrong: "Wrong!",
+    didYouKnow: "Did you know?",
+    scorePrefix: "Your score",
+    replay: "Play again",
+    share: "Share my score",
+    shareDone: "Link copied!",
+    shareText: "I scored {score}/{total} on vortx's marketing quiz. Your turn 👇",
+    ctaSecondary: "See all services",
+    tiers: [
+      { min: 0, max: 3, emoji: "🌱", title: "Digital isn't (yet) your thing", message: "And that's fine — it's our job, not yours. Let us handle it.", cta: "Leave it to the pros — free audit" },
+      { min: 4, max: 6, emoji: "🧭", title: "Solid basics, a few blind spots", message: "You know where you're going; we light up the rest and speed it up.", cta: "Fill the gaps — let's talk strategy" },
+      { min: 7, max: 8, emoji: "🚀", title: "You know the drill", message: "Strong! Now to turn that know-how into real results.", cta: "Take action — no-strings quote" },
+      { min: 9, max: 9, emoji: "🏆", title: "Almost flawless, hats off", message: "Impressive. We love demanding minds (and clients).", cta: "Challenge us — book a call" },
+      { min: 10, max: 10, emoji: "👑", title: "Perfect score — are you bluffing?", message: "Either you're formidable, or you're one of us. Let's talk.", cta: "Let's team up — contact us" },
+    ],
+  },
+
+  // ---- Floating chat widget (same flow as the contact form) ----
+  chat: {
+    open: "Open chat",
+    close: "Close chat",
+    title: "vortx",
+    subtitle: "We reply fast",
+    greeting:
+      "Hi 👋 Tell us what you need — we'll get back to you quickly, no strings attached.",
   },
 
   // ---- Footer (cd-lac style) ----
@@ -609,6 +648,181 @@ export const en = {
     shareCopy: "Copy link",
     shareCopied: "Link copied!",
     articles: [
+      {
+        slug: "ux-ui-design-site-qui-convertit-bonnes-pratiques",
+        category: "UX & Design",
+        title:
+          "UX/UI: the design principles that turn a visitor into a customer",
+        excerpt:
+          "A beautiful website isn't enough: it has to guide, reassure and convert. Here are the UX and UI principles we apply on every vortx project — hierarchy, clarity, accessibility, performance — illustrated by this very site.",
+        date: "2026-06-15",
+        updated: "2026-06-15",
+        readingMinutes: 8,
+        author: "The vortx team",
+        cover: "redesign",
+        summary: {
+          text: "UX organises the journey, UI dresses the interface: together they decide whether a visitor takes action or leaves. This article details the concrete principles (visual hierarchy, cognitive load, one goal per page, consistency, contrast, accessibility, performance) and shows how they are applied across the vortx site.",
+          points: [
+            "UX guides the journey, UI inspires trust — both serve conversion.",
+            "A clear hierarchy, a single goal per page and immediate feedback make the difference.",
+            "Accessibility and performance aren't optional: they're part of the UX.",
+          ],
+        },
+        links: [
+          { label: "Our websites that convert", href: "/services/sites-web", desc: "Bespoke, mobile-first design built around conversion." },
+          { label: "Logo design & branding", href: "/services/branding-design", desc: "The visual identity that feeds a coherent UI." },
+          { label: "Marketing & web glossary", href: "/glossaire", desc: "UX/UI, conversion rate, Core Web Vitals… explained simply." },
+        ],
+        body: [
+          {
+            type: "p",
+            text: "We often mistake a “pretty site” for a “good site”. A site can look stunning and sell nothing; another, more understated, can turn one visitor in ten into a quote request. The difference comes down to experience design — UX — and interface design — UI. One organises the journey, the other dresses it. Together they decide whether the visitor acts or closes the tab.",
+          },
+          {
+            type: "h2",
+            id: "ux-ui-difference",
+            text: "UX and UI: two crafts, one goal",
+          },
+          {
+            type: "p",
+            text: "UX (User Experience) answers “is it easy?”: can people find the information, do they understand what to do, do they reach their goal without friction? UI (User Interface) answers “is it clear and credible?”: colours, typography, spacing, components. Flawless UX with sloppy UI breeds distrust; polished UI with no UX results in beautiful pages where nobody converts.",
+          },
+          {
+            type: "callout",
+            title: "In one sentence",
+            text: "UX decides where the visitor goes. UI makes them want to go there. Conversion happens when both point in the same direction.",
+          },
+          {
+            type: "h2",
+            id: "principes-ux",
+            text: "The UX principles that drive conversion",
+          },
+          {
+            type: "h3",
+            text: "1. A visual hierarchy that guides the eye",
+          },
+          {
+            type: "p",
+            text: "The eye should know where to go within a second: a strong headline, a sub-heading that clarifies, then the action expected. On this site, every section follows the same pattern — a discreet “eyebrow”, a large heading, supporting copy, then a button. It's that repetition of the same rhythm that makes reading effortless.",
+          },
+          {
+            type: "h3",
+            text: "2. One goal per page",
+          },
+          {
+            type: "p",
+            text: "A page that asks for everything gets nothing. Every screen should have one clear primary action — book a call, request a quote — with everything else subordinate to it. That's why our service pages all lead to the same call to action, and our landing pages even remove the menu to keep a single path.",
+          },
+          {
+            type: "h3",
+            text: "3. Reduce cognitive load",
+          },
+          {
+            type: "ul",
+            items: [
+              "Short sentences, concrete vocabulary, zero needless jargon.",
+              "Forms broken into steps rather than a wall of fields: our three-stage contact form qualifies without discouraging.",
+              "Limited choices: too many options paralyse (the paradox of choice).",
+            ],
+          },
+          {
+            type: "h3",
+            text: "4. Immediate feedback",
+          },
+          {
+            type: "p",
+            text: "Every action should produce a visible reaction: a button that responds on hover, a loading state, a confirmation after submitting. Without feedback, the user doubts — and doubt kills conversion. Micro-interactions (a hint that blinks once, an arrow that slides on hover) aren't decorative: they say “this is clickable, keep going”.",
+          },
+          {
+            type: "h3",
+            text: "5. Mobile-first, for real",
+          },
+          {
+            type: "p",
+            text: "In Luxembourg, most traffic arrives on mobile. So we design for the small screen first — generous tap targets, priority content at the top, thumb-friendly navigation — then enrich towards desktop. The reverse produces sites that feel “shrunk” on mobile, which is precisely where the decision gets made.",
+          },
+          {
+            type: "h2",
+            id: "principes-ui",
+            text: "The UI principles: the layer that inspires trust",
+          },
+          {
+            type: "h3",
+            text: "Consistency: a design system, not pages made one by one",
+          },
+          {
+            type: "p",
+            text: "A credible brand is recognised by its consistency. We work with a design system — colours, typography, spacing, reusable components — so that every page looks like it came from the same hand. Here, a tight palette (an electric lime, a teal, a dark “stage” background) and a single set of components hold the whole site together.",
+          },
+          {
+            type: "h3",
+            text: "Contrast and legibility",
+          },
+          {
+            type: "p",
+            text: "Contrast isn't just aesthetic, it's accessibility: light grey text on white excludes part of your audience. We aim for the recommended ratios (WCAG AA), comfortable text sizes and action areas that stand clearly apart from the background.",
+          },
+          {
+            type: "h3",
+            text: "White space works for you",
+          },
+          {
+            type: "p",
+            text: "Empty space isn't wasted: it highlights what matters. Room around a headline, a button or a price draws attention to it. Cramming, by contrast, dilutes the message. A premium design is often recognised by what it removed, not by what it added.",
+          },
+          {
+            type: "h3",
+            text: "Motion, in homeopathic doses",
+          },
+          {
+            type: "p",
+            text: "A well-placed animation directs the eye and brings life; too many effects tire the user and slow things down. Our animated vector illustrations and transitions stay subtle — and switch off automatically for visitors who have enabled “reduce motion” in their system.",
+          },
+          {
+            type: "h2",
+            id: "accessibilite",
+            text: "Accessibility is not optional",
+          },
+          {
+            type: "p",
+            text: "An accessible site is one usable by as many people as possible — and it's a better site for everyone. Keyboard navigation, sufficient contrast, semantic structure (hierarchical headings, correct tags), alternative text: these are the foundations. This site goes further with an accessibility widget that lets you adjust text size, spacing, contrast and animations on the fly.",
+          },
+          {
+            type: "quote",
+            text: "Designing for the edge cases means designing better for everyone.",
+          },
+          {
+            type: "h2",
+            id: "performance-ux",
+            text: "Performance is part of the UX",
+          },
+          {
+            type: "p",
+            text: "The finest design is useless if it takes three seconds to appear. Speed is a direct component of the experience: every hundredth of a second saved reduces abandonment and improves search ranking (Core Web Vitals are a Google criterion). We build near-instant sites — optimised images, lightweight code, modern technologies — because a fast site converts more, full stop.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Fast loading: less abandonment, better SEO.",
+              "Visual stability: no elements jumping around during load.",
+              "Click responsiveness: the interface reacts with no perceptible lag.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "vortx-application",
+            text: "How we apply all this at vortx",
+          },
+          {
+            type: "p",
+            text: "These principles aren't theoretical: they shape this site. The repeated hierarchy of every section, the dark background that makes key content stand out, the tight palette, the animated icons that stay understated, the multi-step form, the accessibility widget, the multilingual version thought through language by language — every detail serves the same purpose: helping the visitor understand, feel confident, and take action.",
+          },
+          {
+            type: "p",
+            text: "This is exactly the method we apply to your project: we start from your conversion goal, not from a template. The result is a site that isn't merely beautiful — it works for you.",
+          },
+        ],
+      },
       {
         slug: "geo-seo-luxembourg-etre-cite-par-les-ia",
         category: "SEO & GEO",
@@ -1147,7 +1361,11 @@ export const en = {
             id: "principes",
             text: "The 5 principles of a good logo",
           },
-          { type: "logo" },
+          {
+            type: "logo",
+            tipTitle: "Why the double circle in the “o”?",
+            tip: "Two reasons. First, legibility: without it the “o” could read as a dot — “v•rtx” instead of “vortx”. The ring anchors the letter and keeps the name crisp.\n\nSecond, meaning: from the large circle to the small one, the shape forms a funnel — a vortex that draws prospects in and turns them into clients, right to the heart of the brand.",
+          },
           { type: "h3", text: "1. Simple" },
           {
             type: "p",
@@ -2405,7 +2623,7 @@ export const en = {
       {
         slug: "site-multilingue",
         illustration: "site-multilingue",
-        title: "Multilingual sites FR / DE / EN / LU",
+        title: "Multilingual sites FR / DE / EN / OTHER",
         tagline: "Speak to all of Luxembourg, and well beyond.",
         short:
           "In Luxembourg, your clients compare you in several languages. We build natively multilingual sites, optimised language by language for search and conversion.",
@@ -2417,7 +2635,7 @@ export const en = {
         ],
         metaTitle: "Multilingual Website Design (FR/DE/EN) in Luxembourg | vortx",
         metaDescription:
-          "Natively multilingual websites for Luxembourg: FR, DE, EN, LU. Localised SEO per language (hreflang), editorial consistency and UX. Speak to your whole market.",
+          "Natively multilingual websites for Luxembourg: FR, DE, EN and other languages. Localised SEO per language (hreflang), editorial consistency and UX. Speak to your whole market.",
         intro: [
           "Multilingualism isn't an option in Luxembourg: it's the reality of the market. A client searching in German shouldn't land on a rough translation — nor stay invisible because your site only exists in one language.",
           "We build multilingual sites designed for this from the start: clean architecture, correct hreflang markup, SEO optimised language by language and editorial consistency. Not a bolted-on translation, a genuine presence in each language.",
@@ -3176,6 +3394,11 @@ export const en = {
       title: "FAQ — Websites, SEO, leads & pricing | vortx Luxembourg",
       description:
         "All the answers on our websites, SEO & GEO, lead generation, advertising, AI, pricing, timelines and GDPR. Marketing & web agency in Luxembourg.",
+    },
+    quiz: {
+      title: "Quiz: test your marketing IQ | vortx Luxembourg",
+      description:
+        "Marketing, web, SEO, GEO, advertising, AI: 10 random questions to test your knowledge. Get your score and a verdict. Free — and a little ruthless.",
     },
   },
 

@@ -41,6 +41,7 @@ export const de = {
     news: "News",
     glossary: "Glossar",
     faq: "FAQ",
+    quiz: "Quiz",
     contact: "Kontakt",
   },
 
@@ -69,7 +70,7 @@ export const de = {
     subtitle:
       "vortx entwickelt Websites und Akquise-Strategien, die Aufmerksamkeit in Kunden verwandeln. Premium-Design, SEO der neuen Generation, messbare Leadgenerierung.",
     primaryCta: "Erstgespräch buchen",
-    secondaryCta: "Unser Vorgehen entdecken",
+    secondaryCta: "Unsere Leistungen entdecken",
     note: "Schnelle Antwort · Audit gratis · Unverbindlich · 100 % maßgeschneidert",
   },
 
@@ -269,7 +270,7 @@ export const de = {
     eyebrow: "Unser Arsenal",
     title: "Die besten Tools, in der Tiefe beherrscht.",
     lead: "Marketing, Code, KI, Design. Wir wählen das Tool fürs Ergebnis, nicht umgekehrt.",
-    stat: { value: "40+", label: "beherrschte Tools" },
+    stat: { value: "42+", label: "beherrschte Tools" },
     categories: [
       {
         name: "Digitales Marketing",
@@ -281,7 +282,6 @@ export const de = {
           "Tag Manager",
           "Search Console",
           "Bing Webmaster",
-          "Matomo",
           "Ahrefs",
           "Semrush",
           "Whatagraph",
@@ -292,7 +292,7 @@ export const de = {
       },
       {
         name: "Web & Code",
-        items: ["WordPress", "Divi", "CSS", "HTML", "VS Code"],
+        items: ["WordPress", "Divi", "CSS", "HTML"],
       },
       {
         name: "KI & Automatisierung",
@@ -313,7 +313,6 @@ export const de = {
           "Canva",
           "Affinity",
           "Figma",
-          "GIMP",
           "UI/UX",
           "Mockups",
         ],
@@ -382,6 +381,7 @@ export const de = {
   faq: {
     eyebrow: "Häufige Fragen",
     title: "Was Kunden fragen, bevor sie starten.",
+    allCta: "Alle Fragen ansehen",
     items: [
       {
         q: "Was kostet eine Website oder eine Kampagne?",
@@ -430,6 +430,7 @@ export const de = {
       stepMessage: "Ihre Nachricht",
       servicesLabel: "Welche Leistungen interessieren Sie?",
       servicesHint: "Wählen Sie eine oder mehrere Leistungen.",
+      serviceOther: "Sonstiges",
       servicesRequired: "Wählen Sie mindestens eine Leistung aus, um fortzufahren.",
       consentBefore:
         "Mit dem Anklicken dieses Kästchens bestätige ich, dass ich zur Kenntnis genommen habe, wie meine personenbezogenen Daten verarbeitet und gespeichert werden, wie in der ",
@@ -439,6 +440,44 @@ export const de = {
       error:
         "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt eine E-Mail.",
     },
+  },
+
+  // ---- Quiz page (fun marketing quiz → contact) ----
+  quiz: {
+    eyebrow: "Quiz",
+    title: "Testen Sie Ihren Marketing-IQ",
+    lead: "10 zufällige Fragen, keine Gnade. Marketing, Web, SEO, Werbung, KI … wie weit kommen Sie?",
+    intro: "So läuft's: 10 Fragen, eine Note von 10 und ein Verdikt (manchmal mit Biss). Bei jeder Antwort lernen Sie etwas dazu. Bereit?",
+    start: "Quiz starten",
+    questionLabel: "Frage",
+    next: "Nächste Frage",
+    finish: "Mein Ergebnis ansehen",
+    correct: "Richtig!",
+    wrong: "Falsch!",
+    didYouKnow: "Schon gewusst?",
+    scorePrefix: "Ihr Ergebnis",
+    replay: "Nochmal spielen",
+    share: "Ergebnis teilen",
+    shareDone: "Link kopiert!",
+    shareText: "Ich habe {score}/{total} im Marketing-Quiz von vortx erreicht. Sie sind dran 👇",
+    ctaSecondary: "Alle Leistungen ansehen",
+    tiers: [
+      { min: 0, max: 3, emoji: "🌱", title: "Digital ist (noch) nicht Ihr Ding", message: "Und das ist okay — das ist unser Job, nicht Ihrer. Überlassen Sie es uns.", cta: "Profis ranlassen — kostenloses Audit" },
+      { min: 4, max: 6, emoji: "🧭", title: "Solide Basis, ein paar blinde Flecken", message: "Sie wissen, wohin Sie wollen; wir beleuchten den Rest und geben Tempo.", cta: "Lücken schließen — Strategie besprechen" },
+      { min: 7, max: 8, emoji: "🚀", title: "Sie kennen das Spiel", message: "Stark! Jetzt heißt es, dieses Wissen in echte Ergebnisse umzuwandeln.", cta: "Loslegen — unverbindliches Angebot" },
+      { min: 9, max: 9, emoji: "🏆", title: "Fast fehlerfrei, Hut ab", message: "Beeindruckend. Wir lieben anspruchsvolle Köpfe (und Kunden).", cta: "Fordern Sie uns — Termin buchen" },
+      { min: 10, max: 10, emoji: "👑", title: "Perfektes Ergebnis — bluffen Sie?", message: "Entweder Sie sind brillant, oder Sie gehören zu uns. Reden wir.", cta: "Zusammenarbeiten — kontaktieren Sie uns" },
+    ],
+  },
+
+  // ---- Floating chat widget (same flow as the contact form) ----
+  chat: {
+    open: "Chat öffnen",
+    close: "Chat schließen",
+    title: "vortx",
+    subtitle: "Wir antworten schnell",
+    greeting:
+      "Hallo 👋 Sagen Sie uns, was Sie brauchen — wir melden uns schnell zurück, unverbindlich.",
   },
 
   // ---- Footer (cd-lac style) ----
@@ -609,6 +648,181 @@ export const de = {
     shareCopy: "Link kopieren",
     shareCopied: "Link kopiert!",
     articles: [
+      {
+        slug: "ux-ui-design-site-qui-convertit-bonnes-pratiques",
+        category: "UX & Design",
+        title:
+          "UX/UI: Die Designprinzipien, die aus Besuchern Kunden machen",
+        excerpt:
+          "Eine schöne Website allein genügt nicht: Sie muss führen, Vertrauen schaffen und konvertieren. Hier sind die UX- und UI-Prinzipien, die wir bei jedem vortx-Projekt anwenden – Hierarchie, Klarheit, Barrierefreiheit, Performance – veranschaulicht an dieser Website selbst.",
+        date: "2026-06-15",
+        updated: "2026-06-15",
+        readingMinutes: 8,
+        author: "Das vortx-Team",
+        cover: "redesign",
+        summary: {
+          text: "Die UX gestaltet den Weg, die UI kleidet die Oberfläche ein: Gemeinsam entscheiden sie, ob ein Besucher handelt oder wieder geht. Der Artikel erläutert die konkreten Prinzipien (visuelle Hierarchie, kognitive Last, ein Ziel pro Seite, Konsistenz, Kontrast, Barrierefreiheit, Performance) und zeigt, wie sie auf der vortx-Website angewendet werden.",
+          points: [
+            "Die UX führt durch den Weg, die UI schafft Vertrauen – beide dienen der Conversion.",
+            "Eine klare Hierarchie, ein einziges Ziel pro Seite und sofortiges Feedback machen den Unterschied.",
+            "Barrierefreiheit und Performance sind keine Optionen: Sie sind Teil der UX.",
+          ],
+        },
+        links: [
+          { label: "Unsere Websites, die konvertieren", href: "/services/sites-web", desc: "Maßgeschneidertes Design, mobile-first und auf Conversion ausgerichtet." },
+          { label: "Logo-Erstellung & Branding", href: "/services/branding-design", desc: "Die visuelle Identität, die eine konsistente UI nährt." },
+          { label: "Glossar für Marketing & Web", href: "/glossaire", desc: "UX/UI, Conversion-Rate, Core Web Vitals … einfach erklärt." },
+        ],
+        body: [
+          {
+            type: "p",
+            text: "Man verwechselt oft „schöne Website“ mit „guter Website“. Eine Website kann großartig aussehen und trotzdem nichts verkaufen; eine andere, schlichtere, verwandelt jeden zehnten Besucher in eine Angebotsanfrage. Den Unterschied machen das Erlebnisdesign – die UX – und das Interface-Design – die UI. Das eine gestaltet den Weg, das andere kleidet ihn ein. Gemeinsam entscheiden sie, ob der Nutzer handelt oder den Tab schließt.",
+          },
+          {
+            type: "h2",
+            id: "ux-ui-difference",
+            text: "UX und UI: zwei Disziplinen, ein Ziel",
+          },
+          {
+            type: "p",
+            text: "Die UX (User Experience) beantwortet die Frage „Ist es einfach?“: Findet man die Information, versteht man, was zu tun ist, erreicht man sein Ziel ohne Reibung? Die UI (User Interface) beantwortet „Ist es klar und glaubwürdig?“: Farben, Schriften, Abstände, Komponenten. Eine makellose UX mit lieblos gemachter UI weckt Misstrauen; eine geschliffene UI ohne UX ergibt hübsche Seiten, auf denen niemand konvertiert.",
+          },
+          {
+            type: "callout",
+            title: "In einem Satz",
+            text: "Die UX entscheidet, wohin der Besucher geht. Die UI weckt die Lust, dorthin zu gehen. Die Conversion entsteht, wenn beide in dieselbe Richtung zeigen.",
+          },
+          {
+            type: "h2",
+            id: "principes-ux",
+            text: "Die UX-Prinzipien, die zur Conversion führen",
+          },
+          {
+            type: "h3",
+            text: "1. Eine visuelle Hierarchie, die das Auge führt",
+          },
+          {
+            type: "p",
+            text: "Der Blick muss in einer Sekunde wissen, wohin: eine starke Überschrift, ein präzisierender Untertitel, dann die erwartete Aktion. Auf dieser Website folgt jeder Abschnitt demselben Schema – eine dezente „Eyebrow“, ein großer Titel, ein unterstützender Text, dann ein Button. Diese Wiederholung desselben Rhythmus macht das Lesen mühelos.",
+          },
+          {
+            type: "h3",
+            text: "2. Ein einziges Ziel pro Seite",
+          },
+          {
+            type: "p",
+            text: "Eine Seite, die alles verlangt, erreicht nichts. Jeder Bildschirm braucht eine klare Hauptaktion – einen Termin buchen, ein Angebot anfragen – und alles andere ordnet sich ihr unter. Deshalb führen unsere Service-Seiten alle zum selben Call-to-Action, und unsere Landingpages entfernen sogar das Menü, um nur einen Weg übrig zu lassen.",
+          },
+          {
+            type: "h3",
+            text: "3. Die kognitive Last reduzieren",
+          },
+          {
+            type: "ul",
+            items: [
+              "Kurze Sätze, konkretes Vokabular, kein unnötiger Fachjargon.",
+              "Formulare in Schritte gegliedert statt einer Mauer aus Feldern: Unser dreistufiges Kontaktformular qualifiziert, ohne abzuschrecken.",
+              "Begrenzte Auswahlmöglichkeiten: Zu viele Optionen lähmen (Paradox der Wahl).",
+            ],
+          },
+          {
+            type: "h3",
+            text: "4. Sofortiges Feedback",
+          },
+          {
+            type: "p",
+            text: "Jede Aktion muss eine sichtbare Reaktion auslösen: ein Button, der auf das Überfahren reagiert, ein Ladezustand, eine Bestätigung nach dem Absenden. Ohne Rückmeldung zweifelt der Nutzer – und Zweifel tötet die Conversion. Mikro-Interaktionen (ein Hinweis, der einmal aufblinkt, ein Pfeil, der beim Überfahren gleitet) sind nicht dekorativ: Sie sagen „das ist klickbar, mach weiter“.",
+          },
+          {
+            type: "h3",
+            text: "5. Mobile-first, und zwar wirklich",
+          },
+          {
+            type: "p",
+            text: "In Luxemburg kommt der Großteil des Traffics über mobile Geräte. Wir gestalten also zuerst für den kleinen Bildschirm – großzügige Touch-Flächen, prioritäre Inhalte oben, Bedienung mit dem Daumen – und reichern erst dann zum Desktop hin an. Der umgekehrte Weg erzeugt auf dem Handy „geschrumpfte“ Websites – ausgerechnet dort, wo die Entscheidung fällt.",
+          },
+          {
+            type: "h2",
+            id: "principes-ui",
+            text: "Die UI-Prinzipien: die Ebene, die Vertrauen schafft",
+          },
+          {
+            type: "h3",
+            text: "Konsistenz: ein Designsystem, keine Seiten von Fall zu Fall",
+          },
+          {
+            type: "p",
+            text: "Eine glaubwürdige Marke erkennt man an ihrer Konsistenz. Wir arbeiten mit einem Designsystem – Farben, Schriften, Abstände, wiederverwendbare Komponenten –, damit jede Seite wie aus einer Hand wirkt. Hier halten eine reduzierte Palette (ein elektrisches Lime, ein Teal, ein dunkler „Stage“-Hintergrund) und ein einziger Komponentensatz die gesamte Website zusammen.",
+          },
+          {
+            type: "h3",
+            text: "Kontrast und Lesbarkeit",
+          },
+          {
+            type: "p",
+            text: "Kontrast ist nicht nur Ästhetik, sondern Barrierefreiheit: hellgrauer Text auf Weiß schließt einen Teil Ihrer Besucher aus. Wir streben die empfohlenen Verhältnisse an (WCAG AA), angenehme Textgrößen und Aktionsbereiche, die sich klar vom Hintergrund abheben.",
+          },
+          {
+            type: "h3",
+            text: "Weißraum arbeitet für Sie",
+          },
+          {
+            type: "p",
+            text: "Leere ist nicht verloren: Sie bringt zur Geltung, was zählt. Luft um einen Titel, einen Button oder einen Preis lenkt die Aufmerksamkeit darauf. Drängen verwässert dagegen die Botschaft. Ein Premium-Design erkennt man oft an dem, was es weggelassen hat, nicht an dem, was es hinzugefügt hat.",
+          },
+          {
+            type: "h3",
+            text: "Bewegung, in homöopathischer Dosis",
+          },
+          {
+            type: "p",
+            text: "Eine gut platzierte Animation lenkt den Blick und bringt Leben; zu viele Effekte ermüden und verlangsamen. Unsere animierten Vektor-Illustrationen und Übergänge bleiben dezent – und schalten sich automatisch ab für Besucher, die „Animationen reduzieren“ in ihrem System aktiviert haben.",
+          },
+          {
+            type: "h2",
+            id: "accessibilite",
+            text: "Barrierefreiheit ist keine Option",
+          },
+          {
+            type: "p",
+            text: "Eine barrierefreie Website ist eine Website, die von möglichst vielen genutzt werden kann – und damit eine bessere Website für alle. Tastaturnavigation, ausreichende Kontraste, semantische Struktur (hierarchische Überschriften, korrekte Tags), Alternativtexte: das sind die Grundlagen. Diese Website geht weiter mit einem Barrierefreiheits-Widget, mit dem sich Textgröße, Abstände, Kontrast und Animationen jederzeit anpassen lassen.",
+          },
+          {
+            type: "quote",
+            text: "Für die Randfälle zu gestalten, heißt für alle besser zu gestalten.",
+          },
+          {
+            type: "h2",
+            id: "performance-ux",
+            text: "Performance ist Teil der UX",
+          },
+          {
+            type: "p",
+            text: "Das schönste Design nützt nichts, wenn es drei Sekunden zum Laden braucht. Geschwindigkeit ist ein direkter Bestandteil des Erlebnisses: Jede gewonnene Hundertstelsekunde senkt die Absprungrate und verbessert das Ranking (die Core Web Vitals sind ein Google-Kriterium). Wir bauen nahezu sofort ladende Websites – optimierte Bilder, schlanker Code, moderne Technologien –, weil eine schnelle Website mehr konvertiert, Punkt.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Schnelles Laden: weniger Absprünge, besseres SEO.",
+              "Visuelle Stabilität: keine Elemente, die während des Ladens springen.",
+              "Reaktionsschnelligkeit beim Klick: Die Oberfläche antwortet ohne spürbare Verzögerung.",
+            ],
+          },
+          {
+            type: "h2",
+            id: "vortx-application",
+            text: "Wie wir das alles bei vortx umsetzen",
+          },
+          {
+            type: "p",
+            text: "Diese Prinzipien sind nicht theoretisch: Sie prägen diese Website. Die wiederkehrende Hierarchie jedes Abschnitts, der dunkle Hintergrund, der die Schlüsselinhalte hervorhebt, die reduzierte Palette, die animierten Icons, die dezent bleiben, das mehrstufige Formular, das Barrierefreiheits-Widget, die mehrsprachige Version, die Sprache für Sprache durchdacht ist – jedes Detail dient demselben Zweck: dem Besucher zu helfen, zu verstehen, Vertrauen zu fassen und ins Handeln zu kommen.",
+          },
+          {
+            type: "p",
+            text: "Genau diese Methode wenden wir auf Ihr Projekt an: Wir gehen von Ihrem Conversion-Ziel aus, nicht von einer Vorlage. Das Ergebnis ist eine Website, die nicht nur schön ist – sie arbeitet für Sie.",
+          },
+        ],
+      },
       {
         slug: "geo-seo-luxembourg-etre-cite-par-les-ia",
         category: "SEO & GEO",
@@ -1147,7 +1361,11 @@ export const de = {
             id: "principes",
             text: "Die 5 Prinzipien eines guten Logos",
           },
-          { type: "logo" },
+          {
+            type: "logo",
+            tipTitle: "Warum der doppelte Kreis im „o“?",
+            tip: "Zwei Gründe. Erstens die Lesbarkeit: ohne ihn könnte das „o“ wie ein Punkt wirken — „v•rtx“ statt „vortx“. Der Kreis verankert den Buchstaben und hält den Namen klar.\n\nZweitens die Bedeutung: vom großen zum kleinen Kreis bildet die Form einen Trichter — einen Strudel (Vortex), der Interessenten ansaugt und in Kunden verwandelt, bis ins Herz der Marke.",
+          },
           { type: "h3", text: "1. Einfach" },
           {
             type: "p",
@@ -2406,7 +2624,7 @@ export const de = {
       {
         slug: "site-multilingue",
         illustration: "site-multilingue",
-        title: "Mehrsprachige Websites FR / DE / EN / LU",
+        title: "Mehrsprachige Websites FR / DE / EN / ANDERE",
         tagline: "Sprechen Sie ganz Luxemburg an, und weit darüber hinaus.",
         short:
           "In Luxemburg vergleichen Ihre Kunden in mehreren Sprachen. Wir bauen nativ mehrsprachige Websites, Sprache für Sprache optimiert für Ranking und Conversion.",
@@ -2418,7 +2636,7 @@ export const de = {
         ],
         metaTitle: "Erstellung mehrsprachiger Websites (FR/DE/EN) in Luxemburg | vortx",
         metaDescription:
-          "Nativ mehrsprachige Websites für Luxemburg: FR, DE, EN, LU. Lokalisiertes SEO pro Sprache (hreflang), redaktionelle Kohärenz und UX. Sprechen Sie Ihren ganzen Markt an.",
+          "Nativ mehrsprachige Websites für Luxemburg: FR, DE, EN und weitere Sprachen. Lokalisiertes SEO pro Sprache (hreflang), redaktionelle Kohärenz und UX. Sprechen Sie Ihren ganzen Markt an.",
         intro: [
           "Mehrsprachigkeit ist in Luxemburg keine Option: Sie ist die Realität des Marktes. Ein Kunde, der auf Deutsch sucht, darf nicht auf eine ungefähre Übersetzung stoßen — und nicht unsichtbar bleiben, weil Ihre Website nur in einer Sprache existiert.",
           "Wir bauen mehrsprachige Websites, von Anfang an dafür gedacht: saubere Architektur, korrekte hreflang-Auszeichnung, Sprache für Sprache optimiertes SEO und redaktionelle Kohärenz. Keine aufgeklebte Übersetzung, sondern eine echte Präsenz in jeder Sprache.",
@@ -3177,6 +3395,11 @@ export const de = {
       title: "FAQ — Websites, SEO, Leads & Preise | vortx Luxemburg",
       description:
         "Alle Antworten zu unseren Websites, SEO & GEO, Leadgenerierung, Werbung, KI, Preisen, Fristen und DSGVO. Marketing- & Web-Agentur in Luxemburg.",
+    },
+    quiz: {
+      title: "Quiz: Testen Sie Ihren Marketing-IQ | vortx Luxemburg",
+      description:
+        "Marketing, Web, SEO, GEO, Werbung, KI: 10 zufällige Fragen, um Ihr Wissen zu testen. Note und Verdikt inklusive. Kostenlos – und ein bisschen gnadenlos.",
     },
   },
 

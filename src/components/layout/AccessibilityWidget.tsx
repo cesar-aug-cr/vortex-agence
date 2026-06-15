@@ -409,17 +409,30 @@ export function AccessibilityWidget({
         aria-expanded={open}
         aria-label={labels.button}
         title={labels.button}
-        className={`relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
-          onDark ? "border-white/30 text-white" : "border-border-strong text-text"
+        className={`group relative inline-flex h-11 w-11 items-center justify-center rounded-full text-[#0a0a0b] shadow-[0_2px_12px_rgba(20,224,200,0.35)] outline-none ring-1 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(200,240,46,0.55)] focus-visible:ring-2 focus-visible:ring-white/70 ${
+          onDark ? "ring-white/25" : "ring-black/10"
         }`}
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, #c8f02e 0%, #22d38c 52%, #14e0c8 100%)",
+        }}
       >
-        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          <circle cx="12" cy="3.8" r="1.6" fill="currentColor" stroke="none" />
-          <path d="M4.5 7.5c2.5 1 5 1.5 7.5 1.5s5-.5 7.5-1.5" />
-          <path d="M12 9v5m0 0-3 6m3-6 3 6" />
+        {/* soft inner sheen for a more premium, dimensional look */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-full opacity-70"
+          style={{
+            backgroundImage:
+              "radial-gradient(70% 60% at 30% 22%, rgba(255,255,255,0.55), transparent 60%)",
+          }}
+        />
+        <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="relative">
+          <circle cx="12" cy="3.9" r="2" fill="currentColor" stroke="none" />
+          <path d="M4.5 8c2.4 1 5 1.4 7.5 1.4S17.1 9 19.5 8" />
+          <path d="M12 9.4V14m0 0-3 6.2M12 14l3 6.2" />
         </svg>
         {active > 0 && (
-          <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 font-mono text-[0.6rem] font-bold text-accent-ink">
+          <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#0a0a0b] px-1 font-mono text-[0.6rem] font-bold text-accent ring-2 ring-bg">
             {active}
           </span>
         )}
