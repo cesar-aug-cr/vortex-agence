@@ -479,6 +479,15 @@ export const fr = {
     shareDone: "Lien copié !",
     shareText: "J'ai eu {score}/{total} au quiz marketing de vortx. À votre tour 👇",
     ctaSecondary: "Voir tous les services",
+    certificate: "Télécharger mon certificat",
+    cert: {
+      heading: "Certificat",
+      subheading: "de QI Marketing",
+      awardedTo: "Décerné à",
+      scoreLabel: "Score obtenu",
+      dateLabel: "Délivré le",
+      footer: "vortx · Agence marketing & web au Luxembourg · vortx.lu/quiz",
+    },
     tiers: [
       { min: 0, max: 3, emoji: "🌱", title: "Le digital, c'est pas (encore) votre truc", message: "Et c'est normal — c'est notre métier, pas le vôtre. Laissez-nous nous en occuper.", cta: "Confiez-le à des pros — audit gratuit" },
       { min: 4, max: 6, emoji: "🧭", title: "Bonnes bases, quelques angles morts", message: "Vous savez où vous allez ; on éclaire le reste et on accélère.", cta: "Comblons les lacunes — parlons stratégie" },

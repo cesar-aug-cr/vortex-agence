@@ -461,6 +461,15 @@ export const en = {
     shareDone: "Link copied!",
     shareText: "I scored {score}/{total} on vortx's marketing quiz. Your turn 👇",
     ctaSecondary: "See all services",
+    certificate: "Download my certificate",
+    cert: {
+      heading: "Certificate",
+      subheading: "of Marketing IQ",
+      awardedTo: "Awarded to",
+      scoreLabel: "Score achieved",
+      dateLabel: "Issued on",
+      footer: "vortx · Marketing & web agency in Luxembourg · vortx.lu/quiz",
+    },
     tiers: [
       { min: 0, max: 3, emoji: "🌱", title: "Digital isn't (yet) your thing", message: "And that's fine — it's our job, not yours. Let us handle it.", cta: "Leave it to the pros — free audit" },
       { min: 4, max: 6, emoji: "🧭", title: "Solid basics, a few blind spots", message: "You know where you're going; we light up the rest and speed it up.", cta: "Fill the gaps — let's talk strategy" },

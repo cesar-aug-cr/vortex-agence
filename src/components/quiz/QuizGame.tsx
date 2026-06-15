@@ -1,16 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { localized } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { QuizQuestion } from "@/lib/quiz/questions";
 import { Check, ArrowRight } from "@/components/ui/icons";
+import { LogoMark } from "@/components/brand/LogoMark";
 
 type QuizCopy = Dictionary["quiz"];
 
 const PER_GAME = 10;
+
+const DATE_LOCALE: Record<Locale, string> = {
+  fr: "fr-FR",
+  en: "en-GB",
+  de: "de-DE",
+  es: "es-ES",
+};
 
 /** Fisher–Yates shuffle (client-only; runs on "start", so no SSR mismatch). */
 function pickRandom(pool: QuizQuestion[], n: number): QuizQuestion[] {
@@ -37,14 +46,12 @@ export function QuizGame({
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [score, setScore] = useState(0);
-  const [shared, setShared] = useState(false);
 
   const start = () => {
     setDeck(pickRandom(questions, total));
     setIndex(0);
     setPicked(null);
     setScore(0);
-    setShared(false);
     setPhase("playing");
   };
 
@@ -70,23 +77,30 @@ export function QuizGame({
     copy.tiers.find((t) => score >= t.min && score <= t.max) ??
     copy.tiers[copy.tiers.length - 1];
 
-  const share = async () => {
-    const text = copy.shareText
-      .replace("{score}", String(score))
-      .replace("{total}", String(total));
-    const url = typeof window !== "undefined" ? window.location.href : "";
-    try {
-      if (typeof navigator !== "undefined" && navigator.share) {
-        await navigator.share({ title: copy.title, text, url });
-      } else if (typeof navigator !== "undefined" && navigator.clipboard) {
-        await navigator.clipboard.writeText(`${text} ${url}`);
-        setShared(true);
-        setTimeout(() => setShared(false), 2000);
-      }
-    } catch {
-      /* user cancelled — ignore */
-    }
+  // Print a one-page certificate (the browser's print dialog lets the user
+  // "Save as PDF"). A body class + scoped @media print CSS isolates the
+  // certificate so only it appears on the printed page.
+  const printCertificate = () => {
+    if (typeof window === "undefined") return;
+    document.body.classList.add("printing-cert");
+    const cleanup = () => {
+      document.body.classList.remove("printing-cert");
+      window.removeEventListener("afterprint", cleanup);
+    };
+    window.addEventListener("afterprint", cleanup);
+    window.print();
+    // Safety net if afterprint never fires (some browsers).
+    setTimeout(cleanup, 1500);
   };
+
+  const certDate =
+    typeof window !== "undefined"
+      ? new Date().toLocaleDateString(DATE_LOCALE[lang] ?? "fr-FR", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })
+      : "";
 
   // ---- INTRO ----
   if (phase === "intro") {
@@ -142,10 +156,10 @@ export function QuizGame({
               </button>
               <button
                 type="button"
-                onClick={share}
+                onClick={printCertificate}
                 className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
               >
-                {shared ? copy.shareDone : copy.share}
+                {copy.certificate}
               </button>
             </div>
             <Link
@@ -156,6 +170,36 @@ export function QuizGame({
             </Link>
           </div>
         </div>
+
+        {/* Printable certificate — hidden on screen, isolated for print/PDF */}
+        {typeof document !== "undefined" &&
+          createPortal(
+            <div id="quiz-cert" aria-hidden>
+              <div className="quiz-cert-frame">
+                <LogoMark animated={false} className="quiz-cert-logo" title="vortx" />
+                <p className="quiz-cert-eyebrow">{copy.cert.heading}</p>
+                <p className="quiz-cert-sub">{copy.cert.subheading}</p>
+                <div className="quiz-cert-rule" />
+                <p className="quiz-cert-awarded">{copy.cert.awardedTo}</p>
+                <p className="quiz-cert-name">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
+                <p className="quiz-cert-scorelabel">{copy.cert.scoreLabel}</p>
+                <p className="quiz-cert-score">
+                  {score} <span>/ {total}</span>
+                </p>
+                <p className="quiz-cert-verdict">
+                  {tier.emoji} {tier.title}
+                </p>
+                <p className="quiz-cert-message">{tier.message}</p>
+                <div className="quiz-cert-foot">
+                  <span>
+                    {copy.cert.dateLabel} {certDate}
+                  </span>
+                  <span>{copy.cert.footer}</span>
+                </div>
+              </div>
+            </div>,
+            document.body
+          )}
       </div>
     );
   }

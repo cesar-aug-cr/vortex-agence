@@ -461,6 +461,15 @@ export const de = {
     shareDone: "Link kopiert!",
     shareText: "Ich habe {score}/{total} im Marketing-Quiz von vortx erreicht. Sie sind dran 👇",
     ctaSecondary: "Alle Leistungen ansehen",
+    certificate: "Mein Zertifikat herunterladen",
+    cert: {
+      heading: "Zertifikat",
+      subheading: "des Marketing-IQ",
+      awardedTo: "Verliehen an",
+      scoreLabel: "Erreichtes Ergebnis",
+      dateLabel: "Ausgestellt am",
+      footer: "vortx · Marketing- & Web-Agentur in Luxemburg · vortx.lu/quiz",
+    },
     tiers: [
       { min: 0, max: 3, emoji: "🌱", title: "Digital ist (noch) nicht Ihr Ding", message: "Und das ist okay — das ist unser Job, nicht Ihrer. Überlassen Sie es uns.", cta: "Profis ranlassen — kostenloses Audit" },
       { min: 4, max: 6, emoji: "🧭", title: "Solide Basis, ein paar blinde Flecken", message: "Sie wissen, wohin Sie wollen; wir beleuchten den Rest und geben Tempo.", cta: "Lücken schließen — Strategie besprechen" },
