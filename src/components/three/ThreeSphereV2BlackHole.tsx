@@ -331,7 +331,7 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
   );
 }
 
-function EventHorizon({ radius = 0.42 }: { radius?: number }) {
+function EventHorizon({ radius = 0.46 }: { radius?: number }) {
   return (
     <mesh>
       <sphereGeometry args={[radius, 64, 64]} />
@@ -370,7 +370,7 @@ function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2Rot
       rotation={rotOverride ?? [Math.PI * 0.2, 0.3, 0.15]}
       scale={scaleOverride ?? (isMobile ? 1.3 : 1.7)}
     >
-      <EventHorizon radius={isMobile ? 0.3 : 0.42} />
+      <EventHorizon radius={isMobile ? 0.46 : 0.42} />
       <PhotonRing />
       <AccretionDisk count={diskCount ?? (isMobile ? 1400 : 2400)} maxRadius={diskMaxRadius} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} />
       <group rotation={ring2RotOverride ?? [Math.PI * 0.35, 0.10, 0.20]}>
