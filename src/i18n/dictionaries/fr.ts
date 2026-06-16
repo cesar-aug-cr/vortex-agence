@@ -663,6 +663,8 @@ export const fr = {
     summaryLabel: "Résumé généré par IA",
     summaryDisclaimer: "Synthèse automatique des points clés, relue par notre équipe.",
     summaryPointsLabel: "À retenir",
+    summaryShow: "Afficher le résumé",
+    summaryHide: "Masquer le résumé",
     linksTitle: "Pour aller plus loin",
     allCategories: "Tous les sujets",
     filterLabel: "Filtrer par sujet",
@@ -2034,6 +2036,8 @@ export const fr = {
     includedTitle: "Ce que ça comprend",
     deliverablesTitle: "Livrables",
     faqTitle: "Questions fréquentes",
+    articlesTitle: "Ressources",
+    articlesLead: "À lire sur le sujet.",
     // Shared "our method" band, rendered on every service & sub-service page.
     method: {
       eyebrow: "Notre méthode",

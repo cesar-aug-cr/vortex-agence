@@ -742,6 +742,139 @@
     display: flex !important;
   }
 }
+
+/* News "AI summary" — collapsed by default; on open, a ~2s reveal: two logo-O
+   dots alternate the brand colours while the card's border turns green→dark
+   and the card fills green, then it settles into the normal summary card. */
+.ai-summary-revealing {
+  animation: aiSummaryReveal 2s ease-in-out forwards;
+}
+@keyframes aiSummaryReveal {
+  0% {
+    background-color: var(--accent-soft);
+    border-color: rgba(200, 240, 46, 0.3);
+  }
+  20% {
+    border-color: #22d38c;
+  }
+  42% {
+    border-color: #06241a;
+  }
+  58% {
+    background-color: #22d38c;
+    border-color: #06241a;
+  }
+  78% {
+    background-color: #1c7d57;
+    border-color: #0f3d2b;
+  }
+  100% {
+    background-color: var(--accent-soft);
+    border-color: rgba(200, 240, 46, 0.3);
+  }
+}
+.ai-summary-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 128px;
+}
+.ai-summary-loader .ai-o {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 9999px;
+  background-color: var(--accent);
+}
+.ai-summary-loader .ai-o-1 {
+  animation: aiSummaryO 1s ease-in-out infinite;
+}
+.ai-summary-loader .ai-o-2 {
+  animation: aiSummaryO 1s ease-in-out 0.5s infinite;
+}
+@keyframes aiSummaryO {
+  0%,
+  100% {
+    background-color: var(--accent);
+    transform: scale(1);
+  }
+  50% {
+    background-color: var(--accent-2);
+    transform: scale(1.18);
+  }
+}
+.ai-summary-content {
+  animation: fadeIn 0.45s ease-out both;
+}
+
+/* Closed state — the "+" toggle gently blinks so it's noticed. */
+.ai-summary-blink {
+  animation: aiSummaryBlink 1.5s ease-in-out infinite;
+}
+@keyframes aiSummaryBlink {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 240, 46, 0);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 12px 3px rgba(200, 240, 46, 0.55);
+    transform: scale(1.09);
+  }
+}
+
+/* Open state — a lime light travels around the card border (rotating conic
+   gradient masked to a thin ring) while a soft lime glow breathes: strong →
+   calm → strong, like the border catching the light. */
+@property --ai-ring-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.ai-summary-lit {
+  animation: aiSummaryGlow 3.4s ease-in-out infinite;
+}
+.ai-summary-lit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--ai-ring-angle),
+    rgba(200, 240, 46, 0) 0deg,
+    rgba(200, 240, 46, 0) 210deg,
+    rgba(200, 240, 46, 0.5) 285deg,
+    #c8f02e 330deg,
+    rgba(200, 240, 46, 0) 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: aiSummaryRing 3.4s linear infinite;
+}
+@keyframes aiSummaryRing {
+  to {
+    --ai-ring-angle: 360deg;
+  }
+}
+@keyframes aiSummaryGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 26px 2px rgba(200, 240, 46, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 9px 0 rgba(200, 240, 46, 0.14);
+  }
+}
 @keyframes floatY {
   0%,
   100% {

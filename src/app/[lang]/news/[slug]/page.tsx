@@ -149,6 +149,8 @@ export default async function ArticlePage({
               label={dict.news.summaryLabel}
               disclaimer={dict.news.summaryDisclaimer}
               pointsLabel={dict.news.summaryPointsLabel}
+              showLabel={dict.news.summaryShow}
+              hideLabel={dict.news.summaryHide}
             />
           )}
 

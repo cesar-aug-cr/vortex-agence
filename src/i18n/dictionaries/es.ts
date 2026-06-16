@@ -639,6 +639,8 @@ export const es = {
     summaryLabel: "Resumen generado por IA",
     summaryDisclaimer: "Síntesis automática de los puntos clave, revisada por nuestro equipo.",
     summaryPointsLabel: "Para recordar",
+    summaryShow: "Mostrar el resumen",
+    summaryHide: "Ocultar el resumen",
     linksTitle: "Para profundizar",
     allCategories: "Todos los temas",
     filterLabel: "Filtrar por tema",
@@ -2010,6 +2012,8 @@ export const es = {
     includedTitle: "Lo que incluye",
     deliverablesTitle: "Entregables",
     faqTitle: "Preguntas frecuentes",
+    articlesTitle: "Recursos",
+    articlesLead: "Para profundizar en el tema.",
     // Shared "our method" band, rendered on every service & sub-service page.
     method: {
       eyebrow: "Nuestro método",

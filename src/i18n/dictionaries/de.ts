@@ -645,6 +645,8 @@ export const de = {
     summaryLabel: "Von KI erstellte Zusammenfassung",
     summaryDisclaimer: "Automatische Synthese der Kernpunkte, von unserem Team geprüft.",
     summaryPointsLabel: "Auf einen Blick",
+    summaryShow: "Zusammenfassung anzeigen",
+    summaryHide: "Zusammenfassung ausblenden",
     linksTitle: "Zum Weiterlesen",
     allCategories: "Alle Themen",
     filterLabel: "Nach Thema filtern",
@@ -2016,6 +2018,8 @@ export const de = {
     includedTitle: "Was darin enthalten ist",
     deliverablesTitle: "Liefergegenstände",
     faqTitle: "Häufige Fragen",
+    articlesTitle: "Ressourcen",
+    articlesLead: "Weiterführende Artikel zum Thema.",
     // Shared "our method" band, rendered on every service & sub-service page.
     method: {
       eyebrow: "Unsere Methode",

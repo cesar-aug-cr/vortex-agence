@@ -13,6 +13,8 @@ import { ContactCta } from "@/components/sections/ContactCta";
 import { PacksIncluded } from "@/components/sections/PacksIncluded";
 import { ServiceMethod } from "@/components/sections/ServiceMethod";
 import { ServiceProof } from "@/components/sections/ServiceProof";
+import { RelatedServiceArticles } from "@/components/sections/RelatedServiceArticles";
+import { articlesForService } from "@/lib/relatedArticles";
 import { serviceIllustration, subServiceIllustration } from "@/components/illustrations/map";
 import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
@@ -273,6 +275,15 @@ export default async function ServiceDetailPage({
 
       <ServiceMethod content={sd.method} />
       <ServiceProof content={sd.proof} />
+
+      <RelatedServiceArticles
+        lang={lang}
+        title={sd.articlesTitle}
+        lead={sd.articlesLead}
+        articles={articlesForService(service.slug, dict.news.articles)}
+        readingTimeLabel={dict.news.readingTime}
+        readLabel={dict.news.readArticle}
+      />
 
       <ContactCta dict={dict} lang={lang} />
 

@@ -645,6 +645,8 @@ export const en = {
     summaryLabel: "AI-generated summary",
     summaryDisclaimer: "Automated synthesis of the key points, reviewed by our team.",
     summaryPointsLabel: "Key takeaways",
+    summaryShow: "Show summary",
+    summaryHide: "Hide summary",
     linksTitle: "Go further",
     allCategories: "All topics",
     filterLabel: "Filter by topic",
@@ -2016,6 +2018,8 @@ export const en = {
     includedTitle: "What's included",
     deliverablesTitle: "Deliverables",
     faqTitle: "Frequently asked questions",
+    articlesTitle: "Resources",
+    articlesLead: "Further reading on this topic.",
     // Shared "our method" band, rendered on every service & sub-service page.
     method: {
       eyebrow: "Our method",
