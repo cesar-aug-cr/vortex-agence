@@ -10,16 +10,19 @@ export function StickySearch({
   placeholder,
   count,
   countSuffix,
+  mobileSticky = true,
 }: {
   value: string;
   onChange: (v: string) => void;
   placeholder: string;
   count: number;
   countSuffix: string;
+  /** When false, the bar is sticky on desktop only (mobile keeps it in flow). */
+  mobileSticky?: boolean;
 }) {
   return (
     <>
-      <div className="sticky top-20 z-30">
+      <div className={`${mobileSticky ? "sticky" : "lg:sticky"} top-20 z-30`}>
         <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 rounded-b-2xl border-x border-b border-border bg-bg/85 px-4 py-3 backdrop-blur-md lg:left-auto lg:right-auto lg:w-full lg:translate-x-0 lg:px-5">
           <div className="relative">
             <svg

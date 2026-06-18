@@ -93,7 +93,7 @@ export function NewsList({
               <Link
                 key={a.slug}
                 href={a.href}
-                className="card card-hover group flex flex-col overflow-hidden"
+                className="card card-hover spotlight-card group flex flex-col overflow-hidden"
               >
                 <div className="illu-stage relative flex h-44 items-center justify-center overflow-hidden border-b border-border">
                   {Cover && <Cover className="h-28 w-28" />}

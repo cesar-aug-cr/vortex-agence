@@ -7,6 +7,8 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { FaqList } from "@/components/sections/FaqList";
+import { ArticleToc } from "@/components/news/ArticleToc";
+import { faqGroupId } from "@/lib/faq";
 
 export async function generateStaticParams() {
   return i18n.locales.map((lang) => ({ lang }));
@@ -37,6 +39,11 @@ export default async function FaqPage({
   const lang: Locale = isLocale(raw) ? raw : i18n.defaultLocale;
   const dict = await getDictionary(lang);
 
+  const tocItems = dict.faqPage.groups.map((g) => ({
+    id: faqGroupId(g.title),
+    text: g.title,
+  }));
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -65,12 +72,26 @@ export default async function FaqPage({
           lead={dict.faqPage.lead}
         />
 
-        <FaqList
-          groups={dict.faqPage.groups}
-          searchPlaceholder={dict.faqPage.searchPlaceholder}
-          countSuffix={dict.faqPage.countSuffix}
-          emptyLabel={dict.faqPage.emptyLabel}
-        />
+        <div className="mt-10 lg:grid lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-12">
+          {/* desktop — sticky left sidebar summary (scroll-spy) */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-28">
+              <ArticleToc items={tocItems} title={dict.faqPage.tocTitle} variant="desktop" />
+            </div>
+          </aside>
+
+          <div className="min-w-0">
+            {/* mobile — sticky collapsible summary bar under the nav */}
+            <ArticleToc items={tocItems} title={dict.faqPage.tocTitle} variant="mobile" />
+
+            <FaqList
+              groups={dict.faqPage.groups}
+              searchPlaceholder={dict.faqPage.searchPlaceholder}
+              countSuffix={dict.faqPage.countSuffix}
+              emptyLabel={dict.faqPage.emptyLabel}
+            />
+          </div>
+        </div>
       </Section>
 
       <ContactCta dict={dict} lang={lang} />

@@ -226,7 +226,7 @@ export const de = {
     problems: [
       "Chancen, die unbemerkt vorbeiziehen",
       "Ein enttäuschender Marketing-ROI",
-      "Zu viele Besuche, zu wenige Kontakte",
+      "Wenige Besuche, wenige Kontakte",
     ],
     solutionTitle: "Mit vortx:",
     solutions: [
@@ -862,7 +862,7 @@ export const de = {
         body: [
           {
             type: "p",
-            text: "Zwanzig Jahre lang bedeutete „online sichtbar sein\" eine Sache: in den Google-Ergebnissen nach oben zu kommen. Heute tippt ein wachsender Teil Ihrer Kunden keine Suchanfrage mehr in eine Suchmaschine — sie stellen einer KI eine Frage. ChatGPT, Perplexity, Google AI Overviews oder Copilot antworten direkt, zitieren einige Quellen, und der Nutzer klickt manchmal auf gar keinen Link. Die Frage ist also nicht mehr nur „Bin ich bei Google auf Platz eins?\", sondern „Zitiert mich die KI als Antwort?\".",
+            text: "Zwanzig Jahre lang bedeutete „online sichtbar sein“ eine Sache: in den Google-Ergebnissen nach oben zu kommen. Heute tippt ein wachsender Teil Ihrer Kunden keine Suchanfrage mehr in eine Suchmaschine — sie stellen einer KI eine Frage. ChatGPT, Perplexity, Google AI Overviews oder Copilot antworten direkt, zitieren einige Quellen, und der Nutzer klickt manchmal auf gar keinen Link. Die Frage ist also nicht mehr nur „Bin ich bei Google auf Platz eins?“, sondern „Zitiert mich die KI als Antwort?“.",
           },
           {
             type: "h2",
@@ -889,7 +889,7 @@ export const de = {
           },
           {
             type: "p",
-            text: "Weil sich das Suchverhalten schnell verschiebt, besonders im B2B. Ein Entscheider, der einen Kauf vorbereitet, fragt zunehmend eine KI „Welche sind die besten Marketing-Agenturen in Luxemburg?\" statt Google. Wenn Ihr Unternehmen in der Antwort nicht auftaucht, existieren Sie in dieser Entscheidung nicht — selbst wenn Sie bei Google Dritter sind.",
+            text: "Weil sich das Suchverhalten schnell verschiebt, besonders im B2B. Ein Entscheider, der einen Kauf vorbereitet, fragt zunehmend eine KI „Welche sind die besten Marketing-Agenturen in Luxemburg?“ statt Google. Wenn Ihr Unternehmen in der Antwort nicht auftaucht, existieren Sie in dieser Entscheidung nicht — selbst wenn Sie bei Google Dritter sind.",
           },
           {
             type: "ul",
@@ -910,7 +910,7 @@ export const de = {
           },
           {
             type: "p",
-            text: "Die Modelle mögen klare Antworten. Eine Seite, die eine Frage in der Überschrift (H2/H3) stellt und direkt darunter in zwei klaren Sätzen beantwortet, hat viel bessere Chancen, aufgegriffen zu werden, als ein langer, verschachtelter Absatz. Denken Sie „Definition, dann Detail\".",
+            text: "Die Modelle mögen klare Antworten. Eine Seite, die eine Frage in der Überschrift (H2/H3) stellt und direkt darunter in zwei klaren Sätzen beantwortet, hat viel bessere Chancen, aufgegriffen zu werden, als ein langer, verschachtelter Absatz. Denken Sie „Definition, dann Detail“.",
           },
           {
             type: "h3",
@@ -918,7 +918,7 @@ export const de = {
           },
           {
             type: "p",
-            text: "Ein nachprüfbarer und präziser Inhalt (Zahlen, Daten, Orte — hier der Luxemburger Markt, die Mehrsprachigkeit FR/DE/EN, die DSGVO) ist „zitierbarer\". Allgemeinplätze werden ignoriert; verankerte Fakten werden aufgegriffen.",
+            text: "Ein nachprüfbarer und präziser Inhalt (Zahlen, Daten, Orte — hier der Luxemburger Markt, die Mehrsprachigkeit FR/DE/EN, die DSGVO) ist „zitierbarer“. Allgemeinplätze werden ignoriert; verankerte Fakten werden aufgegriffen.",
           },
           {
             type: "h3",
@@ -970,14 +970,14 @@ export const de = {
         title:
           "Google Ads oder SEO: Wohin sollten Sie 2026 Ihr Marketing-Budget investieren?",
         excerpt:
-          "Sollten Sie dafür bezahlen, oben bei Google zu erscheinen, oder lieber an Ihrer organischen Sichtbarkeit arbeiten? Die eigentliche Frage ist nicht „das eine oder das andere\", sondern „welches, wann und für welches Ziel\". Wir entwirren das Ganze — mit Zahlen und gesundem Menschenverstand.",
+          "Sollten Sie dafür bezahlen, oben bei Google zu erscheinen, oder lieber an Ihrer organischen Sichtbarkeit arbeiten? Die eigentliche Frage ist nicht „das eine oder das andere“, sondern „welches, wann und für welches Ziel“. Wir entwirren das Ganze — mit Zahlen und gesundem Menschenverstand.",
         date: "2026-06-04",
         updated: "2026-06-04",
         readingMinutes: 8,
         author: "Das vortx-Team",
         cover: "ads-targeting",
         summary: {
-          text: "Soll man in Google Ads oder in SEO investieren? Die Antwort hängt von Ihrem Ziel und Ihrem Zeithorizont ab. Der Artikel stellt das „Mieten\" (Ads, sofort) dem „Besitzen\" (SEO, dauerhaft) gegenüber und zeigt, wie Sie beide je nach Situation kombinieren.",
+          text: "Soll man in Google Ads oder in SEO investieren? Die Antwort hängt von Ihrem Ziel und Ihrem Zeithorizont ab. Der Artikel stellt das „Mieten“ (Ads, sofort) dem „Besitzen“ (SEO, dauerhaft) gegenüber und zeigt, wie Sie beide je nach Situation kombinieren.",
           points: [
             "Google Ads = sofortige Ergebnisse, solange Sie zahlen; SEO = dauerhaftes Asset, das Zeit braucht.",
             "Die richtige Dosierung hängt von Zeithorizont, Markt und Budget ab.",
@@ -992,7 +992,7 @@ export const de = {
         body: [
           {
             type: "p",
-            text: "Es ist eine der Fragen, die man uns am häufigsten stellt: „Soll ich mein Budget in Werbung oder in SEO stecken?\". Ehrliche Antwort: Das hängt von Ihrem Ziel, Ihrem Zeithorizont und Ihrem Markt ab. Beide bringen Kunden über Google, aber sie funktionieren nicht gleich — und vor allem ersetzen sie sich nicht, sie ergänzen sich.",
+            text: "Es ist eine der Fragen, die man uns am häufigsten stellt: „Soll ich mein Budget in Werbung oder in SEO stecken?“. Ehrliche Antwort: Das hängt von Ihrem Ziel, Ihrem Zeithorizont und Ihrem Markt ab. Beide bringen Kunden über Google, aber sie funktionieren nicht gleich — und vor allem ersetzen sie sich nicht, sie ergänzen sich.",
           },
           {
             type: "h2",
@@ -1039,7 +1039,7 @@ export const de = {
             items: [
               "Dauerhafter Traffic: Ihre Positionierung arbeitet über die Zeit weiter.",
               "Höhere Glaubwürdigkeit: Organischen Ergebnissen wird mehr vertraut.",
-              "Sinkende Kosten: Die Anfangsinvestition amortisiert sich, der Klick ist „gratis\".",
+              "Sinkende Kosten: Die Anfangsinvestition amortisiert sich, der Klick ist „gratis“.",
               "GEO-kompatibel: Gutes SEO macht Sie auch für generative KI zitierbar.",
             ],
           },
@@ -1082,7 +1082,7 @@ export const de = {
           {
             type: "callout",
             title: "Zum Mitnehmen",
-            text: "Denken Sie nicht „Ads ODER SEO\", sondern „Ads UND SEO\", dosiert nach Ihrem Zeithorizont und Budget. Werbung für die Geschwindigkeit, SEO für die Dauer — und beide verstärken sich gegenseitig.",
+            text: "Denken Sie nicht „Ads ODER SEO“, sondern „Ads UND SEO“, dosiert nach Ihrem Zeithorizont und Budget. Werbung für die Geschwindigkeit, SEO für die Dauer — und beide verstärken sich gegenseitig.",
           },
           {
             type: "p",
@@ -1118,7 +1118,7 @@ export const de = {
         body: [
           {
             type: "p",
-            text: "Sie haben Traffic, aber wenige Anfragen? Das Problem ist fast nie die Zahl der Besucher — es ist das, was zwischen ihrer Ankunft und ihrer Entscheidung passiert. Dieser Weg hat einen Namen: der Conversion-Funnel. Ihn zu verstehen heißt, mit dem bloßen „Leute herbringen\" aufzuhören und anzufangen, diese Leute in Kunden zu verwandeln.",
+            text: "Sie haben Traffic, aber wenige Anfragen? Das Problem ist fast nie die Zahl der Besucher — es ist das, was zwischen ihrer Ankunft und ihrer Entscheidung passiert. Dieser Weg hat einen Namen: der Conversion-Funnel. Ihn zu verstehen heißt, mit dem bloßen „Leute herbringen“ aufzuhören und anzufangen, diese Leute in Kunden zu verwandeln.",
           },
           {
             type: "h2",
@@ -1215,7 +1215,7 @@ export const de = {
           },
           {
             type: "p",
-            text: "Bei vortx gestalten wir jede Website als Funnel, der zum Konvertieren gebaut ist, und optimieren ihn laufend. Wollen Sie wissen, wo Ihrer Kunden verliert? Wir schenken Ihnen ein kostenloses Audit Ihres Funnels.",
+            text: "Bei vortx gestalten wir jede Website als Funnel, der zum Konvertieren gebaut ist, und optimieren ihn laufend. Wollen Sie wissen, wo er Ihre Kunden verliert? Wir schenken Ihnen ein kostenloses Audit Ihres Funnels.",
           },
         ],
       },
@@ -1675,7 +1675,7 @@ export const de = {
           },
           {
             type: "h3",
-            text: "„KI ist etwas für Großkonzerne\"",
+            text: "„KI ist etwas für Großkonzerne“",
           },
           {
             type: "p",
@@ -1683,7 +1683,7 @@ export const de = {
           },
           {
             type: "h3",
-            text: "„Man braucht einen Entwickler und ein großes Budget\"",
+            text: "„Man braucht einen Entwickler und ein großes Budget“",
           },
           {
             type: "p",
@@ -1691,7 +1691,7 @@ export const de = {
           },
           {
             type: "h3",
-            text: "„Die KI wird mein Team ersetzen\"",
+            text: "„Die KI wird mein Team ersetzen“",
           },
           {
             type: "p",
@@ -1738,7 +1738,7 @@ export const de = {
           },
           {
             type: "p",
-            text: "Dieser Ansatz in kleinen Schritten vermeidet den Effekt des „großen KI-Projekts\", das im Sande verläuft. Sie sammeln konkrete Erfolge, Ihr Team gewinnt an Vertrauen, und Sie investieren nur dort, wo der Wert bewiesen ist.",
+            text: "Dieser Ansatz in kleinen Schritten vermeidet den Effekt des „großen KI-Projekts“, das im Sande verläuft. Sie sammeln konkrete Erfolge, Ihr Team gewinnt an Vertrauen, und Sie investieren nur dort, wo der Wert bewiesen ist.",
           },
           {
             type: "h2",
@@ -1756,7 +1756,7 @@ export const de = {
           },
           {
             type: "quote",
-            text: "Die richtige Frage lautet nicht „Muss ich KI machen?\", sondern „Welche Aufgabe kostet mich jede Woche Zeit?\".",
+            text: "Die richtige Frage lautet nicht „Muss ich KI machen?“, sondern „Welche Aufgabe kostet mich jede Woche Zeit?“.",
           },
           {
             type: "p",
@@ -1867,7 +1867,7 @@ export const de = {
         slug: "cta",
         category: "Conversion",
         short: "Der Button, der zum Handeln einlädt.",
-        def: "Element (Button, Link), das den Besucher zum nächsten Schritt bewegt: „Gespräch buchen\", „Angebot erhalten\". Seine Klarheit und Sichtbarkeit beeinflussen die Conversion stark.",
+        def: "Element (Button, Link), das den Besucher zum nächsten Schritt bewegt: „Gespräch buchen“, „Angebot erhalten“. Seine Klarheit und Sichtbarkeit beeinflussen die Conversion stark.",
       },
       {
         term: "A/B-Testing",
@@ -1881,7 +1881,7 @@ export const de = {
         slug: "lead",
         category: "Akquise",
         short: "Ein potenzieller Geschäftskontakt.",
-        def: "Person oder Unternehmen, das Interesse gezeigt hat (Formular, Anruf, Angebotsanfrage) und Kunde werden könnte. Ein „qualifizierter\" Lead passt gut zu Ihrer Zielgruppe.",
+        def: "Person oder Unternehmen, das Interesse gezeigt hat (Formular, Anruf, Angebotsanfrage) und Kunde werden könnte. Ein „qualifizierter“ Lead passt gut zu Ihrer Zielgruppe.",
       },
       {
         term: "Leadgenerierung",
@@ -2067,7 +2067,7 @@ export const de = {
       ],
       faq: [
         { q: "Maßanfertigung oder WordPress, wie wähle ich?", a: "Die Maßanfertigung (Next.js) bietet die beste Performance und Flexibilität; WordPress ist ideal, wenn Sie die Inhalte selbst bearbeiten wollen. Wir beraten Sie nach Ihrer tatsächlichen Nutzung, ohne Dogma." },
-        { q: "Was bedeutet „mit KI gemacht\"?", a: "Wir nutzen KI, um Konzeption, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — von Menschen geprüft und finalisiert." },
+        { q: "Was bedeutet „mit KI gemacht“?", a: "Wir nutzen KI, um Konzeption, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — von Menschen geprüft und finalisiert." },
         { q: "Wird meine Website für Google und KI optimiert sein?", a: "Ja. Wir integrieren von Anfang an die SEO- und GEO-Best-Practices: Struktur, Performance, strukturierte Daten und zitierbare Inhalte." },
       ],
       packsIncluded: {
@@ -2391,7 +2391,7 @@ export const de = {
           "Optimierung für generative KI (GEO/GSO): Werden Sie von ChatGPT, Perplexity und Google AI zitiert. Strukturierte Daten, zitierbare Inhalte, Tracking der Zitate.",
         intro: [
           "Immer mehr Ihrer Kunden stellen ihre Fragen einer KI statt Google. GEO (Generative Engine Optimization) optimiert Ihre Präsenz so, dass ChatGPT, Perplexity und Google AI Sie aufgreifen und als Quelle zitieren — nicht nur als einen Link unter vielen.",
-          "Wir strukturieren Ihre Inhalte so, dass sie „zitierbar\" sind (klare Antworten, nachprüfbare Fakten, lokaler Kontext), und machen Ihre Website für Maschinen lesbar: strukturierte Daten, llms.txt, saubere Architektur.",
+          "Wir strukturieren Ihre Inhalte so, dass sie „zitierbar“ sind (klare Antworten, nachprüfbare Fakten, lokaler Kontext), und machen Ihre Website für Maschinen lesbar: strukturierte Daten, llms.txt, saubere Architektur.",
         ],
         included: [
           { icon: "geo-citation", title: "Zitierbare Inhalte", desc: "Wir strukturieren Ihre Seiten so, dass sie in den Antworten generativer KI aufgegriffen und zitiert werden." },
@@ -2414,7 +2414,7 @@ export const de = {
         slug: "seo-local",
         illustration: "seo-local",
         title: "Lokales SEO & Google Business Profile",
-        tagline: "Dominieren Sie die „in meiner Nähe\"-Suchen in Luxemburg.",
+        tagline: "Dominieren Sie die „in meiner Nähe“-Suchen in Luxemburg.",
         short:
           "Seien Sie die naheliegende Antwort, wenn ein Kunde in seiner Nähe sucht. Optimierung Ihres Google-Business-Profile-Eintrags, lokale Citations und Bewertungen, um die Nachfrage aus der Umgebung zu erfassen — überall in der Großregion.",
         bullets: [
@@ -2425,9 +2425,9 @@ export const de = {
         ],
         metaTitle: "Agentur für lokales SEO & Google Business Profile in Luxemburg | vortx",
         metaDescription:
-          "Lokale Suchmaschinenoptimierung in Luxemburg: Optimierung des Google Business Profile, Citations, Kundenbewertungen und lokale Seiten. Erfassen Sie „in meiner Nähe\"-Suchen in der Großregion.",
+          "Lokale Suchmaschinenoptimierung in Luxemburg: Optimierung des Google Business Profile, Citations, Kundenbewertungen und lokale Seiten. Erfassen Sie „in meiner Nähe“-Suchen in der Großregion.",
         intro: [
-          "Wenn ein Kunde nach „Klempner Luxemburg\" oder „Agentur in meiner Nähe\" sucht, zeigt Google zuerst eine Karte und drei Einträge. Wenn Sie nicht dabei sind, sind Sie unsichtbar — selbst wenn Sie in den klassischen Ergebnissen Erster sind.",
+          "Wenn ein Kunde nach „Klempner Luxemburg“ oder „Agentur in meiner Nähe“ sucht, zeigt Google zuerst eine Karte und drei Einträge. Wenn Sie nicht dabei sind, sind Sie unsichtbar — selbst wenn Sie in den klassischen Ergebnissen Erster sind.",
           "Lokales SEO optimiert Ihre Präsenz auf dieser Karte und im Local Pack: vollständiger Google-Business-Profile-Eintrag, Konsistenz Ihrer Kontaktdaten im gesamten Web, Kundenbewertungen und technische Auszeichnung. Ein entscheidender Hebel für Geschäfte, Handwerker und ortsnahe Dienstleistungen in Luxemburg und an der Grenze.",
         ],
         included: [
@@ -2443,7 +2443,7 @@ export const de = {
           "Lokale Seiten & mehrsprachige Schema-Auszeichnung",
         ],
         faq: [
-          { q: "Ist lokales SEO nützlich, wenn ich kein Ladengeschäft habe?", a: "Ja, sobald Sie ein Einzugsgebiet haben: Handwerker, Dienstleistungen vor Ort, freie Berufe. Wir können einen Eintrag mit „Einzugsgebiet\" ohne öffentliche Adresse einrichten." },
+          { q: "Ist lokales SEO nützlich, wenn ich kein Ladengeschäft habe?", a: "Ja, sobald Sie ein Einzugsgebiet haben: Handwerker, Dienstleistungen vor Ort, freie Berufe. Wir können einen Eintrag mit „Einzugsgebiet“ ohne öffentliche Adresse einrichten." },
           { q: "Wie lange dauert es, bis mein Eintrag aufsteigt?", a: "Die ersten Verbesserungen (Vollständigkeit, Fotos, Kategorien) wirken in wenigen Wochen. Die Stetigkeit von Bewertungen und Citations festigt die Position über einige Monate." },
         ],
       },
@@ -3241,6 +3241,7 @@ export const de = {
     title: "Alle Ihre Fragen, unsere klaren Antworten.",
     lead: "Website, SEO, Leads, Werbung, KI, Preise, Fristen, DSGVO… Alles, was man uns vor dem Start fragt. Eine Frage bleibt offen? Schreiben Sie uns.",
     searchPlaceholder: "Eine Frage suchen…",
+    tocTitle: "Übersicht",
     countSuffix: "Fragen",
     emptyLabel: "Keine Frage entspricht Ihrer Suche.",
     ctaTitle: "Eine Frage ohne Antwort?",
@@ -3258,7 +3259,7 @@ export const de = {
         title: "Websites",
         items: [
           { q: "Maßanfertigung oder WordPress, wie wähle ich?", a: "Die Maßanfertigung (Next.js) bietet die beste Performance, Sicherheit und Flexibilität; WordPress ist ideal, wenn Sie die Inhalte im Alltag selbst bearbeiten wollen. Wir beraten Sie nach Ihrer tatsächlichen Nutzung, ohne Dogma." },
-          { q: "Stimmt es, dass Ihre Websites „mit KI gemacht\" sind?", a: "Ja. Wir nutzen KI, um Design, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — stets von Menschen geprüft und finalisiert." },
+          { q: "Stimmt es, dass Ihre Websites „mit KI gemacht“ sind?", a: "Ja. Wir nutzen KI, um Design, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — stets von Menschen geprüft und finalisiert." },
           { q: "Wird meine Website schnell und mobiltauglich sein?", a: "Absolut. Performance und mobile-first sind die Basis: eine nahezu sofortige Website, 100 % responsiv und auf allen Bildschirmen zugänglich." },
           { q: "Kann ich meine Website selbst ändern?", a: "Auf WordPress ja, ganz leicht. Bei einer Maßanfertigung richten wir ein, was nötig ist, damit Sie Ihre Schlüsselinhalte verwalten können — oder wir übernehmen es für Sie." },
           { q: "Wird meine Website für Google und KI optimiert sein?", a: "Ja. Wir integrieren von Anfang an die SEO- und GEO-Best-Practices: Struktur, Performance, strukturierte Daten und durch KI-Antwortmaschinen zitierbare Inhalte." },

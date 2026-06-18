@@ -89,7 +89,7 @@ export const fr = {
       "vortx conçoit des sites et des stratégies d'acquisition qui transforment l'attention en clients. Design premium, SEO de nouvelle génération, génération de leads mesurable.",
     primaryCta: "Réserver un appel découverte",
     secondaryCta: "Découvrir nos services",
-    note: "Réponse rapide · Audit offert · Sans engagement · 100% sur-mesure",
+    note: "Réponse rapide · Audit offert · Sans engagement · 100 % sur-mesure",
   },
 
   stats: [
@@ -244,7 +244,7 @@ export const fr = {
     problems: [
       "Des opportunités qui passent inaperçues",
       "Un ROI marketing décevant",
-      "Trop de visites, trop peu de contacts",
+      "Peu de visites, peu de contacts",
     ],
     solutionTitle: "Avec vortx :",
     solutions: [
@@ -258,7 +258,7 @@ export const fr = {
   // ---- Process ----
   process: {
     eyebrow: "Notre méthode",
-    title: "L'adn Marketing, zéro mauvaise surprise.",
+    title: "L'ADN marketing, zéro mauvaise surprise.",
     steps: [
       {
         n: "01",
@@ -547,7 +547,7 @@ export const fr = {
     contactTitle: "Contact",
     location: "Luxembourg",
     rights: "Tous droits réservés.",
-    madeWith: "Conçu avec amour et beaucoup d'AI.",
+    madeWith: "Conçu avec amour et beaucoup d'IA.",
     backToTop: "Retour en haut",
   },
 
@@ -2687,7 +2687,7 @@ export const fr = {
         ],
         faq: [
           { q: "Faites-vous les traductions ?", a: "On peut prendre en charge la rédaction et la traduction professionnelle, ou intégrer proprement vos contenus existants. L'important : un contenu juste et optimisé dans chaque langue, pas une traduction automatique brute." },
-          { q: "Le multilingue pénalise-t-il le SEO ?", a: "Au contraire, bien fait il le renforce : chaque langue capte ses propres recherches. La clé est un balisage hreflang correct et des contenus distincts — exactement ce qu'on met en place." },
+          { q: "Le multilingue pénalise-t-il le SEO ?", a: "Au contraire, bien fait, il le renforce : chaque langue capte ses propres recherches. La clé est un balisage hreflang correct et des contenus distincts — exactement ce qu'on met en place." },
         ],
       },
     ],
@@ -3260,6 +3260,7 @@ export const fr = {
     title: "Toutes vos questions, nos réponses claires.",
     lead: "Site web, SEO, leads, publicité, IA, tarifs, délais, RGPD… Tout ce qu'on nous demande avant de démarrer. Une question reste sans réponse ? Écrivez-nous.",
     searchPlaceholder: "Rechercher une question…",
+    tocTitle: "Sommaire",
     countSuffix: "questions",
     emptyLabel: "Aucune question ne correspond à votre recherche.",
     ctaTitle: "Une question sans réponse ?",

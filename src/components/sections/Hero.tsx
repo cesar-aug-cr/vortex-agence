@@ -8,9 +8,28 @@ import ThreeSphereV2BlackHole from "@/components/three/BlackHoleLazy";
 import { HeroParticles } from "@/components/sections/HeroParticles";
 import { GlowStar } from "@/components/sections/GlowStar";
 
-export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
+// Scrims/tints are driven by CSS vars (default = the dark "space" look, so the
+// real homepage and dark theme are unchanged). The /test-home sandbox flips
+// these vars + the stage tokens in light theme to render a white hero.
+const T = "var(--hero-tint, 7,7,10)";
+const SCRIM = `linear-gradient(100deg, rgba(${T},0.92) 0%, rgba(${T},0.78) 30%, rgba(${T},0.5) 52%, rgba(${T},0.15) 74%, rgba(${T},0) 100%)`;
+const HALO = `radial-gradient(70% 60% at 42% 48%, rgba(${T},0.55), transparent 70%)`;
+const VIGNETTE = `linear-gradient(to top, var(--stage) 6%, rgba(${T},0.6) 40%, transparent 100%)`;
+const FROST = `radial-gradient(44% 54% at 80% 50%, rgba(${T},0.5), rgba(${T},0.16) 55%, transparent 78%)`;
+const GRID = `linear-gradient(to right, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px)`;
+
+export function Hero({
+  dict,
+  lang,
+  sandbox = false,
+}: {
+  dict: Dictionary;
+  lang: Locale;
+  /** /test-home white sandbox: makes the black-hole centre white in light theme. */
+  sandbox?: boolean;
+}) {
   return (
-    <section className="relative isolate overflow-hidden bg-stage text-stage-text">
+    <section className="hero-section relative isolate overflow-hidden bg-stage text-stage-text">
       {/* 3D black hole — pushed left/down, sits behind the scrim */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <ThreeSphereV2BlackHole
@@ -18,6 +37,7 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           bhPositionOverride={[2.4, 0.4, 0]}
           bhPositionMobileOverride={[1.2, 2.6, 1]}
           bhScaleOverride={1.7}
+          eventHorizonColorLight={sandbox ? "#ffffff" : undefined}
         />
       </div>
 
@@ -26,41 +46,19 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         className="pointer-events-none absolute inset-0 z-[1] opacity-[0.05]"
         aria-hidden
         style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundImage: GRID,
           backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(120% 100% at 50% 0%, black, transparent 78%)",
+          maskImage: "radial-gradient(120% 100% at 50% 0%, black, transparent 78%)",
         }}
       />
 
       {/* === READABILITY FILTERS (between 3D and text) === */}
-      {/* left→right scrim so copy always sits on enough contrast */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[2]"
-        aria-hidden
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(7,7,10,0.92) 0%, rgba(7,7,10,0.78) 30%, rgba(7,7,10,0.5) 52%, rgba(7,7,10,0.15) 74%, rgba(7,7,10,0) 100%)",
-        }}
-      />
-      {/* soft halo focusing the headline block */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[2]"
-        aria-hidden
-        style={{
-          background:
-            "radial-gradient(70% 60% at 42% 48%, rgba(7,7,10,0.55), transparent 70%)",
-        }}
-      />
-      {/* bottom vignette for the stats row */}
+      <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: SCRIM }} />
+      <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: HALO }} />
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-2/3"
         aria-hidden
-        style={{
-          background:
-            "linear-gradient(to top, var(--stage) 6%, rgba(7,7,10,0.6) 40%, transparent 100%)",
-        }}
+        style={{ background: VIGNETTE }}
       />
       {/* brand colour glows */}
       <div
@@ -72,24 +70,18 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
-      {/* frosted filter over the black hole only (softens it, keeps text crisp).
-          The blur is applied via .hero-frost (desktop + @supports only); the
-          gradient scrim below carries the look on mobile without the cost. */}
+      {/* frosted filter over the black hole only (softens it, keeps text crisp). */}
       <div
         className="hero-frost pointer-events-none absolute inset-0 z-[3]"
         aria-hidden
         style={{
-          background:
-            "radial-gradient(44% 54% at 80% 50%, rgba(7,7,10,0.5), rgba(7,7,10,0.16) 55%, transparent 78%)",
-          maskImage:
-            "radial-gradient(56% 66% at 80% 50%, #000, transparent 80%)",
-          WebkitMaskImage:
-            "radial-gradient(56% 66% at 80% 50%, #000, transparent 80%)",
+          background: FROST,
+          maskImage: "radial-gradient(56% 66% at 80% 50%, #000, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(56% 66% at 80% 50%, #000, transparent 80%)",
         }}
       />
 
-      {/* Floating particles + glow lines (ported from the "Confiance" section) —
-          above the scrim/frost so they stay visible, below the copy (z-10) */}
+      {/* Floating particles + glow lines — above the scrim/frost, below the copy */}
       <div className="pointer-events-none absolute inset-0 z-[4]" aria-hidden>
         <HeroParticles />
       </div>
@@ -108,11 +100,7 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                   <span className="relative inline-block">
                     Luxembourg
                     {/* sparkle acting as the full stop, under the final "g" */}
-                    <GlowStar
-                      className="left-full top-full"
-                      scale={0.28}
-                      delay={0.8}
-                    />
+                    <GlowStar className="left-full top-full" scale={0.28} delay={0.8} />
                   </span>
                 )}
                 {part}
@@ -121,7 +109,7 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           </span>
         </div>
 
-        <h1 className="mt-10 max-w-3xl text-4xl font-bold leading-[1.04] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up delay-100">
+        <h1 className="hero-title mt-10 max-w-3xl text-4xl font-bold leading-[1.04] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up delay-100">
           {dict.hero.titleLead}{" "}
           <span className="text-gradient">{dict.hero.titleAccent}</span>
         </h1>
@@ -136,7 +124,7 @@ export function Hero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           </Link>
           <a
             href="#services"
-            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-stage-text transition-colors hover:border-accent hover:text-accent sm:backdrop-blur-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--hero-cta-border,rgba(255,255,255,0.25))] px-6 py-3.5 font-semibold text-stage-text transition-colors hover:border-accent hover:text-accent sm:backdrop-blur-sm"
           >
             {dict.hero.secondaryCta}
           </a>

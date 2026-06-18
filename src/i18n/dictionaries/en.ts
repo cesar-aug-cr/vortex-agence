@@ -76,7 +76,7 @@ export const en = {
 
   stats: [
     { value: "Express", label: "Guaranteed reply" },
-    { value: "100 %", label: "Built bespoke" },
+    { value: "100%", label: "Built bespoke" },
     { value: "FR · DE · EN", label: "Natively multilingual" },
   ],
 
@@ -109,7 +109,7 @@ export const en = {
   servicesSection: {
     eyebrow: "Our services",
     title: "One complete chain, from attention to client.",
-    lead: "Six expertises that lock together. Pick one, or let us orchestrate the whole.",
+    lead: "Six areas of expertise that lock together. Pick one, or let us orchestrate them all.",
   },
 
   services: [
@@ -226,7 +226,7 @@ export const en = {
     problems: [
       "Opportunities that slip by unnoticed",
       "A disappointing marketing ROI",
-      "Too many visits, too few contacts",
+      "Few visits, few contacts",
     ],
     solutionTitle: "With vortx:",
     solutions: [
@@ -341,7 +341,7 @@ export const en = {
   geo: {
     eyebrow: "The SEO of the future",
     title: "GEO / GSO: be the AI's answer.",
-    lead: "Search is changing. Your clients ask their questions to AI assistants. We optimise so that vortx — and you — are the source that gets cited.",
+    lead: "Search is changing. Your clients put their questions to AI assistants. We optimise so that vortx — and you — are the source that gets cited.",
     points: [
       {
         title: "Direct citations by AI",
@@ -549,7 +549,7 @@ export const en = {
       note: "marketing · web · design",
     },
     stats: [
-      { value: "100 %", label: "Bespoke, never a template" },
+      { value: "100%", label: "Bespoke, never a template" },
       { value: "FR·DE·EN", label: "Natively multilingual" },
       { value: "GEO", label: "Optimised for generative AI" },
     ],
@@ -2067,7 +2067,7 @@ export const en = {
       ],
       faq: [
         { q: "Bespoke or WordPress, how to choose?", a: "Bespoke (Next.js) offers the best performance and flexibility; WordPress is ideal if you want to edit content yourself. We advise based on your real use, no dogma." },
-        { q: "What does \"built with AI\" mean?", a: "We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and at a better value-for-money — reviewed and finalised by humans." },
+        { q: "What does \"built with AI\" mean?", a: "We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and with better value for money — reviewed and finalised by humans." },
         { q: "Will my site be optimised for Google and AI?", a: "Yes. We build in SEO and GEO best practices from the start: structure, performance, structured data and citable content." },
       ],
       packsIncluded: {
@@ -2219,7 +2219,7 @@ export const en = {
   },
 
   subServicesTitle: "A speciality for every need",
-  subServicesLead: "This service breaks down into focused expertises. Take the one that fits your need — or combine them to cover the whole field.",
+  subServicesLead: "This service breaks down into focused areas of expertise. Take the one that fits your need — or combine them to cover the whole field.",
   subServices: {
     publicite: [
       {
@@ -2617,7 +2617,7 @@ export const en = {
           "We design and build fast, secure and scalable web applications, connected to your existing tools. From mapping the need to production, we build the tool that fits exactly the way you work.",
         ],
         included: [
-          { icon: "webapp", title: "Fully bespoke", desc: "An application built for your precise process — not a generic software you have to put up with." },
+          { icon: "webapp", title: "Fully bespoke", desc: "An application built for your precise process — not generic software you have to put up with." },
           { icon: "next-perf", title: "Fast & secure", desc: "A modern, high-performance architecture designed in compliance with GDPR." },
           { icon: "integration", title: "Integrations & APIs", desc: "Connected to your CRM, your tools and third-party services via APIs and webhooks." },
           { icon: "automation", title: "Scalable", desc: "A foundation that grows with you: we add modules as your needs evolve." },
@@ -3240,6 +3240,7 @@ export const en = {
     title: "All your questions, our clear answers.",
     lead: "Websites, SEO, leads, advertising, AI, pricing, timelines, GDPR… Everything we get asked before getting started. Still have a question? Write to us.",
     searchPlaceholder: "Search for a question…",
+    tocTitle: "Contents",
     countSuffix: "questions",
     emptyLabel: "No question matches your search.",
     ctaTitle: "A question left unanswered?",
@@ -3257,7 +3258,7 @@ export const en = {
         title: "Websites",
         items: [
           { q: "Bespoke or WordPress, how to choose?", a: "Bespoke (Next.js) offers the best performance, security and flexibility; WordPress is ideal if you want to edit content yourself day to day. We advise based on your real use, no dogma." },
-          { q: "Is it true your sites are \"built with AI\"?", a: "Yes. We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and at a better value-for-money — always reviewed and finalised by humans." },
+          { q: "Is it true your sites are \"built with AI\"?", a: "Yes. We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and with better value for money — always reviewed and finalised by humans." },
           { q: "Will my site be fast and mobile-friendly?", a: "Absolutely. Performance and mobile-first are the baseline: a near-instant site, 100% responsive and accessible on every screen." },
           { q: "Will I be able to edit my site myself?", a: "On WordPress, yes, easily. On bespoke builds, we set up what's needed for you to manage your key content — or we handle it for you." },
           { q: "Will my site be optimised for Google and AI?", a: "Yes. We build in SEO and GEO best practices from the start: structure, performance, structured data and content citable by AI answer engines." },
@@ -3268,7 +3269,7 @@ export const en = {
         title: "SEO & GEO",
         items: [
           { q: "What's the difference between SEO and GEO?", a: "SEO puts you in Google's list of results; GEO (Generative Engine Optimization) puts you in the answer generated by an AI like ChatGPT or Perplexity. We optimise for both, because 80% of the best practices are shared." },
-          { q: "Is GEO real or just a fad?", a: "It's very real: more and more decision-makers ask their questions to an AI rather than Google. If you don't appear in the answer, you don't exist in the decision. We structure your content to be cited as a source." },
+          { q: "Is GEO real or just a fad?", a: "It's very real: more and more decision-makers put their questions to an AI rather than to Google. If you don't appear in the answer, you don't exist in the decision. We structure your content to be cited as a source." },
           { q: "How long until we see SEO results?", a: "SEO/GEO is foundational work: the first signals often appear within a few weeks, solid gains within a few months. We show you the progress at every step, with no magic promises." },
           { q: "Do you do SEO in several languages?", a: "Yes, FR/DE/EN natively. It's essential in Luxembourg, where your clients compare you in all three languages." },
         ],

@@ -1,8 +1,9 @@
 // Full-page screenshot via existing Chrome (software WebGL so the 3D renders).
-// Usage: node scripts/shot.mjs <url> <out.png> [width] [height] [theme] [fullPage]
+// Usage: node scripts/shot.mjs <url> <out.png> [width] [height] [theme] [fullPage] [selector]
+//   - selector (optional): scroll that element into view and clip the shot to it.
 import puppeteer from "puppeteer-core";
 
-const [, , url, out, w = "1440", h = "900", theme = "dark", fullPage = "1"] =
+const [, , url, out, w = "1440", h = "900", theme = "dark", fullPage = "1", selector] =
   process.argv;
 
 const CHROME = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
@@ -40,7 +41,15 @@ try {
   // let fonts + 3D settle
   await new Promise((r) => setTimeout(r, 2500));
 
-  await page.screenshot({ path: out, fullPage: fullPage === "1" });
+  if (selector) {
+    const el = await page.$(selector);
+    if (!el) throw new Error(`selector not found: ${selector}`);
+    await el.scrollIntoView();
+    await new Promise((r) => setTimeout(r, 500));
+    await el.screenshot({ path: out });
+  } else {
+    await page.screenshot({ path: out, fullPage: fullPage === "1" });
+  }
   console.log("OK ->", out);
 } catch (e) {
   console.error("SHOT ERROR:", e.message);

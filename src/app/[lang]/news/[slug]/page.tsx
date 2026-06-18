@@ -201,7 +201,7 @@ export default async function ArticlePage({
                 <Link
                   key={a.slug}
                   href={localized(lang, `/news/${a.slug}`)}
-                  className="card card-hover group p-6"
+                  className="card card-hover spotlight-card group p-6"
                 >
                   <span className="font-mono text-xs text-text-muted">{a.category}</span>
                   <h3 className="mt-2 font-semibold text-text transition-colors group-hover:text-accent">

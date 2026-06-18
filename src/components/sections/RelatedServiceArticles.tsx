@@ -61,7 +61,7 @@ export function RelatedServiceArticles({
             <Link
               key={a.slug}
               href={localized(lang, `/news/${a.slug}`)}
-              className="card card-hover group flex flex-col overflow-hidden"
+              className="card card-hover spotlight-card group flex flex-col overflow-hidden"
             >
               <div className="illu-stage relative flex h-36 items-center justify-center overflow-hidden border-b border-border">
                 {Cover && <Cover className="h-24 w-24" />}

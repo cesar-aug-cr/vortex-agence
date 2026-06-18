@@ -21,12 +21,12 @@ export function ArticleLinks({
   if (!links || links.length === 0) return null;
 
   return (
-    <section className="mt-12 rounded-2xl border border-border bg-bg-card p-6 md:p-7">
+    <section className="mt-12">
       <p className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-accent">
         <Link2 width={16} height={16} />
         {title}
       </p>
-      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+      <ul className="mt-5 grid gap-4 sm:grid-cols-2">
         {links.map((l) => {
           const internal = l.href.startsWith("/");
           const href = internal ? localized(lang, l.href) : l.href;
@@ -34,7 +34,7 @@ export function ArticleLinks({
             <li key={l.href}>
               <Link
                 href={href}
-                className="group flex h-full items-start gap-3 rounded-xl border border-border p-4 transition-colors hover:border-accent/50 hover:bg-accent-soft"
+                className="card card-hover spotlight-card group flex h-full items-start gap-3 p-5"
               >
                 <span className="min-w-0 flex-1">
                   <span className="flex items-center gap-1.5 font-semibold text-text transition-colors group-hover:text-accent">

@@ -220,7 +220,7 @@ export const es = {
     problems: [
       "Oportunidades que pasan desapercibidas",
       "Un ROI de marketing decepcionante",
-      "Demasiadas visitas, demasiado pocos contactos",
+      "Pocas visitas, pocos contactos",
     ],
     solutionTitle: "Con vortx:",
     solutions: [
@@ -447,7 +447,7 @@ export const es = {
     next: "Siguiente pregunta",
     finish: "Ver mi puntuación",
     correct: "¡Correcto!",
-    wrong: "¡Fallaste!",
+    wrong: "¡Incorrecto!",
     didYouKnow: "¿Sabía que…?",
     scorePrefix: "Su puntuación",
     replay: "Volver a jugar",
@@ -590,7 +590,7 @@ export const es = {
         location: "Esch-sur-Alzette",
         rating: 5,
         quote:
-          "Sitio rehecho de cero a fin, rápido e impecable en móvil. El equipo lo automatizó todo para que dediquemos menos tiempo a lo administrativo. Una ganancia real en el día a día.",
+          "Sitio rehecho desde cero, rápido e impecable en móvil. El equipo lo automatizó todo para que dediquemos menos tiempo a lo administrativo. Una ganancia real en el día a día.",
       },
       {
         name: "Anne K.",
@@ -1368,8 +1368,8 @@ export const es = {
           },
           {
             type: "logo",
-            tipTitle: "¿Por qué el doble círculo en la « o »?",
-            tip: "Dos razones. Primero, la legibilidad: sin él, la « o » podría parecer un punto — « v•rtx » en lugar de « vortx ». El círculo ancla la letra y mantiene el nombre nítido.\n\nSegundo, el significado: del círculo grande al pequeño, la forma dibuja un embudo — un remolino (vórtice) que atrae a los prospectos y los convierte en clientes, hasta el corazón de la marca.",
+            tipTitle: "¿Por qué el doble círculo en la «o»?",
+            tip: "Dos razones. Primero, la legibilidad: sin él, la «o» podría parecer un punto — «v•rtx» en lugar de «vortx». El círculo ancla la letra y mantiene el nombre nítido.\n\nSegundo, el significado: del círculo grande al pequeño, la forma dibuja un embudo — un remolino (vórtice) que atrae a los prospectos y los convierte en clientes, hasta el corazón de la marca.",
           },
           { type: "h3", text: "1. Simple" },
           {
@@ -2067,21 +2067,21 @@ export const es = {
       packsIncluded: {
         eyebrow: "Todo Incluido",
         title: "¿Qué incluyen todos nuestros packs?",
-        lead: "Independientemente del pack que elijas, siempre disfrutarás de estas características esenciales.",
+        lead: "Independientemente del pack que elija, siempre disfrutará de estas características esenciales.",
         items: [
           { icon: "server", title: "Dominio y Hosting", desc: "Primer año de dominio incluido y hosting de alta velocidad." },
-          { icon: "responsive", title: "100% Responsive", desc: "Adaptación perfecta a todos los dispositivos para capturar leads desde móvil, tablet y escritorio." },
+          { icon: "responsive", title: "100 % Responsive", desc: "Adaptación perfecta a todos los dispositivos para capturar leads desde móvil, tablet y escritorio." },
           { icon: "seo", title: "SEO Preparado para el Futuro", desc: "Optimización para motores de búsqueda tradicionales y posicionamiento conversacional." },
-          { icon: "contact", title: "Formulario de Contacto", desc: "Recibe mensajes directamente en tu email (Landing Page & Site S)." },
-          { icon: "smartforms", title: "Formularios inteligentes", desc: "Formularios de contacto y cotización multi-paso diseñados para maximizar las conversiones y capturar leads cualificados (Site M, L, XL & Custom)." },
-          { icon: "ssl", title: "Certificado SSL", desc: "Conexión segura HTTPS para proteger a tus visitantes." },
+          { icon: "contact", title: "Formulario de Contacto", desc: "Reciba mensajes directamente en su email (Landing Page & Site S)." },
+          { icon: "smartforms", title: "Formularios inteligentes", desc: "Formularios de contacto y cotización multipaso diseñados para maximizar las conversiones y capturar leads cualificados (Site M, L, XL & Custom)." },
+          { icon: "ssl", title: "Certificado SSL", desc: "Conexión segura HTTPS para proteger a sus visitantes." },
           { icon: "support", title: "Soporte Técnico", desc: "Asistencia técnica durante los primeros 3 meses." },
           { icon: "analytics", title: "Analytics integrado", desc: "Seguimiento completo de conversiones y comportamiento de usuarios para optimización continua." },
-          { icon: "speed", title: "Velocidad optimizada", desc: "Carga ultra-rápida para mejorar la experiencia de usuario y el posicionamiento en buscadores." },
+          { icon: "speed", title: "Velocidad optimizada", desc: "Carga ultrarrápida para mejorar la experiencia de usuario y el posicionamiento en buscadores." },
         ],
         moreTitle: "Y mucho más...",
-        moreText: "Cada proyecto es único. Podemos añadir funcionalidades adicionales según tus necesidades: blog, galería, reservas online, integración con redes sociales y más.",
-        ctaLabel: "Pregúntanos",
+        moreText: "Cada proyecto es único. Podemos añadir funcionalidades adicionales según sus necesidades: blog, galería, reservas online, integración con redes sociales y más.",
+        ctaLabel: "Pregúntenos",
       },
     },
     "seo-geo": {
@@ -3235,6 +3235,7 @@ export const es = {
     title: "Todas sus preguntas, nuestras respuestas claras.",
     lead: "Sitio web, SEO, leads, publicidad, IA, tarifas, plazos, RGPD… Todo lo que nos preguntan antes de empezar. ¿Queda alguna pregunta sin responder? Escríbanos.",
     searchPlaceholder: "Buscar una pregunta…",
+    tocTitle: "Índice",
     countSuffix: "preguntas",
     emptyLabel: "Ninguna pregunta coincide con su búsqueda.",
     ctaTitle: "¿Una pregunta sin respuesta?",

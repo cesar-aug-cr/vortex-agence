@@ -41,3 +41,6 @@ _*.svg
 
 # logs
 *.log
+
+# local dev screenshots (scripts/shot.mjs)
+screenshots/

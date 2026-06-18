@@ -331,11 +331,11 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
   );
 }
 
-function EventHorizon({ radius = 0.46 }: { radius?: number }) {
+function EventHorizon({ radius = 0.46, color = "#000000" }: { radius?: number; color?: string }) {
   return (
     <mesh>
       <sphereGeometry args={[radius, 64, 64]} />
-      <meshBasicMaterial color="#000000" />
+      <meshBasicMaterial color={color} />
     </mesh>
   );
 }
@@ -355,7 +355,7 @@ function PhotonRing() {
   );
 }
 
-function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2RotOverride, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed }: { isMobile: boolean; posOverride?: [number, number, number]; rotOverride?: [number, number, number]; scaleOverride?: number; ring2RotOverride?: [number, number, number]; diskCount?: number; disk2Count?: number; diskMaxRadius?: number; diskSizeScale?: number; diskBrightness?: number; disk2MaxRadius?: number; diskSpeed?: number }) {
+function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2RotOverride, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed, eventHorizonColor }: { isMobile: boolean; posOverride?: [number, number, number]; rotOverride?: [number, number, number]; scaleOverride?: number; ring2RotOverride?: [number, number, number]; diskCount?: number; disk2Count?: number; diskMaxRadius?: number; diskSizeScale?: number; diskBrightness?: number; disk2MaxRadius?: number; diskSpeed?: number; eventHorizonColor?: string }) {
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame(({ clock }) => {
@@ -370,7 +370,7 @@ function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2Rot
       rotation={rotOverride ?? [Math.PI * 0.2, 0.3, 0.15]}
       scale={scaleOverride ?? (isMobile ? 1.3 : 1.7)}
     >
-      <EventHorizon radius={isMobile ? 0.46 : 0.42} />
+      <EventHorizon radius={isMobile ? 0.46 : 0.42} color={eventHorizonColor} />
       <PhotonRing />
       <AccretionDisk count={diskCount ?? (isMobile ? 1400 : 2400)} maxRadius={diskMaxRadius} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} />
       <group rotation={ring2RotOverride ?? [Math.PI * 0.35, 0.10, 0.20]}>
@@ -472,9 +472,13 @@ interface Props {
   diskBrightness?: number;
   disk2MaxRadius?: number;
   diskSpeed?: number;
+  /** Event-horizon (centre) colour to use in LIGHT theme only. Falls back to
+   *  black in dark theme. Used by the /test-home white sandbox so the centre
+   *  reads as white on the white hero instead of a black void. */
+  eventHorizonColorLight?: string;
 }
 
-export default function ThreeSphereV2BlackHole({ className, showSphere = false, bhPositionOverride, bhPositionMobileOverride, bhRotationOverride, bhScaleOverride, bhRing2RotOverride, lensingStrength, lensingAsymmetry, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed }: Props) {
+export default function ThreeSphereV2BlackHole({ className, showSphere = false, bhPositionOverride, bhPositionMobileOverride, bhRotationOverride, bhScaleOverride, bhRing2RotOverride, lensingStrength, lensingAsymmetry, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed, eventHorizonColorLight }: Props) {
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   // Pause the (very heavy: FBO + double full-scene render per frame) loop when
@@ -486,6 +490,9 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
   // If the GPU drops the WebGL context (common on iOS Safari under memory
   // pressure) fall back to a static gradient instead of a frozen black canvas.
   const [lost, setLost] = useState(false);
+  // Live light/dark detection (the theme toggle flips `.dark` on <html>). Only
+  // used when `eventHorizonColorLight` is provided (the white sandbox hero).
+  const [isLight, setIsLight] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -517,6 +524,19 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
     mq.addEventListener?.("change", apply);
     return () => mq.removeEventListener?.("change", apply);
   }, []);
+
+  useEffect(() => {
+    if (!eventHorizonColorLight) return;
+    const el = document.documentElement;
+    const apply = () => setIsLight(!el.classList.contains("dark"));
+    apply();
+    const obs = new MutationObserver(apply);
+    obs.observe(el, { attributes: true, attributeFilter: ["class"] });
+    return () => obs.disconnect();
+  }, [eventHorizonColorLight]);
+
+  const eventHorizonColor =
+    eventHorizonColorLight && isLight ? eventHorizonColorLight : undefined;
 
   const effectiveOverride = isMobile
     ? bhPositionMobileOverride ?? bhPositionOverride
@@ -584,7 +604,7 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
           {showSphere && <BandedSphere isMobile={isMobile} />}
-          <BlackHole isMobile={isMobile} posOverride={effectiveOverride} rotOverride={bhRotationOverride} scaleOverride={bhScaleOverride} ring2RotOverride={bhRing2RotOverride} diskCount={diskCount} disk2Count={disk2Count} diskMaxRadius={diskMaxRadius} diskSizeScale={diskSizeScale} diskBrightness={diskBrightness} disk2MaxRadius={disk2MaxRadius} diskSpeed={diskSpeed} />
+          <BlackHole isMobile={isMobile} posOverride={effectiveOverride} rotOverride={bhRotationOverride} scaleOverride={bhScaleOverride} ring2RotOverride={bhRing2RotOverride} diskCount={diskCount} disk2Count={disk2Count} diskMaxRadius={diskMaxRadius} diskSizeScale={diskSizeScale} diskBrightness={diskBrightness} disk2MaxRadius={disk2MaxRadius} diskSpeed={diskSpeed} eventHorizonColor={eventHorizonColor} />
           <GravitationalLens bhPosition={bhPosition} bhScale={bhScale} strength={lensingStrength} asymmetry={lensingAsymmetry} />
         </Suspense>
         </Canvas>

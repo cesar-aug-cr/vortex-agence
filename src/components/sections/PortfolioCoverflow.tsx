@@ -260,8 +260,8 @@ export function PortfolioCoverflow({ copy }: { copy: Copy }) {
       {/* Floating typewriter card */}
       <div className="relative z-30 -mt-20 px-4 md:-mt-32 lg:-mt-40">
         <div
-          className={`mx-auto max-w-md rounded-2xl p-6 text-center shadow-2xl md:p-8 ${
-            isDark ? "border border-white/10 bg-white/5" : "border border-black/5 bg-white/70"
+          className={`spotlight-card mx-auto max-w-md rounded-2xl p-6 text-center shadow-2xl md:p-8 ${
+            isDark ? "border border-white/10 bg-black/40" : "border border-black/5 bg-white/70"
           }`}
           style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
         >

@@ -5,6 +5,14 @@ import { site } from "@/lib/site";
 
 export type Crumb = { label: string; href?: string };
 
+/** Localized accessible label for the breadcrumb nav (screen readers). */
+const NAV_LABEL: Record<Locale, string> = {
+  fr: "Fil d'Ariane",
+  en: "Breadcrumb",
+  de: "Brotkrümelnavigation",
+  es: "Ruta de navegación",
+};
+
 export function Breadcrumbs({
   lang,
   homeLabel,
@@ -28,7 +36,7 @@ export function Breadcrumbs({
   };
 
   return (
-    <nav aria-label="Fil d'Ariane" className="container-vortx pt-28 md:pt-32">
+    <nav aria-label={NAV_LABEL[lang] ?? NAV_LABEL.fr} className="container-vortx pt-28 md:pt-32">
       <ol className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wide text-text-muted">
         {all.map((c, i) => {
           const last = i === all.length - 1;

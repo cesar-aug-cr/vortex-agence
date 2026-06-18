@@ -66,7 +66,7 @@ export function SectionHeading({
       className={`${align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"} ${className}`}
     >
       <span
-        className={`font-mono text-xs uppercase tracking-[0.22em] ${
+        className={`section-eyebrow font-mono text-xs uppercase tracking-[0.22em] ${
           onStage ? "text-accent" : "eyebrow-badge"
         }`}
       >

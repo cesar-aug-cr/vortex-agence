@@ -3,11 +3,17 @@
 import { useMemo, useState } from "react";
 import { Plus } from "@/components/ui/icons";
 import { StickySearch } from "@/components/ui/StickySearch";
+import { faqGroupId } from "@/lib/faq";
 
 type FaqItem = { q: string; a: string };
 type FaqGroup = { title: string; items: readonly FaqItem[] };
 
-/** Searchable, category-grouped FAQ accordion. */
+/**
+ * Searchable, category-grouped FAQ accordion. Each group carries a stable
+ * anchor id ({@link faqGroupId}) so the page's sticky table of contents can
+ * jump to it. The search bar is sticky on desktop only — on mobile the sticky
+ * slot is taken by the article-style TOC bar.
+ */
 export function FaqList({
   groups,
   searchPlaceholder,
@@ -37,13 +43,14 @@ export function FaqList({
   const count = filteredGroups.reduce((n, g) => n + g.items.length, 0);
 
   return (
-    <div className="mt-12">
+    <div>
       <StickySearch
         value={query}
         onChange={setQuery}
         placeholder={searchPlaceholder}
         count={count}
         countSuffix={countSuffix}
+        mobileSticky={false}
       />
 
       {count === 0 ? (
@@ -53,7 +60,7 @@ export function FaqList({
       ) : (
         <div className="space-y-12">
           {filteredGroups.map((g) => (
-            <div key={g.title}>
+            <div key={g.title} id={faqGroupId(g.title)} className="scroll-mt-36">
               <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
                 {g.title}
               </h2>

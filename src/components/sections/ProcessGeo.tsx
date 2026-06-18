@@ -71,7 +71,7 @@ export function ProcessGeo({ dict }: { dict: Dictionary }) {
           {/* left column left empty so the diagonal DNA reads through */}
           <div className="hidden lg:block" aria-hidden />
 
-          <div className="glass-pill rounded-3xl bg-white/[0.05] p-8 backdrop-blur-xl md:p-10">
+          <div className="geo-glass glass-pill rounded-3xl bg-white/[0.05] p-8 backdrop-blur-xl md:p-10">
             <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
               {dict.geo.eyebrow}
             </span>
