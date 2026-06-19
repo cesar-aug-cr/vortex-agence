@@ -40,7 +40,7 @@ export default async function TestHomePage({
 
   return (
     <>
-      <Header dict={dict} lang={lang} overHero />
+      <Header dict={dict} lang={lang} overHero sandbox />
       <div className="test-home relative isolate bg-bg">
         <AmbientGlow />
         <SpotlightCards />

@@ -18,13 +18,20 @@ export function Header({
   dict,
   lang,
   overHero = false,
+  sandbox = false,
 }: {
   dict: Dictionary;
   lang: Locale;
   overHero?: boolean;
+  /** /test-home white sandbox: darkens the over-hero logo so it reads on the
+   *  white hero (light theme only). */
+  sandbox?: boolean;
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  // /test-home sandbox only: track light/dark so the over-hero header renders
+  // dark content on the white (light) hero instead of white-on-white.
+  const [lightTheme, setLightTheme] = useState(false);
   // Mobile nav: which main services have their sub-services expanded.
   const [openServices, setOpenServices] = useState<Set<string>>(new Set());
   const toggleService = (slug: string) =>
@@ -40,6 +47,16 @@ export function Header({
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!sandbox) return;
+    const el = document.documentElement;
+    const apply = () => setLightTheme(!el.classList.contains("dark"));
+    apply();
+    const obs = new MutationObserver(apply);
+    obs.observe(el, { attributes: true, attributeFilter: ["class"] });
+    return () => obs.disconnect();
+  }, [sandbox]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -58,7 +75,11 @@ export function Header({
     { key: "scale", services: dict.services.filter((s) => s.group === "scale") },
   ];
 
-  const navLinkClass = solid
+  // The over-hero header normally renders white content (it sits on the dark
+  // hero). On the /test-home white hero (sandbox + light theme) the content
+  // must be dark instead — same as the solid state.
+  const onLight = solid || (sandbox && lightTheme);
+  const navLinkClass = onLight
     ? "text-text hover:text-accent"
     : "text-white/90 hover:text-accent";
 
@@ -75,7 +96,11 @@ export function Header({
         <Link
           href={localized(lang, "/")}
           aria-label={`vortx — ${dict.common.breadcrumbHome}`}
-          className={solid ? "text-text" : "text-white"}
+          className={
+            solid
+              ? "text-text"
+              : `text-white${sandbox ? " sandbox-overhero-logo" : ""}`
+          }
         >
           <LogoMark className="h-8 w-auto" />
         </Link>
@@ -242,15 +267,15 @@ export function Header({
         <div className="flex items-center gap-2 sm:gap-3">
           {/* accessibility — leftmost */}
           <div className="order-1">
-            <AccessibilityWidget labels={dict.a11y} onDark={!solid} />
+            <AccessibilityWidget labels={dict.a11y} onDark={!onLight} />
           </div>
           {/* language — between accessibility and theme (visible on mobile too) */}
           <div className="order-2">
-            <LanguageSwitcher lang={lang} onDark={!solid} />
+            <LanguageSwitcher lang={lang} onDark={!onLight} />
           </div>
           {/* theme / colour — to the right of language */}
           <div className="order-3">
-            <ThemeToggle label={dict.common.toggleTheme} onDark={!solid} />
+            <ThemeToggle label={dict.common.toggleTheme} onDark={!onLight} />
           </div>
           <Link
             href={localized(lang, "/contact")}
@@ -266,7 +291,7 @@ export function Header({
             aria-label={mobileOpen ? dict.common.close : dict.common.openMenu}
             aria-expanded={mobileOpen}
             className={`order-5 inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden ${
-              solid ? "border-border-strong text-text" : "border-white/30 text-white"
+              onLight ? "border-border-strong text-text" : "border-white/30 text-white"
             }`}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>

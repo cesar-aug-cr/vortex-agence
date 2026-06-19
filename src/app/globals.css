@@ -1341,6 +1341,11 @@ html:not(.dark) .test-home .leadgen-problem {
     0 1px 3px rgba(10, 10, 11, 0.05),
     0 12px 30px -16px rgba(10, 10, 11, 0.14);
 }
+/* test-home sandbox header logo (rendered outside .test-home): darken its white
+   parts so it reads on the white hero. Light theme only. */
+html:not(.dark) .sandbox-overhero-logo {
+  color: #09090c;
+}
 
 /* CTA — lime green with a blue (logo) brilliance/sheen + glow.
    Applied in BOTH themes on the sandbox (the lime + blue glow reads well on
