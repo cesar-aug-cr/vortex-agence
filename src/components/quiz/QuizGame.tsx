@@ -205,8 +205,13 @@ export function QuizGame({
   }
 
   // ---- PLAYING ----
+  // The whole game board is a dark `.card` (in light mode the curated theme
+  // turns cards dark + light text). This keeps the correct/incorrect/feedback
+  // states on a single dark surface in BOTH themes — so the green/red signals
+  // stay legible on the white page without per-state light overrides.
   return (
     <div className="mx-auto max-w-2xl">
+      <div className="card p-6 md:p-8">
       {/* progress */}
       <div className="flex items-center gap-2">
         {Array.from({ length: total }, (_, i) => (
@@ -263,7 +268,7 @@ export function QuizGame({
 
           {/* feedback + did-you-know */}
           {answered && (
-            <div className="mt-5 animate-fade-in-up rounded-2xl border border-border bg-bg-elevated p-4">
+            <div className="mt-5 animate-fade-in-up rounded-2xl border border-border bg-white/5 p-4">
               <p
                 className={`text-sm font-semibold ${
                   picked === current.answer ? "text-green-500" : "text-red-400"
@@ -283,6 +288,7 @@ export function QuizGame({
           )}
         </div>
       )}
+      </div>
     </div>
   );
 }

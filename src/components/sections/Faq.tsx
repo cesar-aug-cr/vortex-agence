@@ -19,7 +19,7 @@ export function Faq({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
     <Section id="faq" tone="muted" containerClassName="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
       <div>
-        <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
+        <span className="section-eyebrow eyebrow-badge font-mono text-xs uppercase tracking-[0.22em]">
           {dict.faq.eyebrow}
         </span>
         <h2 className="mt-4 text-3xl font-bold text-text md:text-4xl">{dict.faq.title}</h2>

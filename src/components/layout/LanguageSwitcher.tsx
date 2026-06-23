@@ -45,10 +45,10 @@ export function LanguageSwitcher({
         aria-haspopup="true"
         aria-expanded={open}
         aria-label={localeNames[lang]}
-        className={`inline-flex h-11 items-center gap-1.5 rounded-full border px-3.5 font-mono text-xs uppercase tracking-widest transition-colors ${
+        className={`hdr-icon-btn inline-flex h-11 items-center gap-1.5 rounded-full border px-3.5 font-mono text-xs uppercase tracking-widest transition-colors ${
           onDark
             ? "border-white/25 text-white/80 hover:border-accent hover:text-accent"
-            : "border-border-strong text-text-muted hover:border-accent hover:text-accent"
+            : "border-border-strong text-text-muted hover:border-accent hover:text-accent-strong"
         }`}
       >
         <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>
@@ -79,7 +79,7 @@ export function LanguageSwitcher({
             onClick={() => setOpen(false)}
             className="fixed inset-0 z-0 cursor-default"
           />
-          <ul className="absolute right-0 top-full z-10 mt-2 w-44 overflow-hidden rounded-xl border border-border bg-bg-card py-1 shadow-[var(--shadow-lg)]">
+          <ul className="nav-dropdown absolute right-0 top-full z-10 mt-2 w-44 overflow-hidden rounded-xl border border-border bg-bg-card py-1 shadow-[var(--shadow-lg)]">
             {i18n.locales.map((l) => (
               <li key={l}>
                 <Link

@@ -79,11 +79,11 @@ export function ShareButton({
 
   const triggerClass =
     variant === "panel"
-      ? "flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-bg-card px-4 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent/50 hover:text-accent"
-      : "inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold text-text transition-colors hover:border-accent/50 hover:text-accent";
+      ? "flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-bg-card px-4 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent/50 hover:text-accent-strong"
+      : "inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold text-text transition-colors hover:border-accent/50 hover:text-accent-strong";
 
   const menuItem =
-    "flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-text transition-colors hover:bg-accent-soft hover:text-accent";
+    "flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-text transition-colors hover:bg-accent-soft hover:text-accent-strong";
 
   return (
     <div ref={ref} className="relative">

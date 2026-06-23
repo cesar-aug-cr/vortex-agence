@@ -103,7 +103,7 @@ export function ArticleToc({
                   className={`block border-l-2 py-1 pl-3 text-sm leading-snug transition-colors ${
                     active
                       ? "border-accent font-semibold text-accent"
-                      : "border-transparent text-text-dim hover:text-accent"
+                      : "border-transparent text-text-dim hover:text-accent-strong"
                   }`}
                 >
                   <span className={active ? "text-accent" : "text-text-muted"}>{i + 1}.</span>{" "}
@@ -161,7 +161,7 @@ export function ArticleToc({
                   className={`block rounded-lg px-2 py-2 text-sm transition-colors ${
                     active
                       ? "bg-accent-soft font-semibold text-accent"
-                      : "text-text-dim hover:bg-accent-soft hover:text-accent"
+                      : "text-text-dim hover:bg-accent-soft hover:text-accent-strong"
                   }`}
                 >
                   {i + 1}. {h.text}

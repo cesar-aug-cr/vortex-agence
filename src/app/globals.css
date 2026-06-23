@@ -1253,6 +1253,26 @@ html:not(.dark) .test-home .hero-section {
 html:not(.dark) .test-home .hero-section .hero-title {
   filter: none;
 }
+/* The note's brand sweep is tuned for the DARK hero (lime→cyan→white). On the
+   white hero the white highlight is invisible and lime/cyan wash out to grey,
+   so re-tune it for light surfaces: dark-teal→olive base with a LIME peak
+   (the bright sweep), mirroring how white peaks on the dark hero. */
+html:not(.dark) .test-home .hero-section .brand-sweep {
+  background-image: linear-gradient(
+    100deg,
+    #0f766e 0%,
+    #4f7a0a 28%,
+    #c8f02e 45%,
+    #c8f02e 55%,
+    #4f7a0a 72%,
+    #0f766e 100%
+  );
+}
+/* The headline accent word uses .text-gradient (lime→cyan), which is washed out
+   on the white hero. Re-tune to readable dark-teal→olive in the light theme. */
+html:not(.dark) .test-home .hero-section .text-gradient {
+  background-image: linear-gradient(100deg, #0f766e 0%, #4f7a0a 100%);
+}
 
 /* LeadGen "solution" panel + funnel chips → dark surfaces in the light theme,
    to match the dark cards (kept lime border/checks). */
@@ -1345,6 +1365,51 @@ html:not(.dark) .test-home .leadgen-problem {
    parts so it reads on the white hero. Light theme only. */
 html:not(.dark) .sandbox-overhero-logo {
   color: #09090c;
+}
+/* Nav dropdowns (mega-menu + Ressources) adopt the dark-card treatment in the
+   LIGHT theme SITE-WIDE — so internal-page dropdowns match the home's dark
+   panels rather than rendering as flat white-on-white. Accent text inside sits
+   on that dark surface, so it must stay brand lime (not the light olive). */
+html:not(.dark) .test-home .nav-dropdown {
+  --bg-card: #121218;
+  --text: #f2f3ee;
+  --text-dim: #b9bcb2;
+  --text-muted: #7e817a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --accent-soft: rgba(200, 240, 46, 0.1);
+}
+html:not(.dark) .test-home .nav-dropdown .text-accent {
+  color: var(--accent);
+}
+
+/* Accent text on ALWAYS-DARK stage bands stays brand lime in the light theme.
+   The site-wide `.text-accent → olive` override is for light surfaces only;
+   on dark stage bands (footer, ContactCta, Geo, ServiceProof…) olive fails AA.
+   Excludes the two stage sections that are FLIPPED to a light surface in light
+   theme (the hero + #approche), where accent text DOES sit on white. */
+html:not(.dark) .test-home .bg-stage:not(.hero-section):not(#approche) .text-accent {
+  color: var(--accent);
+}
+/* The service-illustration stage (.illu-stage) is dark in both themes too. */
+html:not(.dark) .test-home .illu-stage .text-accent {
+  color: var(--accent);
+}
+/* Legal prose links: olive on the white page (lime fails AA); lime stays in dark. */
+html:not(.dark) .test-home .legal-prose a {
+  color: var(--accent-strong);
+}
+
+/* The home's over-hero header icon buttons get a dark fill so they read on the
+   white hero. Kept scoped to the sandbox header — internal solid headers keep
+   the lighter bordered buttons that suit the light bar. */
+html:not(.dark) .sandbox-header .hdr-icon-btn {
+  background-color: #0a0a0b;
+  color: #f2f3ee;
+  border-color: #0a0a0b;
+}
+html:not(.dark) .sandbox-header .hdr-icon-btn:hover {
+  border-color: var(--accent);
 }
 
 /* CTA — lime green with a blue (logo) brilliance/sheen + glow.

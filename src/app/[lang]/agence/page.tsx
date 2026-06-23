@@ -77,7 +77,9 @@ export default async function AgencePage({
                   "radial-gradient(80% 70% at 50% 0%, rgba(20,224,200,0.18), transparent 60%), radial-gradient(70% 60% at 50% 100%, rgba(200,240,46,0.14), transparent 60%)",
               }}
             />
-            <span className="relative font-mono text-7xl font-bold leading-none text-accent md:text-8xl">
+            {/* Always-dark stage → force brand lime (the global light-theme
+                `.text-accent` → olive override would be illegible on near-black). */}
+            <span className="relative font-mono text-7xl font-bold leading-none text-[color:var(--accent)] md:text-8xl">
               {years}
             </span>
             <span className="relative mt-3 text-xl font-semibold">
@@ -127,7 +129,7 @@ export default async function AgencePage({
         </div>
 
         {/* guarantees */}
-        <div className="mt-8 rounded-2xl border border-border bg-bg-card p-8">
+        <div className="card mt-8 p-8">
           <p className="text-sm font-medium text-text">{dict.proof.guaranteesTitle}</p>
           <ul className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
             {dict.proof.guarantees.map((g) => (

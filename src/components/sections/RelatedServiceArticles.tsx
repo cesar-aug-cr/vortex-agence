@@ -65,7 +65,7 @@ export function RelatedServiceArticles({
             >
               <div className="illu-stage relative flex h-36 items-center justify-center overflow-hidden border-b border-border">
                 {Cover && <Cover className="h-24 w-24" />}
-                <span className="absolute left-4 top-4 rounded-full border border-border bg-bg/70 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-text-dim backdrop-blur-sm">
+                <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-stage/70 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-stage-text-dim backdrop-blur-sm">
                   {a.category}
                 </span>
               </div>

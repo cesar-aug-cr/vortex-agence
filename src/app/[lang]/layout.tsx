@@ -104,7 +104,10 @@ export default async function LangLayout({
         <A11yScript />
         <ConsentScript />
       </head>
-      <body className={`${interTight.variable} ${jetbrainsMono.variable} ${atkinson.variable} antialiased`}>
+      {/* `test-home` is the site-wide curated-light-theme hook (formerly a
+          /test-home sandbox). It's a no-op in dark theme — the light overrides
+          in globals.css are all gated `html:not(.dark) .test-home …`. */}
+      <body className={`test-home ${interTight.variable} ${jetbrainsMono.variable} ${atkinson.variable} antialiased`}>
         <ThemeSync />
         <MotionGuard />
         <SchemaMarkup />

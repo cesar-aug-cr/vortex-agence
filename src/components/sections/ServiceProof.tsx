@@ -34,7 +34,14 @@ export function ServiceProof({ content }: { content: ServiceProofContent }) {
                 {Icon && <Icon className="h-11 w-11" />}
               </div>
               <p className="mt-5 text-xl font-bold text-stage-text">{item.value}</p>
-              <p className="mt-1 text-sm font-medium text-accent">{item.label}</p>
+              {/* Always-dark stage band: keep lime (the curated light theme would
+                  otherwise rewrite `text-accent` to olive, which fails on dark). */}
+              <p
+                className="mt-1 text-sm font-medium"
+                style={{ color: "var(--accent)" }}
+              >
+                {item.label}
+              </p>
               <p className="mt-3 text-sm leading-relaxed text-stage-text-dim">
                 {item.desc}
               </p>

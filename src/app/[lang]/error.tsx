@@ -48,7 +48,7 @@ export default function Error({
         </button>
         <a
           href={home}
-          className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3.5 font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+          className="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3.5 font-semibold text-text transition-colors hover:border-accent hover:text-accent-strong"
         >
           {t.home}
         </a>

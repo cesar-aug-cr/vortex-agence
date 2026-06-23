@@ -42,7 +42,7 @@ export function ChatWidget({ dict, lang }: { dict: Dictionary; lang: Locale }) {
               type="button"
               onClick={() => setOpen(false)}
               aria-label={c.close}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-stage-text transition-colors hover:border-accent hover:text-accent"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-stage-text transition-colors hover:border-accent hover:text-[color:var(--accent)]"
             >
               <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
                 <path d="M6 6l12 12M18 6 6 18" />

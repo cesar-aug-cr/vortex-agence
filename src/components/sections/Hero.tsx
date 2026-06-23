@@ -38,6 +38,7 @@ export function Hero({
           bhPositionMobileOverride={[1.2, 2.6, 1]}
           bhScaleOverride={1.7}
           eventHorizonColorLight={sandbox ? "#ffffff" : undefined}
+          diskLimeOnLight={sandbox}
         />
       </div>
 
@@ -124,7 +125,7 @@ export function Hero({
           </Link>
           <a
             href="#services"
-            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--hero-cta-border,rgba(255,255,255,0.25))] px-6 py-3.5 font-semibold text-stage-text transition-colors hover:border-accent hover:text-accent sm:backdrop-blur-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--hero-cta-border,rgba(255,255,255,0.25))] px-6 py-3.5 font-semibold text-stage-text transition-colors hover:border-accent hover:text-accent-strong sm:backdrop-blur-sm"
           >
             {dict.hero.secondaryCta}
           </a>

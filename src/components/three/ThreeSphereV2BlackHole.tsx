@@ -223,7 +223,7 @@ void main() {
 }
 `;
 
-function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightness = 1, speedMultiplier = 1, coreWhite = 0, extraSoftness = 0 }: { count?: number; maxRadius?: number; sizeScale?: number; brightness?: number; speedMultiplier?: number; coreWhite?: number; extraSoftness?: number }) {
+function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightness = 1, speedMultiplier = 1, coreWhite = 0, extraSoftness = 0, limeOuter = false }: { count?: number; maxRadius?: number; sizeScale?: number; brightness?: number; speedMultiplier?: number; coreWhite?: number; extraSoftness?: number; limeOuter?: boolean }) {
   const points = useRef<THREE.Points>(null);
   const { positions, colors, sizes, softness, speeds, baseAngles, radii } = useMemo(() => {
     const pos = new Float32Array(count * 3);
@@ -234,13 +234,15 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
     const ang = new Float32Array(count);
     const rad = new Float32Array(count);
 
-    // Blue-green accretion palette (inner hot → outer cool)
-    const hotWhite = new THREE.Color("#eafffb");
-    const warmCream = new THREE.Color("#7df5e6");
-    const goldAmber = new THREE.Color("#22d38c");
-    const deepGold = new THREE.Color("#14a7c8");
-    const dimBrown = new THREE.Color("#0e3a6b");
-    const coreWhiteColor = new THREE.Color("#ffffff");
+    // Accretion palette (inner hot → outer cool). Default = blue-green. On the
+    // /test-home white hero (limeOuter) the dark blues that read as black on
+    // white are swapped for lime greens so the disk stays on-brand and visible.
+    const hotWhite = new THREE.Color(limeOuter ? "#a6d957" : "#eafffb");
+    const warmCream = new THREE.Color(limeOuter ? "#7fbe34" : "#7df5e6");
+    const goldAmber = new THREE.Color(limeOuter ? "#5f9520" : "#22d38c");
+    const deepGold = new THREE.Color(limeOuter ? "#4a7518" : "#14a7c8");
+    const dimBrown = new THREE.Color(limeOuter ? "#365811" : "#0e3a6b");
+    const coreWhiteColor = new THREE.Color(limeOuter ? "#bfe06b" : "#ffffff");
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
@@ -287,7 +289,7 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
       col[i3 + 2] = c.b * brightness;
     }
     return { positions: pos, colors: col, sizes: sz, softness: soft, speeds: spd, baseAngles: ang, radii: rad };
-  }, [count, sizeScale, brightness, maxRadius, coreWhite, extraSoftness]);
+  }, [count, sizeScale, brightness, maxRadius, coreWhite, extraSoftness, limeOuter]);
 
   const shaderMat = useMemo(
     () =>
@@ -297,14 +299,17 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
         vertexColors: true,
         transparent: true,
         depthWrite: false,
-        blending: THREE.AdditiveBlending,
+        // Additive glow on the dark hero; on the white hero (limeOuter) additive
+        // washes out, so use normal alpha blending — that lets darker particle
+        // colours actually read as darker on white.
+        blending: limeOuter ? THREE.NormalBlending : THREE.AdditiveBlending,
         uniforms: {
           uTime: { value: 0 },
           uSpeed: { value: speedMultiplier },
         },
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [limeOuter]
   );
 
   // Free the GPU material when the disk unmounts (e.g. when the hero leaves
@@ -355,7 +360,7 @@ function PhotonRing() {
   );
 }
 
-function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2RotOverride, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed, eventHorizonColor }: { isMobile: boolean; posOverride?: [number, number, number]; rotOverride?: [number, number, number]; scaleOverride?: number; ring2RotOverride?: [number, number, number]; diskCount?: number; disk2Count?: number; diskMaxRadius?: number; diskSizeScale?: number; diskBrightness?: number; disk2MaxRadius?: number; diskSpeed?: number; eventHorizonColor?: string }) {
+function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2RotOverride, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed, eventHorizonColor, diskLimeOuter }: { isMobile: boolean; posOverride?: [number, number, number]; rotOverride?: [number, number, number]; scaleOverride?: number; ring2RotOverride?: [number, number, number]; diskCount?: number; disk2Count?: number; diskMaxRadius?: number; diskSizeScale?: number; diskBrightness?: number; disk2MaxRadius?: number; diskSpeed?: number; eventHorizonColor?: string; diskLimeOuter?: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame(({ clock }) => {
@@ -372,9 +377,9 @@ function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2Rot
     >
       <EventHorizon radius={isMobile ? 0.46 : 0.42} color={eventHorizonColor} />
       <PhotonRing />
-      <AccretionDisk count={diskCount ?? (isMobile ? 1400 : 2400)} maxRadius={diskMaxRadius} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} />
+      <AccretionDisk count={diskCount ?? (isMobile ? 1400 : 2400)} maxRadius={diskMaxRadius} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} limeOuter={diskLimeOuter} />
       <group rotation={ring2RotOverride ?? [Math.PI * 0.35, 0.10, 0.20]}>
-        <AccretionDisk count={disk2Count ?? (isMobile ? 600 : 1100)} maxRadius={disk2MaxRadius ?? 0.8} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} coreWhite={0.75} extraSoftness={0.22} />
+        <AccretionDisk count={disk2Count ?? (isMobile ? 600 : 1100)} maxRadius={disk2MaxRadius ?? 0.8} sizeScale={diskSizeScale} brightness={diskBrightness} speedMultiplier={diskSpeed} coreWhite={0.75} extraSoftness={0.22} limeOuter={diskLimeOuter} />
         <PhotonRing />
       </group>
     </group>
@@ -476,9 +481,12 @@ interface Props {
    *  black in dark theme. Used by the /test-home white sandbox so the centre
    *  reads as white on the white hero instead of a black void. */
   eventHorizonColorLight?: string;
+  /** LIGHT theme only: swap the disk's dark-blue outer particles for lime so
+   *  they stay visible/on-brand on the white hero (/test-home sandbox). */
+  diskLimeOnLight?: boolean;
 }
 
-export default function ThreeSphereV2BlackHole({ className, showSphere = false, bhPositionOverride, bhPositionMobileOverride, bhRotationOverride, bhScaleOverride, bhRing2RotOverride, lensingStrength, lensingAsymmetry, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed, eventHorizonColorLight }: Props) {
+export default function ThreeSphereV2BlackHole({ className, showSphere = false, bhPositionOverride, bhPositionMobileOverride, bhRotationOverride, bhScaleOverride, bhRing2RotOverride, lensingStrength, lensingAsymmetry, diskCount, disk2Count, diskMaxRadius, diskSizeScale, diskBrightness, disk2MaxRadius, diskSpeed, eventHorizonColorLight, diskLimeOnLight }: Props) {
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   // Pause the (very heavy: FBO + double full-scene render per frame) loop when
@@ -526,17 +534,18 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
   }, []);
 
   useEffect(() => {
-    if (!eventHorizonColorLight) return;
+    if (!eventHorizonColorLight && !diskLimeOnLight) return;
     const el = document.documentElement;
     const apply = () => setIsLight(!el.classList.contains("dark"));
     apply();
     const obs = new MutationObserver(apply);
     obs.observe(el, { attributes: true, attributeFilter: ["class"] });
     return () => obs.disconnect();
-  }, [eventHorizonColorLight]);
+  }, [eventHorizonColorLight, diskLimeOnLight]);
 
   const eventHorizonColor =
     eventHorizonColorLight && isLight ? eventHorizonColorLight : undefined;
+  const diskLimeOuter = !!diskLimeOnLight && isLight;
 
   const effectiveOverride = isMobile
     ? bhPositionMobileOverride ?? bhPositionOverride
@@ -604,7 +613,7 @@ export default function ThreeSphereV2BlackHole({ className, showSphere = false, 
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
           {showSphere && <BandedSphere isMobile={isMobile} />}
-          <BlackHole isMobile={isMobile} posOverride={effectiveOverride} rotOverride={bhRotationOverride} scaleOverride={bhScaleOverride} ring2RotOverride={bhRing2RotOverride} diskCount={diskCount} disk2Count={disk2Count} diskMaxRadius={diskMaxRadius} diskSizeScale={diskSizeScale} diskBrightness={diskBrightness} disk2MaxRadius={disk2MaxRadius} diskSpeed={diskSpeed} eventHorizonColor={eventHorizonColor} />
+          <BlackHole isMobile={isMobile} posOverride={effectiveOverride} rotOverride={bhRotationOverride} scaleOverride={bhScaleOverride} ring2RotOverride={bhRing2RotOverride} diskCount={diskCount} disk2Count={disk2Count} diskMaxRadius={diskMaxRadius} diskSizeScale={diskSizeScale} diskBrightness={diskBrightness} disk2MaxRadius={disk2MaxRadius} diskSpeed={diskSpeed} eventHorizonColor={eventHorizonColor} diskLimeOuter={diskLimeOuter} />
           <GravitationalLens bhPosition={bhPosition} bhScale={bhScale} strength={lensingStrength} asymmetry={lensingAsymmetry} />
         </Suspense>
         </Canvas>

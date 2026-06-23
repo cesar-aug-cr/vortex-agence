@@ -52,7 +52,7 @@ export default async function ContactPage({
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           {/* Intro + form */}
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.22em] eyebrow-badge">
+            <span className="font-mono text-xs uppercase tracking-[0.22em] eyebrow-badge section-eyebrow">
               {dict.contact.eyebrow}
             </span>
             <h1 className="mt-4 text-3xl font-bold leading-[1.08] text-text md:text-5xl">
@@ -75,7 +75,7 @@ export default async function ContactPage({
                 <li>
                   <a
                     href={`mailto:${site.email}`}
-                    className="font-medium text-text transition-colors hover:text-accent"
+                    className="font-medium text-text transition-colors hover:text-accent-strong"
                   >
                     {site.email}
                   </a>
@@ -84,7 +84,7 @@ export default async function ContactPage({
                   <li>
                     <a
                       href={`tel:${site.phone.replace(/\s+/g, "")}`}
-                      className="font-medium text-text transition-colors hover:text-accent"
+                      className="font-medium text-text transition-colors hover:text-accent-strong"
                     >
                       {site.phone}
                     </a>

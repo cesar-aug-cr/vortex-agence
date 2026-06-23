@@ -80,13 +80,15 @@ export function Header({
   // must be dark instead — same as the solid state.
   const onLight = solid || (sandbox && lightTheme);
   const navLinkClass = onLight
-    ? "text-text hover:text-accent"
+    ? "text-text hover:text-accent-strong"
     : "text-white/90 hover:text-accent";
 
   return (
     <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        sandbox ? "sandbox-header " : ""
+      }${
         solid
           ? "border-b border-border bg-bg/85 backdrop-blur-md"
           : "border-b border-transparent"
@@ -124,7 +126,7 @@ export function Header({
               {/* mega panel */}
               <div className="invisible absolute inset-x-0 top-full z-40 translate-y-2 opacity-0 transition-all duration-200 group-hover/mega:visible group-hover/mega:translate-y-0 group-hover/mega:opacity-100 group-focus-within/mega:visible group-focus-within/mega:translate-y-0 group-focus-within/mega:opacity-100">
                 <div className="container-vortx pt-2">
-                  <div className="overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)]">
+                  <div className="nav-dropdown overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)]">
                     <div className="grid gap-8 p-8 lg:grid-cols-[2fr_1fr]">
                       <div>
                         <p className="text-sm text-text-dim">{dict.megaMenu.servicesLead}</p>
@@ -240,7 +242,7 @@ export function Header({
                 </svg>
               </button>
               <div className="invisible absolute left-0 top-full z-40 w-52 translate-y-2 pt-3 opacity-0 transition-all duration-200 group-hover/res:visible group-hover/res:translate-y-0 group-hover/res:opacity-100 group-focus-within/res:visible group-focus-within/res:translate-y-0 group-focus-within/res:opacity-100">
-                <ul className="overflow-hidden rounded-xl border border-border bg-bg-card p-2 shadow-[var(--shadow-lg)]">
+                <ul className="nav-dropdown overflow-hidden rounded-xl border border-border bg-bg-card p-2 shadow-[var(--shadow-lg)]">
                   {[
                     { label: dict.nav.news, href: "/news" },
                     { label: dict.nav.glossary, href: "/glossaire" },

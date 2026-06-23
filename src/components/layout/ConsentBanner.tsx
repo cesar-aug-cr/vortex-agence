@@ -64,7 +64,7 @@ export function ConsentBanner({
         onClick={reopen}
         aria-label={consent.manage}
         title={consent.manage}
-        className="fixed bottom-5 left-5 z-30 hidden h-12 w-12 items-center justify-center rounded-full border border-border bg-bg-elevated/70 text-text shadow-[var(--shadow-md)] backdrop-blur-xl transition-colors hover:border-accent hover:text-accent lg:flex"
+        className="fixed bottom-5 left-5 z-30 hidden h-12 w-12 items-center justify-center rounded-full border border-border bg-bg-elevated/70 text-text shadow-[var(--shadow-md)] backdrop-blur-xl transition-colors hover:border-accent hover:text-accent-strong lg:flex"
       >
         <Cookie width={22} height={22} />
       </button>

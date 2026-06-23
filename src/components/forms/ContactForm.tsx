@@ -11,8 +11,12 @@ import { Check } from "@/components/ui/icons";
 type FormCopy = Dictionary["contact"]["form"];
 type ServiceOpt = { slug: string; title: string };
 
+// White field on the off-white page (light) / dark field (dark) — borders give
+// definition in both themes. `outline-none` is intentionally omitted so the
+// global lime focus-visible ring shows; `accent-strong` keeps the focus border
+// readable on white (olive) while staying lime in dark.
 const fieldClass =
-  "w-full rounded-lg border border-border bg-bg-card px-4 py-3 text-text outline-none transition-colors placeholder:text-text-muted focus:border-accent";
+  "w-full rounded-lg border border-border bg-bg-card px-4 py-3 text-text transition-colors placeholder:text-text-muted focus:border-accent-strong";
 
 const STEPS = 3;
 
@@ -251,7 +255,7 @@ export function ContactForm({
       )}
 
       {error && (
-        <p role="alert" className="text-sm text-red-400">
+        <p role="alert" className="text-sm text-red-600 dark:text-red-400">
           {error}
         </p>
       )}
@@ -265,7 +269,7 @@ export function ContactForm({
               setError("");
               setStep((s) => Math.max(0, s - 1));
             }}
-            className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent-strong"
           >
             ← {form.back}
           </button>

@@ -53,7 +53,7 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                     <Link
                       href={localized(lang, `/services/${s.slug}`)}
                       onClick={() => setServicesOpen(false)}
-                      className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-text transition-colors hover:bg-accent-soft hover:text-accent"
+                      className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-text transition-colors hover:bg-accent-soft hover:text-accent-strong"
                     >
                       {s.title}
                       <ArrowUpRight width={13} height={13} className="text-text-muted" />
@@ -81,7 +81,7 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             onClick={openConsentPreferences}
             aria-label={dict.consent.manage}
             title={dict.consent.manage}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text transition-colors hover:border-accent hover:text-accent"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text transition-colors hover:border-accent hover:text-accent-strong"
           >
             <Cookie width={17} height={17} />
           </button>

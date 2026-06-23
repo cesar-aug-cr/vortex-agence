@@ -28,12 +28,12 @@ export default async function HomePage({
 
   return (
     <>
-      <Header dict={dict} lang={lang} overHero />
+      <Header dict={dict} lang={lang} overHero sandbox />
       <div className="relative isolate bg-bg">
         <AmbientGlow />
         <SpotlightCards />
         <main>
-          <Hero dict={dict} lang={lang} />
+          <Hero dict={dict} lang={lang} sandbox />
           <WhyVortx dict={dict} />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} />

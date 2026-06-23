@@ -74,13 +74,13 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                 key={i}
                 className="illu-stage relative flex items-center justify-center rounded-2xl border border-border py-12"
               >
-                <LogoMark className="h-14 w-auto text-text md:h-20" />
+                <LogoMark className="h-14 w-auto text-stage-text md:h-20" />
                 {block.tip && (
                   <span className="group absolute right-3 top-3">
                     <button
                       type="button"
                       aria-label={block.tipTitle ?? block.tip}
-                      className="logo-tip-glow flex h-8 w-8 items-center justify-center rounded-full border border-accent/50 bg-bg/60 text-accent outline-none backdrop-blur-sm transition-colors hover:bg-accent hover:text-accent-ink focus-visible:bg-accent focus-visible:text-accent-ink"
+                      className="logo-tip-glow flex h-8 w-8 items-center justify-center rounded-full border border-accent/50 bg-stage/60 text-accent outline-none backdrop-blur-sm transition-colors hover:bg-accent hover:text-accent-ink focus-visible:bg-accent focus-visible:text-accent-ink"
                     >
                       <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                         <circle cx="12" cy="12" r="9" />

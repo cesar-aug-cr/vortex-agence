@@ -43,7 +43,7 @@ export function Breadcrumbs({
           return (
             <li key={`${c.label}-${i}`} className="flex items-center gap-2">
               {c.href && !last ? (
-                <Link href={localized(lang, c.href)} className="transition-colors hover:text-accent">
+                <Link href={localized(lang, c.href)} className="transition-colors hover:text-accent-strong">
                   {c.label}
                 </Link>
               ) : (

@@ -345,7 +345,7 @@ export function AccessibilityWidget({
                   onClick={() => setFont(-1)}
                   disabled={s.fontScale <= MIN}
                   aria-label={labels.decrease}
-                  className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border text-lg font-bold text-text transition-colors hover:border-accent hover:text-accent disabled:opacity-40"
+                  className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border text-lg font-bold text-text transition-colors hover:border-accent hover:text-accent-strong disabled:opacity-40"
                 >
                   A−
                 </button>
@@ -357,7 +357,7 @@ export function AccessibilityWidget({
                   onClick={() => setFont(1)}
                   disabled={s.fontScale >= MAX}
                   aria-label={labels.increase}
-                  className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border text-xl font-bold text-text transition-colors hover:border-accent hover:text-accent disabled:opacity-40"
+                  className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border text-xl font-bold text-text transition-colors hover:border-accent hover:text-accent-strong disabled:opacity-40"
                 >
                   A+
                 </button>
@@ -388,7 +388,7 @@ export function AccessibilityWidget({
               <button
                 type="button"
                 onClick={() => setS(DEFAULTS)}
-                className="w-full rounded-lg border border-border py-2.5 text-sm font-medium text-text-dim transition-colors hover:border-accent hover:text-accent"
+                className="w-full rounded-lg border border-border py-2.5 text-sm font-medium text-text-dim transition-colors hover:border-accent hover:text-accent-strong"
               >
                 {labels.reset}
               </button>
@@ -409,7 +409,7 @@ export function AccessibilityWidget({
         aria-expanded={open}
         aria-label={labels.button}
         title={labels.button}
-        className={`relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
+        className={`hdr-icon-btn relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
           onDark ? "border-white/30 text-white" : "border-border-strong text-text"
         }`}
       >

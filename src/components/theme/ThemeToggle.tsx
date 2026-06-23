@@ -36,7 +36,7 @@ export function ThemeToggle({
       onClick={toggle}
       aria-label={label}
       title={label}
-      className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
+      className={`hdr-icon-btn inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
         onDark ? "border-white/30 text-white" : "border-border-strong text-text"
       }`}
     >
