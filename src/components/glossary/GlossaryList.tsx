@@ -42,6 +42,7 @@ export function GlossaryList({
         placeholder={searchPlaceholder}
         count={filtered.length}
         countSuffix={countSuffix}
+        mobileSticky={false}
       />
 
       {filtered.length === 0 ? (
