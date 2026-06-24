@@ -83,7 +83,7 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             title={dict.consent.manage}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text transition-colors hover:border-accent hover:text-accent-strong"
           >
-            <Cookie width={17} height={17} />
+            <Cookie width={16} height={16} />
           </button>
           <button
             type="button"
@@ -105,6 +105,18 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             {dict.common.cta}
             <ArrowRight width={14} height={14} />
           </Link>
+          {/* Chat / message launcher — icon only, far right (opens ChatWidget) */}
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent("vortx:chat-toggle"))}
+            aria-label={dict.chat.open}
+            title={dict.chat.open}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-accent-ink transition-transform hover:-translate-y-0.5"
+          >
+            <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>

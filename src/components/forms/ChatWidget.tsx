@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { ContactForm } from "@/components/forms/ContactForm";
@@ -14,6 +14,14 @@ import { ContactForm } from "@/components/forms/ContactForm";
 export function ChatWidget({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const [open, setOpen] = useState(false);
   const c = dict.chat;
+
+  // On mobile the launcher lives inside the StickyCta pill (icon-only button),
+  // which toggles the panel through this event instead of its own bubble.
+  useEffect(() => {
+    const toggle = () => setOpen((v) => !v);
+    window.addEventListener("vortx:chat-toggle", toggle);
+    return () => window.removeEventListener("vortx:chat-toggle", toggle);
+  }, []);
   const services = dict.services.map((s) => ({ slug: s.slug, title: s.title }));
 
   return (
@@ -60,13 +68,14 @@ export function ChatWidget({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         </div>
       )}
 
-      {/* Launcher */}
+      {/* Launcher — desktop only; on mobile the StickyCta pill hosts the
+          icon-only chat button (see vortx:chat-toggle above). */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? c.close : c.open}
-        className="fixed bottom-6 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-ink shadow-[var(--shadow-lg)] transition-transform hover:-translate-y-0.5 lg:right-6"
+        className="fixed bottom-6 right-4 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-ink shadow-[var(--shadow-lg)] transition-transform hover:-translate-y-0.5 lg:right-6 lg:flex"
       >
         {open ? (
           <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
