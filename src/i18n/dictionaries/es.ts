@@ -441,7 +441,7 @@ export const es = {
     eyebrow: "Quiz",
     title: "Ponga a prueba su QI de marketing",
     lead: "10 preguntas al azar, sin piedad. Marketing, web, SEO, publicidad, IA… ¿hasta dónde llegará?",
-    intro: "Así funciona: 10 preguntas, una nota sobre 10 y un veredicto (a veces con pimienta). Aprende algo con cada respuesta. ¿Listo?",
+    intro: "Así funciona: 10 preguntas, una nota sobre 10 y un veredicto (a veces picante). Aprende algo con cada respuesta. ¿Listo?",
     start: "Empezar el quiz",
     questionLabel: "Pregunta",
     next: "Siguiente pregunta",
