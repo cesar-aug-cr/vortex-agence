@@ -7,6 +7,8 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { GlossaryList } from "@/components/glossary/GlossaryList";
+import { ArticleToc } from "@/components/news/ArticleToc";
+import { glossaryCategoryId } from "@/lib/glossary";
 
 export async function generateStaticParams() {
   return i18n.locales.map((lang) => ({ lang }));
@@ -37,6 +39,14 @@ export default async function GlossairePage({
   const lang: Locale = isLocale(raw) ? raw : i18n.defaultLocale;
   const dict = await getDictionary(lang);
 
+  // table of contents — one entry per category, in order of first appearance
+  const tocItems: { id: string; text: string }[] = [];
+  for (const t of dict.glossary.terms) {
+    if (!tocItems.some((i) => i.text === t.category)) {
+      tocItems.push({ id: glossaryCategoryId(t.category), text: t.category });
+    }
+  }
+
   const definedTermSetJsonLd = {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
@@ -66,12 +76,26 @@ export default async function GlossairePage({
           lead={dict.glossary.lead}
         />
 
-        <GlossaryList
-          terms={dict.glossary.terms}
-          searchPlaceholder={dict.glossary.searchPlaceholder}
-          countSuffix={dict.glossary.countSuffix}
-          emptyLabel={dict.glossary.emptyLabel}
-        />
+        <div className="mt-10 lg:grid lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-12">
+          {/* desktop — sticky left sidebar summary (scroll-spy) */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-28">
+              <ArticleToc items={tocItems} title={dict.glossary.tocTitle} variant="desktop" />
+            </div>
+          </aside>
+
+          <div className="min-w-0">
+            {/* mobile — sticky collapsible summary bar under the nav */}
+            <ArticleToc items={tocItems} title={dict.glossary.tocTitle} variant="mobile" />
+
+            <GlossaryList
+              terms={dict.glossary.terms}
+              searchPlaceholder={dict.glossary.searchPlaceholder}
+              countSuffix={dict.glossary.countSuffix}
+              emptyLabel={dict.glossary.emptyLabel}
+            />
+          </div>
+        </div>
       </Section>
 
       <ContactCta dict={dict} lang={lang} />

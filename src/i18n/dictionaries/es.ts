@@ -1782,6 +1782,7 @@ export const es = {
     title: "El vocabulario del marketing y del web, sin jerga.",
     lead: "Todos los términos que usamos — SEO, GEO, ROAS, embudo, CMS… — explicados de forma sencilla, con el contexto luxemburgués.",
     searchPlaceholder: "Buscar un término…",
+    tocTitle: "Índice",
     countSuffix: "términos",
     emptyLabel: "Ningún término coincide con su búsqueda.",
     ctaTitle: "¿Aún se le escapa algún término?",

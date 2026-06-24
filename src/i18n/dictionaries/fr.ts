@@ -1806,6 +1806,7 @@ export const fr = {
     title: "Le vocabulaire du marketing et du web, sans jargon.",
     lead: "Tous les termes qu'on utilise — SEO, GEO, ROAS, tunnel, CMS… — expliqués simplement, avec le contexte luxembourgeois.",
     searchPlaceholder: "Rechercher un terme…",
+    tocTitle: "Sommaire",
     countSuffix: "termes",
     emptyLabel: "Aucun terme ne correspond à votre recherche.",
     ctaTitle: "Un terme vous échappe encore ?",

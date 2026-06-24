@@ -1788,6 +1788,7 @@ export const de = {
     title: "Das Vokabular von Marketing und Web, ohne Fachjargon.",
     lead: "Alle Begriffe, die wir verwenden — SEO, GEO, ROAS, Trichter, CMS… — einfach erklärt, mit dem Luxemburger Kontext.",
     searchPlaceholder: "Begriff suchen…",
+    tocTitle: "Inhalt",
     countSuffix: "Begriffe",
     emptyLabel: "Kein Begriff entspricht Ihrer Suche.",
     ctaTitle: "Ein Begriff ist Ihnen noch unklar?",

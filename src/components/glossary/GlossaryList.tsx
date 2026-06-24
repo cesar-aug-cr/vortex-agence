@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { GlossaryTerm } from "@/i18n/dictionaries/fr";
 import { StickySearch } from "@/components/ui/StickySearch";
+import { glossaryCategoryId } from "@/lib/glossary";
 
 /** Searchable, category-grouped glossary list. */
 export function GlossaryList({
@@ -50,7 +51,7 @@ export function GlossaryList({
       ) : (
         <div className="space-y-12">
           {categories.map(({ cat, items }) => (
-            <div key={cat}>
+            <div key={cat} id={glossaryCategoryId(cat)} className="scroll-mt-28">
               <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
                 {cat}
               </h2>

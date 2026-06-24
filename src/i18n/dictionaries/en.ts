@@ -1788,6 +1788,7 @@ export const en = {
     title: "The vocabulary of marketing and web, jargon-free.",
     lead: "Every term we use — SEO, GEO, ROAS, funnel, CMS… — explained simply, with the Luxembourg context.",
     searchPlaceholder: "Search for a term…",
+    tocTitle: "Contents",
     countSuffix: "terms",
     emptyLabel: "No term matches your search.",
     ctaTitle: "Still stuck on a term?",
