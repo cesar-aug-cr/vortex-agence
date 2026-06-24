@@ -1388,11 +1388,11 @@ html:not(.dark) .test-home .nav-dropdown .text-accent {
    on dark stage bands (footer, ContactCta, Geo, ServiceProof…) olive fails AA.
    Excludes the two stage sections that are FLIPPED to a light surface in light
    theme (the hero + #approche), where accent text DOES sit on white. */
-html:not(.dark) .test-home .bg-stage:not(.hero-section):not(#approche) .text-accent {
+html:not(.dark) .test-home .bg-stage:not(.hero-section):not(#approche) .text-accent:not(.section-eyebrow) {
   color: var(--accent);
 }
 /* The service-illustration stage (.illu-stage) is dark in both themes too. */
-html:not(.dark) .test-home .illu-stage .text-accent {
+html:not(.dark) .test-home .illu-stage .text-accent:not(.section-eyebrow) {
   color: var(--accent);
 }
 /* Legal prose links: olive on the white page (lime fails AA); lime stays in dark. */
