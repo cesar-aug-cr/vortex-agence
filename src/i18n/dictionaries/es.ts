@@ -48,6 +48,7 @@ export const es = {
       acquire: "Atraer",
       convert: "Convertir",
       scale: "Hacer crecer",
+      design: "Diseño",
     },
     featured: {
       label: "Destacado",
@@ -178,7 +179,7 @@ export const es = {
     },
     {
       slug: "branding-design",
-      group: "convert",
+      group: "design",
       title: "Creación de logos y branding",
       tagline: "Un logo y una marca que se recuerdan.",
       short:
@@ -3231,6 +3232,85 @@ export const es = {
   },
 
   // ---- FAQ page (comprehensive, grouped) ----
+  approachPage: {
+    eyebrow: "Nuestro enfoque",
+    title: "Un método claro, resultados medibles.",
+    lead: "Sin caja negra. En cada etapa sabe qué hacemos, qué recibe, cuánto tarda — y qué necesitamos de usted.",
+    stepDurationLabel: "Duración",
+    stepDeliverablesLabel: "Lo que recibe",
+    stepYouProvideLabel: "Lo que necesitamos de usted",
+    steps: [
+      {
+        n: "01",
+        title: "Diagnóstico y estrategia",
+        desc: "Analizamos su mercado, sus objetivos y su embudo actual para crear una hoja de ruta a medida.",
+        duration: "1 a 2 semanas",
+        deliverables: [
+          "Auditoría de lo existente: web, SEO, captación",
+          "Análisis de competencia y palabras clave",
+          "Hoja de ruta priorizada por impacto",
+        ],
+        youProvide: "Acceso a sus herramientas de analítica y una charla de una hora sobre sus objetivos.",
+      },
+      {
+        n: "02",
+        title: "Diseño y desarrollo",
+        desc: "Diseño premium y desarrollo con las últimas tecnologías, con las mejores prácticas de conversión integradas desde el inicio.",
+        duration: "2 a 6 semanas",
+        deliverables: [
+          "Maquetas de diseño validadas con usted",
+          "Desarrollo Next.js rápido y responsive",
+          "Embudos y formularios orientados a la conversión",
+        ],
+        youProvide: "Sus contenidos clave — textos, imágenes, logo — o nos encargamos nosotros.",
+      },
+      {
+        n: "03",
+        title: "Revisión y ajustes",
+        desc: "Le presentamos el resultado y lo ajustamos juntos hasta que todo se alinee con sus expectativas.",
+        duration: "3 a 5 días",
+        deliverables: [
+          "Revisión completa por videollamada",
+          "Ronda de ajustes incluida",
+          "Control de calidad: velocidad, móvil, SEO",
+        ],
+        youProvide: "Sus comentarios reunidos en una sola pasada, para avanzar rápido.",
+      },
+      {
+        n: "04",
+        title: "Lanzamiento y seguimiento",
+        desc: "Puesta en marcha, configuración de las herramientas de medición y acompañamiento para convertir el tráfico en clientes.",
+        duration: "Continuo",
+        deliverables: [
+          "Puesta en marcha y configuración de analítica",
+          "Seguimiento de posiciones y conversiones",
+          "Optimización continua, basada en datos",
+        ],
+        youProvide: "Una reunión periódica para decidir juntos las próximas prioridades.",
+      },
+    ],
+    principles: {
+      eyebrow: "Lo que cambia",
+      title: "Una forma de trabajar, no solo un entregable.",
+      items: [
+        { title: "Transparencia total", desc: "Ve el avance, las decisiones y las cifras. Nunca una caja negra." },
+        { title: "Orientado a resultados", desc: "Cada acción busca un objetivo medible: un lead, una llamada, una venta." },
+        { title: "Un único interlocutor", desc: "Sin ping-pong entre departamentos. Un contacto que conoce su proyecto de principio a fin." },
+        { title: "Iteración rápida", desc: "Lanzamos, medimos y ajustamos — en lugar de apostarlo todo a un gran lanzamiento." },
+      ],
+    },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Antes de empezar.",
+      items: [
+        { q: "¿Cuánto tarda un proyecto?", a: "Depende del alcance: una web corporativa lleva unas semanas, un sistema de captación completo más tiempo. Le damos un calendario preciso tras el diagnóstico." },
+        { q: "¿Tenemos que preparar el contenido nosotros?", a: "Lo ideal es que aporte sus contenidos clave, pero también podemos redactarlos y producir los visuales. Nos adaptamos a sus recursos." },
+        { q: "¿Qué pasa después del lanzamiento?", a: "Seguimos a su lado: seguimiento del rendimiento, optimización continua y ajustes según los resultados. El lanzamiento es un comienzo, no un final." },
+        { q: "¿Trabajan con mi sector y tamaño de empresa?", a: "Trabajamos sobre todo con pymes y autónomos en Luxemburgo, de todos los sectores. El método se adapta a su mercado y presupuesto." },
+      ],
+    },
+  },
+
   faqPage: {
     eyebrow: "Preguntas frecuentes",
     title: "Todas sus preguntas, nuestras respuestas claras.",

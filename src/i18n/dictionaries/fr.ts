@@ -72,6 +72,7 @@ export const fr = {
       acquire: "Attirer",
       convert: "Convertir",
       scale: "Faire croître",
+      design: "Design",
     },
     featured: {
       label: "À la une",
@@ -202,7 +203,7 @@ export const fr = {
     },
     {
       slug: "branding-design",
-      group: "convert",
+      group: "design",
       title: "Création de logos & branding",
       tagline: "Un logo et une marque dont on se souvient.",
       short:
@@ -3256,6 +3257,85 @@ export const fr = {
   },
 
   // ---- FAQ page (comprehensive, grouped) ----
+  approachPage: {
+    eyebrow: "Notre approche",
+    title: "Une méthode claire, des résultats mesurables.",
+    lead: "Pas de boîte noire. À chaque étape, vous savez ce qu'on fait, ce que vous recevez, en combien de temps — et ce qu'on attend de vous.",
+    stepDurationLabel: "Durée",
+    stepDeliverablesLabel: "Ce que vous recevez",
+    stepYouProvideLabel: "Ce qu'on attend de vous",
+    steps: [
+      {
+        n: "01",
+        title: "Diagnostic & stratégie",
+        desc: "On analyse votre marché, vos objectifs et votre tunnel actuel pour bâtir une feuille de route sur mesure.",
+        duration: "1 à 2 semaines",
+        deliverables: [
+          "Audit de l'existant : site, SEO, acquisition",
+          "Analyse concurrentielle & mots-clés",
+          "Feuille de route priorisée par impact",
+        ],
+        youProvide: "Un accès à vos outils analytics et un échange d'une heure sur vos objectifs.",
+      },
+      {
+        n: "02",
+        title: "Conception & développement",
+        desc: "Design premium et développement aux dernières technologies, avec les bonnes pratiques de conversion intégrées dès le départ.",
+        duration: "2 à 6 semaines",
+        deliverables: [
+          "Maquettes design validées avec vous",
+          "Développement Next.js rapide et responsive",
+          "Tunnels et formulaires orientés conversion",
+        ],
+        youProvide: "Vos contenus clés — textes, visuels, logo — ou on s'en charge pour vous.",
+      },
+      {
+        n: "03",
+        title: "Revue & ajustements",
+        desc: "On vous présente le résultat et on ajuste, ensemble, jusqu'à ce que tout soit aligné avec vos attentes.",
+        duration: "3 à 5 jours",
+        deliverables: [
+          "Revue complète en visio",
+          "Cycle d'ajustements inclus",
+          "Recette qualité : vitesse, mobile, SEO",
+        ],
+        youProvide: "Vos retours regroupés en une seule passe, pour avancer vite.",
+      },
+      {
+        n: "04",
+        title: "Lancement & suivi",
+        desc: "Mise en ligne, configuration des outils de mesure et accompagnement pour transformer le trafic en clients.",
+        duration: "En continu",
+        deliverables: [
+          "Mise en ligne et configuration analytics",
+          "Suivi des positions et des conversions",
+          "Optimisations continues, pilotées par la donnée",
+        ],
+        youProvide: "Un point régulier pour décider ensemble des prochaines priorités.",
+      },
+    ],
+    principles: {
+      eyebrow: "Ce qui change",
+      title: "Une façon de travailler, pas juste un livrable.",
+      items: [
+        { title: "Transparence totale", desc: "Vous voyez l'avancement, les décisions et les chiffres. Jamais de boîte noire." },
+        { title: "Orientation résultat", desc: "Chaque action vise un objectif mesurable : un lead, un appel, une vente." },
+        { title: "Un seul interlocuteur", desc: "Pas de ping-pong entre services. Un contact qui connaît votre projet de bout en bout." },
+        { title: "Itération rapide", desc: "On livre, on mesure, on ajuste — plutôt que de tout miser sur un grand lancement." },
+      ],
+    },
+    faq: {
+      eyebrow: "Questions fréquentes",
+      title: "Avant de démarrer.",
+      items: [
+        { q: "Combien de temps prend un projet ?", a: "Cela dépend du périmètre : un site vitrine prend quelques semaines, un système d'acquisition complet demande davantage. On vous donne un calendrier précis dès le diagnostic." },
+        { q: "Faut-il préparer le contenu nous-mêmes ?", a: "Idéalement vous fournissez vos contenus clés, mais on peut aussi les rédiger et produire les visuels. On s'adapte à vos ressources." },
+        { q: "Que se passe-t-il après le lancement ?", a: "On reste à vos côtés : suivi des performances, optimisations continues et ajustements selon les résultats. Le lancement est un début, pas une fin." },
+        { q: "Travaillez-vous avec mon secteur et ma taille d'entreprise ?", a: "On accompagne surtout des PME et des indépendants au Luxembourg, tous secteurs confondus. La méthode s'adapte à votre marché et à votre budget." },
+      ],
+    },
+  },
+
   faqPage: {
     eyebrow: "FAQ",
     title: "Toutes vos questions, nos réponses claires.",

@@ -54,6 +54,7 @@ export const en = {
       acquire: "Attract",
       convert: "Convert",
       scale: "Scale",
+      design: "Design",
     },
     featured: {
       label: "Featured",
@@ -184,7 +185,7 @@ export const en = {
     },
     {
       slug: "branding-design",
-      group: "convert",
+      group: "design",
       title: "Logo design & branding",
       tagline: "A logo and a brand people remember.",
       short:
@@ -3236,6 +3237,85 @@ export const en = {
   },
 
   // ---- FAQ page (comprehensive, grouped) ----
+  approachPage: {
+    eyebrow: "Our approach",
+    title: "A clear method, measurable results.",
+    lead: "No black box. At every stage you know what we do, what you get, how long it takes — and what we need from you.",
+    stepDurationLabel: "Duration",
+    stepDeliverablesLabel: "What you get",
+    stepYouProvideLabel: "What we need from you",
+    steps: [
+      {
+        n: "01",
+        title: "Diagnosis & strategy",
+        desc: "We analyse your market, your goals and your current funnel to build a tailored roadmap.",
+        duration: "1 to 2 weeks",
+        deliverables: [
+          "Audit of what exists: site, SEO, acquisition",
+          "Competitor & keyword analysis",
+          "Roadmap prioritised by impact",
+        ],
+        youProvide: "Access to your analytics tools and a one-hour chat about your goals.",
+      },
+      {
+        n: "02",
+        title: "Design & development",
+        desc: "Premium design and development on the latest technologies, with conversion best practices built in from the start.",
+        duration: "2 to 6 weeks",
+        deliverables: [
+          "Design mockups validated with you",
+          "Fast, responsive Next.js development",
+          "Conversion-focused funnels and forms",
+        ],
+        youProvide: "Your key content — copy, visuals, logo — or we handle it for you.",
+      },
+      {
+        n: "03",
+        title: "Review & adjustments",
+        desc: "We present the result and adjust it together until everything matches your expectations.",
+        duration: "3 to 5 days",
+        deliverables: [
+          "Full review over video call",
+          "Round of adjustments included",
+          "Quality check: speed, mobile, SEO",
+        ],
+        youProvide: "Your feedback gathered in a single pass, so we move fast.",
+      },
+      {
+        n: "04",
+        title: "Launch & follow-up",
+        desc: "Go-live, measurement setup and ongoing support to turn traffic into customers.",
+        duration: "Ongoing",
+        deliverables: [
+          "Go-live and analytics setup",
+          "Tracking of rankings and conversions",
+          "Continuous, data-driven optimisation",
+        ],
+        youProvide: "A regular check-in to decide the next priorities together.",
+      },
+    ],
+    principles: {
+      eyebrow: "What changes",
+      title: "A way of working, not just a deliverable.",
+      items: [
+        { title: "Full transparency", desc: "You see the progress, the decisions and the numbers. Never a black box." },
+        { title: "Result-driven", desc: "Every action aims at a measurable goal: a lead, a call, a sale." },
+        { title: "One point of contact", desc: "No ping-pong between departments. One contact who knows your project end to end." },
+        { title: "Fast iteration", desc: "We ship, measure and adjust — rather than betting everything on one big launch." },
+      ],
+    },
+    faq: {
+      eyebrow: "Frequently asked",
+      title: "Before we start.",
+      items: [
+        { q: "How long does a project take?", a: "It depends on the scope: a showcase site takes a few weeks, a full acquisition system takes longer. We give you a precise timeline right after the diagnosis." },
+        { q: "Do we have to prepare the content ourselves?", a: "Ideally you provide your key content, but we can also write it and produce the visuals. We adapt to your resources." },
+        { q: "What happens after launch?", a: "We stay by your side: performance tracking, continuous optimisation and adjustments based on results. Launch is a beginning, not an end." },
+        { q: "Do you work with my industry and company size?", a: "We mainly work with SMEs and freelancers in Luxembourg, across all sectors. The method adapts to your market and your budget." },
+      ],
+    },
+  },
+
   faqPage: {
     eyebrow: "FAQ",
     title: "All your questions, our clear answers.",

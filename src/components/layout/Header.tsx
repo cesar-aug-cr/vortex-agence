@@ -73,6 +73,7 @@ export function Header({
     { key: "acquire", services: dict.services.filter((s) => s.group === "acquire") },
     { key: "convert", services: dict.services.filter((s) => s.group === "convert") },
     { key: "scale", services: dict.services.filter((s) => s.group === "scale") },
+    { key: "design", services: dict.services.filter((s) => s.group === "design") },
   ];
 
   // The over-hero header normally renders white content (it sits on the dark
@@ -127,10 +128,34 @@ export function Header({
               <div className="invisible absolute inset-x-0 top-full z-40 translate-y-2 opacity-0 transition-all duration-200 group-hover/mega:visible group-hover/mega:translate-y-0 group-hover/mega:opacity-100 group-focus-within/mega:visible group-focus-within/mega:translate-y-0 group-focus-within/mega:opacity-100">
                 <div className="container-vortx pt-2">
                   <div className="nav-dropdown overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)]">
-                    <div className="grid gap-8 p-8 lg:grid-cols-[2fr_1fr]">
-                      <div>
-                        <p className="text-sm text-text-dim">{dict.megaMenu.servicesLead}</p>
-                        <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-3">
+                    <div className="p-8">
+                      <p className="text-sm text-text-dim">{dict.megaMenu.servicesLead}</p>
+
+                      {/* featured — flat full-width banner, right after the lead */}
+                      <Link
+                        href={localized(lang, "/services/lead-generation")}
+                        className="group/feat spotlight-card card-hover relative mt-5 block rounded-xl border border-border bg-stage px-6 py-5 text-stage-text transition-[transform,box-shadow,border-color] duration-300"
+                      >
+                        <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-accent">
+                          {dict.megaMenu.featured.label}
+                        </span>
+                        <div className="mt-3 flex items-center justify-between gap-6">
+                          <div className="min-w-0">
+                            <h4 className="text-base font-semibold leading-tight">
+                              {dict.megaMenu.featured.title}
+                            </h4>
+                            <p className="mt-0.5 text-sm text-stage-text-dim">
+                              {dict.megaMenu.featured.desc}
+                            </p>
+                          </div>
+                          <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-accent">
+                            {dict.common.readMore}
+                            <ArrowRight width={15} height={15} className="transition-transform group-hover/feat:translate-x-1" />
+                          </span>
+                        </div>
+                      </Link>
+
+                      <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
                           {groups.map((g) => (
                             <div key={g.key}>
                               <p className="font-mono text-xs uppercase tracking-wide text-text-muted">
@@ -175,38 +200,7 @@ export function Header({
                               </ul>
                             </div>
                           ))}
-                        </div>
                       </div>
-
-                      {/* featured */}
-                      <Link
-                        href={localized(lang, "/services/lead-generation")}
-                        className="group/feat relative flex flex-col justify-between overflow-hidden rounded-xl bg-stage p-6 text-stage-text"
-                      >
-                        <div
-                          className="pointer-events-none absolute inset-0"
-                          aria-hidden
-                          style={{
-                            backgroundImage:
-                              "radial-gradient(80% 80% at 80% 10%, rgba(20,224,200,0.18), transparent 60%), radial-gradient(70% 60% at 10% 100%, rgba(200,240,46,0.14), transparent 60%)",
-                          }}
-                        />
-                        <div className="relative">
-                          <span className="font-mono text-[0.7rem] uppercase tracking-wide text-accent">
-                            {dict.megaMenu.featured.label}
-                          </span>
-                          <h4 className="mt-3 text-lg font-semibold">
-                            {dict.megaMenu.featured.title}
-                          </h4>
-                          <p className="mt-2 text-sm text-stage-text-dim">
-                            {dict.megaMenu.featured.desc}
-                          </p>
-                        </div>
-                        <span className="relative mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent">
-                          {dict.common.readMore}
-                          <ArrowRight width={15} height={15} className="transition-transform group-hover/feat:translate-x-1" />
-                        </span>
-                      </Link>
                     </div>
                   </div>
                 </div>

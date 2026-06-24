@@ -54,6 +54,7 @@ export const de = {
       acquire: "Anziehen",
       convert: "Konvertieren",
       scale: "Wachsen lassen",
+      design: "Design",
     },
     featured: {
       label: "Im Fokus",
@@ -184,7 +185,7 @@ export const de = {
     },
     {
       slug: "branding-design",
-      group: "convert",
+      group: "design",
       title: "Logo-Gestaltung & Branding",
       tagline: "Ein Logo und eine Marke, an die man sich erinnert.",
       short:
@@ -3237,6 +3238,85 @@ export const de = {
   },
 
   // ---- FAQ page (comprehensive, grouped) ----
+  approachPage: {
+    eyebrow: "Unser Ansatz",
+    title: "Eine klare Methode, messbare Ergebnisse.",
+    lead: "Keine Blackbox. In jeder Phase wissen Sie, was wir tun, was Sie erhalten, wie lange es dauert — und was wir von Ihnen brauchen.",
+    stepDurationLabel: "Dauer",
+    stepDeliverablesLabel: "Das erhalten Sie",
+    stepYouProvideLabel: "Das brauchen wir von Ihnen",
+    steps: [
+      {
+        n: "01",
+        title: "Diagnose & Strategie",
+        desc: "Wir analysieren Ihren Markt, Ihre Ziele und Ihren aktuellen Funnel, um eine maßgeschneiderte Roadmap zu erstellen.",
+        duration: "1 bis 2 Wochen",
+        deliverables: [
+          "Audit des Bestands: Website, SEO, Akquise",
+          "Wettbewerbs- & Keyword-Analyse",
+          "Nach Wirkung priorisierte Roadmap",
+        ],
+        youProvide: "Zugang zu Ihren Analytics-Tools und ein einstündiges Gespräch über Ihre Ziele.",
+      },
+      {
+        n: "02",
+        title: "Konzeption & Entwicklung",
+        desc: "Premium-Design und Entwicklung mit neuesten Technologien, mit von Anfang an integrierten Conversion-Best-Practices.",
+        duration: "2 bis 6 Wochen",
+        deliverables: [
+          "Mit Ihnen abgestimmte Design-Mockups",
+          "Schnelle, responsive Next.js-Entwicklung",
+          "Conversion-orientierte Funnels und Formulare",
+        ],
+        youProvide: "Ihre wichtigsten Inhalte — Texte, Bilder, Logo — oder wir übernehmen das für Sie.",
+      },
+      {
+        n: "03",
+        title: "Review & Anpassungen",
+        desc: "Wir präsentieren das Ergebnis und passen es gemeinsam an, bis alles Ihren Erwartungen entspricht.",
+        duration: "3 bis 5 Tage",
+        deliverables: [
+          "Vollständige Review per Videocall",
+          "Anpassungsrunde inklusive",
+          "Qualitätsprüfung: Geschwindigkeit, Mobile, SEO",
+        ],
+        youProvide: "Ihr Feedback gebündelt in einem Durchgang, damit es schnell geht.",
+      },
+      {
+        n: "04",
+        title: "Launch & Betreuung",
+        desc: "Go-live, Einrichtung der Messtools und Begleitung, um Traffic in Kunden zu verwandeln.",
+        duration: "Laufend",
+        deliverables: [
+          "Go-live und Analytics-Einrichtung",
+          "Tracking von Rankings und Conversions",
+          "Kontinuierliche, datengetriebene Optimierung",
+        ],
+        youProvide: "Ein regelmäßiger Austausch, um die nächsten Prioritäten gemeinsam festzulegen.",
+      },
+    ],
+    principles: {
+      eyebrow: "Was sich ändert",
+      title: "Eine Arbeitsweise, nicht nur ein Ergebnis.",
+      items: [
+        { title: "Volle Transparenz", desc: "Sie sehen den Fortschritt, die Entscheidungen und die Zahlen. Niemals eine Blackbox." },
+        { title: "Ergebnisorientiert", desc: "Jede Maßnahme zielt auf ein messbares Ziel: einen Lead, einen Anruf, einen Verkauf." },
+        { title: "Ein Ansprechpartner", desc: "Kein Hin und Her zwischen Abteilungen. Ein Kontakt, der Ihr Projekt von A bis Z kennt." },
+        { title: "Schnelle Iteration", desc: "Wir liefern, messen und passen an — statt alles auf einen großen Launch zu setzen." },
+      ],
+    },
+    faq: {
+      eyebrow: "Häufige Fragen",
+      title: "Bevor wir starten.",
+      items: [
+        { q: "Wie lange dauert ein Projekt?", a: "Das hängt vom Umfang ab: eine Website dauert einige Wochen, ein komplettes Akquise-System länger. Sie erhalten direkt nach der Diagnose einen genauen Zeitplan." },
+        { q: "Müssen wir die Inhalte selbst vorbereiten?", a: "Idealerweise liefern Sie Ihre wichtigsten Inhalte, aber wir können sie auch verfassen und die Visuals erstellen. Wir passen uns Ihren Ressourcen an." },
+        { q: "Was passiert nach dem Launch?", a: "Wir bleiben an Ihrer Seite: Performance-Tracking, kontinuierliche Optimierung und Anpassungen je nach Ergebnissen. Der Launch ist ein Anfang, kein Ende." },
+        { q: "Arbeiten Sie mit meiner Branche und Unternehmensgröße?", a: "Wir arbeiten vor allem mit KMU und Selbstständigen in Luxemburg, branchenübergreifend. Die Methode passt sich Ihrem Markt und Budget an." },
+      ],
+    },
+  },
+
   faqPage: {
     eyebrow: "FAQ",
     title: "Alle Ihre Fragen, unsere klaren Antworten.",
