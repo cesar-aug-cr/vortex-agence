@@ -332,7 +332,7 @@ export function Header({
                           onClick={() => toggleService(s.slug)}
                           aria-expanded={open}
                           aria-label={s.title}
-                          className="mobnav-hint-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-text-muted transition-colors hover:text-accent"
+                          className="mobnav-hint-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-text-muted transition-colors hover:text-accent dark:text-white/75"
                         >
                           <svg
                             width="18"
