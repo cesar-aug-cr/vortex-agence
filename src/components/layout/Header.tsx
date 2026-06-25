@@ -286,8 +286,8 @@ export function Header({
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? dict.common.close : dict.common.openMenu}
             aria-expanded={mobileOpen}
-            className={`order-5 inline-flex h-11 w-11 items-center justify-center rounded-full border lg:hidden ${
-              onLight ? "border-border-strong text-text" : "border-white/30 text-white"
+            className={`hdr-icon-btn order-5 inline-flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur-md transition-colors hover:border-accent lg:hidden ${
+              onLight ? "border-transparent bg-text/5 text-text" : "border-transparent bg-white/10 text-white"
             }`}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>

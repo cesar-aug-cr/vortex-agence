@@ -309,6 +309,38 @@
     }
   }
 
+  /* Nav-bar buttons (a11y · language · theme · burger) wear the SAME reflective
+     gradient edge as the StickyCta pill "sujetador" above. The resting border is
+     set transparent in the components so this ring is the visible edge; hover
+     still adds the lime border. */
+  .hdr-icon-btn {
+    position: relative;
+  }
+  @supports (
+    (mask-composite: exclude) or (-webkit-mask-composite: xor)
+  ) {
+    .hdr-icon-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0.18) 22%,
+        rgba(255, 255, 255, 0) 48%,
+        rgba(255, 255, 255, 0.12) 72%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      -webkit-mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  }
+
   /* Ambient page glow — coloured only in dark mode (designed for the dark
      stage). Light mode keeps a clean white surface (no glow). */
   .ambient-glow {

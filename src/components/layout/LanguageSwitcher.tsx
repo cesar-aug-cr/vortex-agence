@@ -45,10 +45,10 @@ export function LanguageSwitcher({
         aria-haspopup="true"
         aria-expanded={open}
         aria-label={localeNames[lang]}
-        className={`hdr-icon-btn inline-flex h-11 items-center gap-1.5 rounded-full border px-3.5 font-mono text-xs uppercase tracking-widest transition-colors ${
+        className={`hdr-icon-btn inline-flex h-11 items-center gap-1.5 rounded-full border px-3.5 font-mono text-xs uppercase tracking-widest backdrop-blur-md transition-colors ${
           onDark
-            ? "border-white/25 text-white/80 hover:border-accent hover:text-accent"
-            : "border-border-strong text-text-muted hover:border-accent hover:text-accent-strong"
+            ? "border-transparent bg-white/10 text-white/80 hover:border-accent hover:text-accent"
+            : "border-transparent bg-text/5 text-text-muted hover:border-accent hover:text-accent-strong"
         }`}
       >
         <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden>

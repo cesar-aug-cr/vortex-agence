@@ -409,8 +409,8 @@ export function AccessibilityWidget({
         aria-expanded={open}
         aria-label={labels.button}
         title={labels.button}
-        className={`hdr-icon-btn relative inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors hover:border-accent ${
-          onDark ? "border-white/30 text-white" : "border-border-strong text-text"
+        className={`hdr-icon-btn relative inline-flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur-md transition-colors hover:border-accent ${
+          onDark ? "border-transparent bg-white/10 text-white" : "border-transparent bg-text/5 text-text"
         }`}
       >
         <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
