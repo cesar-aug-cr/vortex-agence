@@ -423,6 +423,7 @@ export const en = {
       interest: "Service you're interested in",
       message: "Your message",
       submit: "Send my request",
+      sending: "Jumping to hyperspace…",
       success: "Thank you! We'll get back to you very soon.",
       step: "Step",
       next: "Next",

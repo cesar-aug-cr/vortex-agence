@@ -441,6 +441,7 @@ export const fr = {
       interest: "Service qui vous intéresse",
       message: "Votre message",
       submit: "Envoyer ma demande",
+      sending: "Passage en hypervitesse…",
       success: "Merci ! Nous revenons vers vous très vite.",
       step: "Étape",
       next: "Suivant",

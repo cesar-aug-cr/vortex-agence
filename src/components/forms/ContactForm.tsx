@@ -7,6 +7,7 @@ import { localized } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { Check } from "@/components/ui/icons";
+import { HyperspaceWarp } from "@/components/forms/HyperspaceWarp";
 
 type FormCopy = Dictionary["contact"]["form"];
 type ServiceOpt = { slug: string; title: string };
@@ -65,6 +66,10 @@ export function ContactForm({
   async function send() {
     if (status === "sending") return;
     setStatus("sending");
+    // Show the hyperspace warp (+ audio) for at least this long so the jump is
+    // appreciable even if the request resolves instantly.
+    const MIN_WARP_MS = 3000;
+    const startedAt = Date.now();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -77,6 +82,10 @@ export function ContactForm({
         }),
       });
       if (!res.ok) throw new Error();
+      const elapsed = Date.now() - startedAt;
+      if (elapsed < MIN_WARP_MS) {
+        await new Promise((r) => setTimeout(r, MIN_WARP_MS - elapsed));
+      }
       router.push(localized(lang, "/merci"));
     } catch {
       setStatus("error");
@@ -99,6 +108,8 @@ export function ContactForm({
   }
 
   return (
+    <>
+    {status === "sending" && <HyperspaceWarp label={form.sending} />}
     <form onSubmit={onSubmit} className="grid gap-6">
       {/* Honeypot */}
       <input
@@ -290,5 +301,6 @@ export function ContactForm({
         </button>
       </div>
     </form>
+    </>
   );
 }

@@ -417,6 +417,7 @@ export const es = {
       interest: "Servicio que le interesa",
       message: "Su mensaje",
       submit: "Enviar mi solicitud",
+      sending: "Salto al hiperespacio…",
       success: "¡Gracias! Le responderemos muy pronto.",
       step: "Paso",
       next: "Siguiente",

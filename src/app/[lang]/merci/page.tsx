@@ -5,6 +5,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { localized } from "@/lib/locale";
 import { buildMetadata } from "@/lib/metadata";
 import { PageShell } from "@/components/layout/PageShell";
+import { PageFadeIn } from "@/components/layout/PageFadeIn";
 import { Section } from "@/components/ui/Section";
 
 export async function generateStaticParams() {
@@ -39,6 +40,7 @@ export default async function MerciPage({
 
   return (
     <PageShell dict={dict} lang={lang}>
+      <PageFadeIn />
       <Section tone="base" className="pt-28 md:pt-32">
         <div className="mx-auto max-w-xl text-center">
           <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-soft text-accent">

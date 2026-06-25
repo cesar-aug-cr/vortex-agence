@@ -423,6 +423,7 @@ export const de = {
       interest: "Leistung, die Sie interessiert",
       message: "Ihre Nachricht",
       submit: "Anfrage senden",
+      sending: "Sprung in den Hyperraum…",
       success: "Danke! Wir melden uns sehr bald bei Ihnen.",
       step: "Schritt",
       next: "Weiter",
