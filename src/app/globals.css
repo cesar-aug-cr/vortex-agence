@@ -341,6 +341,35 @@
     }
   }
 
+  /* Same reflective glassmorphism edge as .glass-pill / the nav buttons, but as
+     a real child element — for cards that already use ::before/::after (e.g.
+     .spotlight-card) so there's no pseudo-element clash. */
+  .glass-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  @supports (
+    (mask-composite: exclude) or (-webkit-mask-composite: xor)
+  ) {
+    .glass-ring {
+      padding: 1.5px;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0.18) 22%,
+        rgba(255, 255, 255, 0) 48%,
+        rgba(255, 255, 255, 0.12) 72%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      -webkit-mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  }
+
   /* Ambient page glow — coloured only in dark mode (designed for the dark
      stage). Light mode keeps a clean white surface (no glow). */
   .ambient-glow {
@@ -862,6 +891,22 @@
     transform: scale(1.09);
   }
 }
+/* On the white light theme the card fill is now a stronger lime, so the lime
+   blink glow above blends in. Swap the "+" glow to brand cyan there so it pops. */
+html:not(.dark) .ai-summary-blink {
+  animation-name: aiSummaryBlinkCyan;
+}
+@keyframes aiSummaryBlinkCyan {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(20, 224, 200, 0);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 14px 4px rgba(20, 224, 200, 0.75);
+    transform: scale(1.09);
+  }
+}
 
 /* Open state — a lime light travels around the card border (rotating conic
    gradient masked to a thin ring) while a soft lime glow breathes: strong →
@@ -913,6 +958,14 @@
   50% {
     box-shadow: 0 0 9px 0 rgba(200, 240, 46, 0.14);
   }
+}
+
+/* AI-summary box on articles: on the white light theme the lime-at-12% fill
+   (bg-accent-soft) reads as near-white. Strengthen the tint + give it a defined
+   olive border so the box stands out. Dark theme keeps the subtle fill. */
+html:not(.dark) .ai-summary:not(.ai-summary-revealing) {
+  background-color: rgba(200, 240, 46, 0.28);
+  border-color: rgba(95, 122, 10, 0.45);
 }
 
 /* "Avec vortx" solution card — a bright lime light orbits the border (same

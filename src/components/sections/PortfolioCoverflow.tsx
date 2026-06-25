@@ -260,11 +260,12 @@ export function PortfolioCoverflow({ copy }: { copy: Copy }) {
       {/* Floating typewriter card */}
       <div className="relative z-30 -mt-20 px-4 md:-mt-32 lg:-mt-40">
         <div
-          className={`spotlight-card mx-auto max-w-md rounded-2xl p-6 text-center shadow-2xl md:p-8 ${
-            isDark ? "border border-white/10 bg-black/40" : "border border-black/5 bg-white/70"
+          className={`spotlight-card mx-auto max-w-md rounded-2xl border border-transparent p-6 text-center shadow-2xl md:p-8 ${
+            isDark ? "bg-black/40" : "bg-white/70"
           }`}
           style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
         >
+          <span className="glass-ring" aria-hidden />
           <h3
             className={`mb-6 h-[1.5em] whitespace-nowrap text-center text-xl font-bold leading-tight md:text-2xl ${
               isDark ? "text-white" : "text-[#0a0a0b]"
@@ -293,13 +294,14 @@ export function PortfolioCoverflow({ copy }: { copy: Copy }) {
           onClick={() =>
             setActiveIndex((prev) => (prev - 1 + showcaseSites.length) % showcaseSites.length)
           }
-          className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-colors ${
+          className={`relative flex h-12 w-12 items-center justify-center rounded-full border border-transparent backdrop-blur-md transition-colors hover:border-accent ${
             isDark
-              ? "border-white/20 text-white hover:border-accent hover:bg-accent/10 hover:text-accent"
-              : "border-black/20 text-text-dim hover:border-accent hover:bg-accent/10 hover:text-text"
+              ? "bg-white/10 text-white hover:text-accent"
+              : "bg-text/5 text-text-dim hover:text-text"
           }`}
           aria-label={copy.prev}
         >
+          <span className="glass-ring" aria-hidden />
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -308,13 +310,14 @@ export function PortfolioCoverflow({ copy }: { copy: Copy }) {
         <button
           type="button"
           onClick={() => setIsPaused((prev) => !prev)}
-          className={`flex h-14 w-14 items-center justify-center rounded-full border-2 transition-colors ${
+          className={`relative flex h-14 w-14 items-center justify-center rounded-full border border-transparent backdrop-blur-md transition-colors hover:border-accent ${
             isDark
-              ? "border-white text-white hover:bg-white hover:text-black"
-              : "border-text text-text hover:bg-text hover:text-bg"
+              ? "bg-white/10 text-white hover:text-accent"
+              : "bg-text/5 text-text hover:text-text"
           }`}
           aria-label={isPaused ? copy.play : copy.pause}
         >
+          <span className="glass-ring" aria-hidden />
           {isPaused ? (
             <svg className="ml-0.5 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
@@ -329,13 +332,14 @@ export function PortfolioCoverflow({ copy }: { copy: Copy }) {
         <button
           type="button"
           onClick={() => setActiveIndex((prev) => (prev + 1) % showcaseSites.length)}
-          className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-colors ${
+          className={`relative flex h-12 w-12 items-center justify-center rounded-full border border-transparent backdrop-blur-md transition-colors hover:border-accent ${
             isDark
-              ? "border-white/20 text-white hover:border-accent hover:bg-accent/10 hover:text-accent"
-              : "border-black/20 text-text-dim hover:border-accent hover:bg-accent/10 hover:text-text"
+              ? "bg-white/10 text-white hover:text-accent"
+              : "bg-text/5 text-text-dim hover:text-text"
           }`}
           aria-label={copy.next}
         >
+          <span className="glass-ring" aria-hidden />
           <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

@@ -40,7 +40,7 @@ export function AiSummary({
     <aside
       aria-label={label}
       data-phase={phase}
-      className={`relative mt-10 overflow-hidden rounded-2xl border p-6 md:p-7 ${
+      className={`ai-summary relative mt-10 overflow-hidden rounded-2xl border p-6 md:p-7 ${
         phase === "revealing"
           ? "ai-summary-revealing"
           : open

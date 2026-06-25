@@ -9,7 +9,7 @@ const FUNNEL_WIDTHS = ["100%", "82%", "64%", "48%"];
 export function LeadGen({ dict }: { dict: Dictionary }) {
   return (
     <Section tone="base">
-      <SectionHeading eyebrow={dict.leadgen.eyebrow} title={dict.leadgen.title} />
+      <SectionHeading eyebrow={dict.leadgen.eyebrow} title={dict.leadgen.title} lead={dict.leadgen.lead} />
 
       <div className="mt-14 grid items-start gap-5 md:mt-16 lg:grid-cols-2">
         {/* problem */}

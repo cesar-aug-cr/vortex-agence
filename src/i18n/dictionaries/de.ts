@@ -222,7 +222,8 @@ export const de = {
   // ---- Lead-gen / problem→solution ----
   leadgen: {
     eyebrow: "Das Problem, dann die Lösung",
-    title: "Eine schöne Website reicht nicht. Sie muss sich auszahlen.",
+    title: "Niemand beachtet Sie.",
+    lead: "Ein Mensch sieht 6.000 bis 10.000 Werbeanzeigen pro Tag. Um aufzufallen, muss man unvergesslich sein. Und unvergesslich ist so ein bisschen unser Ding.",
     problemTitle: "Ohne Akquise-System:",
     problems: [
       "Chancen, die unbemerkt vorbeiziehen",

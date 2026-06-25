@@ -54,12 +54,84 @@ export default async function AgencePage({
         items={[{ label: dict.nav.about }]}
       />
 
-      {/* intro + story + dynamic experience counter */}
-      <Section tone="base" className="pt-10 md:pt-12">
-        <SectionHeading level="h1" eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
+      {/* intro hero — heading + experience anchor, story + dynamic stats */}
+      <section className="relative isolate scroll-mt-24 overflow-hidden pb-24 pt-10 md:pb-32 md:pt-14">
+        {/* decorative brand background — radial glows + faint grid */}
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(46% 48% at 90% 0%, rgba(20,224,200,0.13), transparent 60%), radial-gradient(42% 48% at 0% 24%, rgba(200,240,46,0.13), transparent 60%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 text-text opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
+              backgroundSize: "64px 64px",
+              maskImage: "radial-gradient(120% 85% at 50% 0%, #000, transparent 72%)",
+              WebkitMaskImage: "radial-gradient(120% 85% at 50% 0%, #000, transparent 72%)",
+            }}
+          />
+        </div>
 
-        <div className="mt-14 grid gap-10 md:mt-16 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
-          <div className="space-y-5">
+        <div className="container-vortx relative">
+          <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-14">
+            <div className="max-w-2xl">
+              <span className="section-eyebrow eyebrow-badge font-mono text-xs uppercase tracking-[0.22em]">
+                {a.eyebrow}
+              </span>
+              <h1 className="mt-4 text-4xl font-bold leading-[1.05] text-text md:text-5xl lg:text-6xl">
+                {a.title}
+              </h1>
+              <p className="mt-5 text-lg text-text-dim">{a.lead}</p>
+
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+                <Link href={localized(lang, "/contact")} className="btn btn-primary">
+                  {dict.common.cta}
+                </Link>
+                <Link
+                  href={localized(lang, "/approche")}
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-accent-strong"
+                >
+                  {dict.nav.approach}
+                  <ArrowRight
+                    width={16}
+                    height={16}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
+            </div>
+
+            {/* experience card — counter rolls over each Jan 1 (ISR) */}
+            <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-3xl border border-stage-border bg-stage p-10 text-center text-stage-text shadow-[var(--shadow-lg)]">
+              <div
+                className="pointer-events-none absolute inset-0"
+                aria-hidden
+                style={{
+                  backgroundImage:
+                    "radial-gradient(80% 70% at 50% 0%, rgba(20,224,200,0.18), transparent 60%), radial-gradient(70% 60% at 50% 100%, rgba(200,240,46,0.14), transparent 60%)",
+                }}
+              />
+              {/* Always-dark stage → force brand lime (the global light-theme
+                  `.text-accent` → olive override would be illegible on near-black). */}
+              <span className="relative font-mono text-7xl font-bold leading-none text-[color:var(--accent)] md:text-8xl">
+                {years}
+              </span>
+              <span className="relative mt-3 text-xl font-semibold">
+                {a.experience.suffix} {a.experience.label}
+              </span>
+              <span className="relative mt-1 font-mono text-xs uppercase tracking-wide text-stage-text-dim">
+                {a.experience.note}
+              </span>
+            </div>
+          </div>
+
+          {/* story */}
+          <div className="mt-14 grid gap-x-10 gap-y-5 md:mt-16 md:grid-cols-2">
             {a.story.map((p) => (
               <p key={p} className="text-lg leading-relaxed text-text-dim">
                 {p}
@@ -67,45 +139,22 @@ export default async function AgencePage({
             ))}
           </div>
 
-          {/* experience card — counter rolls over each Jan 1 (ISR) */}
-          <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-3xl border border-border bg-stage p-10 text-center text-stage-text">
-            <div
-              className="pointer-events-none absolute inset-0"
-              aria-hidden
-              style={{
-                backgroundImage:
-                  "radial-gradient(80% 70% at 50% 0%, rgba(20,224,200,0.18), transparent 60%), radial-gradient(70% 60% at 50% 100%, rgba(200,240,46,0.14), transparent 60%)",
-              }}
-            />
-            {/* Always-dark stage → force brand lime (the global light-theme
-                `.text-accent` → olive override would be illegible on near-black). */}
-            <span className="relative font-mono text-7xl font-bold leading-none text-[color:var(--accent)] md:text-8xl">
-              {years}
-            </span>
-            <span className="relative mt-3 text-xl font-semibold">
-              {a.experience.suffix} {a.experience.label}
-            </span>
-            <span className="relative mt-1 font-mono text-xs uppercase tracking-wide text-stage-text-dim">
-              {a.experience.note}
-            </span>
+          {/* stats band */}
+          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+            {a.stats.map((s) => (
+              <div
+                key={s.label}
+                className="card card-hover flex flex-col items-center justify-center p-7 text-center"
+              >
+                <span className="font-mono text-3xl font-bold text-accent md:text-4xl">
+                  {s.value}
+                </span>
+                <span className="mt-2 text-sm text-text-dim">{s.label}</span>
+              </div>
+            ))}
           </div>
         </div>
-
-        {/* stats band */}
-        <div className="mt-12 grid gap-5 sm:grid-cols-3">
-          {a.stats.map((s) => (
-            <div
-              key={s.label}
-              className="card flex flex-col items-center justify-center p-7 text-center"
-            >
-              <span className="font-mono text-3xl font-bold text-accent md:text-4xl">
-                {s.value}
-              </span>
-              <span className="mt-2 text-sm text-text-dim">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </Section>
+      </section>
 
       {/* what distinguishes us — pillars with icons */}
       <Section tone="muted">

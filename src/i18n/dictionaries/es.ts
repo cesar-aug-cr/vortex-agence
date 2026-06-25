@@ -216,7 +216,8 @@ export const es = {
   // ---- Lead-gen / problem→solution ----
   leadgen: {
     eyebrow: "El problema, luego la solución",
-    title: "Un buen sitio no basta. Tiene que dar resultados.",
+    title: "Nadie te presta atención.",
+    lead: "Una persona ve entre 6.000 y 10.000 anuncios al día. Para destacar, hay que ser inolvidable. Y lo inolvidable es justo lo nuestro.",
     problemTitle: "Sin un sistema de captación:",
     problems: [
       "Oportunidades que pasan desapercibidas",
