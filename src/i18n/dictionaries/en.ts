@@ -1420,6 +1420,24 @@ export const en = {
             text: "A logo alone isn't enough. It reaches its full strength within a coherent identity: colours, typefaces, usage rules. It's that consistency, applied everywhere, that builds trust and recognition.",
           },
           {
+            type: "accordion",
+            title: "Why our colours? The lime → cyan gradient, decoded",
+            items: [
+              {
+                q: "The message: freshness, growth and technology",
+                a: "Our lime green deliberately breaks from the corporate blue you see everywhere: it signals energy, momentum and growth — in short, return on investment. The shift toward teal cyan, meanwhile, points to the tech world: startups, software, marketing automation. Together they sign a modern, alive and unmistakably digital brand.",
+              },
+              {
+                q: "The positioning: creative and against the grain",
+                a: "This palette sets us apart from the classic, interchangeable agencies. It announces original strategies that stand out, and speaks naturally to fast-moving sectors — tech, e-commerce, mobile apps — as well as to brands aimed at Millennials and Gen Z.",
+              },
+              {
+                q: "The on-screen strength: impact and flow",
+                a: "That brightness catches the eye instantly, even in a saturated social feed. And because it's a soft gradient, it suggests flow: adaptability to algorithm changes and agility in our processes. The substance, told by the shape.",
+              },
+            ],
+          },
+          {
             type: "quote",
             text: "A logo is the signature. The identity is the whole handwriting. Both have to say the same thing.",
           },

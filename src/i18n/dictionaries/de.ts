@@ -1420,6 +1420,24 @@ export const de = {
             text: "Ein Logo allein genügt nicht. Seine volle Kraft entfaltet es innerhalb einer stimmigen Identität: Farben, Schriften, Anwendungsregeln. Es ist diese überall angewandte Stimmigkeit, die Vertrauen und Wiedererkennung aufbaut.",
           },
           {
+            type: "accordion",
+            title: "Warum unsere Farben? Der Verlauf Lime → Cyan, entschlüsselt",
+            items: [
+              {
+                q: "Die Botschaft: Frische, Wachstum und Technologie",
+                a: "Unser Lime-Grün bricht bewusst mit dem Corporate-Blau, das man überall sieht: Es steht für Energie, Schwung und Wachstum – kurz, für Return on Investment. Der Übergang zum türkisen Cyan wiederum verweist auf die Tech-Welt: Startups, Software, Marketing-Automatisierung. Zusammen stehen sie für eine moderne, lebendige und unverkennbar digitale Marke.",
+              },
+              {
+                q: "Die Positionierung: kreativ und gegen den Strom",
+                a: "Diese Palette hebt uns von den klassischen, austauschbaren Agenturen ab. Sie kündigt originelle Strategien an, die herausstechen, und spricht naturgemäß schnelllebige Branchen an – Tech, E-Commerce, Mobile Apps – ebenso wie Marken, die sich an Millennials und die Gen Z richten.",
+              },
+              {
+                q: "Die Wirkung am Bildschirm: Impact und Fluss",
+                a: "Diese Leuchtkraft fängt den Blick sofort ein, selbst in einem überladenen Social-Feed. Und weil es ein weicher Verlauf ist, suggeriert er Fluss: Anpassungsfähigkeit an Algorithmus-Änderungen und Agilität in unseren Prozessen. Die Substanz, erzählt von der Form.",
+              },
+            ],
+          },
+          {
             type: "quote",
             text: "Ein Logo ist die Unterschrift. Die Identität ist die gesamte Handschrift. Beide müssen dasselbe sagen.",
           },

@@ -1414,6 +1414,24 @@ export const es = {
             text: "Un logo por sí solo no basta. Cobra toda su fuerza dentro de una identidad coherente: colores, tipografías, reglas de uso. Es esa coherencia, aplicada en todas partes, la que construye la confianza y el reconocimiento.",
           },
           {
+            type: "accordion",
+            title: "¿Por qué nuestros colores? El degradado lima → cian, descifrado",
+            items: [
+              {
+                q: "El mensaje: frescura, crecimiento y tecnología",
+                a: "Nuestro verde lima rompe a propósito con el azul corporativo que se ve en todas partes: transmite energía, impulso y crecimiento — en una palabra, retorno de inversión. La transición hacia el cian turquesa, en cambio, remite al universo tech: startups, software, automatización del marketing. Juntos firman una marca moderna, viva y plenamente digital.",
+              },
+              {
+                q: "El posicionamiento: creativo y a contracorriente",
+                a: "Esta paleta nos aleja de las agencias clásicas e intercambiables. Anuncia estrategias originales, que destacan, y habla con naturalidad a los sectores que se mueven — tech, e-commerce, apps móviles — así como a las marcas dirigidas a los Millennials y la Generación Z.",
+              },
+              {
+                q: "La fuerza en pantalla: impacto y fluidez",
+                a: "Esa luminosidad capta la mirada al instante, incluso en un feed saturado. Y al ser un degradado suave, sugiere fluidez: adaptabilidad ante los cambios de algoritmo y agilidad en nuestros procesos. El fondo, contado por la forma.",
+              },
+            ],
+          },
+          {
             type: "quote",
             text: "Un logo es la firma. La identidad es la escritura entera. Las dos deben decir lo mismo.",
           },

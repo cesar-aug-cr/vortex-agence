@@ -1,5 +1,5 @@
 import type { ArticleBlock } from "@/i18n/dictionaries/fr";
-import { Check } from "@/components/ui/icons";
+import { Check, Plus } from "@/components/ui/icons";
 import { LogoMark } from "@/components/brand/LogoMark";
 
 /** Renders a long-form article body from typed {@link ArticleBlock}s. */
@@ -114,6 +114,34 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                   {block.title}
                 </p>
                 <p className="mt-2 text-lg leading-relaxed text-text">{block.text}</p>
+              </div>
+            );
+          case "accordion":
+            return (
+              <div
+                key={i}
+                className="overflow-hidden rounded-2xl border border-border bg-bg-card"
+              >
+                {block.title && (
+                  <p className="border-b border-border px-5 py-4 font-semibold text-text">
+                    {block.title}
+                  </p>
+                )}
+                <div className="divide-y divide-border">
+                  {block.items.map((it) => (
+                    <details key={it.q} className="group px-5">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-lg font-medium text-text marker:hidden">
+                        {it.q}
+                        <Plus
+                          width={20}
+                          height={20}
+                          className="shrink-0 text-accent transition-transform duration-300 group-open:rotate-45"
+                        />
+                      </summary>
+                      <p className="pb-5 text-lg leading-relaxed text-text-dim">{it.a}</p>
+                    </details>
+                  ))}
+                </div>
               </div>
             );
           default:

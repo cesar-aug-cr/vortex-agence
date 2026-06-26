@@ -23,10 +23,15 @@ export function HyperspaceWarp({ label }: { label?: string }) {
     const gl = canvas.getContext("webgl", { antialias: false, alpha: false });
     if (!gl) return;
 
+    // Light theme → white backdrop + alpha-blended coloured (bigger) particles;
+    // dark theme → black backdrop + additive glow.
+    const isDark = document.documentElement.classList.contains("dark");
+    const uLight = isDark ? 0 : 1;
+
     // ── GLSL ──────────────────────────────────────────────
     const VS = `
       attribute float aId;
-      uniform float uTime, uSpeed, uAspect;
+      uniform float uTime, uSpeed, uAspect, uLight;
       varying float vBrightness, vHue;
       #define PI 3.14159265
       float hash(float n){ return fract(sin(n*127.1)*43758.5453); }
@@ -43,14 +48,17 @@ export function HyperspaceWarp({ label }: { label?: string }) {
         px /= uAspect;
         gl_Position = vec4(px, py, 0.0, 1.0);
         float sz = (1.0-z)*4.0+0.5;
-        gl_PointSize = clamp(sz + uSpeed*2.0, 0.5, 14.0);
+        // Bigger particles on the light theme (uLight = 1).
+        gl_PointSize = clamp((sz + uSpeed*2.0) * (1.0 + uLight*0.9), 0.5, 26.0);
         vBrightness = (1.0-z)*(0.4 + uSpeed*0.6);
         vHue = hash(id*5.1);
       }`;
 
-    // Brand colours: cyan (#14e0c8) → lime (#c8f02e), near-white core.
+    // Brand colours: cyan (#14e0c8) → lime (#c8f02e). Dark theme: near-white
+    // core + additive glow. Light theme: saturated colour over white (alpha blend).
     const FS = `
       precision mediump float;
+      uniform float uLight;
       varying float vBrightness, vHue;
       void main(){
         vec2 uv = gl_PointCoord-0.5;
@@ -61,14 +69,20 @@ export function HyperspaceWarp({ label }: { label?: string }) {
         vec3 cyan = vec3(0.078,0.878,0.784);
         vec3 lime = vec3(0.784,0.941,0.180);
         vec3 base = mix(cyan, lime, vHue);
-        vec3 col = mix(base, vec3(1.0), core*0.6);
-        float brightness = vBrightness*(core*1.6 + halo*0.5);
-        gl_FragColor = vec4(col*brightness, halo*vBrightness);
+        if(uLight > 0.5){
+          vec3 col = base * 0.7;
+          float a = clamp(core*1.4 + halo*0.45, 0.0, 1.0) * (0.5 + vBrightness*0.8);
+          gl_FragColor = vec4(col, a);
+        } else {
+          vec3 col = mix(base, vec3(1.0), core*0.6);
+          float brightness = vBrightness*(core*1.6 + halo*0.5);
+          gl_FragColor = vec4(col*brightness, halo*vBrightness);
+        }
       }`;
 
     const VS2 = `
       attribute vec2 aPos;
-      uniform float uTime, uSpeed, uAspect;
+      uniform float uTime, uSpeed, uAspect, uLight;
       varying float vAlpha, vHue;
       float hash(float n){ return fract(sin(n*127.1)*43758.5453); }
       void main(){
@@ -92,9 +106,11 @@ export function HyperspaceWarp({ label }: { label?: string }) {
 
     const FS2 = `
       precision mediump float;
+      uniform float uLight;
       varying float vAlpha, vHue;
       void main(){
         vec3 col = mix(vec3(0.078,0.878,0.784), vec3(0.784,0.941,0.180), vHue);
+        if(uLight > 0.5) col *= 0.7;
         gl_FragColor = vec4(col, vAlpha);
       }`;
 
@@ -251,10 +267,11 @@ export function HyperspaceWarp({ label }: { label?: string }) {
       t += dt;
       updateAudio(speed);
 
-      gl.clearColor(0, 0, 0, 1);
+      if (isDark) gl.clearColor(0, 0, 0, 1);
+      else gl.clearColor(0.969, 0.973, 0.957, 1);
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.enable(gl.BLEND);
-      gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+      gl.blendFunc(gl.SRC_ALPHA, isDark ? gl.ONE : gl.ONE_MINUS_SRC_ALPHA);
       const asp = W / H;
 
       if (speed > 0.1) {
@@ -266,6 +283,7 @@ export function HyperspaceWarp({ label }: { label?: string }) {
         u1f(streakProg, "uTime", t);
         u1f(streakProg, "uSpeed", speed);
         u1f(streakProg, "uAspect", asp);
+        u1f(streakProg, "uLight", uLight);
         gl.drawArrays(gl.LINES, 0, N * 2);
       }
 
@@ -277,6 +295,7 @@ export function HyperspaceWarp({ label }: { label?: string }) {
       u1f(starProg, "uTime", t);
       u1f(starProg, "uSpeed", speed);
       u1f(starProg, "uAspect", asp);
+      u1f(starProg, "uLight", uLight);
       gl.drawArrays(gl.POINTS, 0, N);
     };
     raf = requestAnimationFrame(frame);
@@ -303,21 +322,25 @@ export function HyperspaceWarp({ label }: { label?: string }) {
 
   if (typeof document === "undefined") return null;
 
+  const light = !document.documentElement.classList.contains("dark");
+
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] overflow-hidden bg-black animate-fade-in"
+      className="fixed inset-0 z-[100] overflow-hidden animate-fade-in"
       role="status"
       aria-live="polite"
       aria-label={label}
+      style={{ backgroundColor: light ? "#f7f8f4" : "#000" }}
     >
       <canvas ref={canvasRef} className="block h-full w-full" />
-      {/* brand vignette so the centre stays readable */}
+      {/* vignette so the centre stays readable (white on light, black on dark) */}
       <div
         className="pointer-events-none absolute inset-0"
         aria-hidden
         style={{
-          backgroundImage:
-            "radial-gradient(60% 60% at 50% 50%, transparent 40%, rgba(0,0,0,0.55) 100%)",
+          backgroundImage: light
+            ? "radial-gradient(60% 60% at 50% 50%, transparent 45%, rgba(247,248,244,0.6) 100%)"
+            : "radial-gradient(60% 60% at 50% 50%, transparent 40%, rgba(0,0,0,0.55) 100%)",
         }}
       />
     </div>,

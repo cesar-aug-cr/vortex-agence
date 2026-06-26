@@ -13,7 +13,8 @@ export type ArticleBlock =
   | { type: "ol"; items: string[] }
   | { type: "quote"; text: string; cite?: string }
   | { type: "callout"; title: string; text: string }
-  | { type: "logo"; tipTitle?: string; tip?: string };
+  | { type: "logo"; tipTitle?: string; tip?: string }
+  | { type: "accordion"; title?: string; items: { q: string; a: string }[] };
 
 /** One glossary entry. */
 export type GlossaryTerm = {
@@ -1436,6 +1437,24 @@ export const fr = {
           {
             type: "p",
             text: "Un logo seul ne suffit pas. Il prend toute sa force au sein d'une identité cohérente : couleurs, typographies, règles d'usage. C'est cette cohérence, appliquée partout, qui construit la confiance et la reconnaissance.",
+          },
+          {
+            type: "accordion",
+            title: "Pourquoi nos couleurs ? Le dégradé lime → cyan, décodé",
+            items: [
+              {
+                q: "Le message : fraîcheur, croissance et technologie",
+                a: "Notre vert lime tranche volontairement avec le bleu corporate qu'on voit partout : il évoque l'énergie, l'élan et la croissance — bref, le retour sur investissement. La bascule vers le cyan turquoise, elle, renvoie à l'univers tech : startups, logiciel, automatisation du marketing. Ensemble, ils signent une marque moderne, vivante et résolument digitale.",
+              },
+              {
+                q: "Le positionnement : créatif et à contre-courant",
+                a: "Cette palette nous éloigne des agences classiques et interchangeables. Elle annonce des stratégies originales, qui sortent du lot, et parle naturellement aux secteurs qui bougent — tech, e-commerce, applications mobiles — comme aux marques qui s'adressent aux Millennials et à la Gen Z.",
+              },
+              {
+                q: "La force à l'écran : impact et fluidité",
+                a: "Une telle luminosité accroche l'œil instantanément, même dans un fil social saturé. Et parce que c'est un dégradé doux, il suggère la fluidité : l'adaptabilité face aux changements d'algorithmes et l'agilité de nos process. Le fond, dit par la forme.",
+              },
+            ],
           },
           {
             type: "quote",
