@@ -1514,3 +1514,19 @@ html:not(.dark) .sandbox-header .hdr-icon-btn:hover {
 .test-home .btn-primary:hover {
   box-shadow: 0 12px 34px rgba(46, 102, 255, 0.55), 0 4px 14px rgba(200, 240, 46, 0.5);
 }
+
+/* Mobile "tap me" affordance — on touch devices the link-card centred in the
+   viewport gets `.is-active` (set by CenterCardActivate), which mirrors the
+   desktop :hover so users know the cards are tappable. Desktop is unaffected. */
+@media (hover: none) and (pointer: coarse) {
+  .card-hover.is-active {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-strong);
+  }
+  /* Spotlight cards: light up their lime border-glow ring (cursor-independent). */
+  .spotlight-card.is-active::before,
+  .spotlight-card.is-active::after {
+    opacity: 1;
+  }
+}

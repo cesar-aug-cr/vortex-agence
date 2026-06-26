@@ -12,6 +12,7 @@ import { A11yScript } from "@/components/layout/A11yScript";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
 import { ChatWidget } from "@/components/forms/ChatWidget";
+import { CenterCardActivate } from "@/components/layout/CenterCardActivate";
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -112,6 +113,7 @@ export default async function LangLayout({
         <MotionGuard />
         <SchemaMarkup />
         {children}
+        <CenterCardActivate />
         <ChatWidget dict={dict} lang={lang} />
         <ConsentBanner lang={lang} consent={dict.consent} />
       </body>
