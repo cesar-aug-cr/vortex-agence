@@ -223,7 +223,7 @@ void main() {
 }
 `;
 
-function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightness = 1, speedMultiplier = 1, coreWhite = 0, extraSoftness = 0, limeOuter = false }: { count?: number; maxRadius?: number; sizeScale?: number; brightness?: number; speedMultiplier?: number; coreWhite?: number; extraSoftness?: number; limeOuter?: boolean }) {
+export function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightness = 1, speedMultiplier = 1, coreWhite = 0, extraSoftness = 0, limeOuter = false }: { count?: number; maxRadius?: number; sizeScale?: number; brightness?: number; speedMultiplier?: number; coreWhite?: number; extraSoftness?: number; limeOuter?: boolean }) {
   const points = useRef<THREE.Points>(null);
   const { positions, colors, sizes, softness, speeds, baseAngles, radii } = useMemo(() => {
     const pos = new Float32Array(count * 3);
@@ -336,7 +336,7 @@ function AccretionDisk({ count = 4000, maxRadius = 1.4, sizeScale = 1, brightnes
   );
 }
 
-function EventHorizon({ radius = 0.46, color = "#000000" }: { radius?: number; color?: string }) {
+export function EventHorizon({ radius = 0.46, color = "#000000" }: { radius?: number; color?: string }) {
   return (
     <mesh>
       <sphereGeometry args={[radius, 64, 64]} />
@@ -345,7 +345,7 @@ function EventHorizon({ radius = 0.46, color = "#000000" }: { radius?: number; c
   );
 }
 
-function PhotonRing() {
+export function PhotonRing() {
   const ref = useRef<THREE.Mesh>(null);
   useFrame(({ clock }) => {
     if (!ref.current) return;
@@ -386,7 +386,7 @@ function BlackHole({ isMobile, posOverride, rotOverride, scaleOverride, ring2Rot
   );
 }
 
-function GravitationalLens({
+export function GravitationalLens({
   bhPosition,
   bhScale,
   strength = 0.035,
