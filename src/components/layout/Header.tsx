@@ -304,6 +304,15 @@ export function Header({
       {mobileOpen && (
         <div className="fixed inset-0 top-20 z-[45] overflow-y-auto border-t border-border bg-bg lg:hidden">
           <nav className="container-vortx py-8">
+            {/* Primary CTA first — on mobile the menu is long, don't bury it. */}
+            <Link
+              href={localized(lang, "/contact")}
+              onClick={() => setMobileOpen(false)}
+              className="btn btn-primary mb-8 w-full"
+            >
+              {dict.common.cta}
+            </Link>
+
             <p className="eyebrow">{dict.nav.services}</p>
             <ul className="mt-4 grid gap-1">
               {dict.services.map((s) => {
@@ -410,13 +419,6 @@ export function Header({
               ))}
             </ul>
 
-            <Link
-              href={localized(lang, "/contact")}
-              onClick={() => setMobileOpen(false)}
-              className="btn btn-primary mt-8 w-full"
-            >
-              {dict.common.cta}
-            </Link>
           </nav>
         </div>
       )}
