@@ -4,7 +4,7 @@
   Contact: contact [at] vortx.lu
 
 /* SITE */
-  Langue: Français (DE / EN / LU à venir)
+  Langues: Français / English / Deutsch / Español
   Stack: Next.js, React, TypeScript, Tailwind CSS, Three.js
   Standards: HTML5, CSS3, JSON-LD, hreflang
   Lieu: Luxembourg

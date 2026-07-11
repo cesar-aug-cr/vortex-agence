@@ -63,9 +63,10 @@ export default async function MentionsLegalesPage({
             </p>
             <ul>
               <li><strong>{todo(L.companyName, "raison sociale")}</strong>{L.legalForm ? ` — ${L.legalForm}` : ` — [À COMPLÉTER : forme juridique]`}</li>
-              <li>Siège social : {todo(site.address.street, "rue")}, {todo(site.address.postalCode, "code postal")} {site.address.locality}, Luxembourg</li>
+              <li>Adresse d&apos;exploitation : {todo(site.address.street, "rue")}, {todo(site.address.postalCode, "code postal")} {site.address.locality}, Luxembourg</li>
               <li>RCS Luxembourg : {todo(L.rcs, "n° RCS")}</li>
-              <li>N° TVA : {todo(L.vat, "n° TVA")}</li>
+              {L.businessPermit ? <li>Autorisation d&apos;établissement : n° {L.businessPermit}</li> : null}
+              <li>N° TVA : {L.vat || "immatriculation en cours"}</li>
               {L.capital ? <li>Capital social : {L.capital}</li> : null}
               <li>
                 E-mail : <a href={`mailto:${site.email}`}>{site.email}</a>

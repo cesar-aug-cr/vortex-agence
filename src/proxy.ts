@@ -31,7 +31,9 @@ export function proxy(req: NextRequest) {
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
   );
 
-  // No locale prefix → redirect to the best-guess locale.
+  // No locale prefix → redirect to the best-guess locale. Deliberately a
+  // temporary (307) redirect: the target varies with Accept-Language, so it
+  // must never be cached as permanent.
   if (!lang) {
     const locale = preferredLocale(req);
     const target = pathname === "/" ? "" : pathname;
@@ -47,9 +49,10 @@ export function proxy(req: NextRequest) {
 
   // Wrong public form (e.g. /es/agence or /es/services) → redirect to the
   // localized one (/es/agencia, /es/servicios) so there's a single public URL.
-  // 307 (temporary) during pre-launch iteration; switch to 308 at launch.
+  // 308 (permanent) so search engines consolidate link equity on the
+  // canonical form.
   if (rest !== prefRest) {
-    return NextResponse.redirect(new URL(`/${lang}${prefRest}${search}`, req.url), 307);
+    return NextResponse.redirect(new URL(`/${lang}${prefRest}${search}`, req.url), 308);
   }
 
   // Correct public form that maps to a different folder → rewrite internally.

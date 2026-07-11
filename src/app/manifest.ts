@@ -8,11 +8,13 @@ export default function manifest(): MetadataRoute.Manifest {
     description: site.description,
     start_url: `/${site.defaultLocale}`,
     display: "standalone",
-    background_color: "#09090c",
-    theme_color: "#09090c",
+    // Matches the light theme --bg token (the site-wide default theme).
+    background_color: "#f7f8f4",
+    theme_color: "#f7f8f4",
     lang: site.defaultLocale,
     icons: [
-      { src: "/icon", sizes: "any", type: "image/png" },
+      { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { src: "/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
   };
 }

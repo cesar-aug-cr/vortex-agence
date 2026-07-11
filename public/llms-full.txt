@@ -119,8 +119,9 @@ R : Chaque projet est sur mesure. Plutôt qu'un tarif générique, vortx propose
 devis précis après un appel découverte gratuit et un audit.
 
 Q : Travaillez-vous en plusieurs langues ?
-R : Oui. Les sites sont multilingues nativement (FR, DE, EN, et Lëtzebuergesch
-sur demande), adaptés au marché luxembourgeois.
+R : Oui. Les sites sont multilingues nativement (FR, DE, EN, ES, et
+Lëtzebuergesch sur demande), adaptés au marché luxembourgeois. Le site de
+vortx est lui-même disponible en quatre langues (FR/EN/DE/ES).
 
 Q : Qu'est-ce que le GEO / GSO ?
 R : L'optimisation pour les moteurs de réponse IA (ChatGPT, Perplexity, Google AI).
@@ -137,6 +138,7 @@ marketing continu font partie de l'offre.
 - Accompagnement après lancement
 
 ## Contact
+Adresse : 18, rue de l'Ouest, L-2273 Luxembourg.
 Zone desservie : Luxembourg (et Grande Région). Tarifs sur devis après appel
 découverte gratuit. Réservez un appel via la page de contact :
 https://vortx.lu/fr/contact

@@ -3,7 +3,7 @@
 > Agence marketing et web basée au Luxembourg. vortx conçoit des sites web qui
 > convertissent et des stratégies d'acquisition mesurables : SEO & GEO,
 > génération de leads, publicité en ligne, branding et automatisation IA.
-> Multilingue (FR/DE/EN). Réponse rapide, audit gratuit, sans engagement.
+> Multilingue (FR/EN/DE/ES). Réponse rapide, audit gratuit, sans engagement.
 
 ## Services
 - [Sites web qui convertissent](https://vortx.lu/fr/services/sites-web) : sites rapides en Next.js ou WordPress, orientés conversion.
@@ -48,10 +48,23 @@
 - [FAQ](https://vortx.lu/fr/faq)
 - [Glossaire](https://vortx.lu/fr/glossaire)
 - [News](https://vortx.lu/fr/news)
+- [Quiz marketing](https://vortx.lu/fr/quiz)
 - [Contact / audit gratuit](https://vortx.lu/fr/contact)
 
+## Articles
+- [Combien coûte un site web professionnel au Luxembourg en 2026 ?](https://vortx.lu/fr/news/combien-coute-un-site-web-luxembourg-2026)
+- [SEO vs GEO : comment être trouvé sur Google ET cité par les IA en 2026](https://vortx.lu/fr/news/geo-seo-luxembourg-etre-cite-par-les-ia)
+- [Google Ads ou SEO : où investir votre budget marketing en 2026 ?](https://vortx.lu/fr/news/google-ads-ou-seo-ou-investir-budget-marketing)
+- [Tunnel de conversion : transformer vos visiteurs en clients, étape par étape](https://vortx.lu/fr/news/tunnel-de-conversion-transformer-visiteurs-en-clients)
+- [UX/UI : les principes de design qui transforment un visiteur en client](https://vortx.lu/fr/news/ux-ui-design-site-qui-convertit-bonnes-pratiques)
+- [Qu'est-ce qu'un bon logo ? Les principes d'une identité qui dure](https://vortx.lu/fr/news/quest-ce-quun-bon-logo-identite-qui-dure)
+- [RGPD & cookies : le minimum à respecter sur votre site au Luxembourg](https://vortx.lu/fr/news/rgpd-cookies-site-web-luxembourg)
+- [5 tâches que votre PME devrait déjà confier à l'IA](https://vortx.lu/fr/news/5-taches-pme-confier-a-l-ia)
+- [IA pour les PME au Luxembourg : par où commencer en 2026](https://vortx.lu/fr/news/ia-pme-luxembourg-par-ou-commencer)
+
 ## Notes
+- Adresse : 18, rue de l'Ouest, L-2273 Luxembourg.
 - Zone desservie : Luxembourg (et Grande Région).
-- Multilingue : FR, DE, EN (Lëtzebuergesch sur demande). Versions DE sous /de/leistungen/…
+- Site disponible en FR, EN, DE et ES (versions DE sous /de/leistungen/…, EN sous /en/…, ES sous /es/servicios/…). Lëtzebuergesch sur demande pour les projets clients.
 - Tarifs : sur devis après appel découverte gratuit ; pas de grille publique.
 - Contact : voir la page de contact pour réserver un appel.

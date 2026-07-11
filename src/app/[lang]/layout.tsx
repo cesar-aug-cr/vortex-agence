@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
+import { ogLocale, ogAlternateLocales } from "@/lib/metadata";
 import { ThemeScript } from "@/components/theme/ThemeScript";
 import { ThemeSync } from "@/components/theme/ThemeSync";
 import { MotionGuard } from "@/components/layout/MotionGuard";
@@ -72,7 +73,8 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      locale: "fr_LU",
+      locale: ogLocale[locale] ?? "fr_LU",
+      alternateLocale: ogAlternateLocales(locale),
       siteName: "vortx",
       title: dict.meta.home.title,
       description: dict.meta.home.description,

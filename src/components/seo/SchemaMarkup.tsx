@@ -21,7 +21,7 @@ export function SchemaMarkup() {
     email: site.email || undefined,
     telephone: site.phone || undefined,
     foundingDate: site.founded,
-    logo: `${site.url}/icon`,
+    logo: `${site.url}/icon.png`,
     image: `${site.url}/opengraph-image`,
     areaServed: { "@type": "Country", name: "Luxembourg" },
     ...(hasFullAddress

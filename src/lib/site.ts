@@ -1,7 +1,8 @@
 /**
  * Central site configuration — single place to edit real-world facts.
  * TODO (placeholders to replace with real data):
- *   - url (final domain), email, phone, address, sameAs (socials)
+ *   - phone, sameAs (socials), legal.vat (pending registration),
+ *     legal.director, legal.host
  */
 export const site = {
   name: "vortx",
@@ -10,11 +11,11 @@ export const site = {
   locales: ["fr", "en", "de", "es"] as const,
   description:
     "Agence marketing & web à Luxembourg : sites qui convertissent, SEO & GEO, génération de leads et publicité en ligne.",
-  email: "contact@vortx.lu", // placeholder
+  email: "contact@vortx.lu",
   phone: "" as string, // placeholder — e.g. "+352 ..."
   address: {
-    street: "" as string, // placeholder — set to flip schema to LocalBusiness
-    postalCode: "" as string, // placeholder
+    street: "18, rue de l'Ouest" as string,
+    postalCode: "L-2273" as string,
     locality: "Luxembourg",
     region: "Luxembourg",
     country: "LU",
@@ -24,14 +25,16 @@ export const site = {
 
   /**
    * Legal identity — required for real "Mentions légales" / privacy pages.
-   * Fill these with the company's actual data (and have a lawyer review the
-   * pages). While empty, the legal pages show clearly-flagged placeholders.
+   * Still pending: vat (registration in progress), director, host details —
+   * their lines render as clearly-flagged placeholders (or are omitted)
+   * until filled.
    */
   legal: {
-    companyName: "" as string, // Raison sociale — ex: "vortx S.à r.l."
-    legalForm: "" as string, // Forme juridique — ex: "Société à responsabilité limitée"
-    rcs: "" as string, // N° RCS Luxembourg — ex: "B123456"
-    vat: "" as string, // N° TVA — ex: "LU12345678"
+    companyName: "vortx" as string,
+    legalForm: "Société à responsabilité limitée simplifiée (SARL-S)" as string,
+    rcs: "B309552" as string, // N° RCS Luxembourg
+    vat: "" as string, // pending — e.g. "LU12345678" once registered
+    businessPermit: "10196845 / 0" as string, // Autorisation d'établissement
     capital: "" as string, // Capital social (optionnel)
     director: "" as string, // Directeur de la publication (nom)
     host: {

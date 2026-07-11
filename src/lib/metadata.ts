@@ -12,12 +12,17 @@ function languageAlternates(path: string): Record<string, string> {
 }
 
 /** OpenGraph locale per language. */
-const ogLocale: Record<string, string> = {
+export const ogLocale: Record<string, string> = {
   fr: "fr_LU",
   en: "en_GB",
   de: "de_LU",
   es: "es_ES",
 };
+
+/** og:locale:alternate — every shipped locale except the current one. */
+export function ogAlternateLocales(lang: Locale): string[] {
+  return i18n.locales.filter((l) => l !== lang).map((l) => ogLocale[l]);
+}
 
 /**
  * Build per-page metadata with a localized canonical + OpenGraph/Twitter.
@@ -47,12 +52,15 @@ export function buildMetadata({
     openGraph: {
       type: "website",
       locale: ogLocale[lang] ?? "fr_LU",
+      alternateLocale: ogAlternateLocales(lang),
       siteName: site.name,
       title,
       description,
       url,
     },
     twitter: { card: "summary_large_image", title, description },
-    robots: index ? { index: true, follow: true } : { index: false, follow: false },
+    // noindex pages keep follow:true so internal links (e.g. legal pages in
+    // the footer) still pass their signals.
+    robots: index ? { index: true, follow: true } : { index: false, follow: true },
   };
 }
