@@ -42,18 +42,33 @@ function useFilteredTexture(src: string, filter: string): THREE.Texture | null {
   return tex;
 }
 
-/** One image plane lying in the disk (XZ) plane, slowly spinning in-plane. */
-function DiskLayer({ texture, size, y, speed }: { texture: THREE.Texture; size: number; y: number; speed: number }) {
+/** Seconds a single disk layer takes to fade from invisible to full. */
+const FADE_DURATION = 3.5;
+
+/** One image plane lying in the disk (XZ) plane, slowly spinning in-plane.
+ *  Fades in gradually (staggered per layer via `fadeDelay`) unless `fade`
+ *  is false (reduced motion → frameloop "demand", the tween would stall). */
+function DiskLayer({ texture, size, y, speed, fade, fadeDelay = 0 }: { texture: THREE.Texture; size: number; y: number; speed: number; fade: boolean; fadeDelay?: number }) {
   const ref = useRef<THREE.Mesh>(null);
+  const matRef = useRef<THREE.MeshBasicMaterial>(null);
+  const fadeStart = useRef<number | null>(null);
   useFrame(({ clock }) => {
+    const t = clock.getElapsedTime();
     // Euler order XYZ: z applies first in object space, so this spins the
     // plane around its own normal while x keeps it lying flat.
-    if (ref.current) ref.current.rotation.z = clock.getElapsedTime() * speed;
+    if (ref.current) ref.current.rotation.z = t * speed;
+    if (fade && matRef.current && matRef.current.opacity < 1) {
+      // Clock starts with the canvas, not with this layer (textures load
+      // async) — anchor the fade to the first rendered frame instead.
+      if (fadeStart.current === null) fadeStart.current = t;
+      const p = Math.min(1, Math.max(0, (t - fadeStart.current - fadeDelay) / FADE_DURATION));
+      matRef.current.opacity = 1 - Math.pow(1 - p, 3); // ease-out cubic
+    }
   });
   return (
     <mesh ref={ref} position={[0, y, 0]} rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[size, size]} />
-      <meshBasicMaterial map={texture} transparent depthWrite={false} side={THREE.DoubleSide} toneMapped={false} />
+      <meshBasicMaterial ref={matRef} map={texture} transparent opacity={fade ? 0 : 1} depthWrite={false} side={THREE.DoubleSide} toneMapped={false} />
     </mesh>
   );
 }
@@ -62,8 +77,10 @@ function DiskLayer({ texture, size, y, speed }: { texture: THREE.Texture; size: 
 const SATURATE = "saturate(1.9) brightness(1.35)";
 
 /** Five stacked image planes = one accretion disk: small/small/LARGE/small/small.
- *  The middle (large, blurred) layer spins slightly faster than the small ones. */
-function ImageDisk({ smallSize, largeSize, gap = 0.06, speed = 0.22, middleFilter = `${SATURATE} blur(4px)` }: { smallSize: number; largeSize: number; gap?: number; speed?: number; middleFilter?: string }) {
+ *  The middle (large, blurred) layer spins slightly faster than the small ones.
+ *  Layers fade in one after the other (middle first, then outwards) so the
+ *  disk builds up gradually instead of popping in. */
+function ImageDisk({ smallSize, largeSize, gap = 0.06, speed = 0.22, middleFilter = `${SATURATE} blur(4px)`, fade = true, fadeDelay = 0 }: { smallSize: number; largeSize: number; gap?: number; speed?: number; middleFilter?: string; fade?: boolean; fadeDelay?: number }) {
   // Every layer is blurred; the middle one keeps its own (stronger/whiter) filter.
   const sharp = useFilteredTexture(DISK_IMG, `${SATURATE} blur(3px)`);
   const blurred = useFilteredTexture(DISK_IMG, middleFilter);
@@ -71,17 +88,17 @@ function ImageDisk({ smallSize, largeSize, gap = 0.06, speed = 0.22, middleFilte
   return (
     <group>
       {/* negative = reversed spin direction */}
-      <DiskLayer texture={sharp} size={smallSize} y={gap * 2} speed={-speed * 0.9} />
-      <DiskLayer texture={sharp} size={smallSize} y={gap} speed={-speed} />
-      <DiskLayer texture={blurred ?? sharp} size={largeSize} y={0} speed={-speed * 1.25} />
-      <DiskLayer texture={sharp} size={smallSize} y={-gap} speed={-speed * 0.95} />
-      <DiskLayer texture={sharp} size={smallSize} y={-gap * 2} speed={-speed * 0.85} />
+      <DiskLayer texture={sharp} size={smallSize} y={gap * 2} speed={-speed * 0.9} fade={fade} fadeDelay={fadeDelay + 1.6} />
+      <DiskLayer texture={sharp} size={smallSize} y={gap} speed={-speed} fade={fade} fadeDelay={fadeDelay + 0.8} />
+      <DiskLayer texture={blurred ?? sharp} size={largeSize} y={0} speed={-speed * 1.25} fade={fade} fadeDelay={fadeDelay} />
+      <DiskLayer texture={sharp} size={smallSize} y={-gap} speed={-speed * 0.95} fade={fade} fadeDelay={fadeDelay + 0.8} />
+      <DiskLayer texture={sharp} size={smallSize} y={-gap * 2} speed={-speed * 0.85} fade={fade} fadeDelay={fadeDelay + 1.6} />
     </group>
   );
 }
 
 /** Same group structure/tilts/oscillation as the home BlackHole, image disks. */
-function BlackHoleImage({ isMobile, isLight, position, scale }: { isMobile: boolean; isLight: boolean; position: [number, number, number]; scale: number }) {
+function BlackHoleImage({ isMobile, isLight, position, scale, fade }: { isMobile: boolean; isLight: boolean; position: [number, number, number]; scale: number; fade: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
   useFrame(({ clock }) => {
     if (!groupRef.current) return;
@@ -92,12 +109,13 @@ function BlackHoleImage({ isMobile, isLight, position, scale }: { isMobile: bool
       <EventHorizon radius={isMobile ? 0.46 : 0.42} color={isLight ? "#ffffff" : "#000000"} />
       <PhotonRing />
       {/* main disk (particles ran 0.3 → 1.7 radius ⇒ ~3.4 diameter) */}
-      <ImageDisk smallSize={2.4} largeSize={3.4} />
+      <ImageDisk smallSize={2.4} largeSize={3.4} fade={fade} />
       {/* second tilted disk — same 5-layer PNG stack, on the axis the original
           second particle disk used (10 images total). Its middle (blurred)
-          layer is deliberately smaller and whiter than the main disk's. */}
+          layer is deliberately smaller and whiter than the main disk's.
+          It starts fading after the main disk is underway. */}
       <group rotation={[Math.PI * 0.35, 0.1, 0.2]}>
-        <ImageDisk smallSize={1.8} largeSize={2.2} speed={0.3} middleFilter="saturate(1.3) brightness(1.9) blur(4px)" />
+        <ImageDisk smallSize={1.8} largeSize={2.2} speed={0.3} middleFilter="saturate(1.3) brightness(1.9) blur(4px)" fade={fade} fadeDelay={1.2} />
         <PhotonRing />
       </group>
     </group>
@@ -155,7 +173,7 @@ export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverri
       >
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
-          <BlackHoleImage isMobile={isMobile} isLight={isLight} position={bhPosition} scale={bhScale} />
+          <BlackHoleImage isMobile={isMobile} isLight={isLight} position={bhPosition} scale={bhScale} fade={!reduced} />
           <GravitationalLens bhPosition={bhPosition} bhScale={bhScale} />
         </Suspense>
       </Canvas>
