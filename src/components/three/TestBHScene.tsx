@@ -75,14 +75,17 @@ function DiskLayer({ texture, size, y, speed, fade, fadeDelay = 0 }: { texture: 
 
 // Extra punch baked into every disk texture (the raw PNG reads a bit washed out).
 const SATURATE = "saturate(1.9) brightness(1.35)";
+// Lighter grade for the light theme — the 1.35/1.9 brightness that glows on a
+// dark stage just bleaches to a white blob on the near-white hero.
+const SATURATE_LIGHT = "saturate(1.9) brightness(1.05)";
 
 /** Five stacked image planes = one accretion disk: small/small/LARGE/small/small.
  *  The middle (large, blurred) layer spins slightly faster than the small ones.
  *  Layers fade in one after the other (middle first, then outwards) so the
  *  disk builds up gradually instead of popping in. */
-function ImageDisk({ smallSize, largeSize, gap = 0.06, speed = 0.22, middleFilter = `${SATURATE} blur(4px)`, fade = true, fadeDelay = 0 }: { smallSize: number; largeSize: number; gap?: number; speed?: number; middleFilter?: string; fade?: boolean; fadeDelay?: number }) {
+function ImageDisk({ smallSize, largeSize, gap = 0.06, speed = 0.22, baseFilter = `${SATURATE} blur(3px)`, middleFilter = `${SATURATE} blur(4px)`, fade = true, fadeDelay = 0 }: { smallSize: number; largeSize: number; gap?: number; speed?: number; baseFilter?: string; middleFilter?: string; fade?: boolean; fadeDelay?: number }) {
   // Every layer is blurred; the middle one keeps its own (stronger/whiter) filter.
-  const sharp = useFilteredTexture(DISK_IMG, `${SATURATE} blur(3px)`);
+  const sharp = useFilteredTexture(DISK_IMG, baseFilter);
   const blurred = useFilteredTexture(DISK_IMG, middleFilter);
   if (!sharp) return null;
   return (
@@ -109,13 +112,27 @@ function BlackHoleImage({ isMobile, isLight, position, scale, fade }: { isMobile
       <EventHorizon radius={isMobile ? 0.46 : 0.42} color={isLight ? "#ffffff" : "#000000"} />
       <PhotonRing />
       {/* main disk (particles ran 0.3 → 1.7 radius ⇒ ~3.4 diameter) */}
-      <ImageDisk smallSize={2.4} largeSize={3.4} fade={fade} />
+      <ImageDisk
+        smallSize={2.4}
+        largeSize={3.4}
+        baseFilter={`${isLight ? SATURATE_LIGHT : SATURATE} blur(3px)`}
+        middleFilter={`${isLight ? SATURATE_LIGHT : SATURATE} blur(4px)`}
+        fade={fade}
+      />
       {/* second tilted disk — same 5-layer PNG stack, on the axis the original
           second particle disk used (10 images total). Its middle (blurred)
           layer is deliberately smaller and whiter than the main disk's.
           It starts fading after the main disk is underway. */}
       <group rotation={[Math.PI * 0.35, 0.1, 0.2]}>
-        <ImageDisk smallSize={1.8} largeSize={2.2} speed={0.3} middleFilter="saturate(1.3) brightness(1.9) blur(4px)" fade={fade} fadeDelay={1.2} />
+        <ImageDisk
+          smallSize={1.8}
+          largeSize={2.2}
+          speed={0.3}
+          baseFilter={`${isLight ? SATURATE_LIGHT : SATURATE} blur(3px)`}
+          middleFilter={isLight ? "saturate(1.3) brightness(1.15) blur(4px)" : "saturate(1.3) brightness(1.9) blur(4px)"}
+          fade={fade}
+          fadeDelay={1.2}
+        />
         <PhotonRing />
       </group>
     </group>
@@ -174,7 +191,9 @@ export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverri
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
           <BlackHoleImage isMobile={isMobile} isLight={isLight} position={bhPosition} scale={bhScale} fade={!reduced} />
-          <GravitationalLens bhPosition={bhPosition} bhScale={bhScale} />
+          {/* Light theme: no central darkening (grey smudge on white) and a
+              much softer horizon brightness boost (white blob otherwise). */}
+          <GravitationalLens bhPosition={bhPosition} bhScale={bhScale} ampScale={isLight ? 0.25 : 1} shadowLift={isLight ? 1 : 0} />
         </Suspense>
       </Canvas>
     </div>

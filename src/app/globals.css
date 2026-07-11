@@ -1339,6 +1339,10 @@ html:not(.dark) .test-home .hero-section {
   --hero-tint: 251, 251, 249;
   --hero-grid: 10, 10, 11;
   --hero-cta-border: rgba(10, 10, 11, 0.18);
+  /* The near-white tint turns the frost veil into a milky halo over the
+     black hole — soften it hard in light theme (dark keeps the defaults). */
+  --hero-frost-core: 0.18;
+  --hero-frost-mid: 0.05;
   background-color: var(--stage);
   color: var(--stage-text);
 }

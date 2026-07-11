@@ -19,7 +19,11 @@ const T = "var(--hero-tint, 7,7,10)";
 const SCRIM = `linear-gradient(100deg, rgba(${T},0.92) 0%, rgba(${T},0.78) 30%, rgba(${T},0.5) 52%, rgba(${T},0.15) 74%, rgba(${T},0) 100%)`;
 const HALO = `radial-gradient(70% 60% at 42% 48%, rgba(${T},0.55), transparent 70%)`;
 const VIGNETTE = `linear-gradient(to top, var(--stage) 6%, rgba(${T},0.6) 40%, transparent 100%)`;
-const FROST = `radial-gradient(44% 54% at 80% 50%, rgba(${T},0.5), rgba(${T},0.16) 55%, transparent 78%)`;
+// Frost opacity is theme-dependent: at the dark default it can sit at 0.5
+// (dark smoke on a dark stage), but on the light hero the tint flips to
+// near-white and the same alpha reads as a milky halo over the black hole —
+// the light theme overrides these two vars down in globals.css.
+const FROST = `radial-gradient(44% 54% at 80% 50%, rgba(${T},var(--hero-frost-core,0.5)), rgba(${T},var(--hero-frost-mid,0.16)) 55%, transparent 78%)`;
 const GRID = `linear-gradient(to right, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px)`;
 
 export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {

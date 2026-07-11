@@ -139,6 +139,12 @@ uniform vec2 bhCenter;
 uniform float strength;
 uniform float ehRadius;
 uniform float asymmetry;
+// Light-theme knobs (1.0 / 0.0 = original dark-theme look):
+// ampScale scales the brightness boost around the horizon (blows out to
+// white on a light stage); shadowLift disables the central darkening
+// (reads as a grey smudge over a light background).
+uniform float ampScale;
+uniform float shadowLift;
 
 void main() {
   vec2 uv = gl_FragCoord.xy / resolution;
@@ -169,10 +175,11 @@ void main() {
   vec4 distortedColor = texture2D(tScene, distortedUV);
   vec4 originalColor = texture2D(tScene, uv);
 
-  float amp = 1.0 + strength * 4.0 / (dist * dist + 0.002);
-  amp = min(amp, 4.0);
+  float amp = 1.0 + ampScale * strength * 4.0 / (dist * dist + 0.002);
+  amp = min(amp, 1.0 + 3.0 * ampScale);
 
   float shadow = smoothstep(ehRadius * 0.2, ehRadius * 2.2, dist);
+  shadow = mix(shadow, 1.0, shadowLift);
   float falloff = smoothstep(distRadius, ehRadius * 0.5, dist);
 
   vec3 distorted = distortedColor.rgb * amp * shadow;
@@ -391,11 +398,17 @@ export function GravitationalLens({
   bhScale,
   strength = 0.035,
   asymmetry = 0,
+  ampScale = 1,
+  shadowLift = 0,
 }: {
   bhPosition: [number, number, number];
   bhScale: number;
   strength?: number;
   asymmetry?: number;
+  /** Scales the brightness boost around the horizon (1 = original). */
+  ampScale?: number;
+  /** 0 = darkened centre (dark theme), 1 = no darkening (light theme). */
+  shadowLift?: number;
 }) {
   const fbo = useFBO(1024, 1024);
   const meshRef = useRef<THREE.Mesh>(null);
@@ -413,6 +426,8 @@ export function GravitationalLens({
       strength: { value: strength },
       ehRadius: { value: 0.04 },
       asymmetry: { value: asymmetry },
+      ampScale: { value: ampScale },
+      shadowLift: { value: shadowLift },
     }),
     []
   );
@@ -425,6 +440,9 @@ export function GravitationalLens({
     gl.getSize(renderSize);
     const dpr = gl.getPixelRatio();
     mat.uniforms.resolution.value.set(renderSize.x * dpr, renderSize.y * dpr);
+    // Theme can flip at runtime — keep the theme-dependent knobs in sync.
+    mat.uniforms.ampScale.value = ampScale;
+    mat.uniforms.shadowLift.value = shadowLift;
 
     const projected = bhPos3D.clone().project(cam);
     mat.uniforms.bhCenter.value.set(projected.x * 0.5 + 0.5, projected.y * 0.5 + 0.5);
