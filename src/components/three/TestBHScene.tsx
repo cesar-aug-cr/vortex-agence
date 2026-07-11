@@ -109,7 +109,9 @@ function BlackHoleImage({ isMobile, isLight, position, scale, fade }: { isMobile
   });
   return (
     <group ref={groupRef} position={position} rotation={[Math.PI * 0.2, 0.3, 0.15]} scale={scale}>
-      <EventHorizon radius={isMobile ? 0.46 : 0.42} color={isLight ? "#ffffff" : "#000000"} />
+      {/* Black event horizon in BOTH themes — on the light hero the black
+          core is what reads as a "black hole" against the pale stage. */}
+      <EventHorizon radius={isMobile ? 0.46 : 0.42} color="#000000" />
       <PhotonRing />
       {/* main disk (particles ran 0.3 → 1.7 radius ⇒ ~3.4 diameter) */}
       <ImageDisk
