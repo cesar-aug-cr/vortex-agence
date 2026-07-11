@@ -223,7 +223,7 @@ export const en = {
   leadgen: {
     eyebrow: "The problem, then the solution",
     title: "Nobody's paying attention to you.",
-    lead: "The average person sees 6,000 to 10,000 ads a day. To stand out, you have to be unforgettable. And unforgettable is kind of our thing.",
+    lead: "According to industry studies, a person sees between 4,000 and 10,000 ads a day. To stand out, you have to be unforgettable. And unforgettable is kind of our thing.",
     problemTitle: "Without an acquisition system:",
     problems: [
       "Opportunities that slip by unnoticed",
@@ -376,6 +376,99 @@ export const en = {
       "No-commitment quote",
       "Guaranteed fast reply",
       "Post-launch support",
+    ],
+  },
+
+  // ---- Work page ----
+  workPage: {
+    eyebrow: "Work",
+    title: "Real projects, for real trades.",
+    lead: "Garages, tradespeople, SMEs, web products: this is what we design and put online. Every project has one clear goal — get found, build trust, generate enquiries.",
+    note: "In the interest of transparency: our numbers-backed case studies (traffic, leads, conversions) are being written up with our clients. We'll gladly walk you through them on a call.",
+    caseEyebrow: "Case study",
+    contextLabel: "The context",
+    deliveredLabel: "What we delivered",
+    cases: [
+      {
+        slug: "garage-biver",
+        name: "Garage Martin Biver",
+        sector: "Car garage · Luxembourg",
+        tags: ["Showcase website", "Online booking", "Multi-brand"],
+        context:
+          "A family-run garage and automotive partner since 1926, distributing Volkswagen, Škoda and Audi. A century of trust — and the need for an online presence to match, with a simple way to book an appointment.",
+        delivered:
+          "A clear showcase website presenting the workshop's brands and services, with online appointment booking. Customers find the information, understand the offer and book their slot — without picking up the phone.",
+      },
+      {
+        slug: "vitrophy",
+        name: "Vitrophy",
+        sector: "Engraving & personalisation · B2B",
+        tags: ["Showcase website", "Visual identity", "B2B positioning"],
+        context:
+          "Vitrophy engraves and personalises locally manufactured products, mainly for professional clients. It needed a site that reflects that craftsmanship and speaks to businesses.",
+        delivered:
+          "A showcase website with a distinctive dark-and-emerald identity and B2B positioning that's clear from the very first page: what Vitrophy makes, who it's for, and how to request a quote.",
+      },
+      {
+        slug: "cim-by-cacr",
+        name: "CIM by CACR",
+        sector: "Web application · SaaS",
+        tags: ["Web app", "AI", "Branding"],
+        context:
+          "Building a brand identity takes weeks and costs a fortune. CIM promises the essentials in minutes: the user uploads their logo, the tool does the rest.",
+        delivered:
+          "A complete web application: logo upload, automatic colour extraction and an AI-assisted PDF brand manual — all wrapped in a polished, dark product interface.",
+      },
+    ],
+    projects: [
+      {
+        slug: "pauly-losch",
+        name: "Garage Pauly-Losch",
+        sector: "Car garage · Luxembourg",
+        tags: ["Showcase website", "Local roots"],
+        summary:
+          "Over 70 years of VW, Audi, Škoda and VW Commercial Vehicles expertise — and a greeting in Luxembourgish, « Wëllkomm ». A showcase website true to the house spirit.",
+      },
+      {
+        slug: "autodis",
+        name: "Autodis Luxembourg",
+        sector: "Car distribution · Esch-sur-Alzette & Mersch",
+        tags: ["Showcase website", "Brand catalogue"],
+        summary:
+          "A multi-brand distributor (BAIC, JAC, Forthing, DFM, Borgward…). A website with a new-models carousel, a brand catalogue and a clear presentation of its services.",
+      },
+      {
+        slug: "isomontage",
+        name: "Isomontage Isolation",
+        sector: "Insulation · Construction",
+        tags: ["Showcase website"],
+        summary:
+          "A showcase website that presents the company's insulation services, simply and clearly.",
+      },
+      {
+        slug: "blumenthal",
+        name: "Blumenthal",
+        sector: "Gardening & hydroculture",
+        tags: ["Showcase website", "Bespoke design"],
+        summary:
+          "Gardening and hydroculture deserved a fitting showcase: a website with a fresh, natural design, true to the trade.",
+      },
+      {
+        slug: "lux-habitat",
+        name: "Lux Habitat",
+        sector: "Carpentry & roofing · Luxembourg",
+        tags: ["Showcase website", "Mobile-first"],
+        summary:
+          "A carpenter in Luxembourg, a mobile-first showcase website: built for the customer searching for a tradesperson from their phone.",
+      },
+      {
+        slug: "momento-relojero",
+        name: "Momento Relojero",
+        sector: "Editorial media · Watchmaking",
+        tags: ["Editorial website", "Premium design"],
+        summary:
+          "A Spanish-language guide to fine watchmaking — mechanics, history, collecting — carried by a premium black-and-gold design.",
+      },
     ],
   },
 
@@ -542,9 +635,12 @@ export const en = {
     title: "An attraction team, at the service of your growth.",
     lead: "vortx brings marketing, design and technology under one roof in Luxembourg. One obsession: turning attention into clients, and proving it in numbers.",
     story: [
-      "vortx was born from a simple observation: too many Luxembourg businesses have a site that looks like a brochure — pretty, but bringing in nothing. We build the opposite: digital presences designed as acquisition machines.",
-      "Behind the agency is a team with more than a decade of combined experience in digital marketing, web development and art direction. We've watched the trends come and go; we keep what converts and drop the rest.",
-      "We work in French, German and English, with a single requirement: every euro invested in your marketing must be justifiable. No jargon, no empty promises — measurable results.",
+      "vortx was born from a simple observation: too many Luxembourg businesses have a site that looks like a brochure — pretty, but bringing in nothing. We build the opposite: digital presences designed as acquisition machines. The agency is a SARL-S based in Luxembourg City, at 18 rue de l'Ouest, bringing marketing, design and technology under one roof — no cascading subcontractors, nothing lost between strategy and execution.",
+      "Behind the agency is a team with more than a decade of combined experience in digital marketing, web development and art direction. We've watched the trends come and go; we keep what converts and drop the rest. This dual culture — the marketer who thinks in sales funnels and the developer who thinks in performance — means we never deliver a site that's \"pretty but hollow\", nor a strategy that's impossible to execute.",
+      "In practice, we cover six disciplines: websites built to convert, SEO & GEO, lead generation, online advertising, branding and AI automation. Our clients are garages, tradespeople, service SMEs and web products — businesses that don't need a hundred-page report, but quote requests landing every week.",
+      "Our philosophy comes down to three principles. Measurable conversion first: no vanity metrics — every euro invested must be tied to a result: a call, a quote, a client. Then strategy before template: we start from your sales funnel, not from an off-the-shelf theme. And finally, total ownership: the code, the content and the access are 100% yours, with no lock-in.",
+      "We're rooted in the reality of the Luxembourg market: your clients compare in French, German and English — and increasingly in Spanish. So we build every presence natively multilingual, GDPR-compliant, and designed to reach across the whole Greater Region, not just the capital.",
+      "Finally, vortx is an AI-native agency. We use artificial intelligence to design and produce faster — always reviewed and finished by humans — and we optimise your content for the web's new front door: getting cited by ChatGPT, Perplexity or Google AI when your clients ask them a question. That's GEO, and we build it in from the first line of every project.",
     ],
     experience: {
       suffix: "years",
@@ -553,8 +649,8 @@ export const en = {
     },
     stats: [
       { value: "100%", label: "Bespoke, never a template" },
-      { value: "FR·DE·EN", label: "Natively multilingual" },
-      { value: "GEO", label: "Optimised for generative AI" },
+      { value: "4 languages", label: "FR · DE · EN · ES natively" },
+      { value: "6 disciplines", label: "Web, SEO & GEO, leads, ads, branding, AI" },
     ],
     valuesTitle: "What sets us apart",
     arsenalTitle: "Our arsenal",
@@ -669,6 +765,8 @@ export const en = {
           "UX/UI: the design principles that turn a visitor into a customer",
         excerpt:
           "A beautiful website isn't enough: it has to guide, reassure and convert. Here are the UX and UI principles we apply on every vortx project — hierarchy, clarity, accessibility, performance — illustrated by this very site.",
+        metaDescription:
+          "Hierarchy, clarity, accessibility, performance: the UX/UI principles that turn visitors into clients. A hands-on guide by vortx, web agency in Luxembourg.",
         date: "2026-06-15",
         updated: "2026-06-15",
         readingMinutes: 8,
@@ -832,6 +930,14 @@ export const en = {
             text: "These principles aren't theoretical: they shape this site. The repeated hierarchy of every section, the dark background that makes key content stand out, the tight palette, the animated icons that stay understated, the multi-step form, the accessibility widget, the multilingual version thought through language by language — every detail serves the same purpose: helping the visitor understand, feel confident, and take action.",
           },
           {
+            type: "sources",
+            title: "Sources & references",
+            items: [
+              { label: "Core Web Vitals — web.dev (Google)", href: "https://web.dev/vitals" },
+              { label: "WCAG accessibility — W3C Web Accessibility Initiative", href: "https://www.w3.org/WAI/" },
+            ],
+          },
+          {
             type: "p",
             text: "This is exactly the method we apply to your project: we start from your conversion goal, not from a template. The result is a site that isn't merely beautiful — it works for you.",
           },
@@ -844,6 +950,8 @@ export const en = {
           "SEO vs GEO: how to get found on Google AND cited by AI in 2026",
         excerpt:
           "Search is no longer played out on Google alone. ChatGPT, Perplexity and Google AI are becoming the new front door. Here's how SEO and GEO work together — and what to actually do about it.",
+        metaDescription:
+          "SEO and GEO in 2026: get found on Google and cited by ChatGPT or Perplexity. The practical vortx method for Luxembourg businesses. Book a free audit.",
         date: "2026-06-02",
         updated: "2026-06-02",
         readingMinutes: 9,
@@ -854,7 +962,7 @@ export const en = {
           points: [
             "SEO ranks you in the results; GEO places you inside the AI's answer.",
             "Structure your pages as question/answer and ground them in local facts to get cited.",
-            "80% of the work is shared: good content performs on Google AND with the models.",
+            "In our experience, around 80% of the work is shared: good content performs on Google AND with the models.",
           ],
         },
         links: [
@@ -950,7 +1058,7 @@ export const en = {
           },
           {
             type: "p",
-            text: "Good news: 80% of the work is shared. Structured, fast, reliable and well-marked-up content performs both on Google and with the models. We don't sacrifice one for the other — we design for both from the start.",
+            text: "Good news: from our experience on both fronts, around 80% of the work is shared. Structured, fast, reliable and well-marked-up content performs both on Google and with the models. We don't sacrifice one for the other — we design for both from the start.",
           },
           {
             type: "quote",
@@ -960,6 +1068,13 @@ export const en = {
             type: "callout",
             title: "Key takeaway",
             text: "Nail your technical and editorial SEO, structure your pages for citation, add structured data and an llms.txt, and ground your content in local facts. You win on Google and in AI answers.",
+          },
+          {
+            type: "sources",
+            title: "Sources & references",
+            items: [
+              { label: "Google Search Essentials — Google Search Central", href: "https://developers.google.com/search" },
+            ],
           },
           {
             type: "p",
@@ -974,6 +1089,8 @@ export const en = {
           "Google Ads or SEO: where should you invest your marketing budget in 2026?",
         excerpt:
           "Should you pay to appear at the top of Google, or build your organic ranking? The real question isn't \"one or the other\", but \"which one, when, and for what goal\". We untangle it all, with figures and common sense to back it up.",
+        metaDescription:
+          "Google Ads or SEO: which one, when, and for what goal? The jargon-free comparison to invest your marketing budget where it pays off in 2026.",
         date: "2026-06-04",
         updated: "2026-06-04",
         readingMinutes: 8,
@@ -1088,6 +1205,14 @@ export const en = {
             text: "Don't think \"Ads OR SEO\", but \"Ads AND SEO\", dosed according to your timeline and budget. Ads for speed, SEO for the long run — and the two reinforcing each other.",
           },
           {
+            type: "sources",
+            title: "Sources & references",
+            items: [
+              { label: "Official Google Ads help", href: "https://support.google.com/google-ads" },
+              { label: "Google Search Essentials — Google Search Central", href: "https://developers.google.com/search" },
+            ],
+          },
+          {
             type: "p",
             text: "At vortx, we build this combination around your real situation, without selling you one at the expense of the other. We'll give you a free audit to tell you where your budget will pay off most.",
           },
@@ -1100,6 +1225,8 @@ export const en = {
           "Conversion funnel: turning your visitors into clients, step by step",
         excerpt:
           "Attracting traffic is good. Converting it into clients is the whole point. The conversion funnel is the map that links the first click to the signed contract — and every poorly designed step costs you sales. Here's how to build it.",
+        metaDescription:
+          "The conversion funnel, from first click to signed contract: the steps, the mistakes that cost you sales and the method to convert more of your visitors.",
         date: "2026-06-07",
         updated: "2026-06-07",
         readingMinutes: 7,
@@ -1229,6 +1356,8 @@ export const en = {
           "How much does a professional website cost in Luxembourg in 2026?",
         excerpt:
           "The real answer isn't a single figure, but a range that depends on your goals. Here's what makes the price of a website vary, and how to invest where it truly counts.",
+        metaDescription:
+          "How much does a website cost in Luxembourg in 2026? What drives the price, where to invest wisely — and how to get an accurate quote, free of charge.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 7,
@@ -1327,6 +1456,13 @@ export const en = {
             text: "The price of a website depends on your goals, not a generic rate. Define the right scope, invest in conversion and search visibility, and judge the cost against what the site brings you.",
           },
           {
+            type: "sources",
+            title: "Sources & references",
+            items: [
+              { label: "Core Web Vitals — web.dev (Google)", href: "https://web.dev/vitals" },
+            ],
+          },
+          {
             type: "p",
             text: "At vortx, we give you a precise quote after a free discovery call — not a price pulled out of thin air. We tell you, straight, what you really need.",
           },
@@ -1338,6 +1474,8 @@ export const en = {
         title: "What makes a good logo? The principles of an identity that lasts",
         excerpt:
           "A good logo isn't just a pretty picture: it's your brand's first promise. Here are the principles that separate a memorable logo from a forgettable one.",
+        metaDescription:
+          "What makes a good logo? Simplicity, memorability, relevance: the principles of a brand identity that lasts — and the mistakes that betray a brand.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 6,
@@ -1459,6 +1597,8 @@ export const en = {
           "GDPR & cookies: the minimum to respect on your Luxembourg website",
         excerpt:
           "Cookie banner, consent, legal notices… GDPR can feel daunting, but the essentials boil down to a few clear rules. Here's the minimum for a worry-free Luxembourg website.",
+        metaDescription:
+          "GDPR and cookies on your Luxembourg website: banner, consent, legal notices — the essentials in clear rules to stay compliant without the stress.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 6,
@@ -1544,6 +1684,14 @@ export const en = {
             text: "GDPR isn't an obstacle to conversion. Done well, it's an argument for trust.",
           },
           {
+            type: "sources",
+            title: "Sources & references",
+            items: [
+              { label: "CNPD — Luxembourg's national data protection commission", href: "https://cnpd.public.lu" },
+              { label: "GDPR text — Regulation (EU) 2016/679 (EUR-Lex)", href: "https://eur-lex.europa.eu/eli/reg/2016/679/oj" },
+            ],
+          },
+          {
             type: "p",
             text: "At vortx, we design every site with GDPR in mind from the start — consent banner, cookie management and legal pages included. Unsure about your current site? We'll give you a free review.",
           },
@@ -1555,6 +1703,8 @@ export const en = {
         title: "5 tasks your SME should already be handing over to AI",
         excerpt:
           "AI doesn't replace your teams — it takes the drudgery off their hands. Here are 5 concrete tasks a Luxembourg SME can automate today, without an overengineered setup.",
+        metaDescription:
+          "5 tasks to hand over to AI in your Luxembourg SME today: replies, lead triage, follow-ups, content, data sync. No overengineered setup required.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 6,
@@ -1646,6 +1796,14 @@ export const en = {
             text: "Hand over to AI the repetitive, low-value tasks — answers, qualification, follow-ups, content, syncing — starting small and keeping control.",
           },
           {
+            type: "sources",
+            title: "Sources & references",
+            items: [
+              { label: "CNPD — data protection in Luxembourg", href: "https://cnpd.public.lu" },
+              { label: "Luxinnovation — digitalisation support for SMEs", href: "https://www.luxinnovation.lu" },
+            ],
+          },
+          {
             type: "p",
             text: "At vortx, we put AI to work where it genuinely saves you time. Want to know what you could automate? We'll tell you for free.",
           },
@@ -1657,6 +1815,8 @@ export const en = {
         title: "AI for SMEs in Luxembourg: where to start in 2026",
         excerpt:
           "AI is no longer just for big corporations. But where do you begin as an SME, with no tech budget and no dedicated team? Here's a pragmatic roadmap: the right use cases, the traps to avoid and how to keep control of your data.",
+        metaDescription:
+          "AI for SMEs in Luxembourg: the 2026 roadmap to get started without a tech budget — the right use cases, the traps to avoid, your data under control.",
         date: "2026-06-09",
         updated: "2026-06-09",
         readingMinutes: 7,
@@ -1780,6 +1940,14 @@ export const en = {
             text: "The right question isn't \"should I do AI?\" but \"which task costs me time every week?\".",
           },
           {
+            type: "sources",
+            title: "Sources & references",
+            items: [
+              { label: "CNPD — data protection in Luxembourg", href: "https://cnpd.public.lu" },
+              { label: "Luxinnovation — digitalisation support for SMEs", href: "https://www.luxinnovation.lu" },
+            ],
+          },
+          {
             type: "p",
             text: "At vortx, we help Luxembourg SMEs pinpoint the use cases that genuinely pay off, then put them in place properly — tools, automations and GDPR safeguards included. Want to know where to start in your business? We'll tell you for free.",
           },
@@ -1790,6 +1958,8 @@ export const en = {
       category: string;
       title: string;
       excerpt: string;
+      /** SEO meta description (140–160 chars). */
+      metaDescription: string;
       date: string;
       updated?: string;
       readingMinutes: number;
@@ -1819,217 +1989,341 @@ export const en = {
         slug: "seo",
         category: "SEO & GEO",
         short: "Get found on Google for free.",
-        def: "Search Engine Optimization covers the techniques that improve a site's position in the organic (non-paid) results of search engines: technical quality, relevant content, authority and user experience.",
+        def: "Search Engine Optimization covers the techniques that improve a site's position in the organic (non-paid) results of search engines: technical quality, relevant content, authority and user experience. In Luxembourg it's worked in three languages: your clients compare in French, German and English.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Our SEO service" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Read: Google Ads or SEO?" },
+        ],
       },
       {
         term: "GEO / GSO",
         slug: "geo-gso",
         category: "SEO & GEO",
         short: "Get cited by generative AI.",
-        def: "Generative Engine Optimization (or Generative Search Optimization) optimises your content so it is picked up and cited as a source by AI answer engines (ChatGPT, Perplexity, Google AI). The goal: be the answer, not just a link.",
+        def: "Generative Engine Optimization (or Generative Search Optimization) optimises your content so it is picked up and cited as a source by AI answer engines (ChatGPT, Perplexity, Google AI). The goal: be the answer, not just a link. Good news: most of the best practices are shared with SEO — we work both fronts together.",
+        links: [
+          { href: "/services/seo-geo/geo-gso", label: "Our GEO / GSO service" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Read: getting cited by AI" },
+        ],
       },
       {
         term: "SERP",
         slug: "serp",
         category: "SEO & GEO",
         short: "Google's results page.",
-        def: "Search Engine Results Page: the page that displays the results of a search. It blends organic links, ads, rich snippets, and increasingly AI-generated answers.",
+        def: "Search Engine Results Page: the page that displays the results of a search. It blends organic links, ads, rich snippets, and increasingly AI-generated answers. Owning the top comes down to two complementary levers: SEO for organic, SEA for paid.",
+        links: [
+          { href: "/services/seo-geo", label: "Our SEO & GEO service" },
+          { href: "/services/publicite/google-ads", label: "Our Google Ads campaigns" },
+        ],
       },
       {
         term: "Keyword",
         slug: "mot-cle",
         category: "SEO & GEO",
         short: "What your clients type.",
-        def: "A term or phrase a user enters into a search engine. SEO is partly about identifying profitable keywords and structuring content around them.",
+        def: "A term or phrase a user enters into a search engine. SEO is partly about identifying profitable keywords and structuring content around them. In a multilingual market like Luxembourg, we research them in FR, DE and EN — volumes and competition differ from one language to the next.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Our SEO service" },
+          { href: "/services/publicite/google-ads", label: "Target the right keywords in Ads" },
+        ],
       },
       {
         term: "Backlink",
         slug: "backlink",
         category: "SEO & GEO",
         short: "A link from another site to yours.",
-        def: "An inbound link from a third-party site. Quality backlinks signal to search engines that your site has authority, which improves ranking.",
+        def: "An inbound link from a third-party site. Quality backlinks signal to search engines that your site has authority, which improves ranking. That authority counts for GEO too: AI leans on what's said about you elsewhere.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Our SEO service" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Read: building authority for AI" },
+        ],
       },
       {
         term: "Structured data (Schema.org)",
         slug: "donnees-structurees",
         category: "SEO & GEO",
         short: "Code that explains your content to machines.",
-        def: "Standardised markup added to a page's code to describe its content (business, service, article, FAQ…). It helps Google and AI understand and surface your information.",
+        def: "Standardised markup added to a page's code to describe its content (business, service, article, FAQ…). It helps Google and AI understand and surface your information. It's one of the baseline deliverables of any serious GEO work.",
+        links: [
+          { href: "/services/seo-geo/geo-gso", label: "Our GEO / GSO service" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Read: making your site readable by AI" },
+        ],
       },
       {
         term: "llms.txt",
         slug: "llms-txt",
         category: "SEO & GEO",
         short: "A summary of your site for AI.",
-        def: "A text file placed at a site's root to present, in a structured way, its offering and key content to large language models. An emerging GEO lever.",
+        def: "A text file placed at a site's root to present, in a structured way, its offering and key content to large language models. An emerging GEO lever, and part of our standard deliverables.",
+        links: [
+          { href: "/services/seo-geo/geo-gso", label: "Our GEO / GSO service" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Read: SEO vs GEO in 2026" },
+        ],
       },
       {
         term: "Conversion funnel",
         slug: "tunnel-de-conversion",
         category: "Conversion",
         short: "The path from visitor to client.",
-        def: "The sequence of steps a visitor goes through before becoming a client (discovery → interest → contact → purchase). We optimise it to reduce drop-off at each step.",
+        def: "The sequence of steps a visitor goes through before becoming a client (discovery → interest → contact → purchase). We optimise it to reduce drop-off at each step. A single leaky step drags down the whole funnel — hence the value of measuring every link in the chain.",
+        links: [
+          { href: "/services/lead-generation/tunnels-de-conversion", label: "Our conversion funnels" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Read: turning your visitors into clients" },
+        ],
       },
       {
         term: "Conversion rate",
         slug: "taux-de-conversion",
         category: "Conversion",
         short: "The % of visitors who take action.",
-        def: "The percentage of visitors who complete the desired action (quote request, purchase, sign-up). A central indicator of a site's or campaign's effectiveness.",
+        def: "The percentage of visitors who complete the desired action (quote request, purchase, sign-up). A central indicator of a site's or campaign's effectiveness: doubling it means doubling your leads without buying more traffic.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Read: the conversion funnel" },
+        ],
       },
       {
         term: "Landing page",
         slug: "landing-page",
         category: "Conversion",
         short: "A page built for a single action.",
-        def: "A landing page designed around a single goal (often tied to a campaign): convert the visitor into a lead or client, with no distraction.",
+        def: "A landing page designed around a single goal (often tied to a campaign): convert the visitor into a lead or client, with no distraction. We sometimes strip out even the menu, leaving a single path to action.",
+        links: [
+          { href: "/services/sites-web/landing-pages", label: "Our landing pages" },
+          { href: "/services/lead-generation/landing-pages-campagne", label: "Campaign landing pages" },
+        ],
       },
       {
         term: "Call-to-action (CTA)",
         slug: "cta",
         category: "Conversion",
         short: "The button that invites action.",
-        def: "An element (button, link) that prompts the visitor to take the next step: \"Book a call\", \"Get a quote\". Its clarity and visibility strongly influence conversion.",
+        def: "An element (button, link) that prompts the visitor to take the next step: \"Book a call\", \"Get a quote\". Its clarity and visibility strongly influence conversion. Golden rule: one goal per page, one primary CTA.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: UX/UI that converts" },
+        ],
       },
       {
         term: "A/B testing",
         slug: "ab-testing",
         category: "Conversion",
         short: "Compare two versions, keep the best.",
-        def: "A method that shows two variants of a page or element to different visitors, then measures which one converts best.",
+        def: "A method that shows two variants of a page or element to different visitors, then measures which one converts best. It's the basic tool of continuous optimisation: we don't guess, we test.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Read: measure to optimise" },
+        ],
       },
       {
         term: "Lead",
         slug: "lead",
         category: "Acquisition",
         short: "A potential sales contact.",
-        def: "A person or company that has shown interest (form, call, quote request) and could become a client. A \"qualified\" lead is a good fit for your target.",
+        def: "A person or company that has shown interest (form, call, quote request) and could become a client. A \"qualified\" lead is a good fit for your target — a hundred qualified leads are worth more than a thousand off-target contacts.",
+        links: [
+          { href: "/services/lead-generation", label: "Our lead generation service" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Read: from visitor to client" },
+        ],
       },
       {
         term: "Lead generation",
         slug: "generation-de-leads",
         category: "Acquisition",
         short: "Create a steady flow of prospects.",
-        def: "The set of actions (site, content, campaigns, automation) designed to attract and capture qualified contacts in a predictable way.",
+        def: "The set of actions (site, content, campaigns, automation) designed to attract and capture qualified contacts in a predictable way. The next step — nurturing and scoring — turns those contacts into sales appointments.",
+        links: [
+          { href: "/services/lead-generation", label: "Our lead generation service" },
+          { href: "/services/lead-generation/lead-nurturing-scoring", label: "Lead nurturing & scoring" },
+        ],
       },
       {
         term: "SEA / Paid advertising",
         slug: "sea",
         category: "Acquisition",
         short: "Buy visibility (Google, Meta…).",
-        def: "Search Engine Advertising and social advertising: paid campaigns (Google Ads, Meta, LinkedIn) that put your ads in front of a targeted audience.",
+        def: "Search Engine Advertising and social advertising: paid campaigns (Google Ads, Meta, LinkedIn) that put your ads in front of a targeted audience. In Luxembourg, geographic and language targeting (FR/DE/EN) often makes all the difference to profitability.",
+        links: [
+          { href: "/services/publicite", label: "Our online advertising service" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Read: Google Ads or SEO?" },
+        ],
       },
       {
         term: "ROAS",
         slug: "roas",
         category: "Data & measurement",
         short: "What each euro of ad spend returns.",
-        def: "Return On Ad Spend: revenue generated for every euro spent on advertising. A ROAS of 4 means €4 of revenue for €1 invested.",
+        def: "Return On Ad Spend: revenue generated for every euro spent on advertising. A ROAS of 4 means €4 of revenue for €1 invested. It's the indicator we track to steer — and cut — every campaign.",
+        links: [
+          { href: "/services/publicite", label: "Our online advertising service" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Read: where to invest your budget?" },
+        ],
       },
       {
         term: "ROI",
         slug: "roi",
         category: "Data & measurement",
         short: "Overall return on investment.",
-        def: "Return On Investment: the ratio between the gain obtained and the amount invested. A key indicator for judging the profitability of a marketing action.",
+        def: "Return On Investment: the ratio between the gain obtained and the amount invested. A key indicator for judging the profitability of a marketing action — and our compass: every euro invested must be justifiable.",
+        links: [
+          { href: "/approche", label: "Our results-driven approach" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Read: Google Ads or SEO?" },
+        ],
       },
       {
         term: "CPL / CPA",
         slug: "cpl-cpa",
         category: "Data & measurement",
         short: "What a lead or a sale costs.",
-        def: "Cost Per Lead (CPL) and Cost Per Acquisition (CPA): the average amount spent to obtain a qualified contact or a client, respectively. To be compared against the value generated.",
+        def: "Cost Per Lead (CPL) and Cost Per Acquisition (CPA): the average amount spent to obtain a qualified contact or a client, respectively. To be compared against the value generated: a \"high\" CPL can be excellent if the average contract is too.",
+        links: [
+          { href: "/services/publicite", label: "Our online advertising service" },
+          { href: "/services/lead-generation", label: "Our lead generation service" },
+        ],
       },
       {
         term: "KPI",
         slug: "kpi",
         category: "Data & measurement",
         short: "The numbers that really count.",
-        def: "Key Performance Indicator: a key metric chosen to measure progress toward a goal (conversion rate, cost per lead, qualified traffic…).",
+        def: "Key Performance Indicator: a key metric chosen to measure progress toward a goal (conversion rate, cost per lead, qualified traffic…). The trap: tracking vanity metrics (followers, impressions) that flatter without proving anything.",
+        links: [
+          { href: "/approche", label: "Our approach, driven by the numbers" },
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+        ],
       },
       {
         term: "CTR",
         slug: "ctr",
         category: "Data & measurement",
         short: "The % of clicks on a link or ad.",
-        def: "Click-Through Rate: the proportion of people who click after seeing a link, an ad or a result. A high CTR signals a relevant message.",
+        def: "Click-Through Rate: the proportion of people who click after seeing a link, an ad or a result. A high CTR signals a relevant message — in advertising as in email marketing, it's the first signal to watch.",
+        links: [
+          { href: "/services/publicite/google-ads", label: "Our Google Ads campaigns" },
+          { href: "/services/lead-generation/email-marketing-automation", label: "Email marketing & automation" },
+        ],
       },
       {
         term: "Analytics",
         slug: "analytics",
         category: "Data & measurement",
         short: "Measure what happens on your site.",
-        def: "Tools (Google Analytics, Matomo…) that track visitor behaviour: traffic sources, page views, conversions. The basis of every marketing decision.",
+        def: "Tools (Google Analytics, Matomo…) that track visitor behaviour: traffic sources, page views, conversions. The basis of every marketing decision — to be configured in line with GDPR, consent included.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/news/rgpd-cookies-site-web-luxembourg", label: "Read: GDPR & cookies in Luxembourg" },
+        ],
       },
       {
         term: "CMS",
         slug: "cms",
         category: "Web & tech",
         short: "The tool for managing a site's content.",
-        def: "Content Management System (e.g. WordPress): a platform that lets you create and edit a site's pages without coding. Handy for staying hands-on day to day.",
+        def: "Content Management System (e.g. WordPress): a platform that lets you create and edit a site's pages without coding. Handy for staying hands-on day to day. The choice between a CMS and bespoke depends on how you'll actually use it — no dogma.",
+        links: [
+          { href: "/services/sites-web", label: "Our websites service" },
+          { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Read: how much does a website cost?" },
+        ],
       },
       {
         term: "WordPress",
         slug: "wordpress",
         category: "Web & tech",
         short: "The world's most widespread CMS.",
-        def: "A hugely popular open-source content management system, ideal when you want to edit your pages yourself. Flexible thanks to its themes and plugins.",
+        def: "A hugely popular open-source content management system, ideal when you want to edit your pages yourself. Flexible thanks to its themes and plugins. We deliver it clean, secure and easy to manage when editorial autonomy comes first.",
+        links: [
+          { href: "/services/sites-web", label: "Our websites service" },
+          { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Read: bespoke or WordPress?" },
+        ],
       },
       {
         term: "Next.js",
         slug: "nextjs",
         category: "Web & tech",
         short: "An ultra-fast web framework.",
-        def: "A React-based framework used to build highly performant, secure and SEO-optimised sites. Our default choice for bespoke work.",
+        def: "A React-based framework used to build highly performant, secure and SEO-optimised sites. Our default choice for bespoke work — including this site, near-instant and built AI-ready.",
+        links: [
+          { href: "/services/sites-web", label: "Our websites service" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: performance is part of UX" },
+        ],
       },
       {
         term: "Responsive",
         slug: "responsive",
         category: "Web & tech",
         short: "A site that adapts to every screen.",
-        def: "Design that automatically adjusts the layout to the device (mobile, tablet, desktop), for an optimal experience everywhere.",
+        def: "Design that automatically adjusts the layout to the device (mobile, tablet, desktop), for an optimal experience everywhere. With most traffic now arriving on mobile, we design for the small screen first.",
+        links: [
+          { href: "/services/sites-web", label: "Our websites service" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: mobile-first, for real" },
+        ],
       },
       {
         term: "Core Web Vitals",
         slug: "core-web-vitals",
         category: "Web & tech",
         short: "Google's scores for technical quality.",
-        def: "Google indicators measuring a page's load speed, responsiveness and visual stability. They influence ranking and user experience.",
+        def: "Google indicators measuring a page's load speed, responsiveness and visual stability. They influence ranking and user experience: a slow site loses visitors before it's even read.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Our SEO service" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: performance & conversion" },
+        ],
       },
       {
         term: "GDPR (RGPD)",
         slug: "rgpd",
         category: "Web & tech",
         short: "The European data law.",
-        def: "General Data Protection Regulation: the European framework governing the collection and use of personal data. A Luxembourg site must comply (consent, cookies…).",
+        def: "General Data Protection Regulation: the European framework governing the collection and use of personal data. A Luxembourg site must comply (consent, cookies…) — in Luxembourg, the CNPD oversees its enforcement.",
+        links: [
+          { href: "/news/rgpd-cookies-site-web-luxembourg", label: "Read: GDPR & cookies in Luxembourg" },
+          { href: "/services/sites-web", label: "Sites compliant from day one" },
+        ],
       },
       {
         term: "Automation",
         slug: "automatisation",
         category: "Web & tech",
         short: "Leave repetitive tasks to machines.",
-        def: "Setting up workflows that automatically run tasks (follow-ups, notifications, tool synchronisation), to save time and reduce errors.",
+        def: "Setting up workflows that automatically run tasks (follow-ups, notifications, tool synchronisation), to save time and reduce errors. For an SME it's often the first step towards AI — and the most profitable one.",
+        links: [
+          { href: "/services/automatisation-ia/automatisation-workflows", label: "Our workflow automation service" },
+          { href: "/news/5-taches-pme-confier-a-l-ia", label: "Read: 5 tasks to hand over to AI" },
+        ],
       },
       {
         term: "Brand identity",
         slug: "identite-de-marque",
         category: "Design & brand",
         short: "What makes your brand recognisable.",
-        def: "A coherent set of visual elements and messages (logo, colours, typography, tone) that distinguishes your business and builds trust.",
+        def: "A coherent set of visual elements and messages (logo, colours, typography, tone) that distinguishes your business and builds trust. The logo is its signature; the identity, the entire handwriting.",
+        links: [
+          { href: "/services/branding-design/identite-visuelle", label: "Our visual identity service" },
+          { href: "/news/quest-ce-quun-bon-logo-identite-qui-dure", label: "Read: what makes a good logo?" },
+        ],
       },
       {
         term: "Design system",
         slug: "design-system",
         category: "Design & brand",
         short: "A brand's visual toolbox.",
-        def: "A library of reusable components, rules and styles that guarantees a site's or product's consistency and speeds up its creation.",
+        def: "A library of reusable components, rules and styles that guarantees a site's or product's consistency and speeds up its creation. It's what makes a brand look as though it came from the same hand on every page.",
+        links: [
+          { href: "/services/branding-design/charte-graphique", label: "Our brand guidelines service" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: consistency & conversion" },
+        ],
       },
       {
         term: "UX / UI",
         slug: "ux-ui",
         category: "Design & brand",
         short: "The experience and the interface.",
-        def: "UX (User Experience) is about the user's feel and journey; UI (User Interface) is about the look and the elements they interact with. Both serve conversion.",
+        def: "UX (User Experience) is about the user's feel and journey; UI (User Interface) is about the look and the elements they interact with. Both serve conversion: UX decides where the visitor goes, UI makes them want to go there.",
+        links: [
+          { href: "/services/sites-web", label: "Our websites service" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: the UX/UI principles that convert" },
+        ],
       },
     ] as GlossaryTerm[],
   },
@@ -2114,7 +2408,7 @@ export const en = {
     },
     "seo-geo": {
       intro: [
-        "Being visible is no longer enough: you have to be found on Google and cited by generative AI. We work both fronts at once, because 80% of the best practices are shared.",
+        "Being visible is no longer enough: you have to be found on Google and cited by generative AI. We work both fronts at once because, in our experience, around 80% of the best practices are shared.",
         "Technical audit, structured content and machine-readable data: we build a presence that performs today on Google and tomorrow in the answers of ChatGPT, Perplexity and Google AI.",
       ],
       included: [
@@ -2296,7 +2590,7 @@ export const en = {
         ],
         metaTitle: "Meta Ads Agency (Facebook & Instagram) in Luxembourg | vortx",
         metaDescription:
-          "Meta Ads campaigns (Facebook, Instagram, Threads) for the Luxembourg market: awareness, engagement and conversions. Precise targeting and creatives that perform.",
+          "Meta Ads campaigns (Facebook, Instagram) for the Luxembourg market: awareness, engagement and conversions. Precise targeting, creatives that perform.",
         intro: [
           "On social media, no one is searching for your product — it's up to you to grab attention. Meta Ads (Facebook, Instagram, Threads) creates demand right where your clients spend their time.",
           "We combine precise targeting, retargeting and content creation that stops the scroll to turn a cold audience into clients, step by step.",
@@ -2427,7 +2721,7 @@ export const en = {
           "Reporting on citations in AI answers",
         ],
         faq: [
-          { q: "Does GEO replace SEO?", a: "No, it complements it. 80% of the best practices are shared: structured, reliable content performs both on Google and with the AIs. We optimise for both." },
+          { q: "Does GEO replace SEO?", a: "No, it complements it. Around 80% of the best practices are shared: structured, reliable content performs both on Google and with the AIs. We optimise for both." },
           { q: "How do you measure GEO results?", a: "We track your presence in the answers of AI assistants (citations, mentions) and how your authority evolves. It's an emerging field: we move forward with method and transparency." },
         ],
       },
@@ -2446,7 +2740,7 @@ export const en = {
         ],
         metaTitle: "Local SEO & Google Business Profile Agency in Luxembourg | vortx",
         metaDescription:
-          "Local SEO in Luxembourg: Google Business Profile optimisation, citations, customer reviews and local pages. Capture \"near me\" searches across the Greater Region.",
+          "Local SEO in Luxembourg: Google Business Profile, citations, customer reviews and local pages. Capture \"near me\" searches across the Greater Region.",
         intro: [
           "When a client searches \"plumber Luxembourg\" or \"agency near me\", Google shows a map and three listings first. If you're not there, you're invisible — even if you rank first in the classic results.",
           "Local SEO optimises your presence on that map and in the local pack: a complete Google Business Profile, consistent contact details across the web, customer reviews and technical markup. A decisive lever for retailers, tradespeople and local services in Luxembourg and across the border.",
@@ -2670,7 +2964,7 @@ export const en = {
         ],
         metaTitle: "Multilingual Website Design (FR/DE/EN) in Luxembourg | vortx",
         metaDescription:
-          "Natively multilingual websites for Luxembourg: FR, DE, EN and other languages. Localised SEO per language (hreflang), editorial consistency and UX. Speak to your whole market.",
+          "Natively multilingual websites for Luxembourg: FR, DE, EN and more. Localised SEO (hreflang), consistent copy and UX. Speak to your whole market.",
         intro: [
           "Multilingualism isn't an option in Luxembourg: it's the reality of the market. A client searching in German shouldn't land on a rough translation — nor stay invisible because your site only exists in one language.",
           "We build multilingual sites designed for this from the start: clean architecture, correct hreflang markup, SEO optimised language by language and editorial consistency. Not a bolted-on translation, a genuine presence in each language.",
@@ -2783,7 +3077,7 @@ export const en = {
         ],
         metaTitle: "Email Marketing & Marketing Automation in Luxembourg | vortx",
         metaDescription:
-          "Email marketing and marketing automation for Luxembourg businesses: nurturing sequences, triggered scenarios and CRM integration. Convert your prospects automatically.",
+          "Email marketing and automation for Luxembourg businesses: nurturing sequences, triggered scenarios and CRM integration. Convert prospects on autopilot.",
         intro: [
           "Not all your prospects are ready to buy today. Without follow-up, most forget you. Email automation keeps the connection alive: it informs, reassures and follows up automatically, until the prospect is ready.",
           "We design sequences triggered by behaviour (download, visit, inactivity), take care of deliverability so you land in the inbox, and connect it all to your CRM so your sales team receives leads that are already warmed up.",
@@ -2820,7 +3114,7 @@ export const en = {
         ],
         metaTitle: "Lead Nurturing & Scoring in Luxembourg | vortx",
         metaDescription:
-          "Lead nurturing and scoring for Luxembourg businesses: behavioural scoring, automated nurturing and MQL/SQL qualification. Your sales team on the right leads, at the right moment.",
+          "Lead nurturing and scoring for Luxembourg businesses: behavioural scoring, automated nurturing and MQL/SQL qualification. Sales time on the right leads.",
         intro: [
           "Drowning your sales team in unqualified leads wastes their time and motivation. Scoring fixes this: each lead gets a score based on its profile and behaviour, and only surfaces once it's ready.",
           "We define the qualification criteria with you (MQL, SQL), automate the nurturing of leads that are still lukewarm, and set up a feedback loop with your sales team to refine the scoring continuously. The result: more time on the right opportunities.",
@@ -2857,7 +3151,7 @@ export const en = {
         ],
         metaTitle: "Conversion Rate Optimisation (CRO) in Luxembourg | vortx",
         metaDescription:
-          "Conversion rate optimisation (CRO) in Luxembourg: audit of obstacles, A/B testing, heatmaps and form optimisation. More leads at the same traffic, driven by data.",
+          "Conversion rate optimisation (CRO) in Luxembourg: friction audit, A/B testing, heatmaps and form optimisation. More leads from the same traffic.",
         intro: [
           "Attracting more traffic is expensive. Converting more of what you already have costs far less — and often pays off more. CRO (Conversion Rate Optimization) is about turning a larger share of your visitors into leads.",
           "We analyse your visitors' real behaviour (heatmaps, recordings, funnels), form hypotheses, then validate them with A/B tests. No opinions: we keep only what the data proves to be the winner.",
@@ -2933,7 +3227,7 @@ export const en = {
         ],
         metaTitle: "Brand Visual Identity in Luxembourg | vortx",
         metaDescription:
-          "Complete visual identity creation in Luxembourg: colours, typography, iconography and art direction. A coherent system that makes your brand recognisable everywhere.",
+          "Complete visual identity in Luxembourg: colours, typography, iconography and art direction. A coherent system that makes your brand recognisable.",
         intro: [
           "A logo alone doesn't make a brand. What makes you recognisable is the consistency of everything else: your colours, your typefaces, your images, your style. A complete visual identity orchestrates these elements into a harmonious system.",
           "We build that system from A to Z: colour palette, typographic hierarchy, iconography, patterns and art direction. Modular and scalable, it gives you everything to communicate consistently — from website to social media, from print to presentation.",
@@ -3044,7 +3338,7 @@ export const en = {
         ],
         metaTitle: "Brand Strategy & Naming in Luxembourg | vortx",
         metaDescription:
-          "Brand strategy and naming in Luxembourg: positioning, brand platform, name creation and multilingual tone of voice. The meaning that guides all your communication.",
+          "Brand strategy and naming in Luxembourg: positioning, brand platform, name creation and multilingual tone of voice. Meaning that guides your communication.",
         intro: [
           "A beautiful brand with no strategy is a façade with no foundations. Before designing anything, you need to know what you stand for, who you're talking to and what sets you apart. That's the role of brand strategy.",
           "We define your positioning, your brand platform (mission, values, promise) and your territory of expression. If needed, we create your name (naming) and set a coherent tone of voice — including in several languages, as the Luxembourg market demands.",
@@ -3231,7 +3525,7 @@ export const en = {
         ],
         metaTitle: "Generative AI for Content in Luxembourg | vortx",
         metaDescription:
-          "Generative AI for content in Luxembourg: articles, newsletters, emails and visuals in your brand tone, in several languages. Produce more, without sacrificing quality.",
+          "Generative AI for content in Luxembourg: articles, newsletters, emails and visuals in your brand tone, multilingual. Produce more without losing quality.",
         intro: [
           "Producing quality content, regularly and in several languages, is a challenge of time and resources. Generative AI changes the game: it speeds up production while keeping your voice — provided it's properly framed.",
           "We set up bespoke generation workflows (articles, emails, social media visuals) trained on your brand tone, with a human editorial validation step. Produce more, faster, without falling into generic content.",
@@ -3369,7 +3663,7 @@ export const en = {
       {
         title: "SEO & GEO",
         items: [
-          { q: "What's the difference between SEO and GEO?", a: "SEO puts you in Google's list of results; GEO (Generative Engine Optimization) puts you in the answer generated by an AI like ChatGPT or Perplexity. We optimise for both, because 80% of the best practices are shared." },
+          { q: "What's the difference between SEO and GEO?", a: "SEO puts you in Google's list of results; GEO (Generative Engine Optimization) puts you in the answer generated by an AI like ChatGPT or Perplexity. We optimise for both because, in our experience, around 80% of the best practices are shared." },
           { q: "Is GEO real or just a fad?", a: "It's very real: more and more decision-makers put their questions to an AI rather than to Google. If you don't appear in the answer, you don't exist in the decision. We structure your content to be cited as a source." },
           { q: "How long until we see SEO results?", a: "SEO/GEO is foundational work: the first signals often appear within a few weeks, solid gains within a few months. We show you the progress at every step, with no magic promises." },
           { q: "Do you do SEO in several languages?", a: "Yes, FR/DE/EN natively. It's essential in Luxembourg, where your clients compare you in all three languages." },
@@ -3475,7 +3769,7 @@ export const en = {
     work: {
       title: "Work | vortx Luxembourg",
       description:
-        "Discover the projects and results of vortx, marketing and web agency in Luxembourg.",
+        "Websites for garages, tradespeople and SMEs, web apps and branding: the work of vortx, marketing & web agency in Luxembourg. Let's talk about your project.",
     },
     contact: {
       title: "Contact & free audit | vortx Luxembourg",

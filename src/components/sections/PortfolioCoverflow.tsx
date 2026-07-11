@@ -10,15 +10,15 @@ import Image from "next/image";
  */
 
 const showcaseSites = [
-  { id: 1, name: "Momento Relojero", image: "/portfolio/momento-relojero.jpg" },
-  { id: 2, name: "Isomontage", image: "/portfolio/isomontage.jpg" },
-  { id: 3, name: "Garage Biver", image: "/portfolio/garage-biver.jpg" },
-  { id: 4, name: "Vitrophy", image: "/portfolio/vitrophy.jpg" },
-  { id: 5, name: "CIM by CACR", image: "/portfolio/cim-by-cacr.jpg" },
-  { id: 6, name: "Blumenthal", image: "/portfolio/blumenthal.jpg" },
-  { id: 7, name: "Lux Habitat", image: "/portfolio/lux-habitat.png" },
-  { id: 8, name: "Autodis", image: "/portfolio/autodis.jpg" },
-  { id: 9, name: "Pauly Losch", image: "/portfolio/pauly-losch.jpg" },
+  { id: 1, slug: "momento-relojero", name: "Momento Relojero", image: "/portfolio/momento-relojero.jpg" },
+  { id: 2, slug: "isomontage", name: "Isomontage", image: "/portfolio/isomontage.jpg" },
+  { id: 3, slug: "garage-biver", name: "Garage Biver", image: "/portfolio/garage-biver.jpg" },
+  { id: 4, slug: "vitrophy", name: "Vitrophy", image: "/portfolio/vitrophy.jpg" },
+  { id: 5, slug: "cim-by-cacr", name: "CIM by CACR", image: "/portfolio/cim-by-cacr.jpg" },
+  { id: 6, slug: "blumenthal", name: "Blumenthal", image: "/portfolio/blumenthal.jpg" },
+  { id: 7, slug: "lux-habitat", name: "Lux Habitat", image: "/portfolio/lux-habitat.png" },
+  { id: 8, slug: "autodis", name: "Autodis", image: "/portfolio/autodis.jpg" },
+  { id: 9, slug: "pauly-losch", name: "Pauly Losch", image: "/portfolio/pauly-losch.jpg" },
 ];
 
 type Copy = {
@@ -30,7 +30,14 @@ type Copy = {
   play: string;
 };
 
-export function PortfolioCoverflow({ copy }: { copy: Copy }) {
+export function PortfolioCoverflow({
+  copy,
+  alts,
+}: {
+  copy: Copy;
+  /** Localized descriptive alt text per project slug (from dict.workPage). */
+  alts?: Record<string, string>;
+}) {
   const typewriterTexts = copy.typewriter;
   const [isDark, setIsDark] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -238,12 +245,14 @@ export function PortfolioCoverflow({ copy }: { copy: Copy }) {
                 >
                   <Image
                     src={site.image}
-                    alt={`Projet ${site.name} réalisé par vortx`}
+                    alt={alts?.[site.slug] ?? `Projet ${site.name} réalisé par vortx`}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 480px"
                     quality={85}
-                    priority={Math.abs(position) <= 1}
+                    // Only the centre slide is preloaded — the section sits
+                    // below the fold, side slides can lazy-load.
+                    priority={position === 0}
                   />
                   <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-black/60 to-transparent p-3">
                     <span className="text-xs font-medium text-white drop-shadow-lg">

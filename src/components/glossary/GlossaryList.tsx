@@ -1,18 +1,24 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import type { GlossaryTerm } from "@/i18n/dictionaries/fr";
+import type { Locale } from "@/i18n/config";
+import { localized } from "@/lib/locale";
 import { StickySearch } from "@/components/ui/StickySearch";
 import { glossaryCategoryId } from "@/lib/glossary";
+import { ArrowRight } from "@/components/ui/icons";
 
 /** Searchable, category-grouped glossary list. */
 export function GlossaryList({
   terms,
+  lang,
   searchPlaceholder,
   countSuffix,
   emptyLabel,
 }: {
   terms: GlossaryTerm[];
+  lang: Locale;
   searchPlaceholder: string;
   countSuffix: string;
   emptyLabel: string;
@@ -66,6 +72,24 @@ export function GlossaryList({
                     <h3 className="text-lg font-semibold text-text">{t.term}</h3>
                     <p className="mt-1 text-sm font-medium text-accent">{t.short}</p>
                     <p className="mt-3 text-sm leading-relaxed text-text-dim">{t.def}</p>
+                    {t.links?.length ? (
+                      <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-4">
+                        {t.links.map((l) => (
+                          <Link
+                            key={l.href}
+                            href={localized(lang, l.href)}
+                            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-accent-strong"
+                          >
+                            {l.label}
+                            <ArrowRight
+                              width={14}
+                              height={14}
+                              className="transition-transform group-hover:translate-x-0.5"
+                            />
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
                 ))}
               </div>

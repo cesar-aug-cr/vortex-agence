@@ -116,6 +116,33 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                 <p className="mt-2 text-lg leading-relaxed text-text">{block.text}</p>
               </div>
             );
+          case "sources":
+            return (
+              <div key={i} className="rounded-2xl border border-border bg-bg-card p-5">
+                {block.title && (
+                  <p className="font-mono text-xs uppercase tracking-wide text-text-muted">
+                    {block.title}
+                  </p>
+                )}
+                <ul className="mt-2 grid gap-1.5">
+                  {block.items.map((s) => (
+                    <li key={s.href} className="text-sm text-text-dim">
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-accent-strong underline decoration-accent-strong/30 underline-offset-4 transition-colors hover:decoration-accent-strong"
+                      >
+                        {s.label}
+                      </a>
+                      <span className="ml-2 font-mono text-xs text-text-muted">
+                        {new URL(s.href).hostname.replace("www.", "")}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
           case "accordion":
             return (
               <div

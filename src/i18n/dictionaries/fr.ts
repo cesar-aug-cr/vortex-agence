@@ -14,7 +14,9 @@ export type ArticleBlock =
   | { type: "quote"; text: string; cite?: string }
   | { type: "callout"; title: string; text: string }
   | { type: "logo"; tipTitle?: string; tip?: string }
-  | { type: "accordion"; title?: string; items: { q: string; a: string }[] };
+  | { type: "accordion"; title?: string; items: { q: string; a: string }[] }
+  /** External authority references, rendered as a small "sources" box. */
+  | { type: "sources"; title?: string; items: { label: string; href: string }[] };
 
 /** One glossary entry. */
 export type GlossaryTerm = {
@@ -23,6 +25,8 @@ export type GlossaryTerm = {
   category: string;
   short: string;
   def: string;
+  /** Internal links to the matching service page / article (canonical paths). */
+  links?: { href: string; label: string }[];
 };
 
 export const fr = {
@@ -242,7 +246,7 @@ export const fr = {
   leadgen: {
     eyebrow: "Le problème, puis la solution",
     title: "Personne ne fait attention à vous.",
-    lead: "Une personne croise 6 000 à 10 000 publicités par jour. Pour sortir du lot, il faut être inoubliable. Et l'inoubliable, c'est justement notre métier.",
+    lead: "Selon les études du secteur, une personne croise entre 4 000 et 10 000 publicités par jour. Pour sortir du lot, il faut être inoubliable. Et l'inoubliable, c'est justement notre métier.",
     problemTitle: "Sans système d'acquisition :",
     problems: [
       "Des opportunités qui passent inaperçues",
@@ -395,6 +399,99 @@ export const fr = {
       "Devis sans engagement",
       "Réponse rapide garantie",
       "Accompagnement après lancement",
+    ],
+  },
+
+  // ---- Réalisations page ----
+  workPage: {
+    eyebrow: "Réalisations",
+    title: "Des projets concrets, pour des métiers concrets.",
+    lead: "Garages, artisans, PME, produits web : voici ce qu'on conçoit et met en ligne. Chaque projet a un objectif clair — être trouvé, inspirer confiance, générer des demandes.",
+    note: "Par transparence : les études de cas chiffrées (trafic, leads, conversions) sont en cours de rédaction avec nos clients. On vous les présente volontiers en appel.",
+    caseEyebrow: "Étude de cas",
+    contextLabel: "Le contexte",
+    deliveredLabel: "Ce qu'on a livré",
+    cases: [
+      {
+        slug: "garage-biver",
+        name: "Garage Martin Biver",
+        sector: "Garage automobile · Luxembourg",
+        tags: ["Site vitrine", "Prise de RDV en ligne", "Multimarque"],
+        context:
+          "Un garage familial, partenaire automobile depuis 1926, distributeur Volkswagen, Škoda et Audi. Un siècle de confiance — et le besoin d'une présence en ligne à la hauteur, avec un moyen simple de prendre rendez-vous.",
+        delivered:
+          "Un site vitrine clair qui présente les marques et les prestations de l'atelier, avec prise de rendez-vous en ligne. Le client trouve l'info, comprend l'offre et réserve son créneau — sans décrocher son téléphone.",
+      },
+      {
+        slug: "vitrophy",
+        name: "Vitrophy",
+        sector: "Gravure & personnalisation · B2B",
+        tags: ["Site vitrine", "Identité visuelle", "Positionnement B2B"],
+        context:
+          "Vitrophy grave et personnalise des produits en fabrication locale, pour une clientèle avant tout professionnelle. Il fallait un site qui reflète ce savoir-faire et parle aux entreprises.",
+        delivered:
+          "Un site vitrine à l'identité sombre et émeraude, distinctive, avec un positionnement B2B lisible dès la première page : ce que Vitrophy fabrique, pour qui, et comment demander un devis.",
+      },
+      {
+        slug: "cim-by-cacr",
+        name: "CIM by CACR",
+        sector: "Application web · SaaS",
+        tags: ["Web app", "IA", "Branding"],
+        context:
+          "Créer une identité de marque prend des semaines et coûte cher. CIM promet l'essentiel en quelques minutes : l'utilisateur charge son logo, l'outil fait le reste.",
+        delivered:
+          "Une application web complète : upload du logo, extraction automatique des couleurs et manuel de marque PDF généré avec l'aide de l'IA — le tout dans une interface produit sombre et soignée.",
+      },
+    ],
+    projects: [
+      {
+        slug: "pauly-losch",
+        name: "Garage Pauly-Losch",
+        sector: "Garage automobile · Luxembourg",
+        tags: ["Site vitrine", "Ancrage local"],
+        summary:
+          "Plus de 70 ans d'expérience VW, Audi, Škoda et VW Utilitaires — et un accueil en luxembourgeois, « Wëllkomm ». Un site vitrine fidèle à l'esprit maison.",
+      },
+      {
+        slug: "autodis",
+        name: "Autodis Luxembourg",
+        sector: "Distribution automobile · Esch-sur-Alzette & Mersch",
+        tags: ["Site vitrine", "Catalogue de marques"],
+        summary:
+          "Distributeur multimarque (BAIC, JAC, Forthing, DFM, Borgward…). Un site avec carrousel de nouveautés, catalogue de marques et présentation des prestations.",
+      },
+      {
+        slug: "isomontage",
+        name: "Isomontage Isolation",
+        sector: "Isolation · Bâtiment",
+        tags: ["Site vitrine"],
+        summary:
+          "Un site vitrine qui présente les services d'isolation de l'entreprise, simplement et clairement.",
+      },
+      {
+        slug: "blumenthal",
+        name: "Blumenthal",
+        sector: "Jardinage & hydroculture",
+        tags: ["Site vitrine", "Design sur mesure"],
+        summary:
+          "Jardinage et hydroculture méritaient un écrin : un site vitrine au design frais et naturel, à l'image du métier.",
+      },
+      {
+        slug: "lux-habitat",
+        name: "Lux Habitat",
+        sector: "Charpente & toiture · Luxembourg",
+        tags: ["Site vitrine", "Mobile-first"],
+        summary:
+          "Un charpentier au Luxembourg, un site vitrine mobile-first : pensé pour le client qui cherche un artisan depuis son téléphone.",
+      },
+      {
+        slug: "momento-relojero",
+        name: "Momento Relojero",
+        sector: "Média éditorial · Horlogerie",
+        tags: ["Site éditorial", "Design premium"],
+        summary:
+          "Un guide de l'horlogerie en espagnol — mécanique, histoire, collectionnisme — porté par un design premium noir et or.",
+      },
     ],
   },
 
@@ -561,9 +658,12 @@ export const fr = {
     title: "Une équipe d'attraction, au service de votre croissance.",
     lead: "vortx réunit le marketing, le design et la technologie sous un même toit, à Luxembourg. Une obsession : transformer l'attention en clients, et le prouver en chiffres.",
     story: [
-      "vortx est né d'un constat simple : trop d'entreprises luxembourgeoises ont un site qui ressemble à une brochure — joli, mais qui ne rapporte rien. On construit l'inverse : des présences digitales pensées comme des machines d'acquisition.",
-      "Derrière l'agence, une équipe qui cumule plus d'une décennie d'expérience en marketing digital, développement web et direction artistique. On a vu les modes passer ; on garde ce qui convertit, on jette le reste.",
-      "On travaille en français, en allemand et en anglais, avec une seule exigence : que chaque euro investi dans votre marketing soit justifiable. Pas de jargon, pas de promesse en l'air — des résultats mesurables.",
+      "vortx est né d'un constat simple : trop d'entreprises luxembourgeoises ont un site qui ressemble à une brochure — joli, mais qui ne rapporte rien. On construit l'inverse : des présences digitales pensées comme des machines d'acquisition. L'agence est une SARL-S basée à Luxembourg-ville, au 18 rue de l'Ouest, qui réunit marketing, design et technologie sous un même toit — sans sous-traitance en cascade, sans perte en ligne entre la stratégie et l'exécution.",
+      "Derrière l'agence, une équipe qui cumule plus d'une décennie d'expérience en marketing digital, développement web et direction artistique. On a vu les modes passer ; on garde ce qui convertit, on jette le reste. Cette double culture — celle du marketeur qui pense tunnel de vente et celle du développeur qui pense performance — fait qu'on ne livre jamais un site « joli mais creux », ni une stratégie impossible à exécuter.",
+      "Concrètement, on couvre six métiers : des sites web conçus pour convertir, le référencement SEO & GEO, la génération de leads, la publicité en ligne, le branding et l'automatisation IA. Nos clients sont des garages, des artisans, des PME de services et des produits web — des entreprises qui n'ont pas besoin d'un rapport de cent pages, mais de demandes de devis qui arrivent chaque semaine.",
+      "Notre philosophie tient en trois principes. La conversion mesurable d'abord : pas de vanity metrics, chaque euro investi doit être relié à un résultat — un appel, un devis, un client. La stratégie avant le template ensuite : on part de votre tunnel de vente, pas d'un thème acheté sur étagère. La propriété totale enfin : le code, les contenus et les accès vous appartiennent à 100 %, sans enfermement.",
+      "On est ancrés dans la réalité du marché luxembourgeois : vos clients comparent en français, en allemand et en anglais — et de plus en plus en espagnol. On conçoit donc chaque présence en multilingue natif, conforme au RGPD, et pensée pour rayonner sur toute la Grande Région, pas seulement dans la capitale.",
+      "Enfin, vortx est une agence native IA. On utilise l'intelligence artificielle pour concevoir et produire plus vite — toujours relu et finalisé par des humains — et on optimise vos contenus pour la nouvelle porte d'entrée du web : être cité par ChatGPT, Perplexity ou Google AI quand vos clients leur posent une question. C'est le GEO, et on l'intègre dès la première ligne de chaque projet.",
     ],
     experience: {
       suffix: "ans",
@@ -572,8 +672,8 @@ export const fr = {
     },
     stats: [
       { value: "100 %", label: "Sur mesure, jamais de template" },
-      { value: "FR·DE·EN", label: "Multilingue natif" },
-      { value: "GEO", label: "Optimisé pour les IA génératives" },
+      { value: "4 langues", label: "FR · DE · EN · ES en natif" },
+      { value: "6 métiers", label: "Web, SEO & GEO, leads, pub, branding, IA" },
     ],
     valuesTitle: "Ce qui nous distingue",
     arsenalTitle: "Notre arsenal",
@@ -688,6 +788,8 @@ export const fr = {
           "UX/UI : les principes de design qui transforment un visiteur en client",
         excerpt:
           "Un beau site ne suffit pas : il doit guider, rassurer et convertir. Voici les principes UX et UI que nous appliquons sur chaque projet vortx — hiérarchie, clarté, accessibilité, performance — illustrés par ce site lui-même.",
+        metaDescription:
+          "Hiérarchie, clarté, accessibilité, performance : les principes UX/UI qui transforment un visiteur en client. Guide concret par vortx, agence web à Luxembourg.",
         date: "2026-06-15",
         updated: "2026-06-15",
         readingMinutes: 8,
@@ -851,6 +953,14 @@ export const fr = {
             text: "Ces principes ne sont pas théoriques : ils façonnent ce site. La hiérarchie répétée de chaque section, le fond sombre qui fait ressortir les contenus clés, la palette resserrée, les icônes animées qui restent sobres, le formulaire en plusieurs étapes, le widget d'accessibilité, la version multilingue pensée langue par langue — chaque détail sert la même chose : aider le visiteur à comprendre, à se sentir en confiance, et à passer à l'action.",
           },
           {
+            type: "sources",
+            title: "Sources & références",
+            items: [
+              { label: "Core Web Vitals — web.dev (Google)", href: "https://web.dev/vitals" },
+              { label: "Accessibilité WCAG — W3C Web Accessibility Initiative", href: "https://www.w3.org/WAI/" },
+            ],
+          },
+          {
             type: "p",
             text: "C'est exactement la méthode qu'on applique à votre projet : on part de votre objectif de conversion, pas d'un template. Le résultat est un site qui n'est pas seulement beau — il travaille pour vous.",
           },
@@ -863,6 +973,8 @@ export const fr = {
           "SEO vs GEO : comment être trouvé sur Google ET cité par les IA en 2026",
         excerpt:
           "Le référencement ne se joue plus seulement sur Google. ChatGPT, Perplexity et Google AI deviennent la nouvelle porte d'entrée. Voici comment le SEO et le GEO travaillent ensemble — et ce qu'il faut faire concrètement.",
+        metaDescription:
+          "SEO et GEO en 2026 : être trouvé sur Google et cité par ChatGPT ou Perplexity. La méthode concrète de vortx pour les entreprises luxembourgeoises.",
         date: "2026-06-02",
         updated: "2026-06-02",
         readingMinutes: 9,
@@ -873,7 +985,7 @@ export const fr = {
           points: [
             "Le SEO vous classe dans les résultats ; le GEO vous place dans la réponse de l'IA.",
             "Structurez vos pages en question/réponse et ancrez-les dans des faits locaux pour être cités.",
-            "80 % du travail est commun : un bon contenu performe sur Google ET auprès des modèles.",
+            "Selon notre pratique, environ 80 % du travail est commun : un bon contenu performe sur Google ET auprès des modèles.",
           ],
         },
         links: [
@@ -969,7 +1081,7 @@ export const fr = {
           },
           {
             type: "p",
-            text: "Bonne nouvelle : 80 % du travail est commun. Un contenu structuré, rapide, fiable et bien balisé performe à la fois sur Google et auprès des modèles. On ne sacrifie pas l'un pour l'autre — on conçoit dès le départ pour les deux.",
+            text: "Bonne nouvelle : d'après notre expérience sur les deux fronts, environ 80 % du travail est commun. Un contenu structuré, rapide, fiable et bien balisé performe à la fois sur Google et auprès des modèles. On ne sacrifie pas l'un pour l'autre — on conçoit dès le départ pour les deux.",
           },
           {
             type: "quote",
@@ -979,6 +1091,13 @@ export const fr = {
             type: "callout",
             title: "À retenir",
             text: "Soignez votre SEO technique et éditorial, structurez vos pages pour la citation, ajoutez des données structurées et un llms.txt, et ancrez votre contenu dans des faits locaux. Vous gagnez sur Google et dans les réponses IA.",
+          },
+          {
+            type: "sources",
+            title: "Sources & références",
+            items: [
+              { label: "Google Search Essentials — Google Search Central", href: "https://developers.google.com/search" },
+            ],
           },
           {
             type: "p",
@@ -993,6 +1112,8 @@ export const fr = {
           "Google Ads ou SEO : où investir votre budget marketing en 2026 ?",
         excerpt:
           "Faut-il payer pour apparaître en haut de Google, ou travailler son référencement naturel ? La vraie question n'est pas « l'un ou l'autre », mais « lequel, quand, et pour quel objectif ». On démêle tout, chiffres et bon sens à l'appui.",
+        metaDescription:
+          "Google Ads ou SEO : lequel choisir, quand, et pour quel objectif ? Le comparatif sans jargon pour investir votre budget marketing au bon endroit en 2026.",
         date: "2026-06-04",
         updated: "2026-06-04",
         readingMinutes: 8,
@@ -1107,6 +1228,14 @@ export const fr = {
             text: "Ne raisonnez pas « Ads OU SEO », mais « Ads ET SEO », dosés selon votre échéance et votre budget. La pub pour la vitesse, le SEO pour la durée — et les deux qui se renforcent.",
           },
           {
+            type: "sources",
+            title: "Sources & références",
+            items: [
+              { label: "Aide officielle Google Ads", href: "https://support.google.com/google-ads" },
+              { label: "Google Search Essentials — Google Search Central", href: "https://developers.google.com/search" },
+            ],
+          },
+          {
             type: "p",
             text: "Chez vortx, on construit cette combinaison selon votre situation réelle, sans vous vendre l'un au détriment de l'autre. On vous offre un audit gratuit pour vous dire où votre budget rapportera le plus.",
           },
@@ -1119,6 +1248,8 @@ export const fr = {
           "Tunnel de conversion : transformer vos visiteurs en clients, étape par étape",
         excerpt:
           "Attirer du trafic, c'est bien. Le convertir en clients, c'est tout l'enjeu. Le tunnel de conversion est la carte qui relie le premier clic au contrat signé — et chaque étape mal pensée vous coûte des ventes. Voici comment le construire.",
+        metaDescription:
+          "Le tunnel de conversion, du premier clic au contrat signé : les étapes, les erreurs qui coûtent des ventes et la méthode pour convertir plus de visiteurs.",
         date: "2026-06-07",
         updated: "2026-06-07",
         readingMinutes: 7,
@@ -1248,6 +1379,8 @@ export const fr = {
           "Combien coûte un site web professionnel au Luxembourg en 2026 ?",
         excerpt:
           "La vraie réponse n'est pas un chiffre, mais une fourchette qui dépend de vos objectifs. Voici ce qui fait varier le prix d'un site, et comment investir là où ça compte vraiment.",
+        metaDescription:
+          "Combien coûte un site web au Luxembourg en 2026 ? Ce qui fait varier le prix, où investir vraiment — et comment obtenir un devis précis, gratuitement.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 7,
@@ -1346,6 +1479,13 @@ export const fr = {
             text: "Le prix d'un site dépend de vos objectifs, pas d'un tarif générique. Définissez le bon périmètre, investissez sur la conversion et le référencement, et jugez le coût à l'aune de ce que le site vous rapporte.",
           },
           {
+            type: "sources",
+            title: "Sources & références",
+            items: [
+              { label: "Core Web Vitals — web.dev (Google)", href: "https://web.dev/vitals" },
+            ],
+          },
+          {
             type: "p",
             text: "Chez vortx, on vous propose un devis précis après un appel découverte gratuit — pas un prix sorti du chapeau. On vous dit, sans détour, ce dont vous avez vraiment besoin.",
           },
@@ -1357,6 +1497,8 @@ export const fr = {
         title: "Qu'est-ce qu'un bon logo ? Les principes d'une identité qui dure",
         excerpt:
           "Un bon logo n'est pas qu'une jolie image : c'est la première promesse de votre marque. Voici les principes qui séparent un logo mémorable d'un logo oubliable.",
+        metaDescription:
+          "Qu'est-ce qu'un bon logo ? Simplicité, mémorabilité, pertinence : les principes d'une identité qui dure — et les erreurs qui trahissent une marque.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 6,
@@ -1478,6 +1620,8 @@ export const fr = {
           "RGPD & cookies : le minimum à respecter sur votre site au Luxembourg",
         excerpt:
           "Bandeau cookies, consentement, mentions… Le RGPD fait peur, mais l'essentiel tient en quelques règles claires. Voici le minimum pour un site luxembourgeois serein.",
+        metaDescription:
+          "RGPD et cookies sur votre site au Luxembourg : bandeau, consentement, mentions légales — l'essentiel en règles claires pour être conforme sans stress.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 6,
@@ -1563,6 +1707,14 @@ export const fr = {
             text: "Le RGPD n'est pas un obstacle à la conversion. Bien fait, c'est un argument de confiance.",
           },
           {
+            type: "sources",
+            title: "Sources & références",
+            items: [
+              { label: "CNPD — Commission nationale pour la protection des données (Luxembourg)", href: "https://cnpd.public.lu" },
+              { label: "Texte du RGPD — Règlement (UE) 2016/679 (EUR-Lex)", href: "https://eur-lex.europa.eu/eli/reg/2016/679/oj" },
+            ],
+          },
+          {
             type: "p",
             text: "Chez vortx, on conçoit chaque site dans le respect du RGPD dès le départ — bandeau de consentement, gestion des cookies et pages légales incluses. Un doute sur votre site actuel ? On vous fait un point gratuit.",
           },
@@ -1574,6 +1726,8 @@ export const fr = {
         title: "5 tâches que votre PME devrait déjà confier à l'IA",
         excerpt:
           "L'IA ne remplace pas vos équipes — elle leur enlève les corvées. Voici 5 tâches concrètes qu'une PME luxembourgeoise peut automatiser dès aujourd'hui, sans usine à gaz.",
+        metaDescription:
+          "5 tâches à confier à l'IA dès aujourd'hui dans votre PME luxembourgeoise : réponses, tri des leads, relances, contenu, synchronisation. Sans usine à gaz.",
         date: "2026-06-08",
         updated: "2026-06-08",
         readingMinutes: 6,
@@ -1665,6 +1819,14 @@ export const fr = {
             text: "Confiez à l'IA les tâches répétitives sans valeur ajoutée — réponses, qualification, relances, contenu, synchronisation — en commençant petit et en gardant la main.",
           },
           {
+            type: "sources",
+            title: "Sources & références",
+            items: [
+              { label: "CNPD — protection des données au Luxembourg", href: "https://cnpd.public.lu" },
+              { label: "Luxinnovation — accompagnement à la digitalisation des PME", href: "https://www.luxinnovation.lu" },
+            ],
+          },
+          {
             type: "p",
             text: "Chez vortx, on met l'IA au travail là où elle vous fait vraiment gagner du temps. Envie de savoir ce que vous pourriez automatiser ? On vous le dit gratuitement.",
           },
@@ -1676,6 +1838,8 @@ export const fr = {
         title: "IA pour les PME au Luxembourg : par où commencer en 2026",
         excerpt:
           "L'IA n'est plus réservée aux grands groupes. Mais par où commencer quand on est une PME, sans budget tech ni équipe dédiée ? Voici une feuille de route pragmatique : les bons cas d'usage, les pièges à éviter et comment garder le contrôle de vos données.",
+        metaDescription:
+          "IA pour les PME au Luxembourg : la feuille de route 2026 pour démarrer sans budget tech — bons cas d'usage, pièges à éviter, données sous contrôle.",
         date: "2026-06-09",
         updated: "2026-06-09",
         readingMinutes: 7,
@@ -1799,6 +1963,14 @@ export const fr = {
             text: "La bonne question n'est pas « est-ce que je dois faire de l'IA ? » mais « quelle tâche me coûte du temps chaque semaine ? ».",
           },
           {
+            type: "sources",
+            title: "Sources & références",
+            items: [
+              { label: "CNPD — protection des données au Luxembourg", href: "https://cnpd.public.lu" },
+              { label: "Luxinnovation — accompagnement à la digitalisation des PME", href: "https://www.luxinnovation.lu" },
+            ],
+          },
+          {
             type: "p",
             text: "Chez vortx, on aide les PME luxembourgeoises à identifier les cas d'usage qui rapportent vraiment, puis à les mettre en place proprement — outils, automatisations et garde-fous RGPD compris. Envie de savoir par où commencer chez vous ? On vous le dit gratuitement.",
           },
@@ -1809,6 +1981,8 @@ export const fr = {
       category: string;
       title: string;
       excerpt: string;
+      /** SEO meta description (140–160 chars). */
+      metaDescription: string;
       date: string;
       updated?: string;
       readingMinutes: number;
@@ -1838,217 +2012,341 @@ export const fr = {
         slug: "seo",
         category: "SEO & GEO",
         short: "Être trouvé gratuitement sur Google.",
-        def: "Le Search Engine Optimization regroupe les techniques qui améliorent la position d'un site dans les résultats naturels (non payants) des moteurs de recherche : qualité technique, contenu pertinent, autorité et expérience utilisateur.",
+        def: "Le Search Engine Optimization regroupe les techniques qui améliorent la position d'un site dans les résultats naturels (non payants) des moteurs de recherche : qualité technique, contenu pertinent, autorité et expérience utilisateur. Au Luxembourg, il se travaille en trois langues : vos clients comparent en français, en allemand et en anglais.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Notre service SEO" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Lire : Google Ads ou SEO ?" },
+        ],
       },
       {
         term: "GEO / GSO",
         slug: "geo-gso",
         category: "SEO & GEO",
         short: "Être cité par les IA génératives.",
-        def: "La Generative Engine Optimization (ou Generative Search Optimization) optimise votre contenu pour qu'il soit repris et cité comme source par les moteurs de réponse IA (ChatGPT, Perplexity, Google AI). L'objectif : être la réponse, pas seulement un lien.",
+        def: "La Generative Engine Optimization (ou Generative Search Optimization) optimise votre contenu pour qu'il soit repris et cité comme source par les moteurs de réponse IA (ChatGPT, Perplexity, Google AI). L'objectif : être la réponse, pas seulement un lien. Bonne nouvelle : l'essentiel des bonnes pratiques est commun avec le SEO — on travaille les deux fronts ensemble.",
+        links: [
+          { href: "/services/seo-geo/geo-gso", label: "Notre service GEO / GSO" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Lire : être cité par les IA" },
+        ],
       },
       {
         term: "SERP",
         slug: "serp",
         category: "SEO & GEO",
         short: "La page de résultats de Google.",
-        def: "Search Engine Results Page : la page qui affiche les résultats d'une recherche. Elle mêle liens naturels, annonces, extraits enrichis, et de plus en plus de réponses générées par IA.",
+        def: "Search Engine Results Page : la page qui affiche les résultats d'une recherche. Elle mêle liens naturels, annonces, extraits enrichis, et de plus en plus de réponses générées par IA. Y occuper le haut se joue sur deux leviers complémentaires : le SEO pour le naturel, le SEA pour le payant.",
+        links: [
+          { href: "/services/seo-geo", label: "Notre service SEO & GEO" },
+          { href: "/services/publicite/google-ads", label: "Nos campagnes Google Ads" },
+        ],
       },
       {
         term: "Mot-clé",
         slug: "mot-cle",
         category: "SEO & GEO",
         short: "Ce que tapent vos clients.",
-        def: "Terme ou expression qu'un internaute saisit dans un moteur de recherche. Le SEO consiste en partie à identifier les mots-clés rentables et à structurer le contenu autour d'eux.",
+        def: "Terme ou expression qu'un internaute saisit dans un moteur de recherche. Le SEO consiste en partie à identifier les mots-clés rentables et à structurer le contenu autour d'eux. Sur un marché multilingue comme le Luxembourg, on les étudie en FR, DE et EN — les volumes et la concurrence diffèrent d'une langue à l'autre.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Notre service SEO" },
+          { href: "/services/publicite/google-ads", label: "Cibler les bons mots-clés en Ads" },
+        ],
       },
       {
         term: "Backlink",
         slug: "backlink",
         category: "SEO & GEO",
         short: "Un lien d'un autre site vers le vôtre.",
-        def: "Lien entrant depuis un site tiers. Les backlinks de qualité signalent aux moteurs que votre site fait autorité, ce qui améliore le référencement.",
+        def: "Lien entrant depuis un site tiers. Les backlinks de qualité signalent aux moteurs que votre site fait autorité, ce qui améliore le référencement. Cette autorité compte aussi pour le GEO : les IA s'appuient sur ce qui se dit de vous ailleurs.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Notre service SEO" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Lire : construire l'autorité pour les IA" },
+        ],
       },
       {
         term: "Données structurées (Schema.org)",
         slug: "donnees-structurees",
         category: "SEO & GEO",
         short: "Du code qui explique votre contenu aux machines.",
-        def: "Balisage standardisé ajouté au code d'une page pour décrire son contenu (entreprise, service, article, FAQ…). Il aide Google et les IA à comprendre et à mettre en avant vos informations.",
+        def: "Balisage standardisé ajouté au code d'une page pour décrire son contenu (entreprise, service, article, FAQ…). Il aide Google et les IA à comprendre et à mettre en avant vos informations. C'est l'un des livrables de base de tout travail GEO sérieux.",
+        links: [
+          { href: "/services/seo-geo/geo-gso", label: "Notre service GEO / GSO" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Lire : rendre son site lisible par les IA" },
+        ],
       },
       {
         term: "llms.txt",
         slug: "llms-txt",
         category: "SEO & GEO",
         short: "Un résumé de votre site pour les IA.",
-        def: "Fichier texte placé à la racine d'un site pour présenter, de façon structurée, son offre et ses contenus clés aux grands modèles de langage. Un levier émergent du GEO.",
+        def: "Fichier texte placé à la racine d'un site pour présenter, de façon structurée, son offre et ses contenus clés aux grands modèles de langage. Un levier émergent du GEO, qui fait partie de nos livrables standards.",
+        links: [
+          { href: "/services/seo-geo/geo-gso", label: "Notre service GEO / GSO" },
+          { href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia", label: "Lire : SEO vs GEO en 2026" },
+        ],
       },
       {
         term: "Tunnel de conversion",
         slug: "tunnel-de-conversion",
         category: "Conversion",
         short: "Le chemin du visiteur jusqu'au client.",
-        def: "Suite d'étapes par lesquelles passe un visiteur avant de devenir client (découverte → intérêt → contact → achat). On l'optimise pour réduire les abandons à chaque étape.",
+        def: "Suite d'étapes par lesquelles passe un visiteur avant de devenir client (découverte → intérêt → contact → achat). On l'optimise pour réduire les abandons à chaque étape. Une seule étape qui fuit plombe tout le tunnel — d'où l'intérêt de mesurer chaque maillon.",
+        links: [
+          { href: "/services/lead-generation/tunnels-de-conversion", label: "Nos tunnels de conversion" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Lire : transformer vos visiteurs en clients" },
+        ],
       },
       {
         term: "Taux de conversion",
         slug: "taux-de-conversion",
         category: "Conversion",
         short: "Le % de visiteurs qui passent à l'action.",
-        def: "Pourcentage de visiteurs qui réalisent l'action souhaitée (demande de devis, achat, inscription). Indicateur central de l'efficacité d'un site ou d'une campagne.",
+        def: "Pourcentage de visiteurs qui réalisent l'action souhaitée (demande de devis, achat, inscription). Indicateur central de l'efficacité d'un site ou d'une campagne : le doubler revient à doubler vos leads sans acheter plus de trafic.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Notre service CRO" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Lire : le tunnel de conversion" },
+        ],
       },
       {
         term: "Landing page",
         slug: "landing-page",
         category: "Conversion",
         short: "Une page faite pour une seule action.",
-        def: "Page d'atterrissage conçue autour d'un objectif unique (souvent lié à une campagne) : convertir le visiteur en lead ou en client, sans distraction.",
+        def: "Page d'atterrissage conçue autour d'un objectif unique (souvent lié à une campagne) : convertir le visiteur en lead ou en client, sans distraction. On y supprime parfois jusqu'au menu pour ne garder qu'un seul chemin vers l'action.",
+        links: [
+          { href: "/services/sites-web/landing-pages", label: "Nos landing pages" },
+          { href: "/services/lead-generation/landing-pages-campagne", label: "Landing pages de campagne" },
+        ],
       },
       {
         term: "Call-to-action (CTA)",
         slug: "cta",
         category: "Conversion",
         short: "Le bouton qui invite à agir.",
-        def: "Élément (bouton, lien) qui incite le visiteur à passer à l'étape suivante : « Réserver un appel », « Obtenir un devis ». Sa clarté et sa visibilité influencent fortement la conversion.",
+        def: "Élément (bouton, lien) qui incite le visiteur à passer à l'étape suivante : « Réserver un appel », « Obtenir un devis ». Sa clarté et sa visibilité influencent fortement la conversion. Règle d'or : un objectif par page, un CTA principal.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Notre service CRO" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Lire : l'UX/UI qui convertit" },
+        ],
       },
       {
         term: "A/B testing",
         slug: "ab-testing",
         category: "Conversion",
         short: "Comparer deux versions pour garder la meilleure.",
-        def: "Méthode qui consiste à montrer deux variantes d'une page ou d'un élément à des visiteurs différents, puis à mesurer laquelle convertit le mieux.",
+        def: "Méthode qui consiste à montrer deux variantes d'une page ou d'un élément à des visiteurs différents, puis à mesurer laquelle convertit le mieux. C'est l'outil de base de l'optimisation continue : on ne devine pas, on teste.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Notre service CRO" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Lire : mesurer pour optimiser" },
+        ],
       },
       {
         term: "Lead",
         slug: "lead",
         category: "Acquisition",
         short: "Un contact commercial potentiel.",
-        def: "Personne ou entreprise ayant manifesté un intérêt (formulaire, appel, demande de devis) et susceptible de devenir client. Un lead « qualifié » correspond bien à votre cible.",
+        def: "Personne ou entreprise ayant manifesté un intérêt (formulaire, appel, demande de devis) et susceptible de devenir client. Un lead « qualifié » correspond bien à votre cible — cent leads qualifiés valent plus que mille contacts hors sujet.",
+        links: [
+          { href: "/services/lead-generation", label: "Notre service Génération de leads" },
+          { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Lire : du visiteur au client" },
+        ],
       },
       {
         term: "Génération de leads",
         slug: "generation-de-leads",
         category: "Acquisition",
         short: "Créer un flux régulier de prospects.",
-        def: "Ensemble des actions (site, contenu, campagnes, automatisation) destinées à attirer et capturer des contacts qualifiés de façon prévisible.",
+        def: "Ensemble des actions (site, contenu, campagnes, automatisation) destinées à attirer et capturer des contacts qualifiés de façon prévisible. L'étape suivante — nurturing et scoring — transforme ces contacts en rendez-vous commerciaux.",
+        links: [
+          { href: "/services/lead-generation", label: "Notre service Génération de leads" },
+          { href: "/services/lead-generation/lead-nurturing-scoring", label: "Nurturing & scoring de leads" },
+        ],
       },
       {
         term: "SEA / Publicité payante",
         slug: "sea",
         category: "Acquisition",
         short: "Acheter de la visibilité (Google, Meta…).",
-        def: "Search Engine Advertising et publicité sur les réseaux : campagnes payantes (Google Ads, Meta, LinkedIn) qui affichent vos annonces devant une audience ciblée.",
+        def: "Search Engine Advertising et publicité sur les réseaux : campagnes payantes (Google Ads, Meta, LinkedIn) qui affichent vos annonces devant une audience ciblée. Au Luxembourg, le ciblage géographique et linguistique (FR/DE/EN) fait souvent toute la différence de rentabilité.",
+        links: [
+          { href: "/services/publicite", label: "Notre service Publicité en ligne" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Lire : Google Ads ou SEO ?" },
+        ],
       },
       {
         term: "ROAS",
         slug: "roas",
         category: "Données & mesure",
         short: "Ce que rapporte chaque euro de pub.",
-        def: "Return On Ad Spend : revenu généré pour chaque euro dépensé en publicité. Un ROAS de 4 signifie 4 € de chiffre d'affaires pour 1 € investi.",
+        def: "Return On Ad Spend : revenu généré pour chaque euro dépensé en publicité. Un ROAS de 4 signifie 4 € de chiffre d'affaires pour 1 € investi. C'est l'indicateur qu'on suit pour piloter — et couper — chaque campagne.",
+        links: [
+          { href: "/services/publicite", label: "Notre service Publicité en ligne" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Lire : où investir votre budget ?" },
+        ],
       },
       {
         term: "ROI",
         slug: "roi",
         category: "Données & mesure",
         short: "Le retour sur investissement global.",
-        def: "Return On Investment : rapport entre le gain obtenu et la somme investie. Indicateur clé pour juger la rentabilité d'une action marketing.",
+        def: "Return On Investment : rapport entre le gain obtenu et la somme investie. Indicateur clé pour juger la rentabilité d'une action marketing — et notre boussole : chaque euro investi doit être justifiable.",
+        links: [
+          { href: "/approche", label: "Notre approche orientée résultats" },
+          { href: "/news/google-ads-ou-seo-ou-investir-budget-marketing", label: "Lire : Google Ads ou SEO ?" },
+        ],
       },
       {
         term: "CPL / CPA",
         slug: "cpl-cpa",
         category: "Données & mesure",
         short: "Combien coûte un lead ou une vente.",
-        def: "Coût Par Lead (CPL) et Coût Par Acquisition (CPA) : montant moyen dépensé pour obtenir respectivement un contact qualifié ou un client. À comparer à la valeur générée.",
+        def: "Coût Par Lead (CPL) et Coût Par Acquisition (CPA) : montant moyen dépensé pour obtenir respectivement un contact qualifié ou un client. À comparer à la valeur générée : un CPL « élevé » peut être excellent si le contrat moyen l'est aussi.",
+        links: [
+          { href: "/services/publicite", label: "Notre service Publicité en ligne" },
+          { href: "/services/lead-generation", label: "Notre service Génération de leads" },
+        ],
       },
       {
         term: "KPI",
         slug: "kpi",
         category: "Données & mesure",
         short: "Les chiffres qui comptent vraiment.",
-        def: "Key Performance Indicator : indicateur clé choisi pour mesurer la progression vers un objectif (taux de conversion, coût par lead, trafic qualifié…).",
+        def: "Key Performance Indicator : indicateur clé choisi pour mesurer la progression vers un objectif (taux de conversion, coût par lead, trafic qualifié…). Le piège : suivre des vanity metrics (abonnés, impressions) qui flattent sans rien prouver.",
+        links: [
+          { href: "/approche", label: "Notre approche, pilotée par les chiffres" },
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Notre service CRO" },
+        ],
       },
       {
         term: "CTR",
         slug: "ctr",
         category: "Données & mesure",
         short: "Le % de clics sur un lien ou une annonce.",
-        def: "Click-Through Rate : proportion de personnes qui cliquent après avoir vu un lien, une annonce ou un résultat. Un CTR élevé signale un message pertinent.",
+        def: "Click-Through Rate : proportion de personnes qui cliquent après avoir vu un lien, une annonce ou un résultat. Un CTR élevé signale un message pertinent — en publicité comme en e-mail marketing, c'est le premier signal à surveiller.",
+        links: [
+          { href: "/services/publicite/google-ads", label: "Nos campagnes Google Ads" },
+          { href: "/services/lead-generation/email-marketing-automation", label: "E-mail marketing & automation" },
+        ],
       },
       {
         term: "Analytics",
         slug: "analytics",
         category: "Données & mesure",
         short: "Mesurer ce qui se passe sur votre site.",
-        def: "Outils (Google Analytics, Matomo…) qui suivent le comportement des visiteurs : sources de trafic, pages vues, conversions. La base de toute décision marketing.",
+        def: "Outils (Google Analytics, Matomo…) qui suivent le comportement des visiteurs : sources de trafic, pages vues, conversions. La base de toute décision marketing — à configurer dans le respect du RGPD, consentement compris.",
+        links: [
+          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Notre service CRO" },
+          { href: "/news/rgpd-cookies-site-web-luxembourg", label: "Lire : RGPD & cookies au Luxembourg" },
+        ],
       },
       {
         term: "CMS",
         slug: "cms",
         category: "Web & tech",
         short: "L'outil pour gérer le contenu d'un site.",
-        def: "Content Management System (ex : WordPress) : plateforme qui permet de créer et modifier les pages d'un site sans coder. Pratique pour garder la main au quotidien.",
+        def: "Content Management System (ex : WordPress) : plateforme qui permet de créer et modifier les pages d'un site sans coder. Pratique pour garder la main au quotidien. Le choix CMS ou sur-mesure dépend de votre usage réel — pas de dogme.",
+        links: [
+          { href: "/services/sites-web", label: "Notre service Sites web" },
+          { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Lire : combien coûte un site web ?" },
+        ],
       },
       {
         term: "WordPress",
         slug: "wordpress",
         category: "Web & tech",
         short: "Le CMS le plus répandu au monde.",
-        def: "Système de gestion de contenu open-source très populaire, idéal quand vous voulez éditer vos pages vous-même. Flexible grâce à ses thèmes et extensions.",
+        def: "Système de gestion de contenu open-source très populaire, idéal quand vous voulez éditer vos pages vous-même. Flexible grâce à ses thèmes et extensions. On le livre propre, sécurisé et facile à gérer quand l'autonomie éditoriale prime.",
+        links: [
+          { href: "/services/sites-web", label: "Notre service Sites web" },
+          { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Lire : sur-mesure ou WordPress ?" },
+        ],
       },
       {
         term: "Next.js",
         slug: "nextjs",
         category: "Web & tech",
         short: "Un framework web ultra-rapide.",
-        def: "Framework basé sur React, utilisé pour construire des sites très performants, sécurisés et optimisés pour le SEO. Notre choix par défaut pour le sur-mesure.",
+        def: "Framework basé sur React, utilisé pour construire des sites très performants, sécurisés et optimisés pour le SEO. Notre choix par défaut pour le sur-mesure — dont ce site, quasi instantané et pensé IA-ready.",
+        links: [
+          { href: "/services/sites-web", label: "Notre service Sites web" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Lire : la performance fait partie de l'UX" },
+        ],
       },
       {
         term: "Responsive",
         slug: "responsive",
         category: "Web & tech",
         short: "Un site qui s'adapte à tous les écrans.",
-        def: "Conception qui ajuste automatiquement la mise en page selon l'appareil (mobile, tablette, ordinateur), pour une expérience optimale partout.",
+        def: "Conception qui ajuste automatiquement la mise en page selon l'appareil (mobile, tablette, ordinateur), pour une expérience optimale partout. L'essentiel du trafic arrivant désormais sur mobile, on conçoit d'abord pour le petit écran.",
+        links: [
+          { href: "/services/sites-web", label: "Notre service Sites web" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Lire : mobile-first, pour de vrai" },
+        ],
       },
       {
         term: "Core Web Vitals",
         slug: "core-web-vitals",
         category: "Web & tech",
         short: "Les notes de Google sur la qualité technique.",
-        def: "Indicateurs de Google mesurant la vitesse de chargement, la réactivité et la stabilité visuelle d'une page. Ils influencent le référencement et l'expérience utilisateur.",
+        def: "Indicateurs de Google mesurant la vitesse de chargement, la réactivité et la stabilité visuelle d'une page. Ils influencent le référencement et l'expérience utilisateur : un site lent perd des visiteurs avant même d'être lu.",
+        links: [
+          { href: "/services/seo-geo/seo", label: "Notre service SEO" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Lire : performance & conversion" },
+        ],
       },
       {
         term: "RGPD",
         slug: "rgpd",
         category: "Web & tech",
         short: "La loi européenne sur les données.",
-        def: "Règlement Général sur la Protection des Données : cadre européen qui encadre la collecte et l'usage des données personnelles. Un site luxembourgeois doit s'y conformer (consentement, cookies…).",
+        def: "Règlement Général sur la Protection des Données : cadre européen qui encadre la collecte et l'usage des données personnelles. Un site luxembourgeois doit s'y conformer (consentement, cookies…) — au Luxembourg, c'est la CNPD qui veille à son application.",
+        links: [
+          { href: "/news/rgpd-cookies-site-web-luxembourg", label: "Lire : RGPD & cookies au Luxembourg" },
+          { href: "/services/sites-web", label: "Des sites conformes dès le départ" },
+        ],
       },
       {
         term: "Automatisation",
         slug: "automatisation",
         category: "Web & tech",
         short: "Laisser les tâches répétitives aux machines.",
-        def: "Mise en place de workflows qui exécutent automatiquement des tâches (relances, notifications, synchronisation d'outils), pour gagner du temps et réduire les erreurs.",
+        def: "Mise en place de workflows qui exécutent automatiquement des tâches (relances, notifications, synchronisation d'outils), pour gagner du temps et réduire les erreurs. Pour une PME, c'est souvent le premier pas vers l'IA — le plus rentable aussi.",
+        links: [
+          { href: "/services/automatisation-ia/automatisation-workflows", label: "Notre service Automatisation de workflows" },
+          { href: "/news/5-taches-pme-confier-a-l-ia", label: "Lire : 5 tâches à confier à l'IA" },
+        ],
       },
       {
         term: "Identité de marque",
         slug: "identite-de-marque",
         category: "Design & marque",
         short: "Ce qui rend votre marque reconnaissable.",
-        def: "Ensemble cohérent d'éléments visuels et de messages (logo, couleurs, typographie, ton) qui distingue votre entreprise et inspire confiance.",
+        def: "Ensemble cohérent d'éléments visuels et de messages (logo, couleurs, typographie, ton) qui distingue votre entreprise et inspire confiance. Le logo en est la signature ; l'identité, l'écriture entière.",
+        links: [
+          { href: "/services/branding-design/identite-visuelle", label: "Notre service Identité visuelle" },
+          { href: "/news/quest-ce-quun-bon-logo-identite-qui-dure", label: "Lire : qu'est-ce qu'un bon logo ?" },
+        ],
       },
       {
         term: "Design system",
         slug: "design-system",
         category: "Design & marque",
         short: "La boîte à outils visuelle d'une marque.",
-        def: "Bibliothèque de composants, de règles et de styles réutilisables qui garantit la cohérence d'un site ou d'un produit, et accélère sa création.",
+        def: "Bibliothèque de composants, de règles et de styles réutilisables qui garantit la cohérence d'un site ou d'un produit, et accélère sa création. C'est ce qui fait qu'une marque semble « issue de la même main » sur chaque page.",
+        links: [
+          { href: "/services/branding-design/charte-graphique", label: "Notre service Charte graphique" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Lire : cohérence & conversion" },
+        ],
       },
       {
         term: "UX / UI",
         slug: "ux-ui",
         category: "Design & marque",
         short: "L'expérience et l'interface.",
-        def: "L'UX (User Experience) concerne le ressenti et le parcours de l'utilisateur ; l'UI (User Interface) concerne l'apparence et les éléments avec lesquels il interagit. Les deux servent la conversion.",
+        def: "L'UX (User Experience) concerne le ressenti et le parcours de l'utilisateur ; l'UI (User Interface) concerne l'apparence et les éléments avec lesquels il interagit. Les deux servent la conversion : l'UX décide où va le visiteur, l'UI lui donne envie d'y aller.",
+        links: [
+          { href: "/services/sites-web", label: "Notre service Sites web" },
+          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Lire : les principes UX/UI qui convertissent" },
+        ],
       },
     ] as GlossaryTerm[],
   },
@@ -2133,7 +2431,7 @@ export const fr = {
     },
     "seo-geo": {
       intro: [
-        "Être visible ne suffit plus : il faut être trouvé sur Google et cité par les IA génératives. On travaille les deux fronts en même temps, car 80 % des bonnes pratiques sont communes.",
+        "Être visible ne suffit plus : il faut être trouvé sur Google et cité par les IA génératives. On travaille les deux fronts en même temps car, selon notre pratique, environ 80 % des bonnes pratiques sont communes.",
         "Audit technique, contenu structuré et données lisibles par les machines : on construit une présence qui performe aujourd'hui sur Google et demain dans les réponses de ChatGPT, Perplexity et Google AI.",
       ],
       included: [
@@ -2354,7 +2652,7 @@ export const fr = {
         ],
         metaTitle: "Agence LinkedIn Ads B2B à Luxembourg | vortx",
         metaDescription:
-          "Campagnes LinkedIn Ads B2B pour le marché luxembourgeois : ciblage par fonction et entreprise, Lead Gen Forms, ABM. Touchez les décideurs, générez des leads qualifiés.",
+          "Campagnes LinkedIn Ads B2B au Luxembourg : ciblage par fonction et entreprise, Lead Gen Forms, ABM. Touchez les décideurs, générez des leads qualifiés.",
         intro: [
           "En B2B, vous ne vendez pas à une entreprise : vous convainquez des personnes. LinkedIn Ads est le seul canal qui vous permet de cibler précisément les décideurs — par fonction, secteur, taille d'entreprise et même par compte nommé.",
           "On structure vos campagnes (Lead Gen Forms, contenus sponsorisés, message ads) pour parler aux bonnes personnes au bon moment, et on relie chaque lead à votre pipeline pour mesurer le vrai retour, pas juste des clics.",
@@ -2448,7 +2746,7 @@ export const fr = {
           "Reporting des citations dans les réponses IA",
         ],
         faq: [
-          { q: "Le GEO remplace-t-il le SEO ?", a: "Non, il le complète. 80 % des bonnes pratiques sont communes : un contenu structuré et fiable performe à la fois sur Google et auprès des IA. On optimise pour les deux." },
+          { q: "Le GEO remplace-t-il le SEO ?", a: "Non, il le complète. Environ 80 % des bonnes pratiques sont communes : un contenu structuré et fiable performe à la fois sur Google et auprès des IA. On optimise pour les deux." },
           { q: "Comment mesure-t-on les résultats du GEO ?", a: "On suit votre présence dans les réponses des assistants IA (citations, mentions) et l'évolution de votre autorité. C'est un domaine émergent : on avance avec méthode et transparence." },
         ],
       },
@@ -2467,7 +2765,7 @@ export const fr = {
         ],
         metaTitle: "Agence SEO local & Google Business Profile à Luxembourg | vortx",
         metaDescription:
-          "Référencement local au Luxembourg : optimisation Google Business Profile, citations, avis clients et pages locales. Captez les recherches « près de moi » dans la Grande Région.",
+          "Référencement local au Luxembourg : Google Business Profile, avis clients et pages locales. Captez les recherches « près de moi » avant vos concurrents.",
         intro: [
           "Quand un client cherche « plombier Luxembourg » ou « agence près de moi », Google affiche d'abord une carte et trois fiches. Si vous n'y êtes pas, vous êtes invisible — même premier dans les résultats classiques.",
           "Le SEO local optimise votre présence sur cette carte et dans le pack local : fiche Google Business Profile complète, cohérence de vos coordonnées partout sur le web, avis clients et balisage technique. Un levier décisif pour les commerces, artisans et services de proximité au Luxembourg et à la frontière.",
@@ -2543,7 +2841,7 @@ export const fr = {
         ],
         metaTitle: "Création de site e-commerce à Luxembourg | vortx",
         metaDescription:
-          "Création de boutiques en ligne performantes au Luxembourg : tunnel d'achat optimisé, paiements sécurisés, gestion catalogue. Un site e-commerce qui vend vraiment.",
+          "Création de boutiques en ligne performantes au Luxembourg : tunnel d'achat optimisé, paiements sécurisés, gestion catalogue. Un e-commerce qui vend.",
         intro: [
           "Une boutique en ligne ne se juge pas à son catalogue, mais à son taux de conversion. Trop de sites e-commerce perdent leurs clients entre le produit et le panier. On construit le vôtre pour les amener jusqu'au paiement, sans friction.",
           "Fiches produits convaincantes, tunnel d'achat fluide, paiements sécurisés et gestion autonome de votre catalogue : on relie le tout à vos outils (stock, livraison, comptabilité) et on suit les performances pour optimiser ce qui fait vendre.",
@@ -2580,7 +2878,7 @@ export const fr = {
         ],
         metaTitle: "Création de landing pages à Luxembourg | vortx",
         metaDescription:
-          "Création de landing pages haute conversion au Luxembourg : pages d'atterrissage rapides, mobile-first et optimisées pour vos campagnes. Plus de leads, moins de budget gaspillé.",
+          "Création de landing pages haute conversion au Luxembourg : rapides, mobile-first, optimisées pour vos campagnes. Plus de leads, moins de budget gaspillé.",
         intro: [
           "Envoyer du trafic publicitaire vers votre page d'accueil, c'est gaspiller du budget. Une landing page a un seul objectif et supprime toutes les distractions pour amener le visiteur à une action précise : remplir un formulaire, réserver, télécharger.",
           "On conçoit des pages rapides, persuasives et mobile-first, alignées sur le message de chaque campagne, puis on les teste et on les optimise pour faire grimper le taux de conversion — et baisser votre coût par lead.",
@@ -2654,7 +2952,7 @@ export const fr = {
         ],
         metaTitle: "Développement d'applications web sur-mesure à Luxembourg | vortx",
         metaDescription:
-          "Développement d'applications et plateformes web sur mesure au Luxembourg : espaces clients, back-offices, intégrations API. Digitalisez vos process, créez votre avantage.",
+          "Applications et plateformes web sur mesure au Luxembourg : espaces clients, back-offices, intégrations API. Digitalisez vos process, prenez de l'avance.",
         intro: [
           "Certains besoins dépassent le site web : un espace client, un outil de gestion interne, une plateforme qui automatise un process métier. C'est là qu'une application sur mesure devient un vrai avantage concurrentiel.",
           "On conçoit et développe des applications web rapides, sécurisées et évolutives, connectées à vos outils existants. De la cartographie du besoin jusqu'à la mise en production, on construit l'outil qui colle exactement à votre façon de travailler.",
@@ -2691,7 +2989,7 @@ export const fr = {
         ],
         metaTitle: "Création de site multilingue (FR/DE/EN) à Luxembourg | vortx",
         metaDescription:
-          "Sites multilingues natifs pour le Luxembourg : FR, DE, EN et autres langues. SEO localisé par langue (hreflang), cohérence éditoriale et UX. Parlez à tout votre marché.",
+          "Sites multilingues natifs pour le Luxembourg : FR, DE, EN et plus. SEO localisé (hreflang), cohérence éditoriale et UX. Parlez à tout votre marché.",
         intro: [
           "Le multilinguisme n'est pas une option au Luxembourg : c'est la réalité du marché. Un client qui cherche en allemand ne doit pas tomber sur une traduction approximative — ni rester invisible parce que votre site n'existe que dans une langue.",
           "On construit des sites multilingues pensés dès le départ pour ça : architecture propre, balisage hreflang correct, SEO optimisé langue par langue et cohérence éditoriale. Pas une traduction plaquée, une vraie présence dans chaque langue.",
@@ -2730,7 +3028,7 @@ export const fr = {
         ],
         metaTitle: "Création de tunnels de conversion à Luxembourg | vortx",
         metaDescription:
-          "Conception de tunnels de conversion (funnels) pour les entreprises luxembourgeoises : parcours du clic au client, tracking complet et optimisation continue. Plus de leads qualifiés.",
+          "Tunnels de conversion pour les entreprises luxembourgeoises : parcours du clic au client, tracking complet, optimisation continue. Plus de leads qualifiés.",
         intro: [
           "Vos clients ne passent pas de l'inconnu à l'achat en un clic. Ils suivent un parcours : ils découvrent, ils se renseignent, ils comparent, puis ils décident. Un tunnel de conversion accompagne ce parcours étape par étape, avec le bon message au bon moment.",
           "On cartographie ce chemin (TOFU/MOFU/BOFU), on aligne chaque page et chaque relance sur la phase concernée, et on installe un tracking complet pour savoir précisément où vous gagnez — et où vous perdez — des prospects.",
@@ -2767,7 +3065,7 @@ export const fr = {
         ],
         metaTitle: "Landing pages de campagne à Luxembourg | vortx",
         metaDescription:
-          "Création de landing pages de campagne au Luxembourg : pages dédiées, copywriting persuasif et formulaires optimisés. Convertissez chaque clic publicitaire en lead qualifié.",
+          "Landing pages de campagne au Luxembourg : pages dédiées, copywriting persuasif, formulaires optimisés. Convertissez chaque clic publicitaire en lead.",
         intro: [
           "Une campagne qui renvoie vers une page générique perd la moitié de son potentiel. À chaque message publicitaire doit correspondre une page qui le prolonge : même promesse, même audience, une seule action attendue.",
           "On crée des landing pages persuasives et rapides pour vos campagnes Google, Meta ou LinkedIn, avec un copywriting orienté bénéfice et des formulaires conçus pour maximiser le taux de réponse — pas pour décourager.",
@@ -2804,7 +3102,7 @@ export const fr = {
         ],
         metaTitle: "Email marketing & marketing automation à Luxembourg | vortx",
         metaDescription:
-          "Email marketing et marketing automation pour les entreprises luxembourgeoises : séquences de nurturing, scénarios déclenchés et intégration CRM. Convertissez vos prospects automatiquement.",
+          "Email marketing et automation au Luxembourg : séquences de nurturing, scénarios déclenchés, intégration CRM. Convertissez vos prospects en pilote automatique.",
         intro: [
           "Tous vos prospects ne sont pas prêts à acheter aujourd'hui. Sans suivi, la plupart vous oublient. L'email automation garde le lien : il informe, rassure et relance automatiquement, jusqu'à ce que le prospect soit prêt.",
           "On conçoit des séquences déclenchées par le comportement (téléchargement, visite, inactivité), on soigne la délivrabilité pour atterrir dans la boîte de réception, et on relie le tout à votre CRM pour que vos commerciaux reçoivent des leads déjà réchauffés.",
@@ -2841,7 +3139,7 @@ export const fr = {
         ],
         metaTitle: "Lead nurturing & scoring à Luxembourg | vortx",
         metaDescription:
-          "Lead nurturing et scoring pour les entreprises luxembourgeoises : notation comportementale, maturation automatisée et qualification MQL/SQL. Vos commerciaux sur les bons leads, au bon moment.",
+          "Lead nurturing et scoring au Luxembourg : notation comportementale, maturation automatisée, qualification MQL/SQL. Vos commerciaux sur les bons leads.",
         intro: [
           "Noyer vos commerciaux sous des leads non qualifiés, c'est leur faire perdre du temps et de la motivation. Le scoring résout ça : chaque lead reçoit une note selon son profil et son comportement, et ne remonte qu'une fois prêt.",
           "On définit avec vous les critères de qualification (MQL, SQL), on automatise la maturation des leads encore tièdes, et on installe une boucle de feedback avec vos commerciaux pour affiner le scoring en continu. Résultat : plus de temps sur les bonnes opportunités.",
@@ -2878,7 +3176,7 @@ export const fr = {
         ],
         metaTitle: "Optimisation du taux de conversion (CRO) à Luxembourg | vortx",
         metaDescription:
-          "Optimisation du taux de conversion (CRO) au Luxembourg : audit des freins, tests A/B, heatmaps et optimisation des formulaires. Plus de leads à trafic égal, piloté par la donnée.",
+          "Optimisation du taux de conversion (CRO) au Luxembourg : audit des freins, tests A/B, heatmaps, formulaires. Plus de leads à trafic égal, piloté par la donnée.",
         intro: [
           "Attirer plus de trafic coûte cher. Convertir mieux celui que vous avez déjà coûte bien moins — et rapporte souvent plus. Le CRO (Conversion Rate Optimization) consiste à transformer une part plus grande de vos visiteurs en leads.",
           "On analyse le comportement réel de vos visiteurs (heatmaps, enregistrements, entonnoirs), on formule des hypothèses, puis on les valide par des tests A/B. Pas d'opinion : on garde uniquement ce que la donnée prouve gagnant.",
@@ -2954,7 +3252,7 @@ export const fr = {
         ],
         metaTitle: "Identité visuelle de marque à Luxembourg | vortx",
         metaDescription:
-          "Création d'identité visuelle complète à Luxembourg : couleurs, typographies, iconographie et direction artistique. Un système cohérent qui rend votre marque reconnaissable partout.",
+          "Création d'identité visuelle complète à Luxembourg : couleurs, typographies, iconographie, direction artistique. Un système cohérent, reconnaissable partout.",
         intro: [
           "Un logo seul ne fait pas une marque. Ce qui vous rend reconnaissable, c'est la cohérence de tout le reste : vos couleurs, vos typographies, vos images, votre style. Une identité visuelle complète orchestre ces éléments en un système harmonieux.",
           "On construit ce système de A à Z : palette de couleurs, hiérarchie typographique, iconographie, motifs et direction artistique. Modulaire et évolutif, il vous donne tout pour communiquer de façon cohérente — du site web au réseau social, du print à la présentation.",
@@ -2991,7 +3289,7 @@ export const fr = {
         ],
         metaTitle: "Charte graphique & brand guidelines à Luxembourg | vortx",
         metaDescription:
-          "Création de charte graphique et brand guidelines à Luxembourg : règles d'usage du logo, couleurs, typographies et applications. Une marque cohérente, appliquée par tous.",
+          "Charte graphique et brand guidelines à Luxembourg : règles d'usage du logo, couleurs, typographies, applications. Une marque cohérente, appliquée par tous.",
         intro: [
           "Une marque perd sa force dès que chacun l'applique à sa façon : logo déformé, couleurs approximatives, typographies disparates. La charte graphique évite ça en fixant des règles claires, suivies par tous.",
           "On documente l'usage de votre marque : zones de protection du logo, codes couleurs précis, hiérarchie typographique, espacements, ton de voix et exemples concrets d'application. Un guide que vos équipes et vos prestataires peuvent suivre sans hésiter.",
@@ -3028,7 +3326,7 @@ export const fr = {
         ],
         metaTitle: "Création de supports print & papeterie à Luxembourg | vortx",
         metaDescription:
-          "Création de supports print à Luxembourg : cartes de visite, brochures, plaquettes, rapports et signalétique. Une marque cohérente du digital au papier, prête à imprimer.",
+          "Création de supports print à Luxembourg : cartes de visite, brochures, plaquettes, signalétique. Une marque cohérente du digital au papier, prête à imprimer.",
         intro: [
           "Le print n'est pas mort — il rassure. Au Luxembourg, le tissu corporate et financier reste un grand consommateur de supports imprimés soignés : une carte de visite, une plaquette ou un rapport annuel en disent long sur votre sérieux.",
           "On conçoit vos supports print dans la continuité de votre identité, prêts à imprimer (fonds perdus, profils colorimétriques, formats normalisés). Du détail de la carte de visite à la signalétique, votre marque reste cohérente sur tous les supports.",
@@ -3065,7 +3363,7 @@ export const fr = {
         ],
         metaTitle: "Stratégie de marque & naming à Luxembourg | vortx",
         metaDescription:
-          "Stratégie de marque et naming à Luxembourg : positionnement, plateforme de marque, création de nom et ton de voix multilingue. Le sens qui guide toute votre communication.",
+          "Stratégie de marque et naming à Luxembourg : positionnement, plateforme de marque, nom, ton de voix multilingue. Le sens qui guide votre communication.",
         intro: [
           "Une belle marque sans stratégie, c'est une façade sans fondations. Avant de dessiner quoi que ce soit, il faut savoir ce que vous représentez, à qui vous parlez et ce qui vous distingue. C'est le rôle de la stratégie de marque.",
           "On définit votre positionnement, votre plateforme de marque (mission, valeurs, promesse) et votre territoire d'expression. Si besoin, on crée votre nom (naming) et on pose un ton de voix cohérent — y compris en plusieurs langues, comme l'exige le marché luxembourgeois.",
@@ -3104,7 +3402,7 @@ export const fr = {
         ],
         metaTitle: "Automatisation des workflows à Luxembourg | vortx",
         metaDescription:
-          "Automatisation des workflows pour les entreprises luxembourgeoises : Make, n8n, Zapier. Connectez vos outils, supprimez les tâches manuelles et gagnez des heures chaque semaine.",
+          "Automatisation des workflows au Luxembourg : Make, n8n, Zapier. Connectez vos outils, supprimez les tâches manuelles, gagnez des heures chaque semaine.",
         intro: [
           "Combien d'heures vos équipes passent-elles à copier des données d'un outil à l'autre, à relancer, à notifier, à mettre à jour des tableaux ? Ces tâches répétitives coûtent cher et génèrent des erreurs. L'automatisation les fait disparaître.",
           "On cartographie vos process, on identifie ce qui peut être automatisé, puis on connecte vos outils (Make, n8n, Zapier) avec des scénarios sur mesure. Le tout supervisé, avec des alertes en cas d'incident — pour que ça tourne sans surprise.",
@@ -3141,7 +3439,7 @@ export const fr = {
         ],
         metaTitle: "Agents & assistants IA sur mesure à Luxembourg | vortx",
         metaDescription:
-          "Création d'agents et assistants IA sur mesure à Luxembourg : connectés à vos données (RAG), capables d'agir, avec garde-fous. L'IA qui travaille vraiment pour votre entreprise.",
+          "Agents et assistants IA sur mesure à Luxembourg : connectés à vos données (RAG), capables d'agir, avec garde-fous. L'IA qui travaille vraiment pour vous.",
         intro: [
           "Un agent IA ne se contente pas de répondre : il comprend une demande, va chercher l'information dans vos données, raisonne et exécute des actions. C'est la différence entre un gadget et un véritable collaborateur numérique.",
           "On conçoit des agents et assistants entraînés sur votre contexte (vos documents, vos process), connectés à vos outils, avec une base de connaissances (RAG) et des garde-fous : validation humaine sur les actions sensibles, respect du RGPD, traçabilité.",
@@ -3215,7 +3513,7 @@ export const fr = {
         ],
         metaTitle: "Intégrations CRM & API à Luxembourg | vortx",
         metaDescription:
-          "Intégrations CRM et API pour les entreprises luxembourgeoises : HubSpot, Salesforce, Pipedrive. Synchronisez vos outils, supprimez les silos et les doubles saisies.",
+          "Intégrations CRM et API au Luxembourg : HubSpot, Salesforce, Pipedrive. Synchronisez vos outils, supprimez les silos et les doubles saisies.",
         intro: [
           "Vos données sont éparpillées : un lead dans le formulaire du site, un autre dans le tableur, un troisième dans le CRM. Cette dispersion fait perdre du temps, crée des erreurs et fait passer des opportunités à la trappe.",
           "On connecte vos outils pour qu'ils parlent le même langage : votre site alimente votre CRM, votre CRM se synchronise avec vos logiciels métier, et tout se met à jour en temps réel. Via des connecteurs existants ou des API sur mesure quand c'est nécessaire.",
@@ -3252,7 +3550,7 @@ export const fr = {
         ],
         metaTitle: "IA générative pour le contenu à Luxembourg | vortx",
         metaDescription:
-          "IA générative pour le contenu à Luxembourg : articles, newsletters, emails et visuels à votre ton de marque, en plusieurs langues. Produisez plus, sans sacrifier la qualité.",
+          "IA générative pour le contenu à Luxembourg : articles, newsletters, emails, visuels à votre ton de marque, multilingue. Produisez plus sans perdre en qualité.",
         intro: [
           "Produire du contenu de qualité, régulièrement et en plusieurs langues, c'est un défi de temps et de moyens. L'IA générative change la donne : elle accélère la production tout en gardant votre voix — à condition d'être bien encadrée.",
           "On met en place des workflows de génération sur mesure (articles, emails, visuels social media) entraînés sur votre ton de marque, avec une étape de validation éditoriale humaine. Produire plus, plus vite, sans tomber dans le contenu générique.",
@@ -3390,7 +3688,7 @@ export const fr = {
       {
         title: "SEO & GEO",
         items: [
-          { q: "Quelle différence entre SEO et GEO ?", a: "Le SEO vous place dans la liste des résultats de Google ; le GEO (Generative Engine Optimization) vous place dans la réponse générée par une IA comme ChatGPT ou Perplexity. On optimise pour les deux, car 80 % des bonnes pratiques sont communes." },
+          { q: "Quelle différence entre SEO et GEO ?", a: "Le SEO vous place dans la liste des résultats de Google ; le GEO (Generative Engine Optimization) vous place dans la réponse générée par une IA comme ChatGPT ou Perplexity. On optimise pour les deux, car environ 80 % des bonnes pratiques sont communes." },
           { q: "Le GEO, c'est du concret ou un effet de mode ?", a: "C'est très concret : de plus en plus de décideurs posent leurs questions à une IA plutôt qu'à Google. Si vous n'apparaissez pas dans la réponse, vous n'existez pas dans la décision. On structure votre contenu pour être cité comme source." },
           { q: "En combien de temps voit-on des résultats en SEO ?", a: "Le SEO/GEO est un travail de fond : les premiers signaux apparaissent souvent en quelques semaines, les gains solides en quelques mois. On vous montre la progression à chaque étape, sans promesse magique." },
           { q: "Travaillez-vous le référencement en plusieurs langues ?", a: "Oui, FR/DE/EN nativement. C'est essentiel au Luxembourg où vos clients comparent dans les trois langues." },
@@ -3496,7 +3794,7 @@ export const fr = {
     work: {
       title: "Réalisations | vortx Luxembourg",
       description:
-        "Découvrez les projets et résultats de vortx, agence marketing et web au Luxembourg.",
+        "Sites web pour garages, artisans et PME, web apps et branding : les réalisations de vortx, agence marketing & web au Luxembourg. Parlons de votre projet.",
     },
     contact: {
       title: "Contact & audit gratuit | vortx Luxembourg",
@@ -3529,12 +3827,12 @@ export const fr = {
     faq: {
       title: "FAQ — Sites web, SEO, leads & tarifs | vortx Luxembourg",
       description:
-        "Toutes les réponses sur nos sites web, le SEO & GEO, la génération de leads, la publicité, l'IA, les tarifs, les délais et le RGPD. Agence marketing & web à Luxembourg.",
+        "Sites web, SEO & GEO, leads, publicité, IA, tarifs, délais, RGPD : toutes les réponses avant de démarrer avec vortx, agence marketing & web à Luxembourg.",
     },
     quiz: {
       title: "Quiz : testez votre QI marketing | vortx Luxembourg",
       description:
-        "Marketing, web, SEO, GEO, publicité, IA : 10 questions tirées au hasard pour tester vos connaissances. Obtenez votre note et un verdict. C'est gratuit et ça pique un peu.",
+        "Marketing, web, SEO, GEO, publicité, IA : 10 questions pour tester vos connaissances. Obtenez votre note et un verdict. Gratuit — et ça pique un peu.",
     },
   },
 

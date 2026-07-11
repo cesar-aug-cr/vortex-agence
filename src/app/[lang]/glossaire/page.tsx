@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
+import { site } from "@/lib/site";
+import { localized } from "@/lib/locale";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -47,16 +49,19 @@ export default async function GlossairePage({
     }
   }
 
+  const glossaryUrl = `${site.url}${localized(lang, "/glossaire")}`;
   const definedTermSetJsonLd = {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
+    "@id": glossaryUrl,
     name: dict.meta.glossary.title,
     description: dict.glossary.lead,
     hasDefinedTerm: dict.glossary.terms.map((t) => ({
       "@type": "DefinedTerm",
       name: t.term,
       description: t.def,
-      inDefinedTermSet: dict.meta.glossary.title,
+      url: `${glossaryUrl}#${t.slug}`,
+      inDefinedTermSet: glossaryUrl,
     })),
   };
 
@@ -90,6 +95,7 @@ export default async function GlossairePage({
 
             <GlossaryList
               terms={dict.glossary.terms}
+              lang={lang}
               searchPlaceholder={dict.glossary.searchPlaceholder}
               countSuffix={dict.glossary.countSuffix}
               emptyLabel={dict.glossary.emptyLabel}
