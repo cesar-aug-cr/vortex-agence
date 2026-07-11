@@ -40,13 +40,20 @@ export async function generateMetadata({
   return buildMetadata({
     lang,
     path: `/news/${slug}`,
-    title: `${article.title} | ${dict.nav.news} vortx`,
-    description: article.excerpt,
+    title: `${article.title} | vortx`,
+    description: article.metaDescription || article.excerpt,
   });
 }
 
-function formatDate(iso: string) {
-  return new Intl.DateTimeFormat("fr-FR", {
+const DATE_LOCALE: Record<Locale, string> = {
+  fr: "fr-FR",
+  en: "en-GB",
+  de: "de-DE",
+  es: "es-ES",
+};
+
+function formatDate(iso: string, lang: Locale) {
+  return new Intl.DateTimeFormat(DATE_LOCALE[lang] ?? "fr-FR", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -81,7 +88,7 @@ export default async function ArticlePage({
     "@type": "Article",
     headline: article.title,
     description: article.excerpt,
-    image: `${site.url}/opengraph-image`,
+    image: `${shareUrl}/opengraph-image`,
     datePublished: article.date,
     dateModified: article.updated ?? article.date,
     author: { "@type": "Organization", name: article.author },
@@ -136,7 +143,7 @@ export default async function ArticlePage({
             <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-text-muted">
               <span>{dict.news.by} {article.author}</span>
               <span aria-hidden>·</span>
-              <span>{dict.news.publishedOn} {formatDate(article.date)}</span>
+              <span>{dict.news.publishedOn} {formatDate(article.date, lang)}</span>
               <span aria-hidden>·</span>
               <span>{article.readingMinutes} {dict.news.readingTime}</span>
             </div>

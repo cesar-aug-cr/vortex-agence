@@ -6,8 +6,15 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { featureIcons } from "@/components/illustrations/icons";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/icons";
 
-function formatDate(iso: string) {
-  return new Intl.DateTimeFormat("fr-FR", {
+const DATE_LOCALE: Record<Locale, string> = {
+  fr: "fr-FR",
+  en: "en-GB",
+  de: "de-DE",
+  es: "es-ES",
+};
+
+function formatDate(iso: string, lang: Locale) {
+  return new Intl.DateTimeFormat(DATE_LOCALE[lang] ?? "fr-FR", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -53,7 +60,7 @@ export function NewsTeaser({ dict, lang }: { dict: Dictionary; lang: Locale }) {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <span className="font-mono text-xs text-text-muted">
-                  {formatDate(a.date)} · {a.readingMinutes} {dict.news.readingTime}
+                  {formatDate(a.date, lang)} · {a.readingMinutes} {dict.news.readingTime}
                 </span>
                 <h3 className="mt-3 text-lg font-semibold leading-snug text-text transition-colors group-hover:text-accent">
                   {a.title}
