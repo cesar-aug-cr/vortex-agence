@@ -11,7 +11,6 @@ import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
 import { LeadGen } from "@/components/sections/LeadGen";
 import { ProcessGeo } from "@/components/sections/ProcessGeo";
-import { Tools } from "@/components/sections/Tools";
 import { Proof } from "@/components/sections/Proof";
 import { Reviews } from "@/components/sections/Reviews";
 import { NewsTeaser } from "@/components/sections/NewsTeaser";
@@ -43,9 +42,8 @@ export default async function HomeTestPage({
           <HeroTestBH dict={dict} lang={lang} />
           <WhyVortx dict={dict} />
           <Services dict={dict} lang={lang} />
-          <LeadGen dict={dict} />
+          <LeadGen dict={dict} lang={lang} />
           <ProcessGeo dict={dict} />
-          <Tools dict={dict} />
           <Proof dict={dict} />
           <Reviews dict={dict} />
           <NewsTeaser dict={dict} lang={lang} />

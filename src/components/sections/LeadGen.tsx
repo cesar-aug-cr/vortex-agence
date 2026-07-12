@@ -1,12 +1,15 @@
 import { Fragment } from "react";
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
+import type { Locale } from "@/i18n/config";
+import { localized } from "@/lib/locale";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Check, ArrowRight } from "@/components/ui/icons";
 
 // Funnel segment widths (mobile): widest at the top, narrowest at the bottom.
 const FUNNEL_WIDTHS = ["100%", "82%", "64%", "48%"];
 
-export function LeadGen({ dict }: { dict: Dictionary }) {
+export function LeadGen({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
     <Section tone="base">
       <SectionHeading eyebrow={dict.leadgen.eyebrow} title={dict.leadgen.title} lead={dict.leadgen.lead} />
@@ -55,6 +58,12 @@ export function LeadGen({ dict }: { dict: Dictionary }) {
                 </li>
               ))}
             </ul>
+            {/* Mid-page conversion point — the hero CTA is 4 sections away and
+                the sticky pill is mobile-only, so desktop needs an action here. */}
+            <Link href={localized(lang, "/contact")} className="btn btn-primary mt-7 w-full sm:w-auto">
+              {dict.common.auditCta}
+              <ArrowRight width={18} height={18} />
+            </Link>
           </div>
 
           {/* funnel — directly under the solution. Horizontal flow on desktop,

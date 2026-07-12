@@ -39,7 +39,6 @@ export function PortfolioCoverflow({
   alts?: Record<string, string>;
 }) {
   const typewriterTexts = copy.typewriter;
-  const [isDark, setIsDark] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [currentText, setCurrentText] = useState("");
@@ -65,16 +64,6 @@ export function PortfolioCoverflow({
       mq.removeEventListener("change", update);
       obs.disconnect();
     };
-  }, []);
-
-  // Track the vortx theme (class "dark" on <html>).
-  useEffect(() => {
-    const el = document.documentElement;
-    const update = () => setIsDark(el.classList.contains("dark"));
-    update();
-    const obs = new MutationObserver(update);
-    obs.observe(el, { attributes: true, attributeFilter: ["class"] });
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -169,7 +158,7 @@ export function PortfolioCoverflow({
         {particles.map((p) => (
           <div
             key={p.id}
-            className={`absolute rounded-full ${isDark ? "bg-white/20" : "bg-accent-2/25"}`}
+            className="absolute rounded-full bg-accent-2/25 dark:bg-white/20"
             style={{
               left: `${p.x}%`,
               top: `${p.y}%`,
@@ -186,39 +175,21 @@ export function PortfolioCoverflow({
       {/* Glow lines (lime / cyan) */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
-          className={`absolute top-1/4 -left-20 h-[2px] w-[600px] ${
-            isDark
-              ? "bg-gradient-to-r from-transparent via-accent-2/40 to-transparent"
-              : "bg-gradient-to-r from-transparent via-accent-2/25 to-transparent"
-          }`}
+          className="absolute top-1/4 -left-20 h-[2px] w-[600px] bg-gradient-to-r from-transparent via-accent-2/25 to-transparent dark:via-accent-2/40"
           style={{ transform: `translateX(${scrollY * 0.2}px) rotate(45deg)` }}
         />
         <div
-          className={`absolute bottom-1/3 -right-20 h-[2px] w-[500px] ${
-            isDark
-              ? "bg-gradient-to-r from-transparent via-accent/40 to-transparent"
-              : "bg-gradient-to-r from-transparent via-accent/30 to-transparent"
-          }`}
+          className="absolute bottom-1/3 -right-20 h-[2px] w-[500px] bg-gradient-to-r from-transparent via-accent/30 to-transparent dark:via-accent/40"
           style={{ transform: `translateX(${-scrollY * 0.15}px) rotate(-45deg)` }}
         />
       </div>
 
       {/* Carousel */}
       <div className="relative flex h-[400px] items-center justify-center md:h-[520px] lg:h-[600px]">
-        <div
-          className={`absolute left-0 top-0 bottom-0 z-20 w-16 md:w-32 pointer-events-none ${
-            isDark
-              ? "bg-gradient-to-r from-[#09090c] to-transparent"
-              : "bg-gradient-to-r from-[#f7f8f4] to-transparent"
-          }`}
-        />
-        <div
-          className={`absolute right-0 top-0 bottom-0 z-20 w-16 md:w-32 pointer-events-none ${
-            isDark
-              ? "bg-gradient-to-l from-[#09090c] to-transparent"
-              : "bg-gradient-to-l from-[#f7f8f4] to-transparent"
-          }`}
-        />
+        {/* Edge fades — from-bg tracks the section background in both themes,
+            so no JS theme detection (no pre-hydration dark flash). */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-16 bg-gradient-to-r from-bg to-transparent md:w-32" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-16 bg-gradient-to-l from-bg to-transparent md:w-32" />
 
         <div className="relative flex h-full w-full items-center justify-center">
           {showcaseSites.map((site, index) => {
@@ -269,24 +240,17 @@ export function PortfolioCoverflow({
       {/* Floating typewriter card */}
       <div className="relative z-30 -mt-20 px-4 md:-mt-32 lg:-mt-40">
         <div
-          className={`spotlight-card mx-auto max-w-md rounded-2xl border border-transparent p-6 text-center shadow-2xl md:p-8 ${
-            isDark ? "bg-black/40" : "bg-white/70"
-          }`}
+          className="spotlight-card mx-auto max-w-md rounded-2xl border border-transparent bg-white/70 p-6 text-center shadow-2xl dark:bg-black/40 md:p-8"
           style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
         >
           <span className="glass-ring" aria-hidden />
-          <h3
-            className={`mb-6 h-[1.5em] whitespace-nowrap text-center text-xl font-bold leading-tight md:text-2xl ${
-              isDark ? "text-white" : "text-[#0a0a0b]"
-            }`}
-          >
+          {/* Decorative rotating slogan — a <p>, not a heading (it starts
+              empty at SSR and its content cycles). Two lines reserved so the
+              ~32-char sentences wrap instead of clipping on small screens. */}
+          <p className="mb-6 min-h-[2.5em] text-center text-xl font-bold leading-tight text-text md:text-2xl">
             {currentText}
-            <span
-              className={`ml-1 inline-block h-[0.8em] w-[2px] animate-pulse align-middle ${
-                isDark ? "bg-white" : "bg-[#0a0a0b]"
-              }`}
-            />
-          </h3>
+            <span className="ml-1 inline-block h-[0.8em] w-[2px] animate-pulse bg-text align-middle" />
+          </p>
           <a
             href="#contact"
             className="block w-full rounded-xl bg-gradient-to-r from-accent to-accent-2 py-4 text-center text-lg font-semibold text-accent-ink shadow-lg shadow-accent/25 transition-all hover:opacity-90"
@@ -303,11 +267,7 @@ export function PortfolioCoverflow({
           onClick={() =>
             setActiveIndex((prev) => (prev - 1 + showcaseSites.length) % showcaseSites.length)
           }
-          className={`relative flex h-12 w-12 items-center justify-center rounded-full border border-transparent backdrop-blur-md transition-colors hover:border-accent ${
-            isDark
-              ? "bg-white/10 text-white hover:text-accent"
-              : "bg-text/5 text-text-dim hover:text-text"
-          }`}
+          className="relative flex h-12 w-12 items-center justify-center rounded-full border border-transparent bg-text/5 text-text-dim backdrop-blur-md transition-colors hover:border-accent hover:text-text dark:bg-white/10 dark:text-white dark:hover:text-accent"
           aria-label={copy.prev}
         >
           <span className="glass-ring" aria-hidden />
@@ -319,11 +279,7 @@ export function PortfolioCoverflow({
         <button
           type="button"
           onClick={() => setIsPaused((prev) => !prev)}
-          className={`relative flex h-14 w-14 items-center justify-center rounded-full border border-transparent backdrop-blur-md transition-colors hover:border-accent ${
-            isDark
-              ? "bg-white/10 text-white hover:text-accent"
-              : "bg-text/5 text-text hover:text-text"
-          }`}
+          className="relative flex h-14 w-14 items-center justify-center rounded-full border border-transparent bg-text/5 text-text backdrop-blur-md transition-colors hover:border-accent dark:bg-white/10 dark:text-white dark:hover:text-accent"
           aria-label={isPaused ? copy.play : copy.pause}
         >
           <span className="glass-ring" aria-hidden />
@@ -341,11 +297,7 @@ export function PortfolioCoverflow({
         <button
           type="button"
           onClick={() => setActiveIndex((prev) => (prev + 1) % showcaseSites.length)}
-          className={`relative flex h-12 w-12 items-center justify-center rounded-full border border-transparent backdrop-blur-md transition-colors hover:border-accent ${
-            isDark
-              ? "bg-white/10 text-white hover:text-accent"
-              : "bg-text/5 text-text-dim hover:text-text"
-          }`}
+          className="relative flex h-12 w-12 items-center justify-center rounded-full border border-transparent bg-text/5 text-text-dim backdrop-blur-md transition-colors hover:border-accent hover:text-text dark:bg-white/10 dark:text-white dark:hover:text-accent"
           aria-label={copy.next}
         >
           <span className="glass-ring" aria-hidden />
