@@ -3844,11 +3844,17 @@ export const fr = {
       lead: "Nous l'étudions et revenons vers vous rapidement avec une première analyse — sans engagement.",
       cta: "Retour à l'accueil",
       metaTitle: "Merci | vortx Luxembourg",
+      quizLead: "En attendant notre réponse, découvrez où en est votre marketing.",
+      quizCta: "Faire le quiz",
     },
     notFound: {
       title: "Page introuvable",
-      lead: "La page que vous cherchez n'existe pas ou a été déplacée.",
+      lead: "Cette page a franchi l'horizon des événements — elle n'existe pas ou a été déplacée.",
       cta: "Retour à l'accueil",
+      didYouMean: "Vous cherchiez peut-être :",
+      explore: "Pages utiles",
+      contactLead: "Vous ne trouvez pas ce que vous cherchez ?",
+      contactCta: "Écrivez-nous",
     },
     legalUpdated: "Dernière mise à jour : à compléter",
     legalTodo:

@@ -3820,11 +3820,17 @@ export const de = {
       lead: "Wir prüfen sie und melden uns rasch mit einer ersten Analyse zurück — unverbindlich.",
       cta: "Zurück zur Startseite",
       metaTitle: "Danke | vortx Luxemburg",
+      quizLead: "Während Sie auf unsere Antwort warten: Finden Sie heraus, wo Ihr Marketing steht.",
+      quizCta: "Zum Quiz",
     },
     notFound: {
       title: "Seite nicht gefunden",
-      lead: "Die Seite, die Sie suchen, existiert nicht oder wurde verschoben.",
+      lead: "Diese Seite hat den Ereignishorizont überquert — sie existiert nicht oder wurde verschoben.",
       cta: "Zurück zur Startseite",
+      didYouMean: "Meinten Sie vielleicht:",
+      explore: "Nützliche Seiten",
+      contactLead: "Sie finden nicht, was Sie suchen?",
+      contactCta: "Schreiben Sie uns",
     },
     legalUpdated: "Letzte Aktualisierung: noch zu ergänzen",
     legalTodo:

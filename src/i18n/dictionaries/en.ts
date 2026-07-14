@@ -3819,11 +3819,17 @@ export const en = {
       lead: "We're reviewing it and will get back to you quickly with an initial analysis — no commitment.",
       cta: "Back to home",
       metaTitle: "Thank you | vortx Luxembourg",
+      quizLead: "While you wait for our reply, find out where your marketing stands.",
+      quizCta: "Take the quiz",
     },
     notFound: {
       title: "Page not found",
-      lead: "The page you're looking for doesn't exist or has been moved.",
+      lead: "This page crossed the event horizon — it doesn't exist or has been moved.",
       cta: "Back to home",
+      didYouMean: "Were you looking for:",
+      explore: "Useful pages",
+      contactLead: "Can't find what you're looking for?",
+      contactCta: "Write to us",
     },
     legalUpdated: "Last updated: to be completed",
     legalTodo:

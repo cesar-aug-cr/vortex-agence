@@ -136,7 +136,7 @@ export function HyperspaceWarp({ label }: { label?: string }) {
     const u1f = (p: WebGLProgram, n: string, v: number) =>
       gl.uniform1f(gl.getUniformLocation(p, n), v);
 
-    const N = 3000;
+    const N = 1000;
     const ids = new Float32Array(N);
     for (let i = 0; i < N; i++) ids[i] = i;
     const streakData = new Float32Array(N * 4);

@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
 import { SpotlightCards } from "@/components/ui/SpotlightCards";
 import { StickyCta } from "@/components/layout/StickyCta";
-import { Hero } from "@/components/sections/Hero";
+import { HeroTestBH } from "@/components/sections/HeroTestBH";
 import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
 import { LeadGen } from "@/components/sections/LeadGen";
@@ -32,7 +32,7 @@ export default async function HomePage({
         <AmbientGlow />
         <SpotlightCards />
         <main>
-          <Hero dict={dict} lang={lang} sandbox />
+          <HeroTestBH dict={dict} lang={lang} />
           <WhyVortx dict={dict} />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} lang={lang} />

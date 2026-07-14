@@ -9,10 +9,9 @@ import { HeroParticles } from "@/components/sections/HeroParticles";
 import { GlowStar } from "@/components/sections/GlowStar";
 
 /**
- * /home-test sandbox hero: identical to Hero.tsx, but the particle black hole
- * is replaced by the image-disk version from /test-bh (TestBHScene), placed at
- * the same hero position/scale. The image scene handles the light-theme white
- * event horizon itself, so no `sandbox` prop is needed.
+ * Homepage hero with the image-disk black hole (TestBHScene). Formerly the
+ * /home-test sandbox; promoted to the real home. The image scene handles the
+ * light-theme white event horizon itself, so no `sandbox` prop is needed.
  */
 
 const T = "var(--hero-tint, 7,7,10)";

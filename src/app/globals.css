@@ -1099,6 +1099,10 @@ html:not(.dark) .ai-summary:not(.ai-summary-revealing) {
   animation: marquee 38s linear infinite;
   will-change: transform;
 }
+/* Footer tools marquee: slower, calmer scroll than the /agence one. */
+.marquee-track.marquee-slow {
+  animation-duration: 60s;
+}
 .marquee-track:hover {
   animation-play-state: paused;
 }
@@ -1330,6 +1334,43 @@ html:not(.dark) .test-home #approche .adn-ambient {
   background-image:
     radial-gradient(50% 55% at 20% 50%, rgba(178, 220, 20, 0.38), transparent 70%),
     radial-gradient(45% 45% at 82% 30%, rgba(178, 220, 20, 0.34), transparent 70%);
+}
+
+/* Thank-you page: lime/cyan pulse rings radiating from the success check. */
+.thanks-check::before,
+.thanks-check::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid rgba(200, 240, 46, 0.55);
+  animation: thanks-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.thanks-check::after {
+  border-color: rgba(20, 224, 200, 0.5);
+  animation-delay: 1.2s;
+}
+@keyframes thanks-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thanks-check::before,
+  .thanks-check::after {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 /* "ADN" section (ProcessGeo, tone=stage) flipped to a light surface. */

@@ -27,6 +27,11 @@ function preferredLocale(req: NextRequest): string {
 export function proxy(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
 
+  // Forward the pathname as a request header: the not-found boundary renders
+  // without route params, so this is how it knows which locale's copy to use.
+  const headers = new Headers(req.headers);
+  headers.set("x-pathname", pathname);
+
   const lang = i18n.locales.find(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
   );
@@ -42,7 +47,9 @@ export function proxy(req: NextRequest) {
 
   // Locale present → handle localized slugs. `rest` is the path after /<lang>.
   const rest = pathname.slice(`/${lang}`.length);
-  if (rest === "" || rest === "/") return; // homepage
+  if (rest === "" || rest === "/") {
+    return NextResponse.next({ request: { headers } }); // homepage
+  }
 
   const canonRest = canonicalizePath(lang, rest); // → real folder path
   const prefRest = localizePath(lang, canonRest); // → preferred public path
@@ -57,10 +64,12 @@ export function proxy(req: NextRequest) {
 
   // Correct public form that maps to a different folder → rewrite internally.
   if (canonRest !== rest) {
-    return NextResponse.rewrite(new URL(`/${lang}${canonRest}${search}`, req.url));
+    return NextResponse.rewrite(new URL(`/${lang}${canonRest}${search}`, req.url), {
+      request: { headers },
+    });
   }
 
-  return;
+  return NextResponse.next({ request: { headers } });
 }
 
 export const config = {

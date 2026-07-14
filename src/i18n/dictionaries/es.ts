@@ -3814,11 +3814,17 @@ export const es = {
       lead: "La estudiamos y le responderemos rápidamente con un primer análisis — sin compromiso.",
       cta: "Volver al inicio",
       metaTitle: "Gracias | vortx Luxemburgo",
+      quizLead: "Mientras espera nuestra respuesta, descubra en qué punto está su marketing.",
+      quizCta: "Hacer el quiz",
     },
     notFound: {
       title: "Página no encontrada",
-      lead: "La página que busca no existe o ha sido movida.",
+      lead: "Esta página cruzó el horizonte de sucesos — no existe o ha sido movida.",
       cta: "Volver al inicio",
+      didYouMean: "Quizás buscaba:",
+      explore: "Páginas útiles",
+      contactLead: "¿No encuentra lo que busca?",
+      contactCta: "Escríbanos",
     },
     legalUpdated: "Última actualización: por completar",
     legalTodo:

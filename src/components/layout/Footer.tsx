@@ -24,7 +24,7 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         }}
       >
-        <div className="marquee-track">
+        <div className="marquee-track marquee-slow">
           {marquee.map((item, i) => (
             <span key={`${item}-${i}`} className="mx-5 font-mono text-xs uppercase tracking-widest text-stage-text-dim">
               {item}
