@@ -295,7 +295,7 @@ export const fr = {
     eyebrow: "Notre arsenal",
     title: "Les meilleurs outils, maîtrisés en profondeur.",
     lead: "Marketing, code, IA, design. On choisit l'outil pour le résultat, pas l'inverse.",
-    stat: { value: "42+", label: "outils maîtrisés" },
+    stat: { value: "44+", label: "outils maîtrisés" },
     categories: [
       {
         name: "Marketing digital",
@@ -309,15 +309,15 @@ export const fr = {
           "Bing Webmaster",
           "Ahrefs",
           "Semrush",
-          "Whatagraph",
           "Google My Business",
           "Mailchimp",
           "SendGrid",
+          "Resend",
         ],
       },
       {
         name: "Web & code",
-        items: ["WordPress", "Divi", "CSS", "HTML"],
+        items: ["WordPress", "Divi", "Elementor", "CSS", "HTML"],
       },
       {
         name: "IA & automatisation",
@@ -326,6 +326,7 @@ export const fr = {
           "ChatGPT",
           "Perplexity",
           "Zapier",
+          "n8n",
           "IA édition d'images",
         ],
       },
@@ -339,7 +340,7 @@ export const fr = {
           "Affinity",
           "Figma",
           "UI/UX",
-          "Maquettes",
+          "Croquis",
         ],
       },
       {

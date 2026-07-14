@@ -14,14 +14,7 @@ export function ProcessGeo({ dict }: { dict: Dictionary }) {
   return (
     <Section id="approche" tone="stage" className="overflow-hidden">
       {/* ambient glow — bleeds so the stage feels continuous */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0"
-        aria-hidden
-        style={{
-          backgroundImage:
-            "radial-gradient(50% 55% at 20% 50%, rgba(20,224,200,0.12), transparent 70%), radial-gradient(45% 45% at 82% 30%, rgba(200,240,46,0.09), transparent 70%)",
-        }}
-      />
+      <div className="adn-ambient pointer-events-none absolute inset-0 z-0" aria-hidden />
 
       {/* DNA helix — full-bleed background, same diagonal as the original Geo,
           passes BEHIND everything (bottom-left → top-right, ends fade out) */}

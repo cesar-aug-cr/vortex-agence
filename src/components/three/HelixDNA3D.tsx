@@ -11,10 +11,9 @@ function HelixStrands({ steps = 200, animate = true }: { steps?: number; animate
     const s2 = new Float32Array(steps * 3);
     const c1 = new Float32Array(steps * 3);
     const c2 = new Float32Array(steps * 3);
-    // Brand-tuned gradient: lime → cyan → lime
+    // One strand lime, the other cyan; rungs blend between the two.
     const lime = new THREE.Color("#c8f02e");
     const cyan = new THREE.Color("#14e0c8");
-    const teal = new THREE.Color("#3ad6a0");
 
     // All "rungs" are accumulated into a single buffer → one draw call instead
     // of ~20 separate <points> (one per bridge).
@@ -35,13 +34,8 @@ function HelixStrands({ steps = 200, animate = true }: { steps?: number; animate
       s2[i3 + 1] = y;
       s2[i3 + 2] = Math.sin(t + Math.PI) * r;
 
-      const frac = i / steps;
-      const col =
-        frac < 0.5
-          ? lime.clone().lerp(cyan, frac * 2)
-          : cyan.clone().lerp(teal, (frac - 0.5) * 2);
-      c1[i3] = col.r; c1[i3 + 1] = col.g; c1[i3 + 2] = col.b;
-      c2[i3] = col.r; c2[i3 + 1] = col.g; c2[i3 + 2] = col.b;
+      c1[i3] = lime.r; c1[i3 + 1] = lime.g; c1[i3 + 2] = lime.b;
+      c2[i3] = cyan.r; c2[i3 + 1] = cyan.g; c2[i3 + 2] = cyan.b;
 
       if (i % 10 === 0 && i < steps - 1) {
         const bSteps = 8;
@@ -52,6 +46,7 @@ function HelixStrands({ steps = 200, animate = true }: { steps?: number; animate
             y,
             s1[i3 + 2] + (s2[i3 + 2] - s1[i3 + 2]) * f
           );
+          const col = lime.clone().lerp(cyan, f);
           bc.push(col.r, col.g, col.b);
         }
       }
@@ -92,58 +87,9 @@ function HelixStrands({ steps = 200, animate = true }: { steps?: number; animate
           <bufferAttribute attach="attributes-position" args={[bridgePos, 3]} count={bridgePos.length / 3} />
           <bufferAttribute attach="attributes-color" args={[bridgeCol, 3]} count={bridgeCol.length / 3} />
         </bufferGeometry>
-        <pointsMaterial size={0.04} vertexColors transparent opacity={0.5} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} />
+        <pointsMaterial size={0.055} vertexColors transparent opacity={0.5} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} />
       </points>
     </group>
-  );
-}
-
-function TravelingParticles({ count = 80 }) {
-  const points = useRef<THREE.Points>(null);
-  const offsets = useMemo(() => {
-    const o = new Float32Array(count);
-    for (let i = 0; i < count; i++) o[i] = i / count;
-    return o;
-  }, [count]);
-
-  const positions = useMemo(() => new Float32Array(count * 3), [count]);
-  const colors = useMemo(() => {
-    const c = new Float32Array(count * 3);
-    const lime = new THREE.Color("#c8f02e");
-    const cyan = new THREE.Color("#14e0c8");
-    for (let i = 0; i < count; i++) {
-      const col = i % 2 === 0 ? lime : cyan;
-      c[i * 3] = col.r; c[i * 3 + 1] = col.g; c[i * 3 + 2] = col.b;
-    }
-    return c;
-  }, [count]);
-
-  useFrame(({ clock }) => {
-    if (!points.current) return;
-    const t = clock.getElapsedTime();
-    const pos = points.current.geometry.attributes.position.array as Float32Array;
-
-    for (let i = 0; i < count; i++) {
-      const i3 = i * 3;
-      const progress = (offsets[i] + t * 0.03) % 1;
-      const angle = progress * Math.PI * 6;
-      const y = (progress - 0.5) * 10;
-      const strand = i % 2 === 0 ? 0 : Math.PI;
-      pos[i3] = Math.cos(angle + strand) * 1.2;
-      pos[i3 + 1] = y;
-      pos[i3 + 2] = Math.sin(angle + strand) * 1.2;
-    }
-    points.current.geometry.attributes.position.needsUpdate = true;
-  });
-
-  return (
-    <points ref={points}>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[positions, 3]} count={count} />
-        <bufferAttribute attach="attributes-color" args={[colors, 3]} count={count} />
-      </bufferGeometry>
-      <pointsMaterial size={0.12} vertexColors transparent opacity={1} sizeAttenuation depthWrite={false} blending={THREE.AdditiveBlending} />
-    </points>
   );
 }
 
@@ -215,7 +161,6 @@ export default function HelixDNA3D({
         >
           <group rotation={[0, 0, tilt]}>
             <HelixStrands steps={isMobile ? 120 : 200} animate={!reduced} />
-            <TravelingParticles count={isMobile ? 40 : 80} />
           </group>
         </Canvas>
       )}

@@ -272,7 +272,7 @@ export const en = {
     eyebrow: "Our arsenal",
     title: "The best tools, mastered in depth.",
     lead: "Marketing, code, AI, design. We pick the tool for the result, not the other way round.",
-    stat: { value: "42+", label: "tools mastered" },
+    stat: { value: "44+", label: "tools mastered" },
     categories: [
       {
         name: "Digital marketing",
@@ -286,15 +286,15 @@ export const en = {
           "Bing Webmaster",
           "Ahrefs",
           "Semrush",
-          "Whatagraph",
           "Google My Business",
           "Mailchimp",
           "SendGrid",
+          "Resend",
         ],
       },
       {
         name: "Web & code",
-        items: ["WordPress", "Divi", "CSS", "HTML"],
+        items: ["WordPress", "Divi", "Elementor", "CSS", "HTML"],
       },
       {
         name: "AI & automation",
@@ -303,6 +303,7 @@ export const en = {
           "ChatGPT",
           "Perplexity",
           "Zapier",
+          "n8n",
           "AI image editing",
         ],
       },
@@ -316,7 +317,7 @@ export const en = {
           "Affinity",
           "Figma",
           "UI/UX",
-          "Mockups",
+          "Sketches",
         ],
       },
       {

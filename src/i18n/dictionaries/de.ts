@@ -272,7 +272,7 @@ export const de = {
     eyebrow: "Unser Arsenal",
     title: "Die besten Tools, in der Tiefe beherrscht.",
     lead: "Marketing, Code, KI, Design. Wir wählen das Tool fürs Ergebnis, nicht umgekehrt.",
-    stat: { value: "42+", label: "beherrschte Tools" },
+    stat: { value: "44+", label: "beherrschte Tools" },
     categories: [
       {
         name: "Digitales Marketing",
@@ -286,15 +286,15 @@ export const de = {
           "Bing Webmaster",
           "Ahrefs",
           "Semrush",
-          "Whatagraph",
           "Google My Business",
           "Mailchimp",
           "SendGrid",
+          "Resend",
         ],
       },
       {
         name: "Web & Code",
-        items: ["WordPress", "Divi", "CSS", "HTML"],
+        items: ["WordPress", "Divi", "Elementor", "CSS", "HTML"],
       },
       {
         name: "KI & Automatisierung",
@@ -303,6 +303,7 @@ export const de = {
           "ChatGPT",
           "Perplexity",
           "Zapier",
+          "n8n",
           "KI-Bildbearbeitung",
         ],
       },
@@ -316,7 +317,7 @@ export const de = {
           "Affinity",
           "Figma",
           "UI/UX",
-          "Mockups",
+          "Skizzen",
         ],
       },
       {

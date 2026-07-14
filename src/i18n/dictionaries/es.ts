@@ -266,7 +266,7 @@ export const es = {
     eyebrow: "Nuestro arsenal",
     title: "Las mejores herramientas, dominadas en profundidad.",
     lead: "Marketing, código, IA, diseño. Elegimos la herramienta por el resultado, no al revés.",
-    stat: { value: "42+", label: "herramientas dominadas" },
+    stat: { value: "44+", label: "herramientas dominadas" },
     categories: [
       {
         name: "Marketing digital",
@@ -280,15 +280,15 @@ export const es = {
           "Bing Webmaster",
           "Ahrefs",
           "Semrush",
-          "Whatagraph",
           "Google My Business",
           "Mailchimp",
           "SendGrid",
+          "Resend",
         ],
       },
       {
         name: "Web y código",
-        items: ["WordPress", "Divi", "CSS", "HTML"],
+        items: ["WordPress", "Divi", "Elementor", "CSS", "HTML"],
       },
       {
         name: "IA y automatización",
@@ -297,6 +297,7 @@ export const es = {
           "ChatGPT",
           "Perplexity",
           "Zapier",
+          "n8n",
           "IA edición de imágenes",
         ],
       },
@@ -310,7 +311,7 @@ export const es = {
           "Affinity",
           "Figma",
           "UI/UX",
-          "Maquetas",
+          "Bocetos",
         ],
       },
       {

@@ -1318,6 +1318,20 @@ html:not(.dark) .test-home .card .text-accent {
   color: var(--accent);
 }
 
+/* Ambient colour blobs behind the DNA helix (ProcessGeo). */
+.adn-ambient {
+  background-image:
+    radial-gradient(50% 55% at 20% 50%, rgba(20, 224, 200, 0.22), transparent 70%),
+    radial-gradient(45% 45% at 82% 30%, rgba(200, 240, 46, 0.17), transparent 70%);
+}
+/* On the light surface the same tints wash out against near-white — push them
+   noticeably stronger, and go all-lime (the cyan blob reads muddy on white). */
+html:not(.dark) .test-home #approche .adn-ambient {
+  background-image:
+    radial-gradient(50% 55% at 20% 50%, rgba(178, 220, 20, 0.38), transparent 70%),
+    radial-gradient(45% 45% at 82% 30%, rgba(178, 220, 20, 0.34), transparent 70%);
+}
+
 /* "ADN" section (ProcessGeo, tone=stage) flipped to a light surface. */
 html:not(.dark) .test-home #approche {
   --stage: #f7f7f4;
