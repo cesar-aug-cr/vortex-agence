@@ -1336,6 +1336,69 @@ html:not(.dark) .test-home #approche .adn-ambient {
     radial-gradient(45% 45% at 82% 30%, rgba(178, 220, 20, 0.34), transparent 70%);
 }
 
+/* Thank-you page: content (check, copy, CTAs) waits for the black hole's
+   ~2s fade-in, then emerges. `both` keeps it invisible during the delay.
+   The readability scrim fades in one second earlier so the text lands on an
+   already-veiled backdrop (dark veil in dark theme, white veil in light —
+   the gradient colour comes from --hero-tint). */
+.thanks-content {
+  animation: thanks-content-in 900ms ease-out 2.2s both;
+}
+.thanks-scrim {
+  --scrim-rgb: 7, 7, 10;
+  --scrim-core: 0.94;
+  --scrim-mid: 0.62;
+  background: radial-gradient(
+    60% 60% at 50% 45%,
+    rgba(var(--scrim-rgb), var(--scrim-core)),
+    rgba(var(--scrim-rgb), var(--scrim-mid)) 60%,
+    transparent 90%
+  );
+  animation: thanks-scrim-in 1800ms ease-in-out 1.2s both;
+}
+/* Light theme: white veil (matches the light stage), original strength. */
+html:not(.dark) .test-home .thanks-scrim {
+  --scrim-rgb: 251, 251, 249;
+  --scrim-core: 0.88;
+  --scrim-mid: 0.55;
+}
+@keyframes thanks-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thanks-scrim {
+    animation: none;
+  }
+}
+html.a11y-no-motion .thanks-scrim {
+  animation-delay: 0s !important;
+}
+@keyframes thanks-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thanks-content {
+    animation: none;
+  }
+}
+/* The global a11y-no-motion rule zeroes duration but not delay — clear it so
+   the content never sits hidden for 2.2s. */
+html.a11y-no-motion .thanks-content {
+  animation-delay: 0s !important;
+}
+
 /* Thank-you page: lime/cyan pulse rings radiating from the success check. */
 .thanks-check::before,
 .thanks-check::after {
