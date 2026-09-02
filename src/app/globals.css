@@ -167,8 +167,11 @@
     background: transparent;
   }
 
+  /* --accent-strong, not --accent: raw lime is 1.23:1 on the light bg (WCAG
+     needs 3:1). It resolves to lime in dark and to the olive (4.78:1) in
+     light — and stays ≥3:1 even on the always-dark stage. */
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-strong);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -1250,9 +1253,10 @@ html.a11y-cursor * {
     auto !important;
 }
 
-/* Strong keyboard focus highlight */
+/* Strong keyboard focus highlight (--accent-strong: lime in dark, readable
+   olive in light — raw lime is invisible on the light bg) */
 html.a11y-focus *:focus-visible {
-  outline: 3px solid var(--accent) !important;
+  outline: 3px solid var(--accent-strong) !important;
   outline-offset: 2px !important;
   border-radius: 2px;
 }
@@ -1284,7 +1288,7 @@ html.dark.a11y-contrast {
 }
 html.a11y-contrast a:focus-visible,
 html.a11y-contrast button:focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--accent-strong);
   outline-offset: 2px;
 }
 
