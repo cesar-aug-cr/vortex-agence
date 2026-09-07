@@ -34,25 +34,35 @@ function pickRandom(pool: QuizQuestion[], n: number): QuizQuestion[] {
 export function QuizGame({
   lang,
   copy,
-  questions,
 }: {
   lang: Locale;
   copy: QuizCopy;
-  questions: QuizQuestion[];
 }) {
-  const total = Math.min(PER_GAME, questions.length);
+  const total = PER_GAME;
   const [phase, setPhase] = useState<"intro" | "playing" | "done">("intro");
   const [deck, setDeck] = useState<QuizQuestion[]>([]);
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [score, setScore] = useState(0);
 
-  const start = () => {
-    setDeck(pickRandom(questions, total));
-    setIndex(0);
-    setPicked(null);
-    setScore(0);
-    setPhase("playing");
+  const [starting, setStarting] = useState(false);
+
+  // The 150-question pool (~65 KB, answers included) is no longer serialised
+  // into the page: it is fetched as its own chunk the first time the visitor
+  // presses "start", then 10 questions are drawn client-side as before.
+  const start = async () => {
+    if (starting) return;
+    setStarting(true);
+    try {
+      const { getQuizQuestions } = await import("@/lib/quiz/questions");
+      setDeck(pickRandom(getQuizQuestions(lang), total));
+      setIndex(0);
+      setPicked(null);
+      setScore(0);
+      setPhase("playing");
+    } finally {
+      setStarting(false);
+    }
   };
 
   const current = deck[index];
@@ -111,7 +121,7 @@ export function QuizGame({
             🧠
           </span>
           <p className="mt-6 text-lg leading-relaxed text-text-dim">{copy.intro}</p>
-          <button type="button" onClick={start} className="btn btn-primary mt-8">
+          <button type="button" onClick={start} disabled={starting} className="btn btn-primary mt-8 disabled:opacity-60">
             {copy.start}
             <ArrowRight width={18} height={18} />
           </button>

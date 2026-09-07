@@ -1,6 +1,6 @@
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
-import { newsSlugs } from "@/lib/site";
+import { newsSlugs } from "@/i18n/news";
 import { renderOgImage } from "@/lib/og";
 
 export const alt = "vortx — News · Marketing & web, Luxembourg";

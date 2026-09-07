@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { site, mainRoutes, serviceSlugs, newsSlugs, subServiceRoutes } from "@/lib/site";
+import { site, mainRoutes, serviceSlugs, subServiceRoutes } from "@/lib/site";
+import { newsSlugs } from "@/i18n/news";
 import { localized } from "@/lib/locale";
 import { fr } from "@/i18n/dictionaries/fr";
 

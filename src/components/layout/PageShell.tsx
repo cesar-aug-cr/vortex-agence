@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
 import { SpotlightCards } from "@/components/ui/SpotlightCards";
 import { StickyCta } from "@/components/layout/StickyCta";
+import { headerCopy, stickyCopy } from "@/i18n/slices";
 
 /**
  * Shell for every internal page: fixed Header (not over-hero), the page-wide
@@ -23,14 +24,14 @@ export function PageShell({
 }) {
   return (
     <>
-      <Header dict={dict} lang={lang} />
+      <Header copy={headerCopy(dict)} lang={lang} />
       <div className="relative isolate bg-bg">
         <AmbientGlow />
         <SpotlightCards />
         <main>{children}</main>
         <Footer dict={dict} lang={lang} />
       </div>
-      <StickyCta dict={dict} lang={lang} />
+      <StickyCta copy={stickyCopy(dict)} lang={lang} />
     </>
   );
 }

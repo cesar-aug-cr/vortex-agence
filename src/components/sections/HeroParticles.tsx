@@ -1,44 +1,31 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { GlowStar } from "@/components/sections/GlowStar";
 
 /**
  * Floating-particle ambience ported from the "Confiance" section
  * (PortfolioCoverflow): 40 drifting dots animated with `coverflow-float`
- * plus two diagonal lime/cyan glow lines, both with a light scroll parallax.
+ * plus glow stars.
  *
  * Tuned for the dark hero stage (always-dark), so colours are fixed here
  * instead of theme-detecting like the source.
+ *
+ * Pure & static: the particle field is deterministic, so it renders on the
+ * server and never re-renders. The previous version re-rendered all 40 divs on
+ * every scroll event to apply a translateY that the CSS animation overrode.
  */
+const PARTICLES = Array.from({ length: 40 }, (_, i) => ({
+  id: i,
+  x: (i * 53) % 100,
+  y: (i * 29) % 100,
+  size: ((i * 7) % 4) + 1,
+  delay: (i % 5) * 1,
+}));
+
 export function HeroParticles() {
-  const [scrollY, setScrollY] = useState(0);
-  const [particles, setParticles] = useState<
-    Array<{ id: number; x: number; y: number; size: number; delay: number }>
-  >([]);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const newParticles = Array.from({ length: 40 }, (_, i) => ({
-      id: i,
-      x: (i * 53) % 100,
-      y: (i * 29) % 100,
-      size: ((i * 7) % 4) + 1,
-      delay: (i % 5) * 1,
-    }));
-    setParticles(newParticles);
-  }, []);
-
   return (
     <>
       {/* Floating particles */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {particles.map((p) => (
+        {PARTICLES.map((p) => (
           <div
             key={p.id}
             className="absolute rounded-full bg-white/20"
@@ -49,7 +36,6 @@ export function HeroParticles() {
               height: `${p.size}px`,
               animationDelay: `${p.delay}s`,
               animation: `coverflow-float ${6 + p.delay}s ease-in-out infinite`,
-              transform: `translateY(${scrollY * 0.1}px)`,
             }}
           />
         ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { Suspense, useEffect, useRef, useState } from "react";
+import BlackHolePoster from "./BlackHolePoster";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { EventHorizon, PhotonRing, GravitationalLens } from "./ThreeSphereV2BlackHole";
@@ -150,6 +151,22 @@ export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverri
   const [isMobile, setIsMobile] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [isLight, setIsLight] = useState(false);
+  // Pause the loop (FBO + double full-scene render per frame, ~21 image planes)
+  // as soon as the hero leaves the viewport — it used to spin for the whole
+  // page. Same pattern as ThreeSphereV2BlackHole.
+  const [onScreen, setOnScreen] = useState(true);
+  // WebGL context lost (iOS Safari under memory pressure): show the static
+  // poster instead of a frozen black canvas.
+  const [lost, setLost] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = wrapRef.current;
+    if (!node) return;
+    const obs = new IntersectionObserver(([e]) => setOnScreen(e.isIntersecting), { threshold: 0 });
+    obs.observe(node);
+    return () => obs.disconnect();
+  }, []);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -179,14 +196,26 @@ export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverri
     (isMobile ? bhPositionMobileOverride ?? bhPositionOverride : bhPositionOverride) ?? [0, 0, 0];
   const bhScale = bhScaleOverride ?? (isMobile ? 1.3 : 1.7);
 
+  if (lost) return <BlackHolePoster />;
+
   return (
-    <div className="absolute inset-0" aria-hidden>
+    <div ref={wrapRef} className="absolute inset-0" aria-hidden>
       <Canvas
         camera={{ position: [0, 0, isMobile ? 10 : 7], fov: 50 }}
         style={{ background: "transparent", position: "absolute", inset: 0, pointerEvents: "none" }}
         dpr={isMobile ? 1 : [1, 1.5]}
         gl={{ alpha: true, antialias: !isMobile, powerPreference: "high-performance", failIfMajorPerformanceCaveat: false }}
-        frameloop={reduced ? "demand" : "always"}
+        frameloop={reduced ? "demand" : onScreen ? "always" : "never"}
+        onCreated={({ gl }) => {
+          gl.domElement.addEventListener(
+            "webglcontextlost",
+            (e) => {
+              e.preventDefault();
+              setLost(true);
+            },
+            { once: true }
+          );
+        }}
       >
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>

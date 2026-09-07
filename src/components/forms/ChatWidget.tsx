@@ -1,9 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import type { Locale } from "@/i18n/config";
-import type { Dictionary } from "@/i18n/getDictionary";
-import { ContactForm } from "@/components/forms/ContactForm";
+import type { ChatCopy } from "@/i18n/slices";
+
+// The panel body (greeting + ContactForm + its WebGL "warp" animation) is only
+// fetched the first time the panel opens: it used to sit in the initial JS of
+// every page although the widget starts closed.
+const ChatPanelBody = dynamic(() => import("./ChatPanelBody"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-40 items-center justify-center" aria-hidden>
+      <span className="h-6 w-6 animate-spin rounded-full border-2 border-border border-t-accent" />
+    </div>
+  ),
+});
 
 /**
  * Floating chat widget. A launcher bubble (bottom-right) opens a panel that
@@ -11,9 +23,9 @@ import { ContactForm } from "@/components/forms/ContactForm";
  * <ContactForm/>, so services → details → message + consent and the /api/contact
  * submission stay identical. Dressed as a chat (header + greeting bubble).
  */
-export function ChatWidget({ dict, lang }: { dict: Dictionary; lang: Locale }) {
+export function ChatWidget({ copy, lang }: { copy: ChatCopy; lang: Locale }) {
   const [open, setOpen] = useState(false);
-  const c = dict.chat;
+  const c = copy.chat;
 
   // On mobile the launcher lives inside the StickyCta pill (icon-only button),
   // which toggles the panel through this event instead of its own bubble.
@@ -22,7 +34,6 @@ export function ChatWidget({ dict, lang }: { dict: Dictionary; lang: Locale }) {
     window.addEventListener("vortx:chat-toggle", toggle);
     return () => window.removeEventListener("vortx:chat-toggle", toggle);
   }, []);
-  const services = dict.services.map((s) => ({ slug: s.slug, title: s.title }));
 
   return (
     <>
@@ -60,10 +71,7 @@ export function ChatWidget({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
           {/* body */}
           <div className="flex-1 overflow-y-auto p-5">
-            <p className="mb-5 max-w-[85%] rounded-2xl rounded-tl-sm bg-bg-elevated p-3 text-sm leading-relaxed text-text-dim">
-              {c.greeting}
-            </p>
-            <ContactForm lang={lang} form={dict.contact.form} services={services} />
+            <ChatPanelBody lang={lang} greeting={c.greeting} form={copy.form} services={copy.services} />
           </div>
         </div>
       )}

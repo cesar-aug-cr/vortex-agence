@@ -1,6 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
+/** Deterministic particle field — same on server and client, no effect needed. */
+const PARTICLES = Array.from({ length: 40 }, (_, i) => ({
+  id: i,
+  x: (i * 53) % 100,
+  y: (i * 29) % 100,
+  size: ((i * 7) % 4) + 1,
+  delay: (i % 5) * 1,
+}));
 import Image from "next/image";
 
 /**
@@ -45,10 +54,10 @@ export function PortfolioCoverflow({
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
-  const [particles, setParticles] = useState<
-    Array<{ id: number; x: number; y: number; size: number; delay: number }>
-  >([]);
+  // Scroll parallax for the two glow lines only: written to a CSS variable in
+  // a rAF instead of React state, so scrolling never re-renders the carousel
+  // (the particles' transform was overridden by their CSS animation anyway).
+  const parallaxRef = useRef<HTMLDivElement>(null);
   const [reduced, setReduced] = useState(false);
 
   // Respect reduced motion (OS setting OR the a11y "pause animations" toggle).
@@ -67,20 +76,20 @@ export function PortfolioCoverflow({
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const newParticles = Array.from({ length: 40 }, (_, i) => ({
-      id: i,
-      x: (i * 53) % 100,
-      y: (i * 29) % 100,
-      size: ((i * 7) % 4) + 1,
-      delay: (i % 5) * 1,
-    }));
-    setParticles(newParticles);
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      parallaxRef.current?.style.setProperty("--sy", String(window.scrollY));
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   // Typewriter
@@ -155,7 +164,7 @@ export function PortfolioCoverflow({
     <div className="relative overflow-hidden py-8 lg:py-12">
       {/* Floating particles */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {particles.map((p) => (
+        {PARTICLES.map((p) => (
           <div
             key={p.id}
             className="absolute rounded-full bg-accent-2/25 dark:bg-white/20"
@@ -166,21 +175,20 @@ export function PortfolioCoverflow({
               height: `${p.size}px`,
               animationDelay: `${p.delay}s`,
               animation: `coverflow-float ${6 + p.delay}s ease-in-out infinite`,
-              transform: `translateY(${scrollY * 0.1}px)`,
             }}
           />
         ))}
       </div>
 
       {/* Glow lines (lime / cyan) */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div ref={parallaxRef} className="pointer-events-none absolute inset-0 overflow-hidden" style={{ "--sy": 0 } as React.CSSProperties}>
         <div
           className="absolute top-1/4 -left-20 h-[2px] w-[600px] bg-gradient-to-r from-transparent via-accent-2/25 to-transparent dark:via-accent-2/40"
-          style={{ transform: `translateX(${scrollY * 0.2}px) rotate(45deg)` }}
+          style={{ transform: "translateX(calc(var(--sy) * 0.2px)) rotate(45deg)" }}
         />
         <div
           className="absolute bottom-1/3 -right-20 h-[2px] w-[500px] bg-gradient-to-r from-transparent via-accent/30 to-transparent dark:via-accent/40"
-          style={{ transform: `translateX(${-scrollY * 0.15}px) rotate(-45deg)` }}
+          style={{ transform: "translateX(calc(var(--sy) * -0.15px)) rotate(-45deg)" }}
         />
       </div>
 
@@ -221,9 +229,9 @@ export function PortfolioCoverflow({
                     className="object-cover object-top"
                     sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 480px"
                     quality={85}
-                    // Only the centre slide is preloaded — the section sits
-                    // below the fold, side slides can lazy-load.
-                    priority={position === 0}
+                    // The whole section sits well below the fold: no priority
+                    // (it was the only eager image on the home and competed
+                    // with the LCP resources).
                   />
                   <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-black/60 to-transparent p-3">
                     <span className="text-xs font-medium text-white drop-shadow-lg">

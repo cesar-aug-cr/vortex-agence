@@ -361,78 +361,88 @@
     <div class="sec-head">
       <span class="sec-num">01</span>
       <h2>Fiabilité &amp; outillage</h2>
-      <span class="sec-count">10 propositions</span>
+      <span class="sec-count">10 propositions · 9 faites · 1 exclue (Resend)</span>
     </div>
     <p class="sec-intro">Aujourd'hui, la seule barrière avant la production est un build manuel — et plusieurs filets de sécurité qui semblent en place ne fonctionnent pas.</p>
 
     <div class="props">
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-fort">Fort</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-fort">Fort</span><span class="eff">S</span></div>
         <h3>La chaîne de lint est morte depuis la migration Next 16</h3>
         <p><code>npm run lint</code> échoue (<code>next lint</code> n'existe plus en Next 16) et ESLint direct crashe (config FlatCompat incompatible avec les flat configs natives d'eslint-config-next 16). Zéro couverture lint, silencieusement. Réécrire <code>eslint.config.mjs</code> en flat config native, remplacer le script par <code>eslint .</code>, ajouter un script <code>typecheck</code> (tsc passe aujourd'hui sans erreur).</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>eslint.config.mjs</code> réécrit en flat config native (<code>eslint-config-next/core-web-vitals</code> + <code>/typescript</code>), scripts <code>lint</code> (<code>eslint .</code>), <code>typecheck</code>, <code>test</code>, <code>check:i18n</code> et <code>check</code> ajoutés. 23 erreurs réelles corrigées ou triées (composants créés pendant le rendu hoistés, entités JSX, règles React-Compiler désactivées pour le code three.js impératif)&nbsp;: <strong>0 erreur, 12 avertissements</strong>.</p>
         <p class="files">eslint.config.mjs · package.json</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
         <h3>Aucune CI, aucun test</h3>
         <p>Pas de <code>.github/</code>, aucun framework de test. Un workflow GitHub Actions minimal sur PR (<code>tsc --noEmit</code> + lint réparé + <code>next build</code>) suffit à empêcher les régressions d'atteindre main. Ensuite&nbsp;: quelques tests Vitest ciblés sur la logique critique — <code>canonicalizePath</code>/<code>localizePath</code> (cœur du routage SEO 4 locales) et la validation de l'API contact.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>.github/workflows/ci.yml</code> (typecheck → lint → parité i18n → tests → build → <code>npm audit</code>) sur PR et push. Vitest installé&nbsp;: <strong>21 tests</strong> sur <code>localizePath</code>/<code>canonicalizePath</code> (aller-retour 4 locales, unicité des slugs), la parité des dictionnaires et l'API contact (JSON invalide, email non ancré, consentement, taille, honeypot, throttle, absence de données personnelles dans les logs).</p>
         <p class="files">.github/workflows · src/i18n/routes.ts · src/app/api/contact/route.ts</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-fort">Fort</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-fort">Fort</span><span class="eff">S</span></div>
         <h3>Garde-fou contre la dérive des dictionnaires EN/DE/ES</h3>
         <p>Le force-cast de <code>getDictionary.ts</code> empêche TypeScript de détecter une clé manquante. Vérifié&nbsp;: les 4 dictionnaires sont aujourd'hui parfaitement alignés (3&nbsp;070 chemins de clés chacun, 0 écart) — mais rien ne l'impose&nbsp;: la prochaine clé oubliée produira un <code>undefined</code> silencieux sur 3 locales. Deux protections complémentaires&nbsp;: une contrainte de type (<code>DictionaryShape</code>) + un petit script de diff des clés en prebuild/CI (~60 lignes, &lt;&nbsp;2&nbsp;s).</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> type <code>DictionaryShape</code> (<code>src/i18n/shape.ts</code>) appliqué via <code>as const satisfies</code> aux trois traductions — une clé manquante ou en trop casse désormais <code>tsc</code>&nbsp;; script <code>scripts/check-i18n.mts</code> (Node natif, &lt;&nbsp;2&nbsp;s) et test Vitest jumeaux&nbsp;: <strong>2&nbsp;897 chemins de clés alignés</strong> dans les 3 langues.</p>
         <p class="files">src/i18n/getDictionary.ts · src/i18n/dictionaries/*.ts</p>
       </article>
 
       <article class="prop">
-        <div class="prop-head"><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
+        <div class="prop-head"><span class="pill sev-faible">⏸ Non traité (Resend) — 02/09/2026</span><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
         <h3>Un échec d'envoi Resend détruit le lead — aucune persistance, aucune alerte</h3>
         <p>Si l'appel Resend échoue, le lead n'existe plus que dans un <code>console.error</code>. Aucun fichier <code>.env.example</code> ne documente les 3 variables requises — impossible de savoir si la prod est configurée. Persister chaque lead avant la tentative d'envoi (KV, table, ou a minima webhook Slack/Discord de secours), créer le <code>.env.example</code>, et tester le parcours complet en prod régulièrement.</p>
+        <p class="done-note"><strong>⏸ Volontairement non traité&nbsp;:</strong> proposition liée à Resend, exclue de ce lot à votre demande. Le <code>.env.example</code> créé pour les nouvelles variables pointe vers la documentation des variables Resend.</p>
         <p class="files">src/app/api/contact/route.ts</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
         <h3>Aucun header de sécurité HTTP</h3>
         <p><code>next.config.ts</code> (15 lignes) ne définit ni CSP, ni HSTS, ni X-Frame-Options (le formulaire est encadrable en iframe — clickjacking), ni Referrer-Policy, ni Permissions-Policy. Ajouter <code>headers()</code> avec le socle standard&nbsp;; pour la CSP, prévoir les nonces/hashes des trois scripts inline du layout et du JSON-LD — commencer en Report-Only.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>next.config.ts</code> pose sur toutes les routes HSTS (2 ans, preload), <code>X-Frame-Options: DENY</code>, <code>X-Content-Type-Options</code>, <code>Referrer-Policy</code>, <code>Permissions-Policy</code>, et en production une <strong>CSP en Report-Only</strong> (frame-ancestors, base-uri, form-action, object-src…) dont les violations sont envoyées à <code>/api/report</code>.</p>
         <p class="files">next.config.ts · src/app/[lang]/layout.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">M</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">M</span></div>
         <h3>Durcir l'API /api/contact</h3>
         <p>La validation est bien conçue (honeypot, 503 propre si transport non configuré) mais&nbsp;: aucune limite de longueur (un body de plusieurs Mo est relayé tel quel vers Resend), regex email non ancrée (<code>xxx\nvictim@mail.com</code> passe), aucun rate limiting par IP, et le consentement n'est pas vérifié côté serveur (un POST direct sans consentement est accepté — accountability RGPD art. 7). Ajouter&nbsp;: bornes de taille, regex ancrée, throttle IP, rejet 400 si consent ≠ oui + horodatage serveur.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> corps limité à 16&nbsp;Ko (413), bornes par champ, regex email ancrée, throttle 5 envois / 10 min par IP (429), consentement vérifié et horodaté côté serveur (400 sinon) — logique extraite dans <code>src/lib/contact-validation.ts</code> et couverte par les tests.</p>
         <p class="files">src/app/api/contact/route.ts</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
         <h3>Données personnelles des leads écrites en clair dans les logs serveur</h3>
         <p>Deux branches loggent l'objet lead complet (nom, email, téléphone, message) via console — un stockage hors de tout cadre déclaré dans la politique de confidentialité (art. 5.1 RGPD). Ne logger que des métadonnées non identifiantes (horodatage, langue, hash court de l'email).</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> les logs ne contiennent plus que <code>leadMeta()</code> (horodatage, langue, services, hash court de l'email) — vérifié par un test qui échoue si nom, email ou message apparaissent.</p>
         <p class="files">src/app/api/contact/route.ts</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
         <h3>Aucune remontée d'erreurs de production</h3>
         <p>Les error boundaries se contentent d'un <code>console.error</code> dans le navigateur du visiteur&nbsp;: personne ne saura qu'une page casse (contextes WebGL perdus sur mobile, échec Resend) tant qu'un prospect ne le signale pas. Ajouter <code>@sentry/nextjs</code>, ou en version minimale une route <code>/api/report</code> appelée depuis les boundaries — et une alerte sur «&nbsp;lead NOT sent&nbsp;».</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> route <code>/api/report</code> (erreurs client, rapports CSP, Reporting API&nbsp;; bornée et throttlée) + <code>reportServerEvent()</code> qui écrit une ligne JSON structurée et pousse sur <code>ALERT_WEBHOOK_URL</code> (Slack/Discord) si défini. Les deux error boundaries envoient l'erreur via <code>sendBeacon</code>&nbsp;; «&nbsp;lead NOT sent&nbsp;» et «&nbsp;transport non configuré&nbsp;» déclenchent l'alerte.</p>
         <p class="files">src/app/[lang]/error.tsx · src/app/global-error.tsx · src/app/api/contact/route.ts</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
         <h3>newsSlugs maintenu à la main en double du dictionnaire</h3>
         <p>Un article ajouté au dictionnaire sans mise à jour de <code>newsSlugs</code> sort silencieusement du sitemap&nbsp;; un slug renommé y laisse une 404. Dériver la liste de <code>fr.news.articles</code> (le sitemap importe déjà <code>fr</code>) ou la contraindre par le type.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>src/i18n/news.ts</code> dérive la liste de <code>fr.news.articles</code>&nbsp;; sitemap et images OG l'utilisent, la copie manuelle de <code>lib/site.ts</code> est supprimée.</p>
         <p class="files">src/lib/site.ts · src/app/sitemap.ts</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 02/09/2026</span><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
         <h3>Matcher du proxy&nbsp;: exclusions par préfixe non borné</h3>
         <p>Le proxy est correct et soigné (constat positif). Seule limite&nbsp;: un futur chemin commençant par un mot exclu (ex. <code>/apiculture</code>) contournerait la redirection de locale. Borner les exclusions avec un séparateur, ou documenter le piège en commentaire. Ajouter aussi <code>Vary: Accept-Language</code> sur la redirection de la racine (une ligne).</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> exclusions bornées (<code>api(?:/|$)</code>, <code>_next/</code>, routes métadonnées ancrées en fin de chemin) et <code>Vary: Accept-Language</code> sur la redirection de la racine.</p>
         <p class="files">src/proxy.ts</p>
       </article>
     </div>
@@ -443,71 +453,80 @@
     <div class="sec-head">
       <span class="sec-num">02</span>
       <h2>Performance</h2>
-      <span class="sec-count">9 propositions</span>
+      <span class="sec-count">9 propositions · 9 faites</span>
     </div>
     <p class="sec-intro">En plus de l'urgence U1 (site entièrement dynamique), mesures faites sur le build de production réel.</p>
 
     <div class="props">
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-fort">Fort</span><span class="eff">M</span></div>
         <h3>Le dictionnaire complet (~240 Ko) est sérialisé dans chaque page</h3>
         <p>Header, StickyCta et ChatWidget reçoivent l'objet <code>dict</code> entier — corps des 9 articles, glossaire et sous-services compris. Mesuré&nbsp;: <code>/fr/cookies</code> (page légale minuscule) pèse 338&nbsp;Ko de HTML dont un segment de 201&nbsp;Ko&nbsp;: le dictionnaire. Passer des tranches typées (le pattern existe déjà&nbsp;: ConsentBanner reçoit <code>dict.consent</code>). Gain estimé&nbsp;: ~180–200&nbsp;Ko de HTML par page et par navigation.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>src/i18n/slices.ts</code> fournit des tranches typées (<code>headerCopy</code>, <code>stickyCopy</code>, <code>chatCopy</code>, quelques Ko) aux trois composants clients présents sur toutes les pages&nbsp;; Header, StickyCta et ChatWidget n'acceptent plus le dictionnaire complet (189&nbsp;Ko).</p>
         <p class="files">src/app/[lang]/layout.tsx · src/components/layout/PageShell.tsx · Header.tsx · StickyCta.tsx · ChatWidget.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-fort">Fort</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-fort">Fort</span><span class="eff">S</span></div>
         <h3>Le trou noir du hero ne se met jamais en pause hors écran</h3>
         <p>La boucle WebGL tourne en continu (double rendu complet par frame&nbsp;: FBO 1024² + écran, ~21 plans d'images) même 10 sections plus bas. Le composant frère <code>ThreeSphereV2BlackHole</code> a déjà le bon pattern (IntersectionObserver → frameloop "never" + fallback si contexte WebGL perdu — risque de canvas noir figé sur iOS)&nbsp;: le recopier dans TestBHScene. Quelques lignes, gros gain batterie/CPU mobile.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>TestBHScene</code> reprend le pattern de <code>ThreeSphereV2BlackHole</code>&nbsp;: IntersectionObserver → <code>frameloop="never"</code> hors écran, et poster statique (<code>BlackHolePoster</code>) si le contexte WebGL est perdu.</p>
         <p class="files">src/components/three/TestBHScene.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">M</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">M</span></div>
         <h3>229 Ko gzip de three.js pour tous les visiteurs de la home, sans garde-fou</h3>
         <p>Le chunk three.js (861&nbsp;Ko brut) se charge dès l'hydratation pour tout le monde — connexion lente ou Data Saver compris (aucun check <code>saveData</code>/<code>deviceMemory</code> dans le code). Proposer un poster statique (le PNG du disque existe déjà&nbsp;: 58&nbsp;Ko) quand le contexte s'y prête.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>src/lib/lite-scene.ts</code> détecte Data Saver, 2G et les appareils ≤&nbsp;2&nbsp;Go&nbsp;; <code>TestBHLazy</code> affiche alors le poster (texture du disque déjà présente, 58&nbsp;Ko) sans jamais demander le chunk three.js.</p>
         <p class="files">src/components/three/TestBHLazy.tsx · src/components/sections/HeroTestBH.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">M</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">M</span></div>
         <h3>~200 Ko gzip de JS initial sur toutes les pages&nbsp;: widgets montés en dur</h3>
         <p>Le ChatWidget importe statiquement ContactForm + HyperspaceWarp (starfield WebGL) alors que le panneau est fermé par défaut&nbsp;; l'AccessibilityWidget (431 lignes) est chargé partout via le Header. Charger le corps de ces panneaux en <code>next/dynamic</code> au premier clic — les boutons restent inline.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> le corps du chat (<code>ChatPanelBody</code>&nbsp;: ContactForm + HyperspaceWarp) et le panneau d'accessibilité (<code>AccessibilityPanel</code>) sont chargés en <code>next/dynamic</code> au premier clic&nbsp;; les boutons restent inline et rendus côté serveur.</p>
         <p class="files">src/components/forms/ChatWidget.tsx · src/components/layout/AccessibilityWidget.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
         <h3>Quiz&nbsp;: les 150 questions (65 Ko) sont sérialisées dans la page — réponses lisibles en clair</h3>
         <p>Le pool entier part dans le payload de <code>/quiz</code> (le tirage de 10 se fait côté client), et l'index de la bonne réponse de chaque question est visible dans la source. Charger le pool par <code>import()</code> dynamique au clic «&nbsp;Démarrer&nbsp;», ou tirer les 10 questions côté serveur.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> la page ne transmet plus le pool&nbsp;: <code>QuizGame</code> charge <code>lib/quiz/questions</code> par <code>import()</code> dynamique au clic «&nbsp;Démarrer&nbsp;», puis tire 10 questions comme avant.</p>
         <p class="files">src/lib/quiz/questions.ts · src/components/quiz/QuizGame.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-moyen">Moyen</span><span class="eff">S</span></div>
         <h3>Re-renders au scroll qui ne produisent aucun effet visuel</h3>
         <p>HeroParticles re-rend 40 divs à chaque événement scroll pour un transform… écrasé par l'animation CSS qui anime la même propriété. Même pattern dans PortfolioCoverflow. Supprimer le state (aucun changement visuel)&nbsp;; pour les 2 «&nbsp;glow lines&nbsp;» qui en profitent réellement, passer par une variable CSS en rAF.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>HeroParticles</code> est désormais un composant statique sans state (particules déterministes, rendues côté serveur)&nbsp;; dans <code>PortfolioCoverflow</code> le state <code>scrollY</code> est remplacé par une variable CSS <code>--sy</code> écrite en rAF, utilisée uniquement par les deux lignes lumineuses.</p>
         <p class="files">src/components/sections/HeroParticles.tsx · PortfolioCoverflow.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
         <h3>Le helix ADN recrée un contexte WebGL entier à chaque passage dans le viewport</h3>
         <p>Le Canvas est démonté/remonté à chaque aller-retour de scroll (compilation shaders comprise — risqué sur iOS). Monter une fois, puis basculer <code>frameloop</code> entre "always" et "never". Supprimer au passage <code>Geo.tsx</code>, mort.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> le Canvas est monté une seule fois puis bascule <code>frameloop</code> entre <code>always</code> et <code>never</code>&nbsp;; <code>Geo.tsx</code> (mort) supprimé. En plus, à votre demande, l'hélice n'est plus rendue du tout sur mobile (&lt;&nbsp;768&nbsp;px&nbsp;: <code>HelixDNA3D</code> retourne null et le conteneur est <code>hidden md:flex</code>).</p>
         <p class="files">src/components/three/HelixDNA3D.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
         <h3>La police d'accessibilité est préchargée sur chaque page pour rien</h3>
         <p>Atkinson Hyperlegible (2 fichiers, ~22,5&nbsp;Ko en preload haute priorité) ne sert que derrière un toggle du widget a11y. Ajouter <code>preload: false</code> — elle reste disponible à l'activation.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>preload: false</code> sur Atkinson Hyperlegible dans le layout.</p>
         <p class="files">src/app/[lang]/layout.tsx</p>
       </article>
 
-      <article class="prop">
-        <div class="prop-head"><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
+      <article class="prop done-card">
+        <div class="prop-head"><span class="pill sev-done">✓ Fait — 03/09/2026</span><span class="pill sev-faible">Faible</span><span class="eff">S</span></div>
         <h3>Images&nbsp;: un <code>priority</code> sous la ligne de flottaison, un <code>quality</code> mort</h3>
         <p>L'image centrale du coverflow (loin sous la fold) est la seule en chargement eager de la home&nbsp;; sur <code>/realisations</code>, <code>quality={80}</code> est silencieusement clampé à 75 par la config (vérifié&nbsp;: q=80 renvoie HTTP 400). Retirer le priority, écrire quality 75 ou autoriser 80.</p>
+        <p class="done-note"><strong>✓ Réalisé&nbsp;:</strong> <code>priority</code> retiré de l'image centrale du coverflow&nbsp;; <code>quality={80}</code> de /realisations passé à 75 (valeur autorisée par la config).</p>
         <p class="files">src/components/sections/PortfolioCoverflow.tsx · src/app/[lang]/realisations/page.tsx · next.config.ts</p>
       </article>
     </div>

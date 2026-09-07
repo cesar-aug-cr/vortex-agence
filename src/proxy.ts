@@ -42,7 +42,10 @@ export function proxy(req: NextRequest) {
   if (!lang) {
     const locale = preferredLocale(req);
     const target = pathname === "/" ? "" : pathname;
-    return NextResponse.redirect(new URL(`/${locale}${target}${search}`, req.url));
+    const res = NextResponse.redirect(new URL(`/${locale}${target}${search}`, req.url));
+    // The target depends on the request language: tell caches to key on it.
+    res.headers.set("Vary", "Accept-Language");
+    return res;
   }
 
   // Locale present → handle localized slugs. `rest` is the path after /<lang>.
@@ -76,8 +79,11 @@ export const config = {
   // Exclude _next, api, dotted files, AND Next's extensionless metadata routes
   // (icon, opengraph-image…) — otherwise "/icon" gets redirected to "/fr/icon"
   // which 404s (those routes live at the root, not under /<locale>).
+  // Every exclusion is bounded (`/` or end of path) so a future page whose
+  // slug merely starts with one of these words (e.g. /apiculture, /iconographie)
+  // still goes through locale routing.
   matcher: [
     "/",
-    "/((?!_next|api|icon|apple-icon|opengraph-image|twitter-image|manifest|sitemap|robots|favicon|.*\\..*).*)",
+    "/((?!_next/|api(?:/|$)|(?:icon|apple-icon|opengraph-image|twitter-image|manifest|sitemap|robots|favicon)$|.*\\..*).*)",
   ],
 };

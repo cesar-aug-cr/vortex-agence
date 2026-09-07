@@ -130,7 +130,7 @@ export default async function StyleGuidePage({
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-text-dim">
           Référence interne des tokens et composants. Basculez le thème (clair/sombre)
-          dans l'en-tête pour voir les couleurs s'adapter.
+          dans l&apos;en-tête pour voir les couleurs s&apos;adapter.
         </p>
       </Section>
 
@@ -218,7 +218,7 @@ export default async function StyleGuidePage({
               type="button"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-accent"
             >
-              Lien d'action
+              Lien d&apos;action
               <ArrowRight width={16} height={16} className="transition-transform group-hover:translate-x-1" />
             </button>
             <button type="button" disabled className="btn btn-primary opacity-60">
@@ -236,7 +236,7 @@ export default async function StyleGuidePage({
             </div>
             <div className="card card-hover p-6">
               <p className="font-semibold text-text">card card-hover</p>
-              <p className="mt-2 text-sm text-text-dim">Survolez pour l'effet.</p>
+              <p className="mt-2 text-sm text-text-dim">Survolez pour l&apos;effet.</p>
             </div>
             <div className="illu-stage flex items-center justify-center rounded-2xl border border-border p-6">
               <span className="font-mono text-xs text-text-muted">illu-stage</span>

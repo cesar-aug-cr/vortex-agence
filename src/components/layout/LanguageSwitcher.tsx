@@ -64,7 +64,7 @@ export function LanguageSwitcher({
           stroke="currentColor"
           strokeWidth={2.5}
           aria-hidden
-          className={`transition-transform ${open ? "rotate-180" : ""}`}
+          className={`hidden transition-transform lg:block ${open ? "rotate-180" : ""}`}
         >
           <path d="m6 9 6 6 6-6" />
         </svg>

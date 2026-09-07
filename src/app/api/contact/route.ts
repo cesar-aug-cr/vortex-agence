@@ -1,5 +1,12 @@
 import { NextResponse } from "next/server";
 import { site } from "@/lib/site";
+import {
+  CONTACT_MAX_BODY_BYTES,
+  leadMeta,
+  validateContact,
+} from "@/lib/contact-validation";
+import { clientIp, isRateLimited } from "@/lib/rate-limit";
+import { reportServerEvent } from "@/lib/report";
 
 /**
  * Contact form handler.
@@ -10,34 +17,46 @@ import { site } from "@/lib/site";
  *   RESEND_API_KEY   — Resend API key
  *   CONTACT_TO       — destination inbox (defaults to site.email)
  *   CONTACT_FROM     — verified sender, e.g. "vortx <contact@vortx.lu>"
+ *
+ * Hardening: body size cap, per-field limits, anchored email check, per-IP
+ * throttle, server-side consent check. Logs never contain personal data —
+ * only `leadMeta()` (timestamp, language, interest, short email hash).
  */
-export async function POST(req: Request) {
-  const data = await req.json().catch(() => null);
+const RATE = { max: 5, windowMs: 10 * 60 * 1000 };
 
-  if (!data || typeof data !== "object") {
+export async function POST(req: Request) {
+  const ip = clientIp(req);
+  if (isRateLimited(`contact:${ip}`, RATE)) {
+    return NextResponse.json({ ok: false, error: "rate-limited" }, { status: 429 });
+  }
+
+  const declared = Number(req.headers.get("content-length") ?? 0);
+  if (declared > CONTACT_MAX_BODY_BYTES) {
+    return NextResponse.json({ ok: false, error: "too-large" }, { status: 413 });
+  }
+  const raw = await req.text().catch(() => "");
+  if (raw.length > CONTACT_MAX_BODY_BYTES) {
+    return NextResponse.json({ ok: false, error: "too-large" }, { status: 413 });
+  }
+
+  let data: unknown = null;
+  try {
+    data = JSON.parse(raw);
+  } catch {
     return NextResponse.json({ ok: false, error: "invalid" }, { status: 400 });
   }
 
   // Honeypot: a real user never fills the hidden "website" field.
-  if (data.website) return NextResponse.json({ ok: true });
-
-  const name = String(data.name ?? "").trim();
-  const email = String(data.email ?? "").trim();
-  const message = String(data.message ?? "").trim();
-  if (!name || !email || !message || !/.+@.+\..+/.test(email)) {
-    return NextResponse.json({ ok: false, error: "missing-fields" }, { status: 400 });
+  if (data && typeof data === "object" && (data as { website?: unknown }).website) {
+    return NextResponse.json({ ok: true });
   }
 
-  const lead = {
-    name,
-    email,
-    phone: String(data.phone ?? "").trim(),
-    company: String(data.company ?? "").trim(),
-    interest: String(data.interest ?? "").trim(),
-    consent: String(data.consent ?? "").trim(),
-    message,
-    lang: String(data.lang ?? "fr"),
-  };
+  const result = validateContact(data);
+  if (!result.ok) {
+    return NextResponse.json({ ok: false, error: result.error }, { status: result.status });
+  }
+  const { lead } = result;
+  const meta = leadMeta(lead);
 
   const to = process.env.CONTACT_TO || site.email;
   const from = process.env.CONTACT_FROM || `vortx <${site.email}>`;
@@ -61,7 +80,8 @@ export async function POST(req: Request) {
             `Téléphone: ${lead.phone || "—"}`,
             `Entreprise: ${lead.company || "—"}`,
             `Services: ${lead.interest || "—"}`,
-            `Consentement données: ${lead.consent || "—"}`,
+            `Langue: ${lead.lang}`,
+            `Consentement données: oui — horodaté ${lead.consentAt} (serveur)`,
             "",
             lead.message,
           ].join("\n"),
@@ -69,17 +89,21 @@ export async function POST(req: Request) {
       });
       if (!res.ok) throw new Error(`Resend ${res.status}`);
     } catch (err) {
-      console.error("[contact] email send failed:", err);
+      await reportServerEvent(
+        "contact.send-failed",
+        { ...meta, reason: err instanceof Error ? err.message : String(err) },
+        { notify: true }
+      );
       return NextResponse.json({ ok: false, error: "send-failed" }, { status: 502 });
     }
   } else if (process.env.NODE_ENV === "production" && !process.env.CONTACT_PLACEHOLDER) {
     // Fail loudly in production rather than silently dropping a lead while the
     // UI shows success. Set RESEND_API_KEY (or CONTACT_PLACEHOLDER=1 to opt in).
-    console.error("[contact] no email transport configured in production — lead NOT sent:", lead);
+    await reportServerEvent("contact.not-configured", meta, { notify: true });
     return NextResponse.json({ ok: false, error: "not-configured" }, { status: 503 });
   } else {
-    // Dev / explicit placeholder mode — log the lead so the flow still works.
-    console.info("[contact] new lead (email transport not configured):", lead);
+    // Dev / explicit placeholder mode — log that a lead came in (metadata only).
+    console.info("[contact] new lead (email transport not configured):", meta);
   }
 
   return NextResponse.json({ ok: true });

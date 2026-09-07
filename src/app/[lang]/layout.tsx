@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
+import { chatCopy } from "@/i18n/slices";
 import { ogLocale, ogAlternateLocales } from "@/lib/metadata";
 import { ThemeScript } from "@/components/theme/ThemeScript";
 import { ThemeSync } from "@/components/theme/ThemeSync";
@@ -32,6 +33,10 @@ const atkinson = Atkinson_Hyperlegible({
   weight: ["400", "700"],
   variable: "--font-readable",
   display: "swap",
+  // Only used behind the accessibility widget's "readable font" toggle: don't
+  // spend a high-priority preload (~22 KB) on every page for it. The browser
+  // fetches it on first use of the CSS variable.
+  preload: false,
 });
 
 const SITE_URL = "https://vortx.lu";
@@ -116,7 +121,7 @@ export default async function LangLayout({
         <SchemaMarkup />
         {children}
         <CenterCardActivate />
-        <ChatWidget dict={dict} lang={lang} />
+        <ChatWidget copy={chatCopy(dict)} lang={lang} />
         <ConsentBanner lang={lang} consent={dict.consent} />
       </body>
     </html>

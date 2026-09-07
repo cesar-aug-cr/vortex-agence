@@ -5,6 +5,7 @@
  */
 
 import type { ArticleBlock, GlossaryTerm } from "./fr";
+import type { DictionaryShape } from "../shape";
 
 export const en = {
   locale: "en",
@@ -3863,4 +3864,4 @@ export const en = {
       },
     },
   },
-} as const;
+} as const satisfies DictionaryShape;

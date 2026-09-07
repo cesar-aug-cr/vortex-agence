@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
+import dynamic from "next/dynamic";
 import type { Dictionary } from "@/i18n/getDictionary";
 
-type A11yLabels = Dictionary["a11y"];
+export type A11yLabels = Dictionary["a11y"];
 
-type Settings = {
+export type Settings = {
   fontScale: number;
   readable: boolean;
   spacing: boolean;
@@ -87,18 +88,73 @@ function sameSettings(a: Settings, b: Settings): boolean {
   return (Object.keys(DEFAULTS) as (keyof Settings)[]).every((k) => a[k] === b[k]);
 }
 
+/* ------------------------------------------------------------------------
+ * Shared settings store. The launcher is rendered twice (header on desktop,
+ * bottom of the burger menu on mobile) and a floating badge/button mirrors it,
+ * so every instance must read and write the SAME settings — a per-instance
+ * useState would let them drift apart (stale badge, floating button not
+ * disappearing after a reset done from the other launcher).
+ * ---------------------------------------------------------------------- */
+const listeners = new Set<() => void>();
+let store: Settings = DEFAULTS;
+let hydrated = false;
+
+function subscribe(fn: () => void) {
+  listeners.add(fn);
+  return () => {
+    listeners.delete(fn);
+  };
+}
+const getSnapshot = () => store;
+const getServerSnapshot = () => DEFAULTS;
+function emit() {
+  for (const l of listeners) l();
+}
+function setStore(next: Settings | ((prev: Settings) => Settings)) {
+  store = typeof next === "function" ? next(store) : next;
+  apply(store);
+  try {
+    localStorage.setItem(KEY, JSON.stringify(store));
+  } catch {
+    /* ignore */
+  }
+  emit();
+}
+function hydrateStore() {
+  if (hydrated) return;
+  hydrated = true;
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+    store = { ...DEFAULTS, ...saved };
+  } catch {
+    /* ignore */
+  }
+  apply(store);
+  emit();
+}
+
 /**
  * Accessibility widget v2 (UserWay / Eye-Able style). The launcher lives in the
  * header; the panel + overlays render through a portal on document.body so the
  * header's backdrop-filter can't trap their `position: fixed` (which otherwise
  * pinned the mobile modal to the top once the header turned solid on scroll).
  */
+// The dialog is fetched on first open (see AccessibilityPanel): the launcher
+// stays inline and server-rendered, the panel leaves the initial bundle.
+const AccessibilityPanel = dynamic(() => import("./AccessibilityPanel"), { ssr: false });
+
 export function AccessibilityWidget({
   labels,
   onDark = false,
+  floating = false,
 }: {
   labels: A11yLabels;
   onDark?: boolean;
+  /** Also render a fixed launcher at the top-right of the viewport (under the
+   *  header, next to the burger on mobile) whenever at least one setting is
+   *  active. It disappears as soon as everything is reset. Enable on ONE
+   *  instance only (the header one, always mounted). */
+  floating?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -107,9 +163,12 @@ export function AccessibilityWidget({
     top: 80,
     right: 16,
   });
-  const [s, setS] = useState<Settings>(DEFAULTS);
-  const loaded = useRef(false);
+  const s = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const setS = setStore;
   const launcherRef = useRef<HTMLButtonElement>(null);
+  const floatingRef = useRef<HTMLButtonElement>(null);
+  // Which launcher opened the panel: anchors the panel position + focus return.
+  const anchorRef = useRef<HTMLButtonElement | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const guideRef = useRef<HTMLDivElement>(null);
   const maskTopRef = useRef<HTMLDivElement>(null);
@@ -118,32 +177,19 @@ export function AccessibilityWidget({
   useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
-      setS({ ...DEFAULTS, ...saved });
-    } catch {
-      /* ignore */
-    }
-    loaded.current = true;
+    hydrateStore();
   }, []);
-
-  useEffect(() => {
-    if (!loaded.current) return;
-    apply(s);
-    try {
-      localStorage.setItem(KEY, JSON.stringify(s));
-    } catch {
-      /* ignore */
-    }
-  }, [s]);
 
   // position the panel under the launcher (desktop) / centre it (mobile)
   useEffect(() => {
     if (!open) return;
     const compute = () => {
-      const r = launcherRef.current?.getBoundingClientRect();
+      const anchor = anchorRef.current ?? launcherRef.current;
+      const r = anchor?.getBoundingClientRect();
       const mobile = window.innerWidth < 640;
-      if (!r) return setPos({ mobile, top: 80, right: 16 });
+      // No anchor, or a display:none launcher (zero rect): fall back to the
+      // top-right corner instead of computing an off-screen position.
+      if (!r || r.width === 0) return setPos({ mobile, top: 80, right: 16 });
       setPos({ mobile, top: r.bottom + 8, right: Math.max(8, window.innerWidth - r.right) });
     };
     compute();
@@ -164,36 +210,6 @@ export function AccessibilityWidget({
     window.addEventListener("pointermove", onMove);
     return () => window.removeEventListener("pointermove", onMove);
   }, [s.readingGuide, s.readingMask]);
-
-  // focus management + Esc + focus trap
-  useEffect(() => {
-    if (!open) return;
-    const node = panelRef.current;
-    node?.querySelector<HTMLElement>("button, a, input")?.focus();
-    const onKey = (ev: KeyboardEvent) => {
-      if (ev.key === "Escape") return setOpen(false);
-      if (ev.key === "Tab" && node) {
-        const f = Array.from(
-          node.querySelectorAll<HTMLElement>("button, a[href], input, [tabindex]:not([tabindex='-1'])")
-        ).filter((el) => !el.hasAttribute("disabled"));
-        if (f.length === 0) return;
-        const firstEl = f[0];
-        const lastEl = f[f.length - 1];
-        if (ev.shiftKey && document.activeElement === firstEl) {
-          ev.preventDefault();
-          lastEl.focus();
-        } else if (!ev.shiftKey && document.activeElement === lastEl) {
-          ev.preventDefault();
-          firstEl.focus();
-        }
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      launcherRef.current?.focus();
-    };
-  }, [open]);
 
   const toggle = (key: keyof Settings) => setS((p) => ({ ...p, [key]: !p[key] }));
   const setFont = (dir: -1 | 1) =>
@@ -236,33 +252,6 @@ export function AccessibilityWidget({
     { key: "pauseMotion", label: labels.pauseMotion },
   ];
 
-  const Switch = ({ on }: { on: boolean }) => (
-    <span
-      aria-hidden
-      className={`relative h-5 w-9 shrink-0 rounded-full transition-colors ${on ? "bg-accent" : "bg-border-strong"}`}
-    >
-      <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${on ? "left-[1.125rem]" : "left-0.5"}`} />
-    </span>
-  );
-
-  const ToggleRow = ({ k, label }: { k: keyof Settings; label: string }) => (
-    <button
-      type="button"
-      onClick={() => toggle(k)}
-      aria-pressed={Boolean(s[k])}
-      className={`flex w-full items-center justify-between gap-3 rounded-lg border px-3 py-2.5 text-left text-sm transition-colors ${
-        s[k] ? "border-accent bg-accent-soft text-text" : "border-border text-text-dim hover:border-border-strong hover:text-text"
-      }`}
-    >
-      {label}
-      <Switch on={Boolean(s[k])} />
-    </button>
-  );
-
-  const GroupTitle = ({ children }: { children: string }) => (
-    <p className="mt-5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-text-muted">{children}</p>
-  );
-
   const portal = (
     <>
       {/* overlays */}
@@ -281,6 +270,32 @@ export function AccessibilityWidget({
         </>
       )}
 
+      {/* Floating launcher: only while something is active. Sits under the
+          header bar (80px), flush with the header's right padding so it lines
+          up with the burger on mobile. z-44 keeps it under the open mobile
+          menu (z-45) and the header (z-50). Mobile/tablet only: on desktop the
+          header launcher already carries the badge. */}
+      {floating && active > 0 && (
+        <button
+          ref={floatingRef}
+          type="button"
+          onClick={() => {
+            anchorRef.current = floatingRef.current;
+            setOpen((v) => !v);
+          }}
+          aria-haspopup="dialog"
+          aria-expanded={open}
+          aria-label={labels.button}
+          title={labels.button}
+          className="fixed right-5 top-[5.5rem] z-[44] inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-bg-card text-text shadow-[var(--shadow-lg)] transition-colors hover:border-accent md:right-8 lg:hidden"
+        >
+          <A11yIcon />
+          <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 font-mono text-[0.6rem] font-bold text-accent-ink">
+            {active}
+          </span>
+        </button>
+      )}
+
       {open && (
         <>
           <button
@@ -290,110 +305,25 @@ export function AccessibilityWidget({
             onClick={() => setOpen(false)}
             className="fixed inset-0 z-[64] cursor-default bg-black/40 sm:bg-transparent"
           />
-          <div
-            ref={panelRef}
-            role="dialog"
-            aria-modal="true"
-            aria-label={labels.title}
-            style={pos.mobile ? undefined : { top: pos.top, right: pos.right }}
-            className={`fixed z-[65] flex max-h-[85vh] w-[min(22rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)] ${
-              pos.mobile ? "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" : ""
-            }`}
-          >
-            {/* pinned header */}
-            <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
-              <h2 className="font-mono text-sm font-semibold uppercase tracking-wide text-accent">
-                {labels.title}
-              </h2>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label={labels.close}
-                className="text-text-muted transition-colors hover:text-text"
-              >
-                <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
-                  <path d="M6 6l12 12M18 6 6 18" />
-                </svg>
-              </button>
-            </div>
-
-            {/* scrollable body */}
-            <div className="grow overflow-y-auto px-5 pb-5">
-              <GroupTitle>{labels.profilesTitle}</GroupTitle>
-              <div className="mt-2 grid grid-cols-2 gap-2">
-                {profiles.map((p) => (
-                  <button
-                    key={p.key}
-                    type="button"
-                    onClick={() => applyProfile(p.key)}
-                    aria-pressed={activeProfile === p.key}
-                    className={`rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors ${
-                      activeProfile === p.key
-                        ? "border-accent bg-accent text-accent-ink"
-                        : "border-border text-text-dim hover:border-accent hover:text-text"
-                    }`}
-                  >
-                    {p.label}
-                  </button>
-                ))}
-              </div>
-
-              <GroupTitle>{labels.textGroup}</GroupTitle>
-              <div className="mt-2 flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setFont(-1)}
-                  disabled={s.fontScale <= MIN}
-                  aria-label={labels.decrease}
-                  className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border text-lg font-bold text-text transition-colors hover:border-accent hover:text-accent-strong disabled:opacity-40"
-                >
-                  A−
-                </button>
-                <span className="w-12 text-center font-mono text-sm text-text-dim">
-                  {Math.round(s.fontScale * 100)}%
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setFont(1)}
-                  disabled={s.fontScale >= MAX}
-                  aria-label={labels.increase}
-                  className="flex h-10 flex-1 items-center justify-center rounded-lg border border-border text-xl font-bold text-text transition-colors hover:border-accent hover:text-accent-strong disabled:opacity-40"
-                >
-                  A+
-                </button>
-              </div>
-              <div className="mt-2 grid gap-2">
-                {textToggles.map((t) => (
-                  <ToggleRow key={t.key} k={t.key} label={t.label} />
-                ))}
-              </div>
-
-              <GroupTitle>{labels.viewGroup}</GroupTitle>
-              <div className="mt-2 grid gap-2">
-                {viewToggles.map((t) => (
-                  <ToggleRow key={t.key} k={t.key} label={t.label} />
-                ))}
-              </div>
-
-              <GroupTitle>{labels.comfortGroup}</GroupTitle>
-              <div className="mt-2 grid gap-2">
-                {comfortToggles.map((t) => (
-                  <ToggleRow key={t.key} k={t.key} label={t.label} />
-                ))}
-              </div>
-            </div>
-
-            {/* pinned footer */}
-            <div className="shrink-0 border-t border-border p-4">
-              <button
-                type="button"
-                onClick={() => setS(DEFAULTS)}
-                className="w-full rounded-lg border border-border py-2.5 text-sm font-medium text-text-dim transition-colors hover:border-accent hover:text-accent-strong"
-              >
-                {labels.reset}
-              </button>
-            </div>
-          </div>
+          <AccessibilityPanel
+            labels={labels}
+            s={s}
+            pos={pos}
+            panelRef={panelRef}
+            onClose={() => setOpen(false)}
+            onUnmount={() => (anchorRef.current ?? launcherRef.current)?.focus()}
+            profiles={profiles}
+            activeProfile={activeProfile}
+            applyProfile={applyProfile}
+            setFont={setFont}
+            canDecrease={s.fontScale > MIN}
+            canIncrease={s.fontScale < MAX}
+            toggle={toggle}
+            textToggles={textToggles}
+            viewToggles={viewToggles}
+            comfortToggles={comfortToggles}
+            reset={() => setS(DEFAULTS)}
+          />
         </>
       )}
     </>
@@ -404,7 +334,10 @@ export function AccessibilityWidget({
       <button
         ref={launcherRef}
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          anchorRef.current = launcherRef.current;
+          setOpen((v) => !v);
+        }}
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label={labels.button}
@@ -413,11 +346,7 @@ export function AccessibilityWidget({
           onDark ? "border-transparent bg-white/10 text-white" : "border-transparent bg-text/5 text-text"
         }`}
       >
-        <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          <circle cx="12" cy="3.9" r="1.8" fill="currentColor" stroke="none" />
-          <path d="M4.5 8c2.4 1 5 1.4 7.5 1.4S17.1 9 19.5 8" />
-          <path d="M12 9.4V14m0 0-3 6.2M12 14l3 6.2" />
-        </svg>
+        <A11yIcon />
         {active > 0 && (
           <span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-accent px-1 font-mono text-[0.6rem] font-bold text-accent-ink">
             {active}
@@ -427,5 +356,15 @@ export function AccessibilityWidget({
 
       {mounted && createPortal(portal, document.body)}
     </>
+  );
+}
+
+function A11yIcon() {
+  return (
+    <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="12" cy="3.9" r="1.8" fill="currentColor" stroke="none" />
+      <path d="M4.5 8c2.4 1 5 1.4 7.5 1.4S17.1 9 19.5 8" />
+      <path d="M12 9.4V14m0 0-3 6.2M12 14l3 6.2" />
+    </svg>
   );
 }

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
-import { getQuizQuestions } from "@/lib/quiz/questions";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -37,7 +36,6 @@ export default async function QuizPage({
   const { lang: raw } = await params;
   const lang: Locale = isLocale(raw) ? raw : i18n.defaultLocale;
   const dict = await getDictionary(lang);
-  const questions = getQuizQuestions(lang);
 
   return (
     <PageShell dict={dict} lang={lang}>
@@ -57,7 +55,7 @@ export default async function QuizPage({
           className="mx-auto"
         />
         <div className="mt-12">
-          <QuizGame lang={lang} copy={dict.quiz} questions={questions} />
+          <QuizGame lang={lang} copy={dict.quiz} />
         </div>
       </Section>
 

@@ -18,8 +18,11 @@ export function ProcessGeo({ dict }: { dict: Dictionary }) {
 
       {/* DNA helix — full-bleed background, same diagonal as the original Geo,
           passes BEHIND everything (bottom-left → top-right, ends fade out) */}
+      {/* Desktop only (hidden md:): the 3D helix is never mounted on phones —
+          HelixDNA3D also returns null below 768px, this just avoids the
+          pre-hydration flash. */}
       <div
-        className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
+        className="pointer-events-none absolute inset-0 z-0 hidden items-center justify-center md:flex"
         aria-hidden
         style={{
           WebkitMaskImage:

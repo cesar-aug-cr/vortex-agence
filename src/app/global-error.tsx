@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { reportClientError } from "@/lib/report-client";
 
 /**
  * Root error boundary — replaces the whole document if the root layout itself
@@ -16,6 +17,7 @@ export default function GlobalError({
 }) {
   useEffect(() => {
     console.error(error);
+    reportClientError(error, "root");
   }, [error]);
 
   return (

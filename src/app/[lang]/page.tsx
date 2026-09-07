@@ -1,5 +1,6 @@
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
+import { headerCopy, stickyCopy } from "@/i18n/slices";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
@@ -27,7 +28,7 @@ export default async function HomePage({
 
   return (
     <>
-      <Header dict={dict} lang={lang} overHero sandbox />
+      <Header copy={headerCopy(dict)} lang={lang} overHero sandbox />
       <div className="relative isolate bg-bg">
         <AmbientGlow />
         <SpotlightCards />
@@ -47,7 +48,7 @@ export default async function HomePage({
         </main>
         <Footer dict={dict} lang={lang} />
       </div>
-      <StickyCta dict={dict} lang={lang} />
+      <StickyCta copy={stickyCopy(dict)} lang={lang} />
     </>
   );
 }

@@ -2,25 +2,23 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import type { Dictionary } from "@/i18n/getDictionary";
+import type { HeaderCopy, NavService } from "@/i18n/slices";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
-import { hiddenSubServices } from "@/lib/site";
 import { LogoMark } from "@/components/brand/LogoMark";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { AccessibilityWidget } from "@/components/layout/AccessibilityWidget";
 import { ArrowUpRight, ArrowRight } from "@/components/ui/icons";
 
-type Service = Dictionary["services"][number];
-
 export function Header({
-  dict,
+  copy,
   lang,
   overHero = false,
   sandbox = false,
 }: {
-  dict: Dictionary;
+  /** Typed slice of the dictionary (see i18n/slices.ts) — never the whole copy. */
+  copy: HeaderCopy;
   lang: Locale;
   overHero?: boolean;
   /** /test-home white sandbox: darkens the over-hero logo so it reads on the
@@ -37,7 +35,8 @@ export function Header({
   const toggleService = (slug: string) =>
     setOpenServices((prev) => {
       const next = new Set(prev);
-      next.has(slug) ? next.delete(slug) : next.add(slug);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
       return next;
     });
 
@@ -69,11 +68,11 @@ export function Header({
   }, [mobileOpen]);
 
   const solid = scrolled || !overHero;
-  const groups: { key: keyof Dictionary["megaMenu"]["columns"]; services: Service[] }[] = [
-    { key: "acquire", services: dict.services.filter((s) => s.group === "acquire") },
-    { key: "convert", services: dict.services.filter((s) => s.group === "convert") },
-    { key: "scale", services: dict.services.filter((s) => s.group === "scale") },
-    { key: "design", services: dict.services.filter((s) => s.group === "design") },
+  const groups: { key: keyof HeaderCopy["megaMenu"]["columns"]; services: NavService[] }[] = [
+    { key: "acquire", services: copy.services.filter((s) => s.group === "acquire") },
+    { key: "convert", services: copy.services.filter((s) => s.group === "convert") },
+    { key: "scale", services: copy.services.filter((s) => s.group === "scale") },
+    { key: "design", services: copy.services.filter((s) => s.group === "design") },
   ];
 
   // The over-hero header normally renders white content (it sits on the dark
@@ -98,7 +97,7 @@ export function Header({
       <div className="container-vortx flex h-20 items-center justify-between gap-6">
         <Link
           href={localized(lang, "/")}
-          aria-label={`vortx — ${dict.common.breadcrumbHome}`}
+          aria-label={`vortx — ${copy.common.breadcrumbHome}`}
           className={
             solid
               ? "text-text"
@@ -118,7 +117,7 @@ export function Header({
                 aria-haspopup="true"
                 className={`flex items-center gap-1.5 py-2 transition-colors ${navLinkClass}`}
               >
-                {dict.nav.services}
+                {copy.nav.services}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden className="transition-transform group-hover/mega:rotate-180">
                   <path d="m6 9 6 6 6-6" />
                 </svg>
@@ -129,7 +128,7 @@ export function Header({
                 <div className="container-vortx pt-2">
                   <div className="nav-dropdown overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)]">
                     <div className="p-8">
-                      <p className="text-sm text-text-dim">{dict.megaMenu.servicesLead}</p>
+                      <p className="text-sm text-text-dim">{copy.megaMenu.servicesLead}</p>
 
                       {/* featured — flat full-width banner, right after the lead */}
                       <Link
@@ -137,20 +136,20 @@ export function Header({
                         className="group/feat spotlight-card card-hover relative mt-5 block rounded-xl border border-border bg-stage px-6 py-5 text-stage-text transition-[transform,box-shadow,border-color] duration-300"
                       >
                         <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-accent">
-                          {dict.megaMenu.featured.label}
+                          {copy.megaMenu.featured.label}
                         </span>
                         <div className="mt-3 flex items-center justify-between gap-6">
                           <div className="min-w-0">
                             {/* Not a heading: nav content must not outrank the page h1. */}
                             <p className="text-base font-semibold leading-tight">
-                              {dict.megaMenu.featured.title}
+                              {copy.megaMenu.featured.title}
                             </p>
                             <p className="mt-0.5 text-sm text-stage-text-dim">
-                              {dict.megaMenu.featured.desc}
+                              {copy.megaMenu.featured.desc}
                             </p>
                           </div>
                           <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-accent">
-                            {dict.common.readMore}
+                            {copy.common.readMore}
                             <ArrowRight width={15} height={15} className="transition-transform group-hover/feat:translate-x-1" />
                           </span>
                         </div>
@@ -160,14 +159,11 @@ export function Header({
                           {groups.map((g) => (
                             <div key={g.key}>
                               <p className="font-mono text-xs uppercase tracking-wide text-text-muted">
-                                {dict.megaMenu.columns[g.key]}
+                                {copy.megaMenu.columns[g.key]}
                               </p>
                               <ul className="mt-3 space-y-3">
                                 {g.services.map((s) => {
-                                  const subs =
-                                    ((dict.subServices as Record<string, readonly { slug: string; title: string }[]>)[s.slug] ?? []).filter(
-                                      (c) => !hiddenSubServices.has(c.slug)
-                                    );
+                                  const subs = s.subs;
                                   return (
                                     <li key={s.slug}>
                                       <Link
@@ -210,17 +206,17 @@ export function Header({
 
             <li>
               <Link href={localized(lang, "/approche")} className={`py-2 transition-colors ${navLinkClass}`}>
-                {dict.nav.approach}
+                {copy.nav.approach}
               </Link>
             </li>
             <li>
               <Link href={localized(lang, "/realisations")} className={`py-2 transition-colors ${navLinkClass}`}>
-                {dict.nav.work}
+                {copy.nav.work}
               </Link>
             </li>
             <li>
               <Link href={localized(lang, "/agence")} className={`py-2 transition-colors ${navLinkClass}`}>
-                {dict.nav.about}
+                {copy.nav.about}
               </Link>
             </li>
 
@@ -231,7 +227,7 @@ export function Header({
                 aria-haspopup="true"
                 className={`flex items-center gap-1.5 py-2 transition-colors ${navLinkClass}`}
               >
-                {dict.nav.resources}
+                {copy.nav.resources}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden className="transition-transform group-hover/res:rotate-180">
                   <path d="m6 9 6 6 6-6" />
                 </svg>
@@ -239,10 +235,10 @@ export function Header({
               <div className="invisible absolute left-0 top-full z-40 w-52 translate-y-2 pt-3 opacity-0 transition-all duration-200 group-hover/res:visible group-hover/res:translate-y-0 group-hover/res:opacity-100 group-focus-within/res:visible group-focus-within/res:translate-y-0 group-focus-within/res:opacity-100">
                 <ul className="nav-dropdown overflow-hidden rounded-xl border border-border bg-bg-card p-2 shadow-[var(--shadow-lg)]">
                   {[
-                    { label: dict.nav.news, href: "/news" },
-                    { label: dict.nav.glossary, href: "/glossaire" },
-                    { label: dict.nav.faq, href: "/faq" },
-                    { label: dict.nav.quiz, href: "/quiz" },
+                    { label: copy.nav.news, href: "/news" },
+                    { label: copy.nav.glossary, href: "/glossaire" },
+                    { label: copy.nav.faq, href: "/faq" },
+                    { label: copy.nav.quiz, href: "/quiz" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link
@@ -262,9 +258,10 @@ export function Header({
         {/* Right cluster — order on every size: a11y · language · theme ·
             (CTA / burger) */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* accessibility — leftmost */}
-          <div className="order-1">
-            <AccessibilityWidget labels={dict.a11y} onDark={!onLight} />
+          {/* accessibility — leftmost. Desktop only: on mobile the launcher
+              lives at the bottom of the burger menu instead. */}
+          <div className="order-1 hidden lg:block">
+            <AccessibilityWidget labels={copy.a11y} onDark={!onLight} floating />
           </div>
           {/* language — between accessibility and theme (visible on mobile too) */}
           <div className="order-2">
@@ -272,20 +269,20 @@ export function Header({
           </div>
           {/* theme / colour — to the right of language */}
           <div className="order-3">
-            <ThemeToggle label={dict.common.toggleTheme} onDark={!onLight} />
+            <ThemeToggle label={copy.common.toggleTheme} onDark={!onLight} />
           </div>
           <Link
             href={localized(lang, "/contact")}
             className="btn btn-primary order-4 hidden sm:inline-flex"
           >
-            {dict.common.cta}
+            {copy.common.cta}
           </Link>
 
           {/* burger */}
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
-            aria-label={mobileOpen ? dict.common.close : dict.common.openMenu}
+            aria-label={mobileOpen ? copy.common.close : copy.common.openMenu}
             aria-expanded={mobileOpen}
             className={`hdr-icon-btn order-5 inline-flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur-md transition-colors hover:border-accent lg:hidden ${
               onLight ? "border-transparent bg-text/5 text-text" : "border-transparent bg-white/10 text-white"
@@ -311,15 +308,13 @@ export function Header({
               onClick={() => setMobileOpen(false)}
               className="btn btn-primary mb-8 w-full"
             >
-              {dict.common.cta}
+              {copy.common.cta}
             </Link>
 
-            <p className="eyebrow">{dict.nav.services}</p>
+            <p className="eyebrow">{copy.nav.services}</p>
             <ul className="mt-4 grid gap-1">
-              {dict.services.map((s) => {
-                const subs = (
-                  (dict.subServices as Record<string, readonly { slug: string; title: string }[]>)[s.slug] ?? []
-                ).filter((c) => !hiddenSubServices.has(c.slug));
+              {copy.services.map((s) => {
+                const subs = s.subs;
                 const open = openServices.has(s.slug);
                 return (
                   <li key={s.slug} className="border-b border-border">
@@ -383,10 +378,10 @@ export function Header({
 
             <ul className="mt-8 grid gap-1 text-lg font-medium">
               {[
-                { label: dict.nav.approach, href: "/approche" },
-                { label: dict.nav.work, href: "/realisations" },
-                { label: dict.nav.about, href: "/agence" },
-                { label: dict.nav.contact, href: "/contact" },
+                { label: copy.nav.approach, href: "/approche" },
+                { label: copy.nav.work, href: "/realisations" },
+                { label: copy.nav.about, href: "/agence" },
+                { label: copy.nav.contact, href: "/contact" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link
@@ -400,13 +395,13 @@ export function Header({
               ))}
             </ul>
 
-            <p className="eyebrow mt-8">{dict.nav.resources}</p>
+            <p className="eyebrow mt-8">{copy.nav.resources}</p>
             <ul className="mt-4 grid gap-1 text-lg font-medium">
               {[
-                { label: dict.nav.news, href: "/news" },
-                { label: dict.nav.glossary, href: "/glossaire" },
-                { label: dict.nav.faq, href: "/faq" },
-                { label: dict.nav.quiz, href: "/quiz" },
+                { label: copy.nav.news, href: "/news" },
+                { label: copy.nav.glossary, href: "/glossaire" },
+                { label: copy.nav.faq, href: "/faq" },
+                { label: copy.nav.quiz, href: "/quiz" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link
@@ -420,6 +415,22 @@ export function Header({
               ))}
             </ul>
 
+            {/* Bottom of the menu: accessibility launcher (hidden from the bar
+                on mobile) + the primary CTA repeated so it's reachable after
+                scrolling through the whole list. */}
+            <div className="mt-8 border-t border-border pt-6">
+              <div className="flex items-center gap-3">
+                <AccessibilityWidget labels={copy.a11y} />
+                <span className="text-lg font-medium text-text">{copy.a11y.button}</span>
+              </div>
+              <Link
+                href={localized(lang, "/contact")}
+                onClick={() => setMobileOpen(false)}
+                className="btn btn-primary mt-6 w-full"
+              >
+                {copy.common.cta}
+              </Link>
+            </div>
           </nav>
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { reportClientError } from "@/lib/report-client";
 
 /**
  * Segment error boundary — catches render/runtime errors in any page under
@@ -28,6 +29,7 @@ export default function Error({
 }) {
   useEffect(() => {
     console.error(error);
+    reportClientError(error, "segment");
   }, [error]);
 
   const pathname = usePathname();

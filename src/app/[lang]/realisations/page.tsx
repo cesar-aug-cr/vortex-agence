@@ -144,7 +144,7 @@ export default async function RealisationsPage({
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-top"
-                    quality={80}
+                    quality={75}
                   />
                 </div>
                 <div className="p-6">

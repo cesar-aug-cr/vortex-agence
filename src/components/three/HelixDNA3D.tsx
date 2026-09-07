@@ -104,6 +104,11 @@ export default function HelixDNA3D({
   tiltDeg?: number;
 }) {
   const [visible, setVisible] = useState(false);
+  // Mount the Canvas once (first time it scrolls into view) and keep it: the
+  // previous mount/unmount on every viewport pass re-created the WebGL context
+  // and recompiled the shaders each time (risky on iOS). Off-screen it now
+  // just stops its frameloop.
+  const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [reduced, setReduced] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -111,7 +116,13 @@ export default function HelixDNA3D({
 
   useEffect(() => {
     if (!ref.current) return;
-    const obs = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), { threshold: 0.1 });
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        setVisible(e.isIntersecting);
+        if (e.isIntersecting) setMounted(true);
+      },
+      { threshold: 0.1 }
+    );
     obs.observe(ref.current);
     return () => obs.disconnect();
   }, []);
@@ -130,6 +141,10 @@ export default function HelixDNA3D({
     };
   }, []);
 
+  // Decorative only: on phones the helix costs a WebGL context and battery
+  // for a background that is mostly hidden behind the cards — skip it.
+  if (isMobile) return null;
+
   return (
     <div
       ref={ref}
@@ -142,7 +157,7 @@ export default function HelixDNA3D({
         transition: reduced ? "none" : "opacity 1600ms ease-out",
       }}
     >
-      {visible && (
+      {mounted && (
         <Canvas
           camera={{ position: [0, 0, 8], fov: 50 }}
           style={{ background: "transparent" }}
@@ -156,7 +171,7 @@ export default function HelixDNA3D({
           }}
           // Decorative canvas → no pointer interaction; single static frame when
           // the user prefers reduced motion.
-          frameloop={reduced ? "demand" : "always"}
+          frameloop={reduced ? "demand" : visible ? "always" : "never"}
           raycaster={{ enabled: false } as never}
         >
           <group rotation={[0, 0, tilt]}>

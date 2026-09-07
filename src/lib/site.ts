@@ -108,19 +108,3 @@ export const mainRoutes = [
   "confidentialite",
   "cookies",
 ] as const;
-
-/**
- * News article slugs (must match the dictionary `news.articles[].slug`).
- * Kept here so the sitemap stays dependency-free of the dictionary.
- */
-export const newsSlugs = [
-  "ux-ui-design-site-qui-convertit-bonnes-pratiques",
-  "geo-seo-luxembourg-etre-cite-par-les-ia",
-  "google-ads-ou-seo-ou-investir-budget-marketing",
-  "tunnel-de-conversion-transformer-visiteurs-en-clients",
-  "combien-coute-un-site-web-luxembourg-2026",
-  "quest-ce-quun-bon-logo-identite-qui-dure",
-  "rgpd-cookies-site-web-luxembourg",
-  "5-taches-pme-confier-a-l-ia",
-  "ia-pme-luxembourg-par-ou-commencer",
-] as const;

@@ -72,7 +72,6 @@ export function ArticleToc({
   variant?: "mobile" | "desktop";
 }) {
   const [open, setOpen] = useState(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const activeId = useActiveHeading(items.map((i) => i.id));
 
   if (items.length < 2) return null;

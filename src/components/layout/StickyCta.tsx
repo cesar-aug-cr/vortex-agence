@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { localized } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
-import type { Dictionary } from "@/i18n/getDictionary";
+import type { StickyCopy } from "@/i18n/slices";
 import { Cookie, ArrowRight, ArrowUpRight } from "@/components/ui/icons";
 import { openConsentPreferences } from "@/lib/consent";
 
@@ -14,7 +14,7 @@ import { openConsentPreferences } from "@/lib/consent";
  *   🍪 (re-open cookie preferences) · "Les services" (opens an upward popover
  *   listing the services) · "Réserver un appel".
  */
-export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
+export function StickyCta({ copy, lang }: { copy: StickyCopy; lang: Locale }) {
   const [show, setShow] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -45,10 +45,10 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             />
             <div className="glass-pill absolute bottom-full left-1/2 z-10 mb-3 w-64 -translate-x-1/2 animate-fade-in-up rounded-2xl bg-bg-elevated/70 p-2 shadow-[var(--shadow-lg)] backdrop-blur-xl">
               <p className="px-3 pb-1 pt-1.5 font-mono text-[0.6rem] uppercase tracking-wide text-text-muted">
-                {dict.servicesSection.eyebrow}
+                {copy.eyebrow}
               </p>
               <ul className="grid">
-                {dict.services.map((s) => (
+                {copy.services.map((s) => (
                   <li key={s.slug}>
                     <Link
                       href={localized(lang, `/services/${s.slug}`)}
@@ -66,7 +66,7 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                     onClick={() => setServicesOpen(false)}
                     className="block rounded-lg px-3 py-2 text-sm font-semibold text-accent"
                   >
-                    {dict.common.allServices}
+                    {copy.allServices}
                   </Link>
                 </li>
               </ul>
@@ -79,8 +79,8 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           <button
             type="button"
             onClick={openConsentPreferences}
-            aria-label={dict.consent.manage}
-            title={dict.consent.manage}
+            aria-label={copy.consentManage}
+            title={copy.consentManage}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text transition-colors hover:border-accent hover:text-accent-strong"
           >
             <Cookie width={16} height={16} />
@@ -96,21 +96,21 @@ export function StickyCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 : "border-border-strong text-text hover:border-accent"
             }`}
           >
-            {dict.common.servicesShort}
+            {copy.servicesShort}
           </button>
           <Link
             href={localized(lang, "/contact")}
             className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-accent px-3 py-2 text-xs font-semibold text-accent-ink transition-transform hover:-translate-y-0.5"
           >
-            {dict.common.cta}
+            {copy.cta}
             <ArrowRight width={14} height={14} />
           </Link>
           {/* Chat / message launcher — icon only, far right (opens ChatWidget) */}
           <button
             type="button"
             onClick={() => window.dispatchEvent(new CustomEvent("vortx:chat-toggle"))}
-            aria-label={dict.chat.open}
-            title={dict.chat.open}
+            aria-label={copy.chatOpen}
+            title={copy.chatOpen}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-accent-ink transition-transform hover:-translate-y-0.5"
           >
             <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
