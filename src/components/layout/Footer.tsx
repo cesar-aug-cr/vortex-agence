@@ -6,11 +6,16 @@ import { LogoMark } from "@/components/brand/LogoMark";
 import { ArrowRight } from "@/components/ui/icons";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { site } from "@/lib/site";
-import { currentYear } from "@/lib/dates";
+import { currentYear, yearsOfExperience } from "@/lib/dates";
 
 export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const year = currentYear();
-  const cols = [dict.footer.columns.services, dict.footer.columns.company, dict.footer.columns.legal];
+  const years = yearsOfExperience();
+  const cols = [
+    dict.footer.columns.services,
+    dict.footer.columns.company,
+    dict.footer.columns.legal,
+  ];
   const allTools = dict.tools.categories.flatMap((c) => c.items);
   const marquee = [...allTools, ...allTools];
 
@@ -26,7 +31,10 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       >
         <div className="marquee-track marquee-slow">
           {marquee.map((item, i) => (
-            <span key={`${item}-${i}`} className="mx-5 font-mono text-xs uppercase tracking-widest text-stage-text-dim">
+            <span
+              key={`${item}-${i}`}
+              className="mx-5 font-mono text-xs uppercase tracking-widest text-stage-text-dim"
+            >
               {item}
               <span className="mx-5 text-accent">•</span>
             </span>
@@ -39,19 +47,33 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           {/* brand + CTA */}
           <div>
             {/* logo 1 — static dot mark (no animation), all breakpoints */}
-            <LogoMark
-              animated={false}
-              className="h-9 w-auto text-stage-text"
-            />
+            <LogoMark animated={false} className="h-9 w-auto text-stage-text" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-stage-text-dim">
               {dict.footer.blurb}
+            </p>
+            {/* experience line (moved from the /agence counter card). Dark
+                stage → brand lime forced, as elsewhere on always-dark bands. */}
+            <p className="mt-4 text-sm text-stage-text">
+              <span className="font-mono text-2xl font-bold leading-none text-[color:var(--accent)]">
+                {years}
+              </span>{" "}
+              <span className="font-semibold">
+                {dict.agence.experience.suffix} {dict.agence.experience.label}
+              </span>
+              <span className="mt-1 block font-mono text-xs uppercase tracking-wide text-stage-text-dim">
+                {dict.agence.experience.note}
+              </span>
             </p>
             <Link
               href={localized(lang, "/contact")}
               className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-accent"
             >
               {dict.common.cta}
-              <ArrowRight width={16} height={16} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight
+                width={16}
+                height={16}
+                className="transition-transform group-hover:translate-x-1"
+              />
             </Link>
           </div>
 
@@ -66,12 +88,27 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((l) => (
                     <li key={l.href}>
-                      <Link
-                        href={localized(lang, l.href)}
-                        className="text-sm text-stage-text/85 transition-colors hover:text-accent"
-                      >
-                        {l.label}
-                      </Link>
+                      {l.href.endsWith(".pdf") ? (
+                        /* static document (e.g. the CGV PDF): no locale prefix,
+                           opens in a new tab */
+                        <a
+                          href={l.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-stage-text/85 transition-colors hover:text-accent"
+                        >
+                          {l.label}
+                          <span className="sr-only"> (PDF)</span>
+                        </a>
+                      ) : (
+                        <Link
+                          href={localized(lang, l.href)}
+                          prefetch={false}
+                          className="text-sm text-stage-text/85 transition-colors hover:text-accent"
+                        >
+                          {l.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

@@ -6,7 +6,7 @@ import { localized } from "@/lib/locale";
 import { buildMetadata } from "@/lib/metadata";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageFadeIn } from "@/components/layout/PageFadeIn";
-import BlackHoleLazy from "@/components/three/BlackHoleLazy";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   return i18n.locales.map((lang) => ({ lang }));
@@ -41,23 +41,27 @@ export default async function MerciPage({
   return (
     <PageShell dict={dict} lang={lang}>
       <PageFadeIn />
-      <section className="hero-section relative isolate flex min-h-svh items-center overflow-hidden bg-stage text-stage-text">
-        {/* 3D black hole — the particle version from the original home hero,
-            centred behind the content */}
+      {/* No `hero-section` class: that hook flips the stage to white in the
+          light theme, which would put dark text on this dark photo. The page
+          stays a dark stage in both themes. */}
+      <section className="relative isolate flex min-h-svh items-center overflow-hidden bg-stage text-stage-text">
+        {/* confirmation illustration (images-test proposal 18): a paper plane
+            flying towards a cyan horizon — public/merci/confirmation.webp,
+            1536×1024, centred subject. Replaces the 3D black hole, so the
+            page needs no WebGL. */}
         <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
-          <BlackHoleLazy
-            showSphere={false}
-            bhPositionOverride={[0, 0, 0]}
-            bhPositionMobileOverride={[0, 0, 1]}
-            bhScaleOverride={1.7}
-            eventHorizonColorLight="#ffffff"
-            diskLimeOnLight
+          <Image
+            src="/merci/confirmation.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover object-center"
           />
         </div>
-        {/* readability scrim between the 3D scene and the text — fades in 1s
-            before the content. Dark theme: dark veil; light theme: lime veil
-            (colour set per-theme in globals.css). Semi-transparent so the
-            black hole stays visible underneath. */}
+        {/* readability scrim between the photo and the text — fades in 1s
+            before the content. Semi-transparent so the illustration stays
+            visible underneath (strength set in globals.css). */}
         <div className="thanks-scrim pointer-events-none absolute inset-0 z-[1]" aria-hidden />
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/3"

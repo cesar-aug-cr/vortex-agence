@@ -227,7 +227,9 @@ export function PortfolioCoverflow({
                     alt={alts?.[site.slug] ?? `Projet ${site.name} réalisé par vortx`}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 480px"
+                    // Phone cards are 200 css px (×1.4 for the active one):
+                    // 220px → a 660 px render on 3x screens instead of 900+.
+                    sizes="(max-width: 640px) 220px, (max-width: 1024px) 360px, 480px"
                     quality={85}
                     // The whole section sits well below the fold: no priority
                     // (it was the only eager image on the home and competed

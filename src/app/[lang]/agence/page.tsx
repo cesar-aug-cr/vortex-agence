@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { localized } from "@/lib/locale";
@@ -106,27 +107,31 @@ export default async function AgencePage({
               </div>
             </div>
 
-            {/* experience card — counter rolls over each Jan 1 (ISR) */}
-            <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-3xl border border-stage-border bg-stage p-10 text-center text-stage-text shadow-[var(--shadow-lg)]">
-              <div
-                className="pointer-events-none absolute inset-0"
-                aria-hidden
-                style={{
-                  backgroundImage:
-                    "radial-gradient(80% 70% at 50% 0%, rgba(20,224,200,0.18), transparent 60%), radial-gradient(70% 60% at 50% 100%, rgba(200,240,46,0.14), transparent 60%)",
-                }}
+            {/* team photo with the experience counter in overlay (counter rolls
+                over each Jan 1 — ISR). Image from images-test proposal 15:
+                public/agence/equipe.webp, 1024×1536, shown 4:5 object-cover.
+                NOTE: it is an AI render used as a placeholder for framing until
+                a real photo shoot — the people in it do not exist. The full
+                "years · note" line also lives in the footer. */}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-stage-border bg-stage text-stage-text shadow-[var(--shadow-lg)]">
+              <Image
+                src="/agence/equipe.webp"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+                priority
               />
-              {/* Always-dark stage → force brand lime (the global light-theme
-                  `.text-accent` → olive override would be illegible on near-black). */}
-              <span className="relative font-mono text-7xl font-bold leading-none text-[color:var(--accent)] md:text-8xl">
-                {years}
-              </span>
-              <span className="relative mt-3 text-xl font-semibold">
-                {a.experience.suffix} {a.experience.label}
-              </span>
-              <span className="relative mt-1 font-mono text-xs uppercase tracking-wide text-stage-text-dim">
-                {a.experience.note}
-              </span>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stage via-stage/70 to-transparent px-6 pb-6 pt-16">
+                {/* Always-dark overlay → force brand lime (the light-theme
+                    `.text-accent` → olive override would be illegible here). */}
+                <span className="font-mono text-5xl font-bold leading-none text-[color:var(--accent)] md:text-6xl">
+                  {years}
+                </span>
+                <span className="ml-2 text-lg font-semibold">
+                  {a.experience.suffix} {a.experience.label}
+                </span>
+              </div>
             </div>
           </div>
 

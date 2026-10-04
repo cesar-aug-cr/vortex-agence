@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
@@ -65,43 +66,66 @@ export default async function ContactPage({
             </div>
           </div>
 
-          {/* Direct channels + benefits */}
+          {/* Direct channels + benefits, laid over the office photo
+              (images-test proposal 16: public/contact/bureau.webp, 1024×1024).
+              The photo is dark, so the panel uses light text + brand lime
+              regardless of theme. NOTE: AI render standing in for a real
+              photo of the office. */}
           <aside className="lg:pt-10">
-            <div className="rounded-2xl border border-border bg-bg-card p-7">
-              <p className="font-mono text-xs uppercase tracking-wide text-text-muted">
-                {dict.footer.contactTitle}
-              </p>
-              <ul className="mt-4 grid gap-3 text-sm">
-                <li>
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="font-medium text-text transition-colors hover:text-accent-strong"
-                  >
-                    {site.email}
-                  </a>
-                </li>
-                {site.phone && (
+            <div className="relative flex min-h-[520px] flex-col justify-end overflow-hidden rounded-2xl border border-stage-border bg-stage text-stage-text shadow-[var(--shadow-lg)]">
+              <Image
+                src="/contact/bureau.webp"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover"
+              />
+              {/* scrim: clear at the top, near-opaque behind the text */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, rgba(7,7,10,0.05) 0%, rgba(7,7,10,0.45) 40%, rgba(7,7,10,0.9) 72%, rgba(7,7,10,0.96) 100%)",
+                }}
+              />
+
+              <div className="relative p-7">
+                <p className="font-mono text-xs uppercase tracking-wide text-stage-text-dim">
+                  {dict.footer.contactTitle}
+                </p>
+                <ul className="mt-4 grid gap-3 text-sm">
                   <li>
                     <a
-                      href={`tel:${site.phone.replace(/\s+/g, "")}`}
-                      className="font-medium text-text transition-colors hover:text-accent-strong"
+                      href={`mailto:${site.email}`}
+                      className="font-medium text-stage-text transition-colors hover:text-[color:var(--accent)]"
                     >
-                      {site.phone}
+                      {site.email}
                     </a>
                   </li>
-                )}
-                <li className="text-text-dim">{dict.footer.location}</li>
-              </ul>
-            </div>
+                  {site.phone && (
+                    <li>
+                      <a
+                        href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                        className="font-medium text-stage-text transition-colors hover:text-[color:var(--accent)]"
+                      >
+                        {site.phone}
+                      </a>
+                    </li>
+                  )}
+                  <li className="text-stage-text-dim">{dict.footer.location}</li>
+                </ul>
 
-            <ul className="mt-8 grid gap-3">
-              {dict.contact.benefits.map((b) => (
-                <li key={b} className="flex items-center gap-2 text-sm text-text-dim">
-                  <Check width={16} height={16} className="text-accent" />
-                  {b}
-                </li>
-              ))}
-            </ul>
+                <ul className="mt-6 grid gap-3 border-t border-white/10 pt-6">
+                  {dict.contact.benefits.map((b) => (
+                    <li key={b} className="flex items-center gap-2 text-sm text-stage-text-dim">
+                      <Check width={16} height={16} className="shrink-0 text-[color:var(--accent)]" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </aside>
         </div>
       </Section>

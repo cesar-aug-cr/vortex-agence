@@ -1,10 +1,24 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ArrowUpRight, Check } from "@/components/ui/icons";
-import { serviceIllustration } from "@/components/illustrations/map";
+
+/**
+ * Home-only: the cards use the generated renders (public/services/<slug>.webp,
+ * 1536×1024, from scripts/images-manifest.mjs) instead of the animated SVG
+ * illustrations. /services and the service pages keep the SVGs.
+ */
+const SERVICE_IMAGES: Record<string, string> = {
+  "sites-web": "/services/sites-web.webp",
+  "seo-geo": "/services/seo-geo.webp",
+  "lead-generation": "/services/lead-generation.webp",
+  publicite: "/services/publicite.webp",
+  "branding-design": "/services/branding-design.webp",
+  "automatisation-ia": "/services/automatisation-ia.webp",
+};
 
 export function Services({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
@@ -16,16 +30,25 @@ export function Services({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       />
       <div className="mt-14 grid gap-5 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
         {dict.services.map((s) => {
-          const Illu = serviceIllustration[s.slug];
+          const img = SERVICE_IMAGES[s.slug];
           return (
           <Link
             key={s.slug}
             href={localized(lang, `/services/${s.slug}`)}
             className="card card-hover spotlight-card group flex flex-col p-7"
           >
-            {Illu && (
-              <div className="illu-stage mb-5 overflow-hidden rounded-xl border border-border">
-                <Illu className="h-40 w-full" />
+            {img && (
+              <div className="relative mb-5 h-40 w-full overflow-hidden rounded-xl border border-border">
+                <Image
+                  src={img}
+                  alt=""
+                  fill
+                  // The frame is only 160 px tall: on a 3x phone "100vw" asked
+                  // for a 1200 px render. ~60vw / 400px keeps ≥ 2x sharpness
+                  // while roughly halving the bytes on mobile.
+                  sizes="(max-width: 768px) 60vw, (max-width: 1024px) 40vw, 400px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
               </div>
             )}
             <div className="flex items-start justify-between gap-4">

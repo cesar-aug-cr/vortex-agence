@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { Section, SectionHeading } from "@/components/ui/Section";
 
@@ -8,7 +9,14 @@ import { Section, SectionHeading } from "@/components/ui/Section";
  * NOTE: `dict.reviews.items` are representative PLACEHOLDERS (see
  * `dict.reviews.note`). Replace them with real, verifiable client reviews
  * before relying on them publicly.
+ *
+ * Avatars (images-test proposal 28): public/reviews/avatar-<n>.webp, mapped
+ * by card index. They are generated, deliberately faceless silhouettes —
+ * swap in real portraits or client logos (with written consent) together
+ * with the real reviews.
  */
+const AVATARS = [1, 2, 3, 4, 5, 6].map((n) => `/reviews/avatar-${n}.webp`);
+
 export function Reviews({ dict }: { dict: Dictionary }) {
   const r = dict.reviews;
 
@@ -18,7 +26,7 @@ export function Reviews({ dict }: { dict: Dictionary }) {
 
       {/* review cards — horizontal snap slider on phone/tablet, grid on desktop */}
       <div className="reviews-slider mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
-        {r.items.map((review) => (
+        {r.items.map((review, i) => (
           <figure
             key={review.name}
             className="card flex shrink-0 basis-[85%] snap-start flex-col p-6 sm:basis-[60%] md:basis-[47%] lg:basis-auto"
@@ -49,11 +57,18 @@ export function Reviews({ dict }: { dict: Dictionary }) {
                     "radial-gradient(60% 130% at 0% 50%, rgba(200,240,46,0.16), transparent 60%)",
                 }}
               />
-              <div className="relative px-4 py-3">
-                <span className="block text-sm font-semibold text-white">{review.name}</span>
-                <span className="block text-xs text-white/55">
-                  {review.role} · {review.location}
-                </span>
+              <div className="relative flex items-center gap-3 px-4 py-3">
+                {AVATARS[i] && (
+                  <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/20">
+                    <Image src={AVATARS[i]} alt="" fill sizes="40px" className="object-cover" />
+                  </span>
+                )}
+                <div className="min-w-0">
+                  <span className="block text-sm font-semibold text-white">{review.name}</span>
+                  <span className="block text-xs text-white/55">
+                    {review.role} · {review.location}
+                  </span>
+                </div>
               </div>
             </figcaption>
           </figure>

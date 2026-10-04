@@ -34,6 +34,10 @@
   --accent: #c8f02e; /* lime */
   --accent-2: #14e0c8; /* cyan vortex */
   --accent-ink: #0a0a0b; /* text on accent fills */
+  /* Colour the hero dissolves into at its bottom edge (and that the divider
+     below it starts from). Black by default; the light theme flips it to the
+     white hero surface so there is no black band between hero and page. */
+  --hero-fade: var(--accent-ink);
   --accent-soft: rgba(200, 240, 46, 0.12);
   /* Readable accent for text on LIGHT surfaces (lime fails AA on white);
      overridden to lime in dark mode below. */
@@ -430,7 +434,17 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: brandSweep 2.8s linear infinite;
+    /* Rest position = the bright centre of the gradient, so the text keeps the
+       identity colours once the sweep has stopped. */
+    background-position: 50% center;
+    /* Three passes on load, then still. Hovering only changes the iteration
+       count (no restart): the sweep resumes while the pointer is over it and
+       finishes when it leaves. A permanent loop repaints the text every frame
+       and was the costliest single animation on the home. */
+    animation: brandSweep 2.8s linear 3;
+  }
+  .brand-sweep:hover {
+    animation-iteration-count: infinite;
   }
 
   .btn {
@@ -1054,6 +1068,13 @@ html:not(.dark) .ai-summary:not(.ai-summary-revealing) {
     opacity: 1;
   }
 }
+/* Sections tagged by <PauseOffscreen> while scrolled out of view: every
+   looping animation inside stops being painted. */
+.is-offscreen,
+.is-offscreen * {
+  animation-play-state: paused !important;
+}
+
 @keyframes brandSweep {
   0% {
     background-position: 150% center;
@@ -1349,9 +1370,11 @@ html:not(.dark) .test-home #approche .adn-ambient {
   animation: thanks-content-in 900ms ease-out 2.2s both;
 }
 .thanks-scrim {
+  /* Softer than the old black-hole veil: the /merci background is now a
+     still illustration whose subject must stay visible behind the text. */
   --scrim-rgb: 7, 7, 10;
-  --scrim-core: 0.94;
-  --scrim-mid: 0.62;
+  --scrim-core: 0.78;
+  --scrim-mid: 0.5;
   background: radial-gradient(
     60% 60% at 50% 45%,
     rgba(var(--scrim-rgb), var(--scrim-core)),
@@ -1360,12 +1383,8 @@ html:not(.dark) .test-home #approche .adn-ambient {
   );
   animation: thanks-scrim-in 1800ms ease-in-out 1.2s both;
 }
-/* Light theme: white veil (matches the light stage), original strength. */
-html:not(.dark) .test-home .thanks-scrim {
-  --scrim-rgb: 251, 251, 249;
-  --scrim-core: 0.88;
-  --scrim-mid: 0.55;
-}
+/* (The light-theme white veil was dropped: /merci now stays a dark stage in
+   both themes, see merci/page.tsx.) */
 @keyframes thanks-scrim-in {
   from {
     opacity: 0;
@@ -1467,6 +1486,11 @@ html:not(.dark) .test-home .hero-section {
   --hero-frost-mid: 0.05;
   background-color: var(--stage);
   color: var(--stage-text);
+}
+/* On the white hero the bottom fade and the divider under it must be white
+   too, not black (set on the page scope: the divider lives outside the hero). */
+html:not(.dark) .test-home {
+  --hero-fade: #fbfbf9;
 }
 html:not(.dark) .test-home .hero-section .hero-title {
   filter: none;

@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
 import { SpotlightCards } from "@/components/ui/SpotlightCards";
+import { PauseOffscreen } from "@/components/ui/PauseOffscreen";
 import { StickyCta } from "@/components/layout/StickyCta";
 import { HeroTestBH } from "@/components/sections/HeroTestBH";
 import { WhyVortx } from "@/components/sections/WhyVortx";
@@ -32,8 +33,17 @@ export default async function HomePage({
       <div className="relative isolate bg-bg">
         <AmbientGlow />
         <SpotlightCards />
+        <PauseOffscreen />
         <main>
           <HeroTestBH dict={dict} lang={lang} />
+          {/* Divider: the hero fades to --hero-fade at its bottom edge, this
+              band fades that colour into the page background. Dark theme:
+              black → #09090c; light theme: white → #f7f8f4 (no black band). */}
+          <div
+            aria-hidden
+            className="h-28 md:h-40"
+            style={{ background: "linear-gradient(to bottom, var(--hero-fade), var(--bg))" }}
+          />
           <WhyVortx dict={dict} />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} lang={lang} />

@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import Link from "next/link";
+import { getImageProps } from "next/image";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
-import { Wordmark } from "@/components/brand/Wordmark";
 import TestBHLazy from "@/components/three/TestBHLazy";
 import { HeroParticles } from "@/components/sections/HeroParticles";
 import { GlowStar } from "@/components/sections/GlowStar";
@@ -25,15 +25,41 @@ const VIGNETTE = `linear-gradient(to top, var(--stage) 6%, rgba(${T},0.6) 40%, t
 const FROST = `radial-gradient(44% 54% at 80% 50%, rgba(${T},var(--hero-frost-core,0.5)), rgba(${T},var(--hero-frost-mid,0.16)) 55%, transparent 78%)`;
 const GRID = `linear-gradient(to right, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px)`;
 
+// Luxembourg skyline cut-out (desktop only): Pont Adolphe, the old town and
+// Kirchberg on a transparent sky, so the black hole shows through behind it.
+// It is the hero's Largest Contentful Paint on desktop, so it loads eagerly at
+// high priority — but NOT via `priority`, whose <link rel=preload> would ship
+// it to phones that never display it. The 2560×1058 source is shown at
+// 76 % (1946 px), the same rule as the previous skyline (−20 %, then −5 %);
+// narrower viewports cap it at the section width.
+const CITY_SRC = "/hero/vortx-luxembourg.webp";
+const CITY_NATURAL = { width: 2560, height: 1058 };
+const CITY_W = 1946;
+const CITY_SIZES = `(max-width: ${CITY_W}px) 100vw, ${CITY_W}px`;
+// 1×1 transparent GIF: the <source> phones match, so they fetch nothing.
+const BLANK_GIF = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+
 export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {
+  const { props: city } = getImageProps({
+    src: CITY_SRC,
+    alt: "",
+    width: CITY_NATURAL.width,
+    height: CITY_NATURAL.height,
+    sizes: CITY_SIZES,
+    loading: "eager",
+    fetchPriority: "high",
+  });
+
   return (
     <section className="hero-section relative isolate overflow-hidden bg-stage text-stage-text">
-      {/* 3D black hole (image-disk version) — same placement as the home hero */}
+      {/* 3D black hole (image-disk version), behind the Luxembourg skyline.
+          Slightly smaller on desktop (1.5) than before; phones keep 1.7. */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <TestBHLazy
           bhPositionOverride={[2.4, 0.4, 0]}
           bhPositionMobileOverride={[1.2, 2.6, 1]}
-          bhScaleOverride={1.7}
+          bhScaleOverride={1.5}
+          bhScaleMobileOverride={1.7}
         />
       </div>
 
@@ -48,14 +74,6 @@ export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
-      {/* === READABILITY FILTERS (between 3D and text) === */}
-      <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: SCRIM }} />
-      <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: HALO }} />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-2/3"
-        aria-hidden
-        style={{ background: VIGNETTE }}
-      />
       {/* brand colour glows */}
       <div
         className="pointer-events-none absolute inset-0 z-[1]"
@@ -66,9 +84,20 @@ export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
+      {/* === READABILITY FILTERS (between 3D and text) ===
+          The bottom vignette and the frost sit UNDER the city skyline so its
+          light trails stay vivid and crisp (the frost's backdrop blur must not
+          touch it); the left scrim and halo sit OVER it so the headline keeps
+          its veiled backdrop. All four veils share --hero-tint, so their order
+          relative to each other is invisible — only the skyline's slot matters. */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-2/3"
+        aria-hidden
+        style={{ background: VIGNETTE }}
+      />
       {/* frosted filter over the black hole only (softens it, keeps text crisp). */}
       <div
-        className="hero-frost pointer-events-none absolute inset-0 z-[3]"
+        className="hero-frost pointer-events-none absolute inset-0 z-[2]"
         aria-hidden
         style={{
           background: FROST,
@@ -77,18 +106,38 @@ export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         }}
       />
 
+      {/* City skyline — desktop only, pinned bottom-right at 76 % of its
+          source width and scaling down with the section below that. The
+          <picture> is art direction in reverse: under lg the blank <source>
+          wins and no image bytes are fetched; from lg the <img> srcset is used. */}
+      <picture
+        className="pointer-events-none absolute bottom-0 right-0 z-[2] hidden max-w-full lg:block"
+        style={{ width: CITY_W }}
+      >
+        <source media="(max-width: 1023px)" srcSet={BLANK_GIF} />
+        <img {...city} alt="" className="h-auto w-full" />
+      </picture>
+
+      <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: SCRIM }} />
+      <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: HALO }} />
+
       {/* Floating particles + glow lines — above the scrim/frost, below the copy */}
       <div className="pointer-events-none absolute inset-0 z-[4]" aria-hidden>
         <HeroParticles />
       </div>
 
+      {/* Bottom fade: the skyline dissolves into a band that the next section
+          picks up (see the divider in page.tsx), so there is no hard cut between
+          the hero and "Why VorTX". Black in dark theme, white in light theme
+          (--hero-fade, globals.css). */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-56 md:h-72"
+        aria-hidden
+        style={{ background: "linear-gradient(to bottom, transparent, var(--hero-fade))" }}
+      />
+
       <div className="container-vortx relative z-10 flex min-h-[100svh] flex-col justify-center pb-16 pt-36 md:pt-40">
         <div className="relative self-start">
-          {/* VORTX wordmark as a faint watermark sitting behind the eyebrow */}
-          <Wordmark
-            aria-hidden
-            className="pointer-events-none absolute left-0 top-1/2 h-14 w-auto -translate-y-1/2 text-stage-text/[0.08] animate-fade-in sm:h-16 md:h-20"
-          />
           <span className="relative font-mono text-xs uppercase tracking-[0.24em] text-accent animate-fade-in">
             {dict.hero.eyebrow.split("Luxembourg").map((part, i) => (
               <Fragment key={i}>

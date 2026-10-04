@@ -85,7 +85,7 @@ export const de = {
   // ---- Trust / positioning band ----
   trust: {
     eyebrow: "Warum vortx",
-    title: "Eine Agentur, kein Dienstleister.",
+    title: "Ihr Wachstumspartner in Luxemburg.",
     lead: "In Luxemburg vergleichen Ihre Kunden auf Französisch, Deutsch und Englisch. Wir bauen Präsenzen, die in allen drei Sprachen performen — und die sowohl Google als auch generative KI ansprechen.",
     pillars: [
       {
@@ -384,6 +384,10 @@ export const de = {
   // ---- Referenzen-Seite ----
   workPage: {
     eyebrow: "Referenzen",
+    comingSoon: {
+      title: "Noch keine Referenzen.",
+      text: "Unsere Fallstudien entstehen gerade gemeinsam mit unseren Kunden. Sprechen wir in der Zwischenzeit über Ihr Projekt: Gern zeigen wir Ihnen unsere Arbeiten in einem Gespräch.",
+    },
     title: "Konkrete Projekte für konkrete Berufe.",
     lead: "Garagen, Handwerker, KMU, Web-Produkte: Das ist es, was wir konzipieren und online bringen. Jedes Projekt hat ein klares Ziel — gefunden werden, Vertrauen schaffen, Anfragen generieren.",
     note: "Der Transparenz halber: Die Fallstudien mit Zahlen (Traffic, Leads, Conversions) entstehen gerade gemeinsam mit unseren Kunden. Wir stellen sie Ihnen gerne in einem Gespräch vor.",
@@ -608,7 +612,6 @@ export const de = {
         links: [
           { label: "Über uns", href: "/agence" },
           { label: "Unsere Methode", href: "/approche" },
-          { label: "Referenzen", href: "/realisations" },
           { label: "News", href: "/news" },
           { label: "Glossar", href: "/glossaire" },
           { label: "FAQ", href: "/faq" },
@@ -621,6 +624,7 @@ export const de = {
           { label: "Impressum", href: "/mentions-legales" },
           { label: "Datenschutz", href: "/confidentialite" },
           { label: "Cookies", href: "/cookies" },
+          { label: "AGB (CGV)", href: "/docs/cgv-vortx-2026-10-02.pdf" },
         ],
       },
     },

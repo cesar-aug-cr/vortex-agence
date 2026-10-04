@@ -44,7 +44,6 @@
 - [Tous les services](https://vortx.lu/fr/services)
 - [Notre méthode](https://vortx.lu/fr/approche) : diagnostic, conception, revue, lancement.
 - [L'agence](https://vortx.lu/fr/agence)
-- [Réalisations](https://vortx.lu/fr/realisations)
 - [FAQ](https://vortx.lu/fr/faq)
 - [Glossaire](https://vortx.lu/fr/glossaire)
 - [News](https://vortx.lu/fr/news)

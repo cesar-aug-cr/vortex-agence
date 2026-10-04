@@ -36,7 +36,7 @@ export const site = {
     vat: "" as string, // pending — e.g. "LU12345678" once registered
     businessPermit: "10196845 / 0" as string, // Autorisation d'établissement
     capital: "" as string, // Capital social (optionnel)
-    director: "" as string, // Directeur de la publication (nom)
+    director: "vortx" as string, // Directeur de la publication
     host: {
       name: "" as string, // Hébergeur — ex: "Vercel Inc."
       address: "" as string, // Adresse de l'hébergeur
@@ -97,7 +97,6 @@ export const mainRoutes = [
   "",
   "services",
   "approche",
-  "realisations",
   "agence",
   "news",
   "glossaire",

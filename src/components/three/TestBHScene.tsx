@@ -101,17 +101,60 @@ function ImageDisk({ smallSize, largeSize, gap = 0.06, speed = 0.22, baseFilter 
   );
 }
 
+/** Debug overlay (`?bh-debug=1`): the group's local axes (X red, Y green = the
+ *  disk's spin axis, Z blue) and a thin ring outlining the disk plane, so the
+ *  tilts can be read directly on screen. */
+function DiskDebug({ axisLength, ringRadius, color }: { axisLength: number; ringRadius: number; color: string }) {
+  return (
+    <>
+      <axesHelper args={[axisLength]} />
+      {/* ring in the disk (XZ) plane */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[ringRadius, 0.012, 8, 96]} />
+        <meshBasicMaterial color={color} toneMapped={false} depthTest={false} />
+      </mesh>
+      {/* spin axis, drawn through the hole */}
+      <mesh>
+        <cylinderGeometry args={[0.008, 0.008, axisLength * 2, 8]} />
+        <meshBasicMaterial color={color} toneMapped={false} depthTest={false} />
+      </mesh>
+    </>
+  );
+}
+
+/** The black hole group's base tilt (X / Y / Z, radians). The X component
+ *  also wobbles ±0.03 every frame — see BlackHoleImage. */
+const BH_TILT = new THREE.Euler(Math.PI * 0.2, 0.3, 0.15, "XYZ");
+
+/** The second disk's own tilt, relative to the black hole group (the axis the
+ *  original second particle disk used). This is what phones show. */
+const SECOND_DISK_TILT = new THREE.Euler(Math.PI * 0.35, 0.1, 0.2, "XYZ");
+const SECOND_DISK_Q_PHONE = new THREE.Quaternion().setFromEuler(SECOND_DISK_TILT);
+
+/** Desktop only: the second disk is turned to face the camera — a full circle
+ *  instead of the steep ellipse. This orientation cancels the parent group's
+ *  base tilt and then lays the disk in the screen plane (disk normal = world
+ *  Z); the parent's ±1.7° wobble still shows through, so it keeps breathing.
+ *  Change SECOND_DISK_FACING to tip it back a little (π/2 = flat to the
+ *  screen). The main disk is untouched. */
+const SECOND_DISK_FACING = new THREE.Euler(Math.PI / 2, 0, 0, "XYZ");
+const SECOND_DISK_Q_DESKTOP = new THREE.Quaternion()
+  .setFromEuler(BH_TILT)
+  .invert()
+  .multiply(new THREE.Quaternion().setFromEuler(SECOND_DISK_FACING));
+
 /** Same group structure/tilts/oscillation as the home BlackHole, image disks. */
-function BlackHoleImage({ isMobile, isLight, position, scale, fade }: { isMobile: boolean; isLight: boolean; position: [number, number, number]; scale: number; fade: boolean }) {
+function BlackHoleImage({ isMobile, isLight, position, scale, fade, debug = false }: { isMobile: boolean; isLight: boolean; position: [number, number, number]; scale: number; fade: boolean; debug?: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
   useFrame(({ clock }) => {
     if (!groupRef.current) return;
-    groupRef.current.rotation.x = Math.PI * 0.2 + Math.sin(clock.getElapsedTime() * 0.15) * 0.03;
+    groupRef.current.rotation.x = BH_TILT.x + Math.sin(clock.getElapsedTime() * 0.15) * 0.03;
   });
   return (
-    <group ref={groupRef} position={position} rotation={[Math.PI * 0.2, 0.3, 0.15]} scale={scale}>
+    <group ref={groupRef} position={position} rotation={BH_TILT} scale={scale}>
       <EventHorizon radius={isMobile ? 0.46 : 0.42} color={isLight ? "#ffffff" : "#000000"} />
       <PhotonRing />
+      {debug && <DiskDebug axisLength={2.2} ringRadius={1.7} color="#c8f02e" />}
       {/* main disk (particles ran 0.3 → 1.7 radius ⇒ ~3.4 diameter) */}
       <ImageDisk
         smallSize={2.4}
@@ -120,11 +163,12 @@ function BlackHoleImage({ isMobile, isLight, position, scale, fade }: { isMobile
         middleFilter={`${isLight ? SATURATE_LIGHT : SATURATE} blur(4px)`}
         fade={fade}
       />
-      {/* second tilted disk — same 5-layer PNG stack, on the axis the original
-          second particle disk used (10 images total). Its middle (blurred)
-          layer is deliberately smaller and whiter than the main disk's.
-          It starts fading after the main disk is underway. */}
-      <group rotation={[Math.PI * 0.35, 0.1, 0.2]}>
+      {/* second disk — same 5-layer PNG stack (10 images total). Faces the
+          camera on desktop, keeps its original steep tilt on phones. Its
+          middle (blurred) layer is deliberately smaller and whiter than the
+          main disk's. It starts fading after the main disk is underway. */}
+      <group quaternion={isMobile ? SECOND_DISK_Q_PHONE : SECOND_DISK_Q_DESKTOP}>
+        {debug && <DiskDebug axisLength={1.6} ringRadius={1.1} color="#14e0c8" />}
         <ImageDisk
           smallSize={1.8}
           largeSize={2.2}
@@ -145,9 +189,16 @@ interface Props {
   bhPositionOverride?: [number, number, number];
   bhPositionMobileOverride?: [number, number, number];
   bhScaleOverride?: number;
+  /** Phone-only scale; falls back to bhScaleOverride, then the 1.3 default. */
+  bhScaleMobileOverride?: number;
 }
 
-export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverride, bhScaleOverride }: Props) {
+export default function TestBHScene({
+  bhPositionOverride,
+  bhPositionMobileOverride,
+  bhScaleOverride,
+  bhScaleMobileOverride,
+}: Props) {
   const [isMobile, setIsMobile] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [isLight, setIsLight] = useState(false);
@@ -158,6 +209,9 @@ export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverri
   // WebGL context lost (iOS Safari under memory pressure): show the static
   // poster instead of a frozen black canvas.
   const [lost, setLost] = useState(false);
+  // `?bh-debug=1` draws axes + disk-plane rings (dev aid, no cost otherwise).
+  // Lazy init is safe: this scene is client-only (dynamic import, ssr:false).
+  const [debug] = useState(() => typeof window !== "undefined" && new URLSearchParams(window.location.search).has("bh-debug"));
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -194,7 +248,7 @@ export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverri
 
   const bhPosition: [number, number, number] =
     (isMobile ? bhPositionMobileOverride ?? bhPositionOverride : bhPositionOverride) ?? [0, 0, 0];
-  const bhScale = bhScaleOverride ?? (isMobile ? 1.3 : 1.7);
+  const bhScale = isMobile ? bhScaleMobileOverride ?? bhScaleOverride ?? 1.3 : bhScaleOverride ?? 1.7;
 
   if (lost) return <BlackHolePoster />;
 
@@ -219,7 +273,7 @@ export default function TestBHScene({ bhPositionOverride, bhPositionMobileOverri
       >
         <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
-          <BlackHoleImage isMobile={isMobile} isLight={isLight} position={bhPosition} scale={bhScale} fade={!reduced} />
+          <BlackHoleImage isMobile={isMobile} isLight={isLight} position={bhPosition} scale={bhScale} fade={!reduced} debug={debug} />
           {/* Light theme: no central darkening (grey smudge on white) and a
               much softer horizon brightness boost (white blob otherwise). */}
           <GravitationalLens bhPosition={bhPosition} bhScale={bhScale} ampScale={isLight ? 0.25 : 1} shadowLift={isLight ? 1 : 0} />

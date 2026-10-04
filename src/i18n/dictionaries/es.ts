@@ -79,7 +79,7 @@ export const es = {
   // ---- Trust / positioning band ----
   trust: {
     eyebrow: "Por qué vortx",
-    title: "Una agencia, no un proveedor.",
+    title: "Su socio de crecimiento en Luxemburgo.",
     lead: "En Luxemburgo, sus clientes comparan en francés, en alemán y en inglés. Construimos presencias que rinden en los tres idiomas — y que hablan tanto a Google como a las IA generativas.",
     pillars: [
       {
@@ -378,6 +378,10 @@ export const es = {
   // ---- Página de proyectos ----
   workPage: {
     eyebrow: "Proyectos",
+    comingSoon: {
+      title: "Todavía no hay proyectos publicados.",
+      text: "Estamos redactando nuestros casos de éxito con nuestros clientes. Mientras tanto, hablemos de su proyecto: le mostramos nuestro trabajo con gusto en una llamada.",
+    },
     title: "Proyectos concretos, para oficios concretos.",
     lead: "Talleres, artesanos, pymes, productos web: esto es lo que diseñamos y ponemos en línea. Cada proyecto tiene un objetivo claro — ser encontrado, inspirar confianza, generar solicitudes.",
     note: "Por transparencia: los casos de éxito con cifras (tráfico, leads, conversiones) están en proceso de redacción con nuestros clientes. Se los presentamos con mucho gusto en una llamada.",
@@ -602,7 +606,6 @@ export const es = {
         links: [
           { label: "Quiénes somos", href: "/agence" },
           { label: "Nuestro método", href: "/approche" },
-          { label: "Proyectos", href: "/realisations" },
           { label: "Novedades", href: "/news" },
           { label: "Glosario", href: "/glossaire" },
           { label: "Preguntas frecuentes", href: "/faq" },
@@ -615,6 +618,7 @@ export const es = {
           { label: "Aviso legal", href: "/mentions-legales" },
           { label: "Privacidad", href: "/confidentialite" },
           { label: "Cookies", href: "/cookies" },
+          { label: "Condiciones generales (CGV)", href: "/docs/cgv-vortx-2026-10-02.pdf" },
         ],
       },
     },

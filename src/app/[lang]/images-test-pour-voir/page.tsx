@@ -8,7 +8,6 @@ import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
-import { yearsOfExperience } from "@/lib/dates";
 import { PageShell } from "@/components/layout/PageShell";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Check, ArrowRight } from "@/components/ui/icons";
@@ -19,7 +18,6 @@ import { GlowStar } from "@/components/sections/GlowStar";
 import { LogoMark } from "@/components/brand/LogoMark";
 import { featureIcons } from "@/components/illustrations/icons";
 import { IconStrategy, IconConversion, IconLocal, IconAI } from "@/components/sections/WhyIcons";
-import TestBHLazy from "@/components/three/TestBHLazy";
 import BlackHoleLazy from "@/components/three/BlackHoleLazy";
 import HelixDNALazy from "@/components/three/HelixDNALazy";
 
@@ -94,7 +92,8 @@ function Gen({
   return (
     <div className={`relative overflow-hidden ${className}`}>
       {/* eager: page de comparaison — on veut tout voir d’un coup (et les captures pleine page) */}
-      <Image src={`/images-test/${id}.webp`} alt={alt} fill sizes={sizes} loading="eager" className="object-cover" />
+      {/* unoptimized: internal page, serve the originals (never through an optimizer) */}
+      <Image src={`/images-test/${id}.webp`} alt={alt} fill sizes={sizes} loading="eager" unoptimized className="object-cover" />
       {children}
     </div>
   );
@@ -169,17 +168,7 @@ function Compare({
 
 /* ---------- répliques des éléments actuels ---------- */
 
-const HERO_TITLE = "Marketing & web au Luxembourg qui attire et convertit.";
 
-function HeroOverlay({ subtitle }: { subtitle: string }) {
-  return (
-    <div className="relative z-10 flex h-full max-w-md flex-col justify-center p-7 text-stage-text md:p-9">
-      <p className="eyebrow text-accent">vortx · Luxembourg</p>
-      <p className="mt-3 text-2xl font-bold leading-tight md:text-3xl">{HERO_TITLE}</p>
-      <p className="mt-3 line-clamp-3 text-sm text-stage-text-dim">{subtitle}</p>
-    </div>
-  );
-}
 
 /* ---------- données des comparaisons 19-43 ---------- */
 
@@ -218,23 +207,6 @@ export default async function ImagesTestPage({
 
   const ready = readdirSync(IMG_DIR).filter((f) => f.endsWith(".webp")).length;
 
-  const serviceImage: Record<string, string> = {
-    "sites-web": "services-sites-web",
-    "seo-geo": "services-seo-geo",
-    "lead-generation": "services-lead-generation",
-    publicite: "services-publicite",
-    "branding-design": "services-branding-design",
-    "automatisation-ia": "services-automatisation-ia",
-  };
-  const serviceVerdict: Record<string, { verdict: Verdict; why: string; caution: string }> = {
-    "sites-web": { verdict: "tester", why: "Le service phare : une scène « écran + interface » rend le résultat concret là où l'illustration reste abstraite.", caution: "Le rendu montre une interface fictive — ne pas la confondre avec une réalisation. L'illustration actuelle est cohérente avec les 5 autres cartes." },
-    "seo-geo": { verdict: "garder", why: "Le sujet (classement + IA) est conceptuel : l'illustration vectorielle l'explique aussi bien qu'un rendu 3D.", caution: "L'image générée est jolie mais interchangeable ; elle n'apporte pas d'information." },
-    "lead-generation": { verdict: "tester", why: "L'entonnoir lumineux est immédiatement lisible, y compris en vignette.", caution: "Attention à l'homogénéité : mélanger photo et vecteur dans la même grille de 6 cartes casse le rythme." },
-    publicite: { verdict: "garder", why: "Les dashboards flottants illustrent bien la publicité pilotée.", caution: "Rendu très « stock » ; l'illustration actuelle est plus distinctive." },
-    "branding-design": { verdict: "tester", why: "Une photo de matériel de marque (cartes, nuancier) parle plus qu'un pictogramme pour un service créatif.", caution: "Doit rester sans texte lisible ; vérifier que le rendu ne montre pas de faux logo." },
-    "automatisation-ia": { verdict: "garder", why: "Les engrenages de verre et rubans de données sont explicites.", caution: "Le SVG actuel est un visuel temporaire (celui d'« application web ») — à remplacer de toute façon, image ou nouveau SVG." },
-  };
-
   const pillars = dict.trust.pillars;
   const pillarIcons = [IconStrategy, IconConversion, IconLocal, IconAI];
   const pillarImages = ["pilier-strategie", "pilier-conversion", "pilier-local", "pilier-ia"];
@@ -245,7 +217,6 @@ export default async function ImagesTestPage({
     { slug: "rgpd-cookies-site-web-luxembourg", img: "news-rgpd-cookies" },
   ].map((n) => ({ ...n, article: dict.news.articles.find((a) => a.slug === n.slug)! }));
 
-  const years = yearsOfExperience();
   const newsFirst = dict.news.articles.find((a) => a.slug === "combien-coute-un-site-web-luxembourg-2026")!;
   const NewsCoverIcon = featureIcons[newsFirst.cover];
 
@@ -255,14 +226,14 @@ export default async function ImagesTestPage({
         <SectionHeading
           eyebrow="Test interne · ne pas indexer"
           title="Images ou éléments actuels : que vaut-il mieux afficher ?"
-          lead="Scan complet du site (30 emplacements). Pour chacun d’eux (43 comparaisons), la colonne de gauche montre ce qui est en ligne aujourd'hui, rendu en direct par le vrai composant (icône, animation, scène 3D) ; la colonne de droite montre une image générée avec gpt-image-2 dans la palette du site. Rien n'est appliqué : cette page sert à décider."
+          lead="Scan complet du site (26 emplacements restants). Pour chacun d’eux (29 comparaisons), la colonne de gauche montre ce qui est en ligne aujourd'hui, rendu en direct par le vrai composant (icône, animation, scène 3D) ; la colonne de droite montre une image générée avec gpt-image-2 dans la palette du site. Les propositions déjà intégrées au site (hero ville, cartes services, photo Agence, étapes Approche) ont été retirées de cette page ; le reste sert à décider."
         />
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-3">
           {[
-            ["30", "emplacements repérés dans le code"],
+            ["26", "emplacements encore à décider"],
             [`${ready}/60`, "rendus générés (public/images-test/)"],
-            ["43", "comparaisons côte à côte · 0 changement appliqué"],
+            ["29", "comparaisons côte à côte · 4 propositions déjà en ligne"],
           ].map(([num, label]) => (
             <li key={label} className="card p-6">
               <span className="block font-mono text-4xl font-bold text-accent-strong">{num}</span>
@@ -279,82 +250,6 @@ export default async function ImagesTestPage({
             <li className="flex gap-2"><Check width={16} height={16} className="mt-0.5 shrink-0 text-accent" /><span><strong className="text-text">Petits formats :</strong> sous 100 px (piliers, icônes de features) une photo devient illisible — garder les icônes.</span></li>
             <li className="flex gap-2"><Check width={16} height={16} className="mt-0.5 shrink-0 text-accent" /><span><strong className="text-text">Éthique :</strong> les rendus « équipe » et « clients » sont des gabarits de cadrage, pas du contenu final — une agence ne publie pas de faux visages ni de faux logos.</span></li>
           </ul>
-        </div>
-      </Section>
-
-      {/* ============ 1. Hero ============ */}
-      <Section className="pt-0 md:pt-0">
-        <h2 className="text-2xl font-bold text-text md:text-3xl">Priorité 1 — les grandes surfaces</h2>
-        <div className="mt-8 grid gap-8">
-          <Compare
-            n="01"
-            where="Accueil · hero"
-            title="Hero d'accueil : trou noir 3D vs photo de Luxembourg"
-            current={
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-stage">
-                <div className="pointer-events-none absolute inset-0" aria-hidden>
-                  <TestBHLazy bhPositionOverride={[2.4, 0.4, 0]} bhPositionMobileOverride={[1.2, 2.6, 1]} bhScaleOverride={1.7} />
-                </div>
-                <HeroOverlay subtitle={dict.hero.subtitle} />
-              </div>
-            }
-            proposal={
-              <Gen id="hero-accueil" alt="Skyline de Luxembourg-Kirchberg à l'heure bleue" className="aspect-video rounded-2xl border border-border bg-stage">
-                <div className="absolute inset-0 bg-gradient-to-r from-stage via-stage/70 to-transparent" aria-hidden />
-                <HeroOverlay subtitle={dict.hero.subtitle} />
-              </Gen>
-            }
-            why="Un ancrage géographique immédiat (Kirchberg) pour une cible « PME et artisans du Luxembourg », et zéro JavaScript : la photo s'affiche avant que three.js (229 Ko gzip) ne soit chargé."
-            caution="Le trou noir est l'élément le plus mémorable du site et la métaphore de la marque (attraction). La photo est belle mais n'importe quelle agence pourrait l'utiliser. Le rendu est une vue « inspirée », pas une photo réelle de la ville."
-            verdict="les-deux"
-            format="2560×1440 · focale à droite"
-          />
-        </div>
-      </Section>
-
-      {/* ============ 2. Services ============ */}
-      <Section className="pt-0 md:pt-0">
-        <h2 className="text-2xl font-bold text-text md:text-3xl">Cartes services (accueil et /services)</h2>
-        <p className="mt-2 max-w-3xl text-text-dim">Aujourd’hui : 6 illustrations SVG vectorielles (≈ 5-15 Ko chacune, thème-aware). Chaque ligne compare la carte réelle et la même carte avec le rendu généré à la place de l’illustration.</p>
-        <div className="mt-8 grid gap-8">
-          {dict.services.map((s, i) => {
-            const Illu = serviceIllustration[s.slug];
-            const sv = serviceVerdict[s.slug];
-            const cardBody = (
-              <>
-                <h4 className="text-lg font-semibold text-text">{s.title}</h4>
-                <p className="tagline mt-1 text-sm font-medium">{s.tagline}</p>
-              </>
-            );
-            return (
-              <Compare
-                key={s.slug}
-                n={`0${i + 2}`}
-                where={`Accueil · #services · carte ${i + 1}/6`}
-                title={s.title}
-                current={
-                  <div className="card flex flex-col p-6">
-                    {Illu && (
-                      <div className="illu-stage mb-5 overflow-hidden rounded-xl border border-border">
-                        <Illu className="h-40 w-full" />
-                      </div>
-                    )}
-                    {cardBody}
-                  </div>
-                }
-                proposal={
-                  <div className="card flex flex-col p-6">
-                    <Gen id={serviceImage[s.slug]} alt={s.title} className="mb-5 h-40 rounded-xl border border-border" />
-                    {cardBody}
-                  </div>
-                }
-                why={sv.why}
-                caution={sv.caution}
-                verdict={sv.verdict}
-                format="~720×320 (rendu 360×160 @2x) · même image réutilisable en carré sur la page service"
-              />
-            );
-          })}
         </div>
       </Section>
 
@@ -440,33 +335,6 @@ export default async function ImagesTestPage({
       <Section className="pt-0 md:pt-0">
         <h2 className="text-2xl font-bold text-text md:text-3xl">Pages Agence, Contact, CTA final et Merci</h2>
         <div className="mt-8 grid gap-8">
-          <Compare
-            n="15"
-            where="/agence · carte « expérience »"
-            title="Page Agence : bloc chiffre vs photo de l'équipe / des bureaux"
-            current={
-              <div className="relative flex aspect-[4/5] flex-col items-center justify-center overflow-hidden rounded-3xl border border-stage-border bg-stage p-10 text-center text-stage-text">
-                <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: "radial-gradient(80% 70% at 50% 0%, rgba(20,224,200,0.18), transparent 60%), radial-gradient(70% 60% at 50% 100%, rgba(200,240,46,0.14), transparent 60%)" }} />
-                <span className="relative font-mono text-7xl font-bold leading-none text-[color:var(--accent)] md:text-8xl">{years}</span>
-                <span className="relative mt-3 text-xl font-semibold">{dict.agence.experience.suffix} {dict.agence.experience.label}</span>
-                <span className="relative mt-1 font-mono text-xs uppercase tracking-wide text-stage-text-dim">{dict.agence.experience.note}</span>
-              </div>
-            }
-            proposal={
-              <Gen id="agence-equipe" alt="Équipe au travail dans un bureau lumineux (rendu de démonstration)" className="aspect-[4/5] rounded-3xl border border-border" sizes="(min-width: 768px) 40vw, 100vw">
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stage to-transparent p-6 text-stage-text">
-                  <span className="font-mono text-4xl font-bold text-[color:var(--accent)]">{years}</span>
-                  <span className="ml-2 font-semibold">{dict.agence.experience.suffix} {dict.agence.experience.label}</span>
-                </div>
-                <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/50 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-white backdrop-blur-sm">rendu IA · gabarit</span>
-              </Gen>
-            }
-            why="Il n'y a aucune photo humaine ni aucun lieu sur tout le site : c'est le manque de crédibilité le plus criant pour une agence locale. Le chiffre peut vivre en surimpression."
-            caution="Ne jamais publier ce rendu : il montre des personnes qui n'existent pas. Il sert à valider le cadrage (portrait 4:5, visages hors champ, lumière naturelle) avant une vraie séance photo au 18 rue de l'Ouest."
-            verdict="image"
-            format="4:5 · 1000×1250 · vraie photo obligatoire"
-          />
-
           <Compare
             n="16"
             where="/contact · colonne latérale"
@@ -986,35 +854,6 @@ export default async function ImagesTestPage({
             caution="Garder une lecture instantanée (graine → couronne) : les rendus doivent rester très simples. Le design system interdit l’emoji comme iconographie — c’est l’un des rares endroits où il reste."
             verdict="image"
             format="512×512 × 6"
-          />
-
-          <Compare
-            n="35"
-            where="/approche · « Notre approche »"
-            title="Étapes de la méthode (page Approche)"
-            current={
-              <div className="grid grid-cols-2 gap-3">
-                {dict.approachPage.steps.map((s) => (
-                  <div key={s.n} className="card p-4"><span className="font-mono text-xl font-bold text-accent-strong">{s.n}</span><p className="mt-2 text-sm font-semibold text-text">{s.title}</p><span className="chip mt-2">{s.duration}</span></div>
-                ))}
-              </div>
-            }
-            proposal={
-              <div className="grid grid-cols-2 gap-3">
-                {dict.approachPage.steps.map((s, i) => (
-                  <div key={s.n} className="card overflow-hidden p-0">
-                    <Gen id={`approche-${i + 1}`} alt={s.title} className="h-28 border-b border-border" sizes="(min-width: 768px) 25vw, 50vw">
-                      <span className="absolute left-3 top-3 font-mono text-xl font-bold text-accent">{s.n}</span>
-                    </Gen>
-                    <div className="p-4"><p className="text-sm font-semibold text-text">{s.title}</p><span className="chip mt-2">{s.duration}</span></div>
-                  </div>
-                ))}
-              </div>
-            }
-            why="La page est 100 % texte ; quatre scènes de travail (audit, maquette, revue, lancement) donnent un rythme visuel et rendent la méthode concrète."
-            caution="Rendus « bureau » très proches les uns des autres : il faut de vraies photos de vos sessions de travail pour que ça ne fasse pas banque d’images."
-            verdict="image"
-            format="~1120×400 × 4 (bandeau de carte)"
           />
 
           <Compare

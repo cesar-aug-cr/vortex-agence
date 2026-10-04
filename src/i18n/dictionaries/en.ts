@@ -85,7 +85,7 @@ export const en = {
   // ---- Trust / positioning band ----
   trust: {
     eyebrow: "Why vortx",
-    title: "An agency, not a vendor.",
+    title: "Your growth partner in Luxembourg.",
     lead: "In Luxembourg, your clients compare you in French, German and English. We build a presence that performs in all three — and that speaks to Google as much as to generative AI.",
     pillars: [
       {
@@ -384,6 +384,10 @@ export const en = {
   // ---- Work page ----
   workPage: {
     eyebrow: "Work",
+    comingSoon: {
+      title: "No case studies for now.",
+      text: "Our case studies are being written up with our clients. In the meantime, let's talk about your project: we're happy to walk you through our work on a call.",
+    },
     title: "Real projects, for real trades.",
     lead: "Garages, tradespeople, SMEs, web products: this is what we design and put online. Every project has one clear goal — get found, build trust, generate enquiries.",
     note: "In the interest of transparency: our numbers-backed case studies (traffic, leads, conversions) are being written up with our clients. We'll gladly walk you through them on a call.",
@@ -608,7 +612,6 @@ export const en = {
         links: [
           { label: "About", href: "/agence" },
           { label: "Our method", href: "/approche" },
-          { label: "Work", href: "/realisations" },
           { label: "News", href: "/news" },
           { label: "Glossary", href: "/glossaire" },
           { label: "FAQ", href: "/faq" },
@@ -621,6 +624,7 @@ export const en = {
           { label: "Legal notice", href: "/mentions-legales" },
           { label: "Privacy", href: "/confidentialite" },
           { label: "Cookies", href: "/cookies" },
+          { label: "Terms of sale (CGV)", href: "/docs/cgv-vortx-2026-10-02.pdf" },
         ],
       },
     },

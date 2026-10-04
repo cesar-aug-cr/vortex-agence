@@ -2,6 +2,8 @@
  * One entry per candidate spot on /fr/images-test-pour-voir. `id` is the file
  * name under public/images-test/. Sizes follow gpt-image-2's supported set
  * (1024x1024, 1536x1024, 1024x1536); the page crops with object-cover.
+ * Optional per entry: `model` (default gpt-image-2) and `style` (replaces the
+ * shared STYLE suffix in gen-images.mjs).
  */
 export const MANIFEST = [
   // --- Priorité 1 -------------------------------------------------------
@@ -11,6 +13,84 @@ export const MANIFEST = [
     quality: "high",
     prompt:
       "Wide cinematic view of Luxembourg City's Kirchberg business district skyline at blue hour, glass towers reflecting a faint lime and cyan glow, long-exposure light trails on the boulevard, dramatic clouds. The left half is dark and empty (space for a headline), the focal point sits on the right.",
+  },
+  {
+    // 01b — same spot, but in the palette of the city skyline now layered on
+    // the real hero (now public/hero/vortx-luxembourg.webp): deep teal storm sky, glass
+    // towers, lime/cyan light trails. Generated with the 2.5 model.
+    id: "hero-accueil-ville",
+    size: "1536x1024",
+    quality: "high",
+    model: "gpt-image-2.5-flare",
+    prompt:
+      "Wide cinematic view of Luxembourg City at blue hour seen from the Kirchberg plateau: the glass towers of Kirchberg on the right with warm yellow-lime lit windows, the old town fortifications and the Grund valley further back, under a dramatic deep teal-navy storm sky torn by clouds. Long-exposure traffic light trails in bright lime (#c8f02e) and cyan (#14e0c8) sweep along a curving boulevard lined with trees from the bottom-left toward the towers. A faint iridescent chromatic mist curls up from the left edge like a breaking wave and dissolves into darkness. Colour palette strictly deep teal, near-black navy, lime and cyan — no warm orange or red. The left third is dark and empty (space for a headline), the focal point sits on the right.",
+    style:
+      "Premium, cinematic, high-end marketing agency aesthetic. Photorealistic rendering, shallow depth of field, rich contrast. Absolutely no text, no letters, no numbers, no logos, no watermarks.",
+  },
+  {
+    // 01c — second take, same palette, different vantage point: from the
+    // Pétrusse valley looking up at the Pont Adolphe and the ramparts.
+    // The shipped file is a 2.35:1 panorama: the first 1536x1024 render was
+    // extended with /v1/images/edits (gpt-image-2.5-sunburst) so the scene the
+    // client approved stayed intact. A `--force` rerun regenerates from scratch
+    // at this size instead. Lossless PNG master: Downloads/vortx-luxembourg-pont-wide.png.
+    id: "hero-accueil-ville-2",
+    size: "2560x1088",
+    quality: "high",
+    model: "gpt-image-2.5-flare",
+    prompt:
+      "Wide cinematic low-angle view of Luxembourg City at blue hour from the bottom of the Pétrusse valley: the great stone arch of the Pont Adolphe spans the frame on the right, the old-town ramparts and the cathedral spires rise above it, and the glass towers of Kirchberg glow on the far horizon with warm yellow-lime lit windows. A dramatic deep teal-navy storm sky torn by clouds. A lamp-lit path and the small river below carry long-exposure light trails and reflections in bright lime (#c8f02e) and cyan (#14e0c8). A faint iridescent chromatic mist drifts in from the left edge and dissolves into darkness. Colour palette strictly deep teal, near-black navy, lime and cyan — no warm orange or red. The left third is dark and empty (space for a headline), the focal point sits on the right.",
+    style:
+      "Premium, cinematic, high-end marketing agency aesthetic. Photorealistic rendering, shallow depth of field, rich contrast. Absolutely no text, no letters, no numbers, no logos, no watermarks.",
+  },
+  {
+    // 01d — the 01c panorama with a cloudless sky (easier to key out so the
+    // black hole shows through). Shipped file = /v1/images/edits on the 01c
+    // master with gpt-image-2.5-sunburst ("remove the clouds, change nothing
+    // else"). Lossless master: Downloads/vortx-luxembourg-pont-wide-sans-nuages.png.
+    id: "hero-accueil-ville-3",
+    size: "2560x1088",
+    quality: "high",
+    model: "gpt-image-2.5-flare",
+    prompt:
+      "Wide cinematic 2.35:1 low-angle view of Luxembourg City at blue hour from the bottom of the Pétrusse valley: the great stone arch of the Pont Adolphe spans the frame on the right, the old-town ramparts and the cathedral spires rise above it, and the glass towers of Kirchberg glow on the far horizon with warm yellow-lime lit windows. The sky is completely clear and cloudless: a smooth deep teal-navy gradient, no stars, no haze. A lamp-lit path and the small river below carry long-exposure light trails and reflections in bright lime (#c8f02e) and cyan (#14e0c8). A faint iridescent chromatic mist drifts in from the left edge and dissolves into darkness. Colour palette strictly deep teal, near-black navy, lime and cyan — no warm orange or red. The left third is dark and empty (space for a headline), the focal point sits on the right.",
+    style:
+      "Premium, cinematic, high-end marketing agency aesthetic. Photorealistic rendering, shallow depth of field, rich contrast. Absolutely no text, no letters, no numbers, no logos, no watermarks.",
+  },
+  {
+    // 01e — the 01d panorama with a flat pure-black (#000000) sky, for keying
+    // or blend-mode compositing over the black hole. Shipped file =
+    // /v1/images/edits on the 01d master with gpt-image-2.5-sunburst, then
+    // every pixel <= 6/255 snapped to 0 so the sky is exactly #000000.
+    // Lossless master: Downloads/vortx-luxembourg-pont-wide-ciel-noir.png.
+    id: "hero-accueil-ville-4",
+    size: "2560x1088",
+    quality: "high",
+    model: "gpt-image-2.5-flare",
+    prompt:
+      "Wide cinematic 2.35:1 low-angle view of Luxembourg City at night from the bottom of the Pétrusse valley: the great stone arch of the Pont Adolphe spans the frame on the right, the old-town ramparts and the cathedral spires rise above it, and the glass towers of Kirchberg glow on the far horizon with warm yellow-lime lit windows. The entire sky is a perfectly flat, solid, pure black (#000000) fill: no gradient, no stars, no haze, no glow. A lamp-lit path and the small river below carry long-exposure light trails and reflections in bright lime (#c8f02e) and cyan (#14e0c8). A faint iridescent chromatic mist drifts in from the left edge and dissolves into darkness. Colour palette strictly deep teal, near-black navy, lime and cyan — no warm orange or red. The left third is dark and empty (space for a headline), the focal point sits on the right.",
+    style:
+      "Premium, cinematic, high-end marketing agency aesthetic. Photorealistic rendering, shallow depth of field, rich contrast. Absolutely no text, no letters, no numbers, no logos, no watermarks.",
+  },
+  {
+    // 01f — the 01e black-sky panorama with (a) the buildings at the far right
+    // replaced by trees and (b) a lime (#c8f02e) rim traced along the whole
+    // sky/skyline boundary (rooftops, trees, mist). Shipped file is
+    // post-processed, not generated: the far-right strip (x 2195-2525,
+    // y 300-460) was inpainted with /v1/images/edits + mask (sunburst) and
+    // pasted back with a 20 px feather so the rest stays pixel-identical; the
+    // rim is drawn programmatically (sky = exact-black region connected to the
+    // top row, 3 px solid lime + 10 px glow). A `--force` rerun only yields a
+    // plain generation of this prompt. Master:
+    // Downloads/vortx-luxembourg-pont-wide-ciel-noir-liseret-lime.png.
+    id: "hero-accueil-ville-5",
+    size: "2560x1088",
+    quality: "high",
+    model: "gpt-image-2.5-flare",
+    prompt:
+      "Wide cinematic 2.35:1 low-angle view of Luxembourg City at night from the bottom of the Pétrusse valley: the great stone arch of the Pont Adolphe spans the frame on the right, the old-town ramparts and the cathedral spires rise above it, and a few glass towers of Kirchberg glow on the horizon with warm yellow-lime lit windows; the far right of the ridge is only dark wooded treetops. The entire sky is a perfectly flat, solid, pure black (#000000) fill, and a thin, crisp, glowing lime (#c8f02e) rim light outlines the whole skyline where the black sky meets rooftops, spires, treetops and mist. A lamp-lit path and the small river below carry long-exposure light trails and reflections in bright lime and cyan (#14e0c8). A faint iridescent chromatic mist drifts in from the left edge and dissolves into darkness. Colour palette strictly deep teal, near-black navy, lime and cyan — no warm orange or red. The left third is dark and empty (space for a headline), the focal point sits on the right.",
+    style:
+      "Premium, cinematic, high-end marketing agency aesthetic. Photorealistic rendering, shallow depth of field, rich contrast. Absolutely no text, no letters, no numbers, no logos, no watermarks.",
   },
   {
     id: "services-sites-web",
@@ -147,6 +227,10 @@ export const MANIFEST = [
   { id: "avatar-1", size: "1024x1024", quality: "low", prompt: "Minimalist stylized avatar illustration: geometric silhouette of a person with no facial features, lime on near-black, flat vector style." },
   { id: "avatar-2", size: "1024x1024", quality: "low", prompt: "Minimalist stylized avatar illustration: geometric silhouette of a person with no facial features, cyan on near-black, flat vector style." },
   { id: "avatar-3", size: "1024x1024", quality: "low", prompt: "Minimalist stylized avatar illustration: geometric silhouette of a person with no facial features, light grey on near-black, flat vector style." },
+  // 4-6: the review slider shows six cards (proposal 28 only had three).
+  { id: "avatar-4", size: "1024x1024", quality: "low", model: "gpt-image-2.5-flare", prompt: "Minimalist stylized avatar illustration: geometric silhouette of a person with no facial features, white on near-black, flat vector style." },
+  { id: "avatar-5", size: "1024x1024", quality: "low", model: "gpt-image-2.5-flare", prompt: "Minimalist stylized avatar illustration: geometric silhouette of a person with no facial features, deep teal on near-black, flat vector style." },
+  { id: "avatar-6", size: "1024x1024", quality: "low", model: "gpt-image-2.5-flare", prompt: "Minimalist stylized avatar illustration: geometric silhouette of a person with no facial features, lime outline with cyan accent on near-black, flat vector style." },
   { id: "feature-responsive", size: "1024x1024", quality: "medium", prompt: "Square: a laptop, a tablet and a phone standing in a row on a dark surface, each showing the same abstract lime layout blocks, cyan rim light." },
   { id: "feature-smart-forms", size: "1024x1024", quality: "medium", prompt: "Square: a floating glass form card with three empty input fields and a glowing lime submit button, a small checkmark light, dark background." },
   { id: "feature-rgpd", size: "1024x1024", quality: "medium", prompt: "Square: a brushed-metal shield with a glowing lime checkmark, a small padlock and a cookie beside it, dark background." },

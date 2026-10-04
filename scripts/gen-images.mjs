@@ -1,6 +1,7 @@
 /**
  * Generates the candidate visuals for /fr/images-test-pour-voir with OpenAI
- * gpt-image-2 and writes them to public/images-test/<id>.webp.
+ * gpt-image-2 (or the `model` named on the entry, e.g. gpt-image-2.5-flare)
+ * and writes them to public/images-test/<id>.webp.
  *
  *   node scripts/gen-images.mjs            # generate missing images
  *   node scripts/gen-images.mjs --force    # regenerate everything
@@ -41,8 +42,8 @@ async function generate(item, attempt = 1) {
     method: "POST",
     headers: { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      model: "gpt-image-2",
-      prompt: `${item.prompt} ${STYLE}`,
+      model: item.model ?? "gpt-image-2",
+      prompt: `${item.prompt} ${item.style ?? STYLE}`,
       n: 1,
       size: item.size,
       quality: item.quality,
