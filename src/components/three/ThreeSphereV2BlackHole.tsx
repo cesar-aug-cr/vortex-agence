@@ -352,7 +352,9 @@ export function EventHorizon({ radius = 0.46, color = "#000000" }: { radius?: nu
   );
 }
 
-export function PhotonRing() {
+/** Flat photon ring around the horizon. Radii default to the merci-page
+ *  values; the home scene passes slightly smaller ones. */
+export function PhotonRing({ inner = 0.39, outer = 0.48 }: { inner?: number; outer?: number } = {}) {
   const ref = useRef<THREE.Mesh>(null);
   useFrame(({ clock }) => {
     if (!ref.current) return;
@@ -361,7 +363,7 @@ export function PhotonRing() {
   });
   return (
     <mesh ref={ref} rotation={[Math.PI / 2, 0, 0]}>
-      <ringGeometry args={[0.39, 0.48, 128]} />
+      <ringGeometry args={[inner, outer, 128]} />
       <meshBasicMaterial color="#cffef6" transparent opacity={0.85} side={THREE.DoubleSide} blending={THREE.AdditiveBlending} />
     </mesh>
   );

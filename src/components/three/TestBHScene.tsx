@@ -153,7 +153,7 @@ function BlackHoleImage({ isMobile, isLight, position, scale, fade, debug = fals
   return (
     <group ref={groupRef} position={position} rotation={BH_TILT} scale={scale}>
       <EventHorizon radius={isMobile ? 0.46 : 0.42} color={isLight ? "#ffffff" : "#000000"} />
-      <PhotonRing />
+      <PhotonRing inner={0.37} outer={0.455} />
       {debug && <DiskDebug axisLength={2.2} ringRadius={1.7} color="#c8f02e" />}
       {/* main disk (particles ran 0.3 → 1.7 radius ⇒ ~3.4 diameter) */}
       <ImageDisk
@@ -178,7 +178,7 @@ function BlackHoleImage({ isMobile, isLight, position, scale, fade, debug = fals
           fade={fade}
           fadeDelay={1.2}
         />
-        <PhotonRing />
+        <PhotonRing inner={0.37} outer={0.455} />
       </group>
     </group>
   );
