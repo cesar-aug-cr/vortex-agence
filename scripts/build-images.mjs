@@ -35,6 +35,11 @@ const SOURCES = [
   { dir: "agence" },
   { dir: "approche" },
   { dir: "contact" },
+  { dir: "cta" }, // final CTA banner background (all pages)
+  { dir: "engagements", max: 828 }, // service pages "Nos engagements" cards (≤ 400 px wide)
+  { dir: "quiz", max: 640 }, // intro brain + 5 level badges (≤ 128 px on screen, 2x on the certificate)
+  { dir: "bandeaux" }, // FAQ / glossary opening banners
+  { dir: "decor" }, // ambient texture (test page /page-test-ok)
   { dir: "merci" },
   { dir: "portfolio" },
   { dir: "reviews", max: 192 }, // 40 px avatars, 3x screens at most

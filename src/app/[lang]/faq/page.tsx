@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
@@ -71,6 +72,23 @@ export default async function FaqPage({
           title={dict.faqPage.title}
           lead={dict.faqPage.lead}
         />
+
+        {/* Opening banner (images-test proposal 39): public/bandeaux/faq.webp,
+            1536×1024, glass question marks. Kept low (≤ 224 px) so the summary and the
+            search stay near the fold. Decorative AI render: empty alt, like
+            the other promoted visuals. */}
+        <div
+          aria-hidden
+          className="relative mt-10 h-40 w-full overflow-hidden rounded-2xl border border-border bg-stage md:h-56"
+        >
+          <Image
+            src="/bandeaux/faq.webp"
+            alt=""
+            fill
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="object-cover"
+          />
+        </div>
 
         <div className="mt-10 lg:grid lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-12">
           {/* desktop — sticky left sidebar summary (scroll-spy) */}

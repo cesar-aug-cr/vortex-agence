@@ -494,7 +494,7 @@ export const de = {
       },
       {
         q: "Was ist GEO / GSO?",
-        a: "Es ist die Optimierung für KI-Antwortmaschinen (ChatGPT, Perplexity, Google AI). Wir strukturieren Ihre Inhalte so, dass KI Sie als Quelle zitiert.",
+        a: "Es ist die Optimierung für KI-Antwortmaschinen (ChatGPT, Claude, Perplexity, Google AI). Wir strukturieren Ihre Inhalte so, dass KI Sie als Quelle zitiert.",
       },
       {
         q: "Bieten Sie Betreuung nach dem Launch an?",
@@ -2805,7 +2805,7 @@ export const de = {
         ],
         faq: [
           { q: "Wie viele Seiten umfasst eine Visitenkarten-Website?", a: "Das hängt von Ihrer Tätigkeit ab — oft 5 bis 10 Seiten (Startseite, Leistungen, Über uns, Kontakt…). Wir definieren gemeinsam die klarste Struktur für Ihre Besucher und für Google." },
-          { q: "Kann ich die Inhalte selbst bearbeiten?", a: "Ja, wenn Sie möchten. Auf WordPress ist die Bearbeitung einfach; bei einer Maßanfertigung richten wir ein, was nötig ist, um Ihre Schlüsselinhalte zu verwalten — oder wir übernehmen es für Sie." },
+          { q: "Kann ich die Inhalte selbst bearbeiten?", a: "Auf WordPress ja, die Bearbeitung ist einfach. Bei einer Maßanfertigung übernehmen wir die Aktualisierungen für Sie." },
         ],
       },
       {
@@ -3662,7 +3662,7 @@ export const de = {
           { q: "Maßanfertigung oder WordPress, wie wähle ich?", a: "Die Maßanfertigung (Next.js) bietet die beste Performance, Sicherheit und Flexibilität; WordPress ist ideal, wenn Sie die Inhalte im Alltag selbst bearbeiten wollen. Wir beraten Sie nach Ihrer tatsächlichen Nutzung, ohne Dogma." },
           { q: "Stimmt es, dass Ihre Websites „mit KI gemacht“ sind?", a: "Ja. Wir nutzen KI, um Design, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — stets von Menschen geprüft und finalisiert." },
           { q: "Wird meine Website schnell und mobiltauglich sein?", a: "Absolut. Performance und mobile-first sind die Basis: eine nahezu sofortige Website, 100 % responsiv und auf allen Bildschirmen zugänglich." },
-          { q: "Kann ich meine Website selbst ändern?", a: "Auf WordPress ja, ganz leicht. Bei einer Maßanfertigung richten wir ein, was nötig ist, damit Sie Ihre Schlüsselinhalte verwalten können — oder wir übernehmen es für Sie." },
+          { q: "Kann ich meine Website selbst ändern?", a: "Auf WordPress ja, ganz leicht. Bei einer Maßanfertigung übernehmen wir die Aktualisierungen für Sie." },
           { q: "Wird meine Website für Google und KI optimiert sein?", a: "Ja. Wir integrieren von Anfang an die SEO- und GEO-Best-Practices: Struktur, Performance, strukturierte Daten und durch KI-Antwortmaschinen zitierbare Inhalte." },
           { q: "Übernehmen Sie Hosting und Wartung?", a: "Ja. Wir können Hosting, Updates, Sicherheit und Weiterentwicklungen übernehmen, damit Sie sich darum nicht kümmern müssen." },
         ],

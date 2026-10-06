@@ -6,6 +6,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
+import { ProjectWall } from "@/components/sections/ProjectWall";
 
 export async function generateStaticParams() {
   return i18n.locales.map((lang) => ({ lang }));
@@ -58,6 +59,8 @@ export default async function RealisationsPage({
           title={work.comingSoon.title}
           lead={work.comingSoon.text}
         />
+        {/* Opening visual: montage of the real mockups (images-test proposal 41) */}
+        <ProjectWall className="mt-12 md:mt-16" />
       </Section>
 
       <ContactCta dict={dict} lang={lang} />

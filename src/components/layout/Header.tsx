@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { HeaderCopy, NavService } from "@/i18n/slices";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
@@ -221,7 +222,20 @@ export function Header({
                             {copy.megaMenu.featured.label}
                           </span>
                           <div className="mt-3 flex items-center justify-between gap-6">
-                            <div className="min-w-0">
+                            {/* vignette (images-test proposal 37): reuses the
+                                lead-generation service render; sizes=128px → the
+                                192 static variant (~8 Ko), lazy — the menu is
+                                closed on load. Decorative, title sits next to it. */}
+                            <span className="relative hidden h-[72px] w-32 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-stage sm:block">
+                              <Image
+                                src="/services/lead-generation.webp"
+                                alt=""
+                                fill
+                                sizes="128px"
+                                className="object-cover"
+                              />
+                            </span>
+                            <div className="min-w-0 flex-1">
                               {/* Not a heading: nav content must not outrank the page h1. */}
                               <p className="text-base font-semibold leading-tight">
                                 {copy.megaMenu.featured.title}

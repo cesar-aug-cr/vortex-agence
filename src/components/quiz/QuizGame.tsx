@@ -1,14 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { createPortal } from "react-dom";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { localized } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { QuizQuestion } from "@/lib/quiz/questions";
 import { Check, ArrowRight } from "@/components/ui/icons";
-import { LogoMark } from "@/components/brand/LogoMark";
+import { renderCertificate, downloadCanvas, CERT_WIDTH, CERT_HEIGHT } from "@/components/quiz/certificate";
+
+/**
+ * Result-tier badges, by tier index (seed → compass → rocket → trophy → crown).
+ * Promoted from /images-test-pour-voir (proposal 34): the emojis rendered
+ * differently per OS and pixelated on the printed certificate; these 1:1
+ * renders are served through the static variants (public/quiz, ≤ 640 px).
+ */
+const TIER_BADGES = [
+  "/quiz/niveau-1.webp",
+  "/quiz/niveau-2.webp",
+  "/quiz/niveau-3.webp",
+  "/quiz/niveau-4.webp",
+  "/quiz/niveau-5.webp",
+];
 
 type QuizCopy = Dictionary["quiz"];
 
@@ -50,9 +64,16 @@ export function QuizGame({
   // The 150-question pool (~65 KB, answers included) is no longer serialised
   // into the page: it is fetched as its own chunk the first time the visitor
   // presses "start", then 10 questions are drawn client-side as before.
+  // Certificate state (rendered once the result is known — see below).
+  const [certCanvas, setCertCanvas] = useState<HTMLCanvasElement | null>(null);
+  const [certUrl, setCertUrl] = useState<string | null>(null);
+  const [downloading, setDownloading] = useState(false);
+
   const start = async () => {
     if (starting) return;
     setStarting(true);
+    setCertCanvas(null);
+    setCertUrl(null);
     try {
       const { getQuizQuestions } = await import("@/lib/quiz/questions");
       setDeck(pickRandom(getQuizQuestions(lang), total));
@@ -86,22 +107,7 @@ export function QuizGame({
   const tier =
     copy.tiers.find((t) => score >= t.min && score <= t.max) ??
     copy.tiers[copy.tiers.length - 1];
-
-  // Print a one-page certificate (the browser's print dialog lets the user
-  // "Save as PDF"). A body class + scoped @media print CSS isolates the
-  // certificate so only it appears on the printed page.
-  const printCertificate = () => {
-    if (typeof window === "undefined") return;
-    document.body.classList.add("printing-cert");
-    const cleanup = () => {
-      document.body.classList.remove("printing-cert");
-      window.removeEventListener("afterprint", cleanup);
-    };
-    window.addEventListener("afterprint", cleanup);
-    window.print();
-    // Safety net if afterprint never fires (some browsers).
-    setTimeout(cleanup, 1500);
-  };
+  const tierBadge = TIER_BADGES[Math.max(0, copy.tiers.indexOf(tier))] ?? TIER_BADGES[TIER_BADGES.length - 1];
 
   const certDate =
     typeof window !== "undefined"
@@ -112,14 +118,63 @@ export function QuizGame({
         })
       : "";
 
+  // Certificate: drawn on a canvas (badge, wordmark and copy baked in) once
+  // the result is known; shown as a preview and downloaded as a PNG the
+  // visitor prints at home. See ./certificate.ts.
+  const certBadgeSrc = `/_img${tierBadge.replace(/.webp$/, "")}-640.webp`;
+  useEffect(() => {
+    if (phase !== "done") return;
+    let cancelled = false;
+    renderCertificate({
+      badgeSrc: certBadgeSrc,
+      heading: copy.cert.heading,
+      subheading: copy.cert.subheading,
+      awardedTo: copy.cert.awardedTo,
+      scoreLabel: copy.cert.scoreLabel,
+      score,
+      total,
+      verdict: tier.title,
+      message: tier.message,
+      dateLabel: copy.cert.dateLabel,
+      date: certDate,
+      footer: copy.cert.footer,
+    })
+      .then((canvas) => {
+        if (cancelled) return;
+        setCertCanvas(canvas);
+        setCertUrl(canvas.toDataURL("image/png"));
+      })
+      .catch(() => {
+        /* no certificate preview; the button stays disabled */
+      });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- re-render only when the result changes
+  }, [phase, score, total, tier, certBadgeSrc, lang]);
+
+  const downloadCertificate = async () => {
+    if (!certCanvas) return;
+    setDownloading(true);
+    try {
+      await downloadCanvas(certCanvas, `certificat-qi-marketing-vortx-${score}-sur-${total}.png`);
+    } finally {
+      setDownloading(false);
+    }
+  };
+
   // ---- INTRO ----
   if (phase === "intro") {
     return (
       <div className="mx-auto max-w-xl text-center">
         <div className="card p-8 md:p-10">
-          <span className="text-5xl" aria-hidden>
-            🧠
-          </span>
+          <Image
+            src="/quiz/intro.webp"
+            alt=""
+            width={112}
+            height={112}
+            className="mx-auto h-28 w-28 rounded-2xl border border-border"
+          />
           <p className="mt-6 text-lg leading-relaxed text-text-dim">{copy.intro}</p>
           <button type="button" onClick={start} disabled={starting} className="btn btn-primary mt-8 disabled:opacity-60">
             {copy.start}
@@ -145,9 +200,13 @@ export function QuizGame({
             {score}
             <span className="text-2xl text-text-muted"> / {total}</span>
           </p>
-          <span className="mt-6 block text-5xl" aria-hidden>
-            {tier.emoji}
-          </span>
+          <Image
+            src={tierBadge}
+            alt={tier.title}
+            width={128}
+            height={128}
+            className="mx-auto mt-6 h-32 w-32 rounded-full border border-border"
+          />
           <h2 className="mt-4 text-2xl font-bold text-text">{tier.title}</h2>
           <p className="mt-3 text-text-dim">{tier.message}</p>
 
@@ -166,8 +225,9 @@ export function QuizGame({
               </button>
               <button
                 type="button"
-                onClick={printCertificate}
-                className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+                onClick={downloadCertificate}
+                disabled={!certCanvas || downloading}
+                className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent disabled:cursor-wait disabled:opacity-60"
               >
                 {copy.certificate}
               </button>
@@ -181,35 +241,20 @@ export function QuizGame({
           </div>
         </div>
 
-        {/* Printable certificate — hidden on screen, isolated for print/PDF */}
-        {typeof document !== "undefined" &&
-          createPortal(
-            <div id="quiz-cert" aria-hidden>
-              <div className="quiz-cert-frame">
-                <LogoMark animated={false} className="quiz-cert-logo" title="vortx" />
-                <p className="quiz-cert-eyebrow">{copy.cert.heading}</p>
-                <p className="quiz-cert-sub">{copy.cert.subheading}</p>
-                <div className="quiz-cert-rule" />
-                <p className="quiz-cert-awarded">{copy.cert.awardedTo}</p>
-                <p className="quiz-cert-name">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p>
-                <p className="quiz-cert-scorelabel">{copy.cert.scoreLabel}</p>
-                <p className="quiz-cert-score">
-                  {score} <span>/ {total}</span>
-                </p>
-                <p className="quiz-cert-verdict">
-                  {tier.emoji} {tier.title}
-                </p>
-                <p className="quiz-cert-message">{tier.message}</p>
-                <div className="quiz-cert-foot">
-                  <span>
-                    {copy.cert.dateLabel} {certDate}
-                  </span>
-                  <span>{copy.cert.footer}</span>
-                </div>
-              </div>
-            </div>,
-            document.body
-          )}
+        {/* Certificate preview — the exact PNG the download button hands over */}
+        <div className="card mt-6 overflow-hidden p-3 md:p-4">
+          <div
+            className="relative mx-auto w-full max-w-sm overflow-hidden rounded-xl border border-border bg-white"
+            style={{ aspectRatio: `${CERT_WIDTH} / ${CERT_HEIGHT}` }}
+          >
+            {certUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element -- data URL generated client-side
+              <img src={certUrl} alt={`${copy.cert.heading} ${copy.cert.subheading} — ${score}/${total}`} className="h-full w-full" />
+            ) : (
+              <div className="absolute inset-0 animate-pulse bg-surface" aria-hidden />
+            )}
+          </div>
+        </div>
       </div>
     );
   }

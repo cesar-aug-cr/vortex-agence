@@ -39,7 +39,9 @@ const CITY_SIZES = `(max-width: ${CITY_W}px) 100vw, ${CITY_W}px`;
 // 1×1 transparent GIF: the <source> phones match, so they fetch nothing.
 const BLANK_GIF = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 
-export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {
+/** `decors={false}` drops the CSS ambience (floating particles, glow stars) —
+ *  used by the /page-test-ok sandbox, which swaps the site decors for an image. */
+export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; lang: Locale; decors?: boolean }) {
   const { props: city } = getImageProps({
     src: CITY_SRC,
     alt: "",
@@ -122,9 +124,11 @@ export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: HALO }} />
 
       {/* Floating particles + glow lines — above the scrim/frost, below the copy */}
-      <div className="pointer-events-none absolute inset-0 z-[4]" aria-hidden>
-        <HeroParticles />
-      </div>
+      {decors && (
+        <div className="pointer-events-none absolute inset-0 z-[4]" aria-hidden>
+          <HeroParticles />
+        </div>
+      )}
 
       {/* Bottom fade: the skyline dissolves into a band that the next section
           picks up (see the divider in page.tsx), so there is no hard cut between
@@ -145,7 +149,7 @@ export function HeroTestBH({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                   <span className="relative inline-block">
                     Luxembourg
                     {/* sparkle acting as the full stop, under the final "g" */}
-                    <GlowStar className="left-full top-full" scale={0.28} delay={0.8} />
+                    {decors && <GlowStar className="left-full top-full" scale={0.28} delay={0.8} />}
                   </span>
                 )}
                 {part}

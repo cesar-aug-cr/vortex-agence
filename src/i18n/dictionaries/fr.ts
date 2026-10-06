@@ -516,7 +516,7 @@ export const fr = {
       },
       {
         q: "Qu'est-ce que le GEO / GSO ?",
-        a: "C'est l'optimisation pour les moteurs de réponse IA (ChatGPT, Perplexity, Google AI). On structure votre contenu pour que les IA vous citent comme source.",
+        a: "C'est l'optimisation pour les moteurs de réponse IA (ChatGPT, Claude, Perplexity, Google AI). On structure votre contenu pour que les IA vous citent comme source.",
       },
       {
         q: "Proposez-vous un suivi après la mise en ligne ?",
@@ -2828,7 +2828,7 @@ export const fr = {
         ],
         faq: [
           { q: "Combien de pages comprend un site vitrine ?", a: "Cela dépend de votre activité — souvent 5 à 10 pages (accueil, services, à propos, contact…). On définit ensemble l'arborescence la plus claire pour vos visiteurs et pour Google." },
-          { q: "Pourrai-je modifier le contenu moi-même ?", a: "Oui, si vous le souhaitez. Sur WordPress, l'édition est simple ; sur du sur-mesure, on met en place ce qu'il faut pour gérer vos contenus clés — ou on s'en occupe pour vous." },
+          { q: "Pourrai-je modifier le contenu moi-même ?", a: "Sur WordPress, oui, l'édition est simple. Sur du sur-mesure, on s'occupe des mises à jour pour vous." },
         ],
       },
       {
@@ -3685,7 +3685,7 @@ export const fr = {
           { q: "Sur-mesure ou WordPress, comment choisir ?", a: "Le sur-mesure (Next.js) offre la meilleure performance, sécurité et flexibilité ; WordPress est idéal si vous voulez éditer le contenu vous-même au quotidien. On vous conseille selon votre usage réel, sans dogme." },
           { q: "C'est vrai que vos sites sont « faits avec l'IA » ?", a: "Oui. On utilise l'IA pour accélérer le design, le code et le contenu. Résultat : un site de meilleure qualité, livré plus vite et à un meilleur rapport valeur/prix — toujours relu et finalisé par des humains." },
           { q: "Mon site sera-t-il rapide et adapté au mobile ?", a: "Absolument. Performance et mobile-first sont la base : un site quasi instantané, 100 % responsive et accessible sur tous les écrans." },
-          { q: "Pourrai-je modifier mon site moi-même ?", a: "Sur WordPress, oui, facilement. Sur du sur-mesure, on met en place ce qu'il faut pour que vous puissiez gérer vos contenus clés — ou on s'en occupe pour vous." },
+          { q: "Pourrai-je modifier mon site moi-même ?", a: "Sur WordPress, oui, facilement. Sur du sur-mesure, on s'occupe des mises à jour pour vous." },
           { q: "Mon site sera-t-il optimisé pour Google et les IA ?", a: "Oui. On intègre dès le départ les bonnes pratiques SEO et GEO : structure, performance, données structurées et contenu citable par les moteurs de réponse IA." },
           { q: "Gérez-vous l'hébergement et la maintenance ?", a: "Oui. On peut prendre en charge l'hébergement, les mises à jour, la sécurité et les évolutions, pour que vous n'ayez pas à vous en soucier." },
         ],

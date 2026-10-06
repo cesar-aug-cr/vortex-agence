@@ -494,7 +494,7 @@ export const en = {
       },
       {
         q: "What is GEO / GSO?",
-        a: "It's optimisation for AI answer engines (ChatGPT, Perplexity, Google AI). We structure your content so AI cites you as a source.",
+        a: "It's optimisation for AI answer engines (ChatGPT, Claude, Perplexity, Google AI). We structure your content so AI cites you as a source.",
       },
       {
         q: "Do you provide support after go-live?",
@@ -2804,7 +2804,7 @@ export const en = {
         ],
         faq: [
           { q: "How many pages does a showcase site include?", a: "It depends on your business — often 5 to 10 pages (home, services, about, contact…). We define the clearest structure together, for your visitors and for Google." },
-          { q: "Will I be able to edit the content myself?", a: "Yes, if you'd like. On WordPress, editing is simple; on bespoke builds, we set up what's needed to manage your key content — or we handle it for you." },
+          { q: "Will I be able to edit the content myself?", a: "On WordPress, yes, editing is simple. On bespoke builds, we handle the updates for you." },
         ],
       },
       {
@@ -3661,7 +3661,7 @@ export const en = {
           { q: "Bespoke or WordPress, how to choose?", a: "Bespoke (Next.js) offers the best performance, security and flexibility; WordPress is ideal if you want to edit content yourself day to day. We advise based on your real use, no dogma." },
           { q: "Is it true your sites are \"built with AI\"?", a: "Yes. We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and with better value for money — always reviewed and finalised by humans." },
           { q: "Will my site be fast and mobile-friendly?", a: "Absolutely. Performance and mobile-first are the baseline: a near-instant site, 100% responsive and accessible on every screen." },
-          { q: "Will I be able to edit my site myself?", a: "On WordPress, yes, easily. On bespoke builds, we set up what's needed for you to manage your key content — or we handle it for you." },
+          { q: "Will I be able to edit my site myself?", a: "On WordPress, yes, easily. On bespoke builds, we handle the updates for you." },
           { q: "Will my site be optimised for Google and AI?", a: "Yes. We build in SEO and GEO best practices from the start: structure, performance, structured data and content citable by AI answer engines." },
           { q: "Do you handle hosting and maintenance?", a: "Yes. We can take on hosting, updates, security and enhancements, so you don't have to worry about it." },
         ],

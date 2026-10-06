@@ -124,7 +124,7 @@ Lëtzebuergesch sur demande), adaptés au marché luxembourgeois. Le site de
 vortx est lui-même disponible en quatre langues (FR/EN/DE/ES).
 
 Q : Qu'est-ce que le GEO / GSO ?
-R : L'optimisation pour les moteurs de réponse IA (ChatGPT, Perplexity, Google AI).
+R : L'optimisation pour les moteurs de réponse IA (ChatGPT, Claude, Perplexity, Google AI).
 vortx structure le contenu pour que les IA citent l'entreprise comme source.
 
 Q : Proposez-vous un suivi après la mise en ligne ?

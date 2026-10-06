@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import Image from "next/image";
@@ -7,17 +7,13 @@ import { notFound } from "next/navigation";
 import { i18n, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { buildMetadata } from "@/lib/metadata";
-import { site } from "@/lib/site";
 import { PageShell } from "@/components/layout/PageShell";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { Check, ArrowRight } from "@/components/ui/icons";
+import { Check } from "@/components/ui/icons";
 import { serviceIllustration, subServiceIllustration } from "@/components/illustrations/map";
 import { packIcons } from "@/components/illustrations/packs";
-import { HeroParticles } from "@/components/sections/HeroParticles";
-import { GlowStar } from "@/components/sections/GlowStar";
 import { LogoMark } from "@/components/brand/LogoMark";
 import { featureIcons } from "@/components/illustrations/icons";
-import { IconStrategy, IconConversion, IconLocal, IconAI } from "@/components/sections/WhyIcons";
 import BlackHoleLazy from "@/components/three/BlackHoleLazy";
 import HelixDNALazy from "@/components/three/HelixDNALazy";
 
@@ -174,7 +170,6 @@ function Compare({
 
 const SitesWebIllu = serviceIllustration["sites-web"];
 const SiteVitrineIllu = subServiceIllustration["site-vitrine"];
-const FUNNEL_WIDTHS = ["100%", "82%", "64%", "48%"];
 
 const SUB_HEROES: { key: string; title: string; img: string; why: string; verdict: Verdict }[] = [
   { key: "google-ads", title: "Google Ads", img: "sub-google-ads", why: "Le résultat surligné au-dessus d’une ville de nuit dit « être vu au bon moment » sans jargon.", verdict: "tester" },
@@ -192,7 +187,6 @@ const PACK_SAMPLES = [
   { icon: "ssl", img: "pack-ssl" },
   { icon: "support", img: "pack-support" },
 ];
-const ENGAGEMENT_IMGS = ["engagement-audit", "engagement-code", "engagement-multilingue", "engagement-reporting"];
 
 /* ---------- page ---------- */
 
@@ -207,9 +201,6 @@ export default async function ImagesTestPage({
 
   const ready = readdirSync(IMG_DIR).filter((f) => f.endsWith(".webp")).length;
 
-  const pillars = dict.trust.pillars;
-  const pillarIcons = [IconStrategy, IconConversion, IconLocal, IconAI];
-  const pillarImages = ["pilier-strategie", "pilier-conversion", "pilier-local", "pilier-ia"];
 
   const news = [
     { slug: "combien-coute-un-site-web-luxembourg-2026", img: "news-cout-site-web" },
@@ -226,7 +217,7 @@ export default async function ImagesTestPage({
         <SectionHeading
           eyebrow="Test interne · ne pas indexer"
           title="Images ou éléments actuels : que vaut-il mieux afficher ?"
-          lead="Scan complet du site (26 emplacements restants). Pour chacun d’eux (29 comparaisons), la colonne de gauche montre ce qui est en ligne aujourd'hui, rendu en direct par le vrai composant (icône, animation, scène 3D) ; la colonne de droite montre une image générée avec gpt-image-2 dans la palette du site. Les propositions déjà intégrées au site (hero ville, cartes services, photo Agence, étapes Approche) ont été retirées de cette page ; le reste sert à décider."
+          lead="Scan complet du site (14 emplacements restants). Pour chacun d’eux (14 comparaisons), la colonne de gauche montre ce qui est en ligne aujourd'hui, rendu en direct par le vrai composant (icône, animation, scène 3D) ; la colonne de droite montre une image générée avec gpt-image-2 dans la palette du site. Les propositions déjà intégrées au site (hero ville, cartes services, photo Agence, étapes Approche, bandeau CTA final, engagements, badges du quiz, vignette du méga-menu, bandeaux FAQ et glossaire, mur de projets des réalisations) ont été retirées de cette page ; la texture d’ambiance se juge sur /page-test-ok ; le reste sert à décider."
         />
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -282,127 +273,10 @@ export default async function ImagesTestPage({
         </div>
       </Section>
 
-      {/* ============ 4. Piliers ============ */}
-      <Section className="pt-0 md:pt-0">
-        <h2 className="text-2xl font-bold text-text md:text-3xl">Piliers « Pourquoi vortx » (accueil et page Agence)</h2>
-        <p className="mt-2 max-w-3xl text-text-dim">Icônes duotone statiques de 40-48 px dans un badge lime. Comparaison à la taille réelle du badge.</p>
-        <div className="mt-8 grid gap-8">
-          {pillars.map((p, i) => {
-            const Icon = pillarIcons[i];
-            const body = (
-              <>
-                <h4 className="mt-5 text-lg font-semibold text-text">{p.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-text-dim">{p.desc}</p>
-              </>
-            );
-            return (
-              <Compare
-                key={p.title}
-                n={`${11 + i}`}
-                where={`Accueil · « Pourquoi vortx » · pilier ${i + 1}/4`}
-                title={p.title}
-                current={
-                  <div className="card p-6">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-accent-soft text-accent sm:h-16 sm:w-16">
-                        <Icon className="h-12 w-12 sm:h-10 sm:w-10" />
-                      </span>
-                      <span className="font-mono text-sm text-text-muted">0{i + 1}</span>
-                    </div>
-                    {body}
-                  </div>
-                }
-                proposal={
-                  <div className="card p-6">
-                    <div className="flex items-center justify-between">
-                      <Gen id={pillarImages[i]} alt={p.title} className="h-20 w-20 rounded-2xl sm:h-16 sm:w-16" sizes="80px" />
-                      <span className="font-mono text-sm text-text-muted">0{i + 1}</span>
-                    </div>
-                    {body}
-                  </div>
-                }
-                why="Une mini-photo apporte de la matière (verre, lumière) là où l'icône reste plate."
-                caution="À 64-80 px, le sujet de la photo est à peine identifiable et le badge perd son lien avec la palette (le lime du fond disparaît). Les 4 icônes forment un système ; 4 photos non."
-                verdict="garder"
-                format="320×320 — seulement si la carte s'agrandit (≥ 160 px)"
-              />
-            );
-          })}
-        </div>
-      </Section>
-
       {/* ============ 5. Pages ============ */}
       <Section className="pt-0 md:pt-0">
-        <h2 className="text-2xl font-bold text-text md:text-3xl">Pages Agence, Contact, CTA final et Merci</h2>
+        <h2 className="text-2xl font-bold text-text md:text-3xl">Page Merci</h2>
         <div className="mt-8 grid gap-8">
-          <Compare
-            n="16"
-            where="/contact · colonne latérale"
-            title="Page Contact : aside sans visuel vs photo de bureau"
-            current={
-              <aside>
-                <div className="rounded-2xl border border-border bg-bg-card p-7">
-                  <p className="font-mono text-xs uppercase tracking-wide text-text-muted">{dict.footer.contactTitle}</p>
-                  <ul className="mt-4 grid gap-3 text-sm">
-                    <li className="font-medium text-text">{site.email}</li>
-                    <li className="text-text-dim">{dict.footer.location}</li>
-                  </ul>
-                </div>
-                <ul className="mt-8 grid gap-3">
-                  {dict.contact.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm text-text-dim"><Check width={16} height={16} className="text-accent" />{b}</li>
-                  ))}
-                </ul>
-              </aside>
-            }
-            proposal={
-              <aside>
-                <Gen id="contact-bureau" alt="Bureau avec téléphone, carnet et café, toits de Luxembourg en arrière-plan" className="aspect-square rounded-2xl border border-border" sizes="(min-width: 768px) 40vw, 100vw" />
-                <div className="mt-4 rounded-2xl border border-border bg-bg-card p-7">
-                  <p className="font-mono text-xs uppercase tracking-wide text-text-muted">{dict.footer.contactTitle}</p>
-                  <ul className="mt-4 grid gap-3 text-sm">
-                    <li className="font-medium text-text">{site.email}</li>
-                    <li className="text-text-dim">{dict.footer.location}</li>
-                  </ul>
-                </div>
-              </aside>
-            }
-            why="La colonne est vide au moment le plus sensible du tunnel ; une scène chaleureuse (téléphone, café, toits de la ville) rassure et rappelle qu'un humain répond."
-            caution="Idéalement une vraie photo du bureau. Attention au poids sur une page de conversion (viser < 120 Ko en WebP/AVIF)."
-            verdict="image"
-            format="1:1 · 800×800"
-          />
-
-          <Compare
-            n="17"
-            where="Toutes les pages · bandeau « Passons à l'action »"
-            title="CTA final : dégradés CSS vs image de fond"
-            current={
-              <div className="relative overflow-hidden rounded-2xl border border-stage-border bg-stage px-6 py-12 text-center text-stage-text">
-                <div className="pointer-events-none absolute inset-0" aria-hidden style={{ backgroundImage: "radial-gradient(60% 70% at 50% 0%, rgba(200,240,46,0.12), transparent 65%), radial-gradient(50% 50% at 85% 90%, rgba(20,224,200,0.10), transparent 70%)" }} />
-                <div className="relative">
-                  <p className="eyebrow text-accent">{dict.contact.eyebrow}</p>
-                  <p className="mt-3 text-2xl font-bold">{dict.contact.title}</p>
-                  <span className="btn btn-primary mt-6 inline-flex">{dict.common.cta}<ArrowRight width={18} height={18} /></span>
-                </div>
-              </div>
-            }
-            proposal={
-              <Gen id="cta-final" alt="Faisceaux lime et cyan sur fond noir" className="rounded-2xl border border-stage-border bg-stage">
-                <div className="absolute inset-0 bg-stage/55" aria-hidden />
-                <div className="relative px-6 py-12 text-center text-stage-text">
-                  <p className="eyebrow text-accent">{dict.contact.eyebrow}</p>
-                  <p className="mt-3 text-2xl font-bold">{dict.contact.title}</p>
-                  <span className="btn btn-primary mt-6 inline-flex">{dict.common.cta}<ArrowRight width={18} height={18} /></span>
-                </div>
-              </Gen>
-            }
-            why="Un fond texturé donne de la profondeur au bandeau le plus répété du site."
-            caution="Gain visuel subtil pour +150 Ko chargés sur chaque page ; les deux dégradés CSS font déjà 90 % du travail gratuitement. Si image : très sombre, sans sujet, en AVIF."
-            verdict="garder"
-            format="2400×800 · très sombre"
-          />
-
           <Compare
             n="18"
             where="/merci"
@@ -594,41 +468,6 @@ export default async function ImagesTestPage({
           />
 
           <Compare
-            n="27"
-            where="Accueil · « Personne ne fait attention à vous »"
-            title="Entonnoir typographique vs illustration de tunnel"
-            current={
-              <div className="card p-6">
-                <p className="text-sm font-semibold text-text">{dict.leadgen.solutionTitle}</p>
-                <div className="mt-5 flex flex-col items-center gap-2.5">
-                  {dict.leadgen.funnel.map((step, i) => (
-                    <Fragment key={step}>
-                      <div className="flex items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-4 py-3 text-center text-sm font-semibold text-text" style={{ width: FUNNEL_WIDTHS[i] }}>{step}</div>
-                      {i < dict.leadgen.funnel.length - 1 && <ArrowRight width={18} height={18} className="rotate-90 text-accent" />}
-                    </Fragment>
-                  ))}
-                </div>
-              </div>
-            }
-            proposal={
-              <div className="card p-6">
-                <p className="text-sm font-semibold text-text">{dict.leadgen.solutionTitle}</p>
-                <Gen id="leadgen-tunnel" alt="Tunnel de lumière se resserrant vers une goutte lime" className="mt-5 aspect-[4/3] rounded-xl border border-border">
-                  <div className="absolute inset-0 flex flex-col items-center justify-between py-4">
-                    {dict.leadgen.funnel.map((step) => (
-                      <span key={step} className="rounded-full border border-white/20 bg-black/55 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">{step}</span>
-                    ))}
-                  </div>
-                </Gen>
-              </div>
-            }
-            why="Un tunnel dessiné est plus parlant qu’une pile de chips, surtout pour une cible non-marketeuse."
-            caution="Les libellés doivent rester du texte HTML (traduisible, accessible) posé sur l’image, jamais dans l’image. Une animation SVG dédiée ferait encore mieux qu’une photo."
-            verdict="tester"
-            format="~1120×500 (desktop) · portrait 3:4 (mobile)"
-          />
-
-          <Compare
             n="28"
             where="Accueil et /approche · « Avis clients »"
             title="Cartes d’avis sans portrait vs avec avatar"
@@ -737,38 +576,6 @@ export default async function ImagesTestPage({
           />
 
           <Compare
-            n="31"
-            where="Pages service · « Nos engagements » (bande sombre)"
-            title="Engagements"
-            current={
-              <div className="grid grid-cols-2 gap-3 rounded-2xl border border-stage-border bg-stage p-4">
-                {dict.servicesDetail.proof.items.map((item) => { const Icon = featureIcons[item.icon]; return (
-                  <div key={item.value} className="flex flex-col rounded-xl border border-white/10 bg-white/[0.03] p-4">
-                    <div className="illu-stage flex h-16 w-16 items-center justify-center rounded-xl border border-white/10">{Icon && <Icon className="h-11 w-11" />}</div>
-                    <p className="mt-3 text-base font-bold text-stage-text">{item.value}</p>
-                    <p className="text-xs font-medium" style={{ color: "var(--accent)" }}>{item.label}</p>
-                  </div>
-                ); })}
-              </div>
-            }
-            proposal={
-              <div className="grid grid-cols-2 gap-3 rounded-2xl border border-stage-border bg-stage p-4">
-                {dict.servicesDetail.proof.items.map((item, i) => (
-                  <div key={item.value} className="flex flex-col rounded-xl border border-white/10 bg-white/[0.03] p-4">
-                    <Gen id={ENGAGEMENT_IMGS[i]} alt={item.label} className="h-16 w-16 rounded-xl border border-white/10" sizes="64px" />
-                    <p className="mt-3 text-base font-bold text-stage-text">{item.value}</p>
-                    <p className="text-xs font-medium" style={{ color: "var(--accent)" }}>{item.label}</p>
-                  </div>
-                ))}
-              </div>
-            }
-            why="Sur fond sombre, une photo sombre se fond bien et évite l’effet « pictogramme »."
-            caution="À 64 px, l’image devient une tache lumineuse ; la valeur (« Audit offert », « 100 % à vous ») porte le message, pas l’icône."
-            verdict="garder"
-            format="256×256 (rendu 64 px)"
-          />
-
-          <Compare
             n="32"
             where="/services/sites-web · « Tout ce qui est inclus »"
             title="Packs sites web (3 des 9)"
@@ -827,36 +634,6 @@ export default async function ImagesTestPage({
           />
 
           <Compare
-            n="34"
-            where="/quiz · écran d’intro et niveaux de résultat"
-            title="Quiz : emojis vs badges illustrés"
-            current={
-              <div className="card p-6 text-center">
-                <span className="text-5xl" aria-hidden>🧠</span>
-                <p className="mt-4 line-clamp-2 text-sm text-text-dim">{dict.quiz.intro}</p>
-                <div className="mt-5 flex justify-center gap-3">
-                  {dict.quiz.tiers.map((t) => (<span key={t.title} className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-2xl" title={t.title}>{t.emoji}</span>))}
-                </div>
-                <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-wide text-text-muted">5 niveaux · aussi imprimés sur le certificat</p>
-              </div>
-            }
-            proposal={
-              <div className="card p-6 text-center">
-                <Gen id="quiz-intro" alt="Cerveau en circuits lime" className="mx-auto h-24 w-24 rounded-2xl border border-border" sizes="96px" />
-                <p className="mt-4 line-clamp-2 text-sm text-text-dim">{dict.quiz.intro}</p>
-                <div className="mt-5 flex justify-center gap-3">
-                  {dict.quiz.tiers.map((t, i) => (<Gen key={t.title} id={`quiz-tier-${i + 1}`} alt={t.title} className="h-12 w-12 rounded-full border border-border" sizes="48px" />))}
-                </div>
-                <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-wide text-text-muted">5 niveaux · aussi imprimés sur le certificat</p>
-              </div>
-            }
-            why="Les emojis dépendent de l’OS (rendu différent sur Windows, iOS, Android) et sortent pixelisés sur le certificat PDF ; des badges dans la palette sont maîtrisés partout."
-            caution="Garder une lecture instantanée (graine → couronne) : les rendus doivent rester très simples. Le design system interdit l’emoji comme iconographie — c’est l’un des rares endroits où il reste."
-            verdict="image"
-            format="512×512 × 6"
-          />
-
-          <Compare
             n="36"
             where="/agence · « Notre arsenal »"
             title="Marquee de noms d’outils vs logos"
@@ -883,35 +660,6 @@ export default async function ImagesTestPage({
           />
 
           <Compare
-            n="37"
-            where="Méga-menu Services · « À la une »"
-            title="Bannière « À la une » du méga-menu"
-            current={
-              <div className="rounded-xl border border-border bg-stage px-6 py-5 text-stage-text">
-                <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-accent">{dict.megaMenu.featured.label}</span>
-                <div className="mt-3 flex items-center justify-between gap-6">
-                  <div><p className="text-base font-semibold leading-tight">{dict.megaMenu.featured.title}</p><p className="mt-0.5 text-sm text-stage-text-dim">{dict.megaMenu.featured.desc}</p></div>
-                  <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-accent">{dict.common.readMore}<ArrowRight width={15} height={15} /></span>
-                </div>
-              </div>
-            }
-            proposal={
-              <div className="rounded-xl border border-border bg-stage px-6 py-5 text-stage-text">
-                <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-accent">{dict.megaMenu.featured.label}</span>
-                <div className="mt-3 flex items-center gap-4">
-                  <Gen id="services-lead-generation" alt="" className="h-[72px] w-32 shrink-0 rounded-lg border border-white/10" sizes="128px" />
-                  <div className="min-w-0 flex-1"><p className="text-base font-semibold leading-tight">{dict.megaMenu.featured.title}</p><p className="mt-0.5 text-sm text-stage-text-dim">{dict.megaMenu.featured.desc}</p></div>
-                  <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-accent">{dict.common.readMore}<ArrowRight width={15} height={15} /></span>
-                </div>
-              </div>
-            }
-            why="Une vignette attire l’œil dans un menu très textuel et réutilise le rendu « génération de leads » (n° 04) sans nouvelle image."
-            caution="Le menu doit rester léger : vignette ≤ 20 Ko, chargée en lazy (elle n’est visible qu’à l’ouverture)."
-            verdict="tester"
-            format="480×270"
-          />
-
-          <Compare
             n="38"
             where="Articles · bloc « logo » du corps de texte"
             title="Logo animé vs illustration éditoriale"
@@ -923,96 +671,6 @@ export default async function ImagesTestPage({
             caution="Chaque article aurait besoin de son propre schéma : c’est un travail éditorial, pas une image générique. Le logo reste un bon séparateur par défaut."
             verdict="tester"
             format="1440×480"
-          />
-
-          <Compare
-            n="39"
-            where="/faq · sous le titre"
-            title="FAQ : en-tête texte vs bandeau illustré"
-            current={
-              <div className="card p-6"><p className="eyebrow text-accent-strong">{dict.faqPage.eyebrow}</p><p className="mt-2 text-xl font-bold text-text">{dict.faqPage.title}</p><p className="mt-2 line-clamp-2 text-sm text-text-dim">{dict.faqPage.lead}</p></div>
-            }
-            proposal={
-              <div className="card overflow-hidden p-0"><Gen id="faq-bandeau" alt="Points d’interrogation de verre lumineux" className="aspect-[16/5] border-b border-border" /><div className="p-6"><p className="eyebrow text-accent-strong">{dict.faqPage.eyebrow}</p><p className="mt-2 text-xl font-bold text-text">{dict.faqPage.title}</p><p className="mt-2 line-clamp-2 text-sm text-text-dim">{dict.faqPage.lead}</p></div></div>
-            }
-            why="Une page très longue sans un seul visuel ; un bandeau d’ouverture pose le ton et sert d’image de partage."
-            caution="Le bandeau repousse le contenu (et le sommaire) sous la ligne de flottaison : le garder bas (≤ 240 px) ou le placer en fond du titre."
-            verdict="tester"
-            format="1600×500"
-          />
-
-          <Compare
-            n="40"
-            where="/glossaire · sous le titre"
-            title="Glossaire : en-tête texte vs bandeau illustré"
-            current={
-              <div className="card p-6"><p className="eyebrow text-accent-strong">{dict.glossary.eyebrow}</p><p className="mt-2 text-xl font-bold text-text">{dict.glossary.title}</p><p className="mt-2 line-clamp-2 text-sm text-text-dim">{dict.glossary.lead}</p></div>
-            }
-            proposal={
-              <div className="card overflow-hidden p-0"><Gen id="glossaire-bandeau" alt="Livre ouvert lumineux" className="aspect-[16/5] border-b border-border" /><div className="p-6"><p className="eyebrow text-accent-strong">{dict.glossary.eyebrow}</p><p className="mt-2 text-xl font-bold text-text">{dict.glossary.title}</p><p className="mt-2 line-clamp-2 text-sm text-text-dim">{dict.glossary.lead}</p></div></div>
-            }
-            why="Même logique que la FAQ : un visuel d’ouverture sur une page de référence purement textuelle."
-            caution="Page utilitaire (on y vient chercher un terme) : l’image ne doit jamais ralentir l’accès à la recherche."
-            verdict="tester"
-            format="1600×500"
-          />
-
-          <Compare
-            n="41"
-            where="/realisations · en-tête"
-            title="Réalisations : en-tête texte vs mur de projets"
-            current={
-              <div className="card p-6"><p className="eyebrow text-accent-strong">{dict.workPage.eyebrow}</p><p className="mt-2 text-xl font-bold text-text">{dict.workPage.title}</p><p className="mt-2 line-clamp-2 text-sm text-text-dim">{dict.workPage.lead}</p></div>
-            }
-            proposal={
-              <div className="card overflow-hidden p-0"><Gen id="realisations-mur" alt="Galerie d’écrans encadrés" className="aspect-[3/1] border-b border-border" /><div className="p-6"><p className="eyebrow text-accent-strong">{dict.workPage.eyebrow}</p><p className="mt-2 text-xl font-bold text-text">{dict.workPage.title}</p><p className="mt-2 line-clamp-2 text-sm text-text-dim">{dict.workPage.lead}</p></div></div>
-            }
-            why="Une ouverture « galerie » annonce la page avant même les mockups."
-            caution="Ne pas utiliser ce rendu : un montage des 9 vrais mockups (déjà dans public/portfolio/) fera mieux et sera honnête. L’IA n’a rien à faire sur une page de preuves."
-            verdict="image"
-            format="1920×640 · montage des mockups réels"
-          />
-
-          <Compare
-            n="42"
-            where="Site entier · décors (AmbientGlow, particules, GlowStar)"
-            title="Décors CSS vs texture image"
-            current={
-              <div className="relative h-64 overflow-hidden rounded-2xl border border-stage-border bg-stage">
-                <HeroParticles />
-                <GlowStar className="absolute left-[20%] top-[30%]" />
-                <GlowStar className="absolute left-[70%] top-[60%]" scale={0.7} delay={1.2} />
-              </div>
-            }
-            proposal={<Gen id="texture-ambiante" alt="Texture sombre avec halos lime et cyan" className="h-64 rounded-2xl border border-stage-border bg-stage" />}
-            why="Une texture unique remplacerait plusieurs couches de dégradés et d’animations."
-            caution="Les décors CSS pèsent quelques centaines d’octets et s’adaptent au thème ; une texture image pèse 80-150 Ko, ne bouge pas et se répète mal. Aucun intérêt."
-            verdict="garder"
-            format="—"
-          />
-
-          <Compare
-            n="43"
-            where="/agence · « Ce qui nous distingue »"
-            title="Piliers (page Agence, badges 56 px)"
-            current={
-              <div className="grid grid-cols-2 gap-3">
-                {pillars.map((p, i) => { const Icon = pillarIcons[i]; return (
-                  <div key={p.title} className="card p-4"><span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-accent-soft text-accent"><Icon className="h-9 w-9" /></span><p className="mt-3 text-sm font-semibold text-text">{p.title}</p></div>
-                ); })}
-              </div>
-            }
-            proposal={
-              <div className="grid grid-cols-2 gap-3">
-                {pillars.map((p, i) => (
-                  <div key={p.title} className="card p-4"><Gen id={pillarImages[i]} alt={p.title} className="h-14 w-14 rounded-xl" sizes="56px" /><p className="mt-3 text-sm font-semibold text-text">{p.title}</p></div>
-                ))}
-              </div>
-            }
-            why="Même série que les piliers de l’accueil (n° 11-14) : une seule décision pour les deux pages."
-            caution="Encore plus petit qu’à l’accueil (56 px) : la photo n’est plus qu’un point lumineux."
-            verdict="garder"
-            format="320×320"
           />
         </div>
       </Section>

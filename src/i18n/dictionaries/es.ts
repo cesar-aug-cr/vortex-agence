@@ -488,7 +488,7 @@ export const es = {
       },
       {
         q: "¿Qué es el GEO / GSO?",
-        a: "Es la optimización para los motores de respuesta de IA (ChatGPT, Perplexity, Google AI). Estructuramos su contenido para que las IA le citen como fuente.",
+        a: "Es la optimización para los motores de respuesta de IA (ChatGPT, Claude, Perplexity, Google AI). Estructuramos su contenido para que las IA le citen como fuente.",
       },
       {
         q: "¿Ofrecen seguimiento tras la puesta en línea?",
@@ -2799,7 +2799,7 @@ export const es = {
         ],
         faq: [
           { q: "¿Cuántas páginas incluye un sitio corporativo?", a: "Depende de su actividad — a menudo de 5 a 10 páginas (inicio, servicios, quiénes somos, contacto…). Definimos juntos la arquitectura más clara para sus visitantes y para Google." },
-          { q: "¿Podré modificar el contenido yo mismo?", a: "Sí, si lo desea. En WordPress, la edición es sencilla; en el desarrollo a medida, ponemos lo necesario para gestionar sus contenidos clave — o nos encargamos nosotros." },
+          { q: "¿Podré modificar el contenido yo mismo?", a: "En WordPress, sí, la edición es sencilla. En el desarrollo a medida, nos encargamos de las actualizaciones por usted." },
         ],
       },
       {
@@ -3656,7 +3656,7 @@ export const es = {
           { q: "¿A medida o WordPress, cómo elegir?", a: "El desarrollo a medida (Next.js) ofrece el mejor rendimiento, seguridad y flexibilidad; WordPress es ideal si quiere editar el contenido usted mismo en el día a día. Le aconsejamos según su uso real, sin dogmas." },
           { q: "¿Es cierto que sus sitios están «hechos con IA»?", a: "Sí. Usamos la IA para acelerar el diseño, el código y el contenido. Resultado: un sitio de mayor calidad, entregado más rápido y con una mejor relación valor/precio — siempre revisado y finalizado por humanos." },
           { q: "¿Mi sitio será rápido y adaptado al móvil?", a: "Por supuesto. El rendimiento y el mobile-first son la base: un sitio casi instantáneo, 100 % responsive y accesible en todas las pantallas." },
-          { q: "¿Podré modificar mi sitio yo mismo?", a: "En WordPress, sí, fácilmente. En el desarrollo a medida, ponemos lo necesario para que pueda gestionar sus contenidos clave — o nos encargamos nosotros." },
+          { q: "¿Podré modificar mi sitio yo mismo?", a: "En WordPress, sí, fácilmente. En el desarrollo a medida, nos encargamos de las actualizaciones por usted." },
           { q: "¿Mi sitio estará optimizado para Google y las IA?", a: "Sí. Integramos desde el principio las buenas prácticas de SEO y GEO: estructura, rendimiento, datos estructurados y contenido citable por los motores de respuesta de IA." },
           { q: "¿Gestionan el alojamiento y el mantenimiento?", a: "Sí. Podemos encargarnos del alojamiento, las actualizaciones, la seguridad y las evoluciones, para que usted no tenga que preocuparse." },
         ],

@@ -94,3 +94,6 @@ export function LogoMark({
     </svg>
   );
 }
+
+/** Raw wordmark geometry (600 x 200 viewBox) for canvas renderers (quiz certificate). */
+export const LOGO_GEOMETRY = { V, R, T, X, O_CX, O_CY, O_R, width: 600, height: 200 } as const;
