@@ -75,6 +75,11 @@ export default async function ArticlePage({
   const toc = article.body.filter(
     (b): b is Extract<ArticleBlock, { type: "h2" }> => b.type === "h2"
   );
+  // The paragraphs before the first h2 are the introduction: they open the
+  // page with the header; the table of contents starts with the first h2.
+  const firstH2 = article.body.findIndex((b) => b.type === "h2");
+  const intro = firstH2 > 0 ? article.body.slice(0, firstH2) : [];
+  const rest = firstH2 > 0 ? article.body.slice(firstH2) : article.body;
   const related = dict.news.articles.filter((a) => a.slug !== article.slug).slice(0, 2);
   const shareUrl = `${site.url}${localized(lang, `/news/${article.slug}`)}`;
   const shareLabels = {
@@ -109,28 +114,10 @@ export default async function ArticlePage({
         ]}
       />
 
-      <Section tone="base" className="pt-10 md:pt-12">
-        <div className="mx-auto max-w-5xl lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12">
-          {/* desktop — sticky left sidebar table of contents + share */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-28 space-y-4">
-              <ArticleToc
-                items={toc.map((h) => ({ id: h.id, text: h.text }))}
-                title={dict.news.tocTitle}
-                variant="desktop"
-              />
-              <ShareButton url={shareUrl} title={article.title} labels={shareLabels} variant="panel" />
-            </div>
-          </aside>
-
-          <article className="min-w-0">
-          {/* mobile — sticky clickable table of contents under the nav */}
-          <ArticleToc
-            items={toc.map((h) => ({ id: h.id, text: h.text }))}
-            title={dict.news.tocTitle}
-            variant="mobile"
-          />
-
+      {/* 1. Opening: cover, title, excerpt, meta, AI summary and the
+          introduction, in one centred column. */}
+      <Section tone="base" className="pb-0 pt-10 md:pb-0 md:pt-12">
+        <div className="mx-auto max-w-5xl">
           {/* header */}
           <header>
             {/* cover: animated illustration above the title, category badge
@@ -173,9 +160,40 @@ export default async function ArticlePage({
             />
           )}
 
+          {intro.length > 0 && (
+            <div className="mt-10">
+              <ArticleBody blocks={intro} />
+            </div>
+          )}
+        </div>
+      </Section>
+
+      {/* 2. Table of contents + the rest of the article, as before. */}
+      <Section tone="base" className="pt-12 md:pt-16">
+        <div className="mx-auto max-w-5xl lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12">
+          {/* desktop — sticky left sidebar table of contents + share */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-28 space-y-4">
+              <ArticleToc
+                items={toc.map((h) => ({ id: h.id, text: h.text }))}
+                title={dict.news.tocTitle}
+                variant="desktop"
+              />
+              <ShareButton url={shareUrl} title={article.title} labels={shareLabels} variant="panel" />
+            </div>
+          </aside>
+
+          <article className="min-w-0">
+          {/* mobile — sticky clickable table of contents under the nav */}
+          <ArticleToc
+            items={toc.map((h) => ({ id: h.id, text: h.text }))}
+            title={dict.news.tocTitle}
+            variant="mobile"
+          />
+
           {/* body */}
-          <div className="mt-10">
-            <ArticleBody blocks={article.body} />
+          <div className="mt-10 lg:mt-0">
+            <ArticleBody blocks={rest} />
           </div>
 
           {/* in-article conversion CTA — before the "go further" links */}
