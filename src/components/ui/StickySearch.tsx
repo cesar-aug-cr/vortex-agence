@@ -37,9 +37,10 @@ const INPUT_CLASS =
  * Default: a bar pinned flush under the nav (full-bleed on mobile, contained
  * on desktop), count below it.
  *
- * `collapsible`: only a round magnifier button follows the scroll (sticky,
- * right-aligned); pressing it opens the field next to it (closing clears the
- * query). The count stays in the flow where the bar used to be.
+ * `collapsible`: only a round magnifier button follows the scroll (sticky on
+ * every size, right-aligned); pressing it opens the field next to it (closing
+ * clears the query). The count stays in the flow where the bar used to be.
+ * `mobileSticky` only applies to the non-collapsible bar.
  */
 export function StickySearch({
   value,
@@ -81,7 +82,9 @@ export function StickySearch({
     };
     return (
       <>
-        <div className={`${sticky} pointer-events-none top-20 z-30 flex justify-end`}>
+        {/* sticky everywhere: on phones it sits under the sticky summary bar
+            (header 80 px + bar 44 px + 12 px), on desktop 16 px under the header */}
+        <div className="pointer-events-none sticky top-[8.5rem] z-20 flex justify-end lg:top-24">
           <div
             className={`pointer-events-auto flex items-center gap-2 rounded-full ${
               open ? "w-full border border-border bg-bg/85 p-1.5 shadow-[var(--shadow-md)] backdrop-blur-md" : ""
@@ -108,7 +111,7 @@ export function StickySearch({
               aria-controls="sticky-search-field"
               aria-label={placeholder}
               title={placeholder}
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-border bg-bg-card text-text shadow-[var(--shadow-md)] transition-colors hover:border-accent hover:text-accent focus-visible:border-accent"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-stage-border bg-stage text-[#c8f02e] shadow-[var(--shadow-md)] transition-colors hover:border-[#c8f02e] focus-visible:border-[#c8f02e] dark:border-border dark:bg-bg-card dark:text-text dark:hover:border-accent dark:hover:text-accent dark:focus-visible:border-accent"
             >
               {open ? <CloseIcon /> : <SearchIcon />}
             </button>
