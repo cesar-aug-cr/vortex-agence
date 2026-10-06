@@ -22,7 +22,7 @@ export function ArticleLinks({
 
   return (
     <section className="mt-12">
-      <p className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-accent">
+      <p className="section-eyebrow eyebrow-badge inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.22em]">
         <Link2 width={16} height={16} />
         {title}
       </p>

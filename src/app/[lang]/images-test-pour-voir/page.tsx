@@ -171,6 +171,16 @@ function Compare({
 const SitesWebIllu = serviceIllustration["sites-web"];
 const SiteVitrineIllu = subServiceIllustration["site-vitrine"];
 
+/** Home service cards: first-generation render (kept in public/images-test) vs the second generation now in production (public/services). */
+const SERVICE_CARD_IMAGES: Record<string, { previous: string; current: string }> = {
+  "sites-web": { previous: "services-sites-web", current: "/services/sites-web.webp" },
+  "seo-geo": { previous: "services-seo-geo", current: "/services/seo-geo.webp" },
+  "lead-generation": { previous: "services-lead-generation", current: "/services/lead-generation.webp" },
+  publicite: { previous: "services-publicite", current: "/services/publicite.webp" },
+  "branding-design": { previous: "services-branding-design", current: "/services/branding-design.webp" },
+  "automatisation-ia": { previous: "services-automatisation-ia", current: "/services/automatisation-ia.webp" },
+};
+
 const SUB_HEROES: { key: string; title: string; img: string; why: string; verdict: Verdict }[] = [
   { key: "google-ads", title: "Google Ads", img: "sub-google-ads", why: "Le résultat surligné au-dessus d’une ville de nuit dit « être vu au bon moment » sans jargon.", verdict: "tester" },
   { key: "refonte-de-site", title: "Refonte de site", img: "sub-refonte-de-site", why: "Avant/après en une image : la pierre fissurée qui devient écran de verre, c’est la refonte.", verdict: "tester" },
@@ -217,7 +227,7 @@ export default async function ImagesTestPage({
         <SectionHeading
           eyebrow="Test interne · ne pas indexer"
           title="Images ou éléments actuels : que vaut-il mieux afficher ?"
-          lead="Scan complet du site (14 emplacements restants). Pour chacun d’eux (14 comparaisons), la colonne de gauche montre ce qui est en ligne aujourd'hui, rendu en direct par le vrai composant (icône, animation, scène 3D) ; la colonne de droite montre une image générée avec gpt-image-2 dans la palette du site. Les propositions déjà intégrées au site (hero ville, cartes services, photo Agence, étapes Approche, bandeau CTA final, engagements, badges du quiz, vignette du méga-menu, bandeaux FAQ et glossaire, mur de projets des réalisations) ont été retirées de cette page ; la texture d’ambiance se juge sur /page-test-ok ; le reste sert à décider."
+          lead="Scan complet du site (15 emplacements restants). Pour chacun d’eux (20 comparaisons), la colonne de gauche montre ce qui est en ligne aujourd'hui, rendu en direct par le vrai composant (icône, animation, scène 3D) ; la colonne de droite montre une image générée avec gpt-image-2 dans la palette du site. Les propositions déjà intégrées au site (hero ville, cartes services, photo Agence, étapes Approche, bandeau CTA final, engagements, badges du quiz, vignette du méga-menu, bandeaux FAQ et glossaire, mur de projets des réalisations) ont été retirées de cette page ; la texture d’ambiance se juge sur /page-test-ok ; le reste sert à décider."
         />
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -241,6 +251,45 @@ export default async function ImagesTestPage({
             <li className="flex gap-2"><Check width={16} height={16} className="mt-0.5 shrink-0 text-accent" /><span><strong className="text-text">Petits formats :</strong> sous 100 px (piliers, icônes de features) une photo devient illisible — garder les icônes.</span></li>
             <li className="flex gap-2"><Check width={16} height={16} className="mt-0.5 shrink-0 text-accent" /><span><strong className="text-text">Éthique :</strong> les rendus « équipe » et « clients » sont des gabarits de cadrage, pas du contenu final — une agence ne publie pas de faux visages ni de faux logos.</span></li>
           </ul>
+        </div>
+      </Section>
+
+      {/* ============ 2. Cartes services (accueil) : visuels actuels vs nouvelle génération ============ */}
+      <Section className="pt-0 md:pt-0">
+        <h2 className="text-2xl font-bold text-text md:text-3xl">Cartes services de l’accueil : première génération vs rendu en production</h2>
+        <p className="mt-2 max-w-3xl text-text-dim">
+          À gauche, la première série (gpt-image-2, conservée dans public/images-test). À droite, la seconde génération avec gpt-image-2.5-flare, briefée pour un sujet
+          reconnaissable au premier coup d’œil (écran de site, loupe sur résultats, téléphone qui reçoit des demandes, mégaphone et cible, tampon de logo, robot assistant) — c’est elle qui est en production depuis le 6 octobre 2026. Même cadrage que la carte réelle (160 px de haut).
+        </p>
+        <div className="mt-8 grid gap-8">
+          {dict.services.map((svc, i) => {
+            const imgs = SERVICE_CARD_IMAGES[svc.slug];
+            if (!imgs) return null;
+            const Card = ({ visual }: { visual: ReactNode }) => (
+              <div className="card flex flex-col p-7">
+                <div className="relative mb-5 h-40 w-full overflow-hidden rounded-xl border border-border">{visual}</div>
+                <h4 className="text-xl font-semibold text-text">{svc.title}</h4>
+                <p className="tagline mt-1 text-sm font-medium">{svc.tagline}</p>
+                <p className="mt-3 text-sm leading-relaxed text-text-dim">{svc.short}</p>
+              </div>
+            );
+            return (
+              <Compare
+                key={svc.slug}
+                n={`${44 + i}`}
+                where="Accueil · « Nos services » · carte"
+                title={svc.title}
+                current={<Card visual={<Gen id={imgs.previous} alt={svc.title} className="h-full w-full" sizes="(min-width: 768px) 50vw, 100vw" />} />}
+                proposal={<Card visual={<Image src={imgs.current} alt="" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />} />}
+                currentLabel="Avant — première génération (gpt-image-2)"
+                proposalLabel="Aujourd'hui — en production (gpt-image-2.5-flare)"
+                why="Un sujet lisible instantanément : on comprend le service avant de lire le titre."
+                caution="Série homogène (même lumière, même matière) : si une image doit changer, régénérer les six ensemble."
+                verdict="image"
+                format="1536×1024 · recadrage object-cover 160 px"
+              />
+            );
+          })}
         </div>
       </Section>
 

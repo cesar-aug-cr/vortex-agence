@@ -131,6 +131,50 @@
     1280,
     1536
   ],
+  "/approche/principe-1.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/approche/principe-2.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/approche/principe-3.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/approche/principe-4.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
   "/contact/bureau.webp": [
     48,
     96,
@@ -139,6 +183,17 @@
     640,
     828,
     1024
+  ],
+  "/cta/fond-clair.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
   ],
   "/cta/fond.webp": [
     48,
@@ -248,6 +303,105 @@
     1536
   ],
   "/decor/texture-ambiante.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/5-taches-pme-confier-a-l-ia.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/combien-coute-un-site-web-luxembourg-2026.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/geo-seo-luxembourg-etre-cite-par-les-ia.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/google-ads-ou-seo-ou-investir-budget-marketing.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/ia-pme-luxembourg-par-ou-commencer.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/quest-ce-quun-bon-logo-identite-qui-dure.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/rgpd-cookies-site-web-luxembourg.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/tunnel-de-conversion-transformer-visiteurs-en-clients.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques.webp": [
     48,
     96,
     192,

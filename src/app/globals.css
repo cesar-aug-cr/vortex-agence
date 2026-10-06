@@ -232,7 +232,7 @@
     text-transform: uppercase;
     letter-spacing: 0.22em;
     font-size: 0.72rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-muted);
   }
 
@@ -245,6 +245,7 @@
     border-radius: 9999px;
     background: var(--accent-strong);
     color: #ffffff;
+    font-weight: 700;
     padding: 0.25rem 0.7rem;
   }
   .dark .eyebrow-badge {
@@ -1365,19 +1366,15 @@ html:not(.dark) .test-home .hero-section .hero-title {
   filter: none;
 }
 /* The note's brand sweep is tuned for the DARK hero (lime→cyan→white). On the
-   white hero the white highlight is invisible and lime/cyan wash out to grey,
-   so re-tune it for light surfaces: dark-teal→olive base with a LIME peak
-   (the bright sweep), mirroring how white peaks on the dark hero. */
+   white hero the sweep is switched OFF: a still dark-teal→olive gradient (the
+   same pair as the light headline accent) keeps the identity colours legible
+   on white with zero motion. The dark hero keeps its animated sweep. */
 html:not(.dark) .test-home .hero-section .brand-sweep {
-  background-image: linear-gradient(
-    100deg,
-    #0f766e 0%,
-    #4f7a0a 28%,
-    #c8f02e 45%,
-    #c8f02e 55%,
-    #4f7a0a 72%,
-    #0f766e 100%
-  );
+  background-image: linear-gradient(100deg, #0f766e 0%, #4f7a0a 100%);
+  background-size: 100% auto;
+  background-position: 0 0;
+  animation: none;
+  will-change: auto;
 }
 /* The headline accent word uses .text-gradient (lime→cyan), which is washed out
    on the white hero. Re-tune to readable dark-teal→olive in the light theme. */
@@ -1436,6 +1433,7 @@ html:not(.dark) .test-home .section-eyebrow {
   border-radius: 9999px;
   background: var(--accent);
   color: #14210a;
+  font-weight: 700;
   padding: 0.25rem 0.7rem;
 }
 /* Light version: bigger lime brilliance on the orbiting "Avec vortx" card. */
@@ -1511,15 +1509,15 @@ html:not(.dark) .test-home .legal-prose a {
   color: var(--accent-strong);
 }
 
-/* The home's over-hero header icon buttons get a dark fill so they read on the
-   white hero. Kept scoped to the sandbox header — internal solid headers keep
-   the lighter bordered buttons that suit the light bar. */
-html:not(.dark) .sandbox-header .hdr-icon-btn {
+/* Header icon buttons (a11y · language · theme · burger) get a dark fill in the
+   light theme on EVERY page — the home's over-hero header set the look, and the
+   internal solid headers now match it instead of the lighter bordered pills. */
+html:not(.dark) header .hdr-icon-btn {
   background-color: #0a0a0b;
   color: #f2f3ee;
   border-color: #0a0a0b;
 }
-html:not(.dark) .sandbox-header .hdr-icon-btn:hover {
+html:not(.dark) header .hdr-icon-btn:hover {
   border-color: var(--accent);
 }
 
@@ -1560,4 +1558,51 @@ html:not(.dark) .sandbox-header .hdr-icon-btn:hover {
   .spotlight-card.is-active::after {
     opacity: 1;
   }
+}
+
+/* Custom checkbox (contact form, consent banner). Drawn in CSS instead of
+   accent-color: native boxes fall back to the OS highlight (blue) on hover in
+   some Chromium builds — this one stays lime in every state. */
+.chk {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  border-radius: 0.375rem;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-card);
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+}
+.chk::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  transform: scale(0);
+  transition: transform 0.12s ease-out;
+  background: var(--accent-ink);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.chk:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.chk:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.chk:checked::before {
+  transform: scale(1);
+}
+.chk:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.chk:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
 }

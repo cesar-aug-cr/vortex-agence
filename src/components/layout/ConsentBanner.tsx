@@ -183,7 +183,7 @@ function ToggleRow({
         checked={checked}
         disabled={disabled}
         onChange={(e) => onChange?.(e.target.checked)}
-        className="mt-1 h-5 w-5 shrink-0 accent-[color:var(--accent)] disabled:cursor-not-allowed"
+        className="chk mt-1"
       />
     </label>
   );

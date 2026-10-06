@@ -264,7 +264,7 @@ export default async function StyleGuidePage({
               <option>Option B</option>
             </select>
             <label className="flex items-center gap-3 text-sm text-text-dim">
-              <input type="checkbox" defaultChecked className="h-5 w-5 accent-[var(--accent)]" />
+              <input type="checkbox" defaultChecked className="chk" />
               Case à cocher
             </label>
           </div>

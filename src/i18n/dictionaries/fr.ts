@@ -785,6 +785,8 @@ export const fr = {
     shareLabel: "Partager",
     shareCopy: "Copier le lien",
     shareCopied: "Lien copié !",
+    // One animated cover icon per category (8 categories, 8 icons): an article
+    // reuses the icon of its category. Automatisation & IA → "automation".
     articles: [
       {
         slug: "ux-ui-design-site-qui-convertit-bonnes-pratiques",
@@ -800,6 +802,7 @@ export const fr = {
         readingMinutes: 8,
         author: "L'équipe vortx",
         cover: "redesign",
+        coverImage: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques.webp",
         summary: {
           text: "L'UX organise le parcours, l'UI habille l'interface : ensemble, ils décident si un visiteur agit ou repart. L'article détaille les principes concrets (hiérarchie visuelle, charge cognitive, un objectif par page, cohérence, contraste, accessibilité, performance) et montre comment ils sont appliqués sur le site vortx.",
           points: [
@@ -985,6 +988,7 @@ export const fr = {
         readingMinutes: 9,
         author: "L'équipe vortx",
         cover: "geo-citation",
+        coverImage: "/news/geo-seo-luxembourg-etre-cite-par-les-ia.webp",
         summary: {
           text: "Le référencement ne se limite plus à Google : ChatGPT, Perplexity et Google AI deviennent une nouvelle porte d'entrée. L'article explique la différence entre SEO et GEO et comment travailler les deux ensemble, avec des actions concrètes pour être cité par les IA.",
           points: [
@@ -1124,6 +1128,7 @@ export const fr = {
         readingMinutes: 8,
         author: "L'équipe vortx",
         cover: "ads-targeting",
+        coverImage: "/news/google-ads-ou-seo-ou-investir-budget-marketing.webp",
         summary: {
           text: "Faut-il investir dans Google Ads ou dans le SEO ? La réponse dépend de votre objectif et de votre échéance. L'article oppose la « location » (Ads, immédiat) à la « propriété » (SEO, durable) et montre comment les combiner selon votre situation.",
           points: [
@@ -1260,6 +1265,7 @@ export const fr = {
         readingMinutes: 7,
         author: "L'équipe vortx",
         cover: "conversion",
+        coverImage: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients.webp",
         summary: {
           text: "Attirer du trafic ne sert à rien s'il ne se transforme pas. L'article décortique le tunnel de conversion étape par étape — du premier clic au contrat — et montre où l'on perd des visiteurs et comment colmater chaque fuite.",
           points: [
@@ -1391,6 +1397,7 @@ export const fr = {
         readingMinutes: 7,
         author: "L'équipe vortx",
         cover: "analytics",
+        coverImage: "/news/combien-coute-un-site-web-luxembourg-2026.webp",
         summary: {
           text: "Le prix d'un site n'est pas un chiffre fixe mais une fourchette qui dépend de vos objectifs. L'article détaille ce qui fait varier le coût et comment investir là où ça rapporte vraiment, plutôt que de chercher le moins cher.",
           points: [
@@ -1509,6 +1516,7 @@ export const fr = {
         readingMinutes: 6,
         author: "L'équipe vortx",
         cover: "branding",
+        coverImage: "/news/quest-ce-quun-bon-logo-identite-qui-dure.webp",
         summary: {
           text: "Un logo n'est pas qu'une jolie image : c'est la première promesse de votre marque. L'article expose les principes d'un logo qui dure — simple, mémorable, intemporel, polyvalent et pertinent — et son rôle au sein d'une identité cohérente.",
           points: [
@@ -1632,6 +1640,7 @@ export const fr = {
         readingMinutes: 6,
         author: "L'équipe vortx",
         cover: "rgpd",
+        coverImage: "/news/rgpd-cookies-site-web-luxembourg.webp",
         summary: {
           text: "Le RGPD fait peur, mais l'essentiel tient en quelques règles claires. L'article résume le minimum à respecter sur un site luxembourgeois — bandeau cookies, consentement et mentions — pour être conforme sans tomber dans la paranoïa.",
           points: [
@@ -1738,6 +1747,7 @@ export const fr = {
         readingMinutes: 6,
         author: "L'équipe vortx",
         cover: "automation",
+        coverImage: "/news/5-taches-pme-confier-a-l-ia.webp",
         summary: {
           text: "L'IA ne remplace pas vos équipes, elle leur enlève les corvées. L'article liste cinq tâches concrètes qu'une PME luxembourgeoise peut automatiser dès aujourd'hui — sans usine à gaz — pour libérer du temps utile.",
           points: [
@@ -1849,7 +1859,8 @@ export const fr = {
         updated: "2026-06-09",
         readingMinutes: 7,
         author: "L'équipe vortx",
-        cover: "ai-build",
+        cover: "automation",
+        coverImage: "/news/ia-pme-luxembourg-par-ou-commencer.webp",
         summary: {
           text: "L'IA n'est plus réservée aux grands groupes : bien cadrée, elle donne à une PME la force de frappe d'une équipe plus grande. Ce guide démonte les idées reçues, montre où l'IA paie vraiment et propose une méthode pour démarrer petit en gardant le contrôle de vos données.",
           points: [
@@ -1993,6 +2004,8 @@ export const fr = {
       readingMinutes: number;
       author: string;
       cover: string;
+      /** Realistic cover photo, public/news/<slug>.webp (band on the article, card on /news). */
+      coverImage?: string;
       body: ArticleBlock[];
       /** AI-style synthesis shown at the top of the article (text + key points). */
       summary?: { text: string; points: string[] };

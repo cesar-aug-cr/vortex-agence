@@ -65,7 +65,7 @@ export function AiSummary({
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent/15 text-accent">
             <Sparkles width={16} height={16} />
           </span>
-          <p className="font-mono text-xs font-semibold uppercase tracking-wide text-accent">
+          <p className="font-mono text-xs font-bold uppercase tracking-wide text-accent">
             {label}
           </p>
         </div>
@@ -76,7 +76,7 @@ export function AiSummary({
           aria-controls="ai-summary-content"
           aria-label={open ? hideLabel : showLabel}
           title={open ? hideLabel : showLabel}
-          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/40 text-accent transition-colors hover:bg-accent hover:text-accent-ink disabled:opacity-60 ${
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-transparent bg-stage text-[#c8f02e] transition-opacity hover:opacity-85 disabled:opacity-60 dark:bg-[#c8f02e] dark:text-[#0a0a0b] ${
             phase === "closed" ? "ai-summary-blink" : ""
           }`}
           disabled={phase === "revealing"}
@@ -114,7 +114,7 @@ export function AiSummary({
 
           {summary.points.length > 0 && (
             <>
-              <p className="mt-5 font-mono text-xs uppercase tracking-wide text-text-muted">
+              <p className="mt-5 font-mono text-xs font-bold uppercase tracking-wide text-text-muted">
                 {pointsLabel}
               </p>
               <ul className="mt-3 grid gap-2.5">

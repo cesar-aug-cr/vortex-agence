@@ -51,6 +51,7 @@ export function FaqList({
         count={count}
         countSuffix={countSuffix}
         mobileSticky={false}
+        collapsible
       />
 
       {count === 0 ? (
@@ -61,7 +62,7 @@ export function FaqList({
         <div className="space-y-12">
           {filteredGroups.map((g) => (
             <div key={g.title} id={faqGroupId(g.title)} className="scroll-mt-36">
-              <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <h2 className="font-mono text-base font-bold uppercase tracking-[0.18em] text-accent md:text-lg">
                 {g.title}
               </h2>
               <div className="mt-4 divide-y divide-border border-y border-border">

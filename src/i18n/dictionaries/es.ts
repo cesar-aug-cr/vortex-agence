@@ -772,6 +772,7 @@ export const es = {
         readingMinutes: 8,
         author: "El equipo vortx",
         cover: "redesign",
+        coverImage: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques.webp",
         summary: {
           text: "La UX organiza el recorrido y la UI viste la interfaz: juntas deciden si un visitante actúa o se marcha. El artículo detalla los principios concretos (jerarquía visual, carga cognitiva, un único objetivo por página, coherencia, contraste, accesibilidad, rendimiento) y muestra cómo se aplican en el sitio de vortx.",
           points: [
@@ -957,6 +958,7 @@ export const es = {
         readingMinutes: 9,
         author: "El equipo vortx",
         cover: "geo-citation",
+        coverImage: "/news/geo-seo-luxembourg-etre-cite-par-les-ia.webp",
         summary: {
           text: "El posicionamiento ya no se limita a Google: ChatGPT, Perplexity y Google AI se convierten en una nueva puerta de entrada. El artículo explica la diferencia entre SEO y GEO y cómo trabajar ambos juntos, con acciones concretas para ser citado por las IA.",
           points: [
@@ -1096,6 +1098,7 @@ export const es = {
         readingMinutes: 8,
         author: "El equipo vortx",
         cover: "ads-targeting",
+        coverImage: "/news/google-ads-ou-seo-ou-investir-budget-marketing.webp",
         summary: {
           text: "¿Hay que invertir en Google Ads o en SEO? La respuesta depende de su objetivo y de su plazo. El artículo contrapone el «alquiler» (Ads, inmediato) a la «propiedad» (SEO, duradera) y muestra cómo combinarlos según su situación.",
           points: [
@@ -1232,6 +1235,7 @@ export const es = {
         readingMinutes: 7,
         author: "El equipo vortx",
         cover: "conversion",
+        coverImage: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients.webp",
         summary: {
           text: "Atraer tráfico no sirve de nada si no se transforma. El artículo desglosa el embudo de conversión paso a paso — del primer clic al contrato — y muestra dónde se pierden visitantes y cómo tapar cada fuga.",
           points: [
@@ -1363,6 +1367,7 @@ export const es = {
         readingMinutes: 7,
         author: "El equipo vortx",
         cover: "analytics",
+        coverImage: "/news/combien-coute-un-site-web-luxembourg-2026.webp",
         summary: {
           text: "El precio de un sitio no es una cifra fija, sino un rango que depende de sus objetivos. El artículo detalla qué hace variar el coste y cómo invertir donde de verdad rinde, en lugar de buscar lo más barato.",
           points: [
@@ -1481,6 +1486,7 @@ export const es = {
         readingMinutes: 6,
         author: "El equipo vortx",
         cover: "branding",
+        coverImage: "/news/quest-ce-quun-bon-logo-identite-qui-dure.webp",
         summary: {
           text: "Un logo no es solo una imagen bonita: es la primera promesa de su marca. El artículo expone los principios de un logo que perdura — simple, memorable, atemporal, versátil y pertinente — y su papel dentro de una identidad coherente.",
           points: [
@@ -1604,6 +1610,7 @@ export const es = {
         readingMinutes: 6,
         author: "El equipo vortx",
         cover: "rgpd",
+        coverImage: "/news/rgpd-cookies-site-web-luxembourg.webp",
         summary: {
           text: "El RGPD asusta, pero lo esencial se resume en unas pocas reglas claras. El artículo recoge el mínimo a respetar en un sitio luxemburgués — banner de cookies, consentimiento y avisos legales — para cumplir sin caer en la paranoia.",
           points: [
@@ -1710,6 +1717,7 @@ export const es = {
         readingMinutes: 6,
         author: "El equipo vortx",
         cover: "automation",
+        coverImage: "/news/5-taches-pme-confier-a-l-ia.webp",
         summary: {
           text: "La IA no sustituye a sus equipos, les quita las tareas pesadas. El artículo enumera cinco tareas concretas que una pyme luxemburguesa puede automatizar desde hoy — sin montar un mecanismo enrevesado — para liberar tiempo útil.",
           points: [
@@ -1821,7 +1829,8 @@ export const es = {
         updated: "2026-06-09",
         readingMinutes: 7,
         author: "El equipo vortx",
-        cover: "ai-build",
+        cover: "automation",
+        coverImage: "/news/ia-pme-luxembourg-par-ou-commencer.webp",
         summary: {
           text: "La IA ya no está reservada a las grandes empresas: bien encuadrada, da a una pyme la capacidad de impacto de un equipo mayor. Esta guía desmonta las ideas preconcebidas, muestra dónde la IA rinde de verdad y propone un método para empezar poco a poco manteniendo el control de sus datos.",
           points: [
@@ -1965,6 +1974,8 @@ export const es = {
       readingMinutes: number;
       author: string;
       cover: string;
+      /** Realistic cover photo, public/news/<slug>.webp (band on the article, card on /news). */
+      coverImage?: string;
       body: ArticleBlock[];
       /** AI-style synthesis shown at the top of the article (text + key points). */
       summary?: { text: string; points: string[] };

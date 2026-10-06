@@ -2,8 +2,6 @@ import type { Dictionary } from "@/i18n/getDictionary";
 import { Section, SectionHeading } from "@/components/ui/Section";
 
 export function Tools({ dict }: { dict: Dictionary }) {
-  const all = dict.tools.categories.flatMap((c) => c.items);
-  const marquee = [...all, ...all];
 
   // Bento layout. Dict order is: 0 Marketing · 1 Web&code · 2 IA · 3 Design ·
   // 4 Productivité. We lay them out as:
@@ -34,7 +32,7 @@ export function Tools({ dict }: { dict: Dictionary }) {
               className={`card card-hover spotlight-card group flex flex-col p-6 ${span}`}
             >
               <div className="flex items-center justify-between gap-3">
-                <h3 className="font-mono text-xs uppercase tracking-wide text-accent">
+                <h3 className="font-mono text-xs font-bold uppercase tracking-wide text-accent">
                   {cat.name}
                 </h3>
                 <span className="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full border border-border px-2 font-mono text-xs text-text-muted">
@@ -68,26 +66,6 @@ export function Tools({ dict }: { dict: Dictionary }) {
           <span className="relative mt-4 text-xs uppercase tracking-[0.22em] text-text-muted">
             {dict.tools.stat.label}
           </span>
-        </div>
-      </div>
-
-      <div
-        className="marquee-container mt-7 rounded-2xl border border-border bg-bg-card py-5"
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-        }}
-      >
-        <div className="marquee-track">
-          {marquee.map((item, i) => (
-            <span
-              key={`${item}-${i}`}
-              className="mx-6 font-mono text-sm uppercase tracking-widest text-text-muted"
-            >
-              {item}
-              <span className="mx-6 text-accent">•</span>
-            </span>
-          ))}
         </div>
       </div>
     </Section>

@@ -180,7 +180,7 @@ export function QuizGame({
             {copy.start}
             <ArrowRight width={18} height={18} />
           </button>
-          <p className="mt-4 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">
+          <p className="mt-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-text-muted">
             {total} {copy.questionLabel.toLowerCase()}s · /{total}
           </p>
         </div>
@@ -193,7 +193,7 @@ export function QuizGame({
     return (
       <div className="mx-auto max-w-xl text-center">
         <div className="card p-8 md:p-10">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-accent">
             {copy.scorePrefix}
           </p>
           <p className="mt-3 text-6xl font-bold text-text">
@@ -278,7 +278,7 @@ export function QuizGame({
           />
         ))}
       </div>
-      <p className="mt-3 font-mono text-xs text-text-muted">
+      <p className="mt-3 font-mono text-sm font-bold text-text-muted md:text-base">
         {copy.questionLabel} {index + 1} / {total}
       </p>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
@@ -52,9 +53,20 @@ export function NewsTeaser({ dict, lang }: { dict: Dictionary; lang: Locale }) {
               href={localized(lang, `/news/${a.slug}`)}
               className="card card-hover spotlight-card group flex flex-col overflow-hidden"
             >
+              {/* realistic cover photo (public/news/<slug>.webp); category icon as fallback */}
               <div className="illu-stage relative flex h-40 items-center justify-center overflow-hidden border-b border-border">
-                {Cover && <Cover className="h-28 w-28" />}
-                <span className="news-cat absolute left-4 top-4 rounded-full border border-border bg-bg/70 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-text-dim backdrop-blur-sm">
+                {a.coverImage ? (
+                  <Image
+                    src={a.coverImage}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                ) : (
+                  Cover && <Cover className="h-28 w-28" />
+                )}
+                <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/55 px-3 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-wide backdrop-blur-sm" style={{ color: "var(--accent)" }}>
                   {a.category}
                 </span>
               </div>

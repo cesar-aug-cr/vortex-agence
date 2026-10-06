@@ -89,14 +89,14 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                     </button>
                     <span
                       role="tooltip"
-                      className="pointer-events-none absolute right-0 top-11 z-20 w-64 origin-top-right scale-95 rounded-xl border border-border bg-bg-card p-4 text-left opacity-0 shadow-[var(--shadow-lg)] transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100 sm:w-72"
+                      className="pointer-events-none absolute right-0 top-11 z-20 w-64 origin-top-right scale-95 rounded-xl border border-stage-border bg-stage p-4 text-left text-stage-text opacity-0 shadow-[var(--shadow-lg)] transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-within:scale-100 group-focus-within:opacity-100 sm:w-72"
                     >
                       {block.tipTitle && (
-                        <span className="block font-mono text-xs uppercase tracking-wide text-accent">
+                        <span className="block font-mono text-xs font-bold uppercase tracking-wide" style={{ color: "var(--accent)" }}>
                           {block.tipTitle}
                         </span>
                       )}
-                      <span className="mt-2 block whitespace-pre-line text-sm leading-relaxed text-text-dim">
+                      <span className="mt-2 block whitespace-pre-line text-sm leading-relaxed text-stage-text-dim">
                         {block.tip}
                       </span>
                     </span>
@@ -108,34 +108,42 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
             return (
               <div
                 key={i}
-                className="rounded-2xl border border-accent/25 bg-accent-soft p-6"
+                // Boxed article blocks are always on the dark stage (both themes),
+                // like the "sources" card; lime stays inline so the light theme
+                // cannot rewrite it to olive.
+                className="rounded-2xl border bg-stage p-6 text-stage-text"
+                style={{ borderColor: "color-mix(in srgb, var(--accent) 35%, transparent)" }}
               >
-                <p className="font-mono text-xs uppercase tracking-wide text-accent">
+                <p className="font-mono text-xs font-bold uppercase tracking-wide" style={{ color: "var(--accent)" }}>
                   {block.title}
                 </p>
-                <p className="mt-2 text-lg leading-relaxed text-text">{block.text}</p>
+                <p className="mt-2 text-lg leading-relaxed text-stage-text">{block.text}</p>
               </div>
             );
           case "sources":
             return (
-              <div key={i} className="rounded-2xl border border-border bg-bg-card p-5">
+              /* Always on the dark stage (both themes): light text, lime links.
+                 The link colour is inline so the curated light theme cannot
+                 rewrite it to olive on this dark surface. */
+              <div key={i} id="article-sources" className="rounded-2xl border border-stage-border bg-stage p-5 text-stage-text">
                 {block.title && (
-                  <p className="font-mono text-xs uppercase tracking-wide text-text-muted">
+                  <p className="font-mono text-xs font-bold uppercase tracking-wide text-stage-text-dim">
                     {block.title}
                   </p>
                 )}
                 <ul className="mt-2 grid gap-1.5">
                   {block.items.map((s) => (
-                    <li key={s.href} className="text-sm text-text-dim">
+                    <li key={s.href} className="text-sm text-stage-text-dim">
                       <a
                         href={s.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-accent-strong underline decoration-accent-strong/30 underline-offset-4 transition-colors hover:decoration-accent-strong"
+                        className="font-medium underline decoration-current/30 underline-offset-4 transition-colors hover:decoration-current"
+                        style={{ color: "var(--accent)" }}
                       >
                         {s.label}
                       </a>
-                      <span className="ml-2 font-mono text-xs text-text-muted">
+                      <span className="ml-2 font-mono text-xs text-stage-text-dim/70">
                         {new URL(s.href).hostname.replace("www.", "")}
                       </span>
                     </li>
@@ -147,25 +155,26 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
             return (
               <div
                 key={i}
-                className="overflow-hidden rounded-2xl border border-border bg-bg-card"
+                className="overflow-hidden rounded-2xl border border-stage-border bg-stage text-stage-text"
               >
                 {block.title && (
-                  <p className="border-b border-border px-5 py-4 font-semibold text-text">
+                  <p className="border-b border-white/10 px-5 py-4 font-semibold text-stage-text">
                     {block.title}
                   </p>
                 )}
-                <div className="divide-y divide-border">
+                <div className="divide-y divide-white/10">
                   {block.items.map((it) => (
                     <details key={it.q} className="group px-5">
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-lg font-medium text-text marker:hidden">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-lg font-medium text-stage-text marker:hidden">
                         {it.q}
                         <Plus
                           width={20}
                           height={20}
-                          className="shrink-0 text-accent transition-transform duration-300 group-open:rotate-45"
+                          className="shrink-0 transition-transform duration-300 group-open:rotate-45"
+                          style={{ color: "var(--accent)" }}
                         />
                       </summary>
-                      <p className="pb-5 text-lg leading-relaxed text-text-dim">{it.a}</p>
+                      <p className="pb-5 text-lg leading-relaxed text-stage-text-dim">{it.a}</p>
                     </details>
                   ))}
                 </div>

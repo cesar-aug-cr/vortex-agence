@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { featureIcons } from "@/components/illustrations/icons";
 import { ArrowUpRight } from "@/components/ui/icons";
 
@@ -14,6 +15,8 @@ export type NewsCard = {
   date: string;
   readingMinutes: number;
   cover: string;
+  /** Realistic cover photo (public/news/<slug>.webp); the category icon is the fallback. */
+  coverImage?: string;
 };
 
 type Labels = {
@@ -96,8 +99,18 @@ export function NewsList({
                 className="card card-hover spotlight-card group flex flex-col overflow-hidden"
               >
                 <div className="illu-stage relative flex h-44 items-center justify-center overflow-hidden border-b border-border">
-                  {Cover && <Cover className="h-28 w-28" />}
-                  <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-stage/70 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wide text-stage-text-dim backdrop-blur-sm">
+                  {a.coverImage ? (
+                    <Image
+                      src={a.coverImage}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    Cover && <Cover className="h-28 w-28" />
+                  )}
+                  <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/55 px-3 py-1 font-mono text-[0.65rem] font-bold uppercase tracking-wide backdrop-blur-sm" style={{ color: "var(--accent)" }}>
                     {a.category}
                   </span>
                 </div>

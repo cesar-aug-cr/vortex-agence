@@ -68,7 +68,7 @@ export function ProcessGeo({ dict }: { dict: Dictionary }) {
           <div className="hidden lg:block" aria-hidden />
 
           <div className="geo-glass glass-pill rounded-3xl bg-white/[0.05] p-8 backdrop-blur-xl md:p-10">
-            <span className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-accent">
               {dict.geo.eyebrow}
             </span>
             <h2 className="mt-4 text-3xl font-bold text-stage-text md:text-4xl">

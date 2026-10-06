@@ -81,7 +81,7 @@ export default async function AgencePage({
         <div className="container-vortx relative">
           <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-14">
             <div className="max-w-2xl">
-              <span className="section-eyebrow eyebrow-badge font-mono text-xs uppercase tracking-[0.22em]">
+              <span className="section-eyebrow eyebrow-badge font-mono text-xs font-bold uppercase tracking-[0.22em]">
                 {a.eyebrow}
               </span>
               <h1 className="mt-4 text-4xl font-bold leading-[1.05] text-text md:text-5xl lg:text-6xl">

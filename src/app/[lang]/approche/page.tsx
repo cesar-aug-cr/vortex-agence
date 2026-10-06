@@ -64,7 +64,7 @@ export default async function ApprochePage({
 
       <Section tone="muted" containerClassName="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
         <div>
-          <span className="section-eyebrow eyebrow-badge font-mono text-xs uppercase tracking-[0.22em]">
+          <span className="section-eyebrow eyebrow-badge font-mono text-xs font-bold uppercase tracking-[0.22em]">
             {faq.eyebrow}
           </span>
           <h2 className="mt-4 text-3xl font-bold text-text md:text-4xl">{faq.title}</h2>

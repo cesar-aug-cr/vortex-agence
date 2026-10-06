@@ -44,7 +44,7 @@ export function StickyCta({ copy, lang }: { copy: StickyCopy; lang: Locale }) {
               className="fixed inset-0 z-0 cursor-default"
             />
             <div className="glass-pill absolute bottom-full left-1/2 z-10 mb-3 w-64 -translate-x-1/2 animate-fade-in-up rounded-2xl bg-bg-elevated/70 p-2 shadow-[var(--shadow-lg)] backdrop-blur-xl">
-              <p className="px-3 pb-1 pt-1.5 font-mono text-[0.6rem] uppercase tracking-wide text-text-muted">
+              <p className="px-3 pb-1 pt-1.5 font-mono text-[0.6rem] font-bold uppercase tracking-wide text-text-muted">
                 {copy.eyebrow}
               </p>
               <ul className="grid">

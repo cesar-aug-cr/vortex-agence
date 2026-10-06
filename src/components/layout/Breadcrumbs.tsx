@@ -50,11 +50,26 @@ export function Breadcrumbs({
           return (
             <li key={`${c.label}-${i}`} className="flex items-center gap-2">
               {c.href && !last ? (
-                <Link href={localized(lang, c.href)} className={`transition-colors ${onStage ? "hover:text-accent" : "hover:text-accent-strong"}`}>
+                /* previous levels: thin underline */
+                <Link
+                  href={localized(lang, c.href)}
+                  className={`underline decoration-1 underline-offset-4 transition-colors ${
+                    onStage ? "decoration-stage-text-dim/50 hover:text-accent hover:decoration-accent" : "decoration-text-muted/50 hover:text-accent-strong hover:decoration-accent-strong"
+                  }`}
+                >
                   {c.label}
                 </Link>
               ) : (
-                <span className={onStage ? "text-stage-text" : "text-text-dim"}>{c.label}</span>
+                /* current page: pill */
+                <span
+                  aria-current="page"
+                  style={{ color: "var(--accent)" }}
+                  className={`inline-flex items-center rounded-full border px-2.5 py-0.5 ${
+                    onStage ? "border-white/15 bg-black/55 backdrop-blur-sm" : "border-stage-border bg-stage"
+                  }`}
+                >
+                  {c.label}
+                </span>
               )}
               {!last && <span aria-hidden className={onStage ? "text-stage-text-dim/50" : "text-text-muted/50"}>/</span>}
             </li>

@@ -49,6 +49,7 @@ export function GlossaryList({
         count={filtered.length}
         countSuffix={countSuffix}
         mobileSticky={false}
+        collapsible
       />
 
       {filtered.length === 0 ? (
@@ -59,7 +60,7 @@ export function GlossaryList({
         <div className="space-y-12">
           {categories.map(({ cat, items }) => (
             <div key={cat} id={glossaryCategoryId(cat)} className="scroll-mt-28">
-              <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <h2 className="font-mono text-base font-bold uppercase tracking-[0.18em] text-accent md:text-lg">
                 {cat}
               </h2>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">

@@ -67,6 +67,7 @@ export default async function NewsPage({
             date: a.date,
             readingMinutes: a.readingMinutes,
             cover: a.cover,
+            coverImage: a.coverImage,
           }))}
           labels={{
             all: dict.news.allCategories,

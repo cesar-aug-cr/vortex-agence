@@ -107,7 +107,7 @@ export default async function SubServicePage({
       <Section tone="base" className="pt-10 md:pt-12">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="order-2 lg:order-1">
-            <span className="font-mono text-xs uppercase tracking-[0.22em] eyebrow-badge section-eyebrow">
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.22em] eyebrow-badge section-eyebrow">
               {parent ? parent.title : dict.servicesSection.eyebrow}
             </span>
             <h1 className="mt-4 text-3xl font-bold leading-[1.08] text-text md:text-5xl">

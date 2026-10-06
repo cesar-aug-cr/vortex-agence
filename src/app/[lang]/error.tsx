@@ -39,7 +39,7 @@ export default function Error({
 
   return (
     <main className="flex min-h-[70svh] flex-col items-center justify-center bg-bg px-6 py-32 text-center">
-      <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
+      <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-accent-strong">
         {t.eyebrow}
       </p>
       <h1 className="mt-4 text-3xl font-bold text-text md:text-4xl">{t.title}</h1>

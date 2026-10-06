@@ -82,7 +82,7 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             {cols.map((col) => (
               <div key={col.title}>
-                <h3 className="font-mono text-xs uppercase tracking-wide text-stage-text-dim">
+                <h3 className="font-mono text-xs font-bold uppercase tracking-wide text-stage-text-dim">
                   {col.title}
                 </h3>
                 <ul className="mt-4 space-y-2.5">
@@ -117,7 +117,7 @@ export function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
             {/* Contact as a 4th column — mobile only (desktop uses the strip below) */}
             <div className="sm:hidden">
-              <h3 className="font-mono text-xs uppercase tracking-wide text-stage-text-dim">
+              <h3 className="font-mono text-xs font-bold uppercase tracking-wide text-stage-text-dim">
                 {dict.footer.contactTitle}
               </h3>
               <ul className="mt-4 space-y-2.5 text-sm text-stage-text/85">

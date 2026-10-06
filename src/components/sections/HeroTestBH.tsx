@@ -142,7 +142,7 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
 
       <div className="container-vortx relative z-10 flex min-h-[100svh] flex-col justify-center pb-16 pt-36 md:pt-40">
         <div className="relative self-start">
-          <span className="relative font-mono text-xs uppercase tracking-[0.24em] text-accent animate-fade-in">
+          <span className="relative font-mono text-xs font-bold uppercase tracking-[0.24em] text-accent animate-fade-in">
             {dict.hero.eyebrow.split("Luxembourg").map((part, i) => (
               <Fragment key={i}>
                 {i > 0 && (

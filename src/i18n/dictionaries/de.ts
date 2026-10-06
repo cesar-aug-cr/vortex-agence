@@ -778,6 +778,7 @@ export const de = {
         readingMinutes: 8,
         author: "Das vortx-Team",
         cover: "redesign",
+        coverImage: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques.webp",
         summary: {
           text: "Die UX gestaltet den Weg, die UI kleidet die Oberfläche ein: Gemeinsam entscheiden sie, ob ein Besucher handelt oder wieder geht. Der Artikel erläutert die konkreten Prinzipien (visuelle Hierarchie, kognitive Last, ein Ziel pro Seite, Konsistenz, Kontrast, Barrierefreiheit, Performance) und zeigt, wie sie auf der vortx-Website angewendet werden.",
           points: [
@@ -963,6 +964,7 @@ export const de = {
         readingMinutes: 9,
         author: "Das vortx-Team",
         cover: "geo-citation",
+        coverImage: "/news/geo-seo-luxembourg-etre-cite-par-les-ia.webp",
         summary: {
           text: "Suchmaschinenoptimierung beschränkt sich nicht mehr auf Google: ChatGPT, Perplexity und Google AI werden zu einem neuen Eingangstor. Der Artikel erklärt den Unterschied zwischen SEO und GEO und wie Sie beide gemeinsam bespielen — mit konkreten Schritten, um von KI zitiert zu werden.",
           points: [
@@ -1102,6 +1104,7 @@ export const de = {
         readingMinutes: 8,
         author: "Das vortx-Team",
         cover: "ads-targeting",
+        coverImage: "/news/google-ads-ou-seo-ou-investir-budget-marketing.webp",
         summary: {
           text: "Soll man in Google Ads oder in SEO investieren? Die Antwort hängt von Ihrem Ziel und Ihrem Zeithorizont ab. Der Artikel stellt das „Mieten“ (Ads, sofort) dem „Besitzen“ (SEO, dauerhaft) gegenüber und zeigt, wie Sie beide je nach Situation kombinieren.",
           points: [
@@ -1238,6 +1241,7 @@ export const de = {
         readingMinutes: 7,
         author: "Das vortx-Team",
         cover: "conversion",
+        coverImage: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients.webp",
         summary: {
           text: "Traffic anzuziehen bringt nichts, wenn er sich nicht verwandelt. Der Artikel zerlegt den Conversion-Funnel Schritt für Schritt — vom ersten Klick bis zum Vertrag — und zeigt, wo Sie Besucher verlieren und wie Sie jedes Leck abdichten.",
           points: [
@@ -1369,6 +1373,7 @@ export const de = {
         readingMinutes: 7,
         author: "Das vortx-Team",
         cover: "analytics",
+        coverImage: "/news/combien-coute-un-site-web-luxembourg-2026.webp",
         summary: {
           text: "Der Preis einer Website ist keine feste Zahl, sondern eine Spanne, die von Ihren Zielen abhängt. Der Artikel erläutert, was die Kosten beeinflusst und wie Sie dort investieren, wo es sich wirklich auszahlt, statt nur das Günstigste zu suchen.",
           points: [
@@ -1487,6 +1492,7 @@ export const de = {
         readingMinutes: 6,
         author: "Das vortx-Team",
         cover: "branding",
+        coverImage: "/news/quest-ce-quun-bon-logo-identite-qui-dure.webp",
         summary: {
           text: "Ein Logo ist nicht nur ein hübsches Bild: Es ist das erste Versprechen Ihrer Marke. Der Artikel erläutert die Prinzipien eines Logos, das bleibt — einfach, einprägsam, zeitlos, vielseitig und passend — und seine Rolle innerhalb einer stimmigen Identität.",
           points: [
@@ -1610,6 +1616,7 @@ export const de = {
         readingMinutes: 6,
         author: "Das vortx-Team",
         cover: "rgpd",
+        coverImage: "/news/rgpd-cookies-site-web-luxembourg.webp",
         summary: {
           text: "Die DSGVO macht Angst, doch das Wesentliche lässt sich in wenigen klaren Regeln zusammenfassen. Der Artikel fasst das Minimum für eine luxemburgische Website zusammen — Cookie-Banner, Einwilligung und Pflichtangaben — um regelkonform zu sein, ohne in Paranoia zu verfallen.",
           points: [
@@ -1716,6 +1723,7 @@ export const de = {
         readingMinutes: 6,
         author: "Das vortx-Team",
         cover: "automation",
+        coverImage: "/news/5-taches-pme-confier-a-l-ia.webp",
         summary: {
           text: "Die KI ersetzt Ihre Teams nicht, sie nimmt ihnen die lästigen Routinen ab. Der Artikel listet fünf konkrete Aufgaben, die ein luxemburgisches KMU schon heute automatisieren kann — ohne Bürokratie-Monster — um nützliche Zeit freizusetzen.",
           points: [
@@ -1827,7 +1835,8 @@ export const de = {
         updated: "2026-06-09",
         readingMinutes: 7,
         author: "Das vortx-Team",
-        cover: "ai-build",
+        cover: "automation",
+        coverImage: "/news/ia-pme-luxembourg-par-ou-commencer.webp",
         summary: {
           text: "KI ist nicht mehr nur den Großkonzernen vorbehalten: richtig eingesetzt, gibt sie einem KMU die Schlagkraft eines größeren Teams. Dieser Leitfaden räumt mit Vorurteilen auf, zeigt, wo KI sich wirklich auszahlt, und liefert eine Methode, um klein zu starten und dabei die Kontrolle über Ihre Daten zu behalten.",
           points: [
@@ -1971,6 +1980,8 @@ export const de = {
       readingMinutes: number;
       author: string;
       cover: string;
+      /** Realistic cover photo, public/news/<slug>.webp (band on the article, card on /news). */
+      coverImage?: string;
       body: ArticleBlock[];
       /** AI-style synthesis shown at the top of the article (text + key points). */
       summary?: { text: string; points: string[] };

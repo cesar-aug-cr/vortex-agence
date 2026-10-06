@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -72,6 +73,9 @@ export default async function ArticlePage({
   if (!article) notFound();
 
   const Cover = featureIcons[article.cover];
+  // Realistic cover photo: public/news/<slug>.webp (variants from
+  // scripts/build-images.mjs), shown as a full-bleed band with the breadcrumbs.
+  const coverImage = article.coverImage;
   const toc = article.body.filter(
     (b): b is Extract<ArticleBlock, { type: "h2" }> => b.type === "h2"
   );
@@ -105,25 +109,29 @@ export default async function ArticlePage({
 
   return (
     <PageShell dict={dict} lang={lang}>
-      {/* Full-bleed cover: the animated illustration on the dark stage, edge
-          to edge, with the breadcrumbs inside it (light text, stage tone). */}
-      {Cover ? (
-        <div className="illu-stage relative overflow-hidden">
-          <Breadcrumbs
-            lang={lang}
-            homeLabel={dict.common.breadcrumbHome}
-            items={[
-              { label: dict.nav.news, href: "/news" },
-              { label: article.title },
-            ]}
-            className="container-vortx relative z-10 pt-28 md:pt-32"
-            tone="stage"
-          />
-          <div className="flex h-56 items-center justify-center md:h-72">
-            <Cover className="h-40 w-40 md:h-48 md:w-48" />
+      {/* Full-bleed photo band — only when the article has a realistic cover
+          photo (`coverImage`, see above). Breadcrumbs sit inside it. The
+          category's animated icon is shown next to the title instead. */}
+      {coverImage ? (
+        <div className="relative overflow-hidden bg-stage">
+          <Image src={coverImage} alt="" fill priority sizes="100vw" className="object-cover" />
+          {/* top scrim so the breadcrumbs stay legible on any photo */}
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-80" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0) 100%)" }} />
+          <div className="container-vortx relative z-10">
+            <div className="mx-auto max-w-5xl">
+              <Breadcrumbs
+                lang={lang}
+                homeLabel={dict.common.breadcrumbHome}
+                items={[
+                  { label: dict.nav.news, href: "/news" },
+                  { label: article.title },
+                ]}
+                className="pt-28 md:pt-32"
+                tone="stage"
+              />
+              <div className="h-56 md:h-80" />
+            </div>
           </div>
-          {/* no seam with the page: the stage fades into the page background */}
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-b from-transparent to-bg md:h-44" />
         </div>
       ) : (
         <Breadcrumbs
@@ -142,12 +150,22 @@ export default async function ArticlePage({
         <div className="mx-auto max-w-5xl">
           {/* header */}
           <header>
-            <span className="inline-flex rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-wide text-accent">
+            <span className="section-eyebrow eyebrow-badge font-mono text-xs font-bold uppercase tracking-[0.22em]">
               {article.category}
             </span>
-            <h1 className="mt-5 text-3xl font-bold leading-[1.1] text-text md:text-5xl">
-              {article.title}
-            </h1>
+            {/* category icon (one animated icon per category) on the left of
+                the title only — eyebrow above, excerpt and meta below span the
+                full width */}
+            <div className="mt-4 flex items-center gap-5 md:gap-7">
+              {Cover && (
+                <div className="illu-stage flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-border md:h-28 md:w-28">
+                  <Cover className="h-14 w-14 md:h-20 md:w-20" />
+                </div>
+              )}
+              <h1 className="min-w-0 flex-1 text-3xl font-bold leading-[1.1] text-text md:text-5xl">
+                {article.title}
+              </h1>
+            </div>
             <p className="mt-5 text-lg text-text-dim">{article.excerpt}</p>
             <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-text-muted">
               <span>{dict.news.by} {article.author}</span>

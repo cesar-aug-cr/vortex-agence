@@ -24,7 +24,7 @@ export function WhyVortx({ dict }: { dict: Dictionary }) {
             }}
           />
           <div>
-            <span className="section-eyebrow eyebrow-badge font-mono text-xs uppercase tracking-[0.22em]">
+            <span className="section-eyebrow eyebrow-badge font-mono text-xs font-bold uppercase tracking-[0.22em]">
               {dict.trust.eyebrow}
             </span>
             <h2 className="mt-4 text-3xl font-bold leading-[1.08] text-text md:text-4xl">

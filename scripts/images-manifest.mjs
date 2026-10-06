@@ -134,6 +134,200 @@ export const MANIFEST = [
     prompt:
       "Abstract 3D scene of interlocking glass gears and flowing luminous data ribbons in lime and cyan, a small precise robotic arm placing a glowing cube into a row of cubes, dark background.",
   },
+  // --- Service cards, second generation (gpt-image-2.5-flare) ---------------
+  {
+    id: "services-v2-sites-web",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A modern laptop open on a dark desk showing a clean website: a hero banner, three cards and one glowing lime call-to-action button, all as abstract shapes; a smartphone leans against it showing the same site adapted to mobile; a small lime cursor arrow hovers over the button.",
+  },
+  {
+    id: "services-v2-seo-geo",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A large glass magnifying glass hovers over a laptop screen that shows a search results list of abstract bars; the first result glows lime and stands out; next to the screen floats a translucent AI chat bubble with a lime quotation mark inside, linked to the first result by a thin cyan light line.",
+  },
+  {
+    id: "services-v2-lead-generation",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A smartphone standing upright on a dark desk, its screen lit up, with a stream of glowing lime notification cards shaped like envelopes and phone handsets flying in from the side and stacking neatly in an inbox tray; a small glass calendar with lime-lit slots sits beside it.",
+  },
+  {
+    id: "services-v2-publicite",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A sleek matte-black megaphone made of glass and metal, projecting a wide lime light beam that hits a classic archery target standing upright on the right; a cyan arrow sits in the exact bullseye; dark stage, beam visible in soft haze.",
+  },
+  {
+    id: "services-v2-branding-design",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A heavy brass-and-black hand stamp lifting off a cream business card, leaving a crisp embossed abstract emblem glowing lime; around it a fan of colour swatches in lime, cyan and charcoal and a fine black pen; top-down luxury still life on dark textured paper.",
+  },
+  {
+    id: "services-v2-automatisation-ia",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A friendly compact white-and-black desk robot with a cyan light-ring face, one arm sorting glowing lime document cards from a messy pile into three neat trays; small glass gears float above it turning in sync; clean dark desk, soft studio light.",
+  },
+  // --- Approche: step 4 remake + the four working principles (gpt-image-2.5-flare) ---
+  {
+    id: "approche-4-v2",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A sleek laptop on a dark desk showing a clean analytics dashboard made of abstract shapes with one lime line chart rising steeply; a small glass-and-metal rocket lifts off from beside the laptop leaving a soft lime exhaust trail; a tiny glass bell-shaped notification with a lime dot floats near the screen.",
+  },
+  {
+    id: "approche-principe-1",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A transparent glass cube on a dark desk with everything visible inside: small glowing gears, a tiny bar chart and a lime checklist card, all clearly seen through the glass walls; a lime light inside the cube; a cyan rim light on the edges.",
+  },
+  {
+    id: "approche-principe-2",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "A glass bar chart with four rising bars on a dark desk, the tallest bar glowing lime and topped with a small lime flag; a cyan arrow curves upward along the bars; clean and simple.",
+  },
+  {
+    id: "approche-principe-3",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "One premium matte-black headset with a lime glowing ring lying on a dark desk; dozens of thin cyan light threads from all directions converge into a single lime line that plugs into the headset; one clear point of contact.",
+  },
+  {
+    id: "approche-principe-4",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Premium product-photography style 3D render, one big instantly recognisable hero object centred, clean composition, photoreal materials (glass, brushed metal, matte black), near-black studio background, lime green (#c8f02e) key light and cyan (#14e0c8) rim light, soft reflections on a dark glossy surface, shallow depth of field, 16:9. Absolutely no text, no letters, no numbers, no logos, no watermarks, no human faces.",
+    prompt:
+      "Three thick glass arrows forming a continuous circular loop, glowing lime and cyan, hovering above a dark desk; at the centre of the loop a small sleek smartphone prototype; the loop suggests build, measure, adjust; motion blur on the arrows.",
+  },
+  // --- Article cover photos (realistic, natural colours; gpt-image-2.5-flare) ---
+  {
+    id: "news-ux-ui-design-site-qui-convertit-bonnes-pratiques",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A web designer's desk by a large window: a laptop showing a blurred website layout, printed wireframe sheets with pencil annotations, a few sticky notes, a ceramic coffee cup; hands of the designer pointing at the wireframe.",
+  },
+  {
+    id: "news-geo-seo-luxembourg-etre-cite-par-les-ia",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "Close-up over the shoulder of a person typing a question into a laptop at a café table; next to the laptop a smartphone showing a blurred chat conversation; morning light, croissant and espresso on the table, old-town street of Luxembourg softly blurred through the window.",
+  },
+  {
+    id: "news-google-ads-ou-seo-ou-investir-budget-marketing",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "Top-down view of a wooden meeting table: a tablet with a blurred bar chart, printed sheets with a budget table, a calculator, a pen, two coffee cups and two people's hands comparing two documents; bright office daylight.",
+  },
+  {
+    id: "news-tunnel-de-conversion-transformer-visiteurs-en-clients",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A craftsman in a bright workshop seen from the side, reading a new customer request on a tablet while leaning on his workbench, tools and wood shavings in the background, warm natural light from a skylight.",
+  },
+  {
+    id: "news-combien-coute-un-site-web-luxembourg-2026",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "Two people seen from behind at a glass meeting table reviewing a printed quote and a laptop with a blurred website mock-up, a calculator and a notebook beside them, modern office with large windows and daylight.",
+  },
+  {
+    id: "news-quest-ce-quun-bon-logo-identite-qui-dure",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A brand designer's desk from above: paper sheets with hand-drawn abstract logo sketches in black marker, a fan of colour swatches, markers, a ruler and a cup of tea, a designer's hand holding a pencil; soft daylight from the side.",
+  },
+  {
+    id: "news-rgpd-cookies-site-web-luxembourg",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A tidy office desk: an open laptop with a blurred consent pop-up on the screen, a small brass padlock resting beside the keyboard, a printed document and reading glasses, a plant in the background, cool daylight.",
+  },
+  {
+    id: "news-5-taches-pme-confier-a-l-ia",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A small-business office desk mid-morning: a person's hands feeding a stack of paper invoices into a desktop scanner next to a laptop, an inbox tray overflowing with documents, a phone ringing; honest, natural light.",
+  },
+  {
+    id: "news-ia-pme-luxembourg-par-ou-commencer",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic skin, fabric, wood and glass textures, shallow depth of field, modern Luxembourg office or workshop setting, 3:2 composition with clean space on the left for text. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A small team of three people seen from behind, standing around a laptop in a modern Luxembourg office, a whiteboard with blurred boxes and arrows behind them, large windows with daylight and the city softly visible outside.",
+  },
+  // --- CTA banner photo, light-theme variant (quiz section on the white site) ---
+  {
+    id: "cta-final-clair",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style:
+      "Premium, airy, high-end marketing agency aesthetic on a bright white studio background. Photorealistic light rendering, soft gradients, luminous and clean, no dark areas, no black. Absolutely no text, no letters, no numbers, no logos, no watermarks.",
+    prompt:
+      "Very bright off-white abstract background: two soft light beams, one lime green (#c8f02e) and one cyan (#14e0c8), crossing diagonally over a white stage with fine floating particles and gentle haze, plenty of empty space in the centre for a dark headline.",
+  },
   // --- News covers ------------------------------------------------------
   {
     id: "news-cout-site-web",

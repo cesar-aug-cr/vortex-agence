@@ -778,6 +778,7 @@ export const en = {
         readingMinutes: 8,
         author: "The vortx team",
         cover: "redesign",
+        coverImage: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques.webp",
         summary: {
           text: "UX organises the journey, UI dresses the interface: together they decide whether a visitor takes action or leaves. This article details the concrete principles (visual hierarchy, cognitive load, one goal per page, consistency, contrast, accessibility, performance) and shows how they are applied across the vortx site.",
           points: [
@@ -963,6 +964,7 @@ export const en = {
         readingMinutes: 9,
         author: "The vortx team",
         cover: "geo-citation",
+        coverImage: "/news/geo-seo-luxembourg-etre-cite-par-les-ia.webp",
         summary: {
           text: "Search is no longer confined to Google: ChatGPT, Perplexity and Google AI are becoming a new front door. This article explains the difference between SEO and GEO and how to work both together, with concrete steps to get cited by AI.",
           points: [
@@ -1102,6 +1104,7 @@ export const en = {
         readingMinutes: 8,
         author: "The vortx team",
         cover: "ads-targeting",
+        coverImage: "/news/google-ads-ou-seo-ou-investir-budget-marketing.webp",
         summary: {
           text: "Should you invest in Google Ads or in SEO? The answer depends on your goal and your timeline. This article contrasts \"renting\" (Ads, immediate) with \"owning\" (SEO, lasting) and shows how to combine them for your situation.",
           points: [
@@ -1238,6 +1241,7 @@ export const en = {
         readingMinutes: 7,
         author: "The vortx team",
         cover: "conversion",
+        coverImage: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients.webp",
         summary: {
           text: "Attracting traffic is pointless if it doesn't convert. This article breaks the conversion funnel down step by step — from the first click to the contract — and shows where you lose visitors and how to plug each leak.",
           points: [
@@ -1369,6 +1373,7 @@ export const en = {
         readingMinutes: 7,
         author: "The vortx team",
         cover: "analytics",
+        coverImage: "/news/combien-coute-un-site-web-luxembourg-2026.webp",
         summary: {
           text: "The price of a website isn't a fixed number but a range that depends on your goals. This article breaks down what makes the cost vary and how to invest where it truly pays off, rather than chasing the cheapest option.",
           points: [
@@ -1487,6 +1492,7 @@ export const en = {
         readingMinutes: 6,
         author: "The vortx team",
         cover: "branding",
+        coverImage: "/news/quest-ce-quun-bon-logo-identite-qui-dure.webp",
         summary: {
           text: "A logo isn't just a pretty picture: it's your brand's first promise. This article lays out the principles of a logo that lasts — simple, memorable, timeless, versatile and relevant — and its role within a coherent identity.",
           points: [
@@ -1610,6 +1616,7 @@ export const en = {
         readingMinutes: 6,
         author: "The vortx team",
         cover: "rgpd",
+        coverImage: "/news/rgpd-cookies-site-web-luxembourg.webp",
         summary: {
           text: "GDPR has a scary reputation, but the essentials come down to a few clear rules. This article sums up the minimum to respect on a Luxembourg website — cookie banner, consent and legal notices — to be compliant without tipping into paranoia.",
           points: [
@@ -1716,6 +1723,7 @@ export const en = {
         readingMinutes: 6,
         author: "The vortx team",
         cover: "automation",
+        coverImage: "/news/5-taches-pme-confier-a-l-ia.webp",
         summary: {
           text: "AI doesn't replace your teams, it takes the drudgery off their hands. This article lists five concrete tasks a Luxembourg SME can automate today — without an overengineered setup — to free up valuable time.",
           points: [
@@ -1827,7 +1835,8 @@ export const en = {
         updated: "2026-06-09",
         readingMinutes: 7,
         author: "The vortx team",
-        cover: "ai-build",
+        cover: "automation",
+        coverImage: "/news/ia-pme-luxembourg-par-ou-commencer.webp",
         summary: {
           text: "AI is no longer reserved for big corporations: framed well, it gives an SME the firepower of a bigger team. This guide dismantles the myths, shows where AI genuinely pays off and lays out a method to start small while keeping control of your data.",
           points: [
@@ -1971,6 +1980,8 @@ export const en = {
       readingMinutes: number;
       author: string;
       cover: string;
+      /** Realistic cover photo, public/news/<slug>.webp (band on the article, card on /news). */
+      coverImage?: string;
       body: ArticleBlock[];
       /** AI-style synthesis shown at the top of the article (text + key points). */
       summary?: { text: string; points: string[] };

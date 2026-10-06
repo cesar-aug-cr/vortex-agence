@@ -53,7 +53,7 @@ export default async function ContactPage({
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           {/* Intro + form */}
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.22em] eyebrow-badge section-eyebrow">
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.22em] eyebrow-badge section-eyebrow">
               {dict.contact.eyebrow}
             </span>
             <h1 className="mt-4 text-3xl font-bold leading-[1.08] text-text md:text-5xl">
@@ -91,7 +91,7 @@ export default async function ContactPage({
               />
 
               <div className="relative p-7">
-                <p className="font-mono text-xs uppercase tracking-wide text-stage-text-dim">
+                <p className="font-mono text-xs font-bold uppercase tracking-wide text-stage-text-dim">
                   {dict.footer.contactTitle}
                 </p>
                 <ul className="mt-4 grid gap-3 text-sm">

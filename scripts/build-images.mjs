@@ -40,6 +40,7 @@ const SOURCES = [
   { dir: "quiz", max: 640 }, // intro brain + 5 level badges (≤ 128 px on screen, 2x on the certificate)
   { dir: "bandeaux" }, // FAQ / glossary opening banners
   { dir: "decor" }, // ambient texture (test page /page-test-ok)
+  { dir: "news" }, // optional article cover photos (coverImage on an article) — folder may not exist yet
   { dir: "merci" },
   { dir: "portfolio" },
   { dir: "reviews", max: 192 }, // 40 px avatars, 3x screens at most

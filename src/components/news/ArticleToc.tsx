@@ -89,7 +89,7 @@ export function ArticleToc({
   if (variant === "desktop") {
     return (
       <nav className="hidden rounded-2xl border border-border bg-bg-card p-5 lg:block">
-        <p className="font-mono text-xs uppercase tracking-wide text-text-muted">{title}</p>
+        <p className="font-mono text-xs font-bold uppercase tracking-wide text-text-muted">{title}</p>
         <ol className="mt-3 grid gap-1">
           {items.map((h, i) => {
             const active = h.id === activeId;
@@ -127,7 +127,7 @@ export function ArticleToc({
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
       >
-        <span className="inline-flex min-w-0 items-center gap-2 font-mono text-xs uppercase tracking-wide text-accent">
+        <span className="inline-flex min-w-0 items-center gap-2 font-mono text-xs font-bold uppercase tracking-wide text-accent">
           <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" aria-hidden>
             <path d="M4 6h16M4 12h12M4 18h8" />
           </svg>

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { localized } from "@/lib/locale";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
-import { Check } from "@/components/ui/icons";
+
 import { HyperspaceWarp } from "@/components/forms/HyperspaceWarp";
 
 type FormCopy = Dictionary["contact"]["form"];
@@ -17,7 +17,7 @@ type ServiceOpt = { slug: string; title: string };
 // global lime focus-visible ring shows; `accent-strong` keeps the focus border
 // readable on white (olive) while staying lime in dark.
 const fieldClass =
-  "w-full rounded-lg border border-border bg-bg-card px-4 py-3 text-text transition-colors placeholder:text-text-muted focus:border-accent-strong";
+  "w-full rounded-lg border-2 border-border bg-bg-card px-4 py-3 text-text transition-colors placeholder:text-text-muted focus:border-accent-strong";
 
 const STEPS = 3;
 
@@ -149,28 +149,26 @@ export function ContactForm({
             {options.map((opt, i) => {
               const on = selected.includes(opt.title);
               return (
-                <button
+                /* real checkbox (same .chk as the consent box) inside a label */
+                <label
                   key={opt.slug}
-                  type="button"
-                  onClick={() => toggleService(opt.title)}
-                  aria-pressed={on}
                   style={{ animationDelay: `${0.15 + i * 0.06}s` }}
-                  className={`option-hint flex items-center justify-between gap-3 rounded-lg border px-4 py-3 text-left text-sm transition-colors ${
+                  className={`option-hint flex cursor-pointer items-center justify-between gap-3 rounded-lg border-2 px-4 py-3 text-left text-sm transition-colors ${
                     on
                       ? "border-accent bg-accent-soft text-text"
                       : "border-border text-text-dim hover:border-border-strong hover:text-text"
                   }`}
                 >
-                  {opt.title}
-                  <span
-                    aria-hidden
-                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors ${
-                      on ? "border-accent bg-accent text-accent-ink" : "border-border-strong"
-                    }`}
-                  >
-                    {on && <Check width={14} height={14} />}
-                  </span>
-                </button>
+                  <span>{opt.title}</span>
+                  <input
+                    type="checkbox"
+                    name="services"
+                    value={opt.title}
+                    checked={on}
+                    onChange={() => toggleService(opt.title)}
+                    className="chk"
+                  />
+                </label>
               );
             })}
           </div>
@@ -248,7 +246,7 @@ export function ContactForm({
               required
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
-              className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--accent)]"
+              className="chk mt-0.5"
             />
             <span className="leading-relaxed">
               {form.consentBefore}
