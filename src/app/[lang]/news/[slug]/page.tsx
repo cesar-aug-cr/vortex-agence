@@ -133,10 +133,22 @@ export default async function ArticlePage({
 
           {/* header */}
           <header>
-            <span className="inline-flex rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-wide text-accent">
-              {article.category}
-            </span>
-            <h1 className="mt-5 text-3xl font-bold leading-[1.1] text-text md:text-5xl">
+            {/* cover: animated illustration above the title, category badge
+                pinned top-left inside it. The stage is dark in both themes,
+                so the badge keeps lime on a translucent dark pill. */}
+            {Cover ? (
+              <div className="illu-stage relative flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-border md:h-72">
+                <span className="absolute left-4 top-4 inline-flex rounded-full border border-white/15 bg-black/40 px-3 py-1 font-mono text-xs uppercase tracking-wide backdrop-blur-sm md:left-5 md:top-5" style={{ color: "var(--accent)" }}>
+                  {article.category}
+                </span>
+                <Cover className="h-40 w-40 md:h-48 md:w-48" />
+              </div>
+            ) : (
+              <span className="inline-flex rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-wide text-accent">
+                {article.category}
+              </span>
+            )}
+            <h1 className="mt-8 text-3xl font-bold leading-[1.1] text-text md:text-5xl">
               {article.title}
             </h1>
             <p className="mt-5 text-lg text-text-dim">{article.excerpt}</p>
@@ -159,13 +171,6 @@ export default async function ArticlePage({
               showLabel={dict.news.summaryShow}
               hideLabel={dict.news.summaryHide}
             />
-          )}
-
-          {/* cover */}
-          {Cover && (
-            <div className="illu-stage mt-10 flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-border md:h-72">
-              <Cover className="h-40 w-40 md:h-48 md:w-48" />
-            </div>
           )}
 
           {/* body */}
