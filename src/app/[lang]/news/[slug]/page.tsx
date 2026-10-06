@@ -105,37 +105,47 @@ export default async function ArticlePage({
 
   return (
     <PageShell dict={dict} lang={lang}>
-      <Breadcrumbs
-        lang={lang}
-        homeLabel={dict.common.breadcrumbHome}
-        items={[
-          { label: dict.nav.news, href: "/news" },
-          { label: article.title },
-        ]}
-      />
+      {/* Full-bleed cover: the animated illustration on the dark stage, edge
+          to edge, with the breadcrumbs inside it (light text, stage tone). */}
+      {Cover ? (
+        <div className="illu-stage relative overflow-hidden">
+          <Breadcrumbs
+            lang={lang}
+            homeLabel={dict.common.breadcrumbHome}
+            items={[
+              { label: dict.nav.news, href: "/news" },
+              { label: article.title },
+            ]}
+            className="container-vortx relative z-10 pt-28 md:pt-32"
+            tone="stage"
+          />
+          <div className="flex h-56 items-center justify-center md:h-72">
+            <Cover className="h-40 w-40 md:h-48 md:w-48" />
+          </div>
+          {/* no seam with the page: the stage fades into the page background */}
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-b from-transparent to-bg md:h-44" />
+        </div>
+      ) : (
+        <Breadcrumbs
+          lang={lang}
+          homeLabel={dict.common.breadcrumbHome}
+          items={[
+            { label: dict.nav.news, href: "/news" },
+            { label: article.title },
+          ]}
+        />
+      )}
 
-      {/* 1. Opening: cover, title, excerpt, meta, AI summary and the
-          introduction, in one centred column. */}
+      {/* 1. Opening: category, title, excerpt, meta, AI summary and the
+          introduction, at the width of the content grid below. */}
       <Section tone="base" className="pb-0 pt-10 md:pb-0 md:pt-12">
         <div className="mx-auto max-w-5xl">
           {/* header */}
           <header>
-            {/* cover: animated illustration above the title, category badge
-                pinned top-left inside it. The stage is dark in both themes,
-                so the badge keeps lime on a translucent dark pill. */}
-            {Cover ? (
-              <div className="illu-stage relative flex h-56 items-center justify-center overflow-hidden rounded-2xl border border-border md:h-72">
-                <span className="absolute left-4 top-4 inline-flex rounded-full border border-white/15 bg-black/40 px-3 py-1 font-mono text-xs uppercase tracking-wide backdrop-blur-sm md:left-5 md:top-5" style={{ color: "var(--accent)" }}>
-                  {article.category}
-                </span>
-                <Cover className="h-40 w-40 md:h-48 md:w-48" />
-              </div>
-            ) : (
-              <span className="inline-flex rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-wide text-accent">
-                {article.category}
-              </span>
-            )}
-            <h1 className="mt-8 text-3xl font-bold leading-[1.1] text-text md:text-5xl">
+            <span className="inline-flex rounded-full border border-border px-3 py-1 font-mono text-xs uppercase tracking-wide text-accent">
+              {article.category}
+            </span>
+            <h1 className="mt-5 text-3xl font-bold leading-[1.1] text-text md:text-5xl">
               {article.title}
             </h1>
             <p className="mt-5 text-lg text-text-dim">{article.excerpt}</p>

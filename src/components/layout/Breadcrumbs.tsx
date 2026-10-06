@@ -17,11 +17,18 @@ export function Breadcrumbs({
   lang,
   homeLabel,
   items,
+  className = "container-vortx pt-28 md:pt-32",
+  tone = "base",
 }: {
   lang: Locale;
   homeLabel: string;
   items: Crumb[];
+  /** Wrapper classes — override when the nav sits inside another block (e.g. a full-bleed cover). */
+  className?: string;
+  /** "stage": light text for the always-dark stage surfaces. */
+  tone?: "base" | "stage";
 }) {
+  const onStage = tone === "stage";
   const all: Crumb[] = [{ label: homeLabel, href: "/" }, ...items];
 
   const jsonLd = {
@@ -36,20 +43,20 @@ export function Breadcrumbs({
   };
 
   return (
-    <nav aria-label={NAV_LABEL[lang] ?? NAV_LABEL.fr} className="container-vortx pt-28 md:pt-32">
-      <ol className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wide text-text-muted">
+    <nav aria-label={NAV_LABEL[lang] ?? NAV_LABEL.fr} className={className}>
+      <ol className={`flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wide ${onStage ? "text-stage-text-dim" : "text-text-muted"}`}>
         {all.map((c, i) => {
           const last = i === all.length - 1;
           return (
             <li key={`${c.label}-${i}`} className="flex items-center gap-2">
               {c.href && !last ? (
-                <Link href={localized(lang, c.href)} className="transition-colors hover:text-accent-strong">
+                <Link href={localized(lang, c.href)} className={`transition-colors ${onStage ? "hover:text-accent" : "hover:text-accent-strong"}`}>
                   {c.label}
                 </Link>
               ) : (
-                <span className="text-text-dim">{c.label}</span>
+                <span className={onStage ? "text-stage-text" : "text-text-dim"}>{c.label}</span>
               )}
-              {!last && <span aria-hidden className="text-text-muted/50">/</span>}
+              {!last && <span aria-hidden className={onStage ? "text-stage-text-dim/50" : "text-text-muted/50"}>/</span>}
             </li>
           );
         })}
