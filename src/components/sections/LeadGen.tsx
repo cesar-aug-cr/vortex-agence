@@ -46,8 +46,7 @@ export function LeadGen({ dict, lang }: { dict: Dictionary; lang: Locale }) {
                   "radial-gradient(80% 60% at 85% 0%, rgba(200,240,46,0.22), transparent 60%), radial-gradient(70% 60% at 0% 100%, rgba(20,224,200,0.16), transparent 60%)",
               }}
             />
-            <h3 className="inline-flex items-center gap-2 font-mono text-sm font-semibold uppercase tracking-wide text-text">
-              <Check width={16} height={16} className="text-accent" />
+            <h3 className="font-mono text-sm font-bold uppercase tracking-wide text-text">
               {dict.leadgen.solutionTitle}
             </h3>
             <ul className="mt-6 space-y-4">

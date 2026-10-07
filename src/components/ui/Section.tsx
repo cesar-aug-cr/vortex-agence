@@ -51,7 +51,7 @@ export function SectionHeading({
   className = "",
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   lead?: string;
   tone?: Tone;
   align?: "left" | "center";

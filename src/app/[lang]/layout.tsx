@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono, Atkinson_Hyperlegible } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono, Atkinson_Hyperlegible, Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { i18n, isLocale } from "@/i18n/config";
@@ -19,6 +19,14 @@ import { CenterCardActivate } from "@/components/layout/CenterCardActivate";
 const interTight = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-inter-tight",
+  display: "swap",
+});
+// Headings site-wide (h1–h4) — see .jakarta-headings in globals.css. Body copy
+// stays on Inter Tight, labels on JetBrains Mono.
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin", "latin-ext"],
+  weight: ["600", "700", "800"],
+  variable: "--font-jakarta",
   display: "swap",
 });
 const jetbrainsMono = JetBrains_Mono({
@@ -115,7 +123,7 @@ export default async function LangLayout({
       {/* `test-home` is the site-wide curated-light-theme hook (formerly a
           /test-home sandbox). It's a no-op in dark theme — the light overrides
           in globals.css are all gated `html:not(.dark) .test-home …`. */}
-      <body className={`test-home ${interTight.variable} ${jetbrainsMono.variable} ${atkinson.variable} antialiased`}>
+      <body className={`test-home jakarta-headings ${interTight.variable} ${jakarta.variable} ${jetbrainsMono.variable} ${atkinson.variable} antialiased`}>
         <ThemeSync />
         <MotionGuard />
         <SchemaMarkup />

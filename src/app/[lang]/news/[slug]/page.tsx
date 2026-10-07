@@ -201,7 +201,7 @@ export default async function ArticlePage({
         <div className="mx-auto max-w-5xl lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12">
           {/* desktop — sticky left sidebar table of contents + share */}
           <aside className="hidden lg:block">
-            <div className="sticky top-28 space-y-4">
+            <div className="sticky top-28 z-20 space-y-4">
               <ArticleToc
                 items={toc.map((h) => ({ id: h.id, text: h.text }))}
                 title={dict.news.tocTitle}
@@ -250,28 +250,52 @@ export default async function ArticlePage({
           </article>
         </div>
 
-        {/* related */}
+        {/* related — a list of rows: cover photo (category icon as fallback),
+            category, title, read link */}
         {related.length > 0 && (
           <div className="mx-auto mt-16 max-w-3xl">
             <h2 className="text-xl font-semibold text-text">{dict.news.relatedTitle}</h2>
-            <div className="mt-6 grid gap-5 sm:grid-cols-2">
-              {related.map((a) => (
-                <Link
-                  key={a.slug}
-                  href={localized(lang, `/news/${a.slug}`)}
-                  className="card card-hover spotlight-card group p-6"
-                >
-                  <span className="font-mono text-xs text-text-muted">{a.category}</span>
-                  <h3 className="mt-2 font-semibold text-text transition-colors group-hover:text-accent">
-                    {a.title}
-                  </h3>
-                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-accent">
-                    {dict.news.readArticle}
-                    <ArrowRight width={15} height={15} className="transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <ul className="mt-6 grid gap-4">
+              {related.map((a) => {
+                const RelatedCover = featureIcons[a.cover];
+                return (
+                  <li key={a.slug}>
+                    <Link
+                      href={localized(lang, `/news/${a.slug}`)}
+                      className="card card-hover spotlight-card group flex items-stretch gap-5 overflow-hidden p-0"
+                    >
+                      <div className="illu-stage relative w-32 shrink-0 self-stretch sm:w-48">
+                        {a.coverImage ? (
+                          <Image
+                            src={a.coverImage}
+                            alt=""
+                            fill
+                            sizes="(min-width: 640px) 192px, 128px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                          />
+                        ) : (
+                          RelatedCover && (
+                            <div className="flex h-full items-center justify-center">
+                              <RelatedCover className="h-14 w-14" />
+                            </div>
+                          )
+                        )}
+                      </div>
+                      <div className="flex min-w-0 flex-1 flex-col justify-center py-4 pr-5">
+                        <span className="font-mono text-xs font-bold uppercase tracking-wide text-text-muted">{a.category}</span>
+                        <h3 className="mt-1.5 font-semibold leading-snug text-text transition-colors group-hover:text-accent">
+                          {a.title}
+                        </h3>
+                        <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                          {dict.news.readArticle}
+                          <ArrowRight width={15} height={15} className="transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         )}
       </Section>

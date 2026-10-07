@@ -94,7 +94,8 @@ export default async function FaqPage({
           {/* desktop — sticky left sidebar summary (scroll-spy) */}
           <aside className="hidden lg:block">
             <div className="sticky top-28">
-              <ArticleToc items={tocItems} title={dict.faqPage.tocTitle} variant="desktop" />
+              <ArticleToc items={tocItems} title={dict.faqPage.tocTitle} variant="desktop"
+                alwaysOpen />
             </div>
           </aside>
 

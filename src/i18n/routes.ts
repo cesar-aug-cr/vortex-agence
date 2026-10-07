@@ -12,7 +12,7 @@ import { i18n } from "@/i18n/config";
  * identifiers and pass through unchanged across languages.
  *
  * Routes intentionally NOT localized (internal / dev only): style-guide,
- * typographies-testsss, not-found.
+ * not-found.
  */
 export const routeSlugs: Record<string, Record<string, string>> = {
   services: { fr: "services", en: "services", de: "leistungen", es: "servicios" },

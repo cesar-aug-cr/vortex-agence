@@ -4,6 +4,7 @@ import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { localized } from "@/lib/locale";
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { withEmphasis } from "@/lib/emphasis";
 import { Check, ArrowRight } from "@/components/ui/icons";
 
 export function ContactCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
@@ -33,7 +34,7 @@ export function ContactCta({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       <div className="relative z-10">
         <SectionHeading
           eyebrow={dict.contact.eyebrow}
-          title={dict.contact.title}
+          title={withEmphasis(dict.contact.title)}
           lead={dict.contact.lead}
           tone="stage"
           align="center"

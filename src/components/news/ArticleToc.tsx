@@ -58,18 +58,21 @@ function useActiveHeading(ids: string[]) {
  * Article table of contents.
  * - `variant="mobile"`: a sticky, collapsible bar pinned under the header so
  *   readers can jump between sections from anywhere (hidden on desktop).
- * - `variant="desktop"`: a plain list meant to sit in a sticky left sidebar
- *   (hidden on mobile).
+ * - `variant="desktop"`: a collapsible card for the sticky left sidebar whose
+ *   header always shows the section being read (hidden on mobile).
  * The section currently being read is highlighted in lime (scroll-spy).
  */
 export function ArticleToc({
   items,
   title,
   variant = "mobile",
+  alwaysOpen = false,
 }: {
   items: TocItem[];
   title: string;
   variant?: "mobile" | "desktop";
+  /** Desktop only: list always expanded, no toggle (FAQ, glossary). */
+  alwaysOpen?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const activeId = useActiveHeading(items.map((i) => i.id));
@@ -87,31 +90,66 @@ export function ArticleToc({
   };
 
   if (variant === "desktop") {
+    // Collapsible card: the header always names the section being read (or
+    // the first one before any heading is reached); the chevron opens the list.
+    const current = items.find((h) => h.id === activeId) ?? items[0];
+    const expanded = alwaysOpen || open;
     return (
       <nav className="hidden rounded-2xl border border-border bg-bg-card p-5 lg:block">
-        <p className="font-mono text-xs font-bold uppercase tracking-wide text-text-muted">{title}</p>
-        <ol className="mt-3 grid gap-1">
-          {items.map((h, i) => {
-            const active = h.id === activeId;
-            return (
-              <li key={h.id}>
-                <a
-                  href={`#${h.id}`}
-                  onClick={(e) => go(e, h.id)}
-                  aria-current={active ? "location" : undefined}
-                  className={`block border-l-2 py-1 pl-3 text-sm leading-snug transition-colors ${
-                    active
-                      ? "border-accent font-semibold text-accent"
-                      : "border-transparent text-text-dim hover:text-accent-strong"
-                  }`}
-                >
-                  <span className={active ? "text-accent" : "text-text-muted"}>{i + 1}.</span>{" "}
-                  {h.text}
-                </a>
-              </li>
-            );
-          })}
-        </ol>
+        {alwaysOpen ? (
+          <p className="font-mono text-xs font-bold uppercase tracking-wide text-text-muted">{title}</p>
+        ) : (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="flex w-full items-start justify-between gap-3 text-left"
+        >
+          <span className="min-w-0">
+            <span className="block font-mono text-xs font-bold uppercase tracking-wide text-text-muted">{title}</span>
+            <span className="mt-1.5 block text-sm font-semibold leading-snug text-accent" aria-live="polite">
+              <span className="text-text-muted">{items.indexOf(current) + 1}.</span> {current.text}
+            </span>
+          </span>
+          <svg
+            width={18}
+            height={18}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            aria-hidden
+            className={`mt-0.5 shrink-0 text-text-muted transition-transform ${open ? "rotate-180" : ""}`}
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+        )}
+        {expanded && (
+          <ol className={alwaysOpen ? "mt-3 grid gap-1" : "mt-4 grid gap-1 border-t border-border pt-4"}>
+            {items.map((h, i) => {
+              const active = h.id === activeId;
+              return (
+                <li key={h.id}>
+                  <a
+                    href={`#${h.id}`}
+                    onClick={(e) => go(e, h.id)}
+                    aria-current={active ? "location" : undefined}
+                    className={`block border-l-2 py-1 pl-3 text-sm leading-snug transition-colors ${
+                      active
+                        ? "border-accent font-semibold text-accent"
+                        : "border-transparent text-text-dim hover:text-accent-strong"
+                    }`}
+                  >
+                    <span className={active ? "text-accent" : "text-text-muted"}>{i + 1}.</span>{" "}
+                    {h.text}
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+        )}
       </nav>
     );
   }

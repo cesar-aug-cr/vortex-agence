@@ -8,6 +8,7 @@ import { localized } from "@/lib/locale";
 import { PageShell } from "@/components/layout/PageShell";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section } from "@/components/ui/Section";
+import { withEmphasis } from "@/lib/emphasis";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Check } from "@/components/ui/icons";
 
@@ -57,7 +58,7 @@ export default async function ContactPage({
               {dict.contact.eyebrow}
             </span>
             <h1 className="mt-4 text-3xl font-bold leading-[1.08] text-text md:text-5xl">
-              {dict.contact.title}
+              {withEmphasis(dict.contact.title)}
             </h1>
             <p className="mt-5 max-w-xl text-lg text-text-dim">{dict.contact.lead}</p>
 

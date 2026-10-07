@@ -101,7 +101,8 @@ export function ShareButton({
       {open && (
         <div
           role="menu"
-          className={`absolute z-30 w-56 rounded-xl border border-border bg-bg-card p-2 shadow-[var(--shadow-lg)] ${
+          style={{ borderColor: "var(--accent)" }}
+          className={`absolute z-[70] w-56 rounded-xl border-4 border-double bg-bg-card p-2 shadow-[var(--shadow-lg)] ${
             variant === "inline" ? "bottom-full right-0 mb-2" : "top-full left-0 mt-2"
           }`}
         >

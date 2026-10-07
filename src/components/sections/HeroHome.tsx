@@ -10,11 +10,13 @@ import TestBHLazy from "@/components/three/TestBHLazy";
 import { HeroTestBH } from "@/components/sections/HeroTestBH";
 
 /**
- * /hero-page-test — mobile-only scroll-driven hero. Desktop (≥ 768 px) renders
- * the regular home hero untouched.
+ * Home hero. Desktop (≥ 768 px) renders HeroTestBH (the black-hole hero);
+ * phones get a scroll-stepped version of the same content.
  *
- * On phones the hero is four screens tall with a sticky stage. Each scroll
- * step (snap points every 100 svh) reveals one more block, centred:
+ * On phones the hero is four screens tall with a sticky stage. One scroll
+ * gesture (swipe or wheel tick) = one step: while the stage is pinned the
+ * gesture is intercepted and the page is scrolled to the next step. Past the
+ * last step the page scrolls normally. Each step reveals one more block:
  *   0  eyebrow + title
  *   1  + lead paragraph
  *   2  + the two CTAs
@@ -29,7 +31,7 @@ const SCRIM = `linear-gradient(100deg, rgba(${T},0.9) 0%, rgba(${T},0.7) 45%, rg
 const SCRIM_LAST = `linear-gradient(100deg, rgba(${T},0.9) 0%, rgba(${T},0.7) 45%, rgba(${T},0.3) 100%), linear-gradient(to bottom, rgba(${T},0.5) 0%, transparent 30%, transparent 80%, rgba(${T},0.15) 100%)`;
 const GRID = `linear-gradient(to right, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px)`;
 
-export function HeroScrollTest({ dict, lang }: { dict: Dictionary; lang: Locale }) {
+export function HeroHome({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const [mobile, setMobile] = useState<boolean | null>(null);
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
@@ -81,16 +83,78 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
     return () => mq.removeEventListener("change", apply);
   }, []);
 
-  // Snap to each step while this hero is mounted (proximity: sections below
-  // scroll freely). Restored on unmount.
+  // One gesture = one step. While the sticky stage is pinned and a step
+  // remains in the gesture's direction, touch moves and wheel ticks are
+  // consumed and the page is scrolled to the neighbouring step; a short lock
+  // swallows the rest of the same gesture. Downwards past the last step (or
+  // upwards at the first) nothing is intercepted, so the page scrolls on.
   useEffect(() => {
-    const el = document.documentElement;
-    const prev = el.style.scrollSnapType;
-    el.style.scrollSnapType = "y proximity";
-    return () => {
-      el.style.scrollSnapType = prev;
+    if (reduced) return;
+    const node = ref.current;
+    if (!node) return;
+    let busy = false;
+    let startY: number | null = null;
+    let consumed = false;
+    const stepPx = () => node.offsetHeight / STEPS;
+    const pinned = () => {
+      const r = node.getBoundingClientRect();
+      return r.top <= 1 && r.bottom > window.innerHeight * 0.5;
     };
-  }, []);
+    const currentStep = () => Math.round(-node.getBoundingClientRect().top / stepPx());
+    const shouldHandle = (dir: 1 | -1) => {
+      if (!pinned()) return false;
+      const k = currentStep();
+      return dir === 1 ? k < STEPS - 1 : k > 0;
+    };
+    const go = (dir: 1 | -1) => {
+      const from = currentStep();
+      const to = Math.min(STEPS - 1, Math.max(0, from + dir));
+      if (to === from) return;
+      busy = true;
+      const top = window.scrollY + node.getBoundingClientRect().top + to * stepPx();
+      window.scrollTo({ top, behavior: "smooth" });
+      window.setTimeout(() => {
+        busy = false;
+      }, 850);
+    };
+    const onTouchStart = (e: TouchEvent) => {
+      startY = e.touches[0]?.clientY ?? null;
+      consumed = false;
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (startY === null) return;
+      const dy = startY - (e.touches[0]?.clientY ?? startY); // > 0: finger up = scroll down
+      const dir: 1 | -1 = dy > 0 ? 1 : -1;
+      if (!shouldHandle(dir)) return;
+      e.preventDefault();
+      if (busy || consumed || Math.abs(dy) < 24) return;
+      consumed = true;
+      go(dir);
+    };
+    const onTouchEnd = () => {
+      startY = null;
+      consumed = false;
+    };
+    const onWheel = (e: WheelEvent) => {
+      const dir: 1 | -1 = e.deltaY > 0 ? 1 : -1;
+      if (!shouldHandle(dir)) return;
+      e.preventDefault();
+      if (busy) return;
+      go(dir);
+    };
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+    window.addEventListener("wheel", onWheel, { passive: false });
+    return () => {
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("touchcancel", onTouchEnd);
+      window.removeEventListener("wheel", onWheel);
+    };
+  }, [reduced]);
 
   useEffect(() => {
     const node = ref.current;
@@ -122,11 +186,6 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
   return (
     <section ref={ref} className="hero-section relative bg-stage text-stage-text" style={{ height: `${STEPS * 100}svh` }}>
-      {/* snap targets, one per step */}
-      {Array.from({ length: STEPS }, (_, k) => (
-        <div key={k} aria-hidden className="absolute inset-x-0 h-[100svh]" style={{ top: `${k * 100}svh`, scrollSnapAlign: "start" }} />
-      ))}
-
       <div className="sticky top-0 isolate h-[100svh] overflow-hidden">
         {/* 3D black hole — on the last step it glides down behind the skyline
             and shrinks, driven inside the scene (eased position/scale), so the
@@ -134,7 +193,7 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
           <TestBHLazy
             bhPositionOverride={[2.4, 0.4, 0]}
-            bhPositionMobileOverride={last ? [0.75, -2.4, 1] : [1.2, 2.6, 1]}
+            bhPositionMobileOverride={last ? [0.75, -2.5, 1] : [1.2, 2.6, 1]}
             bhScaleOverride={1.5}
             bhScaleMobileOverride={last ? 0.95 : 1.7}
           />
@@ -172,7 +231,7 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
 
         {/* copy — centred stack, one block more per step */}
         <div className="container-vortx relative z-10 flex h-full flex-col items-start justify-center pb-24 pt-28 text-left">
-          <span className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-accent">{dict.hero.eyebrow}</span>
+          <span className="section-eyebrow eyebrow-badge font-mono text-xs font-bold uppercase tracking-[0.24em]">{dict.hero.eyebrow}</span>
           <h1 className="hero-title mt-5 text-3xl font-bold leading-[1.08] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)]">
             {dict.hero.titleLead} <span className="text-gradient">{dict.hero.titleAccent}</span>
           </h1>

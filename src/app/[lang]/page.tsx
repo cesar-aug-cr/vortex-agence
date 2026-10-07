@@ -7,7 +7,7 @@ import { AmbientGlow } from "@/components/layout/AmbientGlow";
 import { SpotlightCards } from "@/components/ui/SpotlightCards";
 import { PauseOffscreen } from "@/components/ui/PauseOffscreen";
 import { StickyCta } from "@/components/layout/StickyCta";
-import { HeroTestBH } from "@/components/sections/HeroTestBH";
+import { HeroHome } from "@/components/sections/HeroHome";
 import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
 import { LeadGen } from "@/components/sections/LeadGen";
@@ -35,7 +35,7 @@ export default async function HomePage({
         <SpotlightCards />
         <PauseOffscreen />
         <main>
-          <HeroTestBH dict={dict} lang={lang} />
+          <HeroHome dict={dict} lang={lang} />
           {/* Divider: the hero fades to --hero-fade at its bottom edge, this
               band fades that colour into the page background. Dark theme:
               black → #09090c; light theme: white → #f7f8f4 (no black band). */}

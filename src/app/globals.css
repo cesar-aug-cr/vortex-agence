@@ -1370,9 +1370,18 @@ html:not(.dark) .test-home .hero-section .hero-title {
    same pair as the light headline accent) keeps the identity colours legible
    on white with zero motion. The dark hero keeps its animated sweep. */
 html:not(.dark) .test-home .hero-section .brand-sweep {
-  background-image: linear-gradient(100deg, #0f766e 0%, #4f7a0a 100%);
-  background-size: 100% auto;
-  background-position: 0 0;
+  /* light hero: no sweep — a lime-outlined rectangle with black bold text */
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--accent);
+  border-radius: 0.5rem;
+  background: none;
+  background-image: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: #0a0a0b;
+  color: #0a0a0b;
+  font-weight: 700;
   animation: none;
   will-change: auto;
 }
@@ -1605,4 +1614,11 @@ html:not(.dark) header .hdr-icon-btn:hover {
   opacity: 0.5;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+
+/* Site-wide headings in Plus Jakarta Sans (loaded in the [lang] layout, class on <body>). */
+.jakarta-headings :is(h1, h2, h3, h4) {
+  font-family: var(--font-jakarta), var(--font-inter-tight), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }

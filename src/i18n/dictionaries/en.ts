@@ -506,7 +506,7 @@ export const en = {
   // ---- Final CTA / contact ----
   contact: {
     eyebrow: "Let's take action",
-    title: "Ready to transform your online presence?",
+    title: "Be the reference when *your clients* search in Luxembourg.",
     lead: "Book a free discovery call. We analyse your situation and tell you, straight up, what can be improved.",
     benefits: [
       "Free initial consultation",

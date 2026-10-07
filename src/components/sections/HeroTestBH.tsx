@@ -142,7 +142,9 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
 
       <div className="container-vortx relative z-10 flex min-h-[100svh] flex-col justify-center pb-16 pt-36 md:pt-40">
         <div className="relative self-start">
-          <span className="relative font-mono text-xs font-bold uppercase tracking-[0.24em] text-accent animate-fade-in">
+          <span className="section-eyebrow eyebrow-badge relative font-mono text-xs font-bold uppercase tracking-[0.24em] animate-fade-in">
+            {/* single child: the pill is inline-flex, which would drop the space before "Luxembourg" */}
+            <span>
             {dict.hero.eyebrow.split("Luxembourg").map((part, i) => (
               <Fragment key={i}>
                 {i > 0 && (
@@ -155,6 +157,7 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
                 {part}
               </Fragment>
             ))}
+            </span>
           </span>
         </div>
 

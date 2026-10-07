@@ -103,7 +103,8 @@ export default async function GlossairePage({
           {/* desktop — sticky left sidebar summary (scroll-spy) */}
           <aside className="hidden lg:block">
             <div className="sticky top-28">
-              <ArticleToc items={tocItems} title={dict.glossary.tocTitle} variant="desktop" />
+              <ArticleToc items={tocItems} title={dict.glossary.tocTitle} variant="desktop"
+                alwaysOpen />
             </div>
           </aside>
 
