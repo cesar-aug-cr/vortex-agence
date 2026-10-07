@@ -24,9 +24,9 @@ import { HeroTestBH } from "@/components/sections/HeroTestBH";
 
 const STEPS = 4;
 const T = "var(--hero-tint, 7,7,10)";
-const SCRIM = `linear-gradient(to bottom, rgba(${T},0.82) 0%, rgba(${T},0.42) 38%, rgba(${T},0.42) 62%, rgba(${T},0.88) 100%)`;
+const SCRIM = `linear-gradient(100deg, rgba(${T},0.9) 0%, rgba(${T},0.7) 45%, rgba(${T},0.3) 100%), linear-gradient(to bottom, rgba(${T},0.5) 0%, transparent 30%, transparent 70%, rgba(${T},0.8) 100%)`;
 /* last step: the bottom stays clear so the skyline reads over the black hole */
-const SCRIM_LAST = `linear-gradient(to bottom, rgba(${T},0.82) 0%, rgba(${T},0.42) 38%, rgba(${T},0.35) 62%, rgba(${T},0.15) 100%)`;
+const SCRIM_LAST = `linear-gradient(100deg, rgba(${T},0.9) 0%, rgba(${T},0.7) 45%, rgba(${T},0.3) 100%), linear-gradient(to bottom, rgba(${T},0.5) 0%, transparent 30%, transparent 80%, rgba(${T},0.15) 100%)`;
 const GRID = `linear-gradient(to right, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(var(--hero-grid, 255,255,255),0.6) 1px, transparent 1px)`;
 
 export function HeroScrollTest({ dict, lang }: { dict: Dictionary; lang: Locale }) {
@@ -128,12 +128,13 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       ))}
 
       <div className="sticky top-0 isolate h-[100svh] overflow-hidden">
-        {/* 3D black hole — slides down behind the skyline on the last step */}
+        {/* 3D black hole — slides down and shrinks behind the skyline on the last step */}
         <div
           className="pointer-events-none absolute inset-0 z-0"
           aria-hidden
           style={{
-            transform: last ? "translateY(60svh)" : "translateY(0)",
+            transform: last ? "translateY(60svh) scale(0.62)" : "translateY(0) scale(1)",
+            transformOrigin: "75% 50%",
             transition: reduced ? "none" : "transform 1400ms cubic-bezier(.2,.7,.2,1)",
           }}
         >
@@ -176,18 +177,18 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         />
 
         {/* copy — centred stack, one block more per step */}
-        <div className="container-vortx relative z-10 flex h-full flex-col items-center justify-center pb-24 pt-28 text-center">
+        <div className="container-vortx relative z-10 flex h-full flex-col items-start justify-center pb-24 pt-28 text-left">
           <span className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-accent">{dict.hero.eyebrow}</span>
           <h1 className="hero-title mt-5 text-3xl font-bold leading-[1.08] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)]">
             {dict.hero.titleLead} <span className="text-gradient">{dict.hero.titleAccent}</span>
           </h1>
 
           <Reveal show={s >= 1}>
-            <p className="mx-auto max-w-md pt-6 text-base text-stage-text-dim">{dict.hero.subtitle}</p>
+            <p className="max-w-md pt-6 text-base text-stage-text-dim">{dict.hero.subtitle}</p>
           </Reveal>
 
           <Reveal show={s >= 2}>
-            <div className="flex flex-col items-center gap-3 pt-8">
+            <div className="flex flex-col items-start gap-3 pt-8">
               <Link href={localized(lang, "/contact")} className="btn btn-primary">
                 {dict.hero.primaryCta}
               </Link>
