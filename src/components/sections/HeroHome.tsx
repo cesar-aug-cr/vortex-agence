@@ -20,7 +20,7 @@ import { HeroTestBH } from "@/components/sections/HeroTestBH";
  *   0  eyebrow + title
  *   1  + lead paragraph AND the two CTAs (so "Découvrir nos services" is one
  *      gesture away; the title moves up to make room)
- *   2  + proof card; the city skyline fades in at the bottom and the black
+ *   2  the city skyline fades in at the bottom and the black
  *      hole slides down behind it, like on desktop.
  */
 
@@ -48,8 +48,17 @@ export function HeroHome({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return <MobileScrollHero dict={dict} lang={lang} />;
 }
 
-/** Height-animated reveal (grid-rows 0fr → 1fr) so the centred stack re-centres smoothly. */
+/** Height-animated reveal (grid-rows 0fr → 1fr) so the stack re-flows
+ *  smoothly. The inner box clips only while animating: once settled it lets
+ *  glows (the primary button shadow) paint outside. */
 function Reveal({ show, delay = 0, children }: { show: boolean; delay?: number; children: ReactNode }) {
+  const [settled, setSettled] = useState(false);
+  useEffect(() => {
+    // settle after the transition when shown; un-settle on the next tick when
+    // hidden (both async, so no synchronous setState in the effect body)
+    const t = window.setTimeout(() => setSettled(show), show ? 760 + delay : 0);
+    return () => window.clearTimeout(t);
+  }, [show, delay]);
   return (
     <div
       aria-hidden={!show}
@@ -61,7 +70,7 @@ function Reveal({ show, delay = 0, children }: { show: boolean; delay?: number; 
       }}
     >
       <div
-        className="min-h-0 overflow-hidden"
+        className={settled ? "min-h-0 overflow-visible" : "min-h-0 overflow-hidden"}
         style={{ transform: show ? "translateY(0)" : "translateY(18px)", transition: `transform 700ms cubic-bezier(.2,.7,.2,1) ${delay}ms` }}
       >
         {children}
@@ -222,11 +231,12 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         {/* readability scrim for centred copy (same tint variable as the home hero) */}
         <div className="hero-scrim pointer-events-none absolute inset-0 z-[3]" aria-hidden style={{ background: last ? SCRIM_LAST : SCRIM, transition: "background 900ms ease" }} />
 
-        {/* bottom fade into the next section */}
+        {/* bottom fade straight into the page background: the section under
+            the hero (proof card + "Pourquoi vortx") is the same colour */}
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-20"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-24"
           aria-hidden
-          style={{ background: "linear-gradient(to bottom, transparent, var(--hero-fade))" }}
+          style={{ background: "linear-gradient(to bottom, transparent, var(--bg))" }}
         />
 
         {/* copy — centred stack, one block more per step */}
@@ -254,19 +264,6 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             </div>
           </Reveal>
 
-          {/* last step: the proof card (replaces the former trust line) */}
-          <Reveal show={s >= 2}>
-            <div className="w-full max-w-xs pt-6">
-              <dl className="grid gap-2 p-3.5 rounded-2xl border border-white/15 bg-black/70 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150">
-                {dict.hero.proof.rows.map((r) => (
-                  <div key={r.label} className="flex items-baseline justify-between gap-3 border-b border-white/10 pb-2 last:border-0 last:pb-0">
-                    <dt className="min-w-0 text-xs text-white/70">{r.label}</dt>
-                    <dd className="shrink-0 whitespace-nowrap font-mono text-xs font-bold text-[#c8f02e]">{r.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </Reveal>
         </div>
 
         {/* scroll hint until the last step */}

@@ -1,4 +1,15 @@
 {
+  "/hero/pourquoi-vortx.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
   "/hero/vortx-luxembourg.webp": [
     48,
     96,
@@ -24,6 +35,17 @@
     1536
   ],
   "/services/branding-design.webp": [
+    48,
+    96,
+    192,
+    384,
+    640,
+    828,
+    1080,
+    1280,
+    1536
+  ],
+  "/services/hero.webp": [
     48,
     96,
     192,

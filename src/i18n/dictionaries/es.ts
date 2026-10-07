@@ -544,6 +544,7 @@ export const es = {
       stepMessage: "Su mensaje",
       servicesLabel: "¿Qué servicios le interesan?",
       servicesHint: "Seleccione uno o varios servicios.",
+      serviceGraphic: "Diseño gráfico",
       serviceOther: "Otro",
       servicesRequired: "Seleccione al menos un servicio para continuar.",
       consentBefore:

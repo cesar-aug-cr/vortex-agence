@@ -383,6 +383,26 @@ export const MANIFEST = [
     prompt:
       "A person seen from behind typing a question into a laptop showing a blurred AI chat interface, a second monitor with blurred search results beside it, a notebook and coffee; bright modern desk.",
   },
+  // --- /services index hero (realistic, natural colours) ---
+  {
+    id: "services-hero",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, wide 3:2 composition with clean space on the left third for a headline. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A bright modern agency workspace in Luxembourg seen from a slight height: a long wooden table with three people seen from behind and from the side working together — one on a laptop with a blurred website layout, one annotating printed wireframes, one pointing at a wall-mounted screen showing a blurred dashboard with a rising chart; plants, notebooks, coffee cups, large windows with the city softly visible outside; natural morning light.",
+  },
+  // --- Home "Pourquoi vortx" section background (realistic, natural colours) ---
+  {
+    id: "why-fond",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, wide 3:2 composition, calm and uncluttered so text can sit on top. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "Luxembourg city at golden hour seen from the Kirchberg plateau: the old town on its rocky promontory, the Pont Adolphe and the Pétrusse valley with autumn trees, warm low sunlight, a few people walking on a terrace in the foreground seen from behind; wide, serene, slightly hazy.",
+  },
   // --- News covers ------------------------------------------------------
   {
     id: "news-cout-site-web",

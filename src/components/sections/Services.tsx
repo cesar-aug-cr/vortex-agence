@@ -28,49 +28,55 @@ export function Services({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         title={dict.servicesSection.title}
         lead={dict.servicesSection.lead}
       />
-      <div className="mt-14 grid gap-5 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
-        {dict.services.map((s) => {
+      {/* one row per service, image and text alternating sides */}
+      <ol className="mt-14 grid gap-12 md:mt-16 md:gap-16">
+        {dict.services.map((s, i) => {
           const img = SERVICE_IMAGES[s.slug];
+          const flip = i % 2 === 1;
+          const href = localized(lang, `/services/${s.slug}`);
           return (
-          <Link
-            key={s.slug}
-            href={localized(lang, `/services/${s.slug}`)}
-            className="card card-hover spotlight-card group flex flex-col p-7"
-          >
-            {img && (
-              <div className="relative mb-5 h-40 w-full overflow-hidden rounded-xl border border-border">
-                <Image
-                  src={img}
-                  alt=""
-                  fill
-                  // The frame is only 160 px tall: on a 3x phone "100vw" asked
-                  // for a 1200 px render. ~60vw / 400px keeps ≥ 2x sharpness
-                  // while roughly halving the bytes on mobile.
-                  sizes="(max-width: 768px) 60vw, (max-width: 1024px) 40vw, 400px"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                />
+            <li key={s.slug} className="grid items-center gap-7 md:grid-cols-2 md:gap-12">
+              {img && (
+                <Link
+                  href={href}
+                  aria-label={s.title}
+                  className={`group relative block aspect-[3/2] overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-md)] ${flip ? "md:order-2" : ""}`}
+                >
+                  <Image
+                    src={img}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </Link>
+              )}
+              <div className={flip ? "md:order-1" : ""}>
+                <span className="mb-4 block h-0.5 w-12 bg-[color:var(--accent)]" aria-hidden />
+                <h3 className="text-2xl font-semibold text-text md:text-3xl">
+                  <Link href={href} className="transition-colors hover:text-accent-strong">
+                    {s.title}
+                  </Link>
+                </h3>
+                <p className="tagline mt-2 text-base font-medium">{s.tagline}</p>
+                <p className="mt-4 text-base leading-relaxed text-text-dim">{s.short}</p>
+                <ul className="mt-5 space-y-2">
+                  {s.bullets.slice(0, 3).map((b) => (
+                    <li key={b} className="flex items-start gap-2.5 text-sm text-text-dim">
+                      <Check width={16} height={16} className="mt-0.5 shrink-0 text-accent" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={href} className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
+                  {dict.common.readMore}
+                  <ArrowUpRight width={16} height={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
-            )}
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="text-xl font-semibold text-text">{s.title}</h3>
-              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text-dim transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
-                <ArrowUpRight width={16} height={16} />
-              </span>
-            </div>
-            <p className="tagline mt-1 text-sm font-medium">{s.tagline}</p>
-            <p className="mt-3 text-sm leading-relaxed text-text-dim">{s.short}</p>
-            <ul className="mt-5 space-y-2 border-t border-border pt-5">
-              {s.bullets.slice(0, 3).map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm text-text-dim">
-                  <Check width={16} height={16} className="mt-0.5 shrink-0 text-accent" />
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </Link>
+            </li>
           );
         })}
-      </div>
+      </ol>
     </Section>
   );
 }

@@ -8,6 +8,7 @@ import { SpotlightCards } from "@/components/ui/SpotlightCards";
 import { PauseOffscreen } from "@/components/ui/PauseOffscreen";
 import { StickyCta } from "@/components/layout/StickyCta";
 import { HeroHome } from "@/components/sections/HeroHome";
+import { ProofCard } from "@/components/sections/ProofCard";
 import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
 import { LeadGen } from "@/components/sections/LeadGen";
@@ -41,11 +42,15 @@ export default async function HomePage({
               black → #09090c; light theme: white → #f7f8f4 (no black band). */}
           <div
             aria-hidden
-            className="h-28 md:h-40"
+            className="hidden md:block md:h-24"
             style={{ background: "linear-gradient(to bottom, var(--hero-fade), var(--bg))" }}
           />
+          {/* phones: the hero's proof card sits here, static (desktop shows it inside the hero) */}
+          <div className="container-vortx pt-6 pb-2 md:hidden">
+            <ProofCard dict={dict} className="mx-auto max-w-xs" />
+          </div>
           {/* reduced top padding so the cards show up sooner after the hero */}
-          <WhyVortx dict={dict} className="pt-6 md:pt-8" />
+          <WhyVortx dict={dict} className="pt-6 md:pt-0" />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} lang={lang} />
           <ProcessGeo dict={dict} lang={lang} />

@@ -58,8 +58,13 @@ export function ContactForm({
   const toggleService = (title: string) =>
     setSelected((s) => (s.includes(title) ? s.filter((t) => t !== title) : [...s, title]));
 
-  // Service choices + a generic "Other" option.
-  const options: ServiceOpt[] = [...services, { slug: "autre", title: form.serviceOther }];
+  // Service choices + "Graphic Design" (covered by the branding service, but a
+  // frequent standalone request) + a generic "Other" option.
+  const options: ServiceOpt[] = [
+    ...services,
+    { slug: "graphic-design", title: form.serviceGraphic },
+    { slug: "autre", title: form.serviceOther },
+  ];
 
   const stepTitles = [form.stepServices, form.stepDetails, form.stepMessage];
 

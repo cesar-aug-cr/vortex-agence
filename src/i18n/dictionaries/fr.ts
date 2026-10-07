@@ -572,6 +572,7 @@ export const fr = {
       stepMessage: "Votre message",
       servicesLabel: "Quels services vous intéressent ?",
       servicesHint: "Sélectionnez un ou plusieurs services.",
+      serviceGraphic: "Graphic Design",
       serviceOther: "Autre",
       servicesRequired: "Sélectionnez au moins un service pour continuer.",
       consentBefore:
