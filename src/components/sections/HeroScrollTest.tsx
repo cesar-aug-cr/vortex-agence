@@ -128,21 +128,15 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       ))}
 
       <div className="sticky top-0 isolate h-[100svh] overflow-hidden">
-        {/* 3D black hole — slides down and shrinks behind the skyline on the last step */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0"
-          aria-hidden
-          style={{
-            transform: last ? "translateY(60svh) scale(0.62)" : "translateY(0) scale(1)",
-            transformOrigin: "75% 50%",
-            transition: reduced ? "none" : "transform 1400ms cubic-bezier(.2,.7,.2,1)",
-          }}
-        >
+        {/* 3D black hole — on the last step it glides down behind the skyline
+            and shrinks, driven inside the scene (eased position/scale), so the
+            canvas is never transformed or clipped */}
+        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
           <TestBHLazy
             bhPositionOverride={[2.4, 0.4, 0]}
-            bhPositionMobileOverride={[1.2, 2.6, 1]}
+            bhPositionMobileOverride={last ? [0.75, -2.4, 1] : [1.2, 2.6, 1]}
             bhScaleOverride={1.5}
-            bhScaleMobileOverride={1.7}
+            bhScaleMobileOverride={last ? 0.95 : 1.7}
           />
         </div>
 

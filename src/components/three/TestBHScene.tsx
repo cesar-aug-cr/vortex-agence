@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import BlackHolePoster from "./BlackHolePoster";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
@@ -126,6 +126,9 @@ function DiskDebug({ axisLength, ringRadius, color }: { axisLength: number; ring
  *  also wobbles ±0.03 every frame — see BlackHoleImage. */
 const BH_TILT = new THREE.Euler(Math.PI * 0.2, 0.3, 0.15, "XYZ");
 
+/** Per-frame easing factor for position/scale changes (the lens uses the same). */
+const EASE = 0.05;
+
 /** The second disk's own tilt, relative to the black hole group (the axis the
  *  original second particle disk used). This is what phones show. */
 const SECOND_DISK_TILT = new THREE.Euler(Math.PI * 0.35, 0.1, 0.2, "XYZ");
@@ -146,12 +149,21 @@ const SECOND_DISK_Q_DESKTOP = new THREE.Quaternion()
 /** Same group structure/tilts/oscillation as the home BlackHole, image disks. */
 function BlackHoleImage({ isMobile, isLight, position, scale, fade, debug = false }: { isMobile: boolean; isLight: boolean; position: [number, number, number]; scale: number; fade: boolean; debug?: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
+  // Position/scale are applied once at mount; later prop changes (the stepped
+  // mobile hero moves the hole down and shrinks it) are eased in every frame
+  // instead of jumping. The lens eases with the same factor.
+  const [initial] = useState(() => ({ position, scale }));
+  const [px, py, pz] = position;
+  const target = useMemo(() => new THREE.Vector3(px, py, pz), [px, py, pz]);
   useFrame(({ clock }) => {
-    if (!groupRef.current) return;
-    groupRef.current.rotation.x = BH_TILT.x + Math.sin(clock.getElapsedTime() * 0.15) * 0.03;
+    const g = groupRef.current;
+    if (!g) return;
+    g.rotation.x = BH_TILT.x + Math.sin(clock.getElapsedTime() * 0.15) * 0.03;
+    g.position.lerp(target, EASE);
+    g.scale.setScalar(THREE.MathUtils.lerp(g.scale.x, scale, EASE));
   });
   return (
-    <group ref={groupRef} position={position} rotation={BH_TILT} scale={scale}>
+    <group ref={groupRef} position={initial.position} rotation={BH_TILT} scale={initial.scale}>
       <EventHorizon radius={isMobile ? 0.46 : 0.42} color={isLight ? "#ffffff" : "#000000"} />
       <PhotonRing inner={0.37} outer={0.455} />
       {debug && <DiskDebug axisLength={2.2} ringRadius={1.7} color="#c8f02e" />}

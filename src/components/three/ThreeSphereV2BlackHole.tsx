@@ -418,6 +418,10 @@ export function GravitationalLens({
 
   const [bx, by, bz] = bhPosition;
   const bhPos3D = useMemo(() => new THREE.Vector3(bx, by, bz), [bx, by, bz]);
+  // Eased copies: when the props move (stepped mobile hero) the lens centre
+  // and radius glide with the hole instead of snapping ahead of it.
+  const cur = useRef(new THREE.Vector3(bx, by, bz));
+  const curScale = useRef(bhScale);
   const renderSize = useMemo(() => new THREE.Vector2(), []);
 
   const uniforms = useMemo(
@@ -446,12 +450,14 @@ export function GravitationalLens({
     mat.uniforms.ampScale.value = ampScale;
     mat.uniforms.shadowLift.value = shadowLift;
 
-    const projected = bhPos3D.clone().project(cam);
+    cur.current.lerp(bhPos3D, 0.05);
+    curScale.current = THREE.MathUtils.lerp(curScale.current, bhScale, 0.05);
+    const projected = cur.current.clone().project(cam);
     mat.uniforms.bhCenter.value.set(projected.x * 0.5 + 0.5, projected.y * 0.5 + 0.5);
 
-    const bhDist = bhPos3D.distanceTo(cam.position);
+    const bhDist = cur.current.distanceTo(cam.position);
     const fovRad = (cam.fov * Math.PI) / 180;
-    const ehWorld = 0.42 * bhScale;
+    const ehWorld = 0.42 * curScale.current;
     mat.uniforms.ehRadius.value = ehWorld / (bhDist * Math.tan(fovRad / 2)) / 2;
 
     meshRef.current.visible = false;
