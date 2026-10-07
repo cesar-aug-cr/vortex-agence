@@ -158,7 +158,7 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
           </span>
         </div>
 
-        <h1 className="hero-title mt-10 max-w-3xl text-4xl font-bold leading-[1.04] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up delay-100">
+        <h1 className="hero-title mt-10 max-w-3xl text-3xl font-bold leading-[1.08] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] md:text-5xl animate-fade-in-up delay-100">
           {dict.hero.titleLead}{" "}
           <span className="text-gradient">{dict.hero.titleAccent}</span>
         </h1>

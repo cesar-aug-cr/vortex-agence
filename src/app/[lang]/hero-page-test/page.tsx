@@ -1,13 +1,15 @@
+import type { Metadata } from "next";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { headerCopy, stickyCopy } from "@/i18n/slices";
+import { buildMetadata } from "@/lib/metadata";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AmbientGlow } from "@/components/layout/AmbientGlow";
 import { SpotlightCards } from "@/components/ui/SpotlightCards";
 import { PauseOffscreen } from "@/components/ui/PauseOffscreen";
 import { StickyCta } from "@/components/layout/StickyCta";
-import { HeroTestBH } from "@/components/sections/HeroTestBH";
+import { HeroScrollTest } from "@/components/sections/HeroScrollTest";
 import { WhyVortx } from "@/components/sections/WhyVortx";
 import { Services } from "@/components/sections/Services";
 import { LeadGen } from "@/components/sections/LeadGen";
@@ -18,7 +20,35 @@ import { NewsTeaser } from "@/components/sections/NewsTeaser";
 import { Faq } from "@/components/sections/Faq";
 import { ContactCta } from "@/components/sections/ContactCta";
 
-export default async function HomePage({
+/**
+ * Page interne (noindex, hors sitemap) : la home avec un héros mobile à
+ * défilement par étapes (voir HeroScrollTest). Sur desktop, le héros est
+ * celui de la home, inchangé. Disponible dans toutes les langues pour juger
+ * les textes réels.
+ */
+
+const PATH = "/hero-page-test";
+
+export async function generateStaticParams() {
+  return i18n.locales.map((lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return buildMetadata({
+    lang: isLocale(lang) ? lang : i18n.defaultLocale,
+    path: PATH,
+    title: "Page test — héros mobile à défilement | vortx",
+    description: "Page interne : la home avec un héros mobile révélé en quatre étapes de défilement.",
+    index: false,
+  });
+}
+
+export default async function HeroPageTest({
   params,
 }: {
   params: Promise<{ lang: string }>;
@@ -35,22 +65,16 @@ export default async function HomePage({
         <SpotlightCards />
         <PauseOffscreen />
         <main>
-          <HeroTestBH dict={dict} lang={lang} />
-          {/* Divider: the hero fades to --hero-fade at its bottom edge, this
-              band fades that colour into the page background. Dark theme:
-              black → #09090c; light theme: white → #f7f8f4 (no black band). */}
+          <HeroScrollTest dict={dict} lang={lang} />
           <div
             aria-hidden
             className="h-28 md:h-40"
             style={{ background: "linear-gradient(to bottom, var(--hero-fade), var(--bg))" }}
           />
-          {/* reduced top padding so the cards show up sooner after the hero */}
           <WhyVortx dict={dict} className="pt-6 md:pt-8" />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} lang={lang} />
           <ProcessGeo dict={dict} />
-          {/* Tools ("Notre arsenal") lives on /agence — on the home it made an
-              11-section page longer and diluted the premium positioning. */}
           <Proof dict={dict} />
           <Reviews dict={dict} />
           <NewsTeaser dict={dict} lang={lang} />
@@ -60,6 +84,10 @@ export default async function HomePage({
         <Footer dict={dict} lang={lang} />
       </div>
       <StickyCta copy={stickyCopy(dict)} lang={lang} />
+
+      <p className="chip fixed bottom-4 left-4 z-[45] border border-accent bg-stage text-stage-text shadow-[var(--shadow-lg)]">
+        Page test · héros mobile
+      </p>
     </>
   );
 }

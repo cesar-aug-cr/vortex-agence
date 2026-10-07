@@ -9,9 +9,9 @@ const icons = [IconStrategy, IconConversion, IconLocal, IconAI];
  * anchors the left column while the four pillars fill an asymmetric 2×2 bento
  * grid, each with an icon, an index and the Services-style hover effects.
  */
-export function WhyVortx({ dict }: { dict: Dictionary }) {
+export function WhyVortx({ dict, className = "" }: { dict: Dictionary; className?: string }) {
   return (
-    <Section tone="base">
+    <Section tone="base" className={className}>
       <div className="grid gap-5 lg:auto-rows-fr lg:grid-cols-3">
         {/* featured heading cell */}
         <div className="card relative overflow-hidden p-8 lg:row-span-2 lg:flex lg:flex-col lg:justify-between">
