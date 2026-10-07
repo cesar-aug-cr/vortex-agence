@@ -16,15 +16,15 @@ import { HeroTestBH } from "@/components/sections/HeroTestBH";
  * On phones the hero is four screens tall with a sticky stage. One scroll
  * gesture (swipe or wheel tick) = one step: while the stage is pinned the
  * gesture is intercepted and the page is scrolled to the next step. Past the
- * last step the page scrolls normally. Each step reveals one more block:
+ * last step the page scrolls normally. Each step reveals more:
  *   0  eyebrow + title
- *   1  + lead paragraph
- *   2  + the two CTAs
- *   3  + trust line; the city skyline fades in at the bottom and the black
+ *   1  + lead paragraph AND the two CTAs (so "Découvrir nos services" is one
+ *      gesture away; the title moves up to make room)
+ *   2  + trust line; the city skyline fades in at the bottom and the black
  *      hole slides down behind it, like on desktop.
  */
 
-const STEPS = 4;
+const STEPS = 3;
 const T = "var(--hero-tint, 7,7,10)";
 const SCRIM = `linear-gradient(100deg, rgba(${T},0.9) 0%, rgba(${T},0.7) 45%, rgba(${T},0.3) 100%), linear-gradient(to bottom, rgba(${T},0.5) 0%, transparent 30%, transparent 70%, rgba(${T},0.8) 100%)`;
 /* last step: the bottom stays clear so the skyline reads over the black hole */
@@ -220,7 +220,7 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
         </div>
 
         {/* readability scrim for centred copy (same tint variable as the home hero) */}
-        <div className="pointer-events-none absolute inset-0 z-[3]" aria-hidden style={{ background: last ? SCRIM_LAST : SCRIM, transition: "background 900ms ease" }} />
+        <div className="hero-scrim pointer-events-none absolute inset-0 z-[3]" aria-hidden style={{ background: last ? SCRIM_LAST : SCRIM, transition: "background 900ms ease" }} />
 
         {/* bottom fade into the next section */}
         <div
@@ -240,8 +240,8 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             <p className="max-w-md pt-6 text-base text-stage-text-dim">{dict.hero.subtitle}</p>
           </Reveal>
 
-          <Reveal show={s >= 2}>
-            <div className="flex flex-col items-start gap-3 pt-8">
+          <Reveal show={s >= 1} delay={160}>
+            <div className="flex flex-col items-start gap-3 pt-7">
               <Link href={localized(lang, "/contact")} className="btn btn-primary">
                 {dict.hero.primaryCta}
               </Link>
@@ -254,7 +254,7 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             </div>
           </Reveal>
 
-          <Reveal show={s >= 3}>
+          <Reveal show={s >= 2}>
             <p className="brand-sweep pt-6 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em]">{dict.hero.note}</p>
           </Reveal>
         </div>

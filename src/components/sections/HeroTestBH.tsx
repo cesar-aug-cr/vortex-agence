@@ -15,7 +15,7 @@ import { GlowStar } from "@/components/sections/GlowStar";
  */
 
 const T = "var(--hero-tint, 7,7,10)";
-const SCRIM = `linear-gradient(100deg, rgba(${T},0.92) 0%, rgba(${T},0.78) 30%, rgba(${T},0.5) 52%, rgba(${T},0.15) 74%, rgba(${T},0) 100%)`;
+const SCRIM = `linear-gradient(100deg, rgba(${T},0.94) 0%, rgba(${T},0.86) 32%, rgba(${T},0.6) 54%, rgba(${T},0.2) 74%, rgba(${T},0) 100%)`;
 const HALO = `radial-gradient(70% 60% at 42% 48%, rgba(${T},0.55), transparent 70%)`;
 const VIGNETTE = `linear-gradient(to top, var(--stage) 6%, rgba(${T},0.6) 40%, transparent 100%)`;
 // Frost opacity is theme-dependent: at the dark default it can sit at 0.5
@@ -120,7 +120,7 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
         <img {...city} alt="" className="h-auto w-full" />
       </picture>
 
-      <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: SCRIM }} />
+      <div className="hero-scrim pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: SCRIM }} />
       <div className="pointer-events-none absolute inset-0 z-[2]" aria-hidden style={{ background: HALO }} />
 
       {/* Floating particles + glow lines — above the scrim/frost, below the copy */}
@@ -140,7 +140,7 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
         style={{ background: "linear-gradient(to bottom, transparent, var(--hero-fade))" }}
       />
 
-      <div className="container-vortx relative z-10 flex min-h-[100svh] flex-col justify-center pb-16 pt-36 md:pt-40">
+      <div className="container-vortx relative z-10 flex min-h-[100svh] flex-col justify-center pb-16 pt-36 md:min-h-[92svh] md:pt-40">
         <div className="relative self-start">
           <span className="section-eyebrow eyebrow-badge relative font-mono text-xs font-bold uppercase tracking-[0.24em] animate-fade-in">
             {/* single child: the pill is inline-flex, which would drop the space before "Luxembourg" */}
@@ -161,12 +161,12 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
           </span>
         </div>
 
-        <h1 className="hero-title mt-10 max-w-3xl text-3xl font-bold leading-[1.08] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] md:text-5xl animate-fade-in-up delay-100">
+        <h1 className="hero-title mt-8 max-w-3xl text-3xl font-bold leading-[1.06] drop-shadow-[0_2px_24px_rgba(0,0,0,0.6)] md:text-5xl lg:text-6xl animate-fade-in-up delay-100">
           {dict.hero.titleLead}{" "}
           <span className="text-gradient">{dict.hero.titleAccent}</span>
         </h1>
 
-        <p className="mt-6 max-w-xl text-base text-stage-text-dim sm:text-lg animate-fade-in-up delay-200">
+        <p className="mt-6 max-w-xl text-base text-stage-text sm:text-lg animate-fade-in-up delay-200">
           {dict.hero.subtitle}
         </p>
 
