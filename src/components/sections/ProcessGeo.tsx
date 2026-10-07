@@ -1,6 +1,15 @@
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
+import type { Locale } from "@/i18n/config";
+import { localized } from "@/lib/locale";
 import { Section, SectionHeading } from "@/components/ui/Section";
-import { Check } from "@/components/ui/icons";
+import { ArrowRight, Check } from "@/components/ui/icons";
+
+/** Canonical path with an optional #anchor → localized URL keeping the anchor. */
+function hrefFor(lang: Locale, href: string) {
+  const [path, hash] = href.split("#");
+  return localized(lang, path) + (hash ? `#${hash}` : "");
+}
 import HelixDNA3D from "@/components/three/HelixDNALazy";
 
 /**
@@ -10,7 +19,7 @@ import HelixDNA3D from "@/components/three/HelixDNALazy";
  * method cards stay identical to the original Process; the GEO/GSO content sits
  * on the right inside a glassmorphism card. Originals are untouched.
  */
-export function ProcessGeo({ dict }: { dict: Dictionary }) {
+export function ProcessGeo({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   return (
     <Section id="approche" tone="stage" className="overflow-hidden">
       {/* ambient glow — bleeds so the stage feels continuous */}
@@ -85,12 +94,24 @@ export function ProcessGeo({ dict }: { dict: Dictionary }) {
                     <Check width={18} height={18} />
                   </span>
                   <div>
-                    <h3 className="font-semibold text-stage-text">{pt.title}</h3>
+                    <h3 className="font-semibold text-stage-text">
+                      <Link href={hrefFor(lang, pt.href)} className="underline decoration-white/25 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent">
+                        {pt.title}
+                      </Link>
+                    </h3>
                     <p className="mt-1 text-sm text-stage-text-dim">{pt.desc}</p>
                   </div>
                 </li>
               ))}
             </ul>
+
+            <Link
+              href={hrefFor(lang, dict.geo.cta.href)}
+              className="group mt-9 inline-flex items-center gap-2 font-semibold text-accent"
+            >
+              {dict.geo.cta.label}
+              <ArrowRight width={18} height={18} className="transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </div>

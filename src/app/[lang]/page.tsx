@@ -48,7 +48,7 @@ export default async function HomePage({
           <WhyVortx dict={dict} className="pt-6 md:pt-8" />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} lang={lang} />
-          <ProcessGeo dict={dict} />
+          <ProcessGeo dict={dict} lang={lang} />
           {/* Tools ("Notre arsenal") lives on /agence — on the home it made an
               11-section page longer and diluted the premium positioning. */}
           <Proof dict={dict} />

@@ -328,6 +328,61 @@ export const MANIFEST = [
     prompt:
       "Very bright off-white abstract background: two soft light beams, one lime green (#c8f02e) and one cyan (#14e0c8), crossing diagonally over a white stage with fine floating particles and gentle haze, plenty of empty space in the centre for a dark headline.",
   },
+  // --- Agence page: six small story photos (realistic, natural colours) ---
+  {
+    id: "agence-histoire-1",
+    model: "gpt-image-2.5-flare",
+    size: "1024x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, modern Luxembourg office or street setting, square composition with one clear subject. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A glossy printed brochure lying closed on a wooden desk next to an open laptop whose screen shows a blurred dashboard with a rising chart; the contrast between paper and screen is the subject; morning light from a window.",
+  },
+  {
+    id: "agence-histoire-2",
+    model: "gpt-image-2.5-flare",
+    size: "1024x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, modern Luxembourg office or street setting, square composition with one clear subject. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "Two colleagues seen from behind at a shared desk: one sketches a sales funnel on a small whiteboard, the other writes code on a laptop with blurred lines; a decade of notebooks stacked at the side; warm office daylight.",
+  },
+  {
+    id: "agence-histoire-3",
+    model: "gpt-image-2.5-flare",
+    size: "1024x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, modern Luxembourg office or street setting, square composition with one clear subject. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A craftsman in a bright workshop, seen from the side, reading a new customer request on a smartphone, work gloves and tools on the bench, a van blurred in the background; honest natural light.",
+  },
+  {
+    id: "agence-histoire-4",
+    model: "gpt-image-2.5-flare",
+    size: "1024x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, modern Luxembourg office or street setting, square composition with one clear subject. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "Close-up of a handover on a wooden table: a set of keys on a small ring placed next to a laptop and a signed folder, a client's hands receiving them; clean, bright, trustworthy.",
+  },
+  {
+    id: "agence-histoire-5",
+    model: "gpt-image-2.5-flare",
+    size: "1024x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, modern Luxembourg office or street setting, square composition with one clear subject. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A sunny street in Luxembourg old town with pastel facades and a few passers-by seen from behind, a tram or bus blurred at the far end, flags on a balcony with no readable text; wide daylight.",
+  },
+  {
+    id: "agence-histoire-6",
+    model: "gpt-image-2.5-flare",
+    size: "1024x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, modern Luxembourg office or street setting, square composition with one clear subject. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A person seen from behind typing a question into a laptop showing a blurred AI chat interface, a second monitor with blurred search results beside it, a notebook and coffee; bright modern desk.",
+  },
   // --- News covers ------------------------------------------------------
   {
     id: "news-cout-site-web",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { featureIcons } from "@/components/illustrations/icons";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { localized } from "@/lib/locale";
@@ -135,14 +136,31 @@ export default async function AgencePage({
             </div>
           </div>
 
-          {/* story */}
-          <div className="mt-14 grid gap-x-10 gap-y-5 md:mt-16 md:grid-cols-2">
-            {a.story.map((p) => (
-              <p key={p} className="text-lg leading-relaxed text-text-dim">
-                {p}
-              </p>
-            ))}
-          </div>
+          {/* story — six chapters in a zigzag: photo on one side, text on the
+              other, alternating
+              (public/agence/histoire-<n>.webp, 1024², natural colours). */}
+          <ol className="mx-auto mt-14 grid max-w-5xl gap-12 md:mt-16 md:gap-16">
+            {a.story.map((p, i) => {
+              const flip = i % 2 === 1;
+              return (
+                <li key={p} className="grid items-center gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
+                  <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-md)] ${flip ? "md:order-2" : ""}`}>
+                    <Image
+                      src={`/agence/histoire-${i + 1}.webp`}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 400px, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className={flip ? "md:order-1" : ""}>
+                    <span className="mb-4 block h-0.5 w-12 bg-[color:var(--accent)]" aria-hidden />
+                    <p className="text-lg leading-relaxed text-text-dim md:text-xl md:leading-relaxed">{p}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
 
           {/* stats band */}
           <div className="mt-12 grid gap-5 sm:grid-cols-3">
@@ -210,13 +228,22 @@ export default async function AgencePage({
         </div>
 
         <ol className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {dict.process.steps.map((step) => (
-            <li key={step.n} className="card relative p-7">
-              <span className="font-mono text-3xl font-bold text-accent/30">{step.n}</span>
-              <h3 className="mt-3 text-base font-semibold text-text">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-text-dim">{step.desc}</p>
-            </li>
-          ))}
+          {dict.process.steps.map((step) => {
+            const Icon = featureIcons[step.icon];
+            return (
+              <li key={step.n} className="card card-hover relative p-7">
+                <div className="flex items-start justify-between gap-4">
+                  {/* same animated icon set as the method band on the service pages */}
+                  <div className="illu-stage flex h-28 w-28 items-center justify-center rounded-xl border border-border">
+                    {Icon && <Icon className="h-20 w-20" />}
+                  </div>
+                  <span className="font-mono text-3xl font-bold text-accent/30">{step.n}</span>
+                </div>
+                <h3 className="mt-5 text-base font-semibold text-text">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-dim">{step.desc}</p>
+              </li>
+            );
+          })}
         </ol>
       </Section>
 

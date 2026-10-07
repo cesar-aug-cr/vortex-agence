@@ -257,7 +257,7 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           {/* last step: the proof card (replaces the former trust line) */}
           <Reveal show={s >= 2}>
             <div className="w-full max-w-xs pt-6">
-              <dl className="grid gap-2 p-3.5 rounded-2xl border border-white/15 bg-black/40 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150">
+              <dl className="grid gap-2 p-3.5 rounded-2xl border border-white/15 bg-black/70 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150">
                 {dict.hero.proof.rows.map((r) => (
                   <div key={r.label} className="flex items-baseline justify-between gap-3 border-b border-white/10 pb-2 last:border-0 last:pb-0">
                     <dt className="min-w-0 text-xs text-white/70">{r.label}</dt>

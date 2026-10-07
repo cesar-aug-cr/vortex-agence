@@ -257,21 +257,25 @@ export const de = {
     steps: [
       {
         n: "01",
+        icon: "process",
         title: "Diagnose",
         desc: "Wir analysieren Ihren Markt, Ihre Ziele und Ihren aktuellen Trichter, um eine maßgeschneiderte Strategie zu entwickeln.",
       },
       {
         n: "02",
+        icon: "ai-build",
         title: "Konzeption & Entwicklung",
         desc: "Premium-Design und Entwicklung mit neuesten Technologien, nach den besten Conversion-Praktiken.",
       },
       {
         n: "03",
+        icon: "ab-test",
         title: "Review & Anpassungen",
         desc: "Wir präsentieren Ihnen das Ergebnis und justieren nach, bis Sie rundum zufrieden sind.",
       },
       {
         n: "04",
+        icon: "analytics",
         title: "Launch & Betreuung",
         desc: "Veröffentlichung, Konfiguration und Begleitung, damit Sie sofort Ergebnisse erzielen.",
       },
@@ -283,7 +287,7 @@ export const de = {
     eyebrow: "Unser Arsenal",
     title: "Die besten Tools, in der Tiefe beherrscht.",
     lead: "Marketing, Code, KI, Design. Wir wählen das Tool fürs Ergebnis, nicht umgekehrt.",
-    stat: { value: "44+", label: "beherrschte Tools" },
+    stat: { value: "50+", label: "beherrschte Tools" },
     categories: [
       {
         name: "Digitales Marketing",
@@ -305,7 +309,7 @@ export const de = {
       },
       {
         name: "Web & Code",
-        items: ["WordPress", "Divi", "Elementor", "CSS", "HTML"],
+        items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "WordPress", "Divi", "Elementor", "HTML", "CSS", "GitHub"],
       },
       {
         name: "KI & Automatisierung",
@@ -356,17 +360,21 @@ export const de = {
     eyebrow: "Das SEO der Zukunft",
     title: "GEO / GSO: die Antwort der KI sein.",
     lead: "Die Suche verändert sich. Ihre Kunden stellen ihre Fragen KI-Assistenten. Wir optimieren so, dass vortx — und Sie — die zitierte Quelle sind.",
+    cta: { label: "GEO / GSO entdecken", href: "/services/seo-geo/geo-gso" },
     points: [
       {
         title: "Direkte Zitate durch KI",
+        href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia",
         desc: "Strukturierte Inhalte, um in generativen Antworten aufgegriffen zu werden.",
       },
       {
         title: "LLM-ready Schemata",
+        href: "/glossaire#llms-txt",
         desc: "Strukturierte Daten und Dateien (llms.txt), die zu den Modellen sprechen.",
       },
       {
         title: "SEO & GEO integriert",
+        href: "/services/seo-geo",
         desc: "Wir opfern Google nicht für die KI — wir gewinnen auf beiden Seiten.",
       },
     ],
@@ -665,8 +673,8 @@ export const de = {
     },
     stats: [
       { value: "100 %", label: "Maßgeschneidert, nie ein Template" },
-      { value: "4 Sprachen", label: "FR · DE · EN · ES nativ" },
-      { value: "6 Disziplinen", label: "Web, SEO & GEO, Leads, Ads, Branding, KI" },
+      { value: "4 Sprachen", label: "FR · DE · EN · ES" },
+      { value: "6 Disziplinen", label: "Websites, SEO & GEO, Leads, Ads, Branding & Grafikdesign, KI" },
     ],
     valuesTitle: "Was uns auszeichnet",
     arsenalTitle: "Unser Arsenal",

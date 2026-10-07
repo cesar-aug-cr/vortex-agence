@@ -257,21 +257,25 @@ export const en = {
     steps: [
       {
         n: "01",
+        icon: "process",
         title: "Diagnosis",
         desc: "We analyse your market, your goals and your current funnel to build a bespoke strategy.",
       },
       {
         n: "02",
+        icon: "ai-build",
         title: "Design & development",
         desc: "Premium design and development on the latest technologies, with the best conversion practices.",
       },
       {
         n: "03",
+        icon: "ab-test",
         title: "Review & adjustments",
         desc: "We present the result and refine it until you're fully satisfied.",
       },
       {
         n: "04",
+        icon: "analytics",
         title: "Launch & follow-up",
         desc: "Go-live, configuration and support to start generating results.",
       },
@@ -283,7 +287,7 @@ export const en = {
     eyebrow: "Our arsenal",
     title: "The best tools, mastered in depth.",
     lead: "Marketing, code, AI, design. We pick the tool for the result, not the other way round.",
-    stat: { value: "44+", label: "tools mastered" },
+    stat: { value: "50+", label: "tools mastered" },
     categories: [
       {
         name: "Digital marketing",
@@ -305,7 +309,7 @@ export const en = {
       },
       {
         name: "Web & code",
-        items: ["WordPress", "Divi", "Elementor", "CSS", "HTML"],
+        items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "WordPress", "Divi", "Elementor", "HTML", "CSS", "GitHub"],
       },
       {
         name: "AI & automation",
@@ -356,17 +360,21 @@ export const en = {
     eyebrow: "The SEO of the future",
     title: "GEO / GSO: be the AI's answer.",
     lead: "Search is changing. Your clients put their questions to AI assistants. We optimise so that vortx — and you — are the source that gets cited.",
+    cta: { label: "Discover GEO / GSO", href: "/services/seo-geo/geo-gso" },
     points: [
       {
         title: "Direct citations by AI",
+        href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia",
         desc: "Structured content built to be picked up in generative answers.",
       },
       {
         title: "LLM-ready schemas",
+        href: "/glossaire#llms-txt",
         desc: "Structured data and files (llms.txt) that speak to the models.",
       },
       {
         title: "SEO & GEO integrated",
+        href: "/services/seo-geo",
         desc: "We don't sacrifice Google for AI — we win on both.",
       },
     ],
@@ -665,8 +673,8 @@ export const en = {
     },
     stats: [
       { value: "100%", label: "Bespoke, never a template" },
-      { value: "4 languages", label: "FR · DE · EN · ES natively" },
-      { value: "6 disciplines", label: "Web, SEO & GEO, leads, ads, branding, AI" },
+      { value: "4 languages", label: "FR · DE · EN · ES" },
+      { value: "6 disciplines", label: "Websites, SEO & GEO, leads, ads, branding & graphic design, AI" },
     ],
     valuesTitle: "What sets us apart",
     arsenalTitle: "Our arsenal",

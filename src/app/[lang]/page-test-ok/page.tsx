@@ -104,7 +104,7 @@ export default async function PageTestOk({
           <WhyVortx dict={dict} />
           <Services dict={dict} lang={lang} />
           <LeadGen dict={dict} lang={lang} />
-          <ProcessGeo dict={dict} />
+          <ProcessGeo dict={dict} lang={lang} />
           <Proof dict={dict} />
           <Reviews dict={dict} />
           <NewsTeaser dict={dict} lang={lang} />

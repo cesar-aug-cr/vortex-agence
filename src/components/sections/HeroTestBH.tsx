@@ -186,7 +186,7 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
             glass card + "no commitment" note — bottom-right over the skyline
             from lg, in flow below. */}
         <div className="mt-8 max-w-xs animate-fade-in-up delay-300 lg:absolute lg:bottom-24 lg:right-8 lg:mt-0 lg:w-72">
-          <dl className="grid gap-2 p-4 rounded-2xl border border-white/15 bg-black/40 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150">
+          <dl className="grid gap-2 p-4 rounded-2xl border border-white/15 bg-black/70 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150">
             {dict.hero.proof.rows.map((s) => (
               <div key={s.label} className="flex items-baseline justify-between gap-3 border-b border-white/10 pb-2 last:border-0 last:pb-0">
                 <dt className="min-w-0 text-xs text-white/70">{s.label}</dt>

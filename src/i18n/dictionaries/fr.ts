@@ -279,21 +279,25 @@ export const fr = {
     steps: [
       {
         n: "01",
+        icon: "process",
         title: "Diagnostic",
         desc: "On analyse votre marché, vos objectifs et votre tunnel actuel pour bâtir une stratégie sur mesure.",
       },
       {
         n: "02",
+        icon: "ai-build",
         title: "Conception & développement",
         desc: "Design premium et développement aux dernières technologies, avec les meilleures pratiques de conversion.",
       },
       {
         n: "03",
+        icon: "ab-test",
         title: "Revue & ajustements",
         desc: "On vous présente le résultat et on ajuste jusqu'à ce que vous soyez pleinement satisfait.",
       },
       {
         n: "04",
+        icon: "analytics",
         title: "Lancement & suivi",
         desc: "Mise en ligne, configuration et accompagnement pour commencer à générer des résultats.",
       },
@@ -305,7 +309,7 @@ export const fr = {
     eyebrow: "Notre arsenal",
     title: "Les meilleurs outils, maîtrisés en profondeur.",
     lead: "Marketing, code, IA, design. On choisit l'outil pour le résultat, pas l'inverse.",
-    stat: { value: "44+", label: "outils maîtrisés" },
+    stat: { value: "50+", label: "outils maîtrisés" },
     categories: [
       {
         name: "Marketing digital",
@@ -327,7 +331,7 @@ export const fr = {
       },
       {
         name: "Web & code",
-        items: ["WordPress", "Divi", "Elementor", "CSS", "HTML"],
+        items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "WordPress", "Divi", "Elementor", "HTML", "CSS", "GitHub"],
       },
       {
         name: "IA & automatisation",
@@ -378,17 +382,21 @@ export const fr = {
     eyebrow: "Le SEO du futur",
     title: "GEO / GSO : être la réponse de l'IA.",
     lead: "La recherche évolue. Vos clients posent leurs questions à des assistants IA. Nous optimisons pour que vortx — et vous — soyez la source citée.",
+    cta: { label: "Découvrir le GEO / GSO", href: "/services/seo-geo/geo-gso" },
     points: [
       {
         title: "Citations directes par l'IA",
+        href: "/news/geo-seo-luxembourg-etre-cite-par-les-ia",
         desc: "Du contenu structuré pour être repris dans les réponses génératives.",
       },
       {
         title: "Schémas LLM-ready",
+        href: "/glossaire#llms-txt",
         desc: "Données structurées et fichiers (llms.txt) qui parlent aux modèles.",
       },
       {
         title: "SEO & GEO intégrés",
+        href: "/services/seo-geo",
         desc: "On ne sacrifie pas Google pour l'IA — on gagne sur les deux.",
       },
     ],
@@ -687,8 +695,8 @@ export const fr = {
     },
     stats: [
       { value: "100 %", label: "Sur mesure, jamais de template" },
-      { value: "4 langues", label: "FR · DE · EN · ES en natif" },
-      { value: "6 métiers", label: "Web, SEO & GEO, leads, pub, branding, IA" },
+      { value: "4 langues", label: "FR · DE · EN · ES" },
+      { value: "6 métiers", label: "Sites web, SEO & GEO, leads, pub, branding & design graphique, IA" },
     ],
     valuesTitle: "Ce qui nous distingue",
     arsenalTitle: "Notre arsenal",
