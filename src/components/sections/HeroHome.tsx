@@ -20,7 +20,7 @@ import { HeroTestBH } from "@/components/sections/HeroTestBH";
  *   0  eyebrow + title
  *   1  + lead paragraph AND the two CTAs (so "Découvrir nos services" is one
  *      gesture away; the title moves up to make room)
- *   2  + trust line; the city skyline fades in at the bottom and the black
+ *   2  + proof card; the city skyline fades in at the bottom and the black
  *      hole slides down behind it, like on desktop.
  */
 
@@ -254,8 +254,18 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
             </div>
           </Reveal>
 
+          {/* last step: the proof card (replaces the former trust line) */}
           <Reveal show={s >= 2}>
-            <p className="brand-sweep pt-6 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em]">{dict.hero.note}</p>
+            <div className="w-full max-w-xs pt-6">
+              <dl className="grid gap-2 p-3.5 rounded-2xl border border-white/15 bg-black/40 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl backdrop-saturate-150">
+                {dict.hero.proof.rows.map((r) => (
+                  <div key={r.label} className="flex items-baseline justify-between gap-3 border-b border-white/10 pb-2 last:border-0 last:pb-0">
+                    <dt className="min-w-0 text-xs text-white/70">{r.label}</dt>
+                    <dd className="shrink-0 whitespace-nowrap font-mono text-xs font-bold text-[#c8f02e]">{r.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </Reveal>
         </div>
 

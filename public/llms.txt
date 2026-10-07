@@ -20,7 +20,6 @@
   - [Tunnels de conversion](https://vortx.lu/fr/services/lead-generation/tunnels-de-conversion)
   - [Landing pages de campagne](https://vortx.lu/fr/services/lead-generation/landing-pages-campagne)
   - [Email marketing & automation](https://vortx.lu/fr/services/lead-generation/email-marketing-automation)
-  - [Lead nurturing & scoring](https://vortx.lu/fr/services/lead-generation/lead-nurturing-scoring)
   - [Optimisation du taux de conversion (CRO)](https://vortx.lu/fr/services/lead-generation/optimisation-conversion-cro)
 - [Publicité en ligne](https://vortx.lu/fr/services/publicite) : Google Ads, Meta Ads, LinkedIn Ads pilotées par la donnée.
   - [Google Ads](https://vortx.lu/fr/services/publicite/google-ads)

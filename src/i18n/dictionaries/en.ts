@@ -74,12 +74,21 @@ export const en = {
     primaryCta: "Book a discovery call",
     secondaryCta: "Discover our services",
     note: "Fast reply · Free audit · No commitment · 100% bespoke",
+    // Proof card shown in the hero (desktop: bottom-right glass card; phones: last step).
+    proof: {
+      rows: [
+        { label: "Guaranteed reply", value: "Express" },
+        { label: "Built bespoke", value: "100%" },
+        { label: "Natively multilingual", value: "FR · DE · EN · LU" },
+        { label: "Audit", value: "Free" },
+      ],
+    },
   },
 
   stats: [
     { value: "Express", label: "Guaranteed reply" },
     { value: "100%", label: "Built bespoke" },
-    { value: "FR · DE · EN", label: "Natively multilingual" },
+    { value: "FR · DE · EN · LU", label: "Natively multilingual" },
   ],
 
   // ---- Trust / positioning band ----
@@ -238,6 +247,7 @@ export const en = {
       "A marketing budget justified in numbers",
     ],
     funnel: ["Visitor", "Interested", "Prospect", "Client"],
+    funnelBad: ["Visitor", "Confused", "Gone", "Never back"],
   },
 
   // ---- Process ----
@@ -2152,7 +2162,6 @@ export const en = {
         def: "The set of actions (site, content, campaigns, automation) designed to attract and capture qualified contacts in a predictable way. The next step — nurturing and scoring — turns those contacts into sales appointments.",
         links: [
           { href: "/services/lead-generation", label: "Our lead generation service" },
-          { href: "/services/lead-generation/lead-nurturing-scoring", label: "Lead nurturing & scoring" },
         ],
       },
       {
@@ -2353,6 +2362,16 @@ export const en = {
     faqTitle: "Frequently asked questions",
     articlesTitle: "Resources",
     articlesLead: "Further reading on this topic.",
+    tracking: {
+      eyebrow: "Included in every project",
+      title: "Tracking and conversion built in",
+      lead: "Every site goes live with its measurement already in place: you know where your visitors come from and what they become.",
+      items: [
+        { icon: "analytics", title: "Google Analytics 4", desc: "Traffic, conversions and visitor journeys, readable by city and by language." },
+        { icon: "integration", title: "Google Tag Manager", desc: "One container for your Google, Meta and LinkedIn pixels, switched on or off without touching the code." },
+        { icon: "conversion", title: "Conversion tracking", desc: "Forms, calls, email clicks and booked appointments: every action is counted to work out your return." },
+      ],
+    },
     // Shared "our method" band, rendered on every service & sub-service page.
     method: {
       eyebrow: "Our method",
@@ -2373,7 +2392,7 @@ export const en = {
       items: [
         { icon: "guarantee", value: "Free audit", label: "Before any quote", desc: "A free diagnosis of your situation, with no commitment." },
         { icon: "rgpd", value: "100% yours", label: "Code, content, access", desc: "You fully own it. No lock-in, ever." },
-        { icon: "multilingual", value: "FR · DE · EN", label: "Natively multilingual", desc: "Built for the Luxembourg market and the Greater Region." },
+        { icon: "multilingual", value: "FR · DE · EN · LU", label: "Natively multilingual", desc: "Built for the Luxembourg market and the Greater Region." },
         { icon: "analytics", value: "Clear reporting", label: "Total transparency", desc: "Every euro spent is tied to a measurable result." },
       ],
     },
@@ -3117,43 +3136,6 @@ export const en = {
         ],
       },
       {
-        slug: "lead-nurturing-scoring",
-        illustration: "lead-nurturing-scoring",
-        title: "Lead nurturing & scoring",
-        tagline: "Identify and warm up the prospects ready to buy.",
-        short:
-          "Not all leads are equal. We score them by behaviour and profile so your sales team focuses its energy on the hottest ones — at the right moment.",
-        bullets: [
-          "Behavioural lead scoring",
-          "Nurturing workflows",
-          "MQL → SQL qualification",
-          "Sales feedback loop",
-        ],
-        metaTitle: "Lead Nurturing & Scoring in Luxembourg | vortx",
-        metaDescription:
-          "Lead nurturing and scoring for Luxembourg businesses: behavioural scoring, automated nurturing and MQL/SQL qualification. Sales time on the right leads.",
-        intro: [
-          "Drowning your sales team in unqualified leads wastes their time and motivation. Scoring fixes this: each lead gets a score based on its profile and behaviour, and only surfaces once it's ready.",
-          "We define the qualification criteria with you (MQL, SQL), automate the nurturing of leads that are still lukewarm, and set up a feedback loop with your sales team to refine the scoring continuously. The result: more time on the right opportunities.",
-        ],
-        included: [
-          { icon: "nurturing", title: "Behavioural scoring", desc: "Each lead is scored by profile and actions — you know who's ready." },
-          { icon: "email-automation", title: "Nurturing workflows", desc: "Lukewarm leads are warmed up automatically until they reach the right level." },
-          { icon: "leads", title: "MQL → SQL qualification", desc: "Clear criteria to tell a mere browser from a prospect ready to talk." },
-          { icon: "analytics", title: "Feedback loop", desc: "Your sales team's feedback refines the scoring continuously for greater precision." },
-        ],
-        deliverables: [
-          "Scoring model & qualification criteria",
-          "Automated nurturing workflows",
-          "Configuration in your CRM",
-          "Feedback ritual & continuous adjustment",
-        ],
-        faq: [
-          { q: "Does scoring work without high volume?", a: "Yes. Even with few leads, prioritising the right ones saves your sales team valuable time. The model stays simple and refines itself as data comes in." },
-          { q: "Do I need a particular CRM?", a: "We work with most CRMs (HubSpot, Pipedrive, Salesforce…). If you don't have one, we help you choose and configure the right one." },
-        ],
-      },
-      {
         slug: "optimisation-conversion-cro",
         illustration: "optimisation-conversion-cro",
         title: "Conversion rate optimisation (CRO)",
@@ -3586,7 +3568,7 @@ export const en = {
           "Competitor & keyword analysis",
           "Roadmap prioritised by impact",
         ],
-        youProvide: "Access to your analytics tools and a one-hour chat about your goals.",
+        youProvide: "A video or phone call about your goals.",
       },
       {
         n: "02",

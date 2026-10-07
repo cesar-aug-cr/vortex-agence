@@ -12,6 +12,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { ServiceMethod } from "@/components/sections/ServiceMethod";
 import { ServiceProof } from "@/components/sections/ServiceProof";
+import { ServiceTracking } from "@/components/sections/ServiceTracking";
 import { RelatedServiceArticles } from "@/components/sections/RelatedServiceArticles";
 import { articlesForService } from "@/lib/relatedArticles";
 import { subServiceIllustration } from "@/components/illustrations/map";
@@ -178,6 +179,9 @@ export default async function SubServicePage({
           })}
         </div>
       </Section>
+
+      {/* tracking stack shipped with every website / landing page */}
+      {(slug === "sites-web" || child === "landing-pages-campagne") && <ServiceTracking content={sd.tracking} />}
 
       {/* deliverables + faq */}
       <Section tone="base">

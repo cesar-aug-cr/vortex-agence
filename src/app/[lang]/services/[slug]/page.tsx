@@ -13,6 +13,7 @@ import { ContactCta } from "@/components/sections/ContactCta";
 import { PacksIncluded } from "@/components/sections/PacksIncluded";
 import { ServiceMethod } from "@/components/sections/ServiceMethod";
 import { ServiceProof } from "@/components/sections/ServiceProof";
+import { ServiceTracking } from "@/components/sections/ServiceTracking";
 import { RelatedServiceArticles } from "@/components/sections/RelatedServiceArticles";
 import { articlesForService } from "@/lib/relatedArticles";
 import { serviceIllustration, subServiceIllustration } from "@/components/illustrations/map";
@@ -229,6 +230,9 @@ export default async function ServiceDetailPage({
 
           {/* everything included in every pack (sites-web) */}
           {packs && <PacksIncluded content={packs} lang={lang} />}
+
+          {/* tracking stack shipped with every website (sites-web only) */}
+          {service.slug === "sites-web" && <ServiceTracking content={sd.tracking} />}
 
           {/* deliverables + FAQ */}
           <Section tone="base">

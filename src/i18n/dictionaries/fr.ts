@@ -96,12 +96,21 @@ export const fr = {
     primaryCta: "Réserver un appel découverte",
     secondaryCta: "Découvrir nos services",
     note: "Réponse rapide · Audit offert · Sans engagement · 100 % sur-mesure",
+    // Proof card shown in the hero (desktop: bottom-right glass card; phones: last step).
+    proof: {
+      rows: [
+        { label: "Réponse garantie", value: "Express" },
+        { label: "Conçu sur mesure", value: "100 %" },
+        { label: "Multilingue natif", value: "FR · DE · EN · LU" },
+        { label: "Audit", value: "Offert" },
+      ],
+    },
   },
 
   stats: [
     { value: "Express", label: "Réponse garantie" },
     { value: "100 %", label: "Conçu sur mesure" },
-    { value: "FR · DE · EN", label: "Multilingue natif" },
+    { value: "FR · DE · EN · LU", label: "Multilingue natif" },
   ],
 
   // ---- Trust / positioning band ----
@@ -260,6 +269,7 @@ export const fr = {
       "Un budget marketing qui se justifie en chiffres",
     ],
     funnel: ["Visiteur", "Intéressé", "Prospect", "Client"],
+    funnelBad: ["Visiteur", "Confus", "Parti", "Jamais revenu"],
   },
 
   // ---- Process ----
@@ -2176,7 +2186,6 @@ export const fr = {
         def: "Ensemble des actions (site, contenu, campagnes, automatisation) destinées à attirer et capturer des contacts qualifiés de façon prévisible. L'étape suivante — nurturing et scoring — transforme ces contacts en rendez-vous commerciaux.",
         links: [
           { href: "/services/lead-generation", label: "Notre service Génération de leads" },
-          { href: "/services/lead-generation/lead-nurturing-scoring", label: "Nurturing & scoring de leads" },
         ],
       },
       {
@@ -2377,6 +2386,17 @@ export const fr = {
     faqTitle: "Questions fréquentes",
     articlesTitle: "Ressources",
     articlesLead: "À lire sur le sujet.",
+    // "Tracking & conversion included" — websites and landing pages only.
+    tracking: {
+      eyebrow: "Inclus dans chaque projet",
+      title: "Suivi et conversion intégrés",
+      lead: "Chaque site part en ligne avec sa mesure déjà en place : vous savez d'où viennent vos visiteurs et ce qu'ils deviennent.",
+      items: [
+        { icon: "analytics", title: "Google Analytics 4", desc: "Trafic, conversions et parcours des visiteurs, lisibles par ville et par langue." },
+        { icon: "integration", title: "Google Tag Manager", desc: "Un seul conteneur pour vos pixels Google, Meta et LinkedIn, à activer ou retirer sans toucher au code." },
+        { icon: "conversion", title: "Suivi des conversions", desc: "Formulaires, appels, clics sur l'e-mail et rendez-vous pris : chaque action est comptée pour calculer votre retour." },
+      ],
+    },
     // Shared "our method" band, rendered on every service & sub-service page.
     method: {
       eyebrow: "Notre méthode",
@@ -2397,7 +2417,7 @@ export const fr = {
       items: [
         { icon: "guarantee", value: "Audit offert", label: "Avant tout devis", desc: "Un diagnostic gratuit de votre situation, sans engagement." },
         { icon: "rgpd", value: "100 % à vous", label: "Code, contenus, accès", desc: "Vous êtes pleinement propriétaire. Pas d'enfermement, jamais." },
-        { icon: "multilingual", value: "FR · DE · EN", label: "Multilingue natif", desc: "Pensé pour le marché luxembourgeois et la Grande Région." },
+        { icon: "multilingual", value: "FR · DE · EN · LU", label: "Multilingue natif", desc: "Pensé pour le marché luxembourgeois et la Grande Région." },
         { icon: "analytics", value: "Reporting clair", label: "Transparence totale", desc: "Chaque euro dépensé est relié à un résultat mesurable." },
       ],
     },
@@ -3143,43 +3163,6 @@ export const fr = {
         ],
       },
       {
-        slug: "lead-nurturing-scoring",
-        illustration: "lead-nurturing-scoring",
-        title: "Lead nurturing & scoring",
-        tagline: "Identifiez et réchauffez les prospects prêts à acheter.",
-        short:
-          "Tous les leads ne se valent pas. On les note selon leur comportement et leur profil pour que vos commerciaux concentrent leur énergie sur les plus chauds — au bon moment.",
-        bullets: [
-          "Scoring comportemental des leads",
-          "Workflows de maturation",
-          "Qualification MQL → SQL",
-          "Boucle de feedback commerciale",
-        ],
-        metaTitle: "Lead nurturing & scoring à Luxembourg | vortx",
-        metaDescription:
-          "Lead nurturing et scoring au Luxembourg : notation comportementale, maturation automatisée, qualification MQL/SQL. Vos commerciaux sur les bons leads.",
-        intro: [
-          "Noyer vos commerciaux sous des leads non qualifiés, c'est leur faire perdre du temps et de la motivation. Le scoring résout ça : chaque lead reçoit une note selon son profil et son comportement, et ne remonte qu'une fois prêt.",
-          "On définit avec vous les critères de qualification (MQL, SQL), on automatise la maturation des leads encore tièdes, et on installe une boucle de feedback avec vos commerciaux pour affiner le scoring en continu. Résultat : plus de temps sur les bonnes opportunités.",
-        ],
-        included: [
-          { icon: "nurturing", title: "Scoring comportemental", desc: "Chaque lead est noté selon son profil et ses actions — on sait qui est prêt." },
-          { icon: "email-automation", title: "Workflows de maturation", desc: "Les leads tièdes sont réchauffés automatiquement jusqu'à atteindre le bon niveau." },
-          { icon: "leads", title: "Qualification MQL → SQL", desc: "Des critères clairs pour distinguer le simple intéressé du prospect prêt à parler." },
-          { icon: "analytics", title: "Boucle de feedback", desc: "Le retour de vos commerciaux affine le scoring en continu pour plus de précision." },
-        ],
-        deliverables: [
-          "Modèle de scoring & critères de qualification",
-          "Workflows de nurturing automatisés",
-          "Configuration dans votre CRM",
-          "Rituel de feedback & ajustement continu",
-        ],
-        faq: [
-          { q: "Le scoring fonctionne-t-il sans gros volume ?", a: "Oui. Même avec peu de leads, prioriser les bons fait gagner un temps précieux à vos commerciaux. Le modèle reste simple et s'affine avec les données." },
-          { q: "Faut-il un CRM particulier ?", a: "On travaille avec la plupart des CRM (HubSpot, Pipedrive, Salesforce…). Si vous n'en avez pas, on vous aide à choisir et configurer le bon." },
-        ],
-      },
-      {
         slug: "optimisation-conversion-cro",
         illustration: "optimisation-conversion-cro",
         title: "Optimisation du taux de conversion (CRO)",
@@ -3612,7 +3595,7 @@ export const fr = {
           "Analyse concurrentielle & mots-clés",
           "Feuille de route priorisée par impact",
         ],
-        youProvide: "Un accès à vos outils analytics et un échange d'une heure sur vos objectifs.",
+        youProvide: "Un échange par visio ou par téléphone sur vos objectifs.",
       },
       {
         n: "02",

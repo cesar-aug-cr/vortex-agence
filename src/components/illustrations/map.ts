@@ -19,7 +19,6 @@ import { SiteMultilingue } from "./SiteMultilingue";
 import { TunnelsDeConversion } from "./TunnelsDeConversion";
 import { LandingPagesCampagne } from "./LandingPagesCampagne";
 import { EmailMarketingAutomation } from "./EmailMarketingAutomation";
-import { LeadNurturingScoring } from "./LeadNurturingScoring";
 import { OptimisationConversionCro } from "./OptimisationConversionCro";
 import { CreationDeLogo } from "./CreationDeLogo";
 import { IdentiteVisuelle } from "./IdentiteVisuelle";
@@ -65,7 +64,6 @@ export const subServiceIllustration: Record<string, FC<{ className?: string }>> 
   "tunnels-de-conversion": TunnelsDeConversion,
   "landing-pages-campagne": LandingPagesCampagne,
   "email-marketing-automation": EmailMarketingAutomation,
-  "lead-nurturing-scoring": LeadNurturingScoring,
   "optimisation-conversion-cro": OptimisationConversionCro,
   // branding & design
   "creation-de-logo": CreationDeLogo,
