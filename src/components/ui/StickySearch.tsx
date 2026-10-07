@@ -111,7 +111,7 @@ export function StickySearch({
               aria-controls="sticky-search-field"
               aria-label={placeholder}
               title={placeholder}
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-stage-border bg-stage text-[#c8f02e] shadow-[var(--shadow-md)] transition-colors hover:border-[#c8f02e] focus-visible:border-[#c8f02e] dark:border-border dark:bg-bg-card dark:text-text dark:hover:border-accent dark:hover:text-accent dark:focus-visible:border-accent"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-stage-border bg-stage text-[#c8f02e] shadow-[0_0_0_1px_rgba(79,122,10,0.35),0_0_22px_4px_rgba(79,122,10,0.45)] dark:shadow-[0_0_0_1px_rgba(200,240,46,0.35),0_0_22px_4px_rgba(200,240,46,0.45)] transition-colors hover:border-[#c8f02e] focus-visible:border-[#c8f02e] dark:border-border dark:bg-bg-card dark:text-text dark:hover:border-accent dark:hover:text-accent dark:focus-visible:border-accent"
             >
               {open ? <CloseIcon /> : <SearchIcon />}
             </button>
