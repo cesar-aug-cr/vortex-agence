@@ -252,8 +252,8 @@ export const es = {
       {
         n: "01",
         icon: "process",
-        title: "Diagnóstico",
-        desc: "Analizamos su mercado, sus objetivos y su embudo actual para construir una estrategia a medida.",
+        title: "Diagnóstico de la situación",
+        desc: "Analizamos sus objetivos y su embudo actual para construir una estrategia a medida.",
       },
       {
         n: "02",
@@ -2566,6 +2566,16 @@ export const es = {
       "Impulse su negocio online",
       "Destaque frente a la competencia",
       "Conecte con sus clientes",
+    ],
+    // Coverflow slides: generic mockups (public/portfolio/mockup-<slug>.webp), one per deliverable type.
+    items: [
+      { slug: "site-vitrine-garage", name: "Sitio web · Taller mecánico" },
+      { slug: "logo-menuiserie", name: "Logo · Carpintería" },
+      { slug: "landing-immobilier", name: "Landing page · Inmobiliaria" },
+      { slug: "identite-cafe", name: "Identidad visual · Café" },
+      { slug: "site-cabinet", name: "Sitio multilingüe · Despacho" },
+      { slug: "charte-graphique", name: "Manual de marca · Pyme" },
+      { slug: "campagne-solaire", name: "Campaña publicitaria · Paneles solares" },
     ],
     cta: "Trabajemos juntos",
     prev: "Proyecto anterior",

@@ -46,7 +46,7 @@ export default async function HomePage({
             style={{ background: "linear-gradient(to bottom, var(--hero-fade), var(--bg))" }}
           />
           {/* phones: the hero's proof card sits here, static (desktop shows it inside the hero) */}
-          <div className="container-vortx pt-6 pb-2 md:hidden">
+          <div className="container-vortx pt-11 pb-2 md:hidden">
             <ProofCard dict={dict} className="mx-auto max-w-xs" />
           </div>
           {/* reduced top padding so the cards show up sooner after the hero */}

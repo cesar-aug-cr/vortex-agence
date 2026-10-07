@@ -280,8 +280,8 @@ export const fr = {
       {
         n: "01",
         icon: "process",
-        title: "Diagnostic",
-        desc: "On analyse votre marché, vos objectifs et votre tunnel actuel pour bâtir une stratégie sur mesure.",
+        title: "Diagnostic de la situation",
+        desc: "On analyse vos objectifs et votre tunnel actuel pour bâtir une stratégie sur mesure.",
       },
       {
         n: "02",
@@ -2597,6 +2597,16 @@ export const fr = {
       "Boostez votre activité en ligne",
       "Démarquez-vous de la concurrence",
       "Connectez-vous à vos clients",
+    ],
+    // Coverflow slides: generic mockups (public/portfolio/mockup-<slug>.webp), one per deliverable type.
+    items: [
+      { slug: "site-vitrine-garage", name: "Site vitrine · Garage automobile" },
+      { slug: "logo-menuiserie", name: "Logo · Menuiserie" },
+      { slug: "landing-immobilier", name: "Landing page · Immobilier" },
+      { slug: "identite-cafe", name: "Identité visuelle · Café" },
+      { slug: "site-cabinet", name: "Site multilingue · Cabinet" },
+      { slug: "charte-graphique", name: "Charte graphique · PME" },
+      { slug: "campagne-solaire", name: "Campagne publicitaire · Panneaux solaires" },
     ],
     cta: "Travaillons ensemble",
     prev: "Projet précédent",

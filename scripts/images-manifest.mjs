@@ -403,6 +403,152 @@ export const MANIFEST = [
     prompt:
       "Luxembourg city at golden hour seen from the Kirchberg plateau: the old town on its rocky promontory, the Pont Adolphe and the Pétrusse valley with autumn trees, warm low sunlight, a few people walking on a terrace in the foreground seen from behind; wide, serene, slightly hazy.",
   },
+  // --- Portfolio coverflow: nine ultra-realistic mockups (generic projects) ---
+  {
+    id: "mockup-site-vitrine-garage",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A laptop and a smartphone on a dark wooden workshop bench showing the same automotive garage website: a hero photo of a car lift, service cards, a bright call-to-action button; a wrench and keys beside the devices.",
+  },
+  {
+    id: "mockup-boutique-mode",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A tablet propped on a marble counter showing a fashion e-commerce site: large product photos of clothing, a product grid, a cart button; folded garments and a linen bag next to it.",
+  },
+  {
+    id: "mockup-logo-menuiserie",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "Business cards and a branded wooden sign on a carpenter's workbench, both carrying the same abstract emblem made of two interlocking planks, embossed and laser-engraved; sawdust and a chisel nearby.",
+  },
+  {
+    id: "mockup-landing-immobilier",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A smartphone held in a hand in front of a modern apartment building, the screen showing a real-estate landing page: a hero photo of a flat, a short contact form, a primary button.",
+  },
+  {
+    id: "mockup-identite-cafe",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A café brand identity flat lay on a light table: paper coffee cups, a kraft bag, a folded menu and coasters all carrying the same abstract leaf-and-cup emblem in a warm green; coffee beans scattered.",
+  },
+  {
+    id: "mockup-application-saas",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A large desktop monitor in a bright office showing a SaaS dashboard: sidebar, cards with charts and a rising line graph, a table; a keyboard, a plant and a mug in the foreground.",
+  },
+  {
+    id: "mockup-site-cabinet",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A laptop on a glass meeting table showing a law-firm website in a sober navy and white design: a portrait-style hero photo, three practice-area cards, a language switcher area; a fountain pen and a leather folder beside it.",
+  },
+  {
+    id: "mockup-charte-graphique",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "An open brand guidelines book on a designer's desk showing colour swatches, a typography scale and a logo construction grid, next to printed stationery using the same abstract emblem; soft window light.",
+  },
+  {
+    id: "mockup-campagne-horlogerie",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph of a design deliverable, shot on a full-frame camera with a 50 mm lens, soft natural studio daylight, true-to-life neutral colours, realistic materials and reflections, shallow depth of field, 3:2 composition. Screens show a clean, modern interface made of abstract blocks, blurred lines and real-looking photos, with one accent colour. Absolutely no readable text, no letters, no numbers, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "Three smartphones standing in a row on a black velvet surface, each showing a social media ad for a luxury watch: close-up watch photos, a small price tag block, a button; dramatic but natural lighting.",
+  },
+  // --- Portfolio coverflow v2: seven mockups with real readable copy ---
+  {
+    id: "mockup2-site-vitrine-garage",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph, shot on a full-frame camera with a 50 mm lens, soft natural daylight, true-to-life neutral colours, physically accurate materials, reflections and screen glare, shallow depth of field, 3:2 composition. The interface or print piece is a finished, professional design with REAL readable French text: short headlines, menu labels, button labels and prices rendered crisply and correctly spelled. No lorem ipsum, no gibberish, no placeholder lines, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A laptop and a smartphone on a dark wooden workshop bench showing the same car garage website: hero photo of a car on a lift with the headline \"Votre garage de confiance\", menu \"Services · Devis · Contact\", three service cards \"Entretien\", \"Pneus\", \"Carrosserie\", a green button \"Prendre rendez-vous\"; a wrench and car keys beside the devices.",
+  },
+  {
+    id: "mockup2-logo-menuiserie",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph, shot on a full-frame camera with a 50 mm lens, soft natural daylight, true-to-life neutral colours, physically accurate materials, reflections and screen glare, shallow depth of field, 3:2 composition. The interface or print piece is a finished, professional design with REAL readable French text: short headlines, menu labels, button labels and prices rendered crisply and correctly spelled. No lorem ipsum, no gibberish, no placeholder lines, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "Business cards and a wooden sign on a carpenter's workbench carrying the same logo: an abstract emblem of two interlocking planks above the name \"Atelier Bois\" with the line \"Menuiserie sur mesure\" in a clean serif, laser-engraved in the wood and embossed on the cards; sawdust and a chisel nearby.",
+  },
+  {
+    id: "mockup2-landing-immobilier",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph, shot on a full-frame camera with a 50 mm lens, soft natural daylight, true-to-life neutral colours, physically accurate materials, reflections and screen glare, shallow depth of field, 3:2 composition. The interface or print piece is a finished, professional design with REAL readable French text: short headlines, menu labels, button labels and prices rendered crisply and correctly spelled. No lorem ipsum, no gibberish, no placeholder lines, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A smartphone held in a hand in front of a modern apartment building, the screen showing a real-estate landing page: photo of a bright flat, headline \"Votre appartement à Luxembourg\", a short form with fields \"Nom\", \"E-mail\", \"Téléphone\" and a blue button \"Recevoir les biens\".",
+  },
+  {
+    id: "mockup2-identite-cafe",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph, shot on a full-frame camera with a 50 mm lens, soft natural daylight, true-to-life neutral colours, physically accurate materials, reflections and screen glare, shallow depth of field, 3:2 composition. The interface or print piece is a finished, professional design with REAL readable French text: short headlines, menu labels, button labels and prices rendered crisply and correctly spelled. No lorem ipsum, no gibberish, no placeholder lines, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A café brand identity flat lay on a light table: paper coffee cups, a kraft bag and a folded menu all carrying a green leaf-and-cup emblem with the name \"Café Verdi\"; the menu lists \"Espresso 2,50 €\", \"Cappuccino 3,80 €\", \"Croissant 2,20 €\" in neat typography; coffee beans scattered.",
+  },
+  {
+    id: "mockup2-site-cabinet",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph, shot on a full-frame camera with a 50 mm lens, soft natural daylight, true-to-life neutral colours, physically accurate materials, reflections and screen glare, shallow depth of field, 3:2 composition. The interface or print piece is a finished, professional design with REAL readable French text: short headlines, menu labels, button labels and prices rendered crisply and correctly spelled. No lorem ipsum, no gibberish, no placeholder lines, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "A laptop on a glass meeting table showing a law-firm website in navy and white: headline \"Conseil juridique à Luxembourg\", menu \"Cabinet · Expertises · Contact\", three cards \"Droit des sociétés\", \"Droit du travail\", \"Immobilier\", a small language switcher \"FR · DE · EN\"; a fountain pen and a leather folder beside it.",
+  },
+  {
+    id: "mockup2-charte-graphique",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph, shot on a full-frame camera with a 50 mm lens, soft natural daylight, true-to-life neutral colours, physically accurate materials, reflections and screen glare, shallow depth of field, 3:2 composition. The interface or print piece is a finished, professional design with REAL readable French text: short headlines, menu labels, button labels and prices rendered crisply and correctly spelled. No lorem ipsum, no gibberish, no placeholder lines, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "An open brand guidelines book on a designer's desk: the left page shows a logo construction grid and the title \"Charte graphique\", the right page shows colour swatches labelled \"Bleu nuit\", \"Sable\", \"Blanc\" with hex codes and a typography sample reading \"Aa Bb Cc\"; printed stationery with the same emblem beside it; soft window light.",
+  },
+  {
+    id: "mockup2-campagne-solaire",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Ultra-realistic product photograph, shot on a full-frame camera with a 50 mm lens, soft natural daylight, true-to-life neutral colours, physically accurate materials, reflections and screen glare, shallow depth of field, 3:2 composition. The interface or print piece is a finished, professional design with REAL readable French text: short headlines, menu labels, button labels and prices rendered crisply and correctly spelled. No lorem ipsum, no gibberish, no placeholder lines, no real brand logos, no watermarks, no faces.",
+    prompt:
+      "Three smartphones standing in a row on a light concrete surface, each showing a social media ad for a solar panel installer: photos of panels on a house roof, headlines \"Réduisez votre facture\", \"Panneaux solaires à Luxembourg\", \"Devis gratuit\", a green button \"Demander un devis\"; natural lighting.",
+  },
   // --- News covers ------------------------------------------------------
   {
     id: "news-cout-site-web",

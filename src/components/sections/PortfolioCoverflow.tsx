@@ -18,20 +18,20 @@ import Image from "next/image";
  * active theme via the `.dark` class on <html>.
  */
 
-const showcaseSites = [
-  { id: 1, slug: "momento-relojero", name: "Momento Relojero", image: "/portfolio/momento-relojero.jpg" },
-  { id: 2, slug: "isomontage", name: "Isomontage", image: "/portfolio/isomontage.jpg" },
-  { id: 3, slug: "garage-biver", name: "Garage Biver", image: "/portfolio/garage-biver.jpg" },
-  { id: 4, slug: "vitrophy", name: "Vitrophy", image: "/portfolio/vitrophy.jpg" },
-  { id: 5, slug: "cim-by-cacr", name: "CIM by CACR", image: "/portfolio/cim-by-cacr.jpg" },
-  { id: 6, slug: "blumenthal", name: "Blumenthal", image: "/portfolio/blumenthal.jpg" },
-  { id: 7, slug: "lux-habitat", name: "Lux Habitat", image: "/portfolio/lux-habitat.png" },
-  { id: 8, slug: "autodis", name: "Autodis", image: "/portfolio/autodis.jpg" },
-  { id: 9, slug: "pauly-losch", name: "Pauly Losch", image: "/portfolio/pauly-losch.jpg" },
-];
+/** Mockup image per slide slug (names come from dict.portfolio.items). */
+const SLIDE_IMAGES: Record<string, string> = {
+  "site-vitrine-garage": "/portfolio/mockup-site-vitrine-garage.webp",
+  "logo-menuiserie": "/portfolio/mockup-logo-menuiserie.webp",
+  "landing-immobilier": "/portfolio/mockup-landing-immobilier.webp",
+  "identite-cafe": "/portfolio/mockup-identite-cafe.webp",
+  "site-cabinet": "/portfolio/mockup-site-cabinet.webp",
+  "charte-graphique": "/portfolio/mockup-charte-graphique.webp",
+  "campagne-solaire": "/portfolio/mockup-campagne-solaire.webp",
+};
 
 type Copy = {
   typewriter: readonly string[];
+  items: readonly { slug: string; name: string }[];
   cta: string;
   prev: string;
   next: string;
@@ -48,6 +48,7 @@ export function PortfolioCoverflow({
   alts?: Record<string, string>;
 }) {
   const typewriterTexts = copy.typewriter;
+  const showcaseSites = copy.items.map((it, i) => ({ id: i + 1, slug: it.slug, name: it.name, image: SLIDE_IMAGES[it.slug] ?? "" }));
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [currentText, setCurrentText] = useState("");

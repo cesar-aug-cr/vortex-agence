@@ -258,8 +258,8 @@ export const de = {
       {
         n: "01",
         icon: "process",
-        title: "Diagnose",
-        desc: "Wir analysieren Ihren Markt, Ihre Ziele und Ihren aktuellen Trichter, um eine maßgeschneiderte Strategie zu entwickeln.",
+        title: "Diagnose der Ausgangslage",
+        desc: "Wir analysieren Ihre Ziele und Ihren aktuellen Trichter, um eine maßgeschneiderte Strategie zu entwickeln.",
       },
       {
         n: "02",
@@ -2571,6 +2571,16 @@ export const de = {
       "Bringen Sie Ihr Geschäft online voran",
       "Heben Sie sich vom Wettbewerb ab",
       "Verbinden Sie sich mit Ihren Kunden",
+    ],
+    // Coverflow slides: generic mockups (public/portfolio/mockup-<slug>.webp), one per deliverable type.
+    items: [
+      { slug: "site-vitrine-garage", name: "Website · Autowerkstatt" },
+      { slug: "logo-menuiserie", name: "Logo · Schreinerei" },
+      { slug: "landing-immobilier", name: "Landingpage · Immobilien" },
+      { slug: "identite-cafe", name: "Visuelle Identität · Café" },
+      { slug: "site-cabinet", name: "Mehrsprachige Website · Kanzlei" },
+      { slug: "charte-graphique", name: "Markenrichtlinien · KMU" },
+      { slug: "campagne-solaire", name: "Werbekampagne · Solaranlagen" },
     ],
     cta: "Lassen Sie uns zusammenarbeiten",
     prev: "Vorheriges Projekt",

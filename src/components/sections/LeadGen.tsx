@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
@@ -7,21 +8,52 @@ import { Check, ArrowRight } from "@/components/ui/icons";
 
 // Funnel segment widths (mobile): widest at the top, narrowest at the bottom.
 /** Four-step flow. Desktop: a horizontal row with arrows; phones: a 2×2 grid. */
+/** Phone widths of the vortx funnel steps — a narrowing entonnoir. */
+const FUNNEL_WIDTHS = ["100%", "82%", "64%", "48%"];
+
+/** Four-step flow. Desktop: a horizontal row with arrows. Phones: the vortx
+ *  funnel is a downward entonnoir (narrowing chips + arrows), the negative
+ *  one a plain 2×2 grid. */
 function Funnel({ steps, tone, className = "" }: { steps: readonly string[]; tone: "bad" | "good"; className?: string }) {
   const good = tone === "good";
   const chip = good
     ? "funnel-chip chip border-border-strong text-text !text-[0.95rem] !px-4 !py-2"
     : "funnel-chip chip border-border text-text-muted !text-[0.95rem] !px-4 !py-2";
   return (
-    <div className={`grid grid-cols-2 gap-2.5 md:flex md:flex-wrap md:items-center md:justify-center md:gap-x-3 md:gap-y-2.5 ${className}`}>
-      {steps.map((step, i) => (
-        <div key={step} className="flex items-center justify-center gap-3">
-          <span className={chip}>{step}</span>
-          {i < steps.length - 1 && (
-            <ArrowRight width={20} height={20} className={`hidden md:block ${good ? "text-accent" : "text-text-muted"}`} />
-          )}
+    <div className={className}>
+      {/* desktop (both tones) */}
+      <div className="hidden md:flex md:flex-wrap md:items-center md:justify-center md:gap-x-3 md:gap-y-2.5">
+        {steps.map((step, i) => (
+          <div key={step} className="flex items-center justify-center gap-3">
+            <span className={chip}>{step}</span>
+            {i < steps.length - 1 && <ArrowRight width={20} height={20} className={good ? "text-accent" : "text-text-muted"} />}
+          </div>
+        ))}
+      </div>
+      {/* phones */}
+      {good ? (
+        <div className="flex flex-col items-center gap-2.5 md:hidden">
+          {steps.map((step, i) => (
+            <Fragment key={step}>
+              <div
+                className="funnel-chip flex items-center justify-center rounded-xl border border-accent/40 bg-accent-soft px-4 py-3.5 text-center text-base font-semibold text-text"
+                style={{ width: FUNNEL_WIDTHS[i] ?? "60%" }}
+              >
+                {step}
+              </div>
+              {i < steps.length - 1 && <ArrowRight width={20} height={20} className="rotate-90 text-accent" />}
+            </Fragment>
+          ))}
         </div>
-      ))}
+      ) : (
+        <div className="grid grid-cols-2 gap-2.5 md:hidden">
+          {steps.map((step) => (
+            <div key={step} className="flex items-center justify-center">
+              <span className={chip}>{step}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

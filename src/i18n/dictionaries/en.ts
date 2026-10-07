@@ -258,8 +258,8 @@ export const en = {
       {
         n: "01",
         icon: "process",
-        title: "Diagnosis",
-        desc: "We analyse your market, your goals and your current funnel to build a bespoke strategy.",
+        title: "Situation diagnosis",
+        desc: "We analyse your goals and your current funnel to build a bespoke strategy.",
       },
       {
         n: "02",
@@ -2571,6 +2571,16 @@ export const en = {
       "Grow your business online",
       "Stand out from the crowd",
       "Connect with your customers",
+    ],
+    // Coverflow slides: generic mockups (public/portfolio/mockup-<slug>.webp), one per deliverable type.
+    items: [
+      { slug: "site-vitrine-garage", name: "Showcase website · Car garage" },
+      { slug: "logo-menuiserie", name: "Logo · Carpentry" },
+      { slug: "landing-immobilier", name: "Landing page · Real estate" },
+      { slug: "identite-cafe", name: "Visual identity · Café" },
+      { slug: "site-cabinet", name: "Multilingual website · Law firm" },
+      { slug: "charte-graphique", name: "Brand guidelines · SME" },
+      { slug: "campagne-solaire", name: "Ad campaign · Solar panels" },
     ],
     cta: "Let's work together",
     prev: "Previous project",
