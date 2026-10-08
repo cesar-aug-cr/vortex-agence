@@ -12,6 +12,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Tools } from "@/components/sections/Tools";
 import { ContactCta } from "@/components/sections/ContactCta";
+import { FeaturedPhotoCell } from "@/components/sections/FeaturedPhotoCell";
 import { IconStrategy, IconConversion, IconLocal, IconAI } from "@/components/sections/WhyIcons";
 import { Check, ArrowRight } from "@/components/ui/icons";
 
@@ -179,25 +180,37 @@ export default async function AgencePage({
         </div>
       </section>
 
-      {/* what distinguishes us — pillars with icons */}
+      {/* what distinguishes us — the home photo cell beside an editorial list:
+          big index, icon, title and text, separated by thin rules */}
       <Section tone="muted">
-        <SectionHeading eyebrow={dict.trust.eyebrow} title={a.valuesTitle} />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2">
-          {dict.trust.pillars.map((p, i) => {
-            const Icon = pillarIcons[i % pillarIcons.length];
-            return (
-              <div key={p.title} className="card card-hover group p-7">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-12">
+          <FeaturedPhotoCell
+            eyebrow={dict.trust.eyebrow}
+            title={a.valuesTitle}
+            lead={dict.trust.lead}
+            src="/agence/distingue.webp"
+            position="center 35%"
+          />
+          <ol className="divide-y divide-border">
+            {dict.trust.pillars.map((p, i) => {
+              const Icon = pillarIcons[i % pillarIcons.length];
+              return (
+                <li
+                  key={p.title}
+                  className="grid grid-cols-[2.5rem_3.5rem_1fr] items-start gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[3rem_4rem_1fr] sm:gap-5"
+                >
+                  <span className="pt-1 font-mono text-2xl font-bold text-accent/60">0{i + 1}</span>
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-accent-soft text-accent">
                     <Icon className="h-9 w-9" />
                   </span>
-                  <span className="font-mono text-sm text-text-muted">0{i + 1}</span>
-                </div>
-                <h3 className="mt-5 text-lg font-semibold text-text">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-dim">{p.desc}</p>
-              </div>
-            );
-          })}
+                  <div>
+                    <h3 className="text-lg font-semibold text-text">{p.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-text-dim">{p.desc}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
         </div>
 
         {/* guarantees */}

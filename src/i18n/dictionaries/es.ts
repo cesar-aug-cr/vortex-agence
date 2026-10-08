@@ -518,7 +518,7 @@ export const es = {
   // ---- Final CTA / contact ----
   contact: {
     eyebrow: "Pasemos a la acción",
-    title: "Sea la referencia cuando *sus clientes* buscan en Luxemburgo.",
+    title: "Sea la referencia en Luxemburgo cuando *sus clientes* buscan.",
     lead: "Reserve una llamada de descubrimiento gratuita. Analizamos su situación y le decimos, sin rodeos, qué se puede mejorar.",
     benefits: [
       "Consulta inicial gratuita",

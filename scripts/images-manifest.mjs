@@ -571,6 +571,26 @@ export const MANIFEST = [
     prompt:
       "Editorial photo: a stack of golden cookies next to a brushed-metal padlock and a laptop showing a blank consent banner mockup, dark wood desk, lime accent light, a ring of small stars softly out of focus in the background.",
   },
+  // --- Service pages "Notre méthode" banner background (realistic, natural colours) ---
+  {
+    id: "methode-fond",
+    model: "gpt-image-2.5-flare",
+    size: "1536x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, soft natural daylight, true-to-life neutral colours with no colour grading or neon tints, realistic textures, shallow depth of field, wide 3:2 composition, calm and uncluttered so a headline can sit over it. No text, no letters, no numbers, no logos, no watermarks, screens must be blurred or show only abstract blocks, no identifiable faces (people seen from behind, from the side or only hands).",
+    prompt:
+      "A project kick-off workshop in a bright modern Luxembourg agency meeting room seen from the side: a person seen from behind placing coloured sticky notes in four neat columns on a glass wall, two colleagues seen from the side at a long wooden table reviewing printed page layouts next to a laptop with a blurred website wireframe, notebooks and coffee cups, large windows with the city softly visible outside; natural morning light.",
+  },
+  // --- /agence "Ce qui nous distingue" photo cell (realistic, natural colours) ---
+  {
+    id: "agence-distingue",
+    model: "gpt-image-2.5-flare",
+    size: "1024x1024",
+    quality: "high",
+    style: "Hyper-realistic editorial photograph, shot on a full-frame camera with a 35 mm lens, true-to-life natural colours with no neon tints, realistic textures, square composition with the lower half calmer and darker so white text can sit over it. No text, no letters, no numbers, no logos, no watermarks, no identifiable faces (people seen from behind or from the side).",
+    prompt:
+      "Luxembourg City old town at blue hour seen from the Chemin de la Corniche: the Grund houses and the Alzette river below, the Neumünster abbey, the casemates cliffs, warm lights in the windows, two people seen from behind leaning on the stone parapet looking at the view; serene, slightly hazy, deep blue sky with the last glow of sunset.",
+  },
   // --- Piliers « Pourquoi vortx » ----------------------------------------
   {
     id: "pilier-strategie",
