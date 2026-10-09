@@ -103,9 +103,11 @@ export default async function SubServicePage({
           ...(parent ? [{ label: parent.title, href: `/services/${slug}` }] : []),
           { label: sub.title },
         ]}
+        // desktop: the hero sits higher so its illustration reads centred
+        className="container-vortx pt-28 md:pt-32 lg:pt-[6.25rem]"
       />
 
-      <Section tone="base" className="pt-10 md:pt-12">
+      <Section tone="base" className="pt-10 md:pt-12 lg:pt-6">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="order-2 lg:order-1">
             <span className="font-mono text-xs font-bold uppercase tracking-[0.22em] eyebrow-badge section-eyebrow">
