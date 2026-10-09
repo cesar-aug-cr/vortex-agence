@@ -1144,7 +1144,7 @@ const MONO = "var(--font-jetbrains-mono),ui-monospace,monospace";
 const HEAD = "var(--font-jakarta),var(--font-inter-tight),system-ui,sans-serif";
 
 const BASE = `
-.pbm-root{--pbm-lime:200 240 46;--pbm-cyan:20 224 200;--pbm-green:34 211 140;--pbm-blue:46 102 255;--pbm-hot:242 243 238;position:relative;z-index:1;width:100%;aspect-ratio:1;container-type:inline-size;isolation:isolate;pointer-events:none;user-select:none;-webkit-user-select:none;forced-color-adjust:none;color:#f2f3ee;font-family:var(--font-inter-tight),system-ui,sans-serif;line-height:1;letter-spacing:normal;word-spacing:normal;text-align:left}
+.pbm-root{--pbm-lime:200 240 46;--pbm-cyan:20 224 200;--pbm-green:34 211 140;--pbm-blue:46 102 255;--pbm-hot:242 243 238;position:relative;z-index:20;width:100%;aspect-ratio:1;container-type:inline-size;isolation:isolate;pointer-events:none;user-select:none;-webkit-user-select:none;forced-color-adjust:none;color:#f2f3ee;font-family:var(--font-inter-tight),system-ui,sans-serif;line-height:1;letter-spacing:normal;word-spacing:normal;text-align:left}
 .pbm-cv{position:absolute;inset:-3rem;content-visibility:auto;contain-intrinsic-size:0 0}
 .pbm-cv>.pbm-L{inset:3rem}
 html.a11y-hide-img .pbm-cv{display:none}
