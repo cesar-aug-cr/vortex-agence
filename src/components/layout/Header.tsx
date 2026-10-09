@@ -438,7 +438,7 @@ export function Header({
           solid header's backdrop-filter would otherwise become the containing
           block for this fixed panel and trap it inside the 80px bar. */}
       {mobileOpen && (
-        <div className="fixed inset-0 top-20 z-[45] overflow-y-auto border-t border-border bg-bg lg:hidden">
+        <div className="fixed inset-0 top-20 z-[45] overflow-y-auto overscroll-contain border-t border-border bg-bg lg:hidden">
           <nav className="container-vortx py-8">
             {/* Primary CTA first — on mobile the menu is long, don't bury it. */}
             <Link

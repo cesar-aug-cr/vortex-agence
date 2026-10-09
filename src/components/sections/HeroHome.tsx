@@ -97,6 +97,10 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   // consumed and the page is scrolled to the neighbouring step; a short lock
   // swallows the rest of the same gesture. Downwards past the last step (or
   // upwards at the first) nothing is intercepted, so the page scrolls on.
+  // Only gestures that start on the hero itself (or on the header bar floating
+  // over it) are stepped, and never while an overlay has locked the page
+  // scroll: the open mobile menu, the chat or accessibility panels own their
+  // own scrolling and must not be hijacked.
   useEffect(() => {
     if (reduced) return;
     const node = ref.current;
@@ -104,6 +108,10 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
     let busy = false;
     let startY: number | null = null;
     let consumed = false;
+    const ownsGesture = (target: EventTarget | null) =>
+      document.body.style.overflow !== "hidden" &&
+      target instanceof Element &&
+      (node.contains(target) || target.closest("header") !== null);
     const stepPx = () => node.offsetHeight / STEPS;
     const pinned = () => {
       const r = node.getBoundingClientRect();
@@ -127,7 +135,7 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       }, 850);
     };
     const onTouchStart = (e: TouchEvent) => {
-      startY = e.touches[0]?.clientY ?? null;
+      startY = ownsGesture(e.target) ? (e.touches[0]?.clientY ?? null) : null;
       consumed = false;
     };
     const onTouchMove = (e: TouchEvent) => {
@@ -145,6 +153,7 @@ function MobileScrollHero({ dict, lang }: { dict: Dictionary; lang: Locale }) {
       consumed = false;
     };
     const onWheel = (e: WheelEvent) => {
+      if (!ownsGesture(e.target)) return;
       const dir: 1 | -1 = e.deltaY > 0 ? 1 : -1;
       if (!shouldHandle(dir)) return;
       e.preventDefault();
