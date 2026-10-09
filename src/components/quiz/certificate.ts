@@ -18,18 +18,17 @@ export type CertificateInput = {
   heading: string;
   subheading: string;
   awardedTo: string;
+  /** Visitor's name, typed on the result screen; empty → a dotted line to fill in by hand. */
+  name: string;
   scoreLabel: string;
   score: number;
   total: number;
-  verdict: string;
-  message: string;
   dateLabel: string;
   date: string;
   footer: string;
 };
 
 const INK = "#0a0a0b";
-const INK_SOFT = "#444444";
 const INK_MUTED = "#666666";
 const INK_FAINT = "#777777";
 const LIME = "#c8f02e";
@@ -60,35 +59,6 @@ function roundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: num
   ctx.arcTo(x, y + h, x, y, r);
   ctx.arcTo(x, y, x + w, y, r);
   ctx.closePath();
-}
-
-/** Word-wraps `text` to `maxWidth`; returns the y after the last line drawn. */
-function drawWrapped(
-  ctx: CanvasRenderingContext2D,
-  text: string,
-  x: number,
-  y: number,
-  maxWidth: number,
-  lineHeight: number,
-  maxLines = 6
-): number {
-  const words = text.split(/\s+/);
-  const lines: string[] = [];
-  let line = "";
-  for (const word of words) {
-    const probe = line ? `${line} ${word}` : word;
-    if (ctx.measureText(probe).width > maxWidth && line) {
-      lines.push(line);
-      line = word;
-    } else {
-      line = probe;
-    }
-  }
-  if (line) lines.push(line);
-  const shown = lines.slice(0, maxLines);
-  if (lines.length > maxLines) shown[maxLines - 1] = shown[maxLines - 1].replace(/\s*\S*$/, " …");
-  shown.forEach((l, i) => ctx.fillText(l, x, y + i * lineHeight));
-  return y + shown.length * lineHeight;
 }
 
 function drawWordmark(ctx: CanvasRenderingContext2D, cx: number, top: number, height: number) {
@@ -141,17 +111,17 @@ export async function renderCertificate(input: CertificateInput): Promise<HTMLCa
   ctx.textAlign = "center";
   ctx.textBaseline = "alphabetic";
 
-  drawWordmark(ctx, cx, 190, 110);
+  drawWordmark(ctx, cx, 200, 110);
 
   // Heading
-  let y = 390;
+  let y = 430;
   ctx.fillStyle = TEAL_DEEP;
   ctx.font = `700 26px ${mono}`;
   spaced(ctx, "0.3em");
   ctx.fillText(input.heading.toUpperCase(), cx, y);
   spaced(ctx, "0px");
 
-  y += 76;
+  y += 82;
   ctx.fillStyle = INK;
   ctx.font = `800 60px ${sans}`;
   ctx.fillText(input.subheading, cx, y);
@@ -162,14 +132,25 @@ export async function renderCertificate(input: CertificateInput): Promise<HTMLCa
   roundedRect(ctx, cx - 64, y, 128, 8, 4);
   ctx.fill();
 
-  // Awarded to + dotted name line (filled in by hand)
-  y += 84;
+  // Awarded to + the visitor's name on a dotted line (left blank to fill in
+  // by hand when no name was typed)
+  y += 100;
   ctx.fillStyle = INK_MUTED;
   ctx.font = `500 24px ${sans}`;
   spaced(ctx, "0.14em");
   ctx.fillText(input.awardedTo.toUpperCase(), cx, y);
   spaced(ctx, "0px");
-  y += 60;
+  y += 100;
+  const name = input.name.trim();
+  if (name) {
+    // largest size (64 → 32 px) at which the name fits the line
+    let size = 64;
+    do {
+      ctx.font = `800 ${size}px ${sans}`;
+    } while (ctx.measureText(name).width > 640 && (size -= 2) > 32);
+    ctx.fillStyle = INK;
+    ctx.fillText(name, cx, y - 18);
+  }
   ctx.strokeStyle = INK;
   ctx.lineWidth = 3;
   ctx.setLineDash([3, 14]);
@@ -180,8 +161,8 @@ export async function renderCertificate(input: CertificateInput): Promise<HTMLCa
   ctx.setLineDash([]);
 
   // Badge, clipped to a circle with an ink ring
-  y += 70;
-  const badgeR = 120;
+  y += 80;
+  const badgeR = 150;
   const badgeCy = y + badgeR;
   ctx.save();
   ctx.beginPath();
@@ -208,13 +189,13 @@ export async function renderCertificate(input: CertificateInput): Promise<HTMLCa
   ctx.stroke();
 
   // Score
-  y = badgeCy + badgeR + 80;
+  y = badgeCy + badgeR + 90;
   ctx.fillStyle = INK_MUTED;
   ctx.font = `500 24px ${sans}`;
   spaced(ctx, "0.14em");
   ctx.fillText(input.scoreLabel.toUpperCase(), cx, y);
   spaced(ctx, "0px");
-  y += 120;
+  y += 130;
   const scoreText = String(input.score);
   const totalText = ` / ${input.total}`;
   ctx.font = `800 128px ${sans}`;
@@ -230,16 +211,6 @@ export async function renderCertificate(input: CertificateInput): Promise<HTMLCa
   ctx.font = `600 48px ${sans}`;
   ctx.fillText(totalText, startX + scoreW, y);
   ctx.textAlign = "center";
-
-  // Verdict + message
-  y += 90;
-  ctx.fillStyle = INK;
-  ctx.font = `700 44px ${sans}`;
-  y = drawWrapped(ctx, input.verdict, cx, y, W - 2 * (m + 90), 54, 2);
-  y += 14;
-  ctx.fillStyle = INK_SOFT;
-  ctx.font = `400 27px ${sans}`;
-  drawWrapped(ctx, input.message, cx, y, 820, 40, 5);
 
   // Footer
   ctx.fillStyle = INK_FAINT;

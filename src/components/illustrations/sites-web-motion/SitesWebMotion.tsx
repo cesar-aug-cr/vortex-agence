@@ -71,8 +71,8 @@ import type { SitesWebMotionProps } from "./types";
  *  1.30–2.30  WELD. The rim glows white-hot / lime and cools to the cyan → blue
  *             outline; a glint crosses the glass. The lime tip taps the dots,
  *             the cyan tip extrudes the URL bar.
- *  1.61–2.47  PRINTHEAD. The page exists only above it: glass, nav, "</>
- *             Next.js". The cyan head slams the real wordmark and sweeps the
+ *  1.61–2.47  PRINTHEAD. The page exists only above it: glass, nav, the "</>
+ *             Sur-mesure" chip. The cyan head slams the real wordmark and sweeps the
  *             menu, the green head stamps the nav CTA and sweeps to the eyebrow.
  *  2.26–3.93  KINETIC HEADLINE. Each word group is shot by a rail head (charge,
  *             beam, flare), materialises big and stretched — scale and origin
@@ -211,7 +211,9 @@ const URL_P0: Pt = [URL_BAR.x, URL_BAR.y + URL_BAR.h / 2];
 const URL_P1: Pt = [URL_BAR.x + URL_BAR.w, URL_BAR.y + URL_BAR.h / 2];
 const LOGO_C: Pt = [67, 72];
 const NAVCTA_C: Pt = [331, 72];
-const EYE_C: Pt = [70, 99];
+/** centre of the "</> {eyebrow}" chip (left 42, y 99), where the green hit
+ *  stamps it: JetBrains Mono advances 0.6em, at 7 units, + 4.8 padding a side */
+const eyeCentre = (label: string): Pt => [42 + ([...label].length * 0.6 * 7 + 2 * 4.8) / 2, 99];
 const MENU_X = [168, 206, 244];
 
 // cards / chart
@@ -665,9 +667,10 @@ const CX0 = 266; // chart line clip box
 const CX1 = 357;
 const FO_M = 4; // the CTA forge clip box's margin around the outline (its glow)
 
-function build(title: string, tagline: string, cta: string, ns: string) {
+function build(title: string, tagline: string, cta: string, eyebrow: string, ns: string) {
   begin(ns);
   const lay = layout(title, tagline, cta);
+  const EYE_C = eyeCentre(`</> ${eyebrow}`);
   const { fs, lh, groups, climax, ctaW } = lay;
   const shots: Shot[][] = HEADS.map(() => []);
   const FL: PoolEvent[] = []; // flares
@@ -1513,13 +1516,13 @@ type Built = ReturnType<typeof build> & { ns: string };
 /** built sheets per string set (≈ 95 KB each): the most recently used few */
 const CACHE = new Map<string, Built>();
 const CACHE_MAX = 12;
-function getBuild(title: string, tagline: string, cta: string): Built {
-  const key = `${title}\u0001${tagline}\u0001${cta}`;
+function getBuild(title: string, tagline: string, cta: string, eyebrow: string): Built {
+  const key = `${title}\u0001${tagline}\u0001${cta}\u0001${eyebrow}`;
   let b = CACHE.get(key);
   if (b) CACHE.delete(key);
   else {
     const ns = `swb-${hash(key)}-`;
-    b = { ...build(title, tagline, cta, ns), ns };
+    b = { ...build(title, tagline, cta, eyebrow, ns), ns };
     while (CACHE.size >= CACHE_MAX) CACHE.delete(CACHE.keys().next().value as string);
   }
   CACHE.set(key, b);
@@ -1584,8 +1587,8 @@ function SparkArt() {
   );
 }
 
-export function SitesWebMotion({ className, title, tagline, cta }: SitesWebMotionProps) {
-  const b = getBuild(title, tagline, cta);
+export function SitesWebMotion({ className, title, tagline, cta, eyebrow }: SitesWebMotionProps) {
+  const b = getBuild(title, tagline, cta, eyebrow);
   const { fs, lh, nLines, groups, climax, tag, label, cfs, ctaW }: Layout = b.lay;
   // one dashed guide under each title line (80 % of the line box)
   const guideY = Array.from({ length: nLines }, (_, l) => TITLE_Y + (l + 0.8) * lh);
@@ -1659,7 +1662,7 @@ export function SitesWebMotion({ className, title, tagline, cta }: SitesWebMotio
                 <span className="swb-abs swb-navcta" style={at(306, 63, 50, 18)}>
                   <i />
                 </span>
-                <div className="swb-eye">{"</> Next.js"}</div>
+                <div className="swb-eye">{`</> ${eyebrow}`}</div>
                 <div className={`swb-tag${tag.clamp ? " swb-tagc" : ""}`} style={tagStyle}>
                   {tagline}
                 </div>

@@ -4,10 +4,14 @@
  */
 export type SitesWebMotionProps = {
   className?: string;
-  /** Mini-site headline: the service title ("Création de sites web au Luxembourg"). */
+  /** Mini-site headline: serviceContent["sites-web"].motionTitle ("Sites web qui
+   *  convertissent"), deliberately not the page title. */
   title: string;
   /** Line under it: the service tagline. */
   tagline: string;
   /** CTA label of the mini-site button: dict.common.cta ("Réserver un appel"). */
   cta: string;
+  /** Chip above the headline, shown as "</> {eyebrow}":
+   *  serviceContent["sites-web"].motionEyebrow ("Sur-mesure"). */
+  eyebrow: string;
 };

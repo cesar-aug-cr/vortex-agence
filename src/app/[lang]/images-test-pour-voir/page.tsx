@@ -372,9 +372,10 @@ export default async function ImagesTestPage({
               <div className="illu-stage overflow-hidden rounded-2xl border border-border p-4">
                 <SitesWebMotion
                   className="h-auto w-full"
-                  title={sitesWeb.title}
+                  title={dict.serviceContent["sites-web"].motionTitle}
                   tagline={sitesWeb.tagline}
                   cta={dict.common.cta}
+                  eyebrow={dict.serviceContent["sites-web"].motionEyebrow}
                 />
               </div>
             }

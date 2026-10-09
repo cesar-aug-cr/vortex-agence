@@ -58,14 +58,16 @@ export default async function ServiceDetailPage({
 
   const Illu = serviceIllustration[service.slug];
   // sites-web: the laser motion graphic builds a mini-site out of the page's
-  // own localized copy; the other services keep their static illustration.
+  // own localized copy (its headline is a dedicated line, not the page
+  // title); the other services keep their static illustration.
   const illustration =
     service.slug === "sites-web" ? (
       <SitesWebMotion
         className="h-auto w-full"
-        title={service.title}
+        title={dict.serviceContent["sites-web"].motionTitle}
         tagline={service.tagline}
         cta={dict.common.cta}
+        eyebrow={dict.serviceContent["sites-web"].motionEyebrow}
       />
     ) : Illu ? (
       <Illu className="h-auto w-full" />

@@ -124,9 +124,9 @@ export const es = {
       title: "Creación de sitios web en Luxemburgo",
       tagline: "Sitios rápidos, pensados para transformar al visitante en cliente.",
       short:
-        "Sitios corporativos, landing pages y plataformas a medida en Next.js — o en WordPress cuando quiere conservar el control. Producción acelerada por IA, diseño premium y embudos de conversión integrados.",
+        "Sitios corporativos, landing pages y plataformas a medida — o en WordPress cuando quiere conservar el control. Producción acelerada por IA, diseño premium y embudos de conversión integrados.",
       bullets: [
-        "A medida en Next.js o WordPress, según su necesidad",
+        "A medida o WordPress, según su necesidad",
         "Producción acelerada por IA, entregada más rápido",
         "Diseño a medida, mobile-first",
         "Formularios inteligentes de varios pasos",
@@ -134,7 +134,7 @@ export const es = {
       ],
       metaTitle: "Creación de sitios web en Luxemburgo | vortx",
       metaDescription:
-        "Sitios web rápidos, de diseño premium y orientados a la conversión para las empresas luxemburguesas. Desarrollo Next.js, multilingüe, listo para SEO.",
+        "Creación de sitios web en Luxemburgo: sitios rápidos, de diseño premium y orientados a la conversión. Desarrollo Next.js, multilingüe, listo para SEO.",
     },
     {
       slug: "seo-geo",
@@ -577,13 +577,15 @@ export const es = {
     shareText: "He sacado {score}/{total} en el quiz de marketing de vortx. Te toca 👇",
     ctaSecondary: "Ver todos los servicios",
     certificate: "Descargar mi certificado",
+    nameLabel: "Su nombre en el certificado",
+    namePlaceholder: "Nombre Apellido",
     cert: {
       heading: "Certificado",
       subheading: "de QI de Marketing",
       awardedTo: "Otorgado a",
       scoreLabel: "Puntuación obtenida",
       dateLabel: "Emitido el",
-      footer: "vortx · Agencia de marketing y web en Luxemburgo · vortx.lu/quiz",
+      footer: "vortx · Marketing, web & AI",
     },
     tiers: [
       { min: 0, max: 3, emoji: "🌱", title: "Lo digital no es (todavía) lo suyo", message: "Y está bien — es nuestro trabajo, no el suyo. Déjenoslo a nosotros.", cta: "Déjelo en manos expertas — auditoría gratuita" },
@@ -1423,7 +1425,7 @@ export const es = {
             type: "ul",
             items: [
               "El número de páginas y la complejidad de los contenidos.",
-              "A medida (Next.js) o WordPress, según su necesidad de flexibilidad y autonomía.",
+              "A medida o WordPress, según su necesidad de flexibilidad y autonomía.",
               "El nivel de diseño: plantilla adaptada o identidad 100 % a medida.",
               "Las funcionalidades: formularios, reserva de citas, pago, área de cliente…",
               "El multilingüe (FR/DE/EN) y la optimización SEO y GEO.",
@@ -2267,17 +2269,6 @@ export const es = {
         ],
       },
       {
-        term: "Next.js",
-        slug: "nextjs",
-        category: "Web y tecnología",
-        short: "Un framework web ultrarrápido.",
-        def: "Framework basado en React, utilizado para construir sitios de muy alto rendimiento, seguros y optimizados para el SEO. Nuestra opción por defecto para el desarrollo a medida — incluido este sitio, casi instantáneo y preparado para las IA.",
-        links: [
-          { href: "/services/sites-web", label: "Nuestro servicio de Sitios web" },
-          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Leer: el rendimiento forma parte de la UX" },
-        ],
-      },
-      {
         term: "Responsive",
         slug: "responsive",
         category: "Web y tecnología",
@@ -2402,26 +2393,29 @@ export const es = {
   },
   serviceContent: {
     "sites-web": {
+      // headline of the hero laser animation (kept apart from the page title)
+      motionTitle: "Sitios web que convierten",
+      motionEyebrow: "A medida",
       intro: [
         "Su sitio es a menudo la primera — a veces la única — cita con un cliente. Lo concebimos como un comercial que trabaja 24/7: rápido, claro, orientado a la acción.",
-        "Según su necesidad, construimos a medida (Next.js, ultrarrápido y pensado para la IA) o en WordPress cuando quiere conservar el control del contenido en el día a día. Y sí: gran parte de nuestra producción está acelerada por IA — más calidad, entregada más rápido.",
+        "Según su necesidad, construimos a medida (ultrarrápido y pensado para la IA) o en WordPress cuando quiere conservar el control del contenido en el día a día. Y sí: gran parte de nuestra producción está acelerada por IA — más calidad, entregada más rápido.",
       ],
       included: [
         { icon: "ai-build", title: "Diseñado con IA", desc: "Aceleramos el diseño y el desarrollo con IA, sin sacrificar nunca la calidad ni la coherencia." },
         { icon: "wordpress", title: "WordPress cuando hace falta", desc: "¿Necesita editar sus páginas usted mismo? Entregamos un WordPress limpio, seguro y fácil de gestionar." },
-        { icon: "next-perf", title: "Rendimiento Next.js", desc: "Para el desarrollo a medida, un sitio casi instantáneo, seguro y preparado para el SEO y el GEO." },
+        { icon: "next-perf", title: "Rendimiento", desc: "Para el desarrollo a medida, un sitio casi instantáneo, seguro y preparado para el SEO y el GEO." },
         { icon: "responsive", title: "100 % responsive", desc: "Una experiencia impecable en móvil, tableta y ordenador — el móvil primero." },
         { icon: "conversion", title: "Pensado para convertir", desc: "Cada página tiene un objetivo: generar una llamada, un presupuesto, un lead. Guiamos al visitante hacia la acción." },
         { icon: "smart-forms", title: "Formularios inteligentes", desc: "Formularios de varios pasos que cualifican a sus prospectos y aumentan la tasa de respuesta." },
       ],
       deliverables: [
         "Maquetas y diseño a medida validados con usted",
-        "Sitio a medida (Next.js) o WordPress, a elegir",
+        "Sitio a medida o WordPress, a elegir",
         "Optimización SEO y GEO de base integrada",
         "Formularios, tracking y puesta en línea incluidos",
       ],
       faq: [
-        { q: "¿A medida o WordPress, cómo elegir?", a: "El desarrollo a medida (Next.js) ofrece el mejor rendimiento y flexibilidad; WordPress es ideal si quiere editar el contenido usted mismo. Le aconsejamos según su uso real, sin dogmas." },
+        { q: "¿A medida o WordPress, cómo elegir?", a: "El desarrollo a medida ofrece el mejor rendimiento y flexibilidad; WordPress es ideal si quiere editar el contenido usted mismo. Le aconsejamos según su uso real, sin dogmas." },
         { q: "¿Qué significa «hecho con IA»?", a: "Usamos la IA para acelerar el diseño, el código y el contenido. Resultado: un sitio de mayor calidad, entregado más rápido y con una mejor relación valor/precio — revisado y finalizado por humanos." },
         { q: "¿Mi sitio estará optimizado para Google y las IA?", a: "Sí. Integramos desde el principio las buenas prácticas de SEO y GEO: estructura, rendimiento, datos estructurados y contenido citable." },
       ],
@@ -2842,7 +2836,7 @@ export const es = {
         ],
         deliverables: [
           "Maquetas y diseño a medida validados con usted",
-          "Sitio corporativo responsive (Next.js o WordPress)",
+          "Sitio corporativo responsive",
           "Optimización SEO y GEO de base",
           "Formularios, tracking y puesta en línea incluidos",
         ],
@@ -2884,7 +2878,7 @@ export const es = {
           "Seguimiento e-commerce y formación en la gestión",
         ],
         faq: [
-          { q: "¿En qué plataforma construyen la tienda?", a: "Según su necesidad: WooCommerce/WordPress para la autonomía, o una solución a medida (Next.js) para el rendimiento y necesidades específicas. Le aconsejamos sin dogmas." },
+          { q: "¿En qué plataforma construyen la tienda?", a: "Según su necesidad: WooCommerce/WordPress para la autonomía, o una solución a medida para el rendimiento y necesidades específicas. Le aconsejamos sin dogmas." },
           { q: "¿Gestionan los pagos y el IVA?", a: "Sí. Configuramos los medios de pago, las reglas de IVA luxemburguesas y, si hace falta, la conexión con su logística y su contabilidad." },
         ],
       },
@@ -3591,7 +3585,7 @@ export const es = {
         duration: "2 a 6 semanas",
         deliverables: [
           "Maquetas de diseño validadas con usted",
-          "Desarrollo Next.js rápido y responsive",
+          "Desarrollo rápido y responsive",
           "Embudos y formularios orientados a la conversión",
         ],
         youProvide: "Sus contenidos clave — textos, imágenes, logo — o nos encargamos nosotros.",
@@ -3665,7 +3659,7 @@ export const es = {
       {
         title: "Sitios web",
         items: [
-          { q: "¿A medida o WordPress, cómo elegir?", a: "El desarrollo a medida (Next.js) ofrece el mejor rendimiento, seguridad y flexibilidad; WordPress es ideal si quiere editar el contenido usted mismo en el día a día. Le aconsejamos según su uso real, sin dogmas." },
+          { q: "¿A medida o WordPress, cómo elegir?", a: "El desarrollo a medida ofrece el mejor rendimiento, seguridad y flexibilidad; WordPress es ideal si quiere editar el contenido usted mismo en el día a día. Le aconsejamos según su uso real, sin dogmas." },
           { q: "¿Es cierto que sus sitios están «hechos con IA»?", a: "Sí. Usamos la IA para acelerar el diseño, el código y el contenido. Resultado: un sitio de mayor calidad, entregado más rápido y con una mejor relación valor/precio — siempre revisado y finalizado por humanos." },
           { q: "¿Mi sitio será rápido y adaptado al móvil?", a: "Por supuesto. El rendimiento y el mobile-first son la base: un sitio casi instantáneo, 100 % responsive y accesible en todas las pantallas." },
           { q: "¿Podré modificar mi sitio yo mismo?", a: "En WordPress, sí, fácilmente. En el desarrollo a medida, nos encargamos de las actualizaciones por usted." },

@@ -130,9 +130,9 @@ export const en = {
       title: "Website design in Luxembourg",
       tagline: "Fast sites, built to turn visitors into clients.",
       short:
-        "Showcase sites, landing pages and bespoke platforms in Next.js — or on WordPress when you want to keep control. AI-accelerated production, premium design and built-in conversion funnels.",
+        "Showcase sites, landing pages and bespoke platforms — or on WordPress when you want to keep control. AI-accelerated production, premium design and built-in conversion funnels.",
       bullets: [
-        "Bespoke Next.js or WordPress, to match your need",
+        "Bespoke or WordPress, to match your need",
         "AI-accelerated production, delivered faster",
         "Bespoke design, mobile-first",
         "Smart multi-step forms",
@@ -140,7 +140,7 @@ export const en = {
       ],
       metaTitle: "Website design in Luxembourg | vortx",
       metaDescription:
-        "Fast, premium-design, conversion-focused websites for Luxembourg businesses. Next.js development, multilingual, SEO-ready.",
+        "Website design in Luxembourg: fast, premium-design, conversion-focused websites. Next.js development, multilingual, SEO-ready.",
     },
     {
       slug: "seo-geo",
@@ -583,13 +583,15 @@ export const en = {
     shareText: "I scored {score}/{total} on vortx's marketing quiz. Your turn 👇",
     ctaSecondary: "See all services",
     certificate: "Download my certificate",
+    nameLabel: "Your name on the certificate",
+    namePlaceholder: "First name Last name",
     cert: {
       heading: "Certificate",
       subheading: "of Marketing IQ",
       awardedTo: "Awarded to",
       scoreLabel: "Score achieved",
       dateLabel: "Issued on",
-      footer: "vortx · Marketing & web agency in Luxembourg · vortx.lu/quiz",
+      footer: "vortx · Marketing, web & AI",
     },
     tiers: [
       { min: 0, max: 3, emoji: "🌱", title: "Digital isn't (yet) your thing", message: "And that's fine — it's our job, not yours. Let us handle it.", cta: "Leave it to the pros — free audit" },
@@ -1429,7 +1431,7 @@ export const en = {
             type: "ul",
             items: [
               "The number of pages and the complexity of the content.",
-              "Custom-built (Next.js) or WordPress, depending on your need for flexibility and autonomy.",
+              "Custom-built or WordPress, depending on your need for flexibility and autonomy.",
               "The level of design: an adapted template or a 100% bespoke identity.",
               "The features: forms, appointment booking, payment, client area…",
               "Multilingual support (FR/DE/EN) and SEO & GEO optimisation.",
@@ -2273,17 +2275,6 @@ export const en = {
         ],
       },
       {
-        term: "Next.js",
-        slug: "nextjs",
-        category: "Web & tech",
-        short: "An ultra-fast web framework.",
-        def: "A React-based framework used to build highly performant, secure and SEO-optimised sites. Our default choice for bespoke work — including this site, near-instant and built AI-ready.",
-        links: [
-          { href: "/services/sites-web", label: "Our websites service" },
-          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: performance is part of UX" },
-        ],
-      },
-      {
         term: "Responsive",
         slug: "responsive",
         category: "Web & tech",
@@ -2408,26 +2399,29 @@ export const en = {
   },
   serviceContent: {
     "sites-web": {
+      // headline of the hero laser animation (kept apart from the page title)
+      motionTitle: "Websites that convert",
+      motionEyebrow: "Bespoke",
       intro: [
         "Your site is often the first — sometimes the only — meeting with a client. We design it like a salesperson who works 24/7: fast, clear, action-driven.",
-        "Depending on your need, we build bespoke (Next.js, ultra-fast and AI-ready) or on WordPress when you want to keep control of content day to day. And yes: a large part of our production is AI-accelerated — more quality, delivered faster.",
+        "Depending on your need, we build bespoke (ultra-fast and AI-ready) or on WordPress when you want to keep control of content day to day. And yes: a large part of our production is AI-accelerated — more quality, delivered faster.",
       ],
       included: [
         { icon: "ai-build", title: "Built with AI", desc: "We accelerate design and development with AI, never sacrificing quality or consistency." },
         { icon: "wordpress", title: "WordPress when needed", desc: "Need to edit your pages yourself? We deliver a clean, secure and easy-to-manage WordPress." },
-        { icon: "next-perf", title: "Next.js performance", desc: "For bespoke work, a near-instant, secure site built for SEO and GEO." },
+        { icon: "next-perf", title: "Performance", desc: "For bespoke work, a near-instant, secure site built for SEO and GEO." },
         { icon: "responsive", title: "100% responsive", desc: "A flawless experience on mobile, tablet and desktop — mobile first." },
         { icon: "conversion", title: "Built to convert", desc: "Every page has a goal: generate a call, a quote, a lead. We guide the visitor to action." },
         { icon: "smart-forms", title: "Smart forms", desc: "Multi-step forms that qualify your prospects and lift the response rate." },
       ],
       deliverables: [
         "Bespoke mockups and design signed off with you",
-        "Bespoke site (Next.js) or WordPress, your choice",
+        "Bespoke site or WordPress, your choice",
         "Baseline SEO & GEO optimisation built in",
         "Forms, tracking and go-live included",
       ],
       faq: [
-        { q: "Bespoke or WordPress, how to choose?", a: "Bespoke (Next.js) offers the best performance and flexibility; WordPress is ideal if you want to edit content yourself. We advise based on your real use, no dogma." },
+        { q: "Bespoke or WordPress, how to choose?", a: "Bespoke offers the best performance and flexibility; WordPress is ideal if you want to edit content yourself. We advise based on your real use, no dogma." },
         { q: "What does \"built with AI\" mean?", a: "We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and with better value for money — reviewed and finalised by humans." },
         { q: "Will my site be optimised for Google and AI?", a: "Yes. We build in SEO and GEO best practices from the start: structure, performance, structured data and citable content." },
       ],
@@ -2847,7 +2841,7 @@ export const en = {
         ],
         deliverables: [
           "Bespoke mockups & design signed off with you",
-          "Responsive showcase site (Next.js or WordPress)",
+          "Responsive showcase site",
           "Baseline SEO & GEO optimisation",
           "Forms, tracking and go-live included",
         ],
@@ -2889,7 +2883,7 @@ export const en = {
           "E-commerce tracking & management training",
         ],
         faq: [
-          { q: "Which platform do you build the store on?", a: "Depending on your need: WooCommerce/WordPress for autonomy, or a bespoke solution (Next.js) for performance and specific requirements. We advise without dogma." },
+          { q: "Which platform do you build the store on?", a: "Depending on your need: WooCommerce/WordPress for autonomy, or a bespoke solution for performance and specific requirements. We advise without dogma." },
           { q: "Do you handle payments and VAT?", a: "Yes. We configure payment methods, Luxembourg VAT rules and, if needed, the connection to your logistics and accounting." },
         ],
       },
@@ -3596,7 +3590,7 @@ export const en = {
         duration: "2 to 6 weeks",
         deliverables: [
           "Design mockups validated with you",
-          "Fast, responsive Next.js development",
+          "Fast, responsive development",
           "Conversion-focused funnels and forms",
         ],
         youProvide: "Your key content — copy, visuals, logo — or we handle it for you.",
@@ -3670,7 +3664,7 @@ export const en = {
       {
         title: "Websites",
         items: [
-          { q: "Bespoke or WordPress, how to choose?", a: "Bespoke (Next.js) offers the best performance, security and flexibility; WordPress is ideal if you want to edit content yourself day to day. We advise based on your real use, no dogma." },
+          { q: "Bespoke or WordPress, how to choose?", a: "Bespoke offers the best performance, security and flexibility; WordPress is ideal if you want to edit content yourself day to day. We advise based on your real use, no dogma." },
           { q: "Is it true your sites are \"built with AI\"?", a: "Yes. We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and with better value for money — always reviewed and finalised by humans." },
           { q: "Will my site be fast and mobile-friendly?", a: "Absolutely. Performance and mobile-first are the baseline: a near-instant site, 100% responsive and accessible on every screen." },
           { q: "Will I be able to edit my site myself?", a: "On WordPress, yes, easily. On bespoke builds, we handle the updates for you." },

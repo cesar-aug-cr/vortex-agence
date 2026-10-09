@@ -130,17 +130,17 @@ export const de = {
       title: "Website-Erstellung in Luxemburg",
       tagline: "Schnelle Websites, gemacht, um Besucher in Kunden zu verwandeln.",
       short:
-        "Visitenkarten-Websites, Landingpages und maßgeschneiderte Plattformen in Next.js — oder auf WordPress, wenn Sie selbst die Kontrolle behalten wollen. KI-beschleunigte Produktion, Premium-Design und integrierte Conversion-Trichter.",
+        "Visitenkarten-Websites, Landingpages und maßgeschneiderte Plattformen — oder auf WordPress, wenn Sie selbst die Kontrolle behalten wollen. KI-beschleunigte Produktion, Premium-Design und integrierte Conversion-Trichter.",
       bullets: [
-        "Maßgeschneidert mit Next.js oder WordPress, je nach Bedarf",
+        "Maßgeschneidert oder WordPress, je nach Bedarf",
         "KI-beschleunigte Produktion, schneller geliefert",
         "Maßgeschneidertes Design, mobile-first",
         "Intelligente mehrstufige Formulare",
         "100 % responsiv & barrierefrei",
       ],
-      metaTitle: "Webdesign & Websites in Luxemburg | vortx",
+      metaTitle: "Website-Erstellung & Webdesign in Luxemburg | vortx",
       metaDescription:
-        "Schnelle Websites, Premium-Design und conversion-orientiert für Luxemburger Unternehmen. Next.js-Entwicklung, mehrsprachig, SEO-ready.",
+        "Website-Erstellung in Luxemburg: schnelle Websites, Premium-Design, conversion-orientiert. Next.js-Entwicklung, mehrsprachig, SEO-ready.",
     },
     {
       slug: "seo-geo",
@@ -583,13 +583,15 @@ export const de = {
     shareText: "Ich habe {score}/{total} im Marketing-Quiz von vortx erreicht. Sie sind dran 👇",
     ctaSecondary: "Alle Leistungen ansehen",
     certificate: "Mein Zertifikat herunterladen",
+    nameLabel: "Ihr Name auf dem Zertifikat",
+    namePlaceholder: "Vorname Nachname",
     cert: {
       heading: "Zertifikat",
       subheading: "des Marketing-IQ",
       awardedTo: "Verliehen an",
       scoreLabel: "Erreichtes Ergebnis",
       dateLabel: "Ausgestellt am",
-      footer: "vortx · Marketing- & Web-Agentur in Luxemburg · vortx.lu/quiz",
+      footer: "vortx · Marketing, web & AI",
     },
     tiers: [
       { min: 0, max: 3, emoji: "🌱", title: "Digital ist (noch) nicht Ihr Ding", message: "Und das ist okay — das ist unser Job, nicht Ihrer. Überlassen Sie es uns.", cta: "Profis ranlassen — kostenloses Audit" },
@@ -1429,7 +1431,7 @@ export const de = {
             type: "ul",
             items: [
               "Die Anzahl der Seiten und die Komplexität der Inhalte.",
-              "Maßgeschneidert (Next.js) oder WordPress, je nach Ihrem Bedarf an Flexibilität und Eigenständigkeit.",
+              "Maßgeschneidert oder WordPress, je nach Ihrem Bedarf an Flexibilität und Eigenständigkeit.",
               "Das Designniveau: angepasstes Template oder zu 100 % maßgeschneiderte Identität.",
               "Die Funktionen: Formulare, Terminbuchung, Zahlung, Kundenbereich …",
               "Mehrsprachigkeit (FR/DE/EN) sowie SEO- & GEO-Optimierung.",
@@ -2273,17 +2275,6 @@ export const de = {
         ],
       },
       {
-        term: "Next.js",
-        slug: "nextjs",
-        category: "Web & Technik",
-        short: "Ein ultraschnelles Web-Framework.",
-        def: "Auf React basierendes Framework, das genutzt wird, um sehr performante, sichere und SEO-optimierte Websites zu bauen. Unsere Standardwahl für Maßanfertigungen — darunter diese Website, nahezu sofort geladen und KI-ready gedacht.",
-        links: [
-          { href: "/services/sites-web", label: "Unsere Leistung Websites" },
-          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Artikel: Performance ist Teil der UX" },
-        ],
-      },
-      {
         term: "Responsiv",
         slug: "responsive",
         category: "Web & Technik",
@@ -2408,26 +2399,29 @@ export const de = {
   },
   serviceContent: {
     "sites-web": {
+      // headline of the hero laser animation (kept apart from the page title)
+      motionTitle: "Websites, die konvertieren",
+      motionEyebrow: "Maßgeschneidert",
       intro: [
         "Ihre Website ist oft das erste — manchmal das einzige — Treffen mit einem Kunden. Wir gestalten sie wie einen Vertriebsmitarbeiter, der rund um die Uhr arbeitet: schnell, klar, handlungsorientiert.",
-        "Je nach Bedarf bauen wir maßgeschneidert (Next.js, ultraschnell und KI-ready gedacht) oder auf WordPress, wenn Sie die Kontrolle über die Inhalte im Alltag behalten wollen. Und ja: Ein großer Teil unserer Produktion ist KI-beschleunigt — mehr Qualität, schneller geliefert.",
+        "Je nach Bedarf bauen wir maßgeschneidert (ultraschnell und KI-ready gedacht) oder auf WordPress, wenn Sie die Kontrolle über die Inhalte im Alltag behalten wollen. Und ja: Ein großer Teil unserer Produktion ist KI-beschleunigt — mehr Qualität, schneller geliefert.",
       ],
       included: [
         { icon: "ai-build", title: "Mit KI gestaltet", desc: "Wir beschleunigen Design und Entwicklung mit KI, ohne je Qualität oder Kohärenz zu opfern." },
         { icon: "wordpress", title: "WordPress, wenn nötig", desc: "Sie wollen Ihre Seiten selbst bearbeiten? Wir liefern ein sauberes, sicheres und leicht zu verwaltendes WordPress." },
-        { icon: "next-perf", title: "Next.js-Performance", desc: "Für Maßanfertigungen eine nahezu sofortige, sichere und auf SEO und GEO zugeschnittene Website." },
+        { icon: "next-perf", title: "Performance", desc: "Für Maßanfertigungen eine nahezu sofortige, sichere und auf SEO und GEO zugeschnittene Website." },
         { icon: "responsive", title: "100 % responsiv", desc: "Ein makelloses Erlebnis auf Handy, Tablet und Computer — mobile-first." },
         { icon: "conversion", title: "Auf Conversion ausgelegt", desc: "Jede Seite hat ein Ziel: einen Anruf, ein Angebot, einen Lead generieren. Wir führen den Besucher zur Aktion." },
         { icon: "smart-forms", title: "Intelligente Formulare", desc: "Mehrstufige Formulare, die Ihre Interessenten qualifizieren und die Antwortrate erhöhen." },
       ],
       deliverables: [
         "Mockups und maßgeschneidertes Design, mit Ihnen abgestimmt",
-        "Maßgeschneiderte Website (Next.js) oder WordPress, nach Wahl",
+        "Maßgeschneiderte Website oder WordPress, nach Wahl",
         "Grundlegende SEO- & GEO-Optimierung integriert",
         "Formulare, Tracking und Veröffentlichung inklusive",
       ],
       faq: [
-        { q: "Maßanfertigung oder WordPress, wie wähle ich?", a: "Die Maßanfertigung (Next.js) bietet die beste Performance und Flexibilität; WordPress ist ideal, wenn Sie die Inhalte selbst bearbeiten wollen. Wir beraten Sie nach Ihrer tatsächlichen Nutzung, ohne Dogma." },
+        { q: "Maßanfertigung oder WordPress, wie wähle ich?", a: "Die Maßanfertigung bietet die beste Performance und Flexibilität; WordPress ist ideal, wenn Sie die Inhalte selbst bearbeiten wollen. Wir beraten Sie nach Ihrer tatsächlichen Nutzung, ohne Dogma." },
         { q: "Was bedeutet „mit KI gemacht“?", a: "Wir nutzen KI, um Konzeption, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — von Menschen geprüft und finalisiert." },
         { q: "Wird meine Website für Google und KI optimiert sein?", a: "Ja. Wir integrieren von Anfang an die SEO- und GEO-Best-Practices: Struktur, Performance, strukturierte Daten und zitierbare Inhalte." },
       ],
@@ -2848,7 +2842,7 @@ export const de = {
         ],
         deliverables: [
           "Mockups & maßgeschneidertes Design, mit Ihnen abgestimmt",
-          "Responsive Visitenkarten-Website (Next.js oder WordPress)",
+          "Responsive Visitenkarten-Website",
           "Grundlegende SEO- & GEO-Optimierung",
           "Formulare, Tracking und Veröffentlichung inklusive",
         ],
@@ -2890,7 +2884,7 @@ export const de = {
           "E-Commerce-Tracking & Schulung zur Verwaltung",
         ],
         faq: [
-          { q: "Auf welcher Plattform bauen Sie den Shop?", a: "Je nach Bedarf: WooCommerce/WordPress für die Eigenständigkeit oder eine maßgeschneiderte Lösung (Next.js) für Performance und spezifische Anforderungen. Wir beraten Sie ohne Dogma." },
+          { q: "Auf welcher Plattform bauen Sie den Shop?", a: "Je nach Bedarf: WooCommerce/WordPress für die Eigenständigkeit oder eine maßgeschneiderte Lösung für Performance und spezifische Anforderungen. Wir beraten Sie ohne Dogma." },
           { q: "Übernehmen Sie Zahlungen und Mehrwertsteuer?", a: "Ja. Wir konfigurieren die Zahlungsmittel, die luxemburgischen Mehrwertsteuerregeln und bei Bedarf die Anbindung an Ihre Logistik und Buchhaltung." },
         ],
       },
@@ -3597,7 +3591,7 @@ export const de = {
         duration: "2 bis 6 Wochen",
         deliverables: [
           "Mit Ihnen abgestimmte Design-Mockups",
-          "Schnelle, responsive Next.js-Entwicklung",
+          "Schnelle, responsive Entwicklung",
           "Conversion-orientierte Funnels und Formulare",
         ],
         youProvide: "Ihre wichtigsten Inhalte — Texte, Bilder, Logo — oder wir übernehmen das für Sie.",
@@ -3671,7 +3665,7 @@ export const de = {
       {
         title: "Websites",
         items: [
-          { q: "Maßanfertigung oder WordPress, wie wähle ich?", a: "Die Maßanfertigung (Next.js) bietet die beste Performance, Sicherheit und Flexibilität; WordPress ist ideal, wenn Sie die Inhalte im Alltag selbst bearbeiten wollen. Wir beraten Sie nach Ihrer tatsächlichen Nutzung, ohne Dogma." },
+          { q: "Maßanfertigung oder WordPress, wie wähle ich?", a: "Die Maßanfertigung bietet die beste Performance, Sicherheit und Flexibilität; WordPress ist ideal, wenn Sie die Inhalte im Alltag selbst bearbeiten wollen. Wir beraten Sie nach Ihrer tatsächlichen Nutzung, ohne Dogma." },
           { q: "Stimmt es, dass Ihre Websites „mit KI gemacht“ sind?", a: "Ja. Wir nutzen KI, um Design, Code und Inhalte zu beschleunigen. Ergebnis: eine Website von besserer Qualität, schneller geliefert und mit einem besseren Preis-Leistungs-Verhältnis — stets von Menschen geprüft und finalisiert." },
           { q: "Wird meine Website schnell und mobiltauglich sein?", a: "Absolut. Performance und mobile-first sind die Basis: eine nahezu sofortige Website, 100 % responsiv und auf allen Bildschirmen zugänglich." },
           { q: "Kann ich meine Website selbst ändern?", a: "Auf WordPress ja, ganz leicht. Bei einer Maßanfertigung übernehmen wir die Aktualisierungen für Sie." },

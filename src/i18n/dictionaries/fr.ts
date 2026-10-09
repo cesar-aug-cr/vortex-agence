@@ -152,17 +152,17 @@ export const fr = {
       title: "Création de sites web au Luxembourg",
       tagline: "Des sites rapides, pensés pour transformer le visiteur en client.",
       short:
-        "Sites vitrines, landing pages et plateformes sur mesure en Next.js — ou sur WordPress quand vous voulez garder la main. Production accélérée par l'IA, design premium et tunnels de conversion intégrés.",
+        "Sites vitrines, landing pages et plateformes sur mesure — ou sur WordPress quand vous voulez garder la main. Production accélérée par l'IA, design premium et tunnels de conversion intégrés.",
       bullets: [
-        "Sur-mesure Next.js ou WordPress, selon votre besoin",
+        "Sur-mesure ou WordPress, selon votre besoin",
         "Production accélérée par l'IA, livrée plus vite",
         "Design sur mesure, mobile-first",
         "Formulaires intelligents multi-étapes",
         "100 % responsive & accessible",
       ],
-      metaTitle: "Création de sites web à Luxembourg | vortx",
+      metaTitle: "Création de sites web au Luxembourg | vortx",
       metaDescription:
-        "Sites web rapides, design premium et orientés conversion pour les entreprises luxembourgeoises. Développement Next.js, multilingue, SEO-ready.",
+        "Création de sites web au Luxembourg : des sites rapides, au design premium et orientés conversion. Développement Next.js, multilingue, SEO-ready.",
     },
     {
       slug: "seo-geo",
@@ -605,13 +605,15 @@ export const fr = {
     shareText: "J'ai eu {score}/{total} au quiz marketing de vortx. À votre tour 👇",
     ctaSecondary: "Voir tous les services",
     certificate: "Télécharger mon certificat",
+    nameLabel: "Votre nom sur le certificat",
+    namePlaceholder: "Prénom Nom",
     cert: {
       heading: "Certificat",
       subheading: "de QI Marketing",
       awardedTo: "Décerné à",
       scoreLabel: "Score obtenu",
       dateLabel: "Délivré le",
-      footer: "vortx · Agence marketing & web au Luxembourg · vortx.lu/quiz",
+      footer: "vortx · Marketing, web & AI",
     },
     tiers: [
       { min: 0, max: 3, emoji: "🌱", title: "Le digital, c'est pas (encore) votre truc", message: "Et c'est normal — c'est notre métier, pas le vôtre. Laissez-nous nous en occuper.", cta: "Confiez-le à des pros — audit gratuit" },
@@ -1453,7 +1455,7 @@ export const fr = {
             type: "ul",
             items: [
               "Le nombre de pages et la complexité des contenus.",
-              "Sur-mesure (Next.js) ou WordPress, selon votre besoin de flexibilité et d'autonomie.",
+              "Sur-mesure ou WordPress, selon votre besoin de flexibilité et d'autonomie.",
               "Le niveau de design : template adapté ou identité 100 % sur mesure.",
               "Les fonctionnalités : formulaires, prise de rendez-vous, paiement, espace client…",
               "Le multilingue (FR/DE/EN) et l'optimisation SEO & GEO.",
@@ -2297,17 +2299,6 @@ export const fr = {
         ],
       },
       {
-        term: "Next.js",
-        slug: "nextjs",
-        category: "Web & tech",
-        short: "Un framework web ultra-rapide.",
-        def: "Framework basé sur React, utilisé pour construire des sites très performants, sécurisés et optimisés pour le SEO. Notre choix par défaut pour le sur-mesure — dont ce site, quasi instantané et pensé IA-ready.",
-        links: [
-          { href: "/services/sites-web", label: "Notre service Sites web" },
-          { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Lire : la performance fait partie de l'UX" },
-        ],
-      },
-      {
         term: "Responsive",
         slug: "responsive",
         category: "Web & tech",
@@ -2433,26 +2424,29 @@ export const fr = {
   },
   serviceContent: {
     "sites-web": {
+      // headline of the hero laser animation (kept apart from the page title)
+      motionTitle: "Sites web qui convertissent",
+      motionEyebrow: "Sur-mesure",
       intro: [
         "Votre site est souvent le premier — parfois le seul — rendez-vous avec un client. On le conçoit comme un commercial qui travaille 24/7 : rapide, clair, orienté action.",
-        "Selon votre besoin, on construit en sur-mesure (Next.js, ultra-rapide et pensé IA-ready) ou sur WordPress quand vous voulez garder la main sur le contenu au quotidien. Et oui : une grande partie de notre production est accélérée par l'IA — plus de qualité, livrée plus vite.",
+        "Selon votre besoin, on construit en sur-mesure (ultra-rapide et pensé IA-ready) ou sur WordPress quand vous voulez garder la main sur le contenu au quotidien. Et oui : une grande partie de notre production est accélérée par l'IA — plus de qualité, livrée plus vite.",
       ],
       included: [
         { icon: "ai-build", title: "Conçu avec l'IA", desc: "On accélère le design et le développement avec l'IA, sans jamais sacrifier la qualité ni la cohérence." },
         { icon: "wordpress", title: "WordPress quand il le faut", desc: "Besoin d'éditer vos pages vous-même ? On livre un WordPress propre, sécurisé et facile à gérer." },
-        { icon: "next-perf", title: "Performance Next.js", desc: "Pour le sur-mesure, un site quasi instantané, sécurisé et taillé pour le SEO et le GEO." },
+        { icon: "next-perf", title: "Performance", desc: "Pour le sur-mesure, un site quasi instantané, sécurisé et taillé pour le SEO et le GEO." },
         { icon: "responsive", title: "100 % responsive", desc: "Une expérience impeccable sur mobile, tablette et ordinateur — le mobile d'abord." },
         { icon: "conversion", title: "Pensé pour convertir", desc: "Chaque page a un objectif : générer un appel, un devis, un lead. On guide le visiteur vers l'action." },
         { icon: "smart-forms", title: "Formulaires intelligents", desc: "Formulaires multi-étapes qui qualifient vos prospects et augmentent le taux de réponse." },
       ],
       deliverables: [
         "Maquettes et design sur mesure validés avec vous",
-        "Site sur-mesure (Next.js) ou WordPress, au choix",
+        "Site sur-mesure ou WordPress, au choix",
         "Optimisation SEO & GEO de base intégrée",
         "Formulaires, tracking et mise en ligne inclus",
       ],
       faq: [
-        { q: "Sur-mesure ou WordPress, comment choisir ?", a: "Le sur-mesure (Next.js) offre la meilleure performance et flexibilité ; WordPress est idéal si vous voulez éditer le contenu vous-même. On vous conseille selon votre usage réel, sans dogme." },
+        { q: "Sur-mesure ou WordPress, comment choisir ?", a: "Le sur-mesure offre la meilleure performance et flexibilité ; WordPress est idéal si vous voulez éditer le contenu vous-même. On vous conseille selon votre usage réel, sans dogme." },
         { q: "Que veut dire « fait avec l'IA » ?", a: "On utilise l'IA pour accélérer la conception, le code et le contenu. Résultat : un site de meilleure qualité, livré plus vite et à un meilleur rapport valeur/prix — relu et finalisé par des humains." },
         { q: "Mon site sera-t-il optimisé pour Google et les IA ?", a: "Oui. On intègre dès le départ les bonnes pratiques SEO et GEO : structure, performance, données structurées et contenu citable." },
       ],
@@ -2874,7 +2868,7 @@ export const fr = {
         ],
         deliverables: [
           "Maquettes & design sur mesure validés avec vous",
-          "Site vitrine responsive (Next.js ou WordPress)",
+          "Site vitrine responsive",
           "Optimisation SEO & GEO de base",
           "Formulaires, tracking et mise en ligne inclus",
         ],
@@ -2916,7 +2910,7 @@ export const fr = {
           "Suivi e-commerce & formation à la gestion",
         ],
         faq: [
-          { q: "Sur quelle plateforme construisez-vous la boutique ?", a: "Selon votre besoin : WooCommerce/WordPress pour l'autonomie, ou une solution sur-mesure (Next.js) pour la performance et des besoins spécifiques. On vous conseille sans dogme." },
+          { q: "Sur quelle plateforme construisez-vous la boutique ?", a: "Selon votre besoin : WooCommerce/WordPress pour l'autonomie, ou une solution sur-mesure pour la performance et des besoins spécifiques. On vous conseille sans dogme." },
           { q: "Gérez-vous les paiements et la TVA ?", a: "Oui. On configure les moyens de paiement, les règles de TVA luxembourgeoises et, si besoin, la connexion à votre logistique et votre comptabilité." },
         ],
       },
@@ -3623,7 +3617,7 @@ export const fr = {
         duration: "2 à 6 semaines",
         deliverables: [
           "Maquettes design validées avec vous",
-          "Développement Next.js rapide et responsive",
+          "Développement rapide et responsive",
           "Tunnels et formulaires orientés conversion",
         ],
         youProvide: "Vos contenus clés — textes, visuels, logo — ou on s'en charge pour vous.",
@@ -3697,7 +3691,7 @@ export const fr = {
       {
         title: "Sites web",
         items: [
-          { q: "Sur-mesure ou WordPress, comment choisir ?", a: "Le sur-mesure (Next.js) offre la meilleure performance, sécurité et flexibilité ; WordPress est idéal si vous voulez éditer le contenu vous-même au quotidien. On vous conseille selon votre usage réel, sans dogme." },
+          { q: "Sur-mesure ou WordPress, comment choisir ?", a: "Le sur-mesure offre la meilleure performance, sécurité et flexibilité ; WordPress est idéal si vous voulez éditer le contenu vous-même au quotidien. On vous conseille selon votre usage réel, sans dogme." },
           { q: "C'est vrai que vos sites sont « faits avec l'IA » ?", a: "Oui. On utilise l'IA pour accélérer le design, le code et le contenu. Résultat : un site de meilleure qualité, livré plus vite et à un meilleur rapport valeur/prix — toujours relu et finalisé par des humains." },
           { q: "Mon site sera-t-il rapide et adapté au mobile ?", a: "Absolument. Performance et mobile-first sont la base : un site quasi instantané, 100 % responsive et accessible sur tous les écrans." },
           { q: "Pourrai-je modifier mon site moi-même ?", a: "Sur WordPress, oui, facilement. Sur du sur-mesure, on s'occupe des mises à jour pour vous." },

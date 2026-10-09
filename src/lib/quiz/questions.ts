@@ -11,7 +11,7 @@ export type QuizQuestion = {
 };
 
 /**
- * The 150-question pool (French source of truth). The quiz draws a random
+ * The 149-question pool (French source of truth). The quiz draws a random
  * subset per game. Other locales fall back to FR until translated — add an
  * `en`/`de`/`es` array here to localise.
  */
@@ -54,7 +54,6 @@ const fr: QuizQuestion[] = [
   { id: "web-01", theme: "web", q: "Que mesurent les « Core Web Vitals » de Google ?", options: ["La popularité d'un site sur les réseaux sociaux", "L'expérience réelle de chargement, d'interactivité et de stabilité visuelle", "Le nombre de mots-clés dans une page", "La quantité de visiteurs mensuels"], answer: 1, tip: "Le saviez-vous ? Les Core Web Vitals (LCP, INP, CLS) influencent votre référencement : chez vortx, on les optimise dès la conception." },
   { id: "web-02", theme: "web", q: "Que signifie l'approche « mobile-first » ?", options: ["Créer d'abord une application mobile", "Concevoir le site pour mobile avant de l'adapter aux grands écrans", "Interdire l'accès depuis un ordinateur", "Réserver le site aux utilisateurs de smartphones"], answer: 1, tip: "Le saviez-vous ? Plus de la moitié du trafic web est mobile : on conçoit donc d'abord pour le petit écran, puis on étend." },
   { id: "web-03", theme: "web", q: "À quoi sert le « S » dans HTTPS ?", options: ["Speed (la vitesse)", "Search (la recherche)", "Secure (le chiffrement de la connexion)", "Server (le serveur)"], answer: 2, tip: "Le saviez-vous ? Sans certificat SSL, les navigateurs affichent « Non sécurisé » et font fuir vos prospects." },
-  { id: "web-04", theme: "web", q: "Quel est le principal atout d'un framework comme Next.js face à un WordPress classique ?", options: ["Il est toujours gratuit à héberger", "Il génère des pages rapides et optimisées sans plugins lourds", "Il n'a jamais besoin de maintenance", "Il rédige le contenu automatiquement"], answer: 1, tip: "Le saviez-vous ? Next.js produit des sites ultra-rapides par défaut : c'est notre socle technique chez vortx." },
   { id: "web-05", theme: "web", q: "En UX, que désigne la « hiérarchie visuelle » ?", options: ["L'ordre alphabétique des menus", "L'organisation des éléments pour guider l'œil vers l'essentiel", "Le classement des pages par date", "Le niveau d'accès des administrateurs"], answer: 1, tip: "Le saviez-vous ? Une bonne hiérarchie visuelle dirige le regard vers votre appel à l'action en une fraction de seconde." },
   { id: "web-06", theme: "web", q: "Combien d'objectifs principaux une landing page devrait-elle idéalement viser ?", options: ["Un seul, clair et unique", "Trois ou quatre, pour varier", "Autant que possible", "Aucun, c'est une vitrine"], answer: 0, tip: "Le saviez-vous ? Une page = un objectif : multiplier les boutons dilue les conversions au lieu de les augmenter." },
   { id: "web-07", theme: "web", q: "Que vise la norme WCAG ?", options: ["Le poids maximal des images", "L'accessibilité du web aux personnes en situation de handicap", "La vitesse des serveurs", "Le format des noms de domaine"], answer: 1, tip: "Le saviez-vous ? Un site accessible (WCAG) touche un public plus large et améliore aussi le SEO." },

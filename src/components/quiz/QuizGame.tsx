@@ -61,13 +61,15 @@ export function QuizGame({
 
   const [starting, setStarting] = useState(false);
 
-  // The 150-question pool (~65 KB, answers included) is no longer serialised
+  // The 149-question pool (~65 KB, answers included) is no longer serialised
   // into the page: it is fetched as its own chunk the first time the visitor
   // presses "start", then 10 questions are drawn client-side as before.
   // Certificate state (rendered once the result is known — see below).
   const [certCanvas, setCertCanvas] = useState<HTMLCanvasElement | null>(null);
   const [certUrl, setCertUrl] = useState<string | null>(null);
   const [downloading, setDownloading] = useState(false);
+  // Name printed on the certificate (kept across replays).
+  const [name, setName] = useState("");
 
   const start = async () => {
     if (starting) return;
@@ -125,39 +127,49 @@ export function QuizGame({
   useEffect(() => {
     if (phase !== "done") return;
     let cancelled = false;
-    renderCertificate({
-      badgeSrc: certBadgeSrc,
-      heading: copy.cert.heading,
-      subheading: copy.cert.subheading,
-      awardedTo: copy.cert.awardedTo,
-      scoreLabel: copy.cert.scoreLabel,
-      score,
-      total,
-      verdict: tier.title,
-      message: tier.message,
-      dateLabel: copy.cert.dateLabel,
-      date: certDate,
-      footer: copy.cert.footer,
-    })
-      .then((canvas) => {
-        if (cancelled) return;
-        setCertCanvas(canvas);
-        setCertUrl(canvas.toDataURL("image/png"));
+    // short debounce: the preview follows the name field as the visitor types
+    const timer = window.setTimeout(() => {
+      renderCertificate({
+        badgeSrc: certBadgeSrc,
+        heading: copy.cert.heading,
+        subheading: copy.cert.subheading,
+        awardedTo: copy.cert.awardedTo,
+        name,
+        scoreLabel: copy.cert.scoreLabel,
+        score,
+        total,
+        dateLabel: copy.cert.dateLabel,
+        date: certDate,
+        footer: copy.cert.footer,
       })
-      .catch(() => {
-        /* no certificate preview; the button stays disabled */
-      });
+        .then((canvas) => {
+          if (cancelled) return;
+          setCertCanvas(canvas);
+          setCertUrl(canvas.toDataURL("image/png"));
+        })
+        .catch(() => {
+          /* no certificate preview; the button stays disabled */
+        });
+    }, 200);
     return () => {
       cancelled = true;
+      window.clearTimeout(timer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- re-render only when the result changes
-  }, [phase, score, total, tier, certBadgeSrc, lang]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- re-render only when the result or the name changes
+  }, [phase, score, total, tier, certBadgeSrc, lang, name]);
 
   const downloadCertificate = async () => {
     if (!certCanvas) return;
     setDownloading(true);
     try {
-      await downloadCanvas(certCanvas, `certificat-qi-marketing-vortx-${score}-sur-${total}.png`);
+      const who = name
+        .trim()
+        .normalize("NFD")
+        .replace(/[̀-ͯ]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+      await downloadCanvas(certCanvas, `certificat-qi-marketing-vortx-${who ? `${who}-` : ""}${score}-sur-${total}.png`);
     } finally {
       setDownloading(false);
     }
@@ -215,6 +227,20 @@ export function QuizGame({
               {tier.cta}
               <ArrowRight width={18} height={18} />
             </Link>
+            {/* name printed on the certificate; the preview below follows it */}
+            <label htmlFor="quiz-cert-name" className="mt-3 text-sm font-semibold text-text">
+              {copy.nameLabel}
+            </label>
+            <input
+              id="quiz-cert-name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              maxLength={40}
+              autoComplete="name"
+              placeholder={copy.namePlaceholder}
+              className="w-full max-w-xs rounded-full border border-border-strong bg-transparent px-5 py-2.5 text-center text-sm text-text placeholder:text-text-muted focus:border-accent focus:outline-none"
+            />
             <div className="flex flex-wrap items-center justify-center gap-3">
               <button
                 type="button"
@@ -227,7 +253,7 @@ export function QuizGame({
                 type="button"
                 onClick={downloadCertificate}
                 disabled={!certCanvas || downloading}
-                className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent disabled:cursor-wait disabled:opacity-60"
+                className="inline-flex items-center gap-2 rounded-full border border-accent px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent disabled:cursor-wait disabled:opacity-60"
               >
                 {copy.certificate}
               </button>
