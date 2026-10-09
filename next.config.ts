@@ -67,6 +67,21 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
+  // Removed automatisation-ia sub-services → their parent service page
+  // (public URLs, whose first segment is localized: see i18n/routes.ts).
+  async redirects() {
+    const removed = ":child(automatisation-workflows|agents-assistants-ia)";
+    return [
+      ["fr", "services"],
+      ["en", "services"],
+      ["de", "leistungen"],
+      ["es", "servicios"],
+    ].map(([lang, seg]) => ({
+      source: `/${lang}/${seg}/automatisation-ia/${removed}`,
+      destination: `/${lang}/${seg}/automatisation-ia`,
+      permanent: true,
+    }));
+  },
 };
 
 export default nextConfig;

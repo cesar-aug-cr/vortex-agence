@@ -2338,7 +2338,7 @@ export const fr = {
         short: "Laisser les tâches répétitives aux machines.",
         def: "Mise en place de workflows qui exécutent automatiquement des tâches (relances, notifications, synchronisation d'outils), pour gagner du temps et réduire les erreurs. Pour une PME, c'est souvent le premier pas vers l'IA — le plus rentable aussi.",
         links: [
-          { href: "/services/automatisation-ia/automatisation-workflows", label: "Notre service Automatisation de workflows" },
+          { href: "/services/automatisation-ia", label: "Notre service Automatisation & IA" },
           { href: "/news/5-taches-pme-confier-a-l-ia", label: "Lire : 5 tâches à confier à l'IA" },
         ],
       },
@@ -3401,80 +3401,6 @@ export const fr = {
       },
     ],
     "automatisation-ia": [
-      {
-        slug: "automatisation-workflows",
-        illustration: "automatisation-workflows",
-        title: "Automatisation des workflows",
-        tagline: "Vos tâches répétitives, exécutées toutes seules — 24/7, sans erreur.",
-        short:
-          "On connecte vos outils et on automatise les tâches manuelles : relances, synchronisations, notifications, reportings. Vos équipes se concentrent sur ce qui compte vraiment.",
-        bullets: [
-          "Cartographie de vos process",
-          "Connexion de vos outils (Make, n8n, Zapier)",
-          "Déclencheurs & scénarios sur mesure",
-          "Suivi & alertes en cas d'incident",
-        ],
-        metaTitle: "Automatisation des workflows à Luxembourg | vortx",
-        metaDescription:
-          "Automatisation des workflows au Luxembourg : Make, n8n, Zapier. Connectez vos outils, supprimez les tâches manuelles, gagnez des heures chaque semaine.",
-        intro: [
-          "Combien d'heures vos équipes passent-elles à copier des données d'un outil à l'autre, à relancer, à notifier, à mettre à jour des tableaux ? Ces tâches répétitives coûtent cher et génèrent des erreurs. L'automatisation les fait disparaître.",
-          "On cartographie vos process, on identifie ce qui peut être automatisé, puis on connecte vos outils (Make, n8n, Zapier) avec des scénarios sur mesure. Le tout supervisé, avec des alertes en cas d'incident — pour que ça tourne sans surprise.",
-        ],
-        included: [
-          { icon: "automation", title: "Cartographie des process", desc: "On analyse vos flux pour repérer où l'automatisation fait gagner le plus de temps." },
-          { icon: "integration", title: "Connexion des outils", desc: "Make, n8n, Zapier : on relie vos applications pour qu'elles se parlent enfin." },
-          { icon: "ai-build", title: "Scénarios sur mesure", desc: "Des automatisations conçues pour votre cas précis, pas des recettes génériques." },
-          { icon: "analytics", title: "Supervision & alertes", desc: "Suivi des exécutions et alertes en cas d'incident : ça tourne sans angle mort." },
-        ],
-        deliverables: [
-          "Cartographie des process à automatiser",
-          "Scénarios d'automatisation configurés",
-          "Connexions entre vos outils",
-          "Documentation & supervision des workflows",
-        ],
-        faq: [
-          { q: "Faut-il changer mes outils actuels ?", a: "Rarement. L'automatisation connecte vos outils existants entre eux. On part de votre stack et on ajoute la couche qui les fait communiquer." },
-          { q: "Que se passe-t-il si une automatisation casse ?", a: "On met en place une supervision avec alertes : en cas d'incident, vous (et nous) êtes prévenus immédiatement. On peut aussi assurer la maintenance." },
-        ],
-      },
-      {
-        slug: "agents-assistants-ia",
-        illustration: "agents-assistants-ia",
-        title: "Agents & assistants IA sur mesure",
-        tagline: "Des collaborateurs IA qui raisonnent, décident et agissent.",
-        short:
-          "Au-delà du simple chatbot : des agents IA connectés à vos données et vos outils, capables d'exécuter des tâches complexes — avec les garde-fous nécessaires.",
-        bullets: [
-          "Agents connectés à vos données",
-          "Assistants internes (RH, support, finance)",
-          "Base de connaissances (RAG)",
-          "Garde-fous & validation humaine",
-        ],
-        metaTitle: "Agents & assistants IA sur mesure à Luxembourg | vortx",
-        metaDescription:
-          "Agents et assistants IA sur mesure à Luxembourg : connectés à vos données (RAG), capables d'agir, avec garde-fous. L'IA qui travaille vraiment pour vous.",
-        intro: [
-          "Un agent IA ne se contente pas de répondre : il comprend une demande, va chercher l'information dans vos données, raisonne et exécute des actions. C'est la différence entre un gadget et un véritable collaborateur numérique.",
-          "On conçoit des agents et assistants entraînés sur votre contexte (vos documents, vos process), connectés à vos outils, avec une base de connaissances (RAG) et des garde-fous : validation humaine sur les actions sensibles, respect du RGPD, traçabilité.",
-        ],
-        included: [
-          { icon: "ai-agent", title: "Agents autonomes", desc: "Des agents qui comprennent, raisonnent et exécutent des tâches connectées à vos outils." },
-          { icon: "ai-build", title: "Assistants internes", desc: "Pour le support, les RH, la finance : un assistant qui connaît vos process." },
-          { icon: "geo-citation", title: "Base de connaissances (RAG)", desc: "Branché sur vos documents pour des réponses fiables et sourcées, pas inventées." },
-          { icon: "rgpd", title: "Garde-fous & RGPD", desc: "Validation humaine sur les actions sensibles, confidentialité et traçabilité." },
-        ],
-        deliverables: [
-          "Cadrage des cas d'usage & des données",
-          "Agent/assistant IA développé & connecté",
-          "Base de connaissances & garde-fous",
-          "Tests, documentation & accompagnement",
-        ],
-        faq: [
-          { q: "L'IA risque-t-elle d'inventer des réponses ?", a: "C'est le risque qu'on neutralise avec une base de connaissances (RAG) : l'agent répond à partir de vos documents et cite ses sources. Sur les actions sensibles, une validation humaine est requise." },
-          { q: "Mes données restent-elles confidentielles ?", a: "Oui. On conçoit chaque agent dans le respect du RGPD, avec une attention forte à la confidentialité et au choix des modèles et de l'hébergement." },
-        ],
-      },
       {
         slug: "chatbots-ia",
         illustration: "chatbots-ia",

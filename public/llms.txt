@@ -32,8 +32,6 @@
   - [Supports print & papeterie](https://vortx.lu/fr/services/branding-design/supports-print)
   - [Stratégie de marque & naming](https://vortx.lu/fr/services/branding-design/strategie-de-marque-naming)
 - [Automatisation & IA](https://vortx.lu/fr/services/automatisation-ia) : workflows automatisés, agents IA, intégrations.
-  - [Automatisation des workflows](https://vortx.lu/fr/services/automatisation-ia/automatisation-workflows)
-  - [Agents & assistants IA sur mesure](https://vortx.lu/fr/services/automatisation-ia/agents-assistants-ia)
   - [Chatbots & voicebots IA](https://vortx.lu/fr/services/automatisation-ia/chatbots-ia)
   - [Intégrations CRM & API](https://vortx.lu/fr/services/automatisation-ia/integrations-crm-api)
   - [IA générative pour le contenu](https://vortx.lu/fr/services/automatisation-ia/ia-contenu-generatif)

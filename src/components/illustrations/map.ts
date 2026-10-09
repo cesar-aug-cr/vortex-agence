@@ -24,8 +24,6 @@ import { IdentiteVisuelle } from "./IdentiteVisuelle";
 import { CharteGraphique } from "./CharteGraphique";
 import { SupportsPrint } from "./SupportsPrint";
 import { StrategieDeMarqueNaming } from "./StrategieDeMarqueNaming";
-import { AutomatisationWorkflows } from "./AutomatisationWorkflows";
-import { AgentsAssistantsIa } from "./AgentsAssistantsIa";
 import { ChatbotsIa } from "./ChatbotsIa";
 import { IntegrationsCrmApi } from "./IntegrationsCrmApi";
 import { IaContenuGeneratif } from "./IaContenuGeneratif";
@@ -72,8 +70,6 @@ export const subServiceIllustration: Record<string, FC<{ className?: string }>> 
   "supports-print": SupportsPrint,
   "strategie-de-marque-naming": StrategieDeMarqueNaming,
   // automatisation & ia
-  "automatisation-workflows": AutomatisationWorkflows,
-  "agents-assistants-ia": AgentsAssistantsIa,
   "chatbots-ia": ChatbotsIa,
   "integrations-crm-api": IntegrationsCrmApi,
   "ia-contenu-generatif": IaContenuGeneratif,

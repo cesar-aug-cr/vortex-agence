@@ -2314,7 +2314,7 @@ export const de = {
         short: "Routineaufgaben den Maschinen überlassen.",
         def: "Einrichtung von Workflows, die Aufgaben automatisch ausführen (Nachfassen, Benachrichtigungen, Synchronisierung von Tools), um Zeit zu sparen und Fehler zu reduzieren. Für ein KMU ist das oft der erste Schritt zur KI — und der rentabelste.",
         links: [
-          { href: "/services/automatisation-ia/automatisation-workflows", label: "Unsere Leistung Workflow-Automatisierung" },
+          { href: "/services/automatisation-ia", label: "Unsere Leistung Automatisierung & KI" },
           { href: "/news/5-taches-pme-confier-a-l-ia", label: "Artikel: 5 Aufgaben für die KI" },
         ],
       },
@@ -3375,80 +3375,6 @@ export const de = {
       },
     ],
     "automatisation-ia": [
-      {
-        slug: "automatisation-workflows",
-        illustration: "automatisation-workflows",
-        title: "Automatisierung von Workflows",
-        tagline: "Ihre Routineaufgaben, ganz von selbst ausgeführt — rund um die Uhr, ohne Fehler.",
-        short:
-          "Wir verbinden Ihre Tools und automatisieren die manuellen Aufgaben: Nachfassen, Synchronisierungen, Benachrichtigungen, Reportings. Ihre Teams konzentrieren sich auf das, was wirklich zählt.",
-        bullets: [
-          "Kartierung Ihrer Prozesse",
-          "Anbindung Ihrer Tools (Make, n8n, Zapier)",
-          "Maßgeschneiderte Trigger & Szenarien",
-          "Überwachung & Alarme bei Störungen",
-        ],
-        metaTitle: "Automatisierung von Workflows in Luxemburg | vortx",
-        metaDescription:
-          "Workflow-Automatisierung für Luxemburger Unternehmen mit Make, n8n und Zapier: Tools verbinden, manuelle Aufgaben streichen, Stunden pro Woche gewinnen.",
-        intro: [
-          "Wie viele Stunden verbringen Ihre Teams damit, Daten von einem Tool ins andere zu kopieren, nachzufassen, zu benachrichtigen, Tabellen zu aktualisieren? Diese Routineaufgaben kosten viel und erzeugen Fehler. Automatisierung lässt sie verschwinden.",
-          "Wir kartieren Ihre Prozesse, identifizieren, was sich automatisieren lässt, und verbinden dann Ihre Tools (Make, n8n, Zapier) mit maßgeschneiderten Szenarien. Alles überwacht, mit Alarmen bei Störungen — damit es ohne Überraschung läuft.",
-        ],
-        included: [
-          { icon: "automation", title: "Kartierung der Prozesse", desc: "Wir analysieren Ihre Abläufe, um zu erkennen, wo Automatisierung am meisten Zeit spart." },
-          { icon: "integration", title: "Anbindung der Tools", desc: "Make, n8n, Zapier: Wir verbinden Ihre Anwendungen, damit sie endlich miteinander sprechen." },
-          { icon: "ai-build", title: "Maßgeschneiderte Szenarien", desc: "Automatisierungen, gestaltet für Ihren präzisen Fall, keine generischen Rezepte." },
-          { icon: "analytics", title: "Überwachung & Alarme", desc: "Verfolgung der Ausführungen und Alarme bei Störungen: Es läuft ohne blinden Fleck." },
-        ],
-        deliverables: [
-          "Kartierung der zu automatisierenden Prozesse",
-          "Konfigurierte Automatisierungs-Szenarien",
-          "Verbindungen zwischen Ihren Tools",
-          "Dokumentation & Überwachung der Workflows",
-        ],
-        faq: [
-          { q: "Muss ich meine aktuellen Tools wechseln?", a: "Selten. Automatisierung verbindet Ihre bestehenden Tools miteinander. Wir gehen von Ihrem Stack aus und ergänzen die Schicht, die sie kommunizieren lässt." },
-          { q: "Was passiert, wenn eine Automatisierung ausfällt?", a: "Wir richten eine Überwachung mit Alarmen ein: Bei einer Störung werden Sie (und wir) sofort benachrichtigt. Wir können auch die Wartung übernehmen." },
-        ],
-      },
-      {
-        slug: "agents-assistants-ia",
-        illustration: "agents-assistants-ia",
-        title: "Maßgeschneiderte KI-Agenten & -Assistenten",
-        tagline: "KI-Mitarbeiter, die denken, entscheiden und handeln.",
-        short:
-          "Über den einfachen Chatbot hinaus: KI-Agenten, verbunden mit Ihren Daten und Ihren Tools, fähig, komplexe Aufgaben auszuführen — mit den nötigen Schutzmechanismen.",
-        bullets: [
-          "Mit Ihren Daten verbundene Agenten",
-          "Interne Assistenten (HR, Support, Finanzen)",
-          "Wissensbasis (RAG)",
-          "Schutzmechanismen & menschliche Freigabe",
-        ],
-        metaTitle: "Maßgeschneiderte KI-Agenten & -Assistenten in Luxemburg | vortx",
-        metaDescription:
-          "Maßgeschneiderte KI-Agenten und -Assistenten in Luxemburg: mit Ihren Daten verbunden (RAG), handlungsfähig, abgesichert. KI, die für Ihr Unternehmen arbeitet.",
-        intro: [
-          "Ein KI-Agent begnügt sich nicht damit zu antworten: Er versteht eine Anfrage, holt die Information aus Ihren Daten, denkt und führt Aktionen aus. Das ist der Unterschied zwischen einer Spielerei und einem echten digitalen Mitarbeiter.",
-          "Wir gestalten Agenten und Assistenten, trainiert auf Ihren Kontext (Ihre Dokumente, Ihre Prozesse), verbunden mit Ihren Tools, mit einer Wissensbasis (RAG) und Schutzmechanismen: menschliche Freigabe bei sensiblen Aktionen, DSGVO-Einhaltung, Nachvollziehbarkeit.",
-        ],
-        included: [
-          { icon: "ai-agent", title: "Autonome Agenten", desc: "Agenten, die verstehen, denken und mit Ihren Tools verbundene Aufgaben ausführen." },
-          { icon: "ai-build", title: "Interne Assistenten", desc: "Für Support, HR, Finanzen: ein Assistent, der Ihre Prozesse kennt." },
-          { icon: "geo-citation", title: "Wissensbasis (RAG)", desc: "An Ihre Dokumente angebunden für verlässliche und belegte Antworten, nicht erfunden." },
-          { icon: "rgpd", title: "Schutzmechanismen & DSGVO", desc: "Menschliche Freigabe bei sensiblen Aktionen, Vertraulichkeit und Nachvollziehbarkeit." },
-        ],
-        deliverables: [
-          "Klärung der Anwendungsfälle & Daten",
-          "Entwickelter & angebundener KI-Agent/-Assistent",
-          "Wissensbasis & Schutzmechanismen",
-          "Tests, Dokumentation & Begleitung",
-        ],
-        faq: [
-          { q: "Besteht die Gefahr, dass die KI Antworten erfindet?", a: "Genau dieses Risiko neutralisieren wir mit einer Wissensbasis (RAG): Der Agent antwortet auf Basis Ihrer Dokumente und zitiert seine Quellen. Bei sensiblen Aktionen ist eine menschliche Freigabe erforderlich." },
-          { q: "Bleiben meine Daten vertraulich?", a: "Ja. Wir gestalten jeden Agenten unter Einhaltung der DSGVO, mit großer Aufmerksamkeit für die Vertraulichkeit und die Wahl der Modelle und des Hostings." },
-        ],
-      },
       {
         slug: "chatbots-ia",
         illustration: "chatbots-ia",

@@ -2314,7 +2314,7 @@ export const en = {
         short: "Leave repetitive tasks to machines.",
         def: "Setting up workflows that automatically run tasks (follow-ups, notifications, tool synchronisation), to save time and reduce errors. For an SME it's often the first step towards AI — and the most profitable one.",
         links: [
-          { href: "/services/automatisation-ia/automatisation-workflows", label: "Our workflow automation service" },
+          { href: "/services/automatisation-ia", label: "Our Automation & AI service" },
           { href: "/news/5-taches-pme-confier-a-l-ia", label: "Read: 5 tasks to hand over to AI" },
         ],
       },
@@ -3374,80 +3374,6 @@ export const en = {
       },
     ],
     "automatisation-ia": [
-      {
-        slug: "automatisation-workflows",
-        illustration: "automatisation-workflows",
-        title: "Workflow automation",
-        tagline: "Your repetitive tasks, run on their own — 24/7, error-free.",
-        short:
-          "We connect your tools and automate the manual tasks: follow-ups, synchronisations, notifications, reporting. Your teams focus on what truly matters.",
-        bullets: [
-          "Mapping of your processes",
-          "Connecting your tools (Make, n8n, Zapier)",
-          "Bespoke triggers & scenarios",
-          "Monitoring & incident alerts",
-        ],
-        metaTitle: "Workflow Automation in Luxembourg | vortx",
-        metaDescription:
-          "Workflow automation for Luxembourg businesses: Make, n8n, Zapier. Connect your tools, remove manual tasks and save hours every week.",
-        intro: [
-          "How many hours do your teams spend copying data from one tool to another, following up, notifying, updating spreadsheets? These repetitive tasks are costly and breed errors. Automation makes them disappear.",
-          "We map your processes, identify what can be automated, then connect your tools (Make, n8n, Zapier) with bespoke scenarios. All supervised, with alerts in case of an incident — so it runs with no surprises.",
-        ],
-        included: [
-          { icon: "automation", title: "Process mapping", desc: "We analyse your flows to spot where automation saves the most time." },
-          { icon: "integration", title: "Tool connection", desc: "Make, n8n, Zapier: we connect your apps so they finally talk to each other." },
-          { icon: "ai-build", title: "Bespoke scenarios", desc: "Automations designed for your precise case, not generic recipes." },
-          { icon: "analytics", title: "Monitoring & alerts", desc: "Run tracking and incident alerts: it works with no blind spots." },
-        ],
-        deliverables: [
-          "Mapping of processes to automate",
-          "Configured automation scenarios",
-          "Connections between your tools",
-          "Documentation & workflow monitoring",
-        ],
-        faq: [
-          { q: "Do I need to change my current tools?", a: "Rarely. Automation connects your existing tools to each other. We start from your stack and add the layer that makes them communicate." },
-          { q: "What happens if an automation breaks?", a: "We set up monitoring with alerts: in case of an incident, you (and we) are notified immediately. We can also provide maintenance." },
-        ],
-      },
-      {
-        slug: "agents-assistants-ia",
-        illustration: "agents-assistants-ia",
-        title: "Bespoke AI agents & assistants",
-        tagline: "AI co-workers that reason, decide and act.",
-        short:
-          "Beyond the simple chatbot: AI agents connected to your data and your tools, able to carry out complex tasks — with the necessary guardrails.",
-        bullets: [
-          "Agents connected to your data",
-          "Internal assistants (HR, support, finance)",
-          "Knowledge base (RAG)",
-          "Guardrails & human validation",
-        ],
-        metaTitle: "Bespoke AI Agents & Assistants in Luxembourg | vortx",
-        metaDescription:
-          "Bespoke AI agent and assistant creation in Luxembourg: connected to your data (RAG), able to act, with guardrails. AI that truly works for your business.",
-        intro: [
-          "An AI agent doesn't just answer: it understands a request, fetches information from your data, reasons and carries out actions. That's the difference between a gadget and a genuine digital co-worker.",
-          "We design agents and assistants trained on your context (your documents, your processes), connected to your tools, with a knowledge base (RAG) and guardrails: human validation on sensitive actions, GDPR compliance, traceability.",
-        ],
-        included: [
-          { icon: "ai-agent", title: "Autonomous agents", desc: "Agents that understand, reason and carry out tasks connected to your tools." },
-          { icon: "ai-build", title: "Internal assistants", desc: "For support, HR, finance: an assistant that knows your processes." },
-          { icon: "geo-citation", title: "Knowledge base (RAG)", desc: "Plugged into your documents for reliable, sourced answers, not invented ones." },
-          { icon: "rgpd", title: "Guardrails & GDPR", desc: "Human validation on sensitive actions, confidentiality and traceability." },
-        ],
-        deliverables: [
-          "Scoping of use cases & data",
-          "AI agent/assistant built & connected",
-          "Knowledge base & guardrails",
-          "Testing, documentation & support",
-        ],
-        faq: [
-          { q: "Could the AI make up answers?", a: "That's the risk we neutralise with a knowledge base (RAG): the agent answers from your documents and cites its sources. On sensitive actions, human validation is required." },
-          { q: "Does my data stay confidential?", a: "Yes. We design every agent in compliance with GDPR, with strong attention to confidentiality and to the choice of models and hosting." },
-        ],
-      },
       {
         slug: "chatbots-ia",
         illustration: "chatbots-ia",

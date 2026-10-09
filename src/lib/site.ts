@@ -83,8 +83,6 @@ export const subServiceRoutes = [
   { parent: "branding-design", child: "charte-graphique" },
   { parent: "branding-design", child: "supports-print" },
   { parent: "branding-design", child: "strategie-de-marque-naming" },
-  { parent: "automatisation-ia", child: "automatisation-workflows" },
-  { parent: "automatisation-ia", child: "agents-assistants-ia" },
   { parent: "automatisation-ia", child: "chatbots-ia" },
   { parent: "automatisation-ia", child: "integrations-crm-api" },
   { parent: "automatisation-ia", child: "ia-contenu-generatif" },

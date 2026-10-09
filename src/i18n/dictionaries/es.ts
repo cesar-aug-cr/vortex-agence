@@ -2308,7 +2308,7 @@ export const es = {
         short: "Dejar las tareas repetitivas a las máquinas.",
         def: "Implementación de flujos de trabajo que ejecutan automáticamente tareas (recordatorios, notificaciones, sincronización de herramientas), para ganar tiempo y reducir errores. Para una pyme, suele ser el primer paso hacia la IA — y también el más rentable.",
         links: [
-          { href: "/services/automatisation-ia/automatisation-workflows", label: "Nuestro servicio de Automatización de flujos de trabajo" },
+          { href: "/services/automatisation-ia", label: "Nuestro servicio de Automatización e IA" },
           { href: "/news/5-taches-pme-confier-a-l-ia", label: "Leer: 5 tareas para confiar a la IA" },
         ],
       },
@@ -3369,80 +3369,6 @@ export const es = {
       },
     ],
     "automatisation-ia": [
-      {
-        slug: "automatisation-workflows",
-        illustration: "automatisation-workflows",
-        title: "Automatización de los flujos de trabajo",
-        tagline: "Sus tareas repetitivas, ejecutadas solas — 24/7, sin errores.",
-        short:
-          "Conectamos sus herramientas y automatizamos las tareas manuales: recordatorios, sincronizaciones, notificaciones, informes. Sus equipos se concentran en lo que de verdad importa.",
-        bullets: [
-          "Mapeo de sus procesos",
-          "Conexión de sus herramientas (Make, n8n, Zapier)",
-          "Disparadores y escenarios a medida",
-          "Seguimiento y alertas en caso de incidente",
-        ],
-        metaTitle: "Automatización de los flujos de trabajo en Luxemburgo | vortx",
-        metaDescription:
-          "Automatización de flujos de trabajo en Luxemburgo: Make, n8n, Zapier. Conecte sus herramientas, elimine tareas manuales y gane horas cada semana.",
-        intro: [
-          "¿Cuántas horas dedican sus equipos a copiar datos de una herramienta a otra, a hacer seguimientos, a notificar, a actualizar tablas? Esas tareas repetitivas cuestan caras y generan errores. La automatización las hace desaparecer.",
-          "Mapeamos sus procesos, identificamos lo que se puede automatizar, y luego conectamos sus herramientas (Make, n8n, Zapier) con escenarios a medida. Todo supervisado, con alertas en caso de incidente — para que funcione sin sorpresas.",
-        ],
-        included: [
-          { icon: "automation", title: "Mapeo de los procesos", desc: "Analizamos sus flujos para detectar dónde la automatización hace ganar más tiempo." },
-          { icon: "integration", title: "Conexión de las herramientas", desc: "Make, n8n, Zapier: conectamos sus aplicaciones para que por fin se hablen." },
-          { icon: "ai-build", title: "Escenarios a medida", desc: "Automatizaciones diseñadas para su caso concreto, no recetas genéricas." },
-          { icon: "analytics", title: "Supervisión y alertas", desc: "Seguimiento de las ejecuciones y alertas en caso de incidente: funciona sin puntos ciegos." },
-        ],
-        deliverables: [
-          "Mapeo de los procesos a automatizar",
-          "Escenarios de automatización configurados",
-          "Conexiones entre sus herramientas",
-          "Documentación y supervisión de los workflows",
-        ],
-        faq: [
-          { q: "¿Hay que cambiar mis herramientas actuales?", a: "Rara vez. La automatización conecta sus herramientas existentes entre sí. Partimos de su stack y añadimos la capa que las hace comunicarse." },
-          { q: "¿Qué pasa si una automatización se rompe?", a: "Implementamos una supervisión con alertas: en caso de incidente, usted (y nosotros) recibe aviso de inmediato. También podemos asegurar el mantenimiento." },
-        ],
-      },
-      {
-        slug: "agents-assistants-ia",
-        illustration: "agents-assistants-ia",
-        title: "Agentes y asistentes de IA a medida",
-        tagline: "Colaboradores de IA que razonan, deciden y actúan.",
-        short:
-          "Más allá del simple chatbot: agentes de IA conectados a sus datos y sus herramientas, capaces de ejecutar tareas complejas — con las salvaguardas necesarias.",
-        bullets: [
-          "Agentes conectados a sus datos",
-          "Asistentes internos (RR. HH., soporte, finanzas)",
-          "Base de conocimiento (RAG)",
-          "Salvaguardas y validación humana",
-        ],
-        metaTitle: "Agentes y asistentes de IA a medida en Luxemburgo | vortx",
-        metaDescription:
-          "Agentes y asistentes de IA a medida en Luxemburgo: conectados a sus datos (RAG), capaces de actuar, con salvaguardas. La IA que trabaja para su empresa.",
-        intro: [
-          "Un agente de IA no se limita a responder: comprende una solicitud, busca la información en sus datos, razona y ejecuta acciones. Esa es la diferencia entre un gadget y un verdadero colaborador digital.",
-          "Diseñamos agentes y asistentes entrenados sobre su contexto (sus documentos, sus procesos), conectados a sus herramientas, con una base de conocimiento (RAG) y salvaguardas: validación humana en las acciones sensibles, respeto del RGPD, trazabilidad.",
-        ],
-        included: [
-          { icon: "ai-agent", title: "Agentes autónomos", desc: "Agentes que comprenden, razonan y ejecutan tareas conectadas a sus herramientas." },
-          { icon: "ai-build", title: "Asistentes internos", desc: "Para el soporte, RR. HH., finanzas: un asistente que conoce sus procesos." },
-          { icon: "geo-citation", title: "Base de conocimiento (RAG)", desc: "Conectado a sus documentos para respuestas fiables y con fuentes, no inventadas." },
-          { icon: "rgpd", title: "Salvaguardas y RGPD", desc: "Validación humana en las acciones sensibles, confidencialidad y trazabilidad." },
-        ],
-        deliverables: [
-          "Encuadre de los casos de uso y de los datos",
-          "Agente/asistente de IA desarrollado y conectado",
-          "Base de conocimiento y salvaguardas",
-          "Pruebas, documentación y acompañamiento",
-        ],
-        faq: [
-          { q: "¿La IA corre el riesgo de inventar respuestas?", a: "Ese es el riesgo que neutralizamos con una base de conocimiento (RAG): el agente responde a partir de sus documentos y cita sus fuentes. En las acciones sensibles, se requiere validación humana." },
-          { q: "¿Mis datos siguen siendo confidenciales?", a: "Sí. Diseñamos cada agente respetando el RGPD, con una fuerte atención a la confidencialidad y a la elección de los modelos y del alojamiento." },
-        ],
-      },
       {
         slug: "chatbots-ia",
         illustration: "chatbots-ia",
