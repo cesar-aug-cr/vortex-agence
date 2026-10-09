@@ -42,7 +42,7 @@ export function ChatWidget({ copy, lang }: { copy: ChatCopy; lang: Locale }) {
         <div
           role="dialog"
           aria-label={c.title}
-          className="fixed bottom-24 right-4 z-50 flex max-h-[min(80vh,640px)] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)] animate-fade-in-up lg:right-6"
+          className="fixed bottom-24 right-4 z-50 flex max-h-[min(80vh,640px)] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-2xl border border-border bg-bg-card shadow-[var(--shadow-lg)] dark:shadow-[0_0_0_1px_rgba(200,240,46,0.3),0_0_36px_rgba(200,240,46,0.3),0_0_90px_rgba(200,240,46,0.22),0_30px_70px_rgba(0,0,0,0.55)] animate-fade-in-up lg:right-6"
         >
           {/* header */}
           <div className="flex items-center justify-between gap-3 border-b border-border bg-stage px-5 py-4 text-stage-text">
