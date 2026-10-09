@@ -4,7 +4,7 @@
  */
 export type SitesWebMotionProps = {
   className?: string;
-  /** Mini-site headline: the service title ("Sites web qui convertissent"). */
+  /** Mini-site headline: the service title ("Création de sites web au Luxembourg"). */
   title: string;
   /** Line under it: the service tagline. */
   tagline: string;

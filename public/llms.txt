@@ -6,7 +6,7 @@
 > Multilingue (FR/EN/DE/ES). Réponse rapide, audit gratuit, sans engagement.
 
 ## Services
-- [Sites web qui convertissent](https://vortx.lu/fr/services/sites-web) : sites rapides en Next.js ou WordPress, orientés conversion.
+- [Création de sites web au Luxembourg](https://vortx.lu/fr/services/sites-web) : sites rapides en Next.js ou WordPress, orientés conversion.
   - [Site vitrine sur-mesure](https://vortx.lu/fr/services/sites-web/site-vitrine)
   - [Site e-commerce](https://vortx.lu/fr/services/sites-web/site-e-commerce)
   - [Landing pages haute conversion](https://vortx.lu/fr/services/sites-web/landing-pages)

@@ -127,7 +127,7 @@ export const de = {
     {
       slug: "sites-web",
       group: "convert",
-      title: "Websites, die konvertieren",
+      title: "Website-Erstellung in Luxemburg",
       tagline: "Schnelle Websites, gemacht, um Besucher in Kunden zu verwandeln.",
       short:
         "Visitenkarten-Websites, Landingpages und maßgeschneiderte Plattformen in Next.js — oder auf WordPress, wenn Sie selbst die Kontrolle behalten wollen. KI-beschleunigte Produktion, Premium-Design und integrierte Conversion-Trichter.",

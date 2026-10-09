@@ -21,7 +21,7 @@ Principes :
 vortx propose six expertises qui s'emboîtent. Chacune se décline en spécialités
 ciblées (sous-services), à prendre seules ou combinées.
 
-### Sites web qui convertissent
+### Création de sites web au Luxembourg
 Sites vitrines, landing pages et plateformes sur mesure en Next.js — ou sur
 WordPress quand vous voulez garder la main. Performance, design premium et
 tunnels de conversion intégrés.

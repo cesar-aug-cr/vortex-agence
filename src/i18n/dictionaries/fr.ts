@@ -149,7 +149,7 @@ export const fr = {
     {
       slug: "sites-web",
       group: "convert",
-      title: "Sites web qui convertissent",
+      title: "Création de sites web au Luxembourg",
       tagline: "Des sites rapides, pensés pour transformer le visiteur en client.",
       short:
         "Sites vitrines, landing pages et plateformes sur mesure en Next.js — ou sur WordPress quand vous voulez garder la main. Production accélérée par l'IA, design premium et tunnels de conversion intégrés.",

@@ -127,7 +127,7 @@ export const en = {
     {
       slug: "sites-web",
       group: "convert",
-      title: "Websites that convert",
+      title: "Website design in Luxembourg",
       tagline: "Fast sites, built to turn visitors into clients.",
       short:
         "Showcase sites, landing pages and bespoke platforms in Next.js — or on WordPress when you want to keep control. AI-accelerated production, premium design and built-in conversion funnels.",
