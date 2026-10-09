@@ -18,6 +18,7 @@ import { RelatedServiceArticles } from "@/components/sections/RelatedServiceArti
 import { articlesForService } from "@/lib/relatedArticles";
 import { serviceIllustration, subServiceIllustration } from "@/components/illustrations/map";
 import { SitesWebMotion } from "@/components/illustrations/sites-web-motion/SitesWebMotion";
+import { serviceMotion } from "@/components/illustrations/service-motion";
 import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
 
@@ -57,9 +58,11 @@ export default async function ServiceDetailPage({
   if (!service) notFound();
 
   const Illu = serviceIllustration[service.slug];
+  const Motion = serviceMotion[service.slug];
   // sites-web: the laser motion graphic builds a mini-site out of the page's
   // own localized copy (its headline is a dedicated line, not the page
-  // title); the other services keep their static illustration.
+  // title); the other main services have their own motion graphic, fed with
+  // the page's copy; a slug without one keeps its static illustration.
   const illustration =
     service.slug === "sites-web" ? (
       <SitesWebMotion
@@ -68,6 +71,14 @@ export default async function ServiceDetailPage({
         tagline={service.tagline}
         cta={dict.common.cta}
         eyebrow={dict.serviceContent["sites-web"].motionEyebrow}
+      />
+    ) : Motion ? (
+      <Motion
+        className="h-auto w-full"
+        title={service.title}
+        tagline={service.tagline}
+        cta={dict.common.cta}
+        bullets={service.bullets}
       />
     ) : Illu ? (
       <Illu className="h-auto w-full" />
