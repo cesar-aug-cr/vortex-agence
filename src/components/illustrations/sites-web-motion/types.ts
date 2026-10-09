@@ -1,13 +1,13 @@
 /**
- * Props of the /services/sites-web hero motion graphic. Human-language words
- * come from the page (already-localized dictionary strings); defaults are FR.
+ * Props of the /services/sites-web hero motion graphic. The words are the
+ * page's own, already-localized dictionary strings.
  */
 export type SitesWebMotionProps = {
   className?: string;
-  /** Mini-site headline, e.g. the service title "Sites web qui convertissent". */
-  title?: string;
-  /** Short line under it, e.g. the service tagline. */
-  tagline?: string;
-  /** CTA label of the mini-site button, e.g. "Réserver un appel". */
-  cta?: string;
+  /** Mini-site headline: the service title ("Sites web qui convertissent"). */
+  title: string;
+  /** Line under it: the service tagline. */
+  tagline: string;
+  /** CTA label of the mini-site button: dict.common.cta ("Réserver un appel"). */
+  cta: string;
 };

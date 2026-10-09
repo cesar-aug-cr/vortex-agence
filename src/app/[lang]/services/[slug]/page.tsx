@@ -17,6 +17,7 @@ import { ServiceTracking } from "@/components/sections/ServiceTracking";
 import { RelatedServiceArticles } from "@/components/sections/RelatedServiceArticles";
 import { articlesForService } from "@/lib/relatedArticles";
 import { serviceIllustration, subServiceIllustration } from "@/components/illustrations/map";
+import { SitesWebMotion } from "@/components/illustrations/sites-web-motion/SitesWebMotion";
 import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
 
@@ -56,6 +57,19 @@ export default async function ServiceDetailPage({
   if (!service) notFound();
 
   const Illu = serviceIllustration[service.slug];
+  // sites-web: the laser motion graphic builds a mini-site out of the page's
+  // own localized copy; the other services keep their static illustration.
+  const illustration =
+    service.slug === "sites-web" ? (
+      <SitesWebMotion
+        className="h-auto w-full"
+        title={service.title}
+        tagline={service.tagline}
+        cta={dict.common.cta}
+      />
+    ) : Illu ? (
+      <Illu className="h-auto w-full" />
+    ) : null;
   const content =
     dict.serviceContent[service.slug as keyof typeof dict.serviceContent];
   const sd = dict.servicesDetail;
@@ -136,10 +150,10 @@ export default async function ServiceDetailPage({
             </div>
           </div>
 
-          {Illu && (
+          {illustration && (
             <div className="order-1 lg:order-2">
               <div className="illu-stage overflow-hidden rounded-2xl border border-border p-4">
-                <Illu className="h-auto w-full" />
+                {illustration}
               </div>
             </div>
           )}

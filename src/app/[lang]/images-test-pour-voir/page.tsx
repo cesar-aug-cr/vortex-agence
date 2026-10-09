@@ -10,7 +10,8 @@ import { buildMetadata } from "@/lib/metadata";
 import { PageShell } from "@/components/layout/PageShell";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Check } from "@/components/ui/icons";
-import { serviceIllustration, subServiceIllustration } from "@/components/illustrations/map";
+import { subServiceIllustration } from "@/components/illustrations/map";
+import { SitesWebMotion } from "@/components/illustrations/sites-web-motion/SitesWebMotion";
 import { packIcons } from "@/components/illustrations/packs";
 import { LogoMark } from "@/components/brand/LogoMark";
 import { featureIcons } from "@/components/illustrations/icons";
@@ -168,7 +169,6 @@ function Compare({
 
 /* ---------- données des comparaisons 19-43 ---------- */
 
-const SitesWebIllu = serviceIllustration["sites-web"];
 const SiteVitrineIllu = subServiceIllustration["site-vitrine"];
 
 /** Home service cards: first-generation render (kept in public/images-test) vs the second generation now in production (public/services). */
@@ -208,6 +208,7 @@ export default async function ImagesTestPage({
   const { lang } = await params;
   if (lang !== i18n.defaultLocale) notFound();
   const dict = await getDictionary(lang);
+  const sitesWeb = dict.services.find((s) => s.slug === "sites-web")!;
 
   const ready = readdirSync(IMG_DIR).filter((f) => f.endsWith(".webp")).length;
 
@@ -369,7 +370,12 @@ export default async function ImagesTestPage({
             title="Illustration héros d’une page service"
             current={
               <div className="illu-stage overflow-hidden rounded-2xl border border-border p-4">
-                <SitesWebIllu className="h-auto w-full" />
+                <SitesWebMotion
+                  className="h-auto w-full"
+                  title={sitesWeb.title}
+                  tagline={sitesWeb.tagline}
+                  cta={dict.common.cta}
+                />
               </div>
             }
             proposal={<Gen id="service-hero-sites-web" alt="Site web sur un écran de verre flottant" className="aspect-square rounded-2xl border border-border" sizes="(min-width: 768px) 40vw, 100vw" />}

@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import { SitesWeb } from "./SitesWeb";
 import { SeoGeo } from "./SeoGeo";
 import { LeadGeneration } from "./LeadGeneration";
 import { Publicite } from "./Publicite";
@@ -31,9 +30,10 @@ import { ChatbotsIa } from "./ChatbotsIa";
 import { IntegrationsCrmApi } from "./IntegrationsCrmApi";
 import { IaContenuGeneratif } from "./IaContenuGeneratif";
 
-/** slug → service illustration component (see CONVERSATION.md mapping). */
+/** slug → service illustration component (see CONVERSATION.md mapping).
+ *  "sites-web" is not here: its hero is the laser motion graphic
+ *  (sites-web-motion/SitesWebMotion), which needs the page's localized copy. */
 export const serviceIllustration: Record<string, FC<{ className?: string }>> = {
-  "sites-web": SitesWeb,
   "seo-geo": SeoGeo,
   "lead-generation": LeadGeneration,
   publicite: Publicite,

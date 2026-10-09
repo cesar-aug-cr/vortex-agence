@@ -1,5 +1,5 @@
 /**
- * Advance widths (em) of the fonts variant B lays out in TypeScript, so the
+ * Advance widths (em) of the fonts the laser scene lays out in TypeScript, so the
  * lasers can aim at words, trace the CTA pill and fit the copy before the
  * browser lays it out. Measured in Chrome on the live site (1000 px,
  * letter-spacing 0, font-kerning none). Letters are rendered as inline-blocks /
