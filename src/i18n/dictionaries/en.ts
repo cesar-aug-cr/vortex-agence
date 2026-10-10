@@ -2476,6 +2476,16 @@ export const en = {
           { icon: "analytics", title: "Map tracking", desc: "We track your map rankings by area and the calls and direction requests coming from your profile, and post regularly to keep your presence active." },
         ],
       },
+      "lead-generation": {
+        title: "Qualified enquiries, captured by your site and your landing pages.",
+        lead: "Your leads come in through two doors: your site and your landing pages. We design both to capture, qualify and measure every enquiry; you approve every step.",
+        steps: [
+          { icon: "process", title: "Acquisition diagnosis", desc: "A free audit: we look at where your enquiries come from, which pages of your site convert and where your visitors drop off, before we even talk about a quote." },
+          { icon: "conversion", title: "A site that generates enquiries", desc: "Visible calls to action, short forms that qualify, trust signals: your site becomes your first lead channel. If it needs rebuilding from scratch, we design it bespoke.", links: [{ href: "/services/sites-web", label: "Our websites" }] },
+          { icon: "landing", title: "One landing page per campaign", desc: "For every offer or campaign, a dedicated page, a message aligned with the ad and a single expected action. We test headlines and forms, and keep the version that converts best.", links: [{ href: "/services/sites-web/landing-pages", label: "Our landing pages" }] },
+          { icon: "analytics", title: "Cost-per-lead reporting", desc: "Every enquiry is tracked from its source: page, campaign, channel. Clear monthly reporting shows you lead volume, cost per lead and what's improving." },
+        ],
+      },
       "lead-generation/tunnels-de-conversion": {
         title: "A mapped journey, measured at every stage.",
         lead: "Discovery, consideration, decision: each phase has its own page, message and metric. You approve the architecture before anything goes live.",
@@ -2596,6 +2606,16 @@ export const en = {
           { icon: "analytics", title: "Activation & monitoring", desc: "We activate the scenarios, monitor runs and errors, and measure the time actually freed up. Your teams are trained, and the documentation is yours." },
         ],
       },
+      "automatisation-ia/chatbots-ia": {
+        title: "A chatbot that guides, at any hour.",
+        lead: "A good chatbot never leaves a visitor without a next step. Yours leads the conversation step by step, speaks the visitor's language and knows when to hand over to your team.",
+        steps: [
+          { icon: "leads", title: "Questions & journey", desc: "We list the questions you receive on your site, by email and on your messaging apps, then map out the journey with you: what the bot handles on its own, what it qualifies and what it passes on." },
+          { icon: "chatbot", title: "Scenarios, tone & calendar", desc: "We write every step of the conversation in your tone, connect the bot to your calendar for appointment booking and handle the data collected in line with GDPR." },
+          { icon: "multilingual", title: "Testing in FR, DE and EN", desc: "We run through every scenario in all three languages, edge cases included, and correct any imprecise answer. You approve before go-live." },
+          { icon: "analytics", title: "Launch & improvement", desc: "The bot is deployed on your site, WhatsApp or Messenger. We read the conversations, spot the requests that fall outside the journey and expand the scenarios." },
+        ],
+      },
       "automatisation-ia/integrations-crm-api": {
         title: "One single source of truth for your data.",
         lead: "A sync that breaks silently does more damage than double entry. We connect, test, then monitor every flow over time.",
@@ -2703,6 +2723,36 @@ export const en = {
           { image: "reporting", value: "Traffic and conversions", label: "Tracked every month", desc: "Rankings, traffic, conversions: you see what your SEO brings in." },
         ],
       },
+      "seo-geo/geo-gso": {
+        title: "Getting cited by AI: what we control.",
+        lead: "Nobody can force an AI to cite you. We make your content citable and machine-readable. Then we measure.",
+        items: [
+          { image: "code", value: "Schema.org + llms.txt", label: "Delivered on your site", desc: "Structured data and an llms.txt file installed, so the models can read your offer." },
+          { image: "seo-geo-geo-gso-2", value: "Verifiable facts", label: "Citable content", desc: "Clear answers and local context: we structure your pages to be picked up as a source." },
+          { image: "multilingue", value: "FR · DE · EN", label: "Cited in every language", desc: "Your answers structured in French, German and English, so you're picked up whatever the language of the question." },
+          { image: "seo-geo-geo-gso-4", value: "Method, not magic", label: "An emerging field", desc: "GEO moves fast: we test, we measure and we tell you frankly what works." },
+        ],
+      },
+      "seo-geo/seo-local": {
+        title: "Profile, reviews, contact details: every local signal worked on.",
+        lead: "A spot in the local pack can't be promised. We make your profile complete, your contact details consistent and your reviews monitored.",
+        items: [
+          { image: "seo-geo-seo-local-1", value: "No empty fields", label: "Google Business Profile", desc: "Categories, services, photos, hours: a fully completed profile that stays in your name." },
+          { image: "seo-geo-seo-local-2", value: "Same contact details", label: "Citations & NAP", desc: "Consistent name, address and phone number across local directories: citations cleaned up or created." },
+          { image: "seo-geo-seo-local-3", value: "QR code with your logo", label: "Easier Google reviews", desc: "We create your custom QR code with your logo: your clients scan it and leave their Google review in seconds." },
+          { image: "multilingue", value: "FR/DE/EN local pages", label: "Luxembourg & cross-border", desc: "Local landing pages and LocalBusiness markup, for every language your clients speak." },
+        ],
+      },
+      "lead-generation": {
+        title: "A measurable lead system, not a promise.",
+        lead: "No lead volume promised blindly. We commit to what we control: the method, the measurement, the optimisation.",
+        items: [
+          { image: "lead-generation-1", value: "Goals set together", label: "Matched to your market", desc: "Together, we set realistic goals, then optimise the system until it performs." },
+          { image: "lead-generation-2", value: "Qualified leads", label: "Qualification & scoring", desc: "Every enquiry is qualified automatically: your sales team handles the most promising ones first." },
+          { image: "audit", value: "Your site before ads", label: "Ad budget optional", desc: "We first maximise what your site already captures. Advertising accelerates; it doesn't compensate." },
+          { image: "reporting", value: "Visible cost per lead", label: "Status report", desc: "A regular status report shows you what each lead costs and what it brings in." },
+        ],
+      },
       "lead-generation/tunnels-de-conversion": {
         title: "Your funnel, mapped and measured at every stage.",
         lead: "A B2B funnel isn't guesswork. We design it with you, instrument it, then improve it stage by stage.",
@@ -2711,6 +2761,34 @@ export const en = {
           { image: "lead-generation-tunnels-de-conversion-2", value: "One message per stage", label: "Aligned with each phase", desc: "Every page and every follow-up speaks to prospects according to their phase: discovery, consideration, decision." },
           { image: "reporting", value: "End-to-end tracking", label: "Tracking & attribution", desc: "Every stage is measured: you see where you win prospects and where you lose them." },
           { image: "lead-generation-tunnels-de-conversion-4", value: "Your sales cycle", label: "Built for B2B", desc: "The funnel follows your real cycle, even a long one, and leads to a quote or a call." },
+        ],
+      },
+      "lead-generation/landing-pages-campagne": {
+        title: "Every paid click lands in the right place.",
+        lead: "Your ad makes a promise. The page keeps it: same audience, same message, a single expected action.",
+        items: [
+          { image: "lead-generation-landing-pages-campagne-1", value: "1 campaign = 1 page", label: "Aligned message", desc: "Each page follows on exactly from its ad. No sending visitors to a generic page on your site." },
+          { image: "lead-generation-landing-pages-campagne-2", value: "Mobile first", label: "Fast on smartphones", desc: "Every page is designed for mobile, where most of your campaign traffic comes from." },
+          { image: "reporting", value: "Tracking included", label: "Every conversion counted", desc: "Forms, calls and appointments tracked from go-live, linked to their campaign." },
+          { image: "lead-generation-landing-pages-campagne-4", value: "Optimised if needed", label: "After launch", desc: "If a page converts less than expected, we adjust it: headline, offer or form, until it performs." },
+        ],
+      },
+      "lead-generation/email-marketing-automation": {
+        title: "Compliant, polished, well-paced sequences.",
+        lead: "Automation should neither end up in spam nor run on empty: we build it on consent, deliverability and good timing.",
+        items: [
+          { image: "lead-generation-email-marketing-automation-1", value: "Opt-in only", label: "GDPR by design", desc: "Only contacts who have given consent receive your emails, with a clear unsubscribe link in every send." },
+          { image: "code", value: "SPF · DKIM configured", label: "Careful deliverability", desc: "The technical setup is designed to reach the inbox, not the spam folder." },
+          { image: "lead-generation-email-marketing-automation-3", value: "Sent at the right time", label: "Triggered sequences", desc: "Each email goes out when it's useful: after a download, a key visit or a long silence from the prospect." },
+          { image: "multilingue", value: "Copywriting included", label: "Copy, design, languages", desc: "We write and format every email in your sequences, in FR, DE or EN." },
+        ],
+      },
+      "publicite": {
+        title: "Every euro of ad spend, measured and justified.",
+        lead: "No ROAS promised upfront. Clear rules on Google, Meta and LinkedIn, kept on every campaign.",
+        items: [
+          { image: "audit", value: "Free audit", label: "Before any quote", desc: "A free diagnosis of your market and your goals, with no commitment." },
+          { image: "reporting", value: "Conversions tracked", label: "Set up by us", desc: "Without reliable tracking, optimisation is impossible. Every euro spent is tied to a result." },
         ],
       },
       "publicite/google-ads": {
@@ -2791,6 +2869,16 @@ export const en = {
           { image: "automatisation-ia-2", value: "One use case first", label: "Then we expand", desc: "We start with one measurable task, then extend only what proves its worth." },
           { image: "automatisation-ia-3", value: "GDPR by design", label: "Privacy first", desc: "Every automation is designed in line with GDPR and the confidentiality of your data." },
           { image: "code", value: "Documentation handed over", label: "No black box", desc: "Every workflow is documented: you know what's running, where and why." },
+        ],
+      },
+      "automatisation-ia/chatbots-ia": {
+        title: "A bot that responds, with your team as backup.",
+        lead: "A visitor left without an answer leaves. Here's what we commit to delivering on every chatbot.",
+        items: [
+          { image: "multilingue", value: "FR · DE · EN", label: "Language detected", desc: "The bot detects the visitor's language and leads the conversation in FR, DE or EN." },
+          { image: "automatisation-ia-chatbots-ia-2", value: "Bespoke journeys", label: "Your tone, your questions", desc: "We write every step of the conversation with you: questions, answers and suggested choices, in your tone." },
+          { image: "automatisation-ia-chatbots-ia-3", value: "Human handover", label: "For complex cases", desc: "When an enquiry falls outside the planned journey, the bot passes it to your team with the full context of the exchange." },
+          { image: "reporting", value: "Conversations tracked", label: "Tracking & optimisation", desc: "We analyse real exchanges to enrich the journeys and fine-tune the tone." },
         ],
       },
       "automatisation-ia/integrations-crm-api": {

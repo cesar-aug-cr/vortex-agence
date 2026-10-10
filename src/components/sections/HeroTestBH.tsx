@@ -30,13 +30,12 @@ const GRID = `linear-gradient(to right, rgba(var(--hero-grid, 255,255,255),0.6) 
 // Kirchberg on a transparent sky, so the black hole shows through behind it.
 // It is the hero's Largest Contentful Paint on desktop, so it loads eagerly at
 // high priority — but NOT via `priority`, whose <link rel=preload> would ship
-// it to phones that never display it. The 2560×1058 source is shown at
-// 76 % (1946 px), the same rule as the previous skyline (−20 %, then −5 %);
-// narrower viewports cap it at the section width.
+// it to phones that never display it. It always spans the full section width,
+// so wide and 4K screens get the same composition as a 1920 px one (a fixed
+// width left the image's opaque left edge visible as a cut on large screens).
 const CITY_SRC = "/hero/vortx-luxembourg.webp";
 const CITY_NATURAL = { width: 2560, height: 1058 };
-const CITY_W = 1946;
-const CITY_SIZES = `(max-width: ${CITY_W}px) 100vw, ${CITY_W}px`;
+const CITY_SIZES = "100vw";
 // 1×1 transparent GIF: the <source> phones match, so they fetch nothing.
 const BLANK_GIF = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 
@@ -109,14 +108,11 @@ export function HeroTestBH({ dict, lang, decors = true }: { dict: Dictionary; la
         }}
       />
 
-      {/* City skyline — desktop only, pinned bottom-right at 76 % of its
-          source width and scaling down with the section below that. The
-          <picture> is art direction in reverse: under lg the blank <source>
-          wins and no image bytes are fetched; from lg the <img> srcset is used. */}
-      <picture
-        className="pointer-events-none absolute bottom-0 right-0 z-[2] hidden max-w-full lg:block"
-        style={{ width: CITY_W }}
-      >
+      {/* City skyline — desktop only, pinned to the bottom at the full section
+          width. The <picture> is art direction in reverse: under lg the blank
+          <source> wins and no image bytes are fetched; from lg the <img>
+          srcset is used. */}
+      <picture className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] hidden lg:block">
         <source media="(max-width: 1023px)" srcSet={BLANK_GIF} />
         <img {...city} alt="" className="h-auto w-full" />
       </picture>
