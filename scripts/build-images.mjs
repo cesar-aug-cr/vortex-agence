@@ -32,6 +32,8 @@ const WIDTHS = [48, 96, 192, 384, 640, 828, 1080, 1280, 1600, 1920, 2560];
 const SOURCES = [
   { dir: "hero" },
   { dir: "services" },
+  { dir: "services-hero" }, // realistic hero photos of sub-service pages (square, ≤ 600 px on screen)
+  { dir: "methode" }, // "Notre méthode" banner photo, one per service / sub-service page (full width)
   { dir: "agence" },
   { dir: "approche" },
   { dir: "contact" },

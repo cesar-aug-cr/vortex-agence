@@ -124,9 +124,9 @@ export const es = {
       title: "Creación de sitios web en Luxemburgo",
       tagline: "Sitios rápidos, pensados para transformar al visitante en cliente.",
       short:
-        "Sitios corporativos, landing pages y plataformas a medida — o en WordPress cuando quiere conservar el control. Producción acelerada por IA, diseño premium y embudos de conversión integrados.",
+        "Sitios corporativos, landing pages y plataformas 100 % a medida. Producción acelerada por IA, diseño premium y embudos de conversión integrados.",
       bullets: [
-        "A medida o WordPress, según su necesidad",
+        "Desarrollo 100 % a medida",
         "Producción acelerada por IA, entregada más rápido",
         "Diseño a medida, mobile-first",
         "Formularios inteligentes de varios pasos",
@@ -190,7 +190,7 @@ export const es = {
     {
       slug: "branding-design",
       group: "design",
-      title: "Creación de logos y branding",
+      title: "Logo, diseño, branding e identidad de marca",
       tagline: "Un logo y una marca que se recuerdan.",
       short:
         "Logo a medida, identidad visual completa y manual de marca. La coherencia que inspira confianza antes incluso de la primera palabra.",
@@ -200,7 +200,7 @@ export const es = {
         "Manual de marca y reglas de uso",
         "Adaptaciones impresas y digitales",
       ],
-      metaTitle: "Creación de logo y branding en Luxemburgo | vortx",
+      metaTitle: "Logo, diseño, branding e identidad de marca en Luxemburgo | vortx",
       metaDescription:
         "Creación de logo a medida, identidad de marca y manual de marca para las empresas luxemburguesas. Una imagen coherente que inspira confianza.",
     },
@@ -618,7 +618,7 @@ export const es = {
           { label: "SEO y GEO", href: "/services/seo-geo" },
           { label: "Generación de leads", href: "/services/lead-generation" },
           { label: "Publicidad online", href: "/services/publicite" },
-          { label: "Creación de logos y branding", href: "/services/branding-design" },
+          { label: "Logo, diseño, branding e identidad de marca", href: "/services/branding-design" },
           { label: "Automatización e IA", href: "/services/automatisation-ia" },
         ],
       },
@@ -804,7 +804,7 @@ export const es = {
         },
         links: [
           { label: "Nuestros sitios web que convierten", href: "/services/sites-web", desc: "Diseño a medida, mobile-first y orientado a la conversión." },
-          { label: "Creación de logotipos y branding", href: "/services/branding-design", desc: "La identidad visual que alimenta una UI coherente." },
+          { label: "Logo, diseño, branding e identidad de marca", href: "/services/branding-design", desc: "La identidad visual que alimenta una UI coherente." },
           { label: "Glosario del marketing y de la web", href: "/glossaire", desc: "UX/UI, tasa de conversión, Core Web Vitals… explicados de forma sencilla." },
         ],
         body: [
@@ -1425,7 +1425,7 @@ export const es = {
             type: "ul",
             items: [
               "El número de páginas y la complejidad de los contenidos.",
-              "A medida o WordPress, según su necesidad de flexibilidad y autonomía.",
+              "Un desarrollo 100 % a medida, adaptado a su actividad.",
               "El nivel de diseño: plantilla adaptada o identidad 100 % a medida.",
               "Las funcionalidades: formularios, reserva de citas, pago, área de cliente…",
               "El multilingüe (FR/DE/EN) y la optimización SEO y GEO.",
@@ -1774,7 +1774,7 @@ export const es = {
           { type: "h3", text: "1. Responder a las preguntas repetitivas" },
           {
             type: "p",
-            text: "Un chatbot bien entrenado responde 24/7 a las preguntas habituales (horarios, servicios, presupuestos) y orienta al visitante, sin movilizar a nadie.",
+            text: "Un chatbot bien diseñado responde 24/7 a las preguntas habituales (horarios, servicios, presupuestos) y orienta al visitante, sin movilizar a nadie.",
           },
           { type: "h3", text: "2. Cualificar y filtrar los leads" },
           {
@@ -2111,7 +2111,7 @@ export const es = {
         short: "El % de visitantes que pasan a la acción.",
         def: "Porcentaje de visitantes que realizan la acción deseada (solicitud de presupuesto, compra, registro). Indicador central de la eficacia de un sitio o de una campaña: duplicarla equivale a duplicar sus leads sin comprar más tráfico.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Nuestro servicio CRO" },
+          { href: "/services/lead-generation", label: "Nuestro servicio de Generación de leads" },
           { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Leer: el embudo de conversión" },
         ],
       },
@@ -2133,7 +2133,7 @@ export const es = {
         short: "El botón que invita a actuar.",
         def: "Elemento (botón, enlace) que incita al visitante a pasar a la siguiente etapa: «Reservar una llamada», «Obtener un presupuesto». Su claridad y visibilidad influyen mucho en la conversión. Regla de oro: un objetivo por página, un CTA principal.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Nuestro servicio CRO" },
+          { href: "/services/lead-generation", label: "Nuestro servicio de Generación de leads" },
           { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Leer: el UX/UI que convierte" },
         ],
       },
@@ -2144,7 +2144,7 @@ export const es = {
         short: "Comparar dos versiones para quedarse con la mejor.",
         def: "Método que consiste en mostrar dos variantes de una página o de un elemento a visitantes distintos, y luego medir cuál convierte mejor. Es la herramienta básica de la optimización continua: no se adivina, se prueba.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Nuestro servicio CRO" },
+          { href: "/services/lead-generation", label: "Nuestro servicio de Generación de leads" },
           { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Leer: medir para optimizar" },
         ],
       },
@@ -2221,7 +2221,7 @@ export const es = {
         def: "Key Performance Indicator: indicador clave elegido para medir el avance hacia un objetivo (tasa de conversión, coste por lead, tráfico cualificado…). La trampa: seguir vanity metrics (seguidores, impresiones) que halagan sin demostrar nada.",
         links: [
           { href: "/approche", label: "Nuestro enfoque, guiado por las cifras" },
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Nuestro servicio CRO" },
+          { href: "/services/lead-generation", label: "Nuestro servicio de Generación de leads" },
         ],
       },
       {
@@ -2242,7 +2242,7 @@ export const es = {
         short: "Medir lo que ocurre en su sitio.",
         def: "Herramientas (Google Analytics, Matomo…) que siguen el comportamiento de los visitantes: fuentes de tráfico, páginas vistas, conversiones. La base de toda decisión de marketing — que debe configurarse respetando el RGPD, consentimiento incluido.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Nuestro servicio CRO" },
+          { href: "/services/lead-generation", label: "Nuestro servicio de Generación de leads" },
           { href: "/news/rgpd-cookies-site-web-luxembourg", label: "Leer: RGPD y cookies en Luxemburgo" },
         ],
       },
@@ -2251,21 +2251,10 @@ export const es = {
         slug: "cms",
         category: "Web y tecnología",
         short: "La herramienta para gestionar el contenido de un sitio.",
-        def: "Content Management System (p. ej. WordPress): plataforma que permite crear y modificar las páginas de un sitio sin programar. Práctica para conservar el control en el día a día. La elección entre CMS o desarrollo a medida depende de su uso real — sin dogmas.",
+        def: "Content Management System: plataforma que permite crear y modificar las páginas de un sitio sin programar. Práctica para conservar el control en el día a día.",
         links: [
           { href: "/services/sites-web", label: "Nuestro servicio de Sitios web" },
           { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Leer: ¿cuánto cuesta un sitio web?" },
-        ],
-      },
-      {
-        term: "WordPress",
-        slug: "wordpress",
-        category: "Web y tecnología",
-        short: "El CMS más extendido del mundo.",
-        def: "Sistema de gestión de contenido de código abierto muy popular, ideal cuando quiere editar sus páginas usted mismo. Flexible gracias a sus temas y extensiones. Lo entregamos limpio, seguro y fácil de gestionar cuando prima la autonomía editorial.",
-        links: [
-          { href: "/services/sites-web", label: "Nuestro servicio de Sitios web" },
-          { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Leer: ¿a medida o WordPress?" },
         ],
       },
       {
@@ -2319,7 +2308,7 @@ export const es = {
         short: "Lo que hace reconocible a su marca.",
         def: "Conjunto coherente de elementos visuales y mensajes (logo, colores, tipografía, tono) que distingue a su empresa e inspira confianza. El logo es la firma; la identidad, la escritura entera.",
         links: [
-          { href: "/services/branding-design/identite-visuelle", label: "Nuestro servicio de Identidad visual" },
+          { href: "/services/branding-design/identite-visuelle", label: "Nuestro servicio de Identidad visual y manual de marca" },
           { href: "/news/quest-ce-quun-bon-logo-identite-qui-dure", label: "Leer: ¿qué es un buen logo?" },
         ],
       },
@@ -2330,7 +2319,7 @@ export const es = {
         short: "La caja de herramientas visual de una marca.",
         def: "Biblioteca de componentes, reglas y estilos reutilizables que garantiza la coherencia de un sitio o de un producto, y acelera su creación. Es lo que hace que una marca parezca «salida de la misma mano» en cada página.",
         links: [
-          { href: "/services/branding-design/charte-graphique", label: "Nuestro servicio de Manual de marca" },
+          { href: "/services/branding-design/identite-visuelle", label: "Nuestro servicio de Identidad visual y manual de marca" },
           { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Leer: coherencia y conversión" },
         ],
       },
@@ -2378,6 +2367,240 @@ export const es = {
         { n: "04", icon: "analytics", title: "Lanzamiento y seguimiento", desc: "Puesta en línea, seguimiento de los resultados y acompañamiento continuo. Usted ve el progreso, cada euro ligado a un resultado." },
       ],
     },
+    // Per-page "Notre méthode", keyed by "slug" or "slug/child"; banner photo in
+    // public/methode/<slug>[-<child>].webp. Pages missing here use `method` above.
+    methods: {
+      "sites-web": {
+        title: "Cuatro etapas hacia un sitio que convierte.",
+        lead: "Corporativo, tienda o landing page: el mismo marco. Usted valida maquetas, contenidos y puesta en línea; nosotros construimos rápido, con IA y revisión humana.",
+        steps: [
+          { icon: "process", title: "Auditoría y encuadre", desc: "Auditoría gratuita de su sitio actual o de su proyecto: objetivos, públicos, recorrido de conversión. Definimos con usted el encuadre de su sitio a medida." },
+          { icon: "ai-build", title: "Maquetas y desarrollo", desc: "Arquitectura, maquetas a medida y después desarrollo acelerado por IA. Usted valida el diseño antes de la primera línea de código; los formularios y la base SEO y GEO se integran desde el inicio." },
+          { icon: "next-perf", title: "Pruebas y validación", desc: "Velocidad, formularios, tracking, visualización en todas las pantallas: todo se verifica en preproducción. Usted revisa cada página y ajustamos hasta su validación final." },
+          { icon: "analytics", title: "Lanzamiento y seguimiento", desc: "Dominio, SSL, analítica y seguimiento de conversiones configurados antes del paso a producción. Tras el lanzamiento, leemos los datos con usted y ajustamos lo que frena las solicitudes." },
+        ],
+      },
+      "sites-web/site-vitrine": {
+        title: "Un sitio corporativo construido para desencadenar el contacto.",
+        lead: "Su sitio corporativo tiene unos segundos para convencer. Fijamos con usted el mensaje y el recorrido; después, cada página se diseña, se revisa y se valida antes de la puesta en línea.",
+        steps: [
+          { icon: "strategy", title: "Mensaje y arquitectura", desc: "Aclaramos lo que le distingue, a quién se dirige y la acción esperada: llamada, mensaje o presupuesto. Usted valida la arquitectura — inicio, servicios, quiénes somos, contacto — antes de cualquier diseño." },
+          { icon: "brand-identity", title: "Diseño a su imagen", desc: "Maquetas 100 % a medida, alineadas con su identidad, cero plantillas recicladas. Pruebas de credibilidad, llamadas a la acción y formulario de contacto colocados allí donde el visitante decide." },
+          { icon: "responsive", title: "Prueba de primera impresión", desc: "Verificamos que un visitante entiende quién es usted y qué hacer nada más llegar, empezando por el móvil. Usted revisa textos e imágenes; afinamos hasta que el sitio se le parezca." },
+          { icon: "seo", title: "Lanzamiento y posicionamiento", desc: "Puesta en línea con marcado SEO, datos estructurados y seguimiento de las solicitudes de contacto. Después, nos encargamos de las actualizaciones por usted." },
+        ],
+      },
+      "sites-web/site-e-commerce": {
+        title: "Del producto al pago, sin fricción.",
+        lead: "Una tienda se juzga por sus pedidos, no por su catálogo. Plataforma, pagos, IVA, envío: cada pieza se elige, se prueba y se valida con usted antes de abrir.",
+        steps: [
+          { icon: "ecommerce", title: "Catálogo y plataforma", desc: "Mapeamos su catálogo, sus variantes, sus zonas de envío y sus herramientas existentes. Después diseñamos una tienda a medida, pensada para el rendimiento." },
+          { icon: "funnel", title: "Fichas y embudo de compra", desc: "Fichas de producto que responden a las objeciones, carrito y pasos de pedido reducidos a lo esencial. Medios de pago, reglas de IVA luxemburguesas y gastos de envío se configuran desde el desarrollo." },
+          { icon: "integration", title: "Pedidos de prueba", desc: "Simulamos pedidos completos, del carrito al email de confirmación, y verificamos la sincronización con sus herramientas conectadas: stock, envío, contabilidad. Usted valida cada escenario." },
+          { icon: "analytics", title: "Apertura y pilotaje", desc: "Apertura de la tienda con el seguimiento e-commerce activo: carritos, abandonos, productos que venden. Le formamos en el back-office y después optimizamos allí donde las cifras muestran pérdidas." },
+        ],
+      },
+      "sites-web/landing-pages": {
+        title: "Una campaña, una página, una acción.",
+        lead: "Cada landing page parte de una campaña y de un objetivo único. Alineamos el mensaje con el anuncio, lanzamos rápido y después probamos para reducir su coste por lead.",
+        steps: [
+          { icon: "ads-targeting", title: "Objetivo y anuncio", desc: "Partimos de su campaña: audiencia, promesa del anuncio, acción esperada — formulario, reserva o descarga. Usted valida el objetivo único y el indicador con el que se juzgará la página." },
+          { icon: "landing", title: "Texto, página, formulario", desc: "Copywriting persuasivo alineado con el mensaje del anuncio, página sin menú ni salidas, formulario reducido a los campos útiles. Producción acelerada por IA para que el lanzamiento encaje con su campaña." },
+          { icon: "conversion", title: "Tracking y velocidad verificados", desc: "Antes del primer euro gastado, verificamos que cada conversión llega a sus herramientas publicitarias y que la página carga rápido en móvil, donde llega la mayor parte del tráfico." },
+          { icon: "ab-test", title: "Lanzamiento y A/B testing", desc: "La página se pone en línea con la campaña. Después probamos títulos, imágenes y formularios, una variable cada vez, y nos quedamos con la versión que mejor convierte." },
+        ],
+      },
+      "sites-web/refonte-de-site": {
+        title: "Empezar de cero sin perder su posicionamiento.",
+        lead: "Un rediseño mal llevado puede borrar el posicionamiento adquirido. Partimos de una auditoría de lo existente y terminamos con una migración controlada, URL por URL.",
+        steps: [
+          { icon: "redesign", title: "Auditoría de lo existente", desc: "UX, rendimiento, SEO, conversión: medimos lo que frena y lo que todavía rinde. Usted valida lo que conservamos — contenidos, páginas que rinden, elementos de marca — y lo que rehacemos." },
+          { icon: "ai-build", title: "Diseño, código, redirecciones", desc: "Nuevo diseño y bases técnicas rápidas, construidos en paralelo a su sitio actual, que sigue en línea. Mapeamos todas sus URLs y preparamos cada redirección antes de la migración." },
+          { icon: "speed", title: "Comparativa antes y después", desc: "En un entorno de pruebas, comparamos el sitio antiguo y el nuevo: velocidad, recorridos, formularios, etiquetas SEO. Las redirecciones se prueban una a una; usted valida la versión final." },
+          { icon: "analytics", title: "Migración y seguimiento SEO", desc: "Puesta en línea, redirecciones activas, Search Console bajo vigilancia. Seguimos sus posiciones y sus conversiones tras la migración para corregir rápido el menor retroceso." },
+        ],
+      },
+      "sites-web/site-multilingue": {
+        title: "Encontrado y entendido, en cada idioma.",
+        lead: "En Luxemburgo, un prospecto germanófono no busca como uno francófono. Definimos idiomas, URLs y palabras clave antes del diseño; después, cada versión se optimiza y se valida por separado.",
+        steps: [
+          { icon: "multilingual", title: "Idiomas y arquitectura", desc: "Definimos con usted los idiomas prioritarios, la estructura de las URLs, el marcado hreflang y las palabras clave de cada idioma. El multilingüe se plantea antes de la primera maqueta." },
+          { icon: "gen-content", title: "Contenidos por idioma", desc: "Redacción y traducción profesionales, o integración de sus textos, nunca traducción automática en bruto. Las maquetas absorben las diferencias de longitud entre idiomas." },
+          { icon: "seo", title: "Revisión idioma por idioma", desc: "Usted o sus revisores validan cada versión. Controlamos hreflang, selector de idioma, formularios y emails de confirmación en cada idioma, para que ningún visitante acabe en francés por error." },
+          { icon: "analytics", title: "Indexación y seguimiento", desc: "Puesta en línea y solicitud de indexación de cada versión. Seguimos posiciones, tráfico y solicitudes idioma por idioma, para saber qué mercado responde y dónde reforzar el contenido." },
+        ],
+      },
+      "seo-geo": {
+        title: "Un solo trabajo, dos motores: Google y las IA.",
+        lead: "Trabajamos el SEO y el GEO en un mismo movimiento: usted valida cada prioridad, corregimos lo que bloquea y usted sigue posiciones y citas.",
+        steps: [
+          { icon: "process", title: "Auditoría SEO y GEO", desc: "Auditoría gratuita: técnica, semántica y presencia en las respuestas de IA. Sabe qué frena su visibilidad, y por dónde empezar, antes incluso de hablar de presupuesto." },
+          { icon: "strategy", title: "Plan y optimizaciones", desc: "Palabras clave FR/DE/EN, plan de contenidos, correcciones técnicas, Schema.org y llms.txt: una base que Google entiende y que las IA pueden retomar como fuente." },
+          { icon: "ab-test", title: "Verificaciones y punto cero", desc: "Antes de la puesta en línea, verificamos la indexación, el marcado y la visualización de cada página, corregimos las desviaciones y registramos sus posiciones y citas de partida." },
+          { icon: "analytics", title: "Seguimiento de posiciones y citas", desc: "Puesta en línea y, después, reporting mensual de las posiciones en Google y de las citas en IA, revisado con usted. Ve lo que progresa, lo que se estanca y lo que abordamos a continuación." },
+        ],
+      },
+      "seo-geo/seo": {
+        title: "Del diagnóstico técnico al tráfico cualificado.",
+        lead: "El SEO se construye por capas: primero lo que bloquea la indexación, después las páginas que responden a la búsqueda y luego el seguimiento. Usted valida cada prioridad.",
+        steps: [
+          { icon: "seo", title: "Auditoría técnica y semántica", desc: "Velocidad, estructura, indexación, enlazado interno, búsquedas en las que no aparece: listamos lo que frena su posicionamiento y lo clasificamos por impacto." },
+          { icon: "multilingual", title: "Palabras clave y on-page", desc: "Plan de palabras clave en FR, DE y EN según la intención de búsqueda, y después correcciones técnicas, etiquetas, estructura de las páginas y contenidos que responden a lo que teclean sus clientes." },
+          { icon: "speed", title: "Control técnico", desc: "Rastreamos el sitio como lo haría Google: redirecciones, etiquetas canónicas, versiones lingüísticas, velocidad móvil. Cada anomalía se corrige antes de la reindexación." },
+          { icon: "analytics", title: "Seguimiento y autoridad", desc: "Puesta en línea y, después, reporting mensual de posiciones, tráfico y conversiones, con los próximos contenidos que producir para consolidar su autoridad en sus búsquedas clave." },
+        ],
+      },
+      "seo-geo/geo-gso": {
+        title: "Legible para los modelos, citado en sus respuestas.",
+        lead: "Campo emergente, método estricto: partimos de lo que las IA dicen hoy de usted, estructuramos, probamos y hacemos seguimiento de cada cita.",
+        steps: [
+          { icon: "chatbot", title: "Auditoría de presencia en IA", desc: "Preguntamos a ChatGPT, Perplexity y Google AI sobre sus temas: ¿le citan, de qué forma, y a quién citan en su lugar? Después auditamos la estructura técnica de su sitio." },
+          { icon: "ai-build", title: "Contenido citable y marcado", desc: "Respuestas nítidas, hechos verificables, contexto luxemburgués: reestructuramos sus páginas clave para que sean citables y añadimos los datos estructurados Schema.org y el archivo llms.txt." },
+          { icon: "ab-test", title: "Validación del lado de las máquinas", desc: "Verificamos la validez de los datos estructurados, la lectura de sus páginas sin JavaScript y el acceso de los robots de IA. Cada desviación se corrige antes de publicar." },
+          { icon: "geo-citation", title: "Seguimiento de citas", desc: "Tras la puesta en línea, planteamos regularmente a las IA las preguntas de sus clientes y seguimos dónde le citan, cómo le describen y qué queda por reforzar." },
+        ],
+      },
+      "seo-geo/seo-local": {
+        title: "Ganar el mapa, allí donde sus clientes eligen.",
+        lead: "Ficha, datos de contacto, reseñas, páginas locales: trabajamos las señales que Google utiliza para clasificar a los negocios de proximidad, en Luxemburgo y en la Gran Región.",
+        steps: [
+          { icon: "local-seo", title: "Auditoría de visibilidad local", desc: "Revisamos su ficha de Google Business Profile, sus datos de contacto en los directorios, sus reseñas y los competidores que le adelantan en el mapa, búsqueda por búsqueda." },
+          { icon: "integration", title: "Ficha, citaciones y páginas", desc: "Completamos su ficha (categorías, servicios, fotos, zona de servicio), armonizamos nombre, dirección y teléfono en todas partes y creamos sus páginas locales con marcado en FR, DE y EN." },
+          { icon: "conversion", title: "Controles y reseñas de clientes", desc: "Rastreamos las fichas duplicadas, los datos de contacto divergentes y los errores de marcado, y después lanzamos la recogida de reseñas de clientes con plantillas de respuesta listas para usar." },
+          { icon: "analytics", title: "Seguimiento en el mapa", desc: "Seguimos sus posiciones en el mapa por zona, las llamadas y las solicitudes de indicaciones generadas desde la ficha, y publicamos con regularidad para mantener activa su presencia." },
+        ],
+      },
+      "lead-generation/tunnels-de-conversion": {
+        title: "Un recorrido mapeado, medido en cada nivel.",
+        lead: "Descubrimiento, consideración, decisión: cada fase tiene su página, su mensaje y su medición. Usted valida la arquitectura antes de cualquier puesta en línea.",
+        steps: [
+          { icon: "funnel", title: "Mapeo del recorrido", desc: "Reconstruimos el camino real de sus clientes hasta la solicitud de presupuesto y lo dividimos en fases TOFU, MOFU, BOFU ajustadas a su ciclo de venta." },
+          { icon: "conversion", title: "Páginas y recordatorios alineados", desc: "Para cada fase, la página, el mensaje y el recordatorio que hacen avanzar al prospecto un paso más: tranquilizamos en la consideración y levantamos las últimas objeciones en el momento de decidir." },
+          { icon: "ab-test", title: "Tracking y tests por nivel", desc: "Medimos cada paso de una etapa a otra, detectamos los niveles con fugas y concentramos allí los tests A/B, en lugar de retocarlo todo al azar." },
+          { icon: "analytics", title: "Lanzamiento y atribución", desc: "Embudo en línea y atribución de principio a fin: sabe qué canal trae qué leads y en qué punto están. Un plan de optimización fija los próximos frentes de trabajo." },
+        ],
+      },
+      "lead-generation/landing-pages-campagne": {
+        title: "Una campaña, una página, una sola acción.",
+        lead: "Cada clic de pago debe aterrizar en la promesa que lo provocó. Partimos de su anuncio y de su audiencia y construimos la página que lo prolonga.",
+        steps: [
+          { icon: "ads-targeting", title: "Brief de campaña e intención", desc: "Anuncio, audiencia, palabra clave, oferta: analizamos lo que el visitante vio y buscó antes de hacer clic, para que la página retome palabra por palabra la promesa del anuncio." },
+          { icon: "landing", title: "Copywriting y formulario", desc: "Un título que confirma el clic, beneficios que responden a las objeciones, elementos de confianza, una sola llamada a la acción y un formulario reducido a los campos que realmente cualifican." },
+          { icon: "responsive", title: "Variantes y velocidad móvil", desc: "Preparamos variantes de título, de oferta o de formulario para el A/B testing, y verificamos la carga en móvil, donde llega la mayor parte del tráfico de pago." },
+          { icon: "analytics", title: "Lanzamiento con la campaña", desc: "La página se pone en línea con la campaña, con el tracking de conversiones activo. Seguimos el coste por lead de cada anuncio y nos quedamos con la variante que mejor convierte." },
+        ],
+      },
+      "lead-generation/email-marketing-automation": {
+        title: "Secuencias que hacen seguimiento en el momento adecuado.",
+        lead: "Un prospecto que todavía no está listo no es un prospecto perdido. Diseñamos escenarios que le acompañan hasta la decisión, respetando el RGPD.",
+        steps: [
+          { icon: "rgpd", title: "Base y disparadores", desc: "Revisamos su base, sus consentimientos opt-in y su configuración de envío, y después identificamos los disparadores útiles: descarga, visita clave, inactividad, solicitud que no prosperó." },
+          { icon: "email-automation", title: "Escenarios y redacción", desc: "Escribimos cada secuencia según la fase del prospecto: informar, tranquilizar, proponer una cita. Emails cortos, útiles, con su tono, que mantienen el vínculo sin cansar." },
+          { icon: "ab-test", title: "Entregabilidad y pruebas de envío", desc: "Configuración SPF, DKIM y DMARC, pruebas de recepción y, después, tests A/B de asuntos y contenidos sobre una muestra, antes de escribir a toda su base." },
+          { icon: "analytics", title: "Activación y seguimiento", desc: "Los escenarios funcionan solos y cada secuencia tiene su reporting: aperturas, clics, respuestas, bajas. Reescribimos los emails que pierden fuerza y ajustamos el ritmo de los envíos." },
+        ],
+      },
+      "publicite": {
+        title: "Cada euro de publicidad debe justificarse.",
+        lead: "Partimos de sus cifras reales, no de intuiciones. Usted valida cada etapa, mantiene el control del presupuesto y ve lo que le aporta.",
+        steps: [
+          { icon: "process", title: "Auditoría y objetivos", desc: "Analizamos sus campañas en curso, su tracking, sus márgenes y su mercado. Auditoría gratuita: sabe qué funciona y qué se escapa, antes incluso de hablar de presupuesto." },
+          { icon: "ads-targeting", title: "Plan de medios y campañas", desc: "Google para captar la demanda, Meta para crearla, LinkedIn para llegar a los decisores: elegimos sus canales, implementamos el tracking y construimos campañas y landing pages." },
+          { icon: "ab-test", title: "Presupuesto de prueba y ajustes", desc: "Empezamos con un presupuesto de prueba definido juntos. Anuncios, audiencias y pujas se comparan en condiciones reales; lo que no convierte se corta sin esperar." },
+          { icon: "analytics", title: "Aceleración y reporting", desc: "Aumentamos únicamente lo que es rentable y seguimos optimizando. Reporting claro sobre el coste por adquisición y el ROAS, canal por canal, sin jerga." },
+        ],
+      },
+      "publicite/google-ads": {
+        title: "Clics que se convierten en solicitudes.",
+        lead: "En Google, la demanda ya existe. Nuestro trabajo: situarle en las búsquedas adecuadas, en el momento adecuado, sin pagar por las equivocadas.",
+        steps: [
+          { icon: "seo", title: "Auditoría de cuenta y palabras clave", desc: "Analizamos su cuenta existente — términos de búsqueda, nivel de calidad, presupuesto desperdiciado — o, si parte de cero, la demanda real de sus palabras clave." },
+          { icon: "landing", title: "Estructura y landing pages", desc: "Campañas Search y Performance Max estructuradas por intención y por idioma (FR, DE, EN), palabras clave negativas, landing pages dedicadas. El seguimiento de conversiones se implementa antes del primer euro gastado." },
+          { icon: "conversion", title: "Búsquedas y pujas", desc: "Desde los primeros clics, excluimos las búsquedas que no convierten, probamos los anuncios y ajustamos las pujas según el coste por conversión." },
+          { icon: "next-perf", title: "Escalado", desc: "Ampliamos lo que rinde: nuevas palabras clave, Shopping, YouTube si es pertinente. El reporting contrasta las conversiones de Google con las solicitudes que realmente recibe." },
+        ],
+      },
+      "publicite/meta-ads": {
+        title: "Captar la atención y después convertirla.",
+        lead: "En Meta, la creatividad hace ahora gran parte de la segmentación. Producimos, probamos, reimpactamos: cada etapa se mide hasta la conversión.",
+        steps: [
+          { icon: "integration", title: "Píxel, audiencias y contenidos", desc: "Revisamos su cuenta publicitaria, el píxel y la API de Conversiones, sus audiencias y sus contenidos existentes. Sin una señal fiable, el algoritmo de Meta optimiza a ciegas." },
+          { icon: "branding", title: "Creatividades y recorrido", desc: "Diseñamos imágenes y vídeos en formatos nativos — Reels, Stories, carruseles — y estructuramos el recorrido: descubrimiento, consideración y después retargeting de visitantes y usuarios que han interactuado." },
+          { icon: "ab-test", title: "Tests creativos", desc: "Lanzamos en paralelo varios ganchos, imágenes y formatos. Nos quedamos con los que reducen el coste por resultado, cortamos los demás y declinamos los ganadores." },
+          { icon: "analytics", title: "Amplificación y seguimiento", desc: "El presupuesto sigue a los mejores resultados. Vigilamos la frecuencia, renovamos las creatividades antes de que se desgasten y usted sigue el retorno de la inversión en un reporting claro." },
+        ],
+      },
+      "publicite/linkedin-ads": {
+        title: "Hablar a los decisores, no a todo LinkedIn.",
+        lead: "En B2B, un lead solo vale si avanza en su pipeline. Segmentamos por cuenta y por cargo, y medimos hasta la cita comercial.",
+        steps: [
+          { icon: "strategy", title: "Cliente ideal y cuentas", desc: "Definimos con usted su cliente ideal: cargos, antigüedad, sectores, tamaño de empresa. Para el ABM, construimos la lista de sus cuentas estratégicas en Luxemburgo y en la Gran Región." },
+          { icon: "smart-forms", title: "Formatos y conexión CRM", desc: "Contenidos patrocinados, documentos, Lead Gen Forms precargados: cada formato sirve a una etapa del ciclo de venta. Insight Tag y conexión CRM se implementan desde el principio." },
+          { icon: "leads", title: "Cualificación de leads", desc: "Juzgamos las campañas por la calidad de los leads, no por el coste por clic. Con lo que nos cuenta su equipo comercial, descartamos los perfiles fuera de objetivo y afinamos audiencias y mensajes." },
+          { icon: "funnel", title: "Medición del pipeline", desc: "Concentramos el presupuesto en las cuentas y los mensajes que generan citas. El reporting sigue el coste por lead y la contribución al pipeline, con los datos del CRM como respaldo." },
+        ],
+      },
+      "branding-design": {
+        title: "Una marca pensada antes de ser dibujada.",
+        lead: "Del posicionamiento a los archivos entregados, un marco claro: usted valida cada etapa, afinamos con usted y su marca habla con una sola voz, en todas partes.",
+        steps: [
+          { icon: "process", title: "Diagnóstico de marca", desc: "Estudiamos su punto de partida, sus competidores y sus públicos en Luxemburgo. Auditoría gratuita: identificamos lo que enturbia su imagen antes incluso de hablar de presupuesto." },
+          { icon: "brand-identity", title: "Diseño a medida", desc: "Estrategia, nombre, logo, identidad completa o soportes impresos: diseñamos lo que necesita. Cada propuesta está argumentada y vinculada a su posicionamiento; nada se deja al azar." },
+          { icon: "ab-test", title: "Afinado y validación", desc: "Afinamos la pista elegida con idas y venidas, junto a usted, hasta que cada elemento sea el justo. Nada se finaliza sin su validación." },
+          { icon: "guidelines", title: "Entrega y despliegue", desc: "Le entregamos todos sus archivos, fuentes incluidas, con sus normas de uso. Después, le acompañamos para declinar su marca en cada nuevo soporte, sin perder coherencia." },
+        ],
+      },
+      "branding-design/creation-de-logo": {
+        title: "Del brief a un logo que aguanta en todas partes.",
+        lead: "Un logo se juzga por su uso, no en una maqueta. Lo anclamos en su actividad, lo afinamos con usted y se lo entregamos listo para todos sus soportes.",
+        steps: [
+          { icon: "branding", title: "Brief e inmersión", desc: "Delimitamos su actividad, sus clientes, sus competidores y lo que su logo debe expresar. Un brief preciso evita las pistas desacertadas y las idas y venidas inútiles." },
+          { icon: "logo", title: "Conceptos originales", desc: "Varias pistas distintas, dibujadas para usted, nunca sacadas de un banco de símbolos. Cada concepto se presenta en contexto, con la intención que lo justifica." },
+          { icon: "ab-test", title: "Afinado y legibilidad", desc: "Curvas, proporciones, espaciados: la pista elegida se afina con usted y después se prueba como favicon, en gran formato, en monocromo, sobre fondo claro y oscuro." },
+          { icon: "responsive", title: "Entrega del pack de logo", desc: "Recibe el pack completo — color, monocromo, vectorial, web, impresión, favicon — y una miniguía de uso. El logo le pertenece íntegramente, archivos fuente incluidos." },
+        ],
+      },
+      "branding-design/identite-visuelle": {
+        title: "Del logo al manual, todo encaja.",
+        lead: "Una identidad solo vale si se aplica igual en todas partes. Construimos el sistema y después fijamos sus normas para sus equipos y proveedores.",
+        steps: [
+          { icon: "process", title: "Inventario y taller", desc: "Revisamos sus soportes existentes y los de sus competidores y, en un taller, definimos juntos el territorio visual que ocupar, según sus valores y sus públicos." },
+          { icon: "brand-identity", title: "Logo y sistema visual", desc: "Logo, paleta, jerarquía tipográfica, iconografía, motivos, estilo fotográfico: diseñamos cada pieza en relación con las demás, para obtener un sistema coherente, no una colección de elementos aislados." },
+          { icon: "responsive", title: "Puesta en situación", desc: "Aplicamos el sistema a sus casos reales — papelería, sitio web, redes sociales, presentación — y ajustamos con usted lo que carece de contraste, legibilidad o coherencia." },
+          { icon: "guidelines", title: "Manual y biblioteca de recursos", desc: "El manual fija las normas — zonas de protección, tamaños mínimos, códigos HEX, CMYK, Pantone, usos prohibidos — y sus recursos llegan organizados. Un documento vivo, ampliado con cada nuevo soporte." },
+        ],
+      },
+      "branding-design/supports-print": {
+        title: "Cada soporte diseñado, cada archivo conforme.",
+        lead: "Un soporte impreso no se corrige a posteriori. Definimos, diseñamos y controlamos cada archivo para que vaya a la imprenta que usted elija sin retoques.",
+        steps: [
+          { icon: "process", title: "Pliego de condiciones", desc: "Hacemos inventario de sus soportes — usos, formatos, contenidos — y de las restricciones técnicas de su imprenta, si ya la ha elegido. También verificamos que su identidad está lista para declinarse." },
+          { icon: "branding", title: "Diseño y maquetación", desc: "Tarjetas de visita, papelería, folletos, informes, señalética: cada soporte se maqueta en continuidad con su identidad, con una jerarquía clara al servicio del mensaje." },
+          { icon: "ab-test", title: "Revisión y control de preimpresión", desc: "Usted revisa y valida cada maqueta. Después sometemos los archivos al control de preimpresión: sangrado, CMYK, resolución de las imágenes, tipografías, marcas de corte." },
+          { icon: "print", title: "Archivos y plantillas", desc: "PDF HD conformes, las especificaciones técnicas para la imprenta que usted elija y plantillas reutilizables: sus próximas ediciones se preparan sin partir de cero." },
+        ],
+      },
+      "automatisation-ia": {
+        title: "Automatizar lo que importa, no automatizarlo todo.",
+        lead: "Partimos de sus procesos reales, no de una herramienta de moda. El objetivo: quitar a sus equipos el trabajo sin valor, sin debilitar lo que ya funciona.",
+        steps: [
+          { icon: "process", title: "Mapeo de procesos", desc: "Auditoría gratuita: listamos sus tareas repetitivas, quién las hace, con qué frecuencia y en qué herramientas, y después priorizamos lo que de verdad le hará ganar tiempo." },
+          { icon: "automation", title: "Diseño a medida", desc: "Elegimos el stack adaptado a sus herramientas existentes, configuramos flujos de trabajo, integraciones y asistentes de IA, y documentamos cada escenario para que sus equipos puedan entenderlo." },
+          { icon: "ab-test", title: "Pruebas con casos reales", desc: "Ejecutamos cada automatización con sus datos reales, casos límite incluidos, y verificamos los accesos y el cumplimiento del RGPD. Sus equipos validan antes de cualquier puesta en producción." },
+          { icon: "analytics", title: "Activación y supervisión", desc: "Activamos los escenarios, vigilamos las ejecuciones y los errores, y medimos el tiempo realmente liberado. Sus equipos reciben formación y la documentación le pertenece." },
+        ],
+      },
+      "automatisation-ia/integrations-crm-api": {
+        title: "Una única fuente de verdad para sus datos.",
+        lead: "Una sincronización que falla en silencio hace más daño que una doble entrada. Conectamos, probamos y después supervisamos cada flujo a lo largo del tiempo.",
+        steps: [
+          { icon: "process", title: "Auditoría de flujos", desc: "Inventariamos sus herramientas, sus API y cada dato que circula entre ellas. Detectamos las dobles entradas, los silos y los campos incoherentes de un programa a otro." },
+          { icon: "integration", title: "Mapeo y conectores", desc: "Definimos qué herramienta hace de referencia para cada dato, alineamos los campos y después activamos los conectores existentes o desarrollamos la integración a medida mediante API y webhooks." },
+          { icon: "rgpd", title: "Pruebas y seguridad", desc: "Ponemos a prueba cada sincronización fuera de producción: duplicados, campos vacíos, errores de API. Accesos limitados a lo estrictamente necesario, conexiones seguras, datos tratados respetando el RGPD." },
+          { icon: "automation", title: "Puesta en servicio supervisada", desc: "Puesta en servicio progresiva y, después, supervisión: cada error de sincronización genera una alerta para corregirlo rápido. Recibe la documentación de sus flujos y de los accesos." },
+        ],
+      },
+    },
     // Honest "guarantees / engagements" band — no invented client metrics.
     proof: {
       eyebrow: "Nuestros compromisos",
@@ -2390,6 +2613,191 @@ export const es = {
         { icon: "analytics", value: "Reporting claro", label: "Transparencia total", desc: "Cada euro gastado está ligado a un resultado medible." },
       ],
     },
+    // Per-page "Nos engagements", keyed by "slug" or "slug/child"; `image` is a photo in
+    // public/engagements (no extension). Pages missing here use `proof` above.
+    proofs: {
+      "sites-web": {
+        title: "Lo que incluye cada sitio, negro sobre blanco.",
+        lead: "Sin promesas mágicas. Sea cual sea el pack, estos compromisos figuran en cada proyecto de sitio.",
+        items: [
+          { image: "code", value: "100 % suyo", label: "Código, contenidos, accesos", desc: "Usted sigue siendo el propietario de su sitio. Sin ataduras, aunque cambie de agencia." },
+          { image: "sites-web-2", value: "Hosting incluido", label: "En cada pack", desc: "Dominio gratuito el primer año, hosting de alta velocidad y certificado SSL HTTPS." },
+          { image: "sites-web-3", value: "3 meses de soporte", label: "No está solo", desc: "Asistencia técnica incluida durante los tres primeros meses, sea cual sea el pack." },
+          { image: "sites-web-4", value: "100 % a medida", label: "Cero plantillas", desc: "Cada sitio se diseña y se desarrolla para su actividad, nunca se adapta de una plantilla." },
+        ],
+      },
+      "sites-web/site-vitrine": {
+        title: "Lo que incluye cada sitio, negro sobre blanco.",
+        lead: "Sin promesas mágicas. Sea cual sea el pack, estos compromisos figuran en cada proyecto de sitio.",
+        items: [
+          { image: "code", value: "100 % suyo", label: "Código, contenidos, accesos", desc: "Usted sigue siendo el propietario de su sitio. Sin ataduras, aunque cambie de agencia." },
+          { image: "sites-web-2", value: "Hosting incluido", label: "En cada pack", desc: "Dominio gratuito el primer año, hosting de alta velocidad y certificado SSL HTTPS." },
+          { image: "sites-web-3", value: "3 meses de soporte", label: "No está solo", desc: "Asistencia técnica incluida durante los tres primeros meses, sea cual sea el pack." },
+          { image: "sites-web-4", value: "100 % a medida", label: "Cero plantillas", desc: "Cada sitio se diseña y se desarrolla para su actividad, nunca se adapta de una plantilla." },
+        ],
+      },
+      "sites-web/site-e-commerce": {
+        title: "Del carrito al pago, nuestros compromisos por escrito.",
+        lead: "Una tienda se juzga por sus ventas. Esto es lo que implementamos en cada proyecto e-commerce.",
+        items: [
+          { image: "sites-web-site-e-commerce-1", value: "IVA luxemburgués", label: "Pagos configurados", desc: "Medios de pago seguros y reglas de IVA luxemburguesas configurados desde el lanzamiento." },
+          { image: "sites-web-site-e-commerce-2", value: "Autonomía diaria", label: "Back-office y formación", desc: "Productos, stock y pedidos gestionados por sus equipos, formados en la herramienta, sin depender de nosotros." },
+          { image: "sites-web-site-e-commerce-3", value: "Embudo sin fricción", label: "Del producto al pago", desc: "Un recorrido de compra diseñado para reducir el abandono de carrito y optimizado después con sus datos." },
+          { image: "reporting", value: "Ventas medidas", label: "Seguimiento e-commerce", desc: "Conversiones, carritos y productos que rinden: un panel de control claro desde la puesta en línea." },
+        ],
+      },
+      "sites-web/landing-pages": {
+        title: "Lo que incluye cada sitio, negro sobre blanco.",
+        lead: "Sin promesas mágicas. Sea cual sea el pack, estos compromisos figuran en cada proyecto de sitio.",
+        items: [
+          { image: "sites-web-landing-pages-1", value: "Una sola acción", label: "Cero distracciones", desc: "Sin menú ni salidas: toda la página converge hacia su único objetivo." },
+          { image: "code", value: "100 % suyo", label: "Código, contenidos, accesos", desc: "Usted sigue siendo el propietario de su sitio. Sin ataduras, aunque cambie de agencia." },
+          { image: "sites-web-2", value: "Hosting incluido", label: "En cada pack", desc: "Dominio gratuito el primer año, hosting de alta velocidad y certificado SSL HTTPS." },
+          { image: "sites-web-3", value: "3 meses de soporte", label: "No está solo", desc: "Asistencia técnica incluida durante los tres primeros meses, sea cual sea el pack." },
+          { image: "sites-web-4", value: "100 % a medida", label: "Cero plantillas", desc: "Cada sitio se diseña y se desarrolla para su actividad, nunca se adapta de una plantilla." },
+        ],
+      },
+      "sites-web/refonte-de-site": {
+        title: "Lo que incluye cada sitio, negro sobre blanco.",
+        lead: "Sin promesas mágicas. Sea cual sea el pack, estos compromisos figuran en cada proyecto de sitio.",
+        items: [
+          { image: "code", value: "100 % suyo", label: "Código, contenidos, accesos", desc: "Usted sigue siendo el propietario de su sitio. Sin ataduras, aunque cambie de agencia." },
+          { image: "sites-web-2", value: "Hosting incluido", label: "En cada pack", desc: "Dominio gratuito el primer año, hosting de alta velocidad y certificado SSL HTTPS." },
+          { image: "sites-web-3", value: "3 meses de soporte", label: "No está solo", desc: "Asistencia técnica incluida durante los tres primeros meses, sea cual sea el pack." },
+          { image: "sites-web-4", value: "100 % a medida", label: "Cero plantillas", desc: "Cada sitio se diseña y se desarrolla para su actividad, nunca se adapta de una plantilla." },
+        ],
+      },
+      "sites-web/site-multilingue": {
+        title: "Un verdadero sitio por idioma, negro sobre blanco.",
+        lead: "Nada de traducciones pegadas. Compromisos concretos para existir en cada idioma de su mercado.",
+        items: [
+          { image: "multilingue", value: "FR · DE · EN · LU", label: "Idiomas nativos", desc: "Francés, alemán, inglés; luxemburgués y otros idiomas bajo pedido, para la Gran Región." },
+          { image: "sites-web-site-multilingue-2", value: "SEO idioma por idioma", label: "Marcado hreflang correcto", desc: "URLs y contenidos optimizados por separado: cada idioma capta sus propias búsquedas." },
+          { image: "sites-web-site-multilingue-3", value: "Cero traducción en bruto", label: "Contenido preciso por idioma", desc: "Traducción profesional o integración de sus textos: un contenido preciso, nunca palabra por palabra." },
+          { image: "sites-web-site-multilingue-4", value: "Mismo tono, misma UX", label: "Coherencia editorial", desc: "Un tono y un recorrido coherentes de un idioma a otro, adaptados a cada público." },
+        ],
+      },
+      "seo-geo": {
+        title: "Google e IA: compromisos, no promesas.",
+        lead: "Ninguna agencia seria garantiza una posición en Google o una cita en una IA. Garantizamos el método, los entregables y la transparencia.",
+        items: [
+          { image: "audit", value: "Auditoría SEO/GEO gratuita", label: "Antes de cualquier presupuesto", desc: "Le decimos en qué punto está en Google y ante las IA, sin compromiso." },
+          { image: "seo-geo-2", value: "Google + IA, juntos", label: "Un solo trabajo", desc: "Alrededor del 80 % de las buenas prácticas son comunes: no sacrificamos Google por la IA." },
+          { image: "seo-geo-3", value: "Sin plazos mágicos", label: "Calendario honesto", desc: "Primeras señales a menudo en unas semanas, ganancias sólidas en unos meses. Se lo decimos desde el principio." },
+          { image: "reporting", value: "Posiciones + citas", label: "Reporting mensual", desc: "Sus posiciones en Google y sus citas en IA, seguidas y explicadas en un reporting claro." },
+        ],
+      },
+      "seo-geo/seo": {
+        title: "En Google, lo que prometemos y lo que rechazamos.",
+        lead: "El algoritmo de Google no se negocia. Nos comprometemos con lo que depende de nosotros: bases técnicas, contenidos, seguimiento mensual.",
+        items: [
+          { image: "seo-geo-seo-1", value: "Ningún n.º 1 prometido", label: "La honestidad primero", desc: "Una posición garantizada es un argumento de venta, no un compromiso. Le mostramos el avance." },
+          { image: "code", value: "Base técnica sana", label: "SEO técnico", desc: "Velocidad, estructura, indexación: corregimos de raíz lo que bloquea su posicionamiento." },
+          { image: "multilingue", value: "FR · DE · EN", label: "Palabras clave por idioma", desc: "Un plan de palabras clave pensado para cada uno de los tres idiomas del mercado luxemburgués." },
+          { image: "reporting", value: "Tráfico y conversiones", label: "Seguimiento cada mes", desc: "Posiciones, tráfico, conversiones: ve lo que le aporta su posicionamiento." },
+        ],
+      },
+      "lead-generation/tunnels-de-conversion": {
+        title: "Su embudo, mapeado y medido en cada etapa.",
+        lead: "Un embudo B2B no se adivina. Lo diseñamos con usted, lo instrumentamos y después lo mejoramos nivel por nivel.",
+        items: [
+          { image: "lead-generation-tunnels-de-conversion-1", value: "Embudo mapeado", label: "TOFU · MOFU · BOFU", desc: "El recorrido completo, del primer contacto a la solicitud de presupuesto, mapeado y validado con usted." },
+          { image: "lead-generation-tunnels-de-conversion-2", value: "Un mensaje por etapa", label: "Alineado con cada fase", desc: "Cada página y cada recordatorio hablan al prospecto según su fase: descubrimiento, consideración, decisión." },
+          { image: "reporting", value: "Seguimiento de principio a fin", label: "Tracking y atribución", desc: "Cada etapa se mide: ve dónde gana y dónde pierde prospectos." },
+          { image: "lead-generation-tunnels-de-conversion-4", value: "Su ciclo de venta", label: "Pensado para el B2B", desc: "El embudo sigue su ciclo real, aunque sea largo, y lleva a un presupuesto o a una llamada." },
+        ],
+      },
+      "publicite/google-ads": {
+        title: "En Google, compramos intención, no volumen.",
+        lead: "Sus clientes ya buscan una solución. Le situamos ante ellos en ese instante, con una página hecha para convertir.",
+        items: [
+          { image: "publicite-google-ads-1", value: "La intención primero", label: "Search y Performance Max", desc: "Campañas estructuradas para aparecer en las búsquedas que convierten, no ante los curiosos." },
+          { image: "publicite-google-ads-2", value: "Landing page dedicada", label: "Cuando hace falta", desc: "Si ninguna página de su sitio encaja con el anuncio, creamos una landing page dedicada para transformar el clic de pago en solicitud." },
+          { image: "multilingue", value: "Palabras clave FR · DE · EN", label: "Sus clientes, su idioma", desc: "En Luxemburgo, sus clientes buscan en tres idiomas. Sus campañas cubren los tres." },
+          { image: "publicite-google-ads-4", value: "Clics desde el lanzamiento", label: "Aprendizaje anunciado", desc: "Las primeras semanas sirven para aprender y optimizar. Se lo decimos antes, no después." },
+        ],
+      },
+      "publicite/meta-ads": {
+        title: "Detener el scroll y después medir lo que aporta.",
+        lead: "Nadie busca su producto en Instagram. Creatividades que captan la atención, probadas, y un coste por resultado visible.",
+        items: [
+          { image: "publicite-meta-ads-1", value: "Creatividades a medida", label: "Imágenes y vídeos", desc: "Creamos sus imágenes y vídeos publicitarios, o adaptamos sus contenidos existentes." },
+          { image: "publicite-meta-ads-2", value: "Tests A/B continuos", label: "Las cifras deciden", desc: "Varias imágenes y mensajes probados en paralelo: conservamos lo que rinde y cortamos el resto." },
+          { image: "publicite-meta-ads-3", value: "Ubicaciones elegidas", label: "Según su público", desc: "Facebook, Instagram, Threads o Audience Network: elegimos según su público y sus objetivos." },
+          { image: "reporting", value: "Coste por resultado", label: "Más allá de los likes", desc: "Un reporting claro del coste por resultado y del retorno de la inversión." },
+        ],
+      },
+      "publicite/linkedin-ads": {
+        title: "Los decisores adecuados, seguidos hasta su pipeline.",
+        lead: "El clic cuesta más en LinkedIn. Empezamos con un presupuesto de prueba y medimos el lead, no el clic.",
+        items: [
+          { image: "publicite-linkedin-ads-1", value: "Decisores segmentados", label: "Cuenta por cuenta", desc: "Cargo, antigüedad, sector, tamaño de empresa y, en ABM, sus cuentas estratégicas una a una." },
+          { image: "publicite-linkedin-ads-2", value: "Lead Gen Forms", label: "Formularios precargados", desc: "El decisor le transmite sus datos de contacto sin salir de LinkedIn ni volver a escribir nada." },
+          { image: "reporting", value: "Seguimiento hasta el CRM", label: "Coste por lead medido", desc: "Cada lead se vincula a su CRM: ve su coste y su contribución al pipeline." },
+          { image: "multilingue", value: "LU + Gran Región", label: "Terreno local", desc: "Campañas pensadas para los decisores de Luxemburgo y de la Gran Región." },
+        ],
+      },
+      "branding-design": {
+        title: "Lo que garantizamos a su marca, negro sobre blanco.",
+        lead: "Sin logos genéricos ni archivos retenidos. Compromisos concretos, cumplidos en cada proyecto de marca.",
+        items: [
+          { image: "audit", value: "Auditoría gratuita", label: "Antes de cualquier presupuesto", desc: "Un diagnóstico gratuito de su imagen actual: lo que favorece a su marca y lo que la perjudica." },
+          { image: "branding-design-2", value: "Cero plantillas", label: "Diseñado a mano", desc: "Un logo y una identidad pensados para usted, nunca una plantilla vista mil veces." },
+          { image: "branding-design-3", value: "100 % suyo", label: "Logo y archivos fuente", desc: "Vectorial, color, blanco y negro, web e impresión: todo se entrega, todo le pertenece." },
+          { image: "branding-design-4", value: "Belleza útil", label: "Pensado para convertir", desc: "Cada decisión visual busca la claridad, la confianza y la acción. Nunca belleza por la belleza." },
+        ],
+      },
+      "branding-design/creation-de-logo": {
+        title: "Un logo que se le parece, y que le pertenece.",
+        lead: "Su logo es a menudo lo único que se recuerda de usted. Esto es lo que nos comprometemos a entregar.",
+        items: [
+          { image: "branding-design-creation-de-logo-1", value: "Varias pistas", label: "Conceptos originales", desc: "Conceptos distintos, dibujados a mano para usted. Nunca plantillas retocadas." },
+          { image: "branding-design-creation-de-logo-2", value: "Afinado juntos", label: "Idas y venidas", desc: "La pista elegida, retrabajada con usted. Objetivo: un logo que le encante." },
+          { image: "branding-design-creation-de-logo-3", value: "Legible en todas partes", label: "Pruebas multisoporte", desc: "Verificado en formato pequeño y grande, sobre fondo claro y oscuro, en pantalla y en papel." },
+          { image: "branding-design-creation-de-logo-4", value: "Propiedad íntegra", label: "Archivos fuente entregados", desc: "Vectorial, web, impresión, favicon: todos los archivos son suyos, sin regalías ni costes ocultos." },
+        ],
+      },
+      "branding-design/identite-visuelle": {
+        title: "Una marca coherente, normas negro sobre blanco.",
+        lead: "Logo, colores, tipografías, manual: todo se define, se documenta y se entrega, para que cualquiera aplique su marca sin dudar.",
+        items: [
+          { image: "branding-design-identite-visuelle-1", value: "Logo incluido", label: "El corazón de la identidad", desc: "Creado a medida, o a partir de su logo existente, renovado si hace falta." },
+          { image: "branding-design-identite-visuelle-2", value: "RGB · CMYK · Pantone", label: "Colores sin aproximaciones", desc: "Cada color definido en HEX, RGB, CMYK y Pantone, tanto para pantalla como para impresión." },
+          { image: "branding-design-identite-visuelle-3", value: "Manual en PDF", label: "Normas de uso por escrito", desc: "Zonas de protección, tamaños mínimos, usos prohibidos: ya no queda lugar para la interpretación." },
+          { image: "branding-design-identite-visuelle-4", value: "Recursos organizados", label: "Listos para sus equipos", desc: "Todos sus archivos fuente ordenados y accesibles, tanto para sus equipos como para sus proveedores." },
+        ],
+      },
+      "branding-design/supports-print": {
+        title: "Soportes a su imagen, archivos impecables.",
+        lead: "Lo impreso tranquiliza a sus clientes. Diseñamos cada soporte con el mismo cuidado que su sitio, hasta el archivo final.",
+        items: [
+          { image: "branding-design-supports-print-1", value: "Listos para la imprenta", label: "Archivos conformes", desc: "Sangrado, CMYK, marcas de corte, perfiles de color: archivos aceptados sin retoques." },
+          { image: "branding-design-supports-print-2", value: "Ficha técnica", label: "Para su imprenta", desc: "Las especificaciones que hay que transmitir a la imprenta que usted elija, para un resultado sin malas sorpresas." },
+          { image: "branding-design-supports-print-3", value: "Fiel a su marca", label: "Manual respetado", desc: "Cada soporte prolonga su identidad, tanto si la hemos creado nosotros como si ya tiene un manual de marca." },
+          { image: "branding-design-supports-print-4", value: "Plantillas reutilizables", label: "Pensado para el futuro", desc: "Plantillas y adaptaciones entregadas con sus archivos: la próxima edición no parte de cero." },
+        ],
+      },
+      "automatisation-ia": {
+        title: "Automatizar, sí. Perder el control, nunca.",
+        lead: "Nada de proyectos de IA que se estancan. Compromisos concretos, de la auditoría gratuita a la documentación entregada.",
+        items: [
+          { image: "audit", value: "Auditoría gratuita", label: "Antes de cualquier presupuesto", desc: "Identificamos gratis las tareas de su empresa que de verdad merecen automatizarse." },
+          { image: "automatisation-ia-2", value: "Primero un caso de uso", label: "Después ampliamos", desc: "Empezamos con una tarea medible y después solo extendemos lo que demuestra su eficacia." },
+          { image: "automatisation-ia-3", value: "RGPD desde el diseño", label: "La confidencialidad primero", desc: "Cada automatización se diseña respetando el RGPD y la confidencialidad de sus datos." },
+          { image: "code", value: "Documentación entregada", label: "Sin cajas negras", desc: "Cada flujo de trabajo está documentado: sabe qué se ejecuta, dónde y por qué." },
+        ],
+      },
+      "automatisation-ia/integrations-crm-api": {
+        title: "Sus herramientas por fin conectadas, sin reconstruirlo todo.",
+        lead: "Dobles entradas, leads perdidos entre dos herramientas. Así conectamos su stack, de forma limpia y segura.",
+        items: [
+          { image: "automatisation-ia-integrations-crm-api-1", value: "Su stack se mantiene", label: "Partimos de lo existente", desc: "Conectamos las herramientas que sus equipos ya usan, sin obligarle a cambiarlas." },
+          { image: "automatisation-ia-integrations-crm-api-2", value: "API a medida", label: "Cuando falta el conector", desc: "¿No hay un conector listo para usar? Desarrollamos la integración mediante API o webhooks." },
+          { image: "code", value: "Accesos controlados", label: "Sincronización conforme al RGPD", desc: "Conexiones seguras y gestión precisa de los accesos, respetando el RGPD." },
+          { image: "reporting", value: "Probado y supervisado", label: "Antes y después del lanzamiento", desc: "Cada integración se prueba antes de la puesta en servicio, se documenta y después se supervisa." },
+        ],
+      },
+    },
   },
   serviceContent: {
     "sites-web": {
@@ -2398,11 +2806,11 @@ export const es = {
       motionEyebrow: "A medida",
       intro: [
         "Su sitio es a menudo la primera — a veces la única — cita con un cliente. Lo concebimos como un comercial que trabaja 24/7: rápido, claro, orientado a la acción.",
-        "Según su necesidad, construimos a medida (ultrarrápido y pensado para la IA) o en WordPress cuando quiere conservar el control del contenido en el día a día. Y sí: gran parte de nuestra producción está acelerada por IA — más calidad, entregada más rápido.",
+        "Lo construimos todo a medida: ultrarrápido, seguro y pensado para la IA. Y sí: gran parte de nuestra producción está acelerada por IA — más calidad, entregada más rápido.",
       ],
       included: [
         { icon: "ai-build", title: "Diseñado con IA", desc: "Aceleramos el diseño y el desarrollo con IA, sin sacrificar nunca la calidad ni la coherencia." },
-        { icon: "wordpress", title: "WordPress cuando hace falta", desc: "¿Necesita editar sus páginas usted mismo? Entregamos un WordPress limpio, seguro y fácil de gestionar." },
+        { icon: "process", title: "Actualizaciones gestionadas", desc: "Contenidos, seguridad, mejoras: nos encargamos de las actualizaciones de su sitio, usted se centra en su actividad." },
         { icon: "next-perf", title: "Rendimiento", desc: "Para el desarrollo a medida, un sitio casi instantáneo, seguro y preparado para el SEO y el GEO." },
         { icon: "responsive", title: "100 % responsive", desc: "Una experiencia impecable en móvil, tableta y ordenador — el móvil primero." },
         { icon: "conversion", title: "Pensado para convertir", desc: "Cada página tiene un objetivo: generar una llamada, un presupuesto, un lead. Guiamos al visitante hacia la acción." },
@@ -2410,12 +2818,12 @@ export const es = {
       ],
       deliverables: [
         "Maquetas y diseño a medida validados con usted",
-        "Sitio a medida o WordPress, a elegir",
+        "Sitio 100 % a medida",
         "Optimización SEO y GEO de base integrada",
         "Formularios, tracking y puesta en línea incluidos",
       ],
       faq: [
-        { q: "¿A medida o WordPress, cómo elegir?", a: "El desarrollo a medida ofrece el mejor rendimiento y flexibilidad; WordPress es ideal si quiere editar el contenido usted mismo. Le aconsejamos según su uso real, sin dogmas." },
+        { q: "¿Por qué a medida y no una plantilla?", a: "El desarrollo a medida ofrece el mejor rendimiento, seguridad y flexibilidad: su sitio se diseña para su actividad, no se adapta de una plantilla vista mil veces." },
         { q: "¿Qué significa «hecho con IA»?", a: "Usamos la IA para acelerar el diseño, el código y el contenido. Resultado: un sitio de mayor calidad, entregado más rápido y con una mejor relación valor/precio — revisado y finalizado por humanos." },
         { q: "¿Mi sitio estará optimizado para Google y las IA?", a: "Sí. Integramos desde el principio las buenas prácticas de SEO y GEO: estructura, rendimiento, datos estructurados y contenido citable." },
       ],
@@ -2842,7 +3250,7 @@ export const es = {
         ],
         faq: [
           { q: "¿Cuántas páginas incluye un sitio corporativo?", a: "Depende de su actividad — a menudo de 5 a 10 páginas (inicio, servicios, quiénes somos, contacto…). Definimos juntos la arquitectura más clara para sus visitantes y para Google." },
-          { q: "¿Podré modificar el contenido yo mismo?", a: "En WordPress, sí, la edición es sencilla. En el desarrollo a medida, nos encargamos de las actualizaciones por usted." },
+          { q: "¿Podré modificar el contenido yo mismo?", a: "Nos encargamos de las actualizaciones por usted: nos envía sus cambios y los integramos." },
         ],
       },
       {
@@ -2878,7 +3286,7 @@ export const es = {
           "Seguimiento e-commerce y formación en la gestión",
         ],
         faq: [
-          { q: "¿En qué plataforma construyen la tienda?", a: "Según su necesidad: WooCommerce/WordPress para la autonomía, o una solución a medida para el rendimiento y necesidades específicas. Le aconsejamos sin dogmas." },
+          { q: "¿En qué plataforma construyen la tienda?", a: "En una solución a medida, pensada para el rendimiento y sus necesidades específicas: catálogo, pagos, envíos. Le aconsejamos según su actividad." },
           { q: "¿Gestionan los pagos y el IVA?", a: "Sí. Configuramos los medios de pago, las reglas de IVA luxemburguesas y, si hace falta, la conexión con su logística y su contabilidad." },
         ],
       },
@@ -3143,43 +3551,6 @@ export const es = {
           { q: "¿Hace falta tener ya una lista de emails?", a: "Es un plus, pero también podemos implementar la captación (lead magnets, formularios) para construirla de forma limpia. Partimos de su situación real." },
         ],
       },
-      {
-        slug: "optimisation-conversion-cro",
-        illustration: "optimisation-conversion-cro",
-        title: "Optimización de la tasa de conversión (CRO)",
-        tagline: "Más leads con el mismo tráfico, gracias a los datos.",
-        short:
-          "Duplicar sus conversiones sin duplicar su presupuesto: esa es la apuesta del CRO. Identificamos los frenos, probamos soluciones y conservamos lo que funciona, con pruebas en mano.",
-        bullets: [
-          "Auditoría de los frenos a la conversión",
-          "Tests A/B y multivariantes",
-          "Análisis comportamental (heatmaps)",
-          "Optimización de los formularios",
-        ],
-        metaTitle: "Optimización de la tasa de conversión (CRO) en Luxemburgo | vortx",
-        metaDescription:
-          "Optimización de la tasa de conversión (CRO) en Luxemburgo: auditoría de frenos, tests A/B, heatmaps y formularios. Más leads con el mismo tráfico.",
-        intro: [
-          "Atraer más tráfico cuesta caro. Convertir mejor el que ya tiene cuesta mucho menos — y a menudo rinde más. El CRO (Conversion Rate Optimization) consiste en transformar una proporción mayor de sus visitantes en leads.",
-          "Analizamos el comportamiento real de sus visitantes (heatmaps, grabaciones, embudos), formulamos hipótesis y luego las validamos mediante tests A/B. Sin opiniones: solo conservamos lo que los datos demuestran ganador.",
-        ],
-        included: [
-          { icon: "ab-test", title: "Auditoría de los frenos", desc: "Detectamos con precisión dónde y por qué sus visitantes abandonan antes de convertir." },
-          { icon: "analytics", title: "Tests A/B y multivariantes", desc: "Probamos variantes y medimos: solo se conservan las versiones ganadoras." },
-          { icon: "conversion", title: "Análisis comportamental", desc: "Heatmaps y grabaciones de sesión para comprender las fricciones reales." },
-          { icon: "smart-forms", title: "Optimización de los formularios", desc: "Menos fricción, más cumplimentaciones: el formulario suele ser el punto clave." },
-        ],
-        deliverables: [
-          "Auditoría de conversión y análisis comportamental",
-          "Plan de hipótesis y priorización",
-          "Tests A/B implementados y analizados",
-          "Reporting de las ganancias e iteraciones",
-        ],
-        faq: [
-          { q: "¿Qué ganancia de conversión se puede esperar?", a: "Depende de su punto de partida. No prometemos una cifra mágica: instalamos un proceso de mejora continua y documentamos cada ganancia validada por los tests." },
-          { q: "¿Hace falta mucho tráfico para hacer CRO?", a: "Un mínimo de volumen ayuda a obtener resultados estadísticamente fiables. Por debajo, empezamos por optimizaciones basadas en las buenas prácticas y el análisis comportamental." },
-        ],
-      },
     ],
     "branding-design": [
       {
@@ -3188,7 +3559,7 @@ export const es = {
         title: "Creación de logo",
         tagline: "Un símbolo que le hace reconocible de un vistazo.",
         short:
-          "Un logo único, diseñado a mano y declinado en todos los formatos útiles. El punto de partida de una marca que se recuerda — no un pictograma genérico.",
+          "Solo su logo: un símbolo único, diseñado a mano y declinado en todos los formatos útiles. El punto de partida de una marca que se recuerda — no un pictograma genérico.",
         bullets: [
           "Conceptos originales dibujados a mano",
           "Declinaciones (color, mono, favicon)",
@@ -3217,154 +3588,86 @@ export const es = {
         faq: [
           { q: "¿Cuántas propuestas voy a recibir?", a: "Presentamos varias pistas distintas, y luego afinamos la que prefiera con idas y venidas. El objetivo es un logo que adore, no un compromiso tibio." },
           { q: "¿El logo me pertenece de verdad?", a: "Sí, íntegramente. Recibe todos los archivos fuente y es plenamente propietario de ellos, sin costes ocultos ni canon." },
+          { q: "¿Y si necesito toda la identidad visual?", a: "Esta oferta cubre solo el logo. Para colores, tipografías y el manual de marca completo, elija nuestra oferta Identidad visual y manual de marca: el logo está incluido." },
         ],
       },
       {
         slug: "identite-visuelle",
         illustration: "identite-visuelle",
-        title: "Identidad visual completa",
-        tagline: "Mucho más que un logo: un sistema visual coherente en todas partes.",
-        short:
-          "Colores, tipografías, iconografía, dirección artística: un sistema visual completo que hace reconocible su marca en todos sus puntos de contacto.",
+        title: "Identidad visual y manual de marca",
+        tagline: "Logo, colores, tipografías y normas de uso: su marca completa, lista para usar.",
+        short: "El paquete de identidad completo: su logo, el sistema visual que lo rodea (colores, tipografías, iconografía, dirección artística) y el manual de marca que fija sus normas para sus equipos y proveedores.",
         bullets: [
+          "Logo a medida incluido",
           "Paleta de colores y tipografías",
-          "Iconografía y motivos",
-          "Dirección artística fotográfica",
-          "Sistema modular escalable",
+          "Iconografía, motivos y dirección artística",
+          "Manual de marca en documento (PDF)",
+          "Biblioteca de recursos lista para usar",
         ],
-        metaTitle: "Identidad visual de marca en Luxemburgo | vortx",
+        metaTitle: "Identidad visual y manual de marca en Luxemburgo | vortx",
         metaDescription:
-          "Identidad visual completa en Luxemburgo: colores, tipografías, iconografía y dirección artística. Un sistema coherente, reconocible en todas partes.",
+          "Identidad visual completa y manual de marca en Luxemburgo: logo, colores, tipografías, iconografía y normas de uso. Una marca coherente, aplicada por todos.",
         intro: [
-          "Un logo por sí solo no hace una marca. Lo que le hace reconocible es la coherencia de todo lo demás: sus colores, sus tipografías, sus imágenes, su estilo. Una identidad visual completa orquesta esos elementos en un sistema armonioso.",
-          "Construimos ese sistema de la A a la Z: paleta de colores, jerarquía tipográfica, iconografía, motivos y dirección artística. Modular y escalable, le da todo para comunicar de forma coherente — del sitio web a la red social, del impreso a la presentación.",
+          "Un logo por sí solo no hace una marca. Lo que le hace reconocible es la coherencia de todo lo demás: sus colores, sus tipografías, sus imágenes, su estilo — y unas normas claras para que todos los apliquen igual.",
+          "Lo construimos todo, de la A a la Z: el logo, el sistema visual que lo acompaña (paleta, jerarquía tipográfica, iconografía, motivos, dirección artística) y después el manual de marca que documenta su uso — zonas de protección, códigos de color precisos, espaciados, ejemplos concretos.",
+          "El resultado: una identidad modular que crece con usted, y una guía que sus equipos y proveedores pueden seguir sin dudar, de la web a las redes sociales, del impreso a la presentación.",
         ],
         included: [
-          { icon: "brand-identity", title: "Colores y tipografías", desc: "Una paleta y una jerarquía tipográfica distintivas, declinadas para todos los usos." },
-          { icon: "branding", title: "Iconografía y motivos", desc: "Elementos gráficos propios de su marca que refuerzan su reconocimiento." },
-          { icon: "ai-build", title: "Dirección artística", desc: "Un estilo fotográfico y visual coherente para que todo lo que produzca se parezca." },
-          { icon: "automation", title: "Sistema modular", desc: "Una base escalable: podemos extenderla a nuevos soportes sin rehacerlo todo." },
+          { icon: "logo", title: "Logo a medida", desc: "El corazón de la identidad: un logo único, declinado en color, monocromo y favicon." },
+          { icon: "brand-identity", title: "Colores y tipografías", desc: "Una paleta y una jerarquía tipográfica distintivas, con sus códigos exactos (HEX, RGB, CMYK, Pantone)." },
+          { icon: "branding", title: "Iconografía y dirección artística", desc: "Iconos, motivos y un estilo fotográfico propios, para que todo lo que produzca se parezca a usted." },
+          { icon: "guidelines", title: "Manual de marca", desc: "Normas de uso documentadas: tamaños mínimos, zonas de protección, usos correctos y prohibidos." },
+          { icon: "responsive", title: "Ejemplos de aplicación", desc: "Papelería, web, redes sociales, presentaciones: casos concretos que eliminan cualquier ambigüedad." },
+          { icon: "process", title: "Recursos listos para usar", desc: "Todos los archivos fuente organizados y accesibles para sus equipos y proveedores." },
         ],
         deliverables: [
+          "Logo final (color, mono, favicon, vectorial)",
           "Paleta de colores y sistema tipográfico",
-          "Iconografía, motivos y elementos gráficos",
-          "Dirección artística y ejemplos de aplicación",
-          "Archivos fuente organizados y listos para usar",
-        ],
-        faq: [
-          { q: "¿Hace falta tener ya un logo?", a: "Idealmente sí — la identidad se articula en torno a él. Si no tiene ninguno, empezamos por crearlo, y luego desplegamos la identidad visual coherente a su alrededor." },
-          { q: "¿Qué diferencia hay con un manual de marca?", a: "La identidad visual son los elementos (colores, tipografía, estilo). El manual de marca es el documento que fija sus reglas de uso. Ambos son complementarios y podemos entregar el conjunto." },
-        ],
-      },
-      {
-        slug: "charte-graphique",
-        illustration: "charte-graphique",
-        title: "Manual de marca y brand guidelines",
-        tagline: "Las reglas que garantizan una marca coherente, en todas partes, por todos.",
-        short:
-          "El documento de referencia que fija el uso de su marca: logo, colores, tipografías, tono. Para que todo el mundo — sus equipos y sus proveedores — lo aplique correctamente.",
-        bullets: [
-          "Manual de uso del logo",
-          "Reglas de colores, tipografía y espaciados",
-          "Ejemplos de aplicaciones",
-          "Archivos listos para sus equipos",
-        ],
-        metaTitle: "Manual de marca y brand guidelines en Luxemburgo | vortx",
-        metaDescription:
-          "Manual de marca y brand guidelines en Luxemburgo: reglas de uso del logo, colores, tipografías y aplicaciones. Una marca coherente, aplicada por todos.",
-        intro: [
-          "Una marca pierde su fuerza en cuanto cada uno la aplica a su manera: logo deformado, colores aproximados, tipografías dispares. El manual de marca evita eso fijando reglas claras, seguidas por todos.",
-          "Documentamos el uso de su marca: zonas de protección del logo, códigos de color precisos, jerarquía tipográfica, espaciados, tono de voz y ejemplos concretos de aplicación. Una guía que sus equipos y sus proveedores pueden seguir sin dudar.",
-        ],
-        included: [
-          { icon: "guidelines", title: "Manual del logo", desc: "Tamaños mínimos, zonas de protección, usos correctos y prohibidos, sobre cualquier fondo." },
-          { icon: "brand-identity", title: "Reglas de colores y tipografía", desc: "Códigos precisos (HEX, RGB, CMYK, Pantone) y jerarquía tipográfica documentada." },
-          { icon: "conversion", title: "Ejemplos de aplicación", desc: "Casos concretos — papelería, web, redes sociales — para despejar toda ambigüedad." },
-          { icon: "ai-build", title: "Archivos listos para usar", desc: "Todos los recursos organizados y accesibles para sus equipos y proveedores." },
-        ],
-        deliverables: [
-          "Documento de manual de marca completo (PDF)",
-          "Reglas de logo, colores, tipografías y espaciados",
-          "Tono de voz y ejemplos de aplicación",
+          "Iconografía, motivos y dirección artística",
+          "Manual de marca completo (PDF)",
           "Biblioteca de recursos organizada",
         ],
         faq: [
+          { q: "¿Qué diferencia hay entre identidad visual y manual de marca?", a: "La identidad visual son los elementos (logo, colores, tipografías, estilo). El manual de marca es el documento que fija sus normas de uso. Esta oferta reúne ambos." },
+          { q: "Ya tengo un logo, ¿me sirve igualmente?", a: "Sí. Partimos de su logo actual — refrescándolo si hace falta — y construimos a su alrededor el sistema visual y el manual." },
           { q: "¿De qué sirve un manual si trabajo solo?", a: "Garantiza la coherencia en el tiempo y facilita cada colaboración futura (imprenta, freelance, nueva incorporación). Es una inversión que protege el valor de su marca." },
-          { q: "¿El manual puede evolucionar?", a: "Sí. Es un documento vivo: podemos enriquecerlo a medida que su marca se extiende a nuevos soportes." },
+          { q: "¿La identidad puede evolucionar?", a: "Sí. El sistema es modular y el manual es un documento vivo: lo ampliamos a medida que su marca llega a nuevos soportes." },
         ],
       },
       {
         slug: "supports-print",
         illustration: "supports-print",
         title: "Soportes impresos y papelería",
-        tagline: "Una marca que se sostiene tan bien en las manos como en pantalla.",
-        short:
-          "Tarjetas de visita, folletos, dossieres, informes, señalética: sus soportes impresos diseñados con el mismo cuidado que su presencia digital.",
+        tagline: "Todos sus soportes, diseñados con el mismo cuidado que su web.",
+        short: "Tarjetas de visita, papelería, folletos, dossieres, informes, señalética, roll-ups: diseñamos todos sus soportes en línea con su identidad y le entregamos archivos listos para la imprenta que usted elija.",
         bullets: [
           "Tarjetas de visita y papelería",
-          "Folletos y dossieres",
+          "Folletos, dossieres y flyers",
           "Informes y documentos corporativos",
           "Señalética y soportes para eventos",
         ],
-        metaTitle: "Creación de soportes impresos y papelería en Luxemburgo | vortx",
+        metaTitle: "Diseño de soportes impresos y papelería en Luxemburgo | vortx",
         metaDescription:
-          "Soportes impresos en Luxemburgo: tarjetas de visita, folletos, dossieres y señalética. Una marca coherente del digital al papel, lista para imprimir.",
+          "Diseño de soportes impresos en Luxemburgo: tarjetas de visita, folletos, dossieres, informes, señalética. Archivos listos para la imprenta que usted elija.",
         intro: [
-          "El print no ha muerto — tranquiliza. En Luxemburgo, el tejido corporativo y financiero sigue siendo un gran consumidor de soportes impresos cuidados: una tarjeta de visita, un dossier o un informe anual dicen mucho de su seriedad.",
-          "Diseñamos sus soportes impresos en continuidad con su identidad, listos para imprimir (sangrados, perfiles de color, formatos normalizados). Del detalle de la tarjeta de visita a la señalética, su marca se mantiene coherente en todos los soportes.",
+          "El impreso no ha muerto — da confianza. En Luxemburgo, el tejido corporativo y financiero sigue siendo un gran consumidor de soportes cuidados: una tarjeta de visita, un dossier o un informe anual dicen mucho de su seriedad.",
+          "Diseñamos todos sus soportes en línea con su identidad, de la tarjeta de visita a la señalética. Recibe archivos técnicamente impecables (sangrado, CMYK, perfiles de color, formatos estándar), listos para ir a la imprenta que usted elija.",
         ],
         included: [
-          { icon: "print", title: "Tarjetas y papelería", desc: "Tarjetas de visita, membretes, firmas: su identidad hasta en los detalles." },
+          { icon: "print", title: "Tarjetas y papelería", desc: "Tarjetas de visita, membretes, sobres, firmas: su identidad hasta el último detalle." },
           { icon: "branding", title: "Folletos y dossieres", desc: "Soportes comerciales que ponen en valor sus ofertas con claridad y elegancia." },
           { icon: "guidelines", title: "Informes corporativos", desc: "Informes anuales y documentos institucionales maquetados con rigor." },
-          { icon: "responsive", title: "Listos para imprimir", desc: "Archivos conformes (sangrados, CMYK) para una impresión sin sorpresas desagradables." },
+          { icon: "responsive", title: "Archivos listos para imprimir", desc: "Sangrado, CMYK, marcas de corte: archivos conformes que cualquier imprenta acepta sin retoques." },
         ],
         deliverables: [
-          "Diseño de los soportes impresos solicitados",
-          "Archivos listos para imprimir (PDF, CMYK, sangrados)",
-          "Declinaciones y plantillas reutilizables",
-          "Acompañamiento con su imprenta si hace falta",
+          "Diseño de todos los soportes que necesite",
+          "Archivos listos para imprimir (PDF HD, CMYK, sangrado)",
+          "Plantillas reutilizables y declinaciones",
+          "Especificaciones técnicas para su imprenta",
         ],
         faq: [
-          { q: "¿Gestionan también la impresión?", a: "Entregamos archivos listos para imprimir y podemos coordinar con su imprenta, o recomendarle socios fiables en Luxemburgo." },
-          { q: "¿Pueden partir de mi manual existente?", a: "Sí. Aplicamos su identidad actual sobre los soportes impresos, o la adaptamos si aún no tiene una versión impresa." },
-        ],
-      },
-      {
-        slug: "strategie-de-marque-naming",
-        illustration: "strategie-de-marque-naming",
-        title: "Estrategia de marca y naming",
-        tagline: "El sentido y las palabras antes que los píxeles.",
-        short:
-          "Antes que lo visual, el fondo: posicionamiento, plataforma de marca, nombre y tono de voz. La estrategia que da una dirección clara a toda su comunicación.",
-        bullets: [
-          "Posicionamiento y plataforma de marca",
-          "Naming y búsqueda de nombre",
-          "Tono de voz y mensajes clave",
-          "Identidad verbal multilingüe",
-        ],
-        metaTitle: "Estrategia de marca y naming en Luxemburgo | vortx",
-        metaDescription:
-          "Estrategia de marca y naming en Luxemburgo: posicionamiento, plataforma de marca, nombre y tono de voz multilingüe. El sentido que guía su comunicación.",
-        intro: [
-          "Una bonita marca sin estrategia es una fachada sin cimientos. Antes de dibujar nada, hay que saber qué representa, a quién habla y qué le distingue. Ese es el papel de la estrategia de marca.",
-          "Definimos su posicionamiento, su plataforma de marca (misión, valores, promesa) y su territorio de expresión. Si hace falta, creamos su nombre (naming) y fijamos un tono de voz coherente — incluso en varios idiomas, como exige el mercado luxemburgués.",
-        ],
-        included: [
-          { icon: "strategy", title: "Posicionamiento", desc: "Lo que le distingue, formulado con claridad: la base de toda su comunicación." },
-          { icon: "branding", title: "Plataforma de marca", desc: "Misión, valores, promesa y personalidad: el ADN que guía cada decisión." },
-          { icon: "gen-content", title: "Naming", desc: "Creación y verificación de un nombre de marca o de producto, disponible y con sentido." },
-          { icon: "multilingual", title: "Tono de voz multilingüe", desc: "Una identidad verbal coherente en FR, DE y EN, adaptada a cada público." },
-        ],
-        deliverables: [
-          "Plataforma de marca y posicionamiento",
-          "Naming y recomendaciones (si aplica)",
-          "Guía de tono de voz y mensajes clave",
-          "Síntesis estratégica accionable",
-        ],
-        faq: [
-          { q: "La estrategia de marca, ¿es útil para una estructura pequeña?", a: "Sí, quizá aún más: con menos medios, cada mensaje debe dar en el blanco. Una estrategia clara evita dispersarse y hace toda su comunicación más eficaz." },
-          { q: "¿Hay que hacer la estrategia antes que el logo?", a: "Idealmente sí: lo visual se deriva del posicionamiento. No obstante, podemos llevar ambos en paralelo si el proyecto lo exige. La estrategia sigue siendo la brújula." },
+          { q: "¿Pueden partir de mi manual existente?", a: "Sí. Aplicamos su identidad actual a sus soportes, o la adaptamos si todavía no tiene versión impresa." },
+          { q: "¿Aceptará mi imprenta los archivos?", a: "Sí: entregamos archivos con los estándares de impresión profesional y, si hace falta, las especificaciones técnicas para su imprenta, para un resultado sin sorpresas." },
         ],
       },
     ],
@@ -3372,32 +3675,32 @@ export const es = {
       {
         slug: "chatbots-ia",
         illustration: "chatbots-ia",
-        title: "Chatbots y voicebots de IA",
+        title: "Chatbots inteligentes",
         tagline: "Responda, cualifique y reserve automáticamente, 24/7.",
         short:
-          "Chatbots y voicebots inteligentes que responden a sus visitantes, cualifican las solicitudes y conciertan citas — tanto en su sitio como en WhatsApp.",
+          "Chatbots que reciben a sus visitantes, hacen las preguntas adecuadas, cualifican las solicitudes y conciertan citas — tanto en su sitio como en WhatsApp.",
         bullets: [
           "Chatbot de sitio web multilingüe",
           "WhatsApp y Messenger",
-          "Voicebot para llamadas entrantes",
+          "Reserva de citas automatizada",
           "Transferencia inteligente a un humano",
         ],
-        metaTitle: "Creación de chatbots y voicebots de IA en Luxemburgo | vortx",
+        metaTitle: "Creación de chatbots inteligentes en Luxemburgo | vortx",
         metaDescription:
-          "Chatbots y voicebots de IA en Luxemburgo: sitio web, WhatsApp, llamadas entrantes, multilingüe. Responda, cualifique y reserve automáticamente, 24/7.",
+          "Chatbots inteligentes en Luxemburgo: sitio web, WhatsApp, Messenger, multilingüe. Responda, cualifique y reserve automáticamente, 24/7.",
         intro: [
-          "Un visitante que no encuentra respuesta se va. Una llamada perdida es un cliente perdido. Un chatbot de IA bien diseñado responde al instante, a cualquier hora, en el idioma del visitante — y nunca duerme.",
-          "Desplegamos chatbots y voicebots conectados a su contexto: responden a las preguntas frecuentes, cualifican las solicitudes, conciertan citas y transfieren a un humano cuando es pertinente. En su sitio, en WhatsApp o por teléfono.",
+          "Un visitante que no encuentra respuesta se va. Un mensaje sin respuesta por la noche o el fin de semana es un cliente perdido. Un chatbot bien diseñado responde al instante, a cualquier hora, en el idioma del visitante — y nunca duerme.",
+          "Diseñamos chatbots que guían la conversación paso a paso: responden a las preguntas frecuentes, hacen las preguntas adecuadas para cualificar cada solicitud, conciertan citas y transfieren a su equipo cuando es pertinente. En su sitio, en WhatsApp o en Messenger.",
         ],
         included: [
-          { icon: "chatbot", title: "Chatbot multilingüe", desc: "En su sitio, responde en FR/DE/EN y cualifica a los visitantes de forma continua." },
+          { icon: "chatbot", title: "Chatbot multilingüe", desc: "En su sitio, recibe a sus visitantes en FR, DE o EN y los guía hasta la respuesta adecuada." },
           { icon: "integration", title: "WhatsApp y Messenger", desc: "Donde están sus clientes: desplegamos el bot en sus canales preferidos." },
-          { icon: "ai-agent", title: "Voicebot telefónico", desc: "Un agente de voz que descuelga, informa y orienta las llamadas entrantes." },
+          { icon: "ai-agent", title: "Reserva de citas", desc: "El bot propone sus franjas libres y reserva directamente en su agenda." },
           { icon: "leads", title: "Transferencia inteligente", desc: "Cuando es útil, el bot cede el paso a un humano con todo el contexto." },
         ],
         deliverables: [
           "Diseño de los escenarios y del tono",
-          "Chatbot/voicebot conectado a sus contenidos",
+          "Flujos de conversación a medida",
           "Despliegue en sus canales (web, WhatsApp…)",
           "Seguimiento de las conversaciones y optimización",
         ],
@@ -3441,43 +3744,6 @@ export const es = {
         faq: [
           { q: "¿Y si mi programa no tiene un conector ya hecho?", a: "Desarrollamos una integración a medida mediante su API o webhooks. La mayoría de las herramientas profesionales exponen una API: nos conectamos a ella de forma limpia." },
           { q: "¿Mis datos están seguros durante la sincronización?", a: "Sí. Las integraciones se diseñan respetando el RGPD, con conexiones seguras y una gestión fina de los accesos." },
-        ],
-      },
-      {
-        slug: "ia-contenu-generatif",
-        illustration: "ia-contenu-generatif",
-        title: "IA generativa para el contenido",
-        tagline: "Produzca artículos, emails y visuales de marca, a escala.",
-        short:
-          "Ponga la IA generativa al servicio de su contenido — artículos, newsletters, respuestas, visuales — sin perder su tono de marca y con una validación editorial humana.",
-        bullets: [
-          "Generación de artículos y newsletters",
-          "Respuestas y emails personalizados",
-          "Visuales y declinaciones para redes sociales",
-          "Validación editorial y tono de marca",
-        ],
-        metaTitle: "IA generativa para el contenido en Luxemburgo | vortx",
-        metaDescription:
-          "IA generativa para el contenido en Luxemburgo: artículos, newsletters, emails y visuales con su tono de marca, multilingüe. Produzca más sin perder calidad.",
-        intro: [
-          "Producir contenido de calidad, con regularidad y en varios idiomas, es un reto de tiempo y de medios. La IA generativa cambia las reglas: acelera la producción manteniendo su voz — siempre que esté bien encuadrada.",
-          "Implementamos workflows de generación a medida (artículos, emails, visuales para redes sociales) entrenados sobre su tono de marca, con una etapa de validación editorial humana. Producir más, más rápido, sin caer en el contenido genérico.",
-        ],
-        included: [
-          { icon: "gen-content", title: "Artículos y newsletters", desc: "Contenido editorial producido a su ritmo, en su tono, listo para revisar." },
-          { icon: "email-automation", title: "Emails personalizados", desc: "Respuestas y emails a medida, generados a escala sin perder el toque humano." },
-          { icon: "branding", title: "Visuales para redes sociales", desc: "Declinaciones gráficas coherentes con su identidad, para sus redes." },
-          { icon: "multilingual", title: "Multilingüe y validado", desc: "Producción en FR/DE/EN con validación editorial: calidad y tono garantizados." },
-        ],
-        deliverables: [
-          "Workflows de generación a medida",
-          "Modelos entrenados sobre su tono de marca",
-          "Proceso de validación editorial",
-          "Formación y acompañamiento de sus equipos",
-        ],
-        faq: [
-          { q: "¿El contenido de IA no lo penaliza Google?", a: "Lo que Google penaliza es el contenido sin valor — no la herramienta utilizada. Nuestro enfoque combina generación y validación humana para un contenido útil, original y optimizado. Es la calidad lo que cuenta." },
-          { q: "¿El contenido mantendrá de verdad mi tono?", a: "Sí, ese es todo el reto. Entrenamos los modelos sobre sus contenidos y su estilo, y una revisión humana garantiza la coherencia antes de la publicación." },
         ],
       },
     ],
@@ -3585,10 +3851,10 @@ export const es = {
       {
         title: "Sitios web",
         items: [
-          { q: "¿A medida o WordPress, cómo elegir?", a: "El desarrollo a medida ofrece el mejor rendimiento, seguridad y flexibilidad; WordPress es ideal si quiere editar el contenido usted mismo en el día a día. Le aconsejamos según su uso real, sin dogmas." },
+          { q: "¿Por qué a medida y no una plantilla?", a: "El desarrollo a medida ofrece el mejor rendimiento, seguridad y flexibilidad: su sitio se diseña para su actividad, no se adapta de una plantilla vista mil veces." },
           { q: "¿Es cierto que sus sitios están «hechos con IA»?", a: "Sí. Usamos la IA para acelerar el diseño, el código y el contenido. Resultado: un sitio de mayor calidad, entregado más rápido y con una mejor relación valor/precio — siempre revisado y finalizado por humanos." },
           { q: "¿Mi sitio será rápido y adaptado al móvil?", a: "Por supuesto. El rendimiento y el mobile-first son la base: un sitio casi instantáneo, 100 % responsive y accesible en todas las pantallas." },
-          { q: "¿Podré modificar mi sitio yo mismo?", a: "En WordPress, sí, fácilmente. En el desarrollo a medida, nos encargamos de las actualizaciones por usted." },
+          { q: "¿Podré modificar mi sitio yo mismo?", a: "Nos encargamos de las actualizaciones por usted: nos envía sus cambios y los integramos." },
           { q: "¿Mi sitio estará optimizado para Google y las IA?", a: "Sí. Integramos desde el principio las buenas prácticas de SEO y GEO: estructura, rendimiento, datos estructurados y contenido citable por los motores de respuesta de IA." },
           { q: "¿Gestionan el alojamiento y el mantenimiento?", a: "Sí. Podemos encargarnos del alojamiento, las actualizaciones, la seguridad y las evoluciones, para que usted no tenga que preocuparse." },
         ],

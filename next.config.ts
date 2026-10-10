@@ -67,20 +67,30 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
-  // Removed automatisation-ia sub-services → their parent service page
+  // Removed or merged sub-services → the page that now holds their content
   // (public URLs, whose first segment is localized: see i18n/routes.ts).
   async redirects() {
-    const removed = ":child(automatisation-workflows|agents-assistants-ia)";
-    return [
+    const moved = [
+      // removed: automatisation-ia keeps the offer on its own page
+      { from: "automatisation-ia/:child(automatisation-workflows|agents-assistants-ia|ia-contenu-generatif)", to: "automatisation-ia" },
+      // merged into "Identité visuelle & charte graphique"
+      { from: "branding-design/charte-graphique", to: "branding-design/identite-visuelle" },
+      { from: "branding-design/strategie-de-marque-naming", to: "branding-design" },
+      { from: "lead-generation/optimisation-conversion-cro", to: "lead-generation" },
+    ];
+    const locales = [
       ["fr", "services"],
       ["en", "services"],
       ["de", "leistungen"],
       ["es", "servicios"],
-    ].map(([lang, seg]) => ({
-      source: `/${lang}/${seg}/automatisation-ia/${removed}`,
-      destination: `/${lang}/${seg}/automatisation-ia`,
-      permanent: true,
-    }));
+    ];
+    return moved.flatMap(({ from, to }) =>
+      locales.map(([lang, seg]) => ({
+        source: `/${lang}/${seg}/${from}`,
+        destination: `/${lang}/${seg}/${to}`,
+        permanent: true,
+      }))
+    );
   },
 };
 

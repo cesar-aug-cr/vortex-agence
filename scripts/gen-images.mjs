@@ -66,7 +66,7 @@ async function generate(item, attempt = 1) {
 const queue = MANIFEST.filter((m) => (only.size ? only.has(m.id) : true));
 let ok = 0;
 let failed = 0;
-const CONCURRENCY = 2;
+const CONCURRENCY = Number(process.env.IMG_CONCURRENCY ?? 2);
 
 async function worker() {
   while (queue.length) {

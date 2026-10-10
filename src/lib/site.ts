@@ -77,15 +77,12 @@ export const subServiceRoutes = [
   { parent: "sites-web", child: "site-multilingue" },
   { parent: "lead-generation", child: "tunnels-de-conversion" },
   { parent: "lead-generation", child: "landing-pages-campagne" },
-  { parent: "lead-generation", child: "email-marketing-automation" },  { parent: "lead-generation", child: "optimisation-conversion-cro" },
+  { parent: "lead-generation", child: "email-marketing-automation" },
   { parent: "branding-design", child: "creation-de-logo" },
   { parent: "branding-design", child: "identite-visuelle" },
-  { parent: "branding-design", child: "charte-graphique" },
   { parent: "branding-design", child: "supports-print" },
-  { parent: "branding-design", child: "strategie-de-marque-naming" },
   { parent: "automatisation-ia", child: "chatbots-ia" },
   { parent: "automatisation-ia", child: "integrations-crm-api" },
-  { parent: "automatisation-ia", child: "ia-contenu-generatif" },
 ] as const;
 
 /** Top-level routes (relative to /<lang>) used for the sitemap. */

@@ -243,7 +243,7 @@ export default async function StyleGuidePage({
             </div>
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
-            {["chip", "Next.js", "SEO", "GEO", "WordPress"].map((c) => (
+            {["chip", "Next.js", "SEO", "GEO", "Sur-mesure"].map((c) => (
               <span key={c} className="chip">
                 {c}
               </span>

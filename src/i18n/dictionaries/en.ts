@@ -130,9 +130,9 @@ export const en = {
       title: "Website design in Luxembourg",
       tagline: "Fast sites, built to turn visitors into clients.",
       short:
-        "Showcase sites, landing pages and bespoke platforms — or on WordPress when you want to keep control. AI-accelerated production, premium design and built-in conversion funnels.",
+        "Showcase sites, landing pages and fully bespoke platforms. AI-accelerated production, premium design and built-in conversion funnels.",
       bullets: [
-        "Bespoke or WordPress, to match your need",
+        "100% bespoke development",
         "AI-accelerated production, delivered faster",
         "Bespoke design, mobile-first",
         "Smart multi-step forms",
@@ -196,7 +196,7 @@ export const en = {
     {
       slug: "branding-design",
       group: "design",
-      title: "Logo design & branding",
+      title: "Logo, Design, Branding & Brand Identity",
       tagline: "A logo and a brand people remember.",
       short:
         "Bespoke logo, complete visual identity and brand guidelines. The consistency that builds trust before the first word.",
@@ -206,7 +206,7 @@ export const en = {
         "Brand guidelines & usage rules",
         "Print & digital variations",
       ],
-      metaTitle: "Logo design & branding in Luxembourg | vortx",
+      metaTitle: "Logo, design, branding & brand identity in Luxembourg | vortx",
       metaDescription:
         "Bespoke logo design, brand identity and brand guidelines for Luxembourg businesses. A consistent image that builds trust.",
     },
@@ -624,7 +624,7 @@ export const en = {
           { label: "SEO & GEO", href: "/services/seo-geo" },
           { label: "Lead generation", href: "/services/lead-generation" },
           { label: "Online advertising", href: "/services/publicite" },
-          { label: "Logo design & branding", href: "/services/branding-design" },
+          { label: "Logo, Design, Branding & Brand Identity", href: "/services/branding-design" },
           { label: "Automation & AI", href: "/services/automatisation-ia" },
         ],
       },
@@ -810,7 +810,7 @@ export const en = {
         },
         links: [
           { label: "Our websites that convert", href: "/services/sites-web", desc: "Bespoke, mobile-first design built around conversion." },
-          { label: "Logo design & branding", href: "/services/branding-design", desc: "The visual identity that feeds a coherent UI." },
+          { label: "Logo, Design, Branding & Brand Identity", href: "/services/branding-design", desc: "The visual identity that feeds a coherent UI." },
           { label: "Marketing & web glossary", href: "/glossaire", desc: "UX/UI, conversion rate, Core Web Vitals… explained simply." },
         ],
         body: [
@@ -1431,7 +1431,7 @@ export const en = {
             type: "ul",
             items: [
               "The number of pages and the complexity of the content.",
-              "Custom-built or WordPress, depending on your need for flexibility and autonomy.",
+              "100% bespoke development, tailored to your business.",
               "The level of design: an adapted template or a 100% bespoke identity.",
               "The features: forms, appointment booking, payment, client area…",
               "Multilingual support (FR/DE/EN) and SEO & GEO optimisation.",
@@ -1780,7 +1780,7 @@ export const en = {
           { type: "h3", text: "1. Answering repetitive questions" },
           {
             type: "p",
-            text: "A well-trained chatbot answers common questions 24/7 (opening hours, services, quotes) and guides the visitor, without tying anyone up.",
+            text: "A well-designed chatbot answers common questions 24/7 (opening hours, services, quotes) and guides the visitor, without tying anyone up.",
           },
           { type: "h3", text: "2. Qualifying and sorting leads" },
           {
@@ -2117,7 +2117,7 @@ export const en = {
         short: "The % of visitors who take action.",
         def: "The percentage of visitors who complete the desired action (quote request, purchase, sign-up). A central indicator of a site's or campaign's effectiveness: doubling it means doubling your leads without buying more traffic.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/services/lead-generation", label: "Our lead generation service" },
           { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Read: the conversion funnel" },
         ],
       },
@@ -2139,7 +2139,7 @@ export const en = {
         short: "The button that invites action.",
         def: "An element (button, link) that prompts the visitor to take the next step: \"Book a call\", \"Get a quote\". Its clarity and visibility strongly influence conversion. Golden rule: one goal per page, one primary CTA.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/services/lead-generation", label: "Our lead generation service" },
           { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: UX/UI that converts" },
         ],
       },
@@ -2150,7 +2150,7 @@ export const en = {
         short: "Compare two versions, keep the best.",
         def: "A method that shows two variants of a page or element to different visitors, then measures which one converts best. It's the basic tool of continuous optimisation: we don't guess, we test.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/services/lead-generation", label: "Our lead generation service" },
           { href: "/news/tunnel-de-conversion-transformer-visiteurs-en-clients", label: "Read: measure to optimise" },
         ],
       },
@@ -2227,7 +2227,7 @@ export const en = {
         def: "Key Performance Indicator: a key metric chosen to measure progress toward a goal (conversion rate, cost per lead, qualified traffic…). The trap: tracking vanity metrics (followers, impressions) that flatter without proving anything.",
         links: [
           { href: "/approche", label: "Our approach, driven by the numbers" },
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/services/lead-generation", label: "Our lead generation service" },
         ],
       },
       {
@@ -2248,7 +2248,7 @@ export const en = {
         short: "Measure what happens on your site.",
         def: "Tools (Google Analytics, Matomo…) that track visitor behaviour: traffic sources, page views, conversions. The basis of every marketing decision — to be configured in line with GDPR, consent included.",
         links: [
-          { href: "/services/lead-generation/optimisation-conversion-cro", label: "Our CRO service" },
+          { href: "/services/lead-generation", label: "Our lead generation service" },
           { href: "/news/rgpd-cookies-site-web-luxembourg", label: "Read: GDPR & cookies in Luxembourg" },
         ],
       },
@@ -2257,21 +2257,10 @@ export const en = {
         slug: "cms",
         category: "Web & tech",
         short: "The tool for managing a site's content.",
-        def: "Content Management System (e.g. WordPress): a platform that lets you create and edit a site's pages without coding. Handy for staying hands-on day to day. The choice between a CMS and bespoke depends on how you'll actually use it — no dogma.",
+        def: "Content Management System: a platform that lets you create and edit a site's pages without coding. Handy for staying hands-on day to day.",
         links: [
           { href: "/services/sites-web", label: "Our websites service" },
           { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Read: how much does a website cost?" },
-        ],
-      },
-      {
-        term: "WordPress",
-        slug: "wordpress",
-        category: "Web & tech",
-        short: "The world's most widespread CMS.",
-        def: "A hugely popular open-source content management system, ideal when you want to edit your pages yourself. Flexible thanks to its themes and plugins. We deliver it clean, secure and easy to manage when editorial autonomy comes first.",
-        links: [
-          { href: "/services/sites-web", label: "Our websites service" },
-          { href: "/news/combien-coute-un-site-web-luxembourg-2026", label: "Read: bespoke or WordPress?" },
         ],
       },
       {
@@ -2325,7 +2314,7 @@ export const en = {
         short: "What makes your brand recognisable.",
         def: "A coherent set of visual elements and messages (logo, colours, typography, tone) that distinguishes your business and builds trust. The logo is its signature; the identity, the entire handwriting.",
         links: [
-          { href: "/services/branding-design/identite-visuelle", label: "Our visual identity service" },
+          { href: "/services/branding-design/identite-visuelle", label: "Our Visual identity & brand guidelines service" },
           { href: "/news/quest-ce-quun-bon-logo-identite-qui-dure", label: "Read: what makes a good logo?" },
         ],
       },
@@ -2336,7 +2325,7 @@ export const en = {
         short: "A brand's visual toolbox.",
         def: "A library of reusable components, rules and styles that guarantees a site's or product's consistency and speeds up its creation. It's what makes a brand look as though it came from the same hand on every page.",
         links: [
-          { href: "/services/branding-design/charte-graphique", label: "Our brand guidelines service" },
+          { href: "/services/branding-design/identite-visuelle", label: "Our Visual identity & brand guidelines service" },
           { href: "/news/ux-ui-design-site-qui-convertit-bonnes-pratiques", label: "Read: consistency & conversion" },
         ],
       },
@@ -2384,6 +2373,240 @@ export const en = {
         { n: "04", icon: "analytics", title: "Launch & follow-up", desc: "Go-live, results tracking and ongoing support. You see the progress, every euro tied to a result." },
       ],
     },
+    // Per-page "Notre méthode", keyed by "slug" or "slug/child"; banner photo in
+    // public/methode/<slug>[-<child>].webp. Pages missing here use `method` above.
+    methods: {
+      "sites-web": {
+        title: "Four steps to a site that converts.",
+        lead: "Showcase site, online store or landing page: the same framework. You sign off on mock-ups, content and go-live; we build fast, with AI and human review.",
+        steps: [
+          { icon: "process", title: "Audit & scoping", desc: "A free audit of your current site or project: goals, audiences, conversion paths. Together, we scope your bespoke site." },
+          { icon: "ai-build", title: "Mock-ups & development", desc: "Site structure, bespoke mock-ups, then AI-accelerated development. You approve the design before the first line of code; forms and SEO & GEO foundations are built in from the start." },
+          { icon: "next-perf", title: "Testing & sign-off", desc: "Speed, forms, tracking, display on every screen: everything is checked in staging. You review each page and we adjust until your final sign-off." },
+          { icon: "analytics", title: "Launch & follow-up", desc: "Domain, SSL, analytics and conversion tracking set up before the switch-over. After launch, we read the data with you and fix whatever is holding back enquiries." },
+        ],
+      },
+      "sites-web/site-vitrine": {
+        title: "A showcase site built to spark contact.",
+        lead: "Your showcase site has a few seconds to convince. We pin down the message and the journey with you, then every page is designed, reviewed and approved before go-live.",
+        steps: [
+          { icon: "strategy", title: "Message & site structure", desc: "We clarify what sets you apart, who you're targeting and the action you expect: a call, a message or a quote request. You approve the site structure — home, services, about, contact — before any design." },
+          { icon: "brand-identity", title: "Design that looks like you", desc: "100% bespoke mock-ups, aligned with your identity, zero recycled templates. Credibility proof, calls to action and the contact form placed where the visitor makes up their mind." },
+          { icon: "responsive", title: "First-impression test", desc: "We check that a visitor understands who you are and what to do the moment they arrive, mobile first. You review copy and visuals; we refine until the site truly reflects you." },
+          { icon: "seo", title: "Launch & SEO", desc: "Go-live with SEO markup, structured data and contact-request tracking. After that, we handle the updates for you." },
+        ],
+      },
+      "sites-web/site-e-commerce": {
+        title: "From product to payment, without friction.",
+        lead: "An online store is judged on its orders, not its catalogue. Platform, payments, VAT, shipping: every building block is chosen, tested and approved with you before opening.",
+        steps: [
+          { icon: "ecommerce", title: "Catalogue & platform", desc: "We map your catalogue, your variants, your shipping zones and your existing tools. Then we design a bespoke store, built for performance." },
+          { icon: "funnel", title: "Product pages & checkout", desc: "Product pages that answer objections, basket and checkout steps cut to the essentials. Payment methods, Luxembourg VAT rules and shipping costs are configured from the build." },
+          { icon: "integration", title: "Test orders", desc: "We simulate complete orders, from basket to confirmation email, and check the sync with your connected tools: stock, shipping, accounting. You approve every scenario." },
+          { icon: "analytics", title: "Opening & monitoring", desc: "The store opens with e-commerce tracking live: baskets, abandonments, best-selling products. We train you on the back office, then optimise wherever the numbers show losses." },
+        ],
+      },
+      "sites-web/landing-pages": {
+        title: "One campaign, one page, one action.",
+        lead: "Every landing page starts from a campaign and a single goal. We match the message to the ad, launch fast, then test to bring down your cost per lead.",
+        steps: [
+          { icon: "ads-targeting", title: "Goal & ad", desc: "We start from your campaign: audience, the ad's promise, the expected action — form, booking or download. You approve the single goal and the metric the page will be judged on." },
+          { icon: "landing", title: "Copy, page, form", desc: "Persuasive copywriting aligned with the ad's message, a page with no menu and no exits, a form cut down to the fields that matter. AI-accelerated production to time the launch with your campaign." },
+          { icon: "conversion", title: "Tracking & speed checked", desc: "Before the first euro is spent, we check that every conversion reports back to your ad platforms and that the page loads fast on mobile, where most traffic arrives." },
+          { icon: "ab-test", title: "Launch & A/B testing", desc: "The page goes live with the campaign. We then test headlines, visuals and forms, one variable at a time, and keep the version that converts best." },
+        ],
+      },
+      "sites-web/refonte-de-site": {
+        title: "Start afresh without losing your rankings.",
+        lead: "A poorly handled redesign can wipe out the rankings you've earned. We start with an audit of your current site and finish with a controlled migration, URL by URL.",
+        steps: [
+          { icon: "redesign", title: "Audit of your current site", desc: "UX, performance, SEO, conversion: we measure what's holding you back and what still pays off. You decide what we keep — content, high-performing pages, brand elements — and what we rebuild." },
+          { icon: "ai-build", title: "Design, code, redirects", desc: "A new design and fast technical foundations, built alongside your current site, which stays online. We map all your URLs and prepare every redirect before the switch-over." },
+          { icon: "speed", title: "Before-and-after comparison", desc: "In a test environment, we compare the old and new sites: speed, journeys, forms, SEO tags. Redirects are tested one by one; you approve the final version." },
+          { icon: "analytics", title: "Switch-over & SEO monitoring", desc: "Go-live, redirects active, Search Console monitored. We track your rankings and conversions after the switch-over to fix the slightest dip quickly." },
+        ],
+      },
+      "sites-web/site-multilingue": {
+        title: "Found and understood, in every language.",
+        lead: "In Luxembourg, a German-speaking prospect doesn't search like a French-speaking one. We plan languages, URLs and keywords before the design, then each version is optimised and approved separately.",
+        steps: [
+          { icon: "multilingual", title: "Languages & architecture", desc: "Together, we define your priority languages, URL structure, hreflang markup and the keywords for each language. Multilingual is built in before the first mock-up." },
+          { icon: "gen-content", title: "Content per language", desc: "Professional writing and translation, or integration of your own copy, never raw machine translation. The mock-ups absorb the length differences between languages." },
+          { icon: "seo", title: "Language-by-language review", desc: "You or your reviewers approve each version. We check hreflang, the language switcher, forms and confirmation emails in every language, so no visitor ends up in French by mistake." },
+          { icon: "analytics", title: "Indexing & monitoring", desc: "Go-live and an indexing request for each version. We track rankings, traffic and enquiries language by language, to see which market responds and where to strengthen the content." },
+        ],
+      },
+      "seo-geo": {
+        title: "One project, two engines: Google and AI.",
+        lead: "We work on SEO and GEO in a single move: you approve every priority, we fix what's blocking, you track rankings and citations.",
+        steps: [
+          { icon: "process", title: "SEO & GEO audit", desc: "A free audit: technical, semantic and presence in AI answers. You know what's holding back your visibility, and where to start, before we even talk about a quote." },
+          { icon: "strategy", title: "Plan & optimisations", desc: "FR/DE/EN keywords, content plan, technical fixes, Schema.org and llms.txt: a foundation Google understands and AI can pick up as a source." },
+          { icon: "ab-test", title: "Checks & baseline", desc: "Before go-live, we check each page's indexing, markup and rendering, fix any gaps and record your starting rankings and citations." },
+          { icon: "analytics", title: "Rankings & citations tracking", desc: "Go-live, then monthly reporting on Google rankings and AI citations, reviewed with you. You see what's progressing, what's stalling and what we tackle next." },
+        ],
+      },
+      "seo-geo/seo": {
+        title: "From technical diagnosis to qualified traffic.",
+        lead: "SEO is built in layers: first what blocks indexing, then the pages that answer searches, then tracking. You approve every priority.",
+        steps: [
+          { icon: "seo", title: "Technical & semantic audit", desc: "Speed, structure, indexing, internal linking, queries where you're missing: we list what's holding back your rankings and prioritise it by impact." },
+          { icon: "multilingual", title: "Keywords & on-page", desc: "A FR, DE and EN keyword plan based on search intent, then technical fixes, tags, page structure and content that answers what your clients type." },
+          { icon: "speed", title: "Technical check", desc: "We crawl the site the way Google would: redirects, canonical tags, language versions, mobile speed. Every issue is fixed before re-indexing." },
+          { icon: "analytics", title: "Tracking & authority", desc: "Go-live, then monthly reporting on rankings, traffic and conversions, with the next content to produce to build your authority on your key queries." },
+        ],
+      },
+      "seo-geo/geo-gso": {
+        title: "Readable by the models, cited in their answers.",
+        lead: "An emerging field, so a strict method: we start from what AI says about you today, then structure, test and track every citation.",
+        steps: [
+          { icon: "chatbot", title: "AI presence audit", desc: "We ask ChatGPT, Perplexity and Google AI about your topics: are you cited, how, and who is cited instead of you? Then we audit your site's technical structure." },
+          { icon: "ai-build", title: "Citable content & markup", desc: "Clear answers, verifiable facts, Luxembourg context: we restructure your key pages so they can be cited, then add Schema.org structured data and the llms.txt file." },
+          { icon: "ab-test", title: "Machine-side validation", desc: "We check that the structured data is valid, that your pages read without JavaScript and that AI crawlers can access them. Every gap is fixed before publication." },
+          { icon: "geo-citation", title: "Citation tracking", desc: "After go-live, we regularly put your clients' questions to AI assistants and track where they cite you, how they describe you and what still needs strengthening." },
+        ],
+      },
+      "seo-geo/seo-local": {
+        title: "Win the map, where your clients choose.",
+        lead: "Profile, contact details, reviews, local pages: we work on the signals Google uses to rank local businesses, in Luxembourg and across the Greater Region.",
+        steps: [
+          { icon: "local-seo", title: "Local visibility audit", desc: "We review your Google Business Profile, your contact details in directories, your reviews and the competitors ahead of you on the map, query by query." },
+          { icon: "integration", title: "Profile, citations & pages", desc: "We complete your profile (categories, services, photos, service area), make your name, address and phone number consistent everywhere, and create your local pages, marked up in FR, DE and EN." },
+          { icon: "conversion", title: "Checks & customer reviews", desc: "We hunt down duplicate listings, inconsistent contact details and markup errors, then launch customer review collection with ready-to-use reply templates." },
+          { icon: "analytics", title: "Map tracking", desc: "We track your map rankings by area and the calls and direction requests coming from your profile, and post regularly to keep your presence active." },
+        ],
+      },
+      "lead-generation/tunnels-de-conversion": {
+        title: "A mapped journey, measured at every stage.",
+        lead: "Discovery, consideration, decision: each phase has its own page, message and metric. You approve the architecture before anything goes live.",
+        steps: [
+          { icon: "funnel", title: "Journey mapping", desc: "We trace your clients' real path to the quote request, then split it into TOFU, MOFU and BOFU phases matched to your sales cycle." },
+          { icon: "conversion", title: "Aligned pages & follow-ups", desc: "For each phase, the page, message and follow-up that move the prospect one step forward: we reassure during consideration and remove the last objections at decision time." },
+          { icon: "ab-test", title: "Tracking & tests by stage", desc: "We instrument every step-to-step transition, spot the stages that leak and focus A/B tests there, rather than tweaking everything at random." },
+          { icon: "analytics", title: "Launch & attribution", desc: "Funnel live and end-to-end attribution: you know which channel brings which leads and where they stand. An optimisation plan sets the next priorities." },
+        ],
+      },
+      "lead-generation/landing-pages-campagne": {
+        title: "One campaign, one page, a single action.",
+        lead: "Every paid click should land on the promise that triggered it. We start from your ad and your audience, then build the page that extends it.",
+        steps: [
+          { icon: "ads-targeting", title: "Campaign brief & intent", desc: "Ad, audience, keyword, offer: we analyse what the visitor saw and searched for before clicking, so the page echoes the ad's promise word for word." },
+          { icon: "landing", title: "Copywriting & form", desc: "A headline that confirms the click, benefits that answer objections, reassurance, a single call to action and a form cut down to the fields that truly qualify." },
+          { icon: "responsive", title: "Variants & mobile speed", desc: "We prepare headline, offer or form variants for A/B testing, and check loading on mobile, where most paid traffic arrives." },
+          { icon: "analytics", title: "Launch with the campaign", desc: "The page goes live with the campaign, conversion tracking in place. We track cost per lead by ad and keep the variant that converts best." },
+        ],
+      },
+      "lead-generation/email-marketing-automation": {
+        title: "Sequences that follow up at the right moment.",
+        lead: "A prospect who isn't ready yet isn't a lost prospect. We design scenarios that stay with them through to the decision, in line with GDPR.",
+        steps: [
+          { icon: "rgpd", title: "List & triggers", desc: "We review your list, your opt-in consents and your sending setup, then identify the useful triggers: download, key visit, inactivity, an enquiry that went nowhere." },
+          { icon: "email-automation", title: "Scenarios & copywriting", desc: "We write each sequence for the prospect's phase: inform, reassure, suggest an appointment. Short, useful emails in your tone that keep the connection alive without wearing people out." },
+          { icon: "ab-test", title: "Deliverability & send tests", desc: "SPF, DKIM and DMARC setup, inbox tests, then A/B tests on subject lines and content with a sample, before writing to your whole list." },
+          { icon: "analytics", title: "Activation & tracking", desc: "The scenarios run on their own and each sequence has its own reporting: opens, clicks, replies, unsubscribes. We rewrite the emails that lose traction and adjust the sending pace." },
+        ],
+      },
+      "publicite": {
+        title: "Every euro of ad spend must earn its keep.",
+        lead: "We start from your real numbers, not hunches. You approve every step, stay in control of the budget and see what it brings in.",
+        steps: [
+          { icon: "process", title: "Audit & goals", desc: "We analyse your current campaigns, your tracking, your margins and your market. A free audit: you know what works and what leaks before we even talk about a quote." },
+          { icon: "ads-targeting", title: "Media plan & campaigns", desc: "Google to capture demand, Meta to create it, LinkedIn to reach decision-makers: we choose your channels, set up tracking and build campaigns and landing pages." },
+          { icon: "ab-test", title: "Test budget & adjustments", desc: "We start on a test budget agreed together. Ads, audiences and bids are compared in real conditions; whatever doesn't convert is cut without delay." },
+          { icon: "analytics", title: "Scaling & reporting", desc: "We increase only what's profitable and keep optimising. Clear reporting on cost per acquisition and ROAS, channel by channel, without jargon." },
+        ],
+      },
+      "publicite/google-ads": {
+        title: "Clicks that turn into enquiries.",
+        lead: "On Google, the demand already exists. Our job: put you on the right searches, at the right moment, without paying for the wrong ones.",
+        steps: [
+          { icon: "seo", title: "Account & keyword audit", desc: "We analyse your existing account — search terms, Quality Score, wasted budget — or, if you're starting from scratch, the real demand for your keywords." },
+          { icon: "landing", title: "Structure & landing pages", desc: "Search and Performance Max campaigns structured by intent and by language (FR, DE, EN), negative keywords, dedicated landing pages. Conversion tracking is in place before the first euro is spent." },
+          { icon: "conversion", title: "Search terms & bids", desc: "From the first clicks, we exclude search terms that don't convert, test ads and adjust bids based on cost per conversion." },
+          { icon: "next-perf", title: "Scaling up", desc: "We expand what pays off: new keywords, Shopping, YouTube where relevant. Reporting compares Google conversions with the enquiries you actually receive." },
+        ],
+      },
+      "publicite/meta-ads": {
+        title: "Capture attention, then convert it.",
+        lead: "On Meta, the creative now does much of the targeting. We produce, test and retarget: every step is measured all the way to conversion.",
+        steps: [
+          { icon: "integration", title: "Pixel, audiences & content", desc: "We check your ad account, the pixel and Conversions API, your audiences and your existing content. Without a reliable signal, Meta's algorithm optimises blind." },
+          { icon: "branding", title: "Creatives & journey", desc: "We design visuals and videos in native formats — Reels, Stories, carousels — and structure the journey: discovery, consideration, then retargeting of visitors and engaged users." },
+          { icon: "ab-test", title: "Creative testing", desc: "Several hooks, visuals and formats launch in parallel. We keep those that lower the cost per result, cut the rest and build variations of the winners." },
+          { icon: "analytics", title: "Amplification & tracking", desc: "The budget follows the best performers. We monitor frequency, refresh creatives before they wear out, and you track return on investment in clear reporting." },
+        ],
+      },
+      "publicite/linkedin-ads": {
+        title: "Speak to decision-makers, not all of LinkedIn.",
+        lead: "In B2B, a lead is only worth something if it moves through your pipeline. We target by account and by job function, then measure all the way to the sales meeting.",
+        steps: [
+          { icon: "strategy", title: "Ideal client & accounts", desc: "Together, we define your ideal client: job functions, seniority, sectors, company size. For ABM, we build the list of your strategic accounts in Luxembourg and the Greater Region." },
+          { icon: "smart-forms", title: "Formats & CRM connection", desc: "Sponsored content, documents, pre-filled Lead Gen Forms: each format serves a stage of the sales cycle. Insight Tag and CRM connection are set up from the start." },
+          { icon: "leads", title: "Lead qualification", desc: "We judge campaigns on lead quality, not cost per click. With your sales team's feedback, we filter out off-target profiles and refine audiences and messages." },
+          { icon: "funnel", title: "Pipeline measurement", desc: "We focus the budget on the accounts and messages that generate meetings. Reporting tracks cost per lead and pipeline contribution, backed by CRM data." },
+        ],
+      },
+      "branding-design": {
+        title: "A brand thought through before it's drawn.",
+        lead: "From positioning to delivered files, a clear framework: you approve every step, we refine with you, and your brand speaks with one voice, everywhere.",
+        steps: [
+          { icon: "process", title: "Brand diagnosis", desc: "We study your starting point, your competitors and your audiences in Luxembourg. A free audit: we identify what's blurring your image before we even talk about a quote." },
+          { icon: "brand-identity", title: "Bespoke design", desc: "Strategy, name, logo, full identity or print materials: we design what you need. Every proposal is reasoned and tied to your positioning; nothing is left to chance." },
+          { icon: "ab-test", title: "Refinement & sign-off", desc: "We refine the chosen direction through back-and-forth with you until every element is right. Nothing is finalised without your sign-off." },
+          { icon: "guidelines", title: "Delivery & roll-out", desc: "All your files are delivered, source files included, with their usage rules. Then we help you roll out your brand on every new medium, without losing consistency." },
+        ],
+      },
+      "branding-design/creation-de-logo": {
+        title: "From brief to a logo that holds up everywhere.",
+        lead: "A logo is judged in use, not on a mock-up. We root it in your business, refine it with you and deliver it ready for all your materials.",
+        steps: [
+          { icon: "branding", title: "Brief & immersion", desc: "We get to grips with your business, your clients, your competitors and what your logo needs to express. A precise brief avoids off-target directions and pointless back-and-forth." },
+          { icon: "logo", title: "Original concepts", desc: "Several distinct directions, drawn for you, never pulled from a symbol library. Each concept is presented in context, with the intent behind it." },
+          { icon: "ab-test", title: "Refinement & legibility", desc: "Curves, proportions, spacing: the chosen direction is refined with you, then tested as a favicon, at large size, in monochrome, on light and dark backgrounds." },
+          { icon: "responsive", title: "Logo pack delivery", desc: "You receive the full pack — colour, monochrome, vector, web, print, favicon — and a mini usage guide. The logo is entirely yours, source files included." },
+        ],
+      },
+      "branding-design/identite-visuelle": {
+        title: "From logo to guidelines, everything fits together.",
+        lead: "An identity is only worth something if it's applied the same way everywhere. We build the system, then set its rules for your teams and suppliers.",
+        steps: [
+          { icon: "process", title: "Inventory & workshop", desc: "We review your existing materials and your competitors', then, in a workshop, define together the visual territory to claim, based on your values and your audiences." },
+          { icon: "brand-identity", title: "Logo & visual system", desc: "Logo, palette, typographic hierarchy, iconography, patterns, photo style: we design each piece in relation to the others, for a coherent system, not a collection of isolated elements." },
+          { icon: "responsive", title: "Real-world mock-ups", desc: "We apply the system to your real use cases — stationery, website, social media, presentations — and adjust with you anything lacking contrast, legibility or consistency." },
+          { icon: "guidelines", title: "Guidelines & asset library", desc: "The brand guidelines set the rules — clear space, minimum sizes, HEX, CMYK and Pantone codes, forbidden uses — and your assets arrive organised. A living document, expanded with every new medium." },
+        ],
+      },
+      "branding-design/supports-print": {
+        title: "Every piece designed, every file compliant.",
+        lead: "A printed piece can't be corrected after the fact. We scope, design and check every file so it goes to the printer of your choice with no rework.",
+        steps: [
+          { icon: "process", title: "Specifications", desc: "We list your materials — uses, formats, content — and your printer's technical constraints if already chosen. We also check that your identity is ready to be rolled out." },
+          { icon: "branding", title: "Design & layout", desc: "Business cards, stationery, brochures, reports, signage: each piece is laid out in line with your identity, with a clear hierarchy that serves the message." },
+          { icon: "ab-test", title: "Proofreading & prepress check", desc: "You proofread and approve every mock-up. Then the files go through a prepress check: bleed, CMYK, image resolution, fonts, crop marks." },
+          { icon: "print", title: "Files & templates", desc: "Compliant HD PDFs, technical specifications for the printer of your choice and reusable templates: your next editions are prepared without starting from scratch." },
+        ],
+      },
+      "automatisation-ia": {
+        title: "Automate what matters, not everything.",
+        lead: "We start from your real processes, not a trendy tool. The goal: take low-value work off your teams' plates without weakening what already works.",
+        steps: [
+          { icon: "process", title: "Process mapping", desc: "A free audit: we list your repetitive tasks, who does them, how often and in which tools, then prioritise what will truly save you time." },
+          { icon: "automation", title: "Bespoke design", desc: "We choose the stack that fits your existing tools, configure workflows, integrations and AI assistants, and document every scenario so your teams can still follow it." },
+          { icon: "ab-test", title: "Real-case testing", desc: "We run each automation on your real data, edge cases included, and check access rights and GDPR compliance. Your teams approve before anything goes into production." },
+          { icon: "analytics", title: "Activation & monitoring", desc: "We activate the scenarios, monitor runs and errors, and measure the time actually freed up. Your teams are trained, and the documentation is yours." },
+        ],
+      },
+      "automatisation-ia/integrations-crm-api": {
+        title: "One single source of truth for your data.",
+        lead: "A sync that breaks silently does more damage than double entry. We connect, test, then monitor every flow over time.",
+        steps: [
+          { icon: "process", title: "Data flow audit", desc: "We inventory your tools, their APIs and every piece of data moving between them. We spot double entry, silos and fields that don't match from one software to another." },
+          { icon: "integration", title: "Mapping & connectors", desc: "We define which tool is the reference for each piece of data, align the fields, then plug in existing connectors or build a bespoke integration via API and webhooks." },
+          { icon: "rgpd", title: "Testing & security", desc: "We stress-test every sync outside production: duplicates, empty fields, API errors. Access limited to the strict minimum, secure connections, data handled in compliance with GDPR." },
+          { icon: "automation", title: "Monitored go-live", desc: "Gradual go-live, then monitoring: every sync error triggers an alert so it's fixed fast. You receive documentation of your data flows and access rights." },
+        ],
+      },
+    },
     // Honest "guarantees / engagements" band — no invented client metrics.
     proof: {
       eyebrow: "Our commitments",
@@ -2396,6 +2619,191 @@ export const en = {
         { icon: "analytics", value: "Clear reporting", label: "Total transparency", desc: "Every euro spent is tied to a measurable result." },
       ],
     },
+    // Per-page "Nos engagements", keyed by "slug" or "slug/child"; `image` is a photo in
+    // public/engagements (no extension). Pages missing here use `proof` above.
+    proofs: {
+      "sites-web": {
+        title: "What every site includes, in black and white.",
+        lead: "No magic promises. Whatever the pack, these commitments are part of every website project.",
+        items: [
+          { image: "code", value: "100% yours", label: "Code, content, access", desc: "You remain the owner of your site. No lock-in, even if you change agency." },
+          { image: "sites-web-2", value: "Hosting included", label: "In every pack", desc: "First-year domain on us, high-speed hosting and an SSL certificate for HTTPS." },
+          { image: "sites-web-3", value: "3 months of support", label: "You're not on your own", desc: "Technical support included for the first three months, whatever the pack." },
+          { image: "sites-web-4", value: "100% bespoke", label: "Zero templates", desc: "Every site is designed and built for your business, never adapted from a template." },
+        ],
+      },
+      "sites-web/site-vitrine": {
+        title: "What every site includes, in black and white.",
+        lead: "No magic promises. Whatever the pack, these commitments are part of every website project.",
+        items: [
+          { image: "code", value: "100% yours", label: "Code, content, access", desc: "You remain the owner of your site. No lock-in, even if you change agency." },
+          { image: "sites-web-2", value: "Hosting included", label: "In every pack", desc: "First-year domain on us, high-speed hosting and an SSL certificate for HTTPS." },
+          { image: "sites-web-3", value: "3 months of support", label: "You're not on your own", desc: "Technical support included for the first three months, whatever the pack." },
+          { image: "sites-web-4", value: "100% bespoke", label: "Zero templates", desc: "Every site is designed and built for your business, never adapted from a template." },
+        ],
+      },
+      "sites-web/site-e-commerce": {
+        title: "From basket to payment, our commitments in writing.",
+        lead: "An online store is judged on its sales. Here's what we put in place on every e-commerce project.",
+        items: [
+          { image: "sites-web-site-e-commerce-1", value: "Luxembourg VAT", label: "Payments configured", desc: "Secure payment methods and Luxembourg VAT rules configured from launch." },
+          { image: "sites-web-site-e-commerce-2", value: "Self-sufficient", label: "Back office & training", desc: "Products, stock and orders managed by your teams, trained on the tool, without depending on us." },
+          { image: "sites-web-site-e-commerce-3", value: "Frictionless checkout", label: "From product to payment", desc: "A purchase journey designed to reduce basket abandonment, then optimised using your data." },
+          { image: "reporting", value: "Sales measured", label: "E-commerce tracking", desc: "Conversions, baskets and best-performing products: a clear dashboard from go-live." },
+        ],
+      },
+      "sites-web/landing-pages": {
+        title: "What every site includes, in black and white.",
+        lead: "No magic promises. Whatever the pack, these commitments are part of every website project.",
+        items: [
+          { image: "sites-web-landing-pages-1", value: "A single action", label: "Zero distractions", desc: "No menu, no exits: the whole page drives towards your one goal." },
+          { image: "code", value: "100% yours", label: "Code, content, access", desc: "You remain the owner of your site. No lock-in, even if you change agency." },
+          { image: "sites-web-2", value: "Hosting included", label: "In every pack", desc: "First-year domain on us, high-speed hosting and an SSL certificate for HTTPS." },
+          { image: "sites-web-3", value: "3 months of support", label: "You're not on your own", desc: "Technical support included for the first three months, whatever the pack." },
+          { image: "sites-web-4", value: "100% bespoke", label: "Zero templates", desc: "Every site is designed and built for your business, never adapted from a template." },
+        ],
+      },
+      "sites-web/refonte-de-site": {
+        title: "What every site includes, in black and white.",
+        lead: "No magic promises. Whatever the pack, these commitments are part of every website project.",
+        items: [
+          { image: "code", value: "100% yours", label: "Code, content, access", desc: "You remain the owner of your site. No lock-in, even if you change agency." },
+          { image: "sites-web-2", value: "Hosting included", label: "In every pack", desc: "First-year domain on us, high-speed hosting and an SSL certificate for HTTPS." },
+          { image: "sites-web-3", value: "3 months of support", label: "You're not on your own", desc: "Technical support included for the first three months, whatever the pack." },
+          { image: "sites-web-4", value: "100% bespoke", label: "Zero templates", desc: "Every site is designed and built for your business, never adapted from a template." },
+        ],
+      },
+      "sites-web/site-multilingue": {
+        title: "A real site in every language, in black and white.",
+        lead: "No bolted-on translation. Concrete commitments so you truly exist in every language of your market.",
+        items: [
+          { image: "multilingue", value: "FR · DE · EN · LU", label: "Native languages", desc: "French, German, English; Luxembourgish and other languages on request, for the Greater Region." },
+          { image: "sites-web-site-multilingue-2", value: "SEO language by language", label: "Correct hreflang markup", desc: "URLs and content optimised separately: each language captures its own searches." },
+          { image: "sites-web-site-multilingue-3", value: "No raw translation", label: "Accurate in every language", desc: "Professional translation or integration of your own copy: accurate content, never word for word." },
+          { image: "sites-web-site-multilingue-4", value: "Same tone, same UX", label: "Editorial consistency", desc: "A consistent tone and journey from one language to the next, adapted to each audience." },
+        ],
+      },
+      "seo-geo": {
+        title: "Google and AI: commitments, not promises.",
+        lead: "No serious agency guarantees a Google ranking or an AI citation. We guarantee the method, the deliverables and transparency.",
+        items: [
+          { image: "audit", value: "Free SEO/GEO audit", label: "Before any quote", desc: "We tell you where you stand on Google and with AI, with no commitment." },
+          { image: "seo-geo-2", value: "Google + AI, together", label: "One single project", desc: "Around 80% of best practices are shared: we don't sacrifice Google for AI." },
+          { image: "seo-geo-3", value: "No magic timeline", label: "An honest schedule", desc: "First signals often within a few weeks, solid gains within a few months. We tell you upfront." },
+          { image: "reporting", value: "Rankings + citations", label: "Monthly reporting", desc: "Your Google rankings and AI citations, tracked and explained in clear reporting." },
+        ],
+      },
+      "seo-geo/seo": {
+        title: "On Google, what we promise and what we won't.",
+        lead: "Google's algorithm isn't up for negotiation. We commit to what's in our hands: technical foundations, content, monthly tracking.",
+        items: [
+          { image: "seo-geo-seo-1", value: "No #1 promised", label: "Honesty first", desc: "A guaranteed ranking is a sales pitch, not a commitment. We show you the progress." },
+          { image: "code", value: "Sound technical base", label: "Technical SEO", desc: "Speed, structure, indexing: we fix what's holding back your rankings at the root." },
+          { image: "multilingue", value: "FR · DE · EN", label: "Keywords per language", desc: "A keyword plan built for each of the Luxembourg market's three languages." },
+          { image: "reporting", value: "Traffic and conversions", label: "Tracked every month", desc: "Rankings, traffic, conversions: you see what your SEO brings in." },
+        ],
+      },
+      "lead-generation/tunnels-de-conversion": {
+        title: "Your funnel, mapped and measured at every stage.",
+        lead: "A B2B funnel isn't guesswork. We design it with you, instrument it, then improve it stage by stage.",
+        items: [
+          { image: "lead-generation-tunnels-de-conversion-1", value: "Funnel mapped", label: "TOFU · MOFU · BOFU", desc: "The entire journey, from first contact to quote request, mapped and approved with you." },
+          { image: "lead-generation-tunnels-de-conversion-2", value: "One message per stage", label: "Aligned with each phase", desc: "Every page and every follow-up speaks to prospects according to their phase: discovery, consideration, decision." },
+          { image: "reporting", value: "End-to-end tracking", label: "Tracking & attribution", desc: "Every stage is measured: you see where you win prospects and where you lose them." },
+          { image: "lead-generation-tunnels-de-conversion-4", value: "Your sales cycle", label: "Built for B2B", desc: "The funnel follows your real cycle, even a long one, and leads to a quote or a call." },
+        ],
+      },
+      "publicite/google-ads": {
+        title: "On Google, we buy intent, not volume.",
+        lead: "Your clients are already looking for a solution. We put you in front of them at that moment, with a page built to convert.",
+        items: [
+          { image: "publicite-google-ads-1", value: "Intent first", label: "Search & Performance Max", desc: "Campaigns structured to show up on the searches that convert, not for the merely curious." },
+          { image: "publicite-google-ads-2", value: "Dedicated landing page", label: "When it's needed", desc: "If no page on your site matches the ad, we create a dedicated landing page to turn the paid click into an enquiry." },
+          { image: "multilingue", value: "FR · DE · EN keywords", label: "Your clients, their language", desc: "In Luxembourg, your clients search in three languages. Your campaigns cover all three." },
+          { image: "publicite-google-ads-4", value: "Clicks from launch", label: "Learning phase, upfront", desc: "The first weeks are for learning and optimising. We tell you before, not after." },
+        ],
+      },
+      "publicite/meta-ads": {
+        title: "Stop the scroll, then measure what it brings in.",
+        lead: "Nobody searches for your product on Instagram. Attention-grabbing creatives, tested, with a visible cost per result.",
+        items: [
+          { image: "publicite-meta-ads-1", value: "Bespoke creatives", label: "Visuals and videos", desc: "We create your ad visuals and videos, or adapt your existing content." },
+          { image: "publicite-meta-ads-2", value: "Ongoing A/B testing", label: "The numbers decide", desc: "Several visuals and messages tested in parallel: we keep what performs and cut the rest." },
+          { image: "publicite-meta-ads-3", value: "Chosen placements", label: "Based on your audience", desc: "Facebook, Instagram, Threads or Audience Network: we choose based on your audience and your goals." },
+          { image: "reporting", value: "Cost per result", label: "Beyond the likes", desc: "Clear reporting on cost per result and return on investment." },
+        ],
+      },
+      "publicite/linkedin-ads": {
+        title: "The right decision-makers, tracked all the way to your pipeline.",
+        lead: "Clicks cost more on LinkedIn. We start on a test budget and measure the lead, not the click.",
+        items: [
+          { image: "publicite-linkedin-ads-1", value: "Targeted decision-makers", label: "Down to named accounts", desc: "Job function, seniority, sector, company size, and your named strategic accounts through ABM." },
+          { image: "publicite-linkedin-ads-2", value: "Lead Gen Forms", label: "Pre-filled forms", desc: "Decision-makers send you their details without leaving LinkedIn or retyping anything." },
+          { image: "reporting", value: "Tracked into your CRM", label: "Cost per lead measured", desc: "Every lead is linked to your CRM: you see its cost and its contribution to the pipeline." },
+          { image: "multilingue", value: "LU + Greater Region", label: "Local focus", desc: "Campaigns designed for decision-makers in Luxembourg and the Greater Region." },
+        ],
+      },
+      "branding-design": {
+        title: "What we guarantee your brand, in black and white.",
+        lead: "No generic logo, no files held back. Concrete commitments, kept on every brand project.",
+        items: [
+          { image: "audit", value: "Free audit", label: "Before any quote", desc: "A free diagnosis of your current image: what serves your brand and what holds it back." },
+          { image: "branding-design-2", value: "Zero templates", label: "Crafted by hand", desc: "A logo and identity designed for you, never a template seen a thousand times." },
+          { image: "branding-design-3", value: "100% yours", label: "Logo & source files", desc: "Vector, colour, black & white, web and print: everything is delivered, everything is yours." },
+          { image: "branding-design-4", value: "Beauty that works", label: "Built to convert", desc: "Every visual choice aims for clarity, trust and action. Never beauty for beauty's sake." },
+        ],
+      },
+      "branding-design/creation-de-logo": {
+        title: "A logo that's truly you, and truly yours.",
+        lead: "Your logo is often the only thing people remember about you. Here's what we commit to delivering.",
+        items: [
+          { image: "branding-design-creation-de-logo-1", value: "Several directions", label: "Original concepts", desc: "Distinct concepts, hand-drawn for you. Never retouched templates." },
+          { image: "branding-design-creation-de-logo-2", value: "Refined together", label: "Back-and-forth", desc: "The chosen direction, reworked with you. The goal: a logo you love." },
+          { image: "branding-design-creation-de-logo-3", value: "Legible everywhere", label: "Tested on every medium", desc: "Checked at small and large sizes, on light and dark backgrounds, on screen and on paper." },
+          { image: "branding-design-creation-de-logo-4", value: "Full ownership", label: "Source files delivered", desc: "Vector, web, print, favicon: all the files are yours, with no royalties or hidden fees." },
+        ],
+      },
+      "branding-design/identite-visuelle": {
+        title: "A consistent brand, with rules in black and white.",
+        lead: "Logo, colours, typefaces, guidelines: everything is defined, documented and delivered, so everyone applies your brand without hesitation.",
+        items: [
+          { image: "branding-design-identite-visuelle-1", value: "Logo included", label: "The heart of the identity", desc: "Designed for you, or built on your existing logo and refreshed if needed." },
+          { image: "branding-design-identite-visuelle-2", value: "RGB · CMYK · Pantone", label: "No guesswork on colour", desc: "Every colour defined in HEX, RGB, CMYK and Pantone, for screen and print alike." },
+          { image: "branding-design-identite-visuelle-3", value: "PDF brand guidelines", label: "Written usage rules", desc: "Clear space, minimum sizes, forbidden uses: no more room for interpretation." },
+          { image: "branding-design-identite-visuelle-4", value: "Organised assets", label: "Ready for your teams", desc: "All your source files organised and accessible, for your teams and your suppliers alike." },
+        ],
+      },
+      "branding-design/supports-print": {
+        title: "Materials that reflect you, files without a flaw.",
+        lead: "Print reassures your clients. We design every piece with the same care as your website, right down to the final file.",
+        items: [
+          { image: "branding-design-supports-print-1", value: "Print-ready", label: "Compliant files", desc: "Bleed, CMYK, crop marks, colour profiles: files accepted with no rework." },
+          { image: "branding-design-supports-print-2", value: "Technical spec sheet", label: "For your printer", desc: "The specifications to send to the printer of your choice, for a result with no nasty surprises." },
+          { image: "branding-design-supports-print-3", value: "True to your brand", label: "Guidelines respected", desc: "Every piece extends your identity, whether we created it or you already have brand guidelines." },
+          { image: "branding-design-supports-print-4", value: "Reusable templates", label: "Built for what's next", desc: "Templates and variations delivered with your files: your next edition doesn't start from scratch." },
+        ],
+      },
+      "automatisation-ia": {
+        title: "Automate, yes. Lose control, never.",
+        lead: "No AI project that gets bogged down. Concrete commitments, from the free audit to the documentation we hand over.",
+        items: [
+          { image: "audit", value: "Free audit", label: "Before any quote", desc: "We identify, free of charge, the tasks in your business that are truly worth automating." },
+          { image: "automatisation-ia-2", value: "One use case first", label: "Then we expand", desc: "We start with one measurable task, then extend only what proves its worth." },
+          { image: "automatisation-ia-3", value: "GDPR by design", label: "Privacy first", desc: "Every automation is designed in line with GDPR and the confidentiality of your data." },
+          { image: "code", value: "Documentation handed over", label: "No black box", desc: "Every workflow is documented: you know what's running, where and why." },
+        ],
+      },
+      "automatisation-ia/integrations-crm-api": {
+        title: "Your tools finally connected, without rebuilding everything.",
+        lead: "Double entry, leads lost between two tools. Here's how we connect your stack, cleanly and securely.",
+        items: [
+          { image: "automatisation-ia-integrations-crm-api-1", value: "Your stack, kept", label: "We build on what exists", desc: "We connect the tools your teams already use, without forcing you to switch." },
+          { image: "automatisation-ia-integrations-crm-api-2", value: "Bespoke API work", label: "When no connector exists", desc: "No off-the-shelf connector? We build the integration via the API or webhooks." },
+          { image: "code", value: "Controlled access", label: "GDPR-compliant sync", desc: "Secure connections and fine-grained access management, in line with GDPR." },
+          { image: "reporting", value: "Tested, then monitored", label: "Before and after launch", desc: "Every integration is tested before going live, documented, then monitored." },
+        ],
+      },
+    },
   },
   serviceContent: {
     "sites-web": {
@@ -2404,11 +2812,11 @@ export const en = {
       motionEyebrow: "Bespoke",
       intro: [
         "Your site is often the first — sometimes the only — meeting with a client. We design it like a salesperson who works 24/7: fast, clear, action-driven.",
-        "Depending on your need, we build bespoke (ultra-fast and AI-ready) or on WordPress when you want to keep control of content day to day. And yes: a large part of our production is AI-accelerated — more quality, delivered faster.",
+        "We build everything bespoke: ultra-fast, secure and AI-ready. And yes: a large part of our production is AI-accelerated — more quality, delivered faster.",
       ],
       included: [
         { icon: "ai-build", title: "Built with AI", desc: "We accelerate design and development with AI, never sacrificing quality or consistency." },
-        { icon: "wordpress", title: "WordPress when needed", desc: "Need to edit your pages yourself? We deliver a clean, secure and easy-to-manage WordPress." },
+        { icon: "process", title: "Managed updates", desc: "Content, security, improvements: we handle your site's updates so you can stay focused on your business." },
         { icon: "next-perf", title: "Performance", desc: "For bespoke work, a near-instant, secure site built for SEO and GEO." },
         { icon: "responsive", title: "100% responsive", desc: "A flawless experience on mobile, tablet and desktop — mobile first." },
         { icon: "conversion", title: "Built to convert", desc: "Every page has a goal: generate a call, a quote, a lead. We guide the visitor to action." },
@@ -2416,12 +2824,12 @@ export const en = {
       ],
       deliverables: [
         "Bespoke mockups and design signed off with you",
-        "Bespoke site or WordPress, your choice",
+        "100% bespoke site",
         "Baseline SEO & GEO optimisation built in",
         "Forms, tracking and go-live included",
       ],
       faq: [
-        { q: "Bespoke or WordPress, how to choose?", a: "Bespoke offers the best performance and flexibility; WordPress is ideal if you want to edit content yourself. We advise based on your real use, no dogma." },
+        { q: "Why bespoke rather than a template?", a: "Bespoke offers the best performance, security and flexibility: your site is designed for your business, not adapted from a template seen a thousand times." },
         { q: "What does \"built with AI\" mean?", a: "We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and with better value for money — reviewed and finalised by humans." },
         { q: "Will my site be optimised for Google and AI?", a: "Yes. We build in SEO and GEO best practices from the start: structure, performance, structured data and citable content." },
       ],
@@ -2847,7 +3255,7 @@ export const en = {
         ],
         faq: [
           { q: "How many pages does a showcase site include?", a: "It depends on your business — often 5 to 10 pages (home, services, about, contact…). We define the clearest structure together, for your visitors and for Google." },
-          { q: "Will I be able to edit the content myself?", a: "On WordPress, yes, editing is simple. On bespoke builds, we handle the updates for you." },
+          { q: "Will I be able to edit the content myself?", a: "We handle the updates for you: send us your changes and we put them live." },
         ],
       },
       {
@@ -2883,7 +3291,7 @@ export const en = {
           "E-commerce tracking & management training",
         ],
         faq: [
-          { q: "Which platform do you build the store on?", a: "Depending on your need: WooCommerce/WordPress for autonomy, or a bespoke solution for performance and specific requirements. We advise without dogma." },
+          { q: "Which platform do you build the store on?", a: "On a bespoke solution, built for performance and your specific needs: catalogue, payments, delivery. We advise based on your business." },
           { q: "Do you handle payments and VAT?", a: "Yes. We configure payment methods, Luxembourg VAT rules and, if needed, the connection to your logistics and accounting." },
         ],
       },
@@ -3148,43 +3556,6 @@ export const en = {
           { q: "Do I need an email list already?", a: "It's a plus, but we can also set up capture (lead magnets, forms) to build it cleanly. We start from your real situation." },
         ],
       },
-      {
-        slug: "optimisation-conversion-cro",
-        illustration: "optimisation-conversion-cro",
-        title: "Conversion rate optimisation (CRO)",
-        tagline: "More leads at the same traffic, thanks to data.",
-        short:
-          "Doubling your conversions without doubling your budget: that's the promise of CRO. We identify the obstacles, test solutions and keep what works, with proof to back it up.",
-        bullets: [
-          "Audit of conversion obstacles",
-          "A/B & multivariate testing",
-          "Behavioural analysis (heatmaps)",
-          "Form optimisation",
-        ],
-        metaTitle: "Conversion Rate Optimisation (CRO) in Luxembourg | vortx",
-        metaDescription:
-          "Conversion rate optimisation (CRO) in Luxembourg: friction audit, A/B testing, heatmaps and form optimisation. More leads from the same traffic.",
-        intro: [
-          "Attracting more traffic is expensive. Converting more of what you already have costs far less — and often pays off more. CRO (Conversion Rate Optimization) is about turning a larger share of your visitors into leads.",
-          "We analyse your visitors' real behaviour (heatmaps, recordings, funnels), form hypotheses, then validate them with A/B tests. No opinions: we keep only what the data proves to be the winner.",
-        ],
-        included: [
-          { icon: "ab-test", title: "Audit of obstacles", desc: "We pinpoint exactly where and why your visitors give up before converting." },
-          { icon: "analytics", title: "A/B & multivariate testing", desc: "We test variants and measure: only the winning versions are kept." },
-          { icon: "conversion", title: "Behavioural analysis", desc: "Heatmaps and session recordings to understand the real friction points." },
-          { icon: "smart-forms", title: "Form optimisation", desc: "Less friction, more completions: the form is often the key point." },
-        ],
-        deliverables: [
-          "Conversion audit & behavioural analysis",
-          "Hypothesis plan & prioritisation",
-          "A/B tests set up & analysed",
-          "Reporting of gains & iterations",
-        ],
-        faq: [
-          { q: "What conversion gain can we expect?", a: "It depends on your starting point. We don't promise a magic figure: we set up a continuous-improvement process and document every gain validated by the tests." },
-          { q: "Do I need a lot of traffic to do CRO?", a: "A minimum of volume helps achieve statistically reliable results. Below that, we start with optimisations grounded in best practices and behavioural analysis." },
-        ],
-      },
     ],
     "branding-design": [
       {
@@ -3193,7 +3564,7 @@ export const en = {
         title: "Logo design",
         tagline: "A symbol that makes you recognisable at a glance.",
         short:
-          "A unique logo, hand-crafted and delivered in every useful format. The starting point of a brand people remember — not a generic pictogram.",
+          "Just your logo: a unique symbol, hand-crafted and delivered in every useful format. The starting point of a brand people remember — not a generic pictogram.",
         bullets: [
           "Original hand-drawn concepts",
           "Variations (colour, mono, favicon)",
@@ -3222,154 +3593,86 @@ export const en = {
         faq: [
           { q: "How many proposals will I receive?", a: "We present several distinct directions, then refine the one you prefer through back-and-forth. The goal is a logo you love, not a lukewarm compromise." },
           { q: "Do I really own the logo?", a: "Yes, fully. You receive all the source files and own them completely, with no hidden fees or royalties." },
+          { q: "What if I need the whole visual identity?", a: "This offer covers the logo only. For colours, typography and complete brand guidelines, choose our Visual identity & brand guidelines offer: the logo is included." },
         ],
       },
       {
         slug: "identite-visuelle",
         illustration: "identite-visuelle",
-        title: "Complete visual identity",
-        tagline: "Far more than a logo: a coherent visual system everywhere.",
-        short:
-          "Colours, typography, iconography, art direction: a complete visual system that makes your brand recognisable across every touchpoint.",
+        title: "Visual identity & brand guidelines",
+        tagline: "Logo, colours, typography and usage rules: your complete brand, ready to use.",
+        short: "The complete identity package: your logo, the visual system around it (colours, typography, iconography, art direction) and the brand guidelines that set its rules for your teams and suppliers.",
         bullets: [
+          "Bespoke logo included",
           "Colour palette & typography",
-          "Iconography & patterns",
-          "Photographic art direction",
-          "Scalable modular system",
+          "Iconography, patterns & art direction",
+          "Brand guidelines document (PDF)",
+          "Ready-to-use asset library",
         ],
-        metaTitle: "Brand Visual Identity in Luxembourg | vortx",
+        metaTitle: "Visual identity & brand guidelines in Luxembourg | vortx",
         metaDescription:
-          "Complete visual identity in Luxembourg: colours, typography, iconography and art direction. A coherent system that makes your brand recognisable.",
+          "Complete visual identity and brand guidelines in Luxembourg: logo, colours, typography, iconography and usage rules. A coherent brand, applied by everyone.",
         intro: [
-          "A logo alone doesn't make a brand. What makes you recognisable is the consistency of everything else: your colours, your typefaces, your images, your style. A complete visual identity orchestrates these elements into a harmonious system.",
-          "We build that system from A to Z: colour palette, typographic hierarchy, iconography, patterns and art direction. Modular and scalable, it gives you everything to communicate consistently — from website to social media, from print to presentation.",
+          "A logo alone doesn't make a brand. What makes you recognisable is the consistency of everything else: your colours, your typography, your images, your style — and clear rules so everyone applies them the same way.",
+          "We build it all, from A to Z: the logo, the visual system that goes with it (palette, typographic hierarchy, iconography, patterns, art direction), then the brand guidelines that document its use — clear space, precise colour codes, spacing, concrete examples.",
+          "The result: a modular identity that grows with you, and a guide your teams and suppliers can follow without hesitation, from the website to social media, from print to presentations.",
         ],
         included: [
-          { icon: "brand-identity", title: "Colours & typography", desc: "A distinctive palette and typographic hierarchy, adapted for every use." },
-          { icon: "branding", title: "Iconography & patterns", desc: "Graphic elements unique to your brand that reinforce its recognition." },
-          { icon: "ai-build", title: "Art direction", desc: "A consistent photographic and visual style so everything you produce looks alike." },
-          { icon: "automation", title: "Modular system", desc: "A scalable foundation: we can extend it to new media without redoing everything." },
+          { icon: "logo", title: "Bespoke logo", desc: "The heart of the identity: a unique logo, delivered in colour, monochrome and favicon versions." },
+          { icon: "brand-identity", title: "Colours & typography", desc: "A distinctive palette and typographic hierarchy, with their exact codes (HEX, RGB, CMYK, Pantone)." },
+          { icon: "branding", title: "Iconography & art direction", desc: "Icons, patterns and a photo style of your own, so everything you produce looks like you." },
+          { icon: "guidelines", title: "Brand guidelines", desc: "Documented usage rules: minimum sizes, clear space, correct and forbidden uses." },
+          { icon: "responsive", title: "Application examples", desc: "Stationery, web, social media, presentations: concrete cases that remove any ambiguity." },
+          { icon: "process", title: "Ready-to-use assets", desc: "All source files organised and accessible for your teams and suppliers." },
         ],
         deliverables: [
+          "Final logo (colour, mono, favicon, vector)",
           "Colour palette & typographic system",
-          "Iconography, patterns & graphic elements",
-          "Art direction & application examples",
-          "Organised, ready-to-use source files",
-        ],
-        faq: [
-          { q: "Do I need to have a logo already?", a: "Ideally yes — the identity is built around it. If you don't have one, we start by creating it, then roll out the coherent visual identity around it." },
-          { q: "What's the difference with brand guidelines?", a: "The visual identity is the elements (colours, type, style). The brand guidelines are the document that sets the usage rules. The two are complementary and we can deliver both." },
-        ],
-      },
-      {
-        slug: "charte-graphique",
-        illustration: "charte-graphique",
-        title: "Brand guidelines & style guide",
-        tagline: "The rules that guarantee a coherent brand, everywhere, by everyone.",
-        short:
-          "The reference document that sets how your brand is used: logo, colours, typography, tone. So everyone — your teams and your suppliers — applies it correctly.",
-        bullets: [
-          "Logo usage manual",
-          "Colour, type & spacing rules",
-          "Application examples",
-          "Files ready for your teams",
-        ],
-        metaTitle: "Brand Guidelines & Style Guide in Luxembourg | vortx",
-        metaDescription:
-          "Brand guidelines and style guide creation in Luxembourg: logo usage rules, colours, typography and applications. A coherent brand, applied by everyone.",
-        intro: [
-          "A brand loses its strength the moment everyone applies it their own way: a distorted logo, approximate colours, mismatched typefaces. Brand guidelines prevent this by setting clear rules, followed by all.",
-          "We document how your brand is used: logo protection zones, precise colour codes, typographic hierarchy, spacing, tone of voice and concrete application examples. A guide your teams and suppliers can follow without hesitation.",
-        ],
-        included: [
-          { icon: "guidelines", title: "Logo manual", desc: "Minimum sizes, protection zones, correct and forbidden uses, on every background." },
-          { icon: "brand-identity", title: "Colour & type rules", desc: "Precise codes (HEX, RGB, CMYK, Pantone) and documented typographic hierarchy." },
-          { icon: "conversion", title: "Application examples", desc: "Concrete cases — stationery, web, social media — to remove any ambiguity." },
-          { icon: "ai-build", title: "Ready-to-use files", desc: "All the assets organised and accessible for your teams and suppliers." },
-        ],
-        deliverables: [
-          "Complete brand guidelines document (PDF)",
-          "Logo, colour, typography & spacing rules",
-          "Tone of voice & application examples",
+          "Iconography, patterns & art direction",
+          "Complete brand guidelines (PDF)",
           "Organised asset library",
         ],
         faq: [
+          { q: "What's the difference between a visual identity and brand guidelines?", a: "The visual identity is the set of elements (logo, colours, typography, style). The brand guidelines are the document that sets their usage rules. This offer brings both together." },
+          { q: "I already have a logo — is this still useful?", a: "Yes. We start from your existing logo — refreshing it if needed — and build the visual system and the guidelines around it." },
           { q: "What's the point of guidelines if I work alone?", a: "They guarantee consistency over time and make every future collaboration easier (printer, freelancer, new hire). It's an investment that protects the value of your brand." },
-          { q: "Can the guidelines evolve?", a: "Yes. It's a living document: we can expand it as your brand extends to new media." },
+          { q: "Can the identity evolve?", a: "Yes. The system is modular and the guidelines are a living document: we expand them as your brand reaches new media." },
         ],
       },
       {
         slug: "supports-print",
         illustration: "supports-print",
         title: "Print materials & stationery",
-        tagline: "A brand that holds up just as well in the hand as on screen.",
-        short:
-          "Business cards, brochures, leaflets, reports, signage: your printed materials designed with the same care as your digital presence.",
+        tagline: "All your materials, designed with the same care as your website.",
+        short: "Business cards, stationery, brochures, leaflets, reports, signage, roll-ups: we design all your materials in line with your identity and deliver files ready for the printer of your choice.",
         bullets: [
           "Business cards & stationery",
-          "Brochures & leaflets",
+          "Brochures, leaflets & flyers",
           "Reports & corporate documents",
           "Signage & event materials",
         ],
-        metaTitle: "Print Materials & Stationery Design in Luxembourg | vortx",
+        metaTitle: "Print material & stationery design in Luxembourg | vortx",
         metaDescription:
-          "Print materials design in Luxembourg: business cards, brochures, leaflets, reports and signage. A coherent brand from digital to paper, ready to print.",
+          "Print design in Luxembourg: business cards, brochures, leaflets, reports, signage. Files ready for the printer of your choice.",
         intro: [
-          "Print isn't dead — it reassures. In Luxembourg, the corporate and financial fabric remains a heavy consumer of polished printed materials: a business card, a leaflet or an annual report says a lot about how seriously you take things.",
-          "We design your print materials in continuity with your identity, ready to print (bleeds, colour profiles, standard formats). From the detail of a business card to signage, your brand stays consistent across every medium.",
+          "Print isn't dead — it reassures. In Luxembourg, the corporate and financial sector remains a big user of carefully crafted materials: a business card, a leaflet or an annual report says a lot about how seriously you work.",
+          "We design all your materials in line with your identity, from the business card to signage. You receive technically flawless files (bleed, CMYK, colour profiles, standard formats), ready to go to the printer of your choice.",
         ],
         included: [
-          { icon: "print", title: "Cards & stationery", desc: "Business cards, letterheads, signatures: your identity down to the details." },
+          { icon: "print", title: "Cards & stationery", desc: "Business cards, letterheads, envelopes, signatures: your identity down to the details." },
           { icon: "branding", title: "Brochures & leaflets", desc: "Sales materials that showcase your offers with clarity and elegance." },
           { icon: "guidelines", title: "Corporate reports", desc: "Annual reports and institutional documents laid out with rigour." },
-          { icon: "responsive", title: "Ready to print", desc: "Compliant files (bleeds, CMYK) for printing with no nasty surprises." },
+          { icon: "responsive", title: "Print-ready files", desc: "Bleed, CMYK, crop marks: compliant files any printer accepts without rework." },
         ],
         deliverables: [
-          "Design of the requested print materials",
-          "Print-ready files (PDF, CMYK, bleeds)",
-          "Variations & reusable templates",
-          "Support with your printer if needed",
+          "Design of all the materials you need",
+          "Print-ready files (HD PDF, CMYK, bleed)",
+          "Reusable templates & variations",
+          "Technical specifications for your printer",
         ],
         faq: [
-          { q: "Do you handle the printing too?", a: "We deliver print-ready files and can coordinate with your printer, or recommend reliable partners in Luxembourg." },
-          { q: "Can you reuse my existing guidelines?", a: "Yes. We apply your current identity to the print materials, or adapt it if it doesn't yet have a printed version." },
-        ],
-      },
-      {
-        slug: "strategie-de-marque-naming",
-        illustration: "strategie-de-marque-naming",
-        title: "Brand strategy & naming",
-        tagline: "Meaning and words before pixels.",
-        short:
-          "Before the visuals, the substance: positioning, brand platform, name and tone of voice. The strategy that gives a clear direction to all your communication.",
-        bullets: [
-          "Positioning & brand platform",
-          "Naming & name research",
-          "Tone of voice & key messages",
-          "Multilingual verbal identity",
-        ],
-        metaTitle: "Brand Strategy & Naming in Luxembourg | vortx",
-        metaDescription:
-          "Brand strategy and naming in Luxembourg: positioning, brand platform, name creation and multilingual tone of voice. Meaning that guides your communication.",
-        intro: [
-          "A beautiful brand with no strategy is a façade with no foundations. Before designing anything, you need to know what you stand for, who you're talking to and what sets you apart. That's the role of brand strategy.",
-          "We define your positioning, your brand platform (mission, values, promise) and your territory of expression. If needed, we create your name (naming) and set a coherent tone of voice — including in several languages, as the Luxembourg market demands.",
-        ],
-        included: [
-          { icon: "strategy", title: "Positioning", desc: "What sets you apart, stated clearly: the basis of all your communication." },
-          { icon: "branding", title: "Brand platform", desc: "Mission, values, promise and personality: the DNA that guides every decision." },
-          { icon: "gen-content", title: "Naming", desc: "Creation and checking of a brand or product name that's available and meaningful." },
-          { icon: "multilingual", title: "Multilingual tone of voice", desc: "A coherent verbal identity in FR, DE and EN, adapted to each audience." },
-        ],
-        deliverables: [
-          "Brand platform & positioning",
-          "Naming & recommendations (if applicable)",
-          "Tone of voice guide & key messages",
-          "Actionable strategic summary",
-        ],
-        faq: [
-          { q: "Is brand strategy useful for a small business?", a: "Yes, perhaps even more so: with fewer resources, every message has to land just right. A clear strategy keeps you focused and makes all your communication more effective." },
-          { q: "Should strategy come before the logo?", a: "Ideally yes: the visuals flow from the positioning. We can, however, run both in parallel if the project requires it. Strategy stays the compass." },
+          { q: "Can you work from my existing guidelines?", a: "Yes. We apply your current identity to your materials, or adapt it if it doesn't have a print version yet." },
+          { q: "Will my printer accept the files?", a: "Yes: we deliver files to professional printing standards and, if needed, the technical specifications to pass on to your printer, for a result with no bad surprises." },
         ],
       },
     ],
@@ -3377,32 +3680,32 @@ export const en = {
       {
         slug: "chatbots-ia",
         illustration: "chatbots-ia",
-        title: "AI chatbots & voicebots",
+        title: "Smart chatbots",
         tagline: "Answer, qualify and book automatically, 24/7.",
         short:
-          "Smart chatbots and voicebots that answer your visitors, qualify enquiries and book appointments — on your site and on WhatsApp.",
+          "Chatbots that welcome your visitors, ask the right questions, qualify enquiries and book appointments — on your site and on WhatsApp.",
         bullets: [
           "Multilingual website chatbot",
           "WhatsApp & Messenger",
-          "Voicebot for inbound calls",
+          "Automated appointment booking",
           "Smart handover to a human",
         ],
-        metaTitle: "AI Chatbots & Voicebots in Luxembourg | vortx",
+        metaTitle: "Smart Chatbots in Luxembourg | vortx",
         metaDescription:
-          "AI chatbots and voicebots for Luxembourg businesses: website, WhatsApp, inbound calls, multilingual. Answer, qualify and book automatically, 24/7.",
+          "Smart chatbots for Luxembourg businesses: website, WhatsApp, Messenger, multilingual. Answer, qualify and book automatically, 24/7.",
         intro: [
-          "A visitor who can't find an answer leaves. A missed call is a lost client. A well-designed AI chatbot answers instantly, at any hour, in the visitor's language — and never sleeps.",
-          "We deploy chatbots and voicebots connected to your context: they answer common questions, qualify enquiries, book appointments and hand over to a human when it's relevant. On your site, on WhatsApp, or on the phone.",
+          "A visitor who can't find an answer leaves. A message left unanswered in the evening or at the weekend is a lost client. A well-designed chatbot answers instantly, at any hour, in the visitor's language — and never sleeps.",
+          "We design chatbots that lead the conversation step by step: they answer common questions, ask the right questions to qualify each enquiry, book appointments and hand over to your team when it's relevant. On your site, on WhatsApp or on Messenger.",
         ],
         included: [
-          { icon: "chatbot", title: "Multilingual chatbot", desc: "On your site, it answers in FR/DE/EN and qualifies visitors continuously." },
+          { icon: "chatbot", title: "Multilingual chatbot", desc: "On your site, it welcomes visitors in FR, DE or EN and guides them to the right answer." },
           { icon: "integration", title: "WhatsApp & Messenger", desc: "Where your clients are: we deploy the bot on their preferred channels." },
-          { icon: "ai-agent", title: "Phone voicebot", desc: "A voice agent that picks up, informs and routes inbound calls." },
+          { icon: "ai-agent", title: "Appointment booking", desc: "The bot offers your free slots and books straight into your calendar." },
           { icon: "leads", title: "Smart handover", desc: "When useful, the bot hands over to a human with all the context." },
         ],
         deliverables: [
           "Scenario & tone design",
-          "Chatbot/voicebot connected to your content",
+          "Bespoke conversation flows",
           "Deployment on your channels (web, WhatsApp…)",
           "Conversation tracking & optimisation",
         ],
@@ -3446,43 +3749,6 @@ export const en = {
         faq: [
           { q: "What if my software has no ready-made connector?", a: "We build a bespoke integration via its API or webhooks. Most professional tools expose an API: we plug in cleanly." },
           { q: "Is my data secure during the sync?", a: "Yes. The integrations are designed in compliance with GDPR, with secure connections and fine-grained access management." },
-        ],
-      },
-      {
-        slug: "ia-contenu-generatif",
-        illustration: "ia-contenu-generatif",
-        title: "Generative AI for content",
-        tagline: "Produce articles, emails and on-brand visuals, at scale.",
-        short:
-          "Put generative AI to work for your content — articles, newsletters, replies, visuals — while keeping your brand tone and human editorial validation.",
-        bullets: [
-          "Article & newsletter generation",
-          "Personalised replies & emails",
-          "Social media visuals & variations",
-          "Editorial validation & brand tone",
-        ],
-        metaTitle: "Generative AI for Content in Luxembourg | vortx",
-        metaDescription:
-          "Generative AI for content in Luxembourg: articles, newsletters, emails and visuals in your brand tone, multilingual. Produce more without losing quality.",
-        intro: [
-          "Producing quality content, regularly and in several languages, is a challenge of time and resources. Generative AI changes the game: it speeds up production while keeping your voice — provided it's properly framed.",
-          "We set up bespoke generation workflows (articles, emails, social media visuals) trained on your brand tone, with a human editorial validation step. Produce more, faster, without falling into generic content.",
-        ],
-        included: [
-          { icon: "gen-content", title: "Articles & newsletters", desc: "Editorial content produced at your pace, in your tone, ready to review." },
-          { icon: "email-automation", title: "Personalised emails", desc: "Bespoke replies and emails, generated at scale without losing the human touch." },
-          { icon: "branding", title: "Social media visuals", desc: "Graphic variations consistent with your identity, for your channels." },
-          { icon: "multilingual", title: "Multilingual & validated", desc: "Production in FR/DE/EN with editorial validation: quality and tone guaranteed." },
-        ],
-        deliverables: [
-          "Bespoke generation workflows",
-          "Models trained on your brand tone",
-          "Editorial validation process",
-          "Training & support for your teams",
-        ],
-        faq: [
-          { q: "Isn't AI content penalised by Google?", a: "What Google penalises is content with no value — not the tool used. Our approach combines generation and human validation for useful, original and optimised content. Quality is what counts." },
-          { q: "Will the content really keep my tone?", a: "Yes, that's the whole point. We train the models on your content and your style, and a human review guarantees consistency before publication." },
         ],
       },
     ],
@@ -3590,10 +3856,10 @@ export const en = {
       {
         title: "Websites",
         items: [
-          { q: "Bespoke or WordPress, how to choose?", a: "Bespoke offers the best performance, security and flexibility; WordPress is ideal if you want to edit content yourself day to day. We advise based on your real use, no dogma." },
+          { q: "Why bespoke rather than a template?", a: "Bespoke offers the best performance, security and flexibility: your site is designed for your business, not adapted from a template seen a thousand times." },
           { q: "Is it true your sites are \"built with AI\"?", a: "Yes. We use AI to accelerate design, code and content. The result: a higher-quality site, delivered faster and with better value for money — always reviewed and finalised by humans." },
           { q: "Will my site be fast and mobile-friendly?", a: "Absolutely. Performance and mobile-first are the baseline: a near-instant site, 100% responsive and accessible on every screen." },
-          { q: "Will I be able to edit my site myself?", a: "On WordPress, yes, easily. On bespoke builds, we handle the updates for you." },
+          { q: "Will I be able to edit my site myself?", a: "We handle the updates for you: send us your changes and we put them live." },
           { q: "Will my site be optimised for Google and AI?", a: "Yes. We build in SEO and GEO best practices from the start: structure, performance, structured data and content citable by AI answer engines." },
           { q: "Do you handle hosting and maintenance?", a: "Yes. We can take on hosting, updates, security and enhancements, so you don't have to worry about it." },
         ],

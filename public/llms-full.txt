@@ -22,10 +22,9 @@ vortx propose six expertises qui s'emboîtent. Chacune se décline en spécialit
 ciblées (sous-services), à prendre seules ou combinées.
 
 ### Création de sites web au Luxembourg
-Sites vitrines, landing pages et plateformes sur mesure en Next.js — ou sur
-WordPress quand vous voulez garder la main. Performance, design premium et
-tunnels de conversion intégrés.
-- Développement Next.js ultra-rapide (ou WordPress)
+Sites vitrines, landing pages et plateformes 100 % sur mesure en Next.js.
+Performance, design premium et tunnels de conversion intégrés.
+- Développement sur mesure ultra-rapide (Next.js)
 - Design sur mesure, mobile-first
 - Formulaires intelligents multi-étapes
 - 100 % responsive et accessible
@@ -60,7 +59,6 @@ Sous-services :
 - Landing pages de campagne : transformer le trafic payant en demandes.
 - Email marketing & automation : séquences de nurturing automatisées.
 - Lead nurturing & scoring : qualifier et réchauffer (MQL → SQL).
-- Optimisation du taux de conversion (CRO) : plus de leads à trafic égal.
 
 ### Publicité en ligne
 Campagnes Google Ads, Meta et LinkedIn pilotées par la donnée.
@@ -73,7 +71,7 @@ Sous-services :
 - Meta Ads : créer la demande sur Facebook, Instagram et Threads.
 - LinkedIn Ads : toucher les décideurs B2B (ABM, Lead Gen Forms).
 
-### Création de logos & branding
+### Logo, Design, Branding & Identité de marque
 Logo sur mesure, identité visuelle complète et charte de marque. La cohérence
 qui inspire confiance avant même le premier mot.
 - Création de logo sur mesure
@@ -81,11 +79,9 @@ qui inspire confiance avant même le premier mot.
 - Charte graphique et règles d'usage
 - Déclinaisons print et digital
 Sous-services :
-- Création de logo : un symbole unique et mémorable.
-- Identité visuelle complète : couleurs, typographies, iconographie, direction artistique.
-- Charte graphique & brand guidelines : les règles d'usage de la marque.
-- Supports print & papeterie : cartes, brochures, rapports, signalétique.
-- Stratégie de marque & naming : positionnement, plateforme de marque, ton de voix.
+- Création de logo : le logo seul, un symbole unique et mémorable.
+- Identité visuelle & charte graphique : logo, couleurs, typographies, iconographie, direction artistique et règles d'usage.
+- Supports print & papeterie : conception de cartes, brochures, rapports, signalétique, livrés en fichiers prêts pour l'imprimeur.
 
 ### Automatisation & IA
 Workflows automatisés, intégrations et agents IA sur mesure.
@@ -96,9 +92,8 @@ Workflows automatisés, intégrations et agents IA sur mesure.
 Sous-services :
 - Automatisation des workflows : connecter vos outils (Make, n8n, Zapier).
 - Agents & assistants IA sur mesure : des agents connectés à vos données (RAG).
-- Chatbots & voicebots IA : répondre, qualifier et réserver 24/7 (web, WhatsApp).
+- Chatbots intelligents : répondre, qualifier et réserver 24/7 (web, WhatsApp).
 - Intégrations CRM & API : synchroniser vos outils, supprimer les silos.
-- IA générative pour le contenu : articles, emails, visuels à votre ton de marque.
 
 ## Méthode
 1. Diagnostic — analyse du marché, des objectifs et du tunnel actuel.

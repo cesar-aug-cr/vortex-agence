@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { i18n, isLocale, type Locale } from "@/i18n/config";
@@ -18,6 +19,15 @@ import { articlesForService } from "@/lib/relatedArticles";
 import { subServiceIllustration } from "@/components/illustrations/map";
 import { featureIcons } from "@/components/illustrations/icons";
 import { Check, ArrowRight } from "@/components/ui/icons";
+
+/** Sub-services whose hero shows a realistic photo instead of the animated
+ *  illustration (square sources in public/services-hero, variants built by
+ *  scripts/build-images.mjs). */
+const HERO_PHOTOS: Record<string, string> = {
+  "creation-de-logo": "/services-hero/creation-de-logo.webp",
+  "identite-visuelle": "/services-hero/identite-visuelle.webp",
+  "supports-print": "/services-hero/supports-print.webp",
+};
 
 type SubService = Dictionary["subServices"][keyof Dictionary["subServices"]][number];
 
@@ -68,6 +78,7 @@ export default async function SubServicePage({
 
   const parent = dict.services.find((s) => s.slug === slug);
   const Illu = subServiceIllustration[sub.illustration];
+  const heroPhoto = HERO_PHOTOS[sub.slug];
   const sd = dict.servicesDetail;
 
   const jsonLd = {
@@ -144,12 +155,27 @@ export default async function SubServicePage({
             </div>
           </div>
 
-          {Illu && (
+          {heroPhoto ? (
             <div className="order-1 lg:order-2">
-              <div className="illu-stage overflow-hidden rounded-2xl border border-border p-4">
-                <Illu className="h-auto w-full" />
+              <div className="relative aspect-square overflow-hidden rounded-2xl border border-border bg-stage">
+                <Image
+                  src={heroPhoto}
+                  alt=""
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
               </div>
             </div>
+          ) : (
+            Illu && (
+              <div className="order-1 lg:order-2">
+                <div className="illu-stage overflow-hidden rounded-2xl border border-border p-4">
+                  <Illu className="h-auto w-full" />
+                </div>
+              </div>
+            )
           )}
         </div>
       </Section>
@@ -223,8 +249,8 @@ export default async function SubServicePage({
         </div>
       </Section>
 
-      <ServiceMethod content={sd.method} />
-      <ServiceProof content={sd.proof} />
+      <ServiceMethod content={sd.method} pages={sd.methods} path={`${slug}/${child}`} lang={lang} />
+      <ServiceProof content={sd.proof} pages={sd.proofs} path={`${slug}/${child}`} />
 
       <RelatedServiceArticles
         lang={lang}

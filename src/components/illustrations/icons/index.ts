@@ -1,7 +1,6 @@
 import type { FC } from "react";
 
 import { IconAiBuild } from "./IconAiBuild";
-import { IconWordPress } from "./IconWordPress";
 import { IconNextPerf } from "./IconNextPerf";
 import { IconConversion } from "./IconConversion";
 import { IconResponsive } from "./IconResponsive";
@@ -39,7 +38,6 @@ import { IconLocalSeo } from "./IconLocalSeo";
 import { IconLinkedin } from "./IconLinkedin";
 
 export { IconAiBuild } from "./IconAiBuild";
-export { IconWordPress } from "./IconWordPress";
 export { IconNextPerf } from "./IconNextPerf";
 export { IconConversion } from "./IconConversion";
 export { IconResponsive } from "./IconResponsive";
@@ -78,7 +76,6 @@ export { IconLinkedin } from "./IconLinkedin";
 
 export const featureIcons: Record<string, FC<{ className?: string }>> = {
   "ai-build": IconAiBuild,
-  wordpress: IconWordPress,
   "next-perf": IconNextPerf,
   conversion: IconConversion,
   responsive: IconResponsive,

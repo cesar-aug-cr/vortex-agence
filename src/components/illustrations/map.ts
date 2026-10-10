@@ -18,15 +18,11 @@ import { SiteMultilingue } from "./SiteMultilingue";
 import { TunnelsDeConversion } from "./TunnelsDeConversion";
 import { LandingPagesCampagne } from "./LandingPagesCampagne";
 import { EmailMarketingAutomation } from "./EmailMarketingAutomation";
-import { OptimisationConversionCro } from "./OptimisationConversionCro";
 import { CreationDeLogo } from "./CreationDeLogo";
 import { IdentiteVisuelle } from "./IdentiteVisuelle";
-import { CharteGraphique } from "./CharteGraphique";
 import { SupportsPrint } from "./SupportsPrint";
-import { StrategieDeMarqueNaming } from "./StrategieDeMarqueNaming";
 import { ChatbotsIa } from "./ChatbotsIa";
 import { IntegrationsCrmApi } from "./IntegrationsCrmApi";
-import { IaContenuGeneratif } from "./IaContenuGeneratif";
 
 /** slug → service illustration component (see CONVERSATION.md mapping).
  *  "sites-web" is not here: its hero is the laser motion graphic
@@ -62,15 +58,11 @@ export const subServiceIllustration: Record<string, FC<{ className?: string }>> 
   "tunnels-de-conversion": TunnelsDeConversion,
   "landing-pages-campagne": LandingPagesCampagne,
   "email-marketing-automation": EmailMarketingAutomation,
-  "optimisation-conversion-cro": OptimisationConversionCro,
   // branding & design
   "creation-de-logo": CreationDeLogo,
   "identite-visuelle": IdentiteVisuelle,
-  "charte-graphique": CharteGraphique,
   "supports-print": SupportsPrint,
-  "strategie-de-marque-naming": StrategieDeMarqueNaming,
   // automatisation & ia
   "chatbots-ia": ChatbotsIa,
   "integrations-crm-api": IntegrationsCrmApi,
-  "ia-contenu-generatif": IaContenuGeneratif,
 };

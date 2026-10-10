@@ -306,8 +306,8 @@ export default async function ServiceDetailPage({
         </>
       )}
 
-      <ServiceMethod content={sd.method} />
-      <ServiceProof content={sd.proof} />
+      <ServiceMethod content={sd.method} pages={sd.methods} path={service.slug} lang={lang} />
+      <ServiceProof content={sd.proof} pages={sd.proofs} path={service.slug} />
 
       <RelatedServiceArticles
         lang={lang}

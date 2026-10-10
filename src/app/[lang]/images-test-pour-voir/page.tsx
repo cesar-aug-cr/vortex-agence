@@ -709,7 +709,7 @@ export default async function ImagesTestPage({
                 </Gen>
               </div>
             }
-            why="Les logos (Next.js, WordPress, GA4, Figma, HubSpot, n8n…) se reconnaissent en une fraction de seconde, contrairement à une liste en capitales."
+            why="Les logos (Next.js, GA4, Figma, HubSpot, n8n…) se reconnaissent en une fraction de seconde, contrairement à une liste en capitales."
             caution="Le rendu ne contient que des tuiles vides : les vrais logos sont des marques déposées, à télécharger depuis les kits presse officiels (et à respecter : couleurs, marges)."
             verdict="image"
             format="~20 logos 200×200 SVG"
